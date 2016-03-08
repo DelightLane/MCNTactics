@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
+using System.Collections.Generic;
 
 public class MapCreator : Singletone<MapCreator>
 {
@@ -11,12 +13,13 @@ public class MapCreator : Singletone<MapCreator>
     {
         var tile = GameObject.CreatePrimitive(PrimitiveType.Cube);
 
+        tile.AddComponent<Tile>();
         tile.transform.localScale = new Vector3(TILE_SIZE, 0.05f, TILE_SIZE);
 
         return tile;
     }
 
-    public void CreateTilemap(Vector2 mapSize)
+    public void CreateTilemap(Vector2 mapSize, out Dictionary<Vector2, Tile> resultTilemap)
     {
         var root = GameObject.Find("Tilemap");
         if(root == null)
@@ -34,6 +37,8 @@ public class MapCreator : Singletone<MapCreator>
             }
         }
 
+        var tilemaps = new Dictionary<Vector2, Tile>();
+
         var offset = 0.03f;
 
         for (int i = 0; i < mapSize.x; ++i)
@@ -45,7 +50,11 @@ public class MapCreator : Singletone<MapCreator>
                 tile.transform.position = new Vector3(i * (TILE_SIZE + offset), 0, j * (TILE_SIZE + offset));
 
                 tile.transform.parent = root.transform;
+
+                tilemaps[new Vector2(i, j)] = tile.GetComponent<Tile>();
             }
         }
+
+        resultTilemap = tilemaps;
     }
 }
