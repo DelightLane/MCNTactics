@@ -1,24 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MapCreator
+public class MapCreator : Singletone<MapCreator>
 {
-    private static MapCreator _instance;
-
     private readonly float TILE_SIZE = 1;
-
-    public static MapCreator Instance
-    {
-        get
-        {
-            if(_instance == null)
-            {
-                _instance = new MapCreator();
-            }
-
-            return _instance;
-        }
-    }
 
     private MapCreator() { }
 
