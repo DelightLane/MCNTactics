@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class MapManager : MonoBehaviour {
+public class MapController : MonoBehaviour {
     [SerializeField]
     private Vector2 _mapSize;
 

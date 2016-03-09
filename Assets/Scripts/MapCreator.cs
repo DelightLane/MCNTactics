@@ -51,7 +51,9 @@ public class MapCreator : Singletone<MapCreator>
 
                 tile.transform.parent = root.transform;
 
-                tilemaps[new Vector2(i, j)] = tile.GetComponent<Tile>();
+                var tilePosition = new Vector2(i, j);
+                tilemaps[tilePosition] = tile.GetComponent<Tile>();
+                tilemaps[tilePosition].SetPosition(tilePosition);
             }
         }
 

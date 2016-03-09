@@ -64,8 +64,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\HelperClass\Singletone.cs" />
+    <Compile Include="Assets\Scripts\MapController.cs" />
     <Compile Include="Assets\Scripts\MapCreator.cs" />
-    <Compile Include="Assets\Scripts\MapManager.cs" />
+    <Compile Include="Assets\Scripts\Objects\MoveableObject.cs" />
+    <Compile Include="Assets\Scripts\Objects\PlaceableObject.cs" />
     <Compile Include="Assets\Scripts\Objects\TacticsObject.cs" />
     <Compile Include="Assets\Scripts\Objects\Tile.cs" />
   </ItemGroup>
