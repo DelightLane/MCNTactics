@@ -13,7 +13,7 @@ public class MapCreator : MCN.Singletone<MapCreator>
     {
         var tile = GameObject.CreatePrimitive(PrimitiveType.Cube);
 
-        var material = Resources.Load("Notthing", typeof(Material)) as Material;
+        var material = Resources.Load("Material/Notthing", typeof(Material)) as Material;
 
         var renderer = tile.GetComponent<Renderer>();
         renderer.material = material;
