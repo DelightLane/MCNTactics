@@ -3,7 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-public class MapCreator : Singletone<MapCreator>
+public class MapCreator : MCN.Singletone<MapCreator>
 {
     private readonly float TILE_SIZE = 1;
 
@@ -12,6 +12,11 @@ public class MapCreator : Singletone<MapCreator>
     private GameObject CreateTile()
     {
         var tile = GameObject.CreatePrimitive(PrimitiveType.Cube);
+
+        var material = Resources.Load("Notthing", typeof(Material)) as Material;
+
+        var renderer = tile.GetComponent<Renderer>();
+        renderer.material = material;
 
         tile.AddComponent<Tile>();
         tile.transform.localScale = new Vector3(TILE_SIZE, 0.05f, TILE_SIZE);

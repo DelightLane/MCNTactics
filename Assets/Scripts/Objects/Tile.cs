@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public enum eTileDirect
 {
@@ -9,10 +10,136 @@ public enum eTileDirect
     LEFT
 }
 
+public enum eTileType
+{
+    NORMAL,
+    ACTIVE,
+    DEACTIVE
+}
+
 public class Tile : TacticsObject
 {
     private Vector2 _position;
-    private TacticsObject _attached;
+    private PlaceableObject _attached;
+
+    #region Tile State
+    private MCN.StateMachine<TileState> _stateMachine = new MCN.StateMachine<TileState>();
+
+    private abstract class TileState : MCN.State
+    {
+        public TileState(TacticsObject target) : base(target)
+        {
+            var tile = Target as Tile;
+            if(tile != null)
+            {
+                tile._stateMachine.StorageState(GetCurrentType().ToString(), this);
+            }
+        }
+
+        public abstract eTileType GetCurrentType();
+    }
+
+    private class TileState_Normal : TileState
+    {
+        public TileState_Normal(TacticsObject target) : base(target) { }
+
+        public override void Run()
+        {
+            SetTileColor();
+        }
+
+        public override eTileType GetCurrentType()
+        {
+            return eTileType.NORMAL;
+        }
+
+        private void SetTileColor()
+        {
+            var tile = Target as Tile;
+
+            if(tile != null)
+            {
+                var renderer = tile.transform.GetComponent<Renderer>();
+                if(renderer != null)
+                {
+                    renderer.material.color = Color.white;
+                }
+            }
+        }
+    }
+
+    private class TileState_Active : TileState
+    {
+        public TileState_Active(TacticsObject target) : base(target) { }
+
+        public override void Run()
+        {
+            SetTileColor();
+        }
+
+        public override eTileType GetCurrentType()
+        {
+            return eTileType.ACTIVE;
+        }
+
+        private void SetTileColor()
+        {
+            var tile = Target as Tile;
+
+            if (tile != null)
+            {
+                var renderer = tile.transform.GetComponent<Renderer>();
+                if (renderer != null)
+                {
+                    renderer.material.color = Color.red;
+                }
+            }
+        }
+    }
+
+    private class TileState_Deactive : TileState
+    {
+        public TileState_Deactive(TacticsObject target) : base(target) { }
+
+        public override void Run()
+        {
+            SetTileColor();
+        }
+
+        public override eTileType GetCurrentType()
+        {
+            return eTileType.DEACTIVE;
+        }
+
+        private void SetTileColor()
+        {
+            var tile = Target as Tile;
+
+            if (tile != null)
+            {
+                var renderer = tile.transform.GetComponent<Renderer>();
+                if (renderer != null)
+                {
+                    renderer.material.color = Color.black;
+                }
+            }
+        }
+    }
+    #endregion
+
+    void Awake()
+    {
+        StorageStates();
+
+        ChangeState(eTileType.NORMAL);
+    }
+
+    private void StorageStates()
+    {
+        new TileState_Normal(this);
+        new TileState_Active(this);
+        new TileState_Deactive(this);
+    }
 
     public void SetPosition(Vector2 pos)
     {
@@ -63,5 +190,10 @@ public class Tile : TacticsObject
         }
 
         return null;
+    }
+
+    public void ChangeState(eTileType interaction)
+    {
+        _stateMachine.ChangeState(interaction.ToString());
     }
 }
