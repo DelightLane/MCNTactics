@@ -9,5 +9,13 @@ public class PlaceableObject : TacticsObject
     {
         // 순환 참조 적용. 레퍼런스 관리에 신경 쓸 것
         _attachedTile = tile;
+
+        Place(_attachedTile);
+    }
+
+    private void Place(Tile tile)
+    {
+        transform.parent = tile.transform;
+        transform.localPosition = new Vector3(0, transform.localScale.y / 2, 0);
     }
 }

@@ -3,15 +3,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-public class MapCreator : MCN.Singletone<MapCreator>
+public class MapCreator
 {
     private readonly float TILE_SIZE = 1;
 
-    private MapCreator() { }
-
-    private GameObject CreateTile()
+    private GameObject CreateTile(Vector2 pos)
     {
         var tile = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        tile.name = String.Format("{0}_{1}", pos.x, pos.y);
 
         var material = Resources.Load("Material/Notthing", typeof(Material)) as Material;
 
@@ -50,13 +49,14 @@ public class MapCreator : MCN.Singletone<MapCreator>
         {
             for(int j = 0; j < mapSize.y; ++j)
             {
-                var tile = CreateTile();
+                var tilePosition = new Vector2(i, j);
+
+                var tile = CreateTile(tilePosition);
 
                 tile.transform.position = new Vector3(i * (TILE_SIZE + offset), 0, j * (TILE_SIZE + offset));
 
                 tile.transform.parent = root.transform;
 
-                var tilePosition = new Vector2(i, j);
                 tilemaps[tilePosition] = tile.GetComponent<Tile>();
                 tilemaps[tilePosition].SetPosition(tilePosition);
             }
