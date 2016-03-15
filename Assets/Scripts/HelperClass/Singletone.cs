@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Reflection;
+using UnityEngine;
 
 namespace MCN
 {
-    public class Singletone<T> where T : class
+    public abstract class Singletone<T> where T : class
     {
-        private static T _instance = null;
+        protected static T _instance = null;
 
         public static T Instance
         {
@@ -35,5 +36,32 @@ namespace MCN
                 _instance = (T)Activator.CreateInstance(t, true);
             }
         }
+    }
+
+    public abstract class MonoSingletone : MonoBehaviour
+    {
+        private static MonoSingletone _instance;
+
+        public static MonoSingletone Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = FindObjectOfType(typeof(MonoSingletone)) as MonoSingletone;
+                }
+
+                if (_instance == null)
+                {
+                    GameObject obj = new GameObject("");
+                    _instance = obj.AddComponent(typeof(MonoSingletone)) as MonoSingletone;
+                    _instance.name = _instance.CreatedObjectName();
+                }
+
+                return _instance;
+            }
+        }
+
+        protected abstract string CreatedObjectName();
     }
 }
