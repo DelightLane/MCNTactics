@@ -159,6 +159,18 @@ public class Tile : TacticsObject
         obj.Attach(this);
     }
 
+    public Tile[] GetClosedTiles()
+    {
+        Tile[] closedTiles = new Tile[4];
+
+        closedTiles[0] = GetClosedTile(eTileDirect.UP);
+        closedTiles[1] = GetClosedTile(eTileDirect.DOWN);
+        closedTiles[2] = GetClosedTile(eTileDirect.LEFT);
+        closedTiles[3] = GetClosedTile(eTileDirect.RIGHT);
+
+        return closedTiles;
+    }
+
     public Tile GetClosedTile(eTileDirect direct)
     {
         Vector2 closedTilePos = this._position;
@@ -190,6 +202,27 @@ public class Tile : TacticsObject
         }
 
         return null;
+    }
+
+    public void ShowChainActiveTile(int range)
+    {
+        if(range <= 0)
+        {
+            return;
+        }
+
+        this.ChangeState(eTileType.ACTIVE);
+        
+        var closedTiles = this.GetClosedTiles();
+
+        foreach (var closedTile in closedTiles)
+        {
+            if (closedTile != null)
+            {
+                closedTile.ChangeState(eTileType.ACTIVE);
+                closedTile.ShowChainActiveTile(range - 1);
+            }
+        }
     }
 
     public void ChangeState(eTileType interaction)
