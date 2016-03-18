@@ -65,9 +65,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\HelperClass\Singletone.cs" />
-    <Compile Include="Assets\Scripts\HelperClass\State.cs" />
-    <Compile Include="Assets\Scripts\MapController.cs" />
+    <Compile Include="Assets\Scripts\Core\Singletone.cs" />
+    <Compile Include="Assets\Scripts\Core\State.cs" />
+    <Compile Include="Assets\Scripts\MapManager.cs" />
     <Compile Include="Assets\Scripts\MapCreator.cs" />
     <Compile Include="Assets\Scripts\Objects\MoveableObject.cs" />
     <Compile Include="Assets\Scripts\Objects\PlaceableObject.cs" />

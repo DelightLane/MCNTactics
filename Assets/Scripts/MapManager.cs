@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class MapController : MCN.MonoSingletone {
+public class MapManager : MCN.MonoSingletone<MapManager> {
     [SerializeField]
     private Vector2 _mapSize;
 
@@ -22,7 +22,7 @@ public class MapController : MCN.MonoSingletone {
 
     protected override string CreatedObjectName()
     {
-        return "MapController";
+        return "MapManager";
     }
 
     void Awake()
@@ -31,7 +31,10 @@ public class MapController : MCN.MonoSingletone {
         {
             _mapCreator = new MapCreator();
         }
-        _mapCreator.CreateTilemap(_mapSize, out _tilemaps);
+        if (_mapSize.x > 0 && _mapSize.y > 0)
+        {
+            _mapCreator.CreateTilemap(_mapSize, out _tilemaps);
+        }
 
         if(_placeObjInfos == null)
         {
@@ -56,13 +59,28 @@ public class MapController : MCN.MonoSingletone {
         }
     }
 
+    public bool IsExistMap()
+    {
+        return _tilemaps == null ? false : true;
+    }
+
     public Tile GetTile(Vector2 position)
     {
-        return _tilemaps[position];
+        if (IsExistMap())
+        {
+            return _tilemaps[position];
+        }
+
+        throw new UnityException("Tilemap is not exist.");
     }
 
     public void AttachObject(Vector2 pos, PlaceableObject obj)
     {
-        _tilemaps[pos].AttachObject(obj);
+        if (IsExistMap())
+        {
+            _tilemaps[pos].AttachObject(obj);
+        }
+
+        throw new UnityException("Tilemap is not exist.");
     }
 }

@@ -193,11 +193,9 @@ public class Tile : TacticsObject
 
         if (closedTilePos.x >= 0 && closedTilePos.y >= 0)
         {
-            var mapController = GameObject.FindObjectOfType<MapController>();
-
-            if (mapController != null)
+            if (MapManager.Instance.IsExistMap())
             {
-                return mapController.GetTile(closedTilePos);
+                return MapManager.Instance.GetTile(closedTilePos);
             }
         }
 
