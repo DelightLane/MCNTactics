@@ -159,6 +159,13 @@ public class Tile : TacticsObject, IDisposable
             _attached = null;
         }
 
+        if(_stateMachine != null)
+        {
+            _stateMachine.Dispose();
+
+            _stateMachine = null;
+        }
+
         GameObject.Destroy(gameObject);
     }
 

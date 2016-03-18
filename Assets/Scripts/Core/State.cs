@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MCN
 {
-    public abstract class State
+    public abstract class State : IDisposable
     {
         private TacticsObject _target;
         protected TacticsObject Target {
@@ -27,9 +27,14 @@ namespace MCN
 
         public abstract void Run();
         public virtual void Finish() { }
+
+        public void Dispose()
+        {
+            _target = null;
+        }
     }
 
-    public class StateMachine<T> where T : State
+    public class StateMachine<T> where T : State, IDisposable
     {
         private Dictionary<string, T> _states = new Dictionary<string, T>();
         private T _currentState;
@@ -37,6 +42,11 @@ namespace MCN
         public void StorageState(string stateName, T state)
         {
             _states.Add(stateName, state);
+        }
+
+        public State GetCurrentState()
+        {
+            return _currentState;
         }
 
         public void ChangeState(string stateName)
@@ -52,6 +62,19 @@ namespace MCN
             {
                 _currentState.Run();
             }
+        }
+
+        public void Dispose()
+        {
+            foreach(var state in _states)
+            {
+                if(state.Value != null)
+                {
+                    state.Value.Dispose();
+                }
+            }
+
+            _states.Clear();
         }
     }
 }

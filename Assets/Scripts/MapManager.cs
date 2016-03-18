@@ -39,7 +39,7 @@ public class MapManager : MCN.MonoSingletone<MapManager> {
 
     private MapCreator _mapCreator;
 
-    private Dictionary<Vector2, Tile> _tilemaps;
+    private Dictionary<Vector2, Tile> _tilemap;
 
     protected override string CreatedObjectName()
     {
@@ -79,7 +79,7 @@ public class MapManager : MCN.MonoSingletone<MapManager> {
     {
         if (_mapCreator != null)
         {
-            _mapCreator.CreateTilemap(_mapSize, ref _tilemaps);
+            _mapCreator.CreateTilemap(_mapSize, ref _tilemap);
         }
     }
 
@@ -87,7 +87,7 @@ public class MapManager : MCN.MonoSingletone<MapManager> {
     {
         if (_mapCreator != null)
         {
-            _mapCreator.RemoveTilemap(ref _tilemaps);
+            _mapCreator.RemoveTilemap(ref _tilemap);
         }
     }
 
@@ -122,14 +122,14 @@ public class MapManager : MCN.MonoSingletone<MapManager> {
 
     public bool IsExistMap()
     {
-        return _tilemaps == null ? false : true;
+        return _tilemap == null ? false : true;
     }
 
     public Tile GetTile(Vector2 position)
     {
         if (IsExistMap())
         {
-            return _tilemaps[position];
+            return _tilemap[position];
         }
 
         throw new UnityException("Tilemap is not exist.");
@@ -141,7 +141,7 @@ public class MapManager : MCN.MonoSingletone<MapManager> {
         {
             if (IsInMapSize(pos))
             {
-                _tilemaps[pos].AttachObject(obj);
+                _tilemap[pos].AttachObject(obj);
             }
             else
             {
@@ -151,6 +151,14 @@ public class MapManager : MCN.MonoSingletone<MapManager> {
         else
         {
             throw new UnityException("Tilemap is not exist.");
+        }
+    }
+
+    public void ChangeAllTileState(eTileType state)
+    {
+        foreach(var tile in _tilemap)
+        {
+            tile.Value.ChangeState(state);
         }
     }
 }
