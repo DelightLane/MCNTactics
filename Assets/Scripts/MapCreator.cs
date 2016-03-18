@@ -25,6 +25,13 @@ public class MapCreator
 
     public void CreateTilemap(Vector2 mapSize, out Dictionary<Vector2, Tile> resultTilemap)
     {
+        if (mapSize.x <= 0 && mapSize.y <= 0)
+        {
+            resultTilemap = null;
+
+            return;
+        }
+
         var root = GameObject.Find("Tilemap");
         if(root == null)
         {
@@ -63,5 +70,27 @@ public class MapCreator
         }
 
         resultTilemap = tilemaps;
+    }
+
+    public void RemoveTilemap(ref Dictionary<Vector2, Tile> resultTilemap)
+    {
+        foreach(var tilePair in resultTilemap)
+        {
+            var tile = tilePair.Value.GetComponent<Tile>();    
+
+            if(tile != null)
+            {
+                var attached = tile.GetAttachObject();
+                if(attached != null)
+                {
+                    var placeable = attached.GetComponent<PlaceableObject>();
+
+                    if(placeable != null)
+                    {
+                        placeable.Dispose();
+                    }
+                }
+            }
+        }
     }
 }

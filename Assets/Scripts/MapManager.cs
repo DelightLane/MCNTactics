@@ -27,23 +27,43 @@ public class MapManager : MCN.MonoSingletone<MapManager> {
 
     void Awake()
     {
-        if(_mapCreator == null)
+        if (_mapCreator == null)
         {
             _mapCreator = new MapCreator();
         }
-        if (_mapSize.x > 0 && _mapSize.y > 0)
-        {
-            _mapCreator.CreateTilemap(_mapSize, out _tilemaps);
-        }
 
-        if(_placeObjInfos == null)
+        if (_placeObjInfos == null)
         {
             _placeObjInfos = new List<PlaceInfo>();
         }
-        foreach(var objInfo in _placeObjInfos)
+
+        CreateTilemap();
+
+        PlaceObjacts();
+    }
+
+    public void CreateTilemap()
+    {
+        if (_mapCreator != null)
+        {
+            _mapCreator.CreateTilemap(_mapSize, out _tilemaps);
+        }
+    }
+
+    public void RemoveTtilemap()
+    {
+        if (_mapCreator != null)
+        {
+            _mapCreator.RemoveTilemap(ref _tilemaps);
+        }
+    }
+
+    public void PlaceObjacts()
+    {
+        foreach (var objInfo in _placeObjInfos)
         {
             var targetObj = Instantiate(Resources.Load(string.Format("Prefabs/{0}", objInfo.prefabName), typeof(GameObject))) as GameObject;
-            if(targetObj != null)
+            if (targetObj != null)
             {
                 var placeableObj = targetObj.GetComponent<PlaceableObject>() as PlaceableObject;
 
