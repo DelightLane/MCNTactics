@@ -48,7 +48,10 @@ public class MoveableObject : PlaceableObject, MCN.IObserver<eTouchEvent>
 
             if (moveable != null)
             {
-                moveable.ChangeMoveableState(eMoveableType.NORMAL);
+                if (moveable.IsSelected())
+                {
+                    moveable.ChangeMoveableState(eMoveableType.NORMAL);
+                }
             }
         }
 
@@ -61,6 +64,8 @@ public class MoveableObject : PlaceableObject, MCN.IObserver<eTouchEvent>
                 if (moveable._attachedTile != null)
                 {
                     MapManager.Instance.ChangeAllTileState(eTileType.DEACTIVE);
+
+                    GameManager.Instance.SelectedObj = moveable;
 
                     moveable._attachedTile.ShowChainActiveTile(moveable.moveRange);
                 }
@@ -83,7 +88,10 @@ public class MoveableObject : PlaceableObject, MCN.IObserver<eTouchEvent>
 
             if (moveable != null)
             {
-                moveable.ChangeMoveableState(eMoveableType.MOVE);
+                if (GameManager.Instance.SelectedObj == null)
+                {
+                    moveable.ChangeMoveableState(eMoveableType.MOVE);
+                }
             }
         }
 
@@ -93,6 +101,8 @@ public class MoveableObject : PlaceableObject, MCN.IObserver<eTouchEvent>
 
             if (moveable != null)
             {
+                GameManager.Instance.SelectedObj = null;
+
                 MapManager.Instance.ChangeAllTileState(eTileType.NORMAL);
             }
         }

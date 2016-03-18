@@ -26,4 +26,9 @@ public class PlaceableObject : TacticsObject, IDisposable
         transform.parent = tile.transform;
         transform.localPosition = new Vector3(0, transform.localScale.y / 2, 0);
     }
+
+    public bool IsSelected()
+    {
+        return GameManager.Instance.SelectedObj == this;
+    }
 }

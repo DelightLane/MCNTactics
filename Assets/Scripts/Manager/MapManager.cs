@@ -129,28 +129,26 @@ public class MapManager : MCN.MonoSingletone<MapManager> {
     {
         if (IsExistMap())
         {
-            return _tilemap[position];
-        }
-
-        throw new UnityException("Tilemap is not exist.");
-    }
-
-    public void AttachObject(Vector2 pos, PlaceableObject obj)
-    {
-        if (IsExistMap())
-        {
-            if (IsInMapSize(pos))
+            if (IsInMapSize(position))
             {
-                _tilemap[pos].AttachObject(obj);
+                return _tilemap[position];
             }
-            else
-            {
-                throw new UnityException("Tilemap is smaller than position.");
-            }
+
+            return null;
         }
         else
         {
             throw new UnityException("Tilemap is not exist.");
+        }
+    }
+
+    public void AttachObject(Vector2 pos, PlaceableObject obj)
+    {
+        var tile = GetTile(pos);
+
+        if (tile != null)
+        {
+            tile.AttachObject(obj);
         }
     }
 
