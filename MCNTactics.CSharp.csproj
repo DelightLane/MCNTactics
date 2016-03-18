@@ -65,10 +65,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Core\IObservable.cs" />
     <Compile Include="Assets\Scripts\Core\Singletone.cs" />
     <Compile Include="Assets\Scripts\Core\State.cs" />
-    <Compile Include="Assets\Scripts\MapManager.cs" />
-    <Compile Include="Assets\Scripts\MapCreator.cs" />
+    <Compile Include="Assets\Scripts\Manager\TouchManager.cs" />
+    <Compile Include="Assets\Scripts\Manager\MapManager.cs" />
+    <Compile Include="Assets\Scripts\Manager\MapCreator.cs" />
     <Compile Include="Assets\Scripts\Objects\MoveableObject.cs" />
     <Compile Include="Assets\Scripts\Objects\PlaceableObject.cs" />
     <Compile Include="Assets\Scripts\Objects\TacticsObject.cs" />
