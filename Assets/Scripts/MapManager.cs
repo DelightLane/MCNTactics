@@ -100,7 +100,9 @@ public class MapManager : MCN.MonoSingletone<MapManager> {
         {
             _tilemaps[pos].AttachObject(obj);
         }
-
-        throw new UnityException("Tilemap is not exist.");
+        else
+        {
+            throw new UnityException("Tilemap is not exist.");
+        }
     }
 }
