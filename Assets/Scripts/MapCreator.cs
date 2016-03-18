@@ -5,91 +5,74 @@ using System.Collections.Generic;
 
 public class MapCreator
 {
-    private readonly float TILE_SIZE = 1;
-
-    private GameObject CreateTile(Vector2 pos)
+    public void CreateTilemap(Vector2 mapSize, ref Dictionary<Vector2, Tile> resultTilemap)
     {
-        var tile = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        tile.name = String.Format("{0}_{1}", pos.x, pos.y);
+        RemoveTilemap(ref resultTilemap);
 
-        var material = Resources.Load("Material/Notthing", typeof(Material)) as Material;
-
-        var renderer = tile.GetComponent<Renderer>();
-        renderer.material = material;
-
-        tile.AddComponent<Tile>();
-        tile.transform.localScale = new Vector3(TILE_SIZE, 0.05f, TILE_SIZE);
-
-        return tile;
+        CreateTiles(mapSize, ref resultTilemap);
     }
 
-    public void CreateTilemap(Vector2 mapSize, out Dictionary<Vector2, Tile> resultTilemap)
+    public GameObject GetRoot()
     {
-        if (mapSize.x <= 0 && mapSize.y <= 0)
-        {
-            resultTilemap = null;
-
-            return;
-        }
-
         var root = GameObject.Find("Tilemap");
-        if(root == null)
+
+        if (root == null)
         {
             root = new GameObject("Tilemap");
             root.transform.position = Vector3.up * -1;
         }
-        else
-        {
-            var rootChilds = root.GetComponentsInChildren<GameObject>();
 
-            foreach(var child in rootChilds)
+        return root;
+    }
+
+    public void RemoveTilemap(ref Dictionary<Vector2, Tile> tilemap)
+    {
+        if(tilemap == null)
+        {
+            return;
+        }
+
+        foreach (var tilePair in tilemap)
+        {
+            var tile = tilePair.Value.GetComponent<Tile>();
+
+            if (tile != null)
             {
-                GameObject.Destroy(child);
+                tile.Dispose();
             }
         }
 
-        var tilemaps = new Dictionary<Vector2, Tile>();
+        tilemap.Clear();
+    }
+
+    private void CreateTiles(Vector2 mapSize, ref Dictionary<Vector2, Tile> tilemap)
+    {
+        if (mapSize.x <= 0 && mapSize.y <= 0)
+        {
+            return;
+        }
+
+        if (tilemap == null)
+        {
+            tilemap = new Dictionary<Vector2, Tile>();
+        }
 
         var offset = 0.03f;
 
         for (int i = 0; i < mapSize.x; ++i)
         {
-            for(int j = 0; j < mapSize.y; ++j)
+            for (int j = 0; j < mapSize.y; ++j)
             {
                 var tilePosition = new Vector2(i, j);
 
-                var tile = CreateTile(tilePosition);
+                var tile = Tile.CreateTile(tilePosition);
 
-                tile.transform.position = new Vector3(i * (TILE_SIZE + offset), 0, j * (TILE_SIZE + offset));
+                tile.transform.position = new Vector3(i * (Tile.TILE_SIZE + offset), 0, j * (Tile.TILE_SIZE + offset));
 
-                tile.transform.parent = root.transform;
+                tile.transform.parent = GetRoot().transform;
 
-                tilemaps[tilePosition] = tile.GetComponent<Tile>();
-                tilemaps[tilePosition].SetPosition(tilePosition);
-            }
-        }
-
-        resultTilemap = tilemaps;
-    }
-
-    public void RemoveTilemap(ref Dictionary<Vector2, Tile> resultTilemap)
-    {
-        foreach(var tilePair in resultTilemap)
-        {
-            var tile = tilePair.Value.GetComponent<Tile>();    
-
-            if(tile != null)
-            {
-                var attached = tile.GetAttachObject();
-                if(attached != null)
-                {
-                    var placeable = attached.GetComponent<PlaceableObject>();
-
-                    if(placeable != null)
-                    {
-                        placeable.Dispose();
-                    }
-                }
+                tilemap[tilePosition] = tile.GetComponent<Tile>();
+                tilemap[tilePosition].SetPosition(tilePosition);
             }
         }
     }

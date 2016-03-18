@@ -16,6 +16,27 @@ public class MapManager : MCN.MonoSingletone<MapManager> {
         public string prefabName;
     }
 
+#if UNITY_EDITOR
+    private class DebugMapManager
+    {
+        private Vector2 _savedMapSize;
+
+        public void CreateTilemap(MapManager manager)
+        {
+            if (_savedMapSize != manager._mapSize)
+            {
+                manager.CreateTilemap();
+
+                manager.PlaceObjacts();
+
+                _savedMapSize = manager._mapSize;
+            }
+        }
+    }
+
+    private DebugMapManager _debug;
+#endif
+
     private MapCreator _mapCreator;
 
     private Dictionary<Vector2, Tile> _tilemaps;
@@ -37,20 +58,33 @@ public class MapManager : MCN.MonoSingletone<MapManager> {
             _placeObjInfos = new List<PlaceInfo>();
         }
 
+#if UNITY_EDITOR
+        _debug = new DebugMapManager();
+        _debug.CreateTilemap(this);
+#else
         CreateTilemap();
 
         PlaceObjacts();
+#endif
+    }
+
+    void Update()
+    {
+#if UNITY_EDITOR
+        _debug = new DebugMapManager();
+        _debug.CreateTilemap(this);
+#endif
     }
 
     public void CreateTilemap()
     {
         if (_mapCreator != null)
         {
-            _mapCreator.CreateTilemap(_mapSize, out _tilemaps);
+            _mapCreator.CreateTilemap(_mapSize, ref _tilemaps);
         }
     }
 
-    public void RemoveTtilemap()
+    public void RemoveTilemap()
     {
         if (_mapCreator != null)
         {
@@ -58,22 +92,30 @@ public class MapManager : MCN.MonoSingletone<MapManager> {
         }
     }
 
+    public bool IsInMapSize(Vector2 pos)
+    {
+        return _mapSize.x > pos.x && _mapSize.y > pos.y;
+    }
+
     public void PlaceObjacts()
     {
         foreach (var objInfo in _placeObjInfos)
         {
-            var targetObj = Instantiate(Resources.Load(string.Format("Prefabs/{0}", objInfo.prefabName), typeof(GameObject))) as GameObject;
-            if (targetObj != null)
+            if (IsInMapSize(objInfo.pos))
             {
-                var placeableObj = targetObj.GetComponent<PlaceableObject>() as PlaceableObject;
+                var targetObj = Instantiate(Resources.Load(string.Format("Prefabs/{0}", objInfo.prefabName), typeof(GameObject))) as GameObject;
+                if (targetObj != null)
+                {
+                    var placeableObj = targetObj.GetComponent<PlaceableObject>() as PlaceableObject;
 
-                if (placeableObj != null)
-                {
-                    this.AttachObject(objInfo.pos, placeableObj);
-                }
-                else
-                {
-                    Debug.LogWarning(string.Format("Prefab {0} don't have 'PlaceableObject'", objInfo.prefabName));
+                    if (placeableObj != null)
+                    {
+                        this.AttachObject(objInfo.pos, placeableObj);
+                    }
+                    else
+                    {
+                        Debug.LogWarning(string.Format("Prefab {0} don't have 'PlaceableObject'", objInfo.prefabName));
+                    }
                 }
             }
         }
@@ -98,7 +140,14 @@ public class MapManager : MCN.MonoSingletone<MapManager> {
     {
         if (IsExistMap())
         {
-            _tilemaps[pos].AttachObject(obj);
+            if (IsInMapSize(pos))
+            {
+                _tilemaps[pos].AttachObject(obj);
+            }
+            else
+            {
+                throw new UnityException("Tilemap is smaller than position.");
+            }
         }
         else
         {

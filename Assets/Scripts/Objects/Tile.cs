@@ -17,10 +17,12 @@ public enum eTileType
     DEACTIVE
 }
 
-public class Tile : TacticsObject
+public class Tile : TacticsObject, IDisposable
 {
     private Vector2 _position;
     private PlaceableObject _attached;
+
+    public static readonly float TILE_SIZE = 1;
 
     #region Tile State
     private MCN.StateMachine<TileState> _stateMachine = new MCN.StateMachine<TileState>();
@@ -30,7 +32,7 @@ public class Tile : TacticsObject
         public TileState(TacticsObject target) : base(target)
         {
             var tile = Target as Tile;
-            if(tile != null)
+            if (tile != null)
             {
                 tile._stateMachine.StorageState(GetCurrentType().ToString(), this);
             }
@@ -57,10 +59,10 @@ public class Tile : TacticsObject
         {
             var tile = Target as Tile;
 
-            if(tile != null)
+            if (tile != null)
             {
                 var renderer = tile.transform.GetComponent<Renderer>();
-                if(renderer != null)
+                if (renderer != null)
                 {
                     renderer.material.color = Color.white;
                 }
@@ -126,6 +128,39 @@ public class Tile : TacticsObject
         }
     }
     #endregion
+
+    public static GameObject CreateTile(Vector2 pos)
+    {
+        var tile = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        tile.name = String.Format("{0}_{1}", pos.x, pos.y);
+
+        var material = Resources.Load("Material/Notthing", typeof(Material)) as Material;
+
+        var renderer = tile.GetComponent<Renderer>();
+        renderer.material = material;
+
+        tile.AddComponent<Tile>();
+        tile.transform.localScale = new Vector3(TILE_SIZE, 0.05f, TILE_SIZE);
+
+        return tile;
+    }
+
+    public void Dispose()
+    {
+        if (_attached != null)
+        {
+            var placeable = _attached.GetComponent<PlaceableObject>();
+
+            if (placeable != null)
+            {
+                placeable.Dispose();
+            }
+
+            _attached = null;
+        }
+
+        GameObject.Destroy(gameObject);
+    }
 
     void Awake()
     {
@@ -204,13 +239,13 @@ public class Tile : TacticsObject
 
     public void ShowChainActiveTile(int range)
     {
-        if(range <= 0)
+        if (range <= 0)
         {
             return;
         }
 
         this.ChangeState(eTileType.ACTIVE);
-        
+
         var closedTiles = this.GetClosedTiles();
 
         foreach (var closedTile in closedTiles)
@@ -225,6 +260,9 @@ public class Tile : TacticsObject
 
     public void ChangeState(eTileType interaction)
     {
-        _stateMachine.ChangeState(interaction.ToString());
+        if (_stateMachine != null)
+        {
+            _stateMachine.ChangeState(interaction.ToString());
+        }
     }
 }

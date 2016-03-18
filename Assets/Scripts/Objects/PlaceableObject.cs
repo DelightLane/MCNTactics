@@ -17,6 +17,8 @@ public class PlaceableObject : TacticsObject, IDisposable
     public void Dispose()
     {
         _attachedTile = null;
+
+        GameObject.Destroy(gameObject);
     }
 
     private void Place(Tile tile)

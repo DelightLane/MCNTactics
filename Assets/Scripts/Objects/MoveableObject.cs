@@ -5,7 +5,7 @@ using System.Collections;
 public class MoveableObject : PlaceableObject
 {
     [SerializeField]
-    private int moveRange;
+    private int moveRange = 0;
 
     void Update()
     {
