@@ -8,7 +8,7 @@ public enum eMoveableType
     MOVE
 }
 
-public class MoveableObject : PlaceableObject
+public class MoveableObject : PlaceableObject, MCN.IObserver<eTouchEvent>
 {
     [SerializeField]
     private int moveRange = 0;
@@ -101,9 +101,16 @@ public class MoveableObject : PlaceableObject
 
     void Awake()
     {
+        TouchManager.Instance.Subscribe(this);
+
         StorageStates();
 
         ChangeMoveableState(eMoveableType.NORMAL);
+    }
+
+    void Destroy()
+    {
+        TouchManager.Instance.Unsubscribe(this);
     }
 
     private void StorageStates()
@@ -112,32 +119,15 @@ public class MoveableObject : PlaceableObject
         new MoveableState_Move(this);
     }
 
-    void Update()
+    public void OnNext(eTouchEvent touchEvent)
     {
-        OnTouchEvent(() =>
+        if (touchEvent == eTouchEvent.TOUCH)
         {
             var state = GetCurrentMoveableState();
 
             if (state != null)
             {
                 state.OnTouchEvent();
-            }
-        });
-    }
-
-    private void OnTouchEvent(Action callback)
-    {
-        // TODO : 마우스가 아니라 실제로 터치 이벤트에 대해 동작하게 수정
-        if (Input.GetMouseButtonUp(0))
-        {
-            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit))
-            {
-                if (hit.transform == transform)
-                {
-                    callback();
-                }
             }
         }
     }
