@@ -13,9 +13,9 @@ public class MoveableObject : PlaceableObject
     [SerializeField]
     private int moveRange = 0;
 
+    #region state
     private MCN.StateMachine<MoveableState> _moveableStateMachine = new MCN.StateMachine<MoveableState>();
 
-    #region state
     private abstract class MoveableState : MCN.State
     {
         public MoveableState(TacticsObject target) : base(target)
@@ -29,6 +29,8 @@ public class MoveableObject : PlaceableObject
         }
 
         public abstract eMoveableType GetCurrentType();
+
+        public abstract void OnTouchEvent();
     }
 
     private class MoveableState_Move : MoveableState
@@ -38,6 +40,16 @@ public class MoveableObject : PlaceableObject
         public override eMoveableType GetCurrentType()
         {
             return eMoveableType.MOVE;
+        }
+
+        public override void OnTouchEvent()
+        {
+            var moveable = Target as MoveableObject;
+
+            if (moveable != null)
+            {
+                moveable.ChangeMoveableState(eMoveableType.NORMAL);
+            }
         }
 
         public override void Run()
@@ -63,6 +75,16 @@ public class MoveableObject : PlaceableObject
         public override eMoveableType GetCurrentType()
         {
             return eMoveableType.NORMAL;
+        }
+
+        public override void OnTouchEvent()
+        {
+            var moveable = Target as MoveableObject;
+
+            if (moveable != null)
+            {
+                moveable.ChangeMoveableState(eMoveableType.MOVE);
+            }
         }
 
         public override void Run()
@@ -94,13 +116,11 @@ public class MoveableObject : PlaceableObject
     {
         OnTouchEvent(() =>
         {
-            if(GetMoveableCurrentStateType() == eMoveableType.NORMAL)
+            var state = GetCurrentMoveableState();
+
+            if (state != null)
             {
-                ChangeMoveableState(eMoveableType.MOVE);
-            }
-            else
-            {
-                ChangeMoveableState(eMoveableType.NORMAL);
+                state.OnTouchEvent();
             }
         });
     }
@@ -122,17 +142,24 @@ public class MoveableObject : PlaceableObject
         }
     }
 
-    private eMoveableType GetMoveableCurrentStateType()
+    private MoveableState GetCurrentMoveableState()
     {
         var state = _moveableStateMachine.GetCurrentState();
-        if (state != null)
+        if(state != null && state is MoveableState)
         {
-            var moveableState = state as MoveableState;
+            return state as MoveableState;
+        }
 
-            if(moveableState != null)
-            {
-                return moveableState.GetCurrentType();
-            }
+        throw new UnityException("don't have moveable state.");
+    }
+
+    private eMoveableType GetMoveableCurrentStateType()
+    {
+        var state = GetCurrentMoveableState();
+
+        if(state != null)
+        {
+            return state.GetCurrentType();
         }
 
         throw new UnityException("don't have moveable state.");
