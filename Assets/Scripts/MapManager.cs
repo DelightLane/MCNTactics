@@ -71,7 +71,6 @@ public class MapManager : MCN.MonoSingletone<MapManager> {
     void Update()
     {
 #if UNITY_EDITOR
-        _debug = new DebugMapManager();
         _debug.CreateTilemap(this);
 #endif
     }
