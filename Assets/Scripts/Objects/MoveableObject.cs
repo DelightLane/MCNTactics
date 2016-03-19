@@ -28,6 +28,8 @@ public class MoveableObject : PlaceableObject, MCN.IObserver<eTouchEvent>
             }
         }
 
+        public virtual void TileTouchAction(Tile activeTile) { }
+
         public abstract eMoveableType GetCurrentType();
 
         public abstract void OnTouchEvent();
@@ -61,13 +63,28 @@ public class MoveableObject : PlaceableObject, MCN.IObserver<eTouchEvent>
 
             if (moveable != null)
             {
+                moveable.Select();
+
                 if (moveable._attachedTile != null)
                 {
                     MapManager.Instance.ChangeAllTileState(eTileType.DEACTIVE);
 
-                    GameManager.Instance.SelectedObj = moveable;
-
                     moveable._attachedTile.ShowChainActiveTile(moveable.moveRange);
+                }
+            }
+        }
+
+        public override void TileTouchAction(Tile activeTile)
+        {
+            var moveable = Target as MoveableObject;
+
+            if(moveable != null)
+            {
+                bool isSuccess = activeTile.AttachObject(moveable);
+
+                if (isSuccess)
+                {
+                    moveable.ChangeMoveableState(eMoveableType.NORMAL);
                 }
             }
         }
@@ -101,7 +118,7 @@ public class MoveableObject : PlaceableObject, MCN.IObserver<eTouchEvent>
 
             if (moveable != null)
             {
-                GameManager.Instance.SelectedObj = null;
+                moveable.Deselect();
 
                 MapManager.Instance.ChangeAllTileState(eTileType.NORMAL);
             }
@@ -127,6 +144,16 @@ public class MoveableObject : PlaceableObject, MCN.IObserver<eTouchEvent>
     {
         new MoveableState_Normal(this);
         new MoveableState_Move(this);
+    }
+
+    public override void TileTouchAction(Tile activeTile)
+    {
+        var state = GetCurrentMoveableState();
+
+        if (state != null)
+        {
+            state.TileTouchAction(activeTile);
+        }
     }
 
     public void OnNext(eTouchEvent touchEvent)

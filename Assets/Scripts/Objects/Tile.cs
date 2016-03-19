@@ -17,7 +17,13 @@ public enum eTileType
     DEACTIVE
 }
 
-public class Tile : TacticsObject, IDisposable
+// Tile이 active 상태일 때 실행하는 액션
+public interface ITileActive
+{
+    void TileTouchAction(Tile activeTile);
+}
+
+public class Tile : TacticsObject, IDisposable, MCN.IObserver<eTouchEvent>
 {
     private Vector2 _position;
     private PlaceableObject _attached;
@@ -39,6 +45,8 @@ public class Tile : TacticsObject, IDisposable
         }
 
         public abstract eTileType GetCurrentType();
+
+        public virtual void TouchEvent(eTouchEvent touch) { }
     }
 
     private class TileState_Normal : TileState
@@ -97,6 +105,24 @@ public class Tile : TacticsObject, IDisposable
                 }
             }
         }
+
+        public override void TouchEvent(eTouchEvent touch)
+        {
+            if (touch == eTouchEvent.TOUCH)
+            {
+                var selected = GameManager.Instance.SelectedObj as ITileActive;
+
+                if(selected != null)
+                {
+                    var tile = Target as Tile;
+
+                    if (tile != null)
+                    {
+                        selected.TileTouchAction(tile);
+                    }
+                }
+            }
+        }
     }
 
     private class TileState_Deactive : TileState
@@ -129,6 +155,8 @@ public class Tile : TacticsObject, IDisposable
     }
     #endregion
 
+    private Tile() { }
+
     public static GameObject CreateTile(Vector2 pos)
     {
         var tile = GameObject.CreatePrimitive(PrimitiveType.Cube);
@@ -139,8 +167,10 @@ public class Tile : TacticsObject, IDisposable
         var renderer = tile.GetComponent<Renderer>();
         renderer.material = material;
 
-        tile.AddComponent<Tile>();
         tile.transform.localScale = new Vector3(TILE_SIZE, 0.05f, TILE_SIZE);
+
+        var tileComp = tile.AddComponent<Tile>();
+        TouchManager.Instance.Subscribe(tileComp);
 
         return tile;
     }
@@ -188,17 +218,24 @@ public class Tile : TacticsObject, IDisposable
         _position = pos;
     }
 
-    public TacticsObject GetAttachObject()
+    public PlaceableObject GetAttachObject()
     {
         return _attached;
     }
 
-    public void AttachObject(PlaceableObject obj)
+    public bool AttachObject(PlaceableObject obj)
     {
-        // 순환 참조 적용. 레퍼런스 관리에 신경 쓸 것
-        _attached = obj;
+        if (_attached == null)
+        {
+            // 순환 참조 적용. 레퍼런스 관리에 신경 쓸 것
+            _attached = obj;
 
-        obj.Attach(this);
+            obj.Attach(this);
+
+            return true;
+        }
+
+        return false;
     }
 
     public Tile[] GetClosedTiles()
@@ -271,5 +308,27 @@ public class Tile : TacticsObject, IDisposable
         {
             _stateMachine.ChangeState(interaction.ToString());
         }
+    }
+
+    private TileState GetCurrentState()
+    {
+        if(_stateMachine != null)
+        {
+            var tileState = _stateMachine.GetCurrentState() as TileState;
+
+            if(tileState != null)
+            {
+                return tileState;
+            }
+
+            throw new UnityException("tileState isn't.");
+        }
+
+        throw new UnityException("_stateMachine is null.");
+    }
+
+    public void OnNext(eTouchEvent data)
+    {
+        GetCurrentState().TouchEvent(data);
     }
 }
