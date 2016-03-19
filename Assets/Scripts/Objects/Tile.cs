@@ -227,6 +227,13 @@ public class Tile : TacticsObject, IDisposable, MCN.IObserver<eTouchEvent>
     {
         if (_attached == null)
         {
+            var prevTile = obj.GetPlacedTile();
+
+            if(prevTile != null)
+            {
+                prevTile.DetachObject();
+            }
+
             // 순환 참조 적용. 레퍼런스 관리에 신경 쓸 것
             _attached = obj;
 
@@ -236,6 +243,16 @@ public class Tile : TacticsObject, IDisposable, MCN.IObserver<eTouchEvent>
         }
 
         return false;
+    }
+
+    public void DetachObject()
+    {
+        if(_attached != null)
+        {
+            _attached.Detach();
+
+            _attached = null;
+        }
     }
 
     public Tile[] GetClosedTiles()

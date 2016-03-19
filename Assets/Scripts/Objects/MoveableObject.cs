@@ -65,11 +65,11 @@ public class MoveableObject : PlaceableObject, MCN.IObserver<eTouchEvent>
             {
                 moveable.Select();
 
-                if (moveable._attachedTile != null)
+                if (moveable._placedTile != null)
                 {
                     MapManager.Instance.ChangeAllTileState(eTileType.DEACTIVE);
 
-                    moveable._attachedTile.ShowChainActiveTile(moveable.moveRange);
+                    moveable._placedTile.ShowChainActiveTile(moveable.moveRange);
                 }
             }
         }
