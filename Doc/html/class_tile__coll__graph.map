@@ -1,0 +1,6 @@
+<map id="Tile" name="Tile">
+<area shape="rect" id="node7" href="$class_placeable_object.html" title="{PlaceableObject\n||+ Attach()\l+ Detach()\l+ GetPlacedTile()\l+ Dispose()\l+ IsSelected()\l+ Select()\l+ Deselect()\l+ TileTouchAction()\l&#45; Place()\l}" alt="" coords="327,632,461,827"/>
+<area shape="rect" id="node2" href="$class_tactics_object.html" title="{TacticsObject\n||}" alt="" coords="9,132,112,209"/>
+<area shape="rect" id="node5" href="$interface_m_c_n_1_1_i_observer.html" title="{MCN::IObserver\&lt; eTouchEvent \&gt;\n||+ OnNext()\l}" alt="" coords="137,132,347,209"/>
+<area shape="rect" id="node8" href="$interface_i_tile_active.html" title="{ITileActive\n||+ TileTouchAction()\l}" alt="" coords="529,382,664,459"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Tile.Dispose" name="Tile.Dispose">
+<area shape="rect" id="node2" href="$class_map_creator.html#afb12afa9a9ca8fe04701af4b494e1c8a" title="MapCreator.RemoveTilemap" alt="" coords="147,31,331,57"/>
+<area shape="rect" id="node3" href="$class_map_creator.html#a80d7f9ebca92a02da259157958929a6d" title="MapCreator.CreateTilemap" alt="" coords="387,5,563,32"/>
+<area shape="rect" id="node6" href="$class_map_manager.html#aac20afabde4946e32ce1e719c72e0f50" title="MapManager.RemoveTilemap" alt="" coords="379,56,571,83"/>
+<area shape="rect" id="node4" href="$class_map_manager.html#aa6125f2ca4b3c4e8858f73f5e65d385b" title="MapManager.CreateTilemap" alt="" coords="619,5,803,32"/>
+<area shape="rect" id="node5" href="$class_map_manager.html#ad633984007048c7d63eab44aaeb0c32d" title="MapManager.Awake" alt="" coords="851,5,991,32"/>
+</map>

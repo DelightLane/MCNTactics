@@ -1,0 +1,240 @@
+\hypertarget{class_map_creator}{}\section{Map\+Creator 클래스 참조}
+\label{class_map_creator}\index{Map\+Creator@{Map\+Creator}}
+
+
+Map\+Creator에 대한 협력 다이어그램\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{class_map_creator__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_map_creator_a80d7f9ebca92a02da259157958929a6d}{Create\+Tilemap} (Vector2 map\+Size, ref Dictionary$<$ Vector2, \hyperlink{class_tile}{Tile} $>$ result\+Tilemap)
+\item 
+Game\+Object \hyperlink{class_map_creator_aa7308965858123141f44438bb017acc8}{Get\+Root} ()
+\item 
+void \hyperlink{class_map_creator_afb12afa9a9ca8fe04701af4b494e1c8a}{Remove\+Tilemap} (ref Dictionary$<$ Vector2, \hyperlink{class_tile}{Tile} $>$ tilemap)
+\end{DoxyCompactItemize}
+\subsection*{Private 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_map_creator_aff7c3fbefa2dd4f091ded379ca000a23}{Create\+Tiles} (Vector2 map\+Size, ref Dictionary$<$ Vector2, \hyperlink{class_tile}{Tile} $>$ tilemap)
+\end{DoxyCompactItemize}
+
+
+\subsection{상세한 설명}
+
+
+Map\+Creator.\+cs 파일의 6 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{멤버 함수 문서화}
+\index{Map\+Creator@{Map\+Creator}!Create\+Tilemap@{Create\+Tilemap}}
+\index{Create\+Tilemap@{Create\+Tilemap}!Map\+Creator@{Map\+Creator}}
+\subsubsection[{\texorpdfstring{Create\+Tilemap(\+Vector2 map\+Size, ref Dictionary$<$ Vector2, Tile $>$ result\+Tilemap)}{CreateTilemap(Vector2 mapSize, ref Dictionary< Vector2, Tile > resultTilemap)}}]{\setlength{\rightskip}{0pt plus 5cm}void Map\+Creator.\+Create\+Tilemap (
+\begin{DoxyParamCaption}
+\item[{Vector2}]{map\+Size, }
+\item[{ref Dictionary$<$ Vector2, {\bf Tile} $>$}]{result\+Tilemap}
+\end{DoxyParamCaption}
+)}\hypertarget{class_map_creator_a80d7f9ebca92a02da259157958929a6d}{}\label{class_map_creator_a80d7f9ebca92a02da259157958929a6d}
+
+
+Map\+Creator.\+cs 파일의 8 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+9     \{
+10         \hyperlink{class_map_creator_afb12afa9a9ca8fe04701af4b494e1c8a}{RemoveTilemap}(ref resultTilemap);
+11 
+12         \hyperlink{class_map_creator_aff7c3fbefa2dd4f091ded379ca000a23}{CreateTiles}(mapSize, ref resultTilemap);
+13     \}
+\end{DoxyCode}
+
+
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_map_creator_a80d7f9ebca92a02da259157958929a6d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_map_creator_a80d7f9ebca92a02da259157958929a6d_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Map\+Creator@{Map\+Creator}!Create\+Tiles@{Create\+Tiles}}
+\index{Create\+Tiles@{Create\+Tiles}!Map\+Creator@{Map\+Creator}}
+\subsubsection[{\texorpdfstring{Create\+Tiles(\+Vector2 map\+Size, ref Dictionary$<$ Vector2, Tile $>$ tilemap)}{CreateTiles(Vector2 mapSize, ref Dictionary< Vector2, Tile > tilemap)}}]{\setlength{\rightskip}{0pt plus 5cm}void Map\+Creator.\+Create\+Tiles (
+\begin{DoxyParamCaption}
+\item[{Vector2}]{map\+Size, }
+\item[{ref Dictionary$<$ Vector2, {\bf Tile} $>$}]{tilemap}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_map_creator_aff7c3fbefa2dd4f091ded379ca000a23}{}\label{class_map_creator_aff7c3fbefa2dd4f091ded379ca000a23}
+
+
+Map\+Creator.\+cs 파일의 48 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+49     \{
+50         \textcolor{keywordflow}{if} (mapSize.x <= 0 && mapSize.y <= 0)
+51         \{
+52             \textcolor{keywordflow}{return};
+53         \}
+54 
+55         \textcolor{keywordflow}{if} (tilemap == null)
+56         \{
+57             tilemap = \textcolor{keyword}{new} Dictionary<Vector2, Tile>();
+58         \}
+59 
+60         var offset = 0.03f;
+61 
+62         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < mapSize.x; ++i)
+63         \{
+64             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < mapSize.y; ++j)
+65             \{
+66                 var tilePosition = \textcolor{keyword}{new} Vector2(i, j);
+67 
+68                 var tile = \hyperlink{class_tile}{Tile}.\hyperlink{class_tile_aec3cdb55a67f4c12d3056355c15bdba2}{CreateTile}(tilePosition);
+69 
+70                 tile.transform.position = \textcolor{keyword}{new} Vector3(i * (\hyperlink{class_tile}{Tile}.\hyperlink{class_tile_a51b7dea4344573ba12a461a32517e683}{TILE\_SIZE} + offset), 0, j * (
+      \hyperlink{class_tile}{Tile}.\hyperlink{class_tile_a51b7dea4344573ba12a461a32517e683}{TILE\_SIZE} + offset));
+71 
+72                 tile.transform.parent = \hyperlink{class_map_creator_aa7308965858123141f44438bb017acc8}{GetRoot}().transform;
+73 
+74                 tilemap[tilePosition] = tile.GetComponent<\hyperlink{class_tile}{Tile}>();
+75                 tilemap[tilePosition].\hyperlink{class_tile_a4d7a81b36513066aad741ed675164690}{SetPosition}(tilePosition);
+76             \}
+77         \}
+78     \}
+\end{DoxyCode}
+
+
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{class_map_creator_aff7c3fbefa2dd4f091ded379ca000a23_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_map_creator_aff7c3fbefa2dd4f091ded379ca000a23_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Map\+Creator@{Map\+Creator}!Get\+Root@{Get\+Root}}
+\index{Get\+Root@{Get\+Root}!Map\+Creator@{Map\+Creator}}
+\subsubsection[{\texorpdfstring{Get\+Root()}{GetRoot()}}]{\setlength{\rightskip}{0pt plus 5cm}Game\+Object Map\+Creator.\+Get\+Root (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_map_creator_aa7308965858123141f44438bb017acc8}{}\label{class_map_creator_aa7308965858123141f44438bb017acc8}
+
+
+Map\+Creator.\+cs 파일의 15 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+16     \{
+17         var root = GameObject.Find(\textcolor{stringliteral}{"Tilemap"});
+18 
+19         \textcolor{keywordflow}{if} (root == null)
+20         \{
+21             root = \textcolor{keyword}{new} GameObject(\textcolor{stringliteral}{"Tilemap"});
+22             root.transform.position = Vector3.up * -1;
+23         \}
+24 
+25         \textcolor{keywordflow}{return} root;
+26     \}
+\end{DoxyCode}
+
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_map_creator_aa7308965858123141f44438bb017acc8_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Map\+Creator@{Map\+Creator}!Remove\+Tilemap@{Remove\+Tilemap}}
+\index{Remove\+Tilemap@{Remove\+Tilemap}!Map\+Creator@{Map\+Creator}}
+\subsubsection[{\texorpdfstring{Remove\+Tilemap(ref Dictionary$<$ Vector2, Tile $>$ tilemap)}{RemoveTilemap(ref Dictionary< Vector2, Tile > tilemap)}}]{\setlength{\rightskip}{0pt plus 5cm}void Map\+Creator.\+Remove\+Tilemap (
+\begin{DoxyParamCaption}
+\item[{ref Dictionary$<$ Vector2, {\bf Tile} $>$}]{tilemap}
+\end{DoxyParamCaption}
+)}\hypertarget{class_map_creator_afb12afa9a9ca8fe04701af4b494e1c8a}{}\label{class_map_creator_afb12afa9a9ca8fe04701af4b494e1c8a}
+
+
+Map\+Creator.\+cs 파일의 28 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+29     \{
+30         \textcolor{keywordflow}{if}(tilemap == null)
+31         \{
+32             \textcolor{keywordflow}{return};
+33         \}
+34 
+35         \textcolor{keywordflow}{foreach} (var tilePair \textcolor{keywordflow}{in} tilemap)
+36         \{
+37             var tile = tilePair.Value.GetComponent<\hyperlink{class_tile}{Tile}>();
+38 
+39             \textcolor{keywordflow}{if} (tile != null)
+40             \{
+41                 tile.\hyperlink{class_tile_a6e8a801e95a29156cbf32024e45c6596}{Dispose}();
+42             \}
+43         \}
+44 
+45         tilemap.Clear();
+46     \}
+\end{DoxyCode}
+
+
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_map_creator_afb12afa9a9ca8fe04701af4b494e1c8a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_map_creator_afb12afa9a9ca8fe04701af4b494e1c8a_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Git\+Hub/\+M\+C\+N\+Tactics/\+Assets/\+Scripts/\+Manager/\hyperlink{_map_creator_8cs}{Map\+Creator.\+cs}\end{DoxyCompactItemize}

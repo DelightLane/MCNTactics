@@ -1,0 +1,588 @@
+\hypertarget{class_moveable_object}{}\section{Moveable\+Object 클래스 참조}
+\label{class_moveable_object}\index{Moveable\+Object@{Moveable\+Object}}
+
+
+Moveable\+Object에 대한 상속 다이어그램 \+: \nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_moveable_object__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Moveable\+Object에 대한 협력 다이어그램\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_moveable_object__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{클래스}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_moveable_object_1_1_moveable_state}{Moveable\+State}
+\item 
+class \hyperlink{class_moveable_object_1_1_moveable_state___move}{Moveable\+State\+\_\+\+Move}
+\item 
+class \hyperlink{class_moveable_object_1_1_moveable_state___normal}{Moveable\+State\+\_\+\+Normal}
+\end{DoxyCompactItemize}
+\subsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+override void \hyperlink{class_moveable_object_a8aa14fd4e56b9911e895f5e899e0d9a0}{Tile\+Touch\+Action} (\hyperlink{class_tile}{Tile} active\+Tile)
+\item 
+void \hyperlink{class_moveable_object_aeba5445de84542260b21e15e1308f712}{On\+Next} (\hyperlink{_touch_manager_8cs_ae33e321a424fe84ba8b2fdb81ad40a68}{e\+Touch\+Event} touch\+Event)
+\item 
+void \hyperlink{class_placeable_object_a3176ec3d5d26b2a83cdc58b01e630aa1}{Attach} (\hyperlink{class_tile}{Tile} tile)
+\item 
+void \hyperlink{class_placeable_object_aef2018b58bf7c8c0fab5aaf3d9a154d4}{Detach} ()
+\item 
+\hyperlink{class_tile}{Tile} \hyperlink{class_placeable_object_ab44a9b122632ac3cf0babb5040e8a201}{Get\+Placed\+Tile} ()
+\item 
+void \hyperlink{class_placeable_object_a8bd49b7db556556502a0518fc833be48}{Dispose} ()
+\item 
+bool \hyperlink{class_placeable_object_a71fd42914caa0dc6229fe6a5ffe09b99}{Is\+Selected} ()
+\item 
+void \hyperlink{class_placeable_object_a019818f3f6c6eb715fed163efa921f5a}{Select} ()
+\item 
+void \hyperlink{class_placeable_object_a0c1248b1f9981ddbf68e6f70a6498f3d}{Deselect} ()
+\item 
+void \hyperlink{interface_m_c_n_1_1_i_observer_a2f934b71aa4ddf6f936670d32c3cdff7}{On\+Next} (T data)
+\end{DoxyCompactItemize}
+\subsection*{Protected 속성}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_tile}{Tile} \hyperlink{class_placeable_object_a0fd0566f0bb15c71b0630322762342d8}{\+\_\+placed\+Tile}
+\end{DoxyCompactItemize}
+\subsection*{Private 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_moveable_object_ac937cc3f450cfb27c74f4de180c4de24}{Awake} ()
+\item 
+void \hyperlink{class_moveable_object_a89479f589ce63f7925cf6cd15e4aabef}{Destroy} ()
+\item 
+void \hyperlink{class_moveable_object_a1cd5235b78466505ca3950d852287615}{Storage\+States} ()
+\item 
+\hyperlink{class_moveable_object_1_1_moveable_state}{Moveable\+State} \hyperlink{class_moveable_object_a1fd6f362fa5243bf6ba3adfac8980ad1}{Get\+Current\+Moveable\+State} ()
+\item 
+\hyperlink{_moveable_object_8cs_a90215797ba850e199f3ef63d7c56f132}{e\+Moveable\+Type} \hyperlink{class_moveable_object_a41840d658f3ae47083b026955075c62f}{Get\+Moveable\+Current\+State\+Type} ()
+\item 
+void \hyperlink{class_moveable_object_a35e45dfc7967725cca99c52762a1ffdf}{Change\+Moveable\+State} (\hyperlink{_moveable_object_8cs_a90215797ba850e199f3ef63d7c56f132}{e\+Moveable\+Type} type)
+\end{DoxyCompactItemize}
+\subsection*{Private 속성}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_moveable_object_a5453d85915073df751887c9ca9480405}{move\+Range} = 0
+\item 
+\hyperlink{class_m_c_n_1_1_state_machine}{M\+C\+N.\+State\+Machine}$<$ \hyperlink{class_moveable_object_1_1_moveable_state}{Moveable\+State} $>$ \hyperlink{class_moveable_object_a3abd653cd978a7bdbb391a4c86f7d75f}{\+\_\+moveable\+State\+Machine} = new \hyperlink{class_m_c_n_1_1_state_machine}{M\+C\+N.\+State\+Machine}$<$\hyperlink{class_moveable_object_1_1_moveable_state}{Moveable\+State}$>$()
+\end{DoxyCompactItemize}
+
+
+\subsection{상세한 설명}
+
+
+Moveable\+Object.\+cs 파일의 11 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{멤버 함수 문서화}
+\index{Moveable\+Object@{Moveable\+Object}!Attach@{Attach}}
+\index{Attach@{Attach}!Moveable\+Object@{Moveable\+Object}}
+\subsubsection[{\texorpdfstring{Attach(\+Tile tile)}{Attach(Tile tile)}}]{\setlength{\rightskip}{0pt plus 5cm}void Placeable\+Object.\+Attach (
+\begin{DoxyParamCaption}
+\item[{{\bf Tile}}]{tile}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\hypertarget{class_placeable_object_a3176ec3d5d26b2a83cdc58b01e630aa1}{}\label{class_placeable_object_a3176ec3d5d26b2a83cdc58b01e630aa1}
+
+
+Placeable\+Object.\+cs 파일의 11 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+12     \{
+13         \textcolor{comment}{// 순환 참조 적용. 레퍼런스 관리에 신경 쓸 것}
+14         \hyperlink{class_placeable_object_a0fd0566f0bb15c71b0630322762342d8}{\_placedTile} = tile;
+15 
+16         \hyperlink{class_placeable_object_a06a30cf4396743908cc88733cb216df5}{Place}(tile);
+17     \}
+\end{DoxyCode}
+
+
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_placeable_object_a3176ec3d5d26b2a83cdc58b01e630aa1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_placeable_object_a3176ec3d5d26b2a83cdc58b01e630aa1_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Moveable\+Object@{Moveable\+Object}!Awake@{Awake}}
+\index{Awake@{Awake}!Moveable\+Object@{Moveable\+Object}}
+\subsubsection[{\texorpdfstring{Awake()}{Awake()}}]{\setlength{\rightskip}{0pt plus 5cm}void Moveable\+Object.\+Awake (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_moveable_object_ac937cc3f450cfb27c74f4de180c4de24}{}\label{class_moveable_object_ac937cc3f450cfb27c74f4de180c4de24}
+
+
+Moveable\+Object.\+cs 파일의 129 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+130     \{
+131         \hyperlink{class_touch_manager}{TouchManager}.\hyperlink{class_m_c_n_1_1_mono_singletone_aa50c027cca64cf4ad30c1ee5c83e0b78}{Instance}.Subscribe(\textcolor{keyword}{this});
+132 
+133         \hyperlink{class_moveable_object_a1cd5235b78466505ca3950d852287615}{StorageStates}();
+134 
+135         \hyperlink{class_moveable_object_a35e45dfc7967725cca99c52762a1ffdf}{ChangeMoveableState}(\hyperlink{_moveable_object_8cs_a90215797ba850e199f3ef63d7c56f132}{eMoveableType}.NORMAL);
+136     \}
+\end{DoxyCode}
+
+
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_moveable_object_ac937cc3f450cfb27c74f4de180c4de24_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Moveable\+Object@{Moveable\+Object}!Change\+Moveable\+State@{Change\+Moveable\+State}}
+\index{Change\+Moveable\+State@{Change\+Moveable\+State}!Moveable\+Object@{Moveable\+Object}}
+\subsubsection[{\texorpdfstring{Change\+Moveable\+State(e\+Moveable\+Type type)}{ChangeMoveableState(eMoveableType type)}}]{\setlength{\rightskip}{0pt plus 5cm}void Moveable\+Object.\+Change\+Moveable\+State (
+\begin{DoxyParamCaption}
+\item[{{\bf e\+Moveable\+Type}}]{type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_moveable_object_a35e45dfc7967725cca99c52762a1ffdf}{}\label{class_moveable_object_a35e45dfc7967725cca99c52762a1ffdf}
+
+
+Moveable\+Object.\+cs 파일의 195 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+196     \{
+197         \textcolor{keywordflow}{if}(\hyperlink{class_moveable_object_a3abd653cd978a7bdbb391a4c86f7d75f}{\_moveableStateMachine} != null)
+198         \{
+199             \hyperlink{class_moveable_object_a3abd653cd978a7bdbb391a4c86f7d75f}{\_moveableStateMachine}.ChangeState(type.ToString());
+200         \}
+201     \}
+\end{DoxyCode}
+
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_moveable_object_a35e45dfc7967725cca99c52762a1ffdf_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Moveable\+Object@{Moveable\+Object}!Deselect@{Deselect}}
+\index{Deselect@{Deselect}!Moveable\+Object@{Moveable\+Object}}
+\subsubsection[{\texorpdfstring{Deselect()}{Deselect()}}]{\setlength{\rightskip}{0pt plus 5cm}void Placeable\+Object.\+Deselect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\hypertarget{class_placeable_object_a0c1248b1f9981ddbf68e6f70a6498f3d}{}\label{class_placeable_object_a0c1248b1f9981ddbf68e6f70a6498f3d}
+
+
+Placeable\+Object.\+cs 파일의 59 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+60     \{
+61         \hyperlink{class_game_manager}{GameManager}.\hyperlink{class_m_c_n_1_1_singletone_a46dbbebd93e96a9592a9803c51f35602}{Instance}.SelectedObj = null;
+62     \}
+\end{DoxyCode}
+
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_placeable_object_a0c1248b1f9981ddbf68e6f70a6498f3d_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Moveable\+Object@{Moveable\+Object}!Destroy@{Destroy}}
+\index{Destroy@{Destroy}!Moveable\+Object@{Moveable\+Object}}
+\subsubsection[{\texorpdfstring{Destroy()}{Destroy()}}]{\setlength{\rightskip}{0pt plus 5cm}void Moveable\+Object.\+Destroy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_moveable_object_a89479f589ce63f7925cf6cd15e4aabef}{}\label{class_moveable_object_a89479f589ce63f7925cf6cd15e4aabef}
+
+
+Moveable\+Object.\+cs 파일의 138 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+139     \{
+140         \hyperlink{class_touch_manager}{TouchManager}.\hyperlink{class_m_c_n_1_1_mono_singletone_aa50c027cca64cf4ad30c1ee5c83e0b78}{Instance}.Unsubscribe(\textcolor{keyword}{this});
+141     \}
+\end{DoxyCode}
+\index{Moveable\+Object@{Moveable\+Object}!Detach@{Detach}}
+\index{Detach@{Detach}!Moveable\+Object@{Moveable\+Object}}
+\subsubsection[{\texorpdfstring{Detach()}{Detach()}}]{\setlength{\rightskip}{0pt plus 5cm}void Placeable\+Object.\+Detach (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\hypertarget{class_placeable_object_aef2018b58bf7c8c0fab5aaf3d9a154d4}{}\label{class_placeable_object_aef2018b58bf7c8c0fab5aaf3d9a154d4}
+
+
+Placeable\+Object.\+cs 파일의 21 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+22     \{
+23         \hyperlink{class_placeable_object_a0fd0566f0bb15c71b0630322762342d8}{\_placedTile} = null;
+24     \}
+\end{DoxyCode}
+
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_placeable_object_aef2018b58bf7c8c0fab5aaf3d9a154d4_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Moveable\+Object@{Moveable\+Object}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!Moveable\+Object@{Moveable\+Object}}
+\subsubsection[{\texorpdfstring{Dispose()}{Dispose()}}]{\setlength{\rightskip}{0pt plus 5cm}void Placeable\+Object.\+Dispose (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\hypertarget{class_placeable_object_a8bd49b7db556556502a0518fc833be48}{}\label{class_placeable_object_a8bd49b7db556556502a0518fc833be48}
+
+
+Placeable\+Object.\+cs 파일의 31 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+32     \{
+33         \hyperlink{class_placeable_object_a0fd0566f0bb15c71b0630322762342d8}{\_placedTile} = null;
+34 
+35         GameObject.Destroy(gameObject);
+36     \}
+\end{DoxyCode}
+
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_placeable_object_a8bd49b7db556556502a0518fc833be48_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Moveable\+Object@{Moveable\+Object}!Get\+Current\+Moveable\+State@{Get\+Current\+Moveable\+State}}
+\index{Get\+Current\+Moveable\+State@{Get\+Current\+Moveable\+State}!Moveable\+Object@{Moveable\+Object}}
+\subsubsection[{\texorpdfstring{Get\+Current\+Moveable\+State()}{GetCurrentMoveableState()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Moveable\+State} Moveable\+Object.\+Get\+Current\+Moveable\+State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_moveable_object_a1fd6f362fa5243bf6ba3adfac8980ad1}{}\label{class_moveable_object_a1fd6f362fa5243bf6ba3adfac8980ad1}
+
+
+Moveable\+Object.\+cs 파일의 172 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+173     \{
+174         var state = \hyperlink{class_moveable_object_a3abd653cd978a7bdbb391a4c86f7d75f}{\_moveableStateMachine}.GetCurrentState();
+175         \textcolor{keywordflow}{if}(state != null && state is MoveableState)
+176         \{
+177             \textcolor{keywordflow}{return} state as MoveableState;
+178         \}
+179 
+180         \textcolor{keywordflow}{throw} \textcolor{keyword}{new} UnityException(\textcolor{stringliteral}{"don't have moveable state."});
+181     \}
+\end{DoxyCode}
+
+
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_moveable_object_a1fd6f362fa5243bf6ba3adfac8980ad1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_moveable_object_a1fd6f362fa5243bf6ba3adfac8980ad1_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Moveable\+Object@{Moveable\+Object}!Get\+Moveable\+Current\+State\+Type@{Get\+Moveable\+Current\+State\+Type}}
+\index{Get\+Moveable\+Current\+State\+Type@{Get\+Moveable\+Current\+State\+Type}!Moveable\+Object@{Moveable\+Object}}
+\subsubsection[{\texorpdfstring{Get\+Moveable\+Current\+State\+Type()}{GetMoveableCurrentStateType()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+Moveable\+Type} Moveable\+Object.\+Get\+Moveable\+Current\+State\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_moveable_object_a41840d658f3ae47083b026955075c62f}{}\label{class_moveable_object_a41840d658f3ae47083b026955075c62f}
+
+
+Moveable\+Object.\+cs 파일의 183 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+184     \{
+185         var state = \hyperlink{class_moveable_object_a1fd6f362fa5243bf6ba3adfac8980ad1}{GetCurrentMoveableState}();
+186 
+187         \textcolor{keywordflow}{if}(state != null)
+188         \{
+189             \textcolor{keywordflow}{return} state.GetCurrentType();
+190         \}
+191 
+192         \textcolor{keywordflow}{throw} \textcolor{keyword}{new} UnityException(\textcolor{stringliteral}{"don't have moveable state."});
+193     \}
+\end{DoxyCode}
+
+
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_moveable_object_a41840d658f3ae47083b026955075c62f_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Moveable\+Object@{Moveable\+Object}!Get\+Placed\+Tile@{Get\+Placed\+Tile}}
+\index{Get\+Placed\+Tile@{Get\+Placed\+Tile}!Moveable\+Object@{Moveable\+Object}}
+\subsubsection[{\texorpdfstring{Get\+Placed\+Tile()}{GetPlacedTile()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tile} Placeable\+Object.\+Get\+Placed\+Tile (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\hypertarget{class_placeable_object_ab44a9b122632ac3cf0babb5040e8a201}{}\label{class_placeable_object_ab44a9b122632ac3cf0babb5040e8a201}
+
+
+Placeable\+Object.\+cs 파일의 26 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+27     \{
+28         \textcolor{keywordflow}{return} \hyperlink{class_placeable_object_a0fd0566f0bb15c71b0630322762342d8}{\_placedTile};
+29     \}
+\end{DoxyCode}
+
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_placeable_object_ab44a9b122632ac3cf0babb5040e8a201_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Moveable\+Object@{Moveable\+Object}!Is\+Selected@{Is\+Selected}}
+\index{Is\+Selected@{Is\+Selected}!Moveable\+Object@{Moveable\+Object}}
+\subsubsection[{\texorpdfstring{Is\+Selected()}{IsSelected()}}]{\setlength{\rightskip}{0pt plus 5cm}bool Placeable\+Object.\+Is\+Selected (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\hypertarget{class_placeable_object_a71fd42914caa0dc6229fe6a5ffe09b99}{}\label{class_placeable_object_a71fd42914caa0dc6229fe6a5ffe09b99}
+
+
+Placeable\+Object.\+cs 파일의 49 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+50     \{
+51         \textcolor{keywordflow}{return} \hyperlink{class_game_manager}{GameManager}.\hyperlink{class_m_c_n_1_1_singletone_a46dbbebd93e96a9592a9803c51f35602}{Instance}.SelectedObj == \textcolor{keyword}{this};
+52     \}
+\end{DoxyCode}
+\index{Moveable\+Object@{Moveable\+Object}!On\+Next@{On\+Next}}
+\index{On\+Next@{On\+Next}!Moveable\+Object@{Moveable\+Object}}
+\subsubsection[{\texorpdfstring{On\+Next(\+T data)}{OnNext(T data)}}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf M\+C\+N.\+I\+Observer}$<$ T $>$.On\+Next (
+\begin{DoxyParamCaption}
+\item[{T}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\hypertarget{interface_m_c_n_1_1_i_observer_a2f934b71aa4ddf6f936670d32c3cdff7}{}\label{interface_m_c_n_1_1_i_observer_a2f934b71aa4ddf6f936670d32c3cdff7}
+\index{Moveable\+Object@{Moveable\+Object}!On\+Next@{On\+Next}}
+\index{On\+Next@{On\+Next}!Moveable\+Object@{Moveable\+Object}}
+\subsubsection[{\texorpdfstring{On\+Next(e\+Touch\+Event touch\+Event)}{OnNext(eTouchEvent touchEvent)}}]{\setlength{\rightskip}{0pt plus 5cm}void Moveable\+Object.\+On\+Next (
+\begin{DoxyParamCaption}
+\item[{{\bf e\+Touch\+Event}}]{touch\+Event}
+\end{DoxyParamCaption}
+)}\hypertarget{class_moveable_object_aeba5445de84542260b21e15e1308f712}{}\label{class_moveable_object_aeba5445de84542260b21e15e1308f712}
+
+
+Moveable\+Object.\+cs 파일의 159 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+160     \{
+161         \textcolor{keywordflow}{if} (touchEvent == \hyperlink{_touch_manager_8cs_ae33e321a424fe84ba8b2fdb81ad40a68}{eTouchEvent}.TOUCH)
+162         \{
+163             var state = \hyperlink{class_moveable_object_a1fd6f362fa5243bf6ba3adfac8980ad1}{GetCurrentMoveableState}();
+164 
+165             \textcolor{keywordflow}{if} (state != null)
+166             \{
+167                 state.OnTouchEvent();
+168             \}
+169         \}
+170     \}
+\end{DoxyCode}
+
+
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_moveable_object_aeba5445de84542260b21e15e1308f712_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Moveable\+Object@{Moveable\+Object}!Select@{Select}}
+\index{Select@{Select}!Moveable\+Object@{Moveable\+Object}}
+\subsubsection[{\texorpdfstring{Select()}{Select()}}]{\setlength{\rightskip}{0pt plus 5cm}void Placeable\+Object.\+Select (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\hypertarget{class_placeable_object_a019818f3f6c6eb715fed163efa921f5a}{}\label{class_placeable_object_a019818f3f6c6eb715fed163efa921f5a}
+
+
+Placeable\+Object.\+cs 파일의 54 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+55     \{
+56         \hyperlink{class_game_manager}{GameManager}.\hyperlink{class_m_c_n_1_1_singletone_a46dbbebd93e96a9592a9803c51f35602}{Instance}.SelectedObj = \textcolor{keyword}{this};
+57     \}
+\end{DoxyCode}
+
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_placeable_object_a019818f3f6c6eb715fed163efa921f5a_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Moveable\+Object@{Moveable\+Object}!Storage\+States@{Storage\+States}}
+\index{Storage\+States@{Storage\+States}!Moveable\+Object@{Moveable\+Object}}
+\subsubsection[{\texorpdfstring{Storage\+States()}{StorageStates()}}]{\setlength{\rightskip}{0pt plus 5cm}void Moveable\+Object.\+Storage\+States (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_moveable_object_a1cd5235b78466505ca3950d852287615}{}\label{class_moveable_object_a1cd5235b78466505ca3950d852287615}
+
+
+Moveable\+Object.\+cs 파일의 143 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+144     \{
+145         \textcolor{keyword}{new} MoveableState\_Normal(\textcolor{keyword}{this});
+146         \textcolor{keyword}{new} MoveableState\_Move(\textcolor{keyword}{this});
+147     \}
+\end{DoxyCode}
+
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_moveable_object_a1cd5235b78466505ca3950d852287615_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Moveable\+Object@{Moveable\+Object}!Tile\+Touch\+Action@{Tile\+Touch\+Action}}
+\index{Tile\+Touch\+Action@{Tile\+Touch\+Action}!Moveable\+Object@{Moveable\+Object}}
+\subsubsection[{\texorpdfstring{Tile\+Touch\+Action(\+Tile active\+Tile)}{TileTouchAction(Tile activeTile)}}]{\setlength{\rightskip}{0pt plus 5cm}override void Moveable\+Object.\+Tile\+Touch\+Action (
+\begin{DoxyParamCaption}
+\item[{{\bf Tile}}]{active\+Tile}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_moveable_object_a8aa14fd4e56b9911e895f5e899e0d9a0}{}\label{class_moveable_object_a8aa14fd4e56b9911e895f5e899e0d9a0}
+
+
+\hyperlink{class_placeable_object_ae61aaa6cf5c16ca879efe8cba08fdfcf}{Placeable\+Object}(으)로부터 재구현되었습니다.
+
+
+
+Moveable\+Object.\+cs 파일의 149 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+150     \{
+151         var state = \hyperlink{class_moveable_object_a1fd6f362fa5243bf6ba3adfac8980ad1}{GetCurrentMoveableState}();
+152 
+153         \textcolor{keywordflow}{if} (state != null)
+154         \{
+155             state.TileTouchAction(activeTile);
+156         \}
+157     \}
+\end{DoxyCode}
+
+
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_moveable_object_a8aa14fd4e56b9911e895f5e899e0d9a0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{멤버 데이타 문서화}
+\index{Moveable\+Object@{Moveable\+Object}!\+\_\+moveable\+State\+Machine@{\+\_\+moveable\+State\+Machine}}
+\index{\+\_\+moveable\+State\+Machine@{\+\_\+moveable\+State\+Machine}!Moveable\+Object@{Moveable\+Object}}
+\subsubsection[{\texorpdfstring{\+\_\+moveable\+State\+Machine}{_moveableStateMachine}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\+C\+N.\+State\+Machine}$<${\bf Moveable\+State}$>$ Moveable\+Object.\+\_\+moveable\+State\+Machine = new {\bf M\+C\+N.\+State\+Machine}$<${\bf Moveable\+State}$>$()\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_moveable_object_a3abd653cd978a7bdbb391a4c86f7d75f}{}\label{class_moveable_object_a3abd653cd978a7bdbb391a4c86f7d75f}
+
+
+Moveable\+Object.\+cs 파일의 17 번째 라인에서 정의되었습니다.
+
+\index{Moveable\+Object@{Moveable\+Object}!\+\_\+placed\+Tile@{\+\_\+placed\+Tile}}
+\index{\+\_\+placed\+Tile@{\+\_\+placed\+Tile}!Moveable\+Object@{Moveable\+Object}}
+\subsubsection[{\texorpdfstring{\+\_\+placed\+Tile}{_placedTile}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tile} Placeable\+Object.\+\_\+placed\+Tile\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\hypertarget{class_placeable_object_a0fd0566f0bb15c71b0630322762342d8}{}\label{class_placeable_object_a0fd0566f0bb15c71b0630322762342d8}
+
+
+Placeable\+Object.\+cs 파일의 7 번째 라인에서 정의되었습니다.
+
+\index{Moveable\+Object@{Moveable\+Object}!move\+Range@{move\+Range}}
+\index{move\+Range@{move\+Range}!Moveable\+Object@{Moveable\+Object}}
+\subsubsection[{\texorpdfstring{move\+Range}{moveRange}}]{\setlength{\rightskip}{0pt plus 5cm}int Moveable\+Object.\+move\+Range = 0\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_moveable_object_a5453d85915073df751887c9ca9480405}{}\label{class_moveable_object_a5453d85915073df751887c9ca9480405}
+
+
+Moveable\+Object.\+cs 파일의 14 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Git\+Hub/\+M\+C\+N\+Tactics/\+Assets/\+Scripts/\+Objects/\hyperlink{_moveable_object_8cs}{Moveable\+Object.\+cs}\end{DoxyCompactItemize}

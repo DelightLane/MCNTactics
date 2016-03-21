@@ -1,0 +1,5 @@
+<map id="MoveableObject.ChangeMoveableState" name="MoveableObject.ChangeMoveableState">
+<area shape="rect" id="node2" href="$class_moveable_object_1_1_moveable_state___move.html#a889290d4ac29ed29876312697a846a9f" title="MoveableObject.MoveableState\l_Move.OnTouchEvent" alt="" coords="269,5,472,47"/>
+<area shape="rect" id="node3" href="$class_moveable_object_1_1_moveable_state___normal.html#a021502fc37896515d37066f735e31313" title="MoveableObject.MoveableState\l_Normal.OnTouchEvent" alt="" coords="269,71,472,112"/>
+<area shape="rect" id="node4" href="$class_moveable_object.html#ac937cc3f450cfb27c74f4de180c4de24" title="MoveableObject.Awake" alt="" coords="292,137,449,163"/>
+</map>

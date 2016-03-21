@@ -1,0 +1,5 @@
+<map id="MapCreator.CreateTiles" name="MapCreator.CreateTiles">
+<area shape="rect" id="node2" href="$class_map_creator.html#a80d7f9ebca92a02da259157958929a6d" title="MapCreator.CreateTilemap" alt="" coords="212,5,388,32"/>
+<area shape="rect" id="node3" href="$class_map_manager.html#aa6125f2ca4b3c4e8858f73f5e65d385b" title="MapManager.CreateTilemap" alt="" coords="436,5,620,32"/>
+<area shape="rect" id="node4" href="$class_map_manager.html#ad633984007048c7d63eab44aaeb0c32d" title="MapManager.Awake" alt="" coords="668,5,808,32"/>
+</map>

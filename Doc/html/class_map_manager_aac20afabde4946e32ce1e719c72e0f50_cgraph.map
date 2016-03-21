@@ -1,0 +1,8 @@
+<map id="MapManager.RemoveTilemap" name="MapManager.RemoveTilemap">
+<area shape="rect" id="node2" href="$class_map_creator.html#afb12afa9a9ca8fe04701af4b494e1c8a" title="MapCreator.RemoveTilemap" alt="" coords="245,56,429,83"/>
+<area shape="rect" id="node3" href="$class_tile.html#a6e8a801e95a29156cbf32024e45c6596" title="Tile.Dispose" alt="" coords="477,56,571,83"/>
+<area shape="rect" id="node4" href="$class_placeable_object.html#a8bd49b7db556556502a0518fc833be48" title="PlaceableObject.Dispose" alt="" coords="619,5,787,32"/>
+<area shape="rect" id="node5" href="$class_m_c_n_1_1_state.html#af6df0477e0dead784489688cb2c2093e" title="MCN.State.Dispose" alt="" coords="634,56,771,83"/>
+<area shape="rect" id="node6" href="$class_m_c_n_1_1_state.html#aebf48ef248bbf185d6aae91d9789459e" title="MCN.State.Destroy" alt="" coords="635,107,770,133"/>
+<area shape="rect" id="node7" href="$class_m_c_n_1_1_state.html#afdec72a816a8a8ec584cac758a027215" title="MCN.State.Run" alt="" coords="835,107,948,133"/>
+</map>

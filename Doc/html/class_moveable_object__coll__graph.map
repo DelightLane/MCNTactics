@@ -1,0 +1,7 @@
+<map id="MoveableObject" name="MoveableObject">
+<area shape="rect" id="node2" href="$class_placeable_object.html" title="{PlaceableObject\n||+ Attach()\l+ Detach()\l+ GetPlacedTile()\l+ Dispose()\l+ IsSelected()\l+ Select()\l+ Deselect()\l+ TileTouchAction()\l&#45; Place()\l}" alt="" coords="136,259,271,453"/>
+<area shape="rect" id="node7" href="$class_tile.html" title="{Tile\n|+ TILE_SIZE\l&#45; _position\l|+ Dispose()\l+ SetPosition()\l+ GetAttachObject()\l+ AttachObject()\l+ DetachObject()\l+ GetClosedTiles()\l+ GetClosedTile()\l+ ShowChainActiveTile()\l+ ChangeState()\l+ OnNext()\l+ CreateTile()\l&#45; Tile()\l&#45; Awake()\l&#45; StorageStates()\l&#45; GetCurrentState()\l}" alt="" coords="142,516,305,813"/>
+<area shape="rect" id="node3" href="$class_tactics_object.html" title="{TacticsObject\n||}" alt="" coords="9,132,112,209"/>
+<area shape="rect" id="node6" href="$interface_i_tile_active.html" title="{ITileActive\n||+ TileTouchAction()\l}" alt="" coords="136,132,271,209"/>
+<area shape="rect" id="node8" href="$interface_m_c_n_1_1_i_observer.html" title="{MCN::IObserver\&lt; eTouchEvent \&gt;\n||+ OnNext()\l}" alt="" coords="346,317,557,395"/>
+</map>

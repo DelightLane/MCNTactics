@@ -1,0 +1,606 @@
+\hypertarget{class_tile}{}\section{Tile 클래스 참조}
+\label{class_tile}\index{Tile@{Tile}}
+
+
+Tile에 대한 상속 다이어그램 \+: \nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_tile__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Tile에 대한 협력 다이어그램\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_tile__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{클래스}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_tile_1_1_tile_state}{Tile\+State}
+\item 
+class \hyperlink{class_tile_1_1_tile_state___active}{Tile\+State\+\_\+\+Active}
+\item 
+class \hyperlink{class_tile_1_1_tile_state___deactive}{Tile\+State\+\_\+\+Deactive}
+\item 
+class \hyperlink{class_tile_1_1_tile_state___normal}{Tile\+State\+\_\+\+Normal}
+\end{DoxyCompactItemize}
+\subsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_tile_a6e8a801e95a29156cbf32024e45c6596}{Dispose} ()
+\item 
+void \hyperlink{class_tile_a4d7a81b36513066aad741ed675164690}{Set\+Position} (Vector2 pos)
+\item 
+\hyperlink{class_placeable_object}{Placeable\+Object} \hyperlink{class_tile_a02150b69b975e8e9de1c3e10070a8dda}{Get\+Attach\+Object} ()
+\item 
+bool \hyperlink{class_tile_a1969ee41c320c6e7748a33374942e07e}{Attach\+Object} (\hyperlink{class_placeable_object}{Placeable\+Object} obj)
+\item 
+void \hyperlink{class_tile_ab8ab187ab674cfb222f761feac3b20b3}{Detach\+Object} ()
+\item 
+\hyperlink{class_tile}{Tile}\mbox{[}$\,$\mbox{]} \hyperlink{class_tile_a38b9f5c215f16448118e83e0d10aed05}{Get\+Closed\+Tiles} ()
+\item 
+\hyperlink{class_tile}{Tile} \hyperlink{class_tile_a838aaa6a94321629d04e944ed3bf8b9f}{Get\+Closed\+Tile} (\hyperlink{_tile_8cs_a082f743a62d2d8e13dac8fd38af246d7}{e\+Tile\+Direct} direct)
+\item 
+void \hyperlink{class_tile_a0ca6f4d1ddb0e7609749f1cf583b3c16}{Show\+Chain\+Active\+Tile} (int range)
+\item 
+void \hyperlink{class_tile_a2bb5c747e9483b803ea65b4341ce5af6}{Change\+State} (\hyperlink{_tile_8cs_a271bc07be325bca511bcb747e0ff2fda}{e\+Tile\+Type} interaction)
+\item 
+void \hyperlink{class_tile_afdb21c9f57ecd9953edfd92d8541f8a3}{On\+Next} (\hyperlink{_touch_manager_8cs_ae33e321a424fe84ba8b2fdb81ad40a68}{e\+Touch\+Event} data)
+\item 
+void \hyperlink{interface_m_c_n_1_1_i_observer_a2f934b71aa4ddf6f936670d32c3cdff7}{On\+Next} (T data)
+\end{DoxyCompactItemize}
+\subsection*{정적 Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+static Game\+Object \hyperlink{class_tile_aec3cdb55a67f4c12d3056355c15bdba2}{Create\+Tile} (Vector2 pos)
+\end{DoxyCompactItemize}
+\subsection*{정적 Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+static readonly float \hyperlink{class_tile_a51b7dea4344573ba12a461a32517e683}{T\+I\+L\+E\+\_\+\+S\+I\+ZE} = 1
+\end{DoxyCompactItemize}
+\subsection*{Private 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_tile_a7684d2e86beeb06d844ebb7819b11b33}{Tile} ()
+\item 
+void \hyperlink{class_tile_a4fbf82b2a26cdeb792dc78192d7247dc}{Awake} ()
+\item 
+void \hyperlink{class_tile_a6cb69a9fad04bee1fa3473aec22428de}{Storage\+States} ()
+\item 
+\hyperlink{class_tile_1_1_tile_state}{Tile\+State} \hyperlink{class_tile_ae37e08e39263e766fdc612de94fb7a0d}{Get\+Current\+State} ()
+\end{DoxyCompactItemize}
+\subsection*{Private 속성}
+\begin{DoxyCompactItemize}
+\item 
+Vector2 \hyperlink{class_tile_a56d02616cede51da0afdceff82ca958d}{\+\_\+position}
+\item 
+\hyperlink{class_placeable_object}{Placeable\+Object} \hyperlink{class_tile_aa548ae60732f4d054b6777436baefdd5}{\+\_\+attached}
+\item 
+\hyperlink{class_m_c_n_1_1_state_machine}{M\+C\+N.\+State\+Machine}$<$ \hyperlink{class_tile_1_1_tile_state}{Tile\+State} $>$ \hyperlink{class_tile_a822a1bffe56b1193b8c5c61070ea7827}{\+\_\+state\+Machine} = new \hyperlink{class_m_c_n_1_1_state_machine}{M\+C\+N.\+State\+Machine}$<$\hyperlink{class_tile_1_1_tile_state}{Tile\+State}$>$()
+\end{DoxyCompactItemize}
+
+
+\subsection{상세한 설명}
+
+
+Tile.\+cs 파일의 26 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{생성자 \& 소멸자 문서화}
+\index{Tile@{Tile}!Tile@{Tile}}
+\index{Tile@{Tile}!Tile@{Tile}}
+\subsubsection[{\texorpdfstring{Tile()}{Tile()}}]{\setlength{\rightskip}{0pt plus 5cm}Tile.\+Tile (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_tile_a7684d2e86beeb06d844ebb7819b11b33}{}\label{class_tile_a7684d2e86beeb06d844ebb7819b11b33}
+
+
+Tile.\+cs 파일의 158 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+158 \{ \}
+\end{DoxyCode}
+
+
+\subsection{멤버 함수 문서화}
+\index{Tile@{Tile}!Attach\+Object@{Attach\+Object}}
+\index{Attach\+Object@{Attach\+Object}!Tile@{Tile}}
+\subsubsection[{\texorpdfstring{Attach\+Object(\+Placeable\+Object obj)}{AttachObject(PlaceableObject obj)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Tile.\+Attach\+Object (
+\begin{DoxyParamCaption}
+\item[{{\bf Placeable\+Object}}]{obj}
+\end{DoxyParamCaption}
+)}\hypertarget{class_tile_a1969ee41c320c6e7748a33374942e07e}{}\label{class_tile_a1969ee41c320c6e7748a33374942e07e}
+
+
+Tile.\+cs 파일의 226 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+227     \{
+228         \textcolor{keywordflow}{if} (\hyperlink{class_tile_aa548ae60732f4d054b6777436baefdd5}{\_attached} == null)
+229         \{
+230             var prevTile = obj.\hyperlink{class_placeable_object_ab44a9b122632ac3cf0babb5040e8a201}{GetPlacedTile}();
+231 
+232             \textcolor{keywordflow}{if}(prevTile != null)
+233             \{
+234                 prevTile.\hyperlink{class_tile_ab8ab187ab674cfb222f761feac3b20b3}{DetachObject}();
+235             \}
+236 
+237             \textcolor{comment}{// 순환 참조 적용. 레퍼런스 관리에 신경 쓸 것}
+238             \hyperlink{class_tile_aa548ae60732f4d054b6777436baefdd5}{\_attached} = obj;
+239 
+240             obj.\hyperlink{class_placeable_object_a3176ec3d5d26b2a83cdc58b01e630aa1}{Attach}(\textcolor{keyword}{this});
+241 
+242             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+243         \}
+244 
+245         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+246     \}
+\end{DoxyCode}
+
+
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_tile_a1969ee41c320c6e7748a33374942e07e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_tile_a1969ee41c320c6e7748a33374942e07e_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Tile@{Tile}!Awake@{Awake}}
+\index{Awake@{Awake}!Tile@{Tile}}
+\subsubsection[{\texorpdfstring{Awake()}{Awake()}}]{\setlength{\rightskip}{0pt plus 5cm}void Tile.\+Awake (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_tile_a4fbf82b2a26cdeb792dc78192d7247dc}{}\label{class_tile_a4fbf82b2a26cdeb792dc78192d7247dc}
+
+
+Tile.\+cs 파일의 202 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+203     \{
+204         \hyperlink{class_tile_a6cb69a9fad04bee1fa3473aec22428de}{StorageStates}();
+205 
+206         \hyperlink{class_tile_a2bb5c747e9483b803ea65b4341ce5af6}{ChangeState}(\hyperlink{_tile_8cs_a271bc07be325bca511bcb747e0ff2fda}{eTileType}.NORMAL);
+207     \}
+\end{DoxyCode}
+\index{Tile@{Tile}!Change\+State@{Change\+State}}
+\index{Change\+State@{Change\+State}!Tile@{Tile}}
+\subsubsection[{\texorpdfstring{Change\+State(e\+Tile\+Type interaction)}{ChangeState(eTileType interaction)}}]{\setlength{\rightskip}{0pt plus 5cm}void Tile.\+Change\+State (
+\begin{DoxyParamCaption}
+\item[{{\bf e\+Tile\+Type}}]{interaction}
+\end{DoxyParamCaption}
+)}\hypertarget{class_tile_a2bb5c747e9483b803ea65b4341ce5af6}{}\label{class_tile_a2bb5c747e9483b803ea65b4341ce5af6}
+
+
+Tile.\+cs 파일의 322 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+323     \{
+324         \textcolor{keywordflow}{if} (\hyperlink{class_tile_a822a1bffe56b1193b8c5c61070ea7827}{\_stateMachine} != null)
+325         \{
+326             \hyperlink{class_tile_a822a1bffe56b1193b8c5c61070ea7827}{\_stateMachine}.ChangeState(interaction.ToString());
+327         \}
+328     \}
+\end{DoxyCode}
+\index{Tile@{Tile}!Create\+Tile@{Create\+Tile}}
+\index{Create\+Tile@{Create\+Tile}!Tile@{Tile}}
+\subsubsection[{\texorpdfstring{Create\+Tile(\+Vector2 pos)}{CreateTile(Vector2 pos)}}]{\setlength{\rightskip}{0pt plus 5cm}static Game\+Object Tile.\+Create\+Tile (
+\begin{DoxyParamCaption}
+\item[{Vector2}]{pos}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_tile_aec3cdb55a67f4c12d3056355c15bdba2}{}\label{class_tile_aec3cdb55a67f4c12d3056355c15bdba2}
+
+
+Tile.\+cs 파일의 160 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+161     \{
+162         var tile = GameObject.CreatePrimitive(PrimitiveType.Cube);
+163         tile.name = String.Format(\textcolor{stringliteral}{"\{0\}\_\{1\}"}, pos.x, pos.y);
+164 
+165         var material = Resources.Load(\textcolor{stringliteral}{"Material/Notthing"}, typeof(Material)) as Material;
+166 
+167         var renderer = tile.GetComponent<Renderer>();
+168         renderer.material = material;
+169 
+170         tile.transform.localScale = \textcolor{keyword}{new} Vector3(\hyperlink{class_tile_a51b7dea4344573ba12a461a32517e683}{TILE\_SIZE}, 0.05f, 
+      \hyperlink{class_tile_a51b7dea4344573ba12a461a32517e683}{TILE\_SIZE});
+171 
+172         var tileComp = tile.AddComponent<\hyperlink{class_tile}{Tile}>();
+173         \hyperlink{class_touch_manager}{TouchManager}.\hyperlink{class_m_c_n_1_1_mono_singletone_aa50c027cca64cf4ad30c1ee5c83e0b78}{Instance}.Subscribe(tileComp);
+174 
+175         \textcolor{keywordflow}{return} tile;
+176     \}
+\end{DoxyCode}
+
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_tile_aec3cdb55a67f4c12d3056355c15bdba2_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Tile@{Tile}!Detach\+Object@{Detach\+Object}}
+\index{Detach\+Object@{Detach\+Object}!Tile@{Tile}}
+\subsubsection[{\texorpdfstring{Detach\+Object()}{DetachObject()}}]{\setlength{\rightskip}{0pt plus 5cm}void Tile.\+Detach\+Object (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_tile_ab8ab187ab674cfb222f761feac3b20b3}{}\label{class_tile_ab8ab187ab674cfb222f761feac3b20b3}
+
+
+Tile.\+cs 파일의 248 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+249     \{
+250         \textcolor{keywordflow}{if}(\hyperlink{class_tile_aa548ae60732f4d054b6777436baefdd5}{\_attached} != null)
+251         \{
+252             \hyperlink{class_tile_aa548ae60732f4d054b6777436baefdd5}{\_attached}.\hyperlink{class_placeable_object_aef2018b58bf7c8c0fab5aaf3d9a154d4}{Detach}();
+253 
+254             \hyperlink{class_tile_aa548ae60732f4d054b6777436baefdd5}{\_attached} = null;
+255         \}
+256     \}
+\end{DoxyCode}
+
+
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{class_tile_ab8ab187ab674cfb222f761feac3b20b3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_tile_ab8ab187ab674cfb222f761feac3b20b3_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Tile@{Tile}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!Tile@{Tile}}
+\subsubsection[{\texorpdfstring{Dispose()}{Dispose()}}]{\setlength{\rightskip}{0pt plus 5cm}void Tile.\+Dispose (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_tile_a6e8a801e95a29156cbf32024e45c6596}{}\label{class_tile_a6e8a801e95a29156cbf32024e45c6596}
+
+
+Tile.\+cs 파일의 178 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+179     \{
+180         \textcolor{keywordflow}{if} (\hyperlink{class_tile_aa548ae60732f4d054b6777436baefdd5}{\_attached} != null)
+181         \{
+182             var placeable = \hyperlink{class_tile_aa548ae60732f4d054b6777436baefdd5}{\_attached}.GetComponent<\hyperlink{class_placeable_object}{PlaceableObject}>();
+183 
+184             \textcolor{keywordflow}{if} (placeable != null)
+185             \{
+186                 placeable.\hyperlink{class_placeable_object_a8bd49b7db556556502a0518fc833be48}{Dispose}();
+187             \}
+188 
+189             \hyperlink{class_tile_aa548ae60732f4d054b6777436baefdd5}{\_attached} = null;
+190         \}
+191 
+192         \textcolor{keywordflow}{if}(\hyperlink{class_tile_a822a1bffe56b1193b8c5c61070ea7827}{\_stateMachine} != null)
+193         \{
+194             \hyperlink{class_tile_a822a1bffe56b1193b8c5c61070ea7827}{\_stateMachine}.Dispose();
+195 
+196             \hyperlink{class_tile_a822a1bffe56b1193b8c5c61070ea7827}{\_stateMachine} = null;
+197         \}
+198 
+199         GameObject.Destroy(gameObject);
+200     \}
+\end{DoxyCode}
+
+
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_tile_a6e8a801e95a29156cbf32024e45c6596_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_tile_a6e8a801e95a29156cbf32024e45c6596_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Tile@{Tile}!Get\+Attach\+Object@{Get\+Attach\+Object}}
+\index{Get\+Attach\+Object@{Get\+Attach\+Object}!Tile@{Tile}}
+\subsubsection[{\texorpdfstring{Get\+Attach\+Object()}{GetAttachObject()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Placeable\+Object} Tile.\+Get\+Attach\+Object (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_tile_a02150b69b975e8e9de1c3e10070a8dda}{}\label{class_tile_a02150b69b975e8e9de1c3e10070a8dda}
+
+
+Tile.\+cs 파일의 221 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+222     \{
+223         \textcolor{keywordflow}{return} \hyperlink{class_tile_aa548ae60732f4d054b6777436baefdd5}{\_attached};
+224     \}
+\end{DoxyCode}
+\index{Tile@{Tile}!Get\+Closed\+Tile@{Get\+Closed\+Tile}}
+\index{Get\+Closed\+Tile@{Get\+Closed\+Tile}!Tile@{Tile}}
+\subsubsection[{\texorpdfstring{Get\+Closed\+Tile(e\+Tile\+Direct direct)}{GetClosedTile(eTileDirect direct)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tile} Tile.\+Get\+Closed\+Tile (
+\begin{DoxyParamCaption}
+\item[{{\bf e\+Tile\+Direct}}]{direct}
+\end{DoxyParamCaption}
+)}\hypertarget{class_tile_a838aaa6a94321629d04e944ed3bf8b9f}{}\label{class_tile_a838aaa6a94321629d04e944ed3bf8b9f}
+
+
+Tile.\+cs 파일의 270 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+271     \{
+272         Vector2 closedTilePos = this.\hyperlink{class_tile_a56d02616cede51da0afdceff82ca958d}{\_position};
+273 
+274         \textcolor{keywordflow}{switch} (direct)
+275         \{
+276             \textcolor{keywordflow}{case} \hyperlink{_tile_8cs_a082f743a62d2d8e13dac8fd38af246d7}{eTileDirect}.UP:
+277                 closedTilePos += \textcolor{keyword}{new} Vector2(0, 1);
+278                 \textcolor{keywordflow}{break};
+279             \textcolor{keywordflow}{case} \hyperlink{_tile_8cs_a082f743a62d2d8e13dac8fd38af246d7}{eTileDirect}.DOWN:
+280                 closedTilePos += \textcolor{keyword}{new} Vector2(0, -1);
+281                 \textcolor{keywordflow}{break};
+282             \textcolor{keywordflow}{case} \hyperlink{_tile_8cs_a082f743a62d2d8e13dac8fd38af246d7}{eTileDirect}.RIGHT:
+283                 closedTilePos += \textcolor{keyword}{new} Vector2(1, 0);
+284                 \textcolor{keywordflow}{break};
+285             \textcolor{keywordflow}{case} \hyperlink{_tile_8cs_a082f743a62d2d8e13dac8fd38af246d7}{eTileDirect}.LEFT:
+286                 closedTilePos += \textcolor{keyword}{new} Vector2(-1, 0);
+287                 \textcolor{keywordflow}{break};
+288         \}
+289 
+290         \textcolor{keywordflow}{if} (closedTilePos.x >= 0 && closedTilePos.y >= 0)
+291         \{
+292             \textcolor{keywordflow}{if} (\hyperlink{class_map_manager}{MapManager}.\hyperlink{class_m_c_n_1_1_mono_singletone_aa50c027cca64cf4ad30c1ee5c83e0b78}{Instance}.IsExistMap())
+293             \{
+294                 \textcolor{keywordflow}{return} \hyperlink{class_map_manager}{MapManager}.\hyperlink{class_m_c_n_1_1_mono_singletone_aa50c027cca64cf4ad30c1ee5c83e0b78}{Instance}.GetTile(closedTilePos);
+295             \}
+296         \}
+297 
+298         \textcolor{keywordflow}{return} null;
+299     \}
+\end{DoxyCode}
+\index{Tile@{Tile}!Get\+Closed\+Tiles@{Get\+Closed\+Tiles}}
+\index{Get\+Closed\+Tiles@{Get\+Closed\+Tiles}!Tile@{Tile}}
+\subsubsection[{\texorpdfstring{Get\+Closed\+Tiles()}{GetClosedTiles()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tile} \mbox{[}$\,$\mbox{]} Tile.\+Get\+Closed\+Tiles (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_tile_a38b9f5c215f16448118e83e0d10aed05}{}\label{class_tile_a38b9f5c215f16448118e83e0d10aed05}
+
+
+Tile.\+cs 파일의 258 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+259     \{
+260         \hyperlink{class_tile}{Tile}[] closedTiles = \textcolor{keyword}{new} \hyperlink{class_tile}{Tile}[4];
+261 
+262         closedTiles[0] = \hyperlink{class_tile_a838aaa6a94321629d04e944ed3bf8b9f}{GetClosedTile}(\hyperlink{_tile_8cs_a082f743a62d2d8e13dac8fd38af246d7}{eTileDirect}.UP);
+263         closedTiles[1] = \hyperlink{class_tile_a838aaa6a94321629d04e944ed3bf8b9f}{GetClosedTile}(\hyperlink{_tile_8cs_a082f743a62d2d8e13dac8fd38af246d7}{eTileDirect}.DOWN);
+264         closedTiles[2] = \hyperlink{class_tile_a838aaa6a94321629d04e944ed3bf8b9f}{GetClosedTile}(\hyperlink{_tile_8cs_a082f743a62d2d8e13dac8fd38af246d7}{eTileDirect}.LEFT);
+265         closedTiles[3] = \hyperlink{class_tile_a838aaa6a94321629d04e944ed3bf8b9f}{GetClosedTile}(\hyperlink{_tile_8cs_a082f743a62d2d8e13dac8fd38af246d7}{eTileDirect}.RIGHT);
+266 
+267         \textcolor{keywordflow}{return} closedTiles;
+268     \}
+\end{DoxyCode}
+\index{Tile@{Tile}!Get\+Current\+State@{Get\+Current\+State}}
+\index{Get\+Current\+State@{Get\+Current\+State}!Tile@{Tile}}
+\subsubsection[{\texorpdfstring{Get\+Current\+State()}{GetCurrentState()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tile\+State} Tile.\+Get\+Current\+State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_tile_ae37e08e39263e766fdc612de94fb7a0d}{}\label{class_tile_ae37e08e39263e766fdc612de94fb7a0d}
+
+
+Tile.\+cs 파일의 330 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+331     \{
+332         \textcolor{keywordflow}{if}(\hyperlink{class_tile_a822a1bffe56b1193b8c5c61070ea7827}{\_stateMachine} != null)
+333         \{
+334             var tileState = \hyperlink{class_tile_a822a1bffe56b1193b8c5c61070ea7827}{\_stateMachine}.GetCurrentState() as TileState;
+335 
+336             \textcolor{keywordflow}{if}(tileState != null)
+337             \{
+338                 \textcolor{keywordflow}{return} tileState;
+339             \}
+340 
+341             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} UnityException(\textcolor{stringliteral}{"tileState isn't."});
+342         \}
+343 
+344         \textcolor{keywordflow}{throw} \textcolor{keyword}{new} UnityException(\textcolor{stringliteral}{"\_stateMachine is null."});
+345     \}
+\end{DoxyCode}
+\index{Tile@{Tile}!On\+Next@{On\+Next}}
+\index{On\+Next@{On\+Next}!Tile@{Tile}}
+\subsubsection[{\texorpdfstring{On\+Next(\+T data)}{OnNext(T data)}}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf M\+C\+N.\+I\+Observer}$<$ T $>$.On\+Next (
+\begin{DoxyParamCaption}
+\item[{T}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\hypertarget{interface_m_c_n_1_1_i_observer_a2f934b71aa4ddf6f936670d32c3cdff7}{}\label{interface_m_c_n_1_1_i_observer_a2f934b71aa4ddf6f936670d32c3cdff7}
+\index{Tile@{Tile}!On\+Next@{On\+Next}}
+\index{On\+Next@{On\+Next}!Tile@{Tile}}
+\subsubsection[{\texorpdfstring{On\+Next(e\+Touch\+Event data)}{OnNext(eTouchEvent data)}}]{\setlength{\rightskip}{0pt plus 5cm}void Tile.\+On\+Next (
+\begin{DoxyParamCaption}
+\item[{{\bf e\+Touch\+Event}}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{class_tile_afdb21c9f57ecd9953edfd92d8541f8a3}{}\label{class_tile_afdb21c9f57ecd9953edfd92d8541f8a3}
+
+
+Tile.\+cs 파일의 347 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+348     \{
+349         \hyperlink{class_tile_ae37e08e39263e766fdc612de94fb7a0d}{GetCurrentState}().\hyperlink{class_tile_1_1_tile_state_a3ddb7ad41bed1404287b6847dd4edf05}{TouchEvent}(data);
+350     \}
+\end{DoxyCode}
+\index{Tile@{Tile}!Set\+Position@{Set\+Position}}
+\index{Set\+Position@{Set\+Position}!Tile@{Tile}}
+\subsubsection[{\texorpdfstring{Set\+Position(\+Vector2 pos)}{SetPosition(Vector2 pos)}}]{\setlength{\rightskip}{0pt plus 5cm}void Tile.\+Set\+Position (
+\begin{DoxyParamCaption}
+\item[{Vector2}]{pos}
+\end{DoxyParamCaption}
+)}\hypertarget{class_tile_a4d7a81b36513066aad741ed675164690}{}\label{class_tile_a4d7a81b36513066aad741ed675164690}
+
+
+Tile.\+cs 파일의 216 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+217     \{
+218         \hyperlink{class_tile_a56d02616cede51da0afdceff82ca958d}{\_position} = pos;
+219     \}
+\end{DoxyCode}
+
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_tile_a4d7a81b36513066aad741ed675164690_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Tile@{Tile}!Show\+Chain\+Active\+Tile@{Show\+Chain\+Active\+Tile}}
+\index{Show\+Chain\+Active\+Tile@{Show\+Chain\+Active\+Tile}!Tile@{Tile}}
+\subsubsection[{\texorpdfstring{Show\+Chain\+Active\+Tile(int range)}{ShowChainActiveTile(int range)}}]{\setlength{\rightskip}{0pt plus 5cm}void Tile.\+Show\+Chain\+Active\+Tile (
+\begin{DoxyParamCaption}
+\item[{int}]{range}
+\end{DoxyParamCaption}
+)}\hypertarget{class_tile_a0ca6f4d1ddb0e7609749f1cf583b3c16}{}\label{class_tile_a0ca6f4d1ddb0e7609749f1cf583b3c16}
+
+
+Tile.\+cs 파일의 301 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+302     \{
+303         \textcolor{keywordflow}{if} (range <= 0)
+304         \{
+305             \textcolor{keywordflow}{return};
+306         \}
+307 
+308         this.\hyperlink{class_tile_a2bb5c747e9483b803ea65b4341ce5af6}{ChangeState}(\hyperlink{_tile_8cs_a271bc07be325bca511bcb747e0ff2fda}{eTileType}.ACTIVE);
+309 
+310         var closedTiles = this.\hyperlink{class_tile_a38b9f5c215f16448118e83e0d10aed05}{GetClosedTiles}();
+311 
+312         \textcolor{keywordflow}{foreach} (var closedTile \textcolor{keywordflow}{in} closedTiles)
+313         \{
+314             \textcolor{keywordflow}{if} (closedTile != null)
+315             \{
+316                 closedTile.ChangeState(\hyperlink{_tile_8cs_a271bc07be325bca511bcb747e0ff2fda}{eTileType}.ACTIVE);
+317                 closedTile.ShowChainActiveTile(range - 1);
+318             \}
+319         \}
+320     \}
+\end{DoxyCode}
+\index{Tile@{Tile}!Storage\+States@{Storage\+States}}
+\index{Storage\+States@{Storage\+States}!Tile@{Tile}}
+\subsubsection[{\texorpdfstring{Storage\+States()}{StorageStates()}}]{\setlength{\rightskip}{0pt plus 5cm}void Tile.\+Storage\+States (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_tile_a6cb69a9fad04bee1fa3473aec22428de}{}\label{class_tile_a6cb69a9fad04bee1fa3473aec22428de}
+
+
+Tile.\+cs 파일의 209 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+210     \{
+211         \textcolor{keyword}{new} TileState\_Normal(\textcolor{keyword}{this});
+212         \textcolor{keyword}{new} TileState\_Active(\textcolor{keyword}{this});
+213         \textcolor{keyword}{new} TileState\_Deactive(\textcolor{keyword}{this});
+214     \}
+\end{DoxyCode}
+
+
+\subsection{멤버 데이타 문서화}
+\index{Tile@{Tile}!\+\_\+attached@{\+\_\+attached}}
+\index{\+\_\+attached@{\+\_\+attached}!Tile@{Tile}}
+\subsubsection[{\texorpdfstring{\+\_\+attached}{_attached}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Placeable\+Object} Tile.\+\_\+attached\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_tile_aa548ae60732f4d054b6777436baefdd5}{}\label{class_tile_aa548ae60732f4d054b6777436baefdd5}
+
+
+Tile.\+cs 파일의 29 번째 라인에서 정의되었습니다.
+
+\index{Tile@{Tile}!\+\_\+position@{\+\_\+position}}
+\index{\+\_\+position@{\+\_\+position}!Tile@{Tile}}
+\subsubsection[{\texorpdfstring{\+\_\+position}{_position}}]{\setlength{\rightskip}{0pt plus 5cm}Vector2 Tile.\+\_\+position\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_tile_a56d02616cede51da0afdceff82ca958d}{}\label{class_tile_a56d02616cede51da0afdceff82ca958d}
+
+
+Tile.\+cs 파일의 28 번째 라인에서 정의되었습니다.
+
+\index{Tile@{Tile}!\+\_\+state\+Machine@{\+\_\+state\+Machine}}
+\index{\+\_\+state\+Machine@{\+\_\+state\+Machine}!Tile@{Tile}}
+\subsubsection[{\texorpdfstring{\+\_\+state\+Machine}{_stateMachine}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\+C\+N.\+State\+Machine}$<${\bf Tile\+State}$>$ Tile.\+\_\+state\+Machine = new {\bf M\+C\+N.\+State\+Machine}$<${\bf Tile\+State}$>$()\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_tile_a822a1bffe56b1193b8c5c61070ea7827}{}\label{class_tile_a822a1bffe56b1193b8c5c61070ea7827}
+
+
+Tile.\+cs 파일의 34 번째 라인에서 정의되었습니다.
+
+\index{Tile@{Tile}!T\+I\+L\+E\+\_\+\+S\+I\+ZE@{T\+I\+L\+E\+\_\+\+S\+I\+ZE}}
+\index{T\+I\+L\+E\+\_\+\+S\+I\+ZE@{T\+I\+L\+E\+\_\+\+S\+I\+ZE}!Tile@{Tile}}
+\subsubsection[{\texorpdfstring{T\+I\+L\+E\+\_\+\+S\+I\+ZE}{TILE_SIZE}}]{\setlength{\rightskip}{0pt plus 5cm}readonly float Tile.\+T\+I\+L\+E\+\_\+\+S\+I\+ZE = 1\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_tile_a51b7dea4344573ba12a461a32517e683}{}\label{class_tile_a51b7dea4344573ba12a461a32517e683}
+
+
+Tile.\+cs 파일의 31 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Git\+Hub/\+M\+C\+N\+Tactics/\+Assets/\+Scripts/\+Objects/\hyperlink{_tile_8cs}{Tile.\+cs}\end{DoxyCompactItemize}

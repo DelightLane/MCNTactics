@@ -1,0 +1,5 @@
+<map id="MapManager.AttachObject" name="MapManager.AttachObject">
+<area shape="rect" id="node2" href="$class_map_manager.html#ae457099efdd1a804add3b851b2bc7691" title="MapManager.GetTile" alt="" coords="231,31,373,57"/>
+<area shape="rect" id="node3" href="$class_map_manager.html#a9a18efae73b0d690d2bc6c8ac8703a02" title="MapManager.IsExistMap" alt="" coords="424,5,591,32"/>
+<area shape="rect" id="node4" href="$class_map_manager.html#a504d7a68ace64557bc3c3254a8b1cddc" title="MapManager.IsInMapSize" alt="" coords="421,56,593,83"/>
+</map>

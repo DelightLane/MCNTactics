@@ -1,0 +1,5 @@
+<map id="MoveableObject.OnNext" name="MoveableObject.OnNext">
+<area shape="rect" id="node2" href="$class_moveable_object.html#a1fd6f362fa5243bf6ba3adfac8980ad1" title="MoveableObject.GetCurrent\lMoveableState" alt="" coords="216,5,397,47"/>
+<area shape="rect" id="node3" href="$class_moveable_object_1_1_moveable_state.html#a623625a3835f3038d314023b95533944" title="MoveableObject.MoveableState.\lMoveableState" alt="" coords="445,5,652,47"/>
+<area shape="rect" id="node4" href="$class_moveable_object_1_1_moveable_state.html#a2e4bcd7c2bac20c8a628d113292d2722" title="MoveableObject.MoveableState.\lGetCurrentType" alt="" coords="700,5,907,47"/>
+</map>

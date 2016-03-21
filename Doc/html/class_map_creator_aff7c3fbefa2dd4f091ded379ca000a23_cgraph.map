@@ -1,0 +1,5 @@
+<map id="MapCreator.CreateTiles" name="MapCreator.CreateTiles">
+<area shape="rect" id="node2" href="$class_tile.html#aec3cdb55a67f4c12d3056355c15bdba2" title="Tile.CreateTile" alt="" coords="231,5,335,32"/>
+<area shape="rect" id="node3" href="$class_map_creator.html#aa7308965858123141f44438bb017acc8" title="MapCreator.GetRoot" alt="" coords="212,56,353,83"/>
+<area shape="rect" id="node4" href="$class_tile.html#a4d7a81b36513066aad741ed675164690" title="Tile.SetPosition" alt="" coords="226,107,339,133"/>
+</map>

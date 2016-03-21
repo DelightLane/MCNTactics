@@ -1,0 +1,4 @@
+<map id="MoveableObject.MoveableState_Move" name="MoveableObject.MoveableState_Move">
+<area shape="rect" id="node2" href="$class_moveable_object_1_1_moveable_state.html" title="{MoveableState\n||+ MoveableState()\l+ TileTouchAction()\l+ GetCurrentType()\l+ OnTouchEvent()\l}" alt="" coords="58,344,193,465"/>
+<area shape="rect" id="node3" href="$class_m_c_n_1_1_state.html" title="{MCN::State\n|+ Target\l&#45; _target\l|+ State()\l+ Initialize()\l+ Destroy()\l+ Run()\l+ Finish()\l+ Dispose()\l}" alt="" coords="80,131,171,296"/>
+</map>

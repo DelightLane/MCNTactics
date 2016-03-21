@@ -1,0 +1,6 @@
+<map id="MapManager.IsInMapSize" name="MapManager.IsInMapSize">
+<area shape="rect" id="node2" href="$class_map_manager.html#a4213ccbaa1a81d0a47884de50a28de32" title="MapManager.PlaceObjacts" alt="" coords="641,5,820,32"/>
+<area shape="rect" id="node4" href="$class_map_manager.html#ae457099efdd1a804add3b851b2bc7691" title="MapManager.GetTile" alt="" coords="225,31,368,57"/>
+<area shape="rect" id="node3" href="$class_map_manager.html#ad633984007048c7d63eab44aaeb0c32d" title="MapManager.Awake" alt="" coords="868,5,1008,32"/>
+<area shape="rect" id="node5" href="$class_map_manager.html#ab8cbf46e369a9c59ff183a1b6c3b20bb" title="MapManager.AttachObject" alt="" coords="416,31,593,57"/>
+</map>

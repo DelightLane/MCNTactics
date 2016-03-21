@@ -1,0 +1,4 @@
+<map id="MoveableObject.Awake" name="MoveableObject.Awake">
+<area shape="rect" id="node2" href="$class_moveable_object.html#a1cd5235b78466505ca3950d852287615" title="MoveableObject.StorageStates" alt="" coords="218,5,419,32"/>
+<area shape="rect" id="node3" href="$class_moveable_object.html#a35e45dfc7967725cca99c52762a1ffdf" title="MoveableObject.ChangeMoveable\lState" alt="" coords="211,57,427,98"/>
+</map>

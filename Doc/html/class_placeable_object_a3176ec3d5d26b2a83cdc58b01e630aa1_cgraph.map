@@ -1,0 +1,7 @@
+<map id="PlaceableObject.Attach" name="PlaceableObject.Attach">
+<area shape="rect" id="node2" href="$class_placeable_object.html#a06a30cf4396743908cc88733cb216df5" title="PlaceableObject.Place" alt="" coords="212,5,367,32"/>
+<area shape="rect" id="node3" href="$class_tile.html#a1969ee41c320c6e7748a33374942e07e" title="Tile.AttachObject" alt="" coords="415,31,537,57"/>
+<area shape="rect" id="node4" href="$class_placeable_object.html#ab44a9b122632ac3cf0babb5040e8a201" title="PlaceableObject.GetPlacedTile" alt="" coords="585,5,788,32"/>
+<area shape="rect" id="node5" href="$class_tile.html#ab8ab187ab674cfb222f761feac3b20b3" title="Tile.DetachObject" alt="" coords="624,56,749,83"/>
+<area shape="rect" id="node6" href="$class_placeable_object.html#aef2018b58bf7c8c0fab5aaf3d9a154d4" title="PlaceableObject.Detach" alt="" coords="836,56,999,83"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="PlaceableObject.Attach" name="PlaceableObject.Attach">
+<area shape="rect" id="node2" href="$class_tile.html#a1969ee41c320c6e7748a33374942e07e" title="Tile.AttachObject" alt="" coords="212,21,335,47"/>
+<area shape="rect" id="node3" href="$class_moveable_object_1_1_moveable_state___move.html#a38a7adcb49e881666e2f4a4728cc917d" title="MoveableObject.MoveableState\l_Move.TileTouchAction" alt="" coords="383,5,585,47"/>
+<area shape="rect" id="node4" href="$class_placeable_object.html#a06a30cf4396743908cc88733cb216df5" title="PlaceableObject.Place" alt="" coords="407,71,561,98"/>
+</map>

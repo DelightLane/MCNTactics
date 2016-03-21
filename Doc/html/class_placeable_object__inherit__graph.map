@@ -1,0 +1,5 @@
+<map id="PlaceableObject" name="PlaceableObject">
+<area shape="rect" id="node6" href="$class_moveable_object.html" title="{MoveableObject\n|&#45; moveRange\l&#45; _moveableStateMachine\l|+ TileTouchAction()\l+ OnNext()\l&#45; Awake()\l&#45; Destroy()\l&#45; StorageStates()\l&#45; GetCurrentMoveableState()\l&#45; GetMoveableCurrentStateType()\l&#45; ChangeMoveableState()\l}" alt="" coords="73,499,288,693"/>
+<area shape="rect" id="node2" href="$class_tactics_object.html" title="{TacticsObject\n||}" alt="" coords="9,131,112,208"/>
+<area shape="rect" id="node5" href="$interface_i_tile_active.html" title="{ITileActive\n||+ TileTouchAction()\l}" alt="" coords="249,131,384,208"/>
+</map>

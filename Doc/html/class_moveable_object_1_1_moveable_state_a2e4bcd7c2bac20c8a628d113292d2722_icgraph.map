@@ -1,0 +1,8 @@
+<map id="MoveableObject.MoveableState.GetCurrentType" name="MoveableObject.MoveableState.GetCurrentType">
+<area shape="rect" id="node2" href="$class_moveable_object_1_1_moveable_state.html#a623625a3835f3038d314023b95533944" title="MoveableObject.MoveableState.\lMoveableState" alt="" coords="260,64,467,105"/>
+<area shape="rect" id="node7" href="$class_moveable_object_1_1_moveable_state.html#ad12f69b3ef4dadf43105502253b4dc6e" title="MoveableObject.MoveableState.\lTileTouchAction" alt="" coords="260,129,467,171"/>
+<area shape="rect" id="node3" href="$class_moveable_object.html#a1fd6f362fa5243bf6ba3adfac8980ad1" title="MoveableObject.GetCurrent\lMoveableState" alt="" coords="515,64,696,105"/>
+<area shape="rect" id="node4" href="$class_moveable_object.html#a8aa14fd4e56b9911e895f5e899e0d9a0" title="MoveableObject.TileTouch\lAction" alt="" coords="754,5,927,47"/>
+<area shape="rect" id="node5" href="$class_moveable_object.html#aeba5445de84542260b21e15e1308f712" title="MoveableObject.OnNext" alt="" coords="759,71,922,98"/>
+<area shape="rect" id="node6" href="$class_moveable_object.html#a41840d658f3ae47083b026955075c62f" title="MoveableObject.GetMoveable\lCurrentStateType" alt="" coords="744,123,937,164"/>
+</map>

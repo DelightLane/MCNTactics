@@ -1,0 +1,4 @@
+<map id="ITileActive" name="ITileActive">
+<area shape="rect" id="node2" href="$class_placeable_object.html" title="{PlaceableObject\n|# _placedTile\l|+ Attach()\l+ Detach()\l+ GetPlacedTile()\l+ Dispose()\l+ IsSelected()\l+ Select()\l+ Deselect()\l+ TileTouchAction()\l&#45; Place()\l}" alt="" coords="45,131,180,325"/>
+<area shape="rect" id="node3" href="$class_moveable_object.html" title="{MoveableObject\n|&#45; moveRange\l&#45; _moveableStateMachine\l|+ TileTouchAction()\l+ OnNext()\l&#45; Awake()\l&#45; Destroy()\l&#45; StorageStates()\l&#45; GetCurrentMoveableState()\l&#45; GetMoveableCurrentStateType()\l&#45; ChangeMoveableState()\l}" alt="" coords="5,373,220,568"/>
+</map>

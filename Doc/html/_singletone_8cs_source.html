@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>MCNTactics: D:/GitHub/MCNTactics/Assets/Scripts/Core/Singletone.cs 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">MCNTactics
+   &#160;<span id="projectnumber">1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'검색');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>메인&#160;페이지</span></a></li>
+      <li><a href="namespaces.html"><span>패키지</span></a></li>
+      <li><a href="annotated.html"><span>클래스</span></a></li>
+      <li class="current"><a href="files.html"><span>파일들</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="검색" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>파일&#160;목록</span></a></li>
+      <li><a href="globals.html"><span>파일&#160;멤버</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_singletone_8cs_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Singletone.cs</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_singletone_8cs.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>;</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>.Reflection;</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_unity_engine.html">UnityEngine</a>;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_m_c_n.html">MCN</a></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div><div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="class_m_c_n_1_1_singletone.html">    7</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class </span><a class="code" href="class_m_c_n_1_1_singletone.html">Singletone</a>&lt;T&gt; where T : class</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    {</div><div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_m_c_n_1_1_singletone.html#a267e8a9e6e7c073b988cda4f95e26eb1">    9</a></span>&#160;        <span class="keyword">protected</span> <span class="keyword">static</span> T <a class="code" href="class_m_c_n_1_1_singletone.html#a267e8a9e6e7c073b988cda4f95e26eb1">_instance</a> = null;</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> T <a class="code" href="class_m_c_n_1_1_singletone.html#a46dbbebd93e96a9592a9803c51f35602">Instance</a></div><div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_m_c_n_1_1_singletone.html#a46dbbebd93e96a9592a9803c51f35602">   12</a></span>&#160;        {</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            <span class="keyword">get</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            {</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                <span class="keywordflow">if</span> (_instance == null)</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                {</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                    <a class="code" href="class_m_c_n_1_1_singletone.html#a4f4f62d67cc4a98909639d3e09eaef07">CreateInstance</a>();</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                }</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="class_m_c_n_1_1_singletone.html#a267e8a9e6e7c073b988cda4f95e26eb1">_instance</a>;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            }</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        }</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div><div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_m_c_n_1_1_singletone.html#a4f4f62d67cc4a98909639d3e09eaef07">   23</a></span>&#160;        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_m_c_n_1_1_singletone.html#a4f4f62d67cc4a98909639d3e09eaef07">CreateInstance</a>()</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        {</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="keywordflow">if</span> (_instance == null)</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            {</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                Type t = typeof(T);</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                ConstructorInfo[] ctors = t.GetConstructors();</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                <span class="keywordflow">if</span> (ctors.Length &gt; 0)</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                {</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                    <span class="keywordflow">throw</span> <span class="keyword">new</span> InvalidOperationException(String.Format(<span class="stringliteral">&quot;{0} has at least one accesible ctor making it impossible to enforce singleton behaviour&quot;</span>, t.Name));</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                }</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                _instance = (T)Activator.CreateInstance(t, <span class="keyword">true</span>);</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            }</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        }</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div><div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_m_c_n_1_1_mono_singletone.html">   41</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class </span><a class="code" href="class_m_c_n_1_1_mono_singletone.html">MonoSingletone</a>&lt;T&gt; : MonoBehaviour where T : <a class="code" href="class_m_c_n_1_1_mono_singletone.html">MonoSingletone</a>&lt;T&gt;</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    {</div><div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_m_c_n_1_1_mono_singletone.html#a790a4dfd828c6e4f008ad64d33d61ac0">   43</a></span>&#160;        <span class="keyword">private</span> <span class="keyword">static</span> T <a class="code" href="class_m_c_n_1_1_mono_singletone.html#a790a4dfd828c6e4f008ad64d33d61ac0">_instance</a>;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> T <a class="code" href="class_m_c_n_1_1_singletone.html#a46dbbebd93e96a9592a9803c51f35602">Instance</a></div><div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="class_m_c_n_1_1_mono_singletone.html#aa50c027cca64cf4ad30c1ee5c83e0b78">   46</a></span>&#160;        {</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keyword">get</span></div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            {</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                <span class="keywordflow">if</span> (_instance == null)</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                {</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                    _instance = FindObjectOfType(typeof(T)) as T;</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                }</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                <span class="keywordflow">if</span> (_instance == null)</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                {</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                    GameObject obj = <span class="keyword">new</span> GameObject(<span class="stringliteral">&quot;&quot;</span>);</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                    _instance = obj.AddComponent(typeof(T)) as T;</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                    _instance.name = _instance.CreatedObjectName();</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                }</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="class_m_c_n_1_1_singletone.html#a267e8a9e6e7c073b988cda4f95e26eb1">_instance</a>;</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            }</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        }</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keyword">protected</span> <span class="keyword">abstract</span> <span class="keywordtype">string</span> CreatedObjectName();</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div><div class="ttc" id="class_m_c_n_1_1_singletone_html_a4f4f62d67cc4a98909639d3e09eaef07"><div class="ttname"><a href="class_m_c_n_1_1_singletone.html#a4f4f62d67cc4a98909639d3e09eaef07">MCN.Singletone.CreateInstance</a></div><div class="ttdeci">static void CreateInstance()</div><div class="ttdef"><b>Definition:</b> <a href="_singletone_8cs_source.html#l00023">Singletone.cs:23</a></div></div>
+<div class="ttc" id="namespace_system_html"><div class="ttname"><a href="namespace_system.html">System</a></div></div>
+<div class="ttc" id="class_m_c_n_1_1_singletone_html_a46dbbebd93e96a9592a9803c51f35602"><div class="ttname"><a href="class_m_c_n_1_1_singletone.html#a46dbbebd93e96a9592a9803c51f35602">MCN.Singletone.Instance</a></div><div class="ttdeci">static T Instance</div><div class="ttdef"><b>Definition:</b> <a href="_singletone_8cs_source.html#l00012">Singletone.cs:12</a></div></div>
+<div class="ttc" id="class_m_c_n_1_1_singletone_html"><div class="ttname"><a href="class_m_c_n_1_1_singletone.html">MCN.Singletone</a></div><div class="ttdef"><b>Definition:</b> <a href="_singletone_8cs_source.html#l00007">Singletone.cs:7</a></div></div>
+<div class="ttc" id="class_m_c_n_1_1_mono_singletone_html_a790a4dfd828c6e4f008ad64d33d61ac0"><div class="ttname"><a href="class_m_c_n_1_1_mono_singletone.html#a790a4dfd828c6e4f008ad64d33d61ac0">MCN.MonoSingletone._instance</a></div><div class="ttdeci">static T _instance</div><div class="ttdef"><b>Definition:</b> <a href="_singletone_8cs_source.html#l00043">Singletone.cs:43</a></div></div>
+<div class="ttc" id="namespace_m_c_n_html"><div class="ttname"><a href="namespace_m_c_n.html">MCN</a></div><div class="ttdef"><b>Definition:</b> <a href="_i_observable_8cs_source.html#l00003">IObservable.cs:3</a></div></div>
+<div class="ttc" id="class_m_c_n_1_1_mono_singletone_html"><div class="ttname"><a href="class_m_c_n_1_1_mono_singletone.html">MCN.MonoSingletone</a></div><div class="ttdef"><b>Definition:</b> <a href="_singletone_8cs_source.html#l00041">Singletone.cs:41</a></div></div>
+<div class="ttc" id="namespace_unity_engine_html"><div class="ttname"><a href="namespace_unity_engine.html">UnityEngine</a></div></div>
+<div class="ttc" id="class_m_c_n_1_1_singletone_html_a267e8a9e6e7c073b988cda4f95e26eb1"><div class="ttname"><a href="class_m_c_n_1_1_singletone.html#a267e8a9e6e7c073b988cda4f95e26eb1">MCN.Singletone._instance</a></div><div class="ttdeci">static T _instance</div><div class="ttdef"><b>Definition:</b> <a href="_singletone_8cs_source.html#l00009">Singletone.cs:9</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_84bbf7b3c7f28a5a18725745e1505219.html">Assets</a></li><li class="navelem"><a class="el" href="dir_f13b41af88cf68434578284aaf699e39.html">Scripts</a></li><li class="navelem"><a class="el" href="dir_7db68f476bd50f9f6d9cf398af037e8e.html">Core</a></li><li class="navelem"><a class="el" href="_singletone_8cs.html">Singletone.cs</a></li>
+    <li class="footer">다음에 의해 생성됨 : 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+  </ul>
+</div>
+</body>
+</html>

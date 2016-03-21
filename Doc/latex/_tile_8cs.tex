@@ -1,0 +1,89 @@
+\hypertarget{_tile_8cs}{}\section{D\+:/\+Git\+Hub/\+M\+C\+N\+Tactics/\+Assets/\+Scripts/\+Objects/\+Tile.cs 파일 참조}
+\label{_tile_8cs}\index{D\+:/\+Git\+Hub/\+M\+C\+N\+Tactics/\+Assets/\+Scripts/\+Objects/\+Tile.\+cs@{D\+:/\+Git\+Hub/\+M\+C\+N\+Tactics/\+Assets/\+Scripts/\+Objects/\+Tile.\+cs}}
+\subsection*{클래스}
+\begin{DoxyCompactItemize}
+\item 
+interface \hyperlink{interface_i_tile_active}{I\+Tile\+Active}
+\item 
+class \hyperlink{class_tile}{Tile}
+\item 
+class \hyperlink{class_tile_1_1_tile_state}{Tile.\+Tile\+State}
+\item 
+class \hyperlink{class_tile_1_1_tile_state___normal}{Tile.\+Tile\+State\+\_\+\+Normal}
+\item 
+class \hyperlink{class_tile_1_1_tile_state___active}{Tile.\+Tile\+State\+\_\+\+Active}
+\item 
+class \hyperlink{class_tile_1_1_tile_state___deactive}{Tile.\+Tile\+State\+\_\+\+Deactive}
+\end{DoxyCompactItemize}
+\subsection*{열거형 타입}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_tile_8cs_a082f743a62d2d8e13dac8fd38af246d7}{e\+Tile\+Direct} \{ \hyperlink{_tile_8cs_a082f743a62d2d8e13dac8fd38af246d7afbaedde498cdead4f2780217646e9ba1}{e\+Tile\+Direct.\+UP}, 
+\hyperlink{_tile_8cs_a082f743a62d2d8e13dac8fd38af246d7ac4e0e4e3118472beeb2ae75827450f1f}{e\+Tile\+Direct.\+D\+O\+WN}, 
+\hyperlink{_tile_8cs_a082f743a62d2d8e13dac8fd38af246d7a21507b40c80068eda19865706fdc2403}{e\+Tile\+Direct.\+R\+I\+G\+HT}, 
+\hyperlink{_tile_8cs_a082f743a62d2d8e13dac8fd38af246d7a684d325a7303f52e64011467ff5c5758}{e\+Tile\+Direct.\+L\+E\+FT}
+ \}
+\item 
+enum \hyperlink{_tile_8cs_a271bc07be325bca511bcb747e0ff2fda}{e\+Tile\+Type} \{ \hyperlink{_tile_8cs_a271bc07be325bca511bcb747e0ff2fdaa1e23852820b9154316c7c06e2b7ba051}{e\+Tile\+Type.\+N\+O\+R\+M\+AL}, 
+\hyperlink{_tile_8cs_a271bc07be325bca511bcb747e0ff2fdaa18ff74f43da410c5529f7d6fca84f115}{e\+Tile\+Type.\+A\+C\+T\+I\+VE}, 
+\hyperlink{_tile_8cs_a271bc07be325bca511bcb747e0ff2fdaa22cf020c6b8dbd720f63e3865de7d2ca}{e\+Tile\+Type.\+D\+E\+A\+C\+T\+I\+VE}
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{열거형 타입 문서화}
+\index{Tile.\+cs@{Tile.\+cs}!e\+Tile\+Direct@{e\+Tile\+Direct}}
+\index{e\+Tile\+Direct@{e\+Tile\+Direct}!Tile.\+cs@{Tile.\+cs}}
+\subsubsection[{\texorpdfstring{e\+Tile\+Direct}{eTileDirect}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf e\+Tile\+Direct}\hspace{0.3cm}{\ttfamily [strong]}}\hypertarget{_tile_8cs_a082f743a62d2d8e13dac8fd38af246d7}{}\label{_tile_8cs_a082f743a62d2d8e13dac8fd38af246d7}
+\begin{Desc}
+\item[열거형 멤버]\par
+\begin{description}
+\index{UP@{UP}!Tile.\+cs@{Tile.\+cs}}\index{Tile.\+cs@{Tile.\+cs}!UP@{UP}}\item[{\em 
+UP\hypertarget{_tile_8cs_a082f743a62d2d8e13dac8fd38af246d7afbaedde498cdead4f2780217646e9ba1}{}\label{_tile_8cs_a082f743a62d2d8e13dac8fd38af246d7afbaedde498cdead4f2780217646e9ba1}
+}]\index{D\+O\+WN@{D\+O\+WN}!Tile.\+cs@{Tile.\+cs}}\index{Tile.\+cs@{Tile.\+cs}!D\+O\+WN@{D\+O\+WN}}\item[{\em 
+D\+O\+WN\hypertarget{_tile_8cs_a082f743a62d2d8e13dac8fd38af246d7ac4e0e4e3118472beeb2ae75827450f1f}{}\label{_tile_8cs_a082f743a62d2d8e13dac8fd38af246d7ac4e0e4e3118472beeb2ae75827450f1f}
+}]\index{R\+I\+G\+HT@{R\+I\+G\+HT}!Tile.\+cs@{Tile.\+cs}}\index{Tile.\+cs@{Tile.\+cs}!R\+I\+G\+HT@{R\+I\+G\+HT}}\item[{\em 
+R\+I\+G\+HT\hypertarget{_tile_8cs_a082f743a62d2d8e13dac8fd38af246d7a21507b40c80068eda19865706fdc2403}{}\label{_tile_8cs_a082f743a62d2d8e13dac8fd38af246d7a21507b40c80068eda19865706fdc2403}
+}]\index{L\+E\+FT@{L\+E\+FT}!Tile.\+cs@{Tile.\+cs}}\index{Tile.\+cs@{Tile.\+cs}!L\+E\+FT@{L\+E\+FT}}\item[{\em 
+L\+E\+FT\hypertarget{_tile_8cs_a082f743a62d2d8e13dac8fd38af246d7a684d325a7303f52e64011467ff5c5758}{}\label{_tile_8cs_a082f743a62d2d8e13dac8fd38af246d7a684d325a7303f52e64011467ff5c5758}
+}]\end{description}
+\end{Desc}
+
+
+Tile.\+cs 파일의 5 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+6 \{
+7     \hyperlink{_tile_8cs_a082f743a62d2d8e13dac8fd38af246d7afbaedde498cdead4f2780217646e9ba1}{UP},
+8     \hyperlink{_tile_8cs_a082f743a62d2d8e13dac8fd38af246d7ac4e0e4e3118472beeb2ae75827450f1f}{DOWN},
+9     \hyperlink{_tile_8cs_a082f743a62d2d8e13dac8fd38af246d7a21507b40c80068eda19865706fdc2403}{RIGHT},
+10     \hyperlink{_tile_8cs_a082f743a62d2d8e13dac8fd38af246d7a684d325a7303f52e64011467ff5c5758}{LEFT}
+11 \}
+\end{DoxyCode}
+\index{Tile.\+cs@{Tile.\+cs}!e\+Tile\+Type@{e\+Tile\+Type}}
+\index{e\+Tile\+Type@{e\+Tile\+Type}!Tile.\+cs@{Tile.\+cs}}
+\subsubsection[{\texorpdfstring{e\+Tile\+Type}{eTileType}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf e\+Tile\+Type}\hspace{0.3cm}{\ttfamily [strong]}}\hypertarget{_tile_8cs_a271bc07be325bca511bcb747e0ff2fda}{}\label{_tile_8cs_a271bc07be325bca511bcb747e0ff2fda}
+\begin{Desc}
+\item[열거형 멤버]\par
+\begin{description}
+\index{N\+O\+R\+M\+AL@{N\+O\+R\+M\+AL}!Tile.\+cs@{Tile.\+cs}}\index{Tile.\+cs@{Tile.\+cs}!N\+O\+R\+M\+AL@{N\+O\+R\+M\+AL}}\item[{\em 
+N\+O\+R\+M\+AL\hypertarget{_tile_8cs_a271bc07be325bca511bcb747e0ff2fdaa1e23852820b9154316c7c06e2b7ba051}{}\label{_tile_8cs_a271bc07be325bca511bcb747e0ff2fdaa1e23852820b9154316c7c06e2b7ba051}
+}]\index{A\+C\+T\+I\+VE@{A\+C\+T\+I\+VE}!Tile.\+cs@{Tile.\+cs}}\index{Tile.\+cs@{Tile.\+cs}!A\+C\+T\+I\+VE@{A\+C\+T\+I\+VE}}\item[{\em 
+A\+C\+T\+I\+VE\hypertarget{_tile_8cs_a271bc07be325bca511bcb747e0ff2fdaa18ff74f43da410c5529f7d6fca84f115}{}\label{_tile_8cs_a271bc07be325bca511bcb747e0ff2fdaa18ff74f43da410c5529f7d6fca84f115}
+}]\index{D\+E\+A\+C\+T\+I\+VE@{D\+E\+A\+C\+T\+I\+VE}!Tile.\+cs@{Tile.\+cs}}\index{Tile.\+cs@{Tile.\+cs}!D\+E\+A\+C\+T\+I\+VE@{D\+E\+A\+C\+T\+I\+VE}}\item[{\em 
+D\+E\+A\+C\+T\+I\+VE\hypertarget{_tile_8cs_a271bc07be325bca511bcb747e0ff2fdaa22cf020c6b8dbd720f63e3865de7d2ca}{}\label{_tile_8cs_a271bc07be325bca511bcb747e0ff2fdaa22cf020c6b8dbd720f63e3865de7d2ca}
+}]\end{description}
+\end{Desc}
+
+
+Tile.\+cs 파일의 13 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+14 \{
+15     \hyperlink{_moveable_object_8cs_a90215797ba850e199f3ef63d7c56f132a1e23852820b9154316c7c06e2b7ba051}{NORMAL},
+16     \hyperlink{_tile_8cs_a271bc07be325bca511bcb747e0ff2fdaa18ff74f43da410c5529f7d6fca84f115}{ACTIVE},
+17     \hyperlink{_tile_8cs_a271bc07be325bca511bcb747e0ff2fdaa22cf020c6b8dbd720f63e3865de7d2ca}{DEACTIVE}
+18 \}
+\end{DoxyCode}

@@ -1,0 +1,4 @@
+<map id="TouchManager" name="TouchManager">
+<area shape="rect" id="node2" href="$class_m_c_n_1_1_mono_singletone.html" title="{MonoSingletone\&lt; TouchManager \&gt;\n|+ Instance\l&#45; _instance\l|# CreatedObjectName()\l}" alt="" coords="5,5,229,97"/>
+<area shape="rect" id="node3" href="$interface_m_c_n_1_1_i_observable.html" title="{IObservable\&lt; eTouchEvent \&gt;\n||+ Subscribe()\l+ Unsubscribe()\l}" alt="" coords="253,5,440,97"/>
+</map>

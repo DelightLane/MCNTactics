@@ -1,0 +1,4 @@
+<map id="MoveableObject.MoveableState.TileTouchAction" name="MoveableObject.MoveableState.TileTouchAction">
+<area shape="rect" id="node2" href="$class_moveable_object_1_1_moveable_state.html#a2e4bcd7c2bac20c8a628d113292d2722" title="MoveableObject.MoveableState.\lGetCurrentType" alt="" coords="260,5,467,47"/>
+<area shape="rect" id="node3" href="$class_moveable_object_1_1_moveable_state.html#a2e9b847c28ea97d1aaca22ddeed3d0d7" title="MoveableObject.MoveableState.\lOnTouchEvent" alt="" coords="260,71,467,112"/>
+</map>

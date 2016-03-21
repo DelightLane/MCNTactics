@@ -1,0 +1,6 @@
+<map id="Tile.TileState" name="Tile.TileState">
+<area shape="rect" id="node4" href="$class_tile_1_1_tile_state___active.html" title="{Tile.TileState_Active\n||+ TileState_Active()\l+ Run()\l+ GetCurrentType()\l+ TouchEvent()\l&#45; SetTileColor()\l}" alt="" coords="5,499,144,635"/>
+<area shape="rect" id="node5" href="$class_tile_1_1_tile_state___deactive.html" title="{Tile.TileState_Deactive\n||+ TileState_Deactive()\l+ Run()\l+ GetCurrentType()\l&#45; SetTileColor()\l}" alt="" coords="169,506,322,627"/>
+<area shape="rect" id="node6" href="$class_tile_1_1_tile_state___normal.html" title="{Tile.TileState_Normal\n||+ TileState_Normal()\l+ Run()\l+ GetCurrentType()\l&#45; SetTileColor()\l}" alt="" coords="346,506,491,627"/>
+<area shape="rect" id="node2" href="$class_m_c_n_1_1_state.html" title="{MCN::State\n|+ Target\l&#45; _target\l|+ State()\l+ Initialize()\l+ Destroy()\l+ Run()\l+ Finish()\l+ Dispose()\l}" alt="" coords="200,131,291,296"/>
+</map>

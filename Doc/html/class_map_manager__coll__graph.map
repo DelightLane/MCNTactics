@@ -1,0 +1,4 @@
+<map id="MapManager" name="MapManager">
+<area shape="rect" id="node2" href="$class_m_c_n_1_1_mono_singletone.html" title="{MCN::MonoSingletone\l\&lt; MapManager \&gt;\n|+ Instance\l&#45; _instance\l|# CreatedObjectName()\l}" alt="" coords="5,13,164,119"/>
+<area shape="rect" id="node3" href="$class_map_creator.html" title="{MapCreator\n||+ CreateTilemap()\l+ GetRoot()\l+ RemoveTilemap()\l&#45; CreateTiles()\l}" alt="" coords="189,5,322,127"/>
+</map>

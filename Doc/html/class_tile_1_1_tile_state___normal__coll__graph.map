@@ -1,0 +1,5 @@
+<map id="Tile.TileState_Normal" name="Tile.TileState_Normal">
+<area shape="rect" id="node2" href="$class_tile_1_1_tile_state.html" title="{TileState\n||+ TileState()\l+ GetCurrentType()\l+ TouchEvent()\l}" alt="" coords="23,472,157,579"/>
+<area shape="rect" id="node3" href="$class_m_c_n_1_1_state.html" title="{MCN::State\n|+ Target\l|+ State()\l+ Initialize()\l+ Destroy()\l+ Run()\l+ Finish()\l+ Dispose()\l}" alt="" coords="45,272,135,423"/>
+<area shape="rect" id="node5" href="$class_tactics_object.html" title="{TacticsObject\n||}" alt="" coords="119,132,221,209"/>
+</map>
