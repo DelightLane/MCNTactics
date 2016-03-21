@@ -26,9 +26,9 @@ void \hyperlink{class_touch_manager_aa68342b07f75f8eda3b420e07f9e4c7b}{Subscribe
 void \hyperlink{class_touch_manager_a2c4ace4b27bef64c2e9496240ee4d676}{Unsubscribe} (\hyperlink{interface_m_c_n_1_1_i_observer}{I\+Observer}$<$ \hyperlink{_touch_manager_8cs_ae33e321a424fe84ba8b2fdb81ad40a68}{e\+Touch\+Event} $>$ observer)
 \item 
 void \hyperlink{interface_m_c_n_1_1_i_observable_a84e57296a612a2d49afbcc7f841ceb0b}{Subscribe} (I\+Observer$<$ T $>$ observer)
-\item 
+\begin{DoxyCompactList}\small\item\em 옵저버 등록 메소드 \end{DoxyCompactList}\item 
 void \hyperlink{interface_m_c_n_1_1_i_observable_a3ff752d344f0b610b1146af7a0fbf067}{Unsubscribe} (I\+Observer$<$ T $>$ observer)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em 옵저버 등록 해제 메소드 \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected 멤버 함수}
 \begin{DoxyCompactItemize}
 \item 
@@ -106,7 +106,11 @@ Touch\+Manager.\+cs 파일의 61 번째 라인에서 정의되었습니다.
 \item[{{\bf I\+Observer}$<$ T $>$}]{observer}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inherited]}}\hypertarget{interface_m_c_n_1_1_i_observable_a84e57296a612a2d49afbcc7f841ceb0b}{}\label{interface_m_c_n_1_1_i_observable_a84e57296a612a2d49afbcc7f841ceb0b}
-\index{Touch\+Manager@{Touch\+Manager}!Subscribe@{Subscribe}}
+
+
+옵저버 등록 메소드 
+
+구현시에는 리스트 등을 활용하여 observer를 등록해둔다. \index{Touch\+Manager@{Touch\+Manager}!Subscribe@{Subscribe}}
 \index{Subscribe@{Subscribe}!Touch\+Manager@{Touch\+Manager}}
 \subsubsection[{\texorpdfstring{Subscribe(\+I\+Observer$<$ e\+Touch\+Event $>$ observer)}{Subscribe(IObserver< eTouchEvent > observer)}}]{\setlength{\rightskip}{0pt plus 5cm}void Touch\+Manager.\+Subscribe (
 \begin{DoxyParamCaption}
@@ -133,7 +137,11 @@ Touch\+Manager.\+cs 파일의 45 번째 라인에서 정의되었습니다.
 \item[{{\bf I\+Observer}$<$ T $>$}]{observer}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inherited]}}\hypertarget{interface_m_c_n_1_1_i_observable_a3ff752d344f0b610b1146af7a0fbf067}{}\label{interface_m_c_n_1_1_i_observable_a3ff752d344f0b610b1146af7a0fbf067}
-\index{Touch\+Manager@{Touch\+Manager}!Unsubscribe@{Unsubscribe}}
+
+
+옵저버 등록 해제 메소드 
+
+등록된 리스트 등에서 해당 observer를 해제한다. \index{Touch\+Manager@{Touch\+Manager}!Unsubscribe@{Unsubscribe}}
 \index{Unsubscribe@{Unsubscribe}!Touch\+Manager@{Touch\+Manager}}
 \subsubsection[{\texorpdfstring{Unsubscribe(\+I\+Observer$<$ e\+Touch\+Event $>$ observer)}{Unsubscribe(IObserver< eTouchEvent > observer)}}]{\setlength{\rightskip}{0pt plus 5cm}void Touch\+Manager.\+Unsubscribe (
 \begin{DoxyParamCaption}
@@ -207,7 +215,7 @@ Touch\+Manager.\+cs 파일의 14 번째 라인에서 정의되었습니다.
 \subsubsection[{\texorpdfstring{Instance}{Instance}}]{\setlength{\rightskip}{0pt plus 5cm}T {\bf M\+C\+N.\+Mono\+Singletone}$<$ T $>$.Instance\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}, {\ttfamily [inherited]}}\hypertarget{class_m_c_n_1_1_mono_singletone_aa50c027cca64cf4ad30c1ee5c83e0b78}{}\label{class_m_c_n_1_1_mono_singletone_aa50c027cca64cf4ad30c1ee5c83e0b78}
 
 
-Singletone.\+cs 파일의 46 번째 라인에서 정의되었습니다.
+Singletone.\+cs 파일의 58 번째 라인에서 정의되었습니다.
 
 
 

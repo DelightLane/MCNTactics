@@ -113,6 +113,9 @@ $(document).ready(function(){initNavTree('interface_m_c_n_1_1_i_observable.html'
 <div class="title">MCN.IObservable&lt; T &gt; 인터페이스 템플릿 참조</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>옵저버 관리자 인터페이스  
+ <a href="interface_m_c_n_1_1_i_observable.html#details">더 자세히 ...</a></p>
 <div class="dynheader">
 MCN.IObservable&lt; T &gt;에 대한 협력 다이어그램:</div>
 <div class="dyncontent">
@@ -122,13 +125,17 @@ MCN.IObservable&lt; T &gt;에 대한 협력 다이어그램:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public 멤버 함수</h2></td></tr>
 <tr class="memitem:a84e57296a612a2d49afbcc7f841ceb0b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_m_c_n_1_1_i_observable.html#a84e57296a612a2d49afbcc7f841ceb0b">Subscribe</a> (<a class="el" href="interface_m_c_n_1_1_i_observer.html">IObserver</a>&lt; T &gt; observer)</td></tr>
+<tr class="memdesc:a84e57296a612a2d49afbcc7f841ceb0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">옵저버 등록 메소드  <a href="#a84e57296a612a2d49afbcc7f841ceb0b">더 자세히 ...</a><br /></td></tr>
 <tr class="separator:a84e57296a612a2d49afbcc7f841ceb0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ff752d344f0b610b1146af7a0fbf067"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_m_c_n_1_1_i_observable.html#a3ff752d344f0b610b1146af7a0fbf067">Unsubscribe</a> (<a class="el" href="interface_m_c_n_1_1_i_observer.html">IObserver</a>&lt; T &gt; observer)</td></tr>
+<tr class="memdesc:a3ff752d344f0b610b1146af7a0fbf067"><td class="mdescLeft">&#160;</td><td class="mdescRight">옵저버 등록 해제 메소드  <a href="#a3ff752d344f0b610b1146af7a0fbf067">더 자세히 ...</a><br /></td></tr>
 <tr class="separator:a3ff752d344f0b610b1146af7a0fbf067"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">상세한 설명</h2>
-<div class="textblock">
-<p><a class="el" href="_i_observable_8cs_source.html">IObservable.cs</a> 파일의 <a class="el" href="_i_observable_8cs_source.html#l00005">5</a> 번째 라인에서 정의되었습니다.</p>
+<div class="textblock"><p>옵저버 관리자 인터페이스 </p>
+<p>옵저버 패턴에서 관찰자들을 관리하는 관리자 인터페이스. </p><dl class="section author"><dt>작성자</dt><dd>Delight </dd></dl>
+
+<p><a class="el" href="_i_observable_8cs_source.html">IObservable.cs</a> 파일의 <a class="el" href="_i_observable_8cs_source.html#l00010">10</a> 번째 라인에서 정의되었습니다.</p>
 </div><h2 class="groupheader">멤버 함수 문서화</h2>
 <a class="anchor" id="a84e57296a612a2d49afbcc7f841ceb0b"></a>
 <div class="memitem">
@@ -143,6 +150,9 @@ Public 멤버 함수</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>옵저버 등록 메소드 </p>
+<p>구현시에는 리스트 등을 활용하여 observer를 등록해둔다. </p>
 
 </div>
 </div>
@@ -159,6 +169,9 @@ Public 멤버 함수</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>옵저버 등록 해제 메소드 </p>
+<p>등록된 리스트 등에서 해당 observer를 해제한다. </p>
 
 </div>
 </div>

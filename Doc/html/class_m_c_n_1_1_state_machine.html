@@ -114,6 +114,9 @@ $(document).ready(function(){initNavTree('class_m_c_n_1_1_state_machine.html',''
 <div class="title">MCN.StateMachine&lt; T &gt; 클래스 템플릿 참조</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>상태 머신 클래스  
+ <a href="class_m_c_n_1_1_state_machine.html#details">더 자세히 ...</a></p>
 <div class="dynheader">
 MCN.StateMachine&lt; T &gt;에 대한 협력 다이어그램:</div>
 <div class="dyncontent">
@@ -139,7 +142,9 @@ Private 속성</h2></td></tr>
 <tr class="separator:a040bf7c13d5127fe983af2ef0a6315ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">상세한 설명</h2>
-<div class="textblock"><div class="typeconstraint">
+<div class="textblock"><p>상태 머신 클래스 </p>
+<p><a class="el" href="class_m_c_n_1_1_state.html" title="상태 추상 클래스 ">State</a> 패턴을 조작하기 위한 has a 클래스. <a class="el" href="class_m_c_n_1_1_state.html" title="상태 추상 클래스 ">State</a> 패턴이 필요한 클래스는 해당 클래스의 인스턴스를 지역 변수로 가진다. </p><dl class="section author"><dt>작성자</dt><dd>Delight </dd></dl>
+<div class="typeconstraint">
 <dl><dt><b>타입 한정자들</b></dt><dd>
 <table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em><a class="el" href="class_m_c_n_1_1_state.html">State</a></em></td><td>&#160;</td></tr>
@@ -149,7 +154,7 @@ Private 속성</h2></td></tr>
 </dl>
 </div>
 
-<p><a class="el" href="_state_8cs_source.html">State.cs</a> 파일의 <a class="el" href="_state_8cs_source.html#l00037">37</a> 번째 라인에서 정의되었습니다.</p>
+<p><a class="el" href="_state_8cs_source.html">State.cs</a> 파일의 <a class="el" href="_state_8cs_source.html#l00049">49</a> 번째 라인에서 정의되었습니다.</p>
 </div><h2 class="groupheader">멤버 함수 문서화</h2>
 <a class="anchor" id="a81eb33948ad947f9ef9c0771542a8c47"></a>
 <div class="memitem">
@@ -165,9 +170,9 @@ Private 속성</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="_state_8cs_source.html">State.cs</a> 파일의 <a class="el" href="_state_8cs_source.html#l00052">52</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        {</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="class_m_c_n_1_1_state_machine.html#a040bf7c13d5127fe983af2ef0a6315ec">_currentState</a> != null)</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            {</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <a class="code" href="class_m_c_n_1_1_state_machine.html#a040bf7c13d5127fe983af2ef0a6315ec">_currentState</a>.Finish();</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            }</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <a class="code" href="class_m_c_n_1_1_state_machine.html#a040bf7c13d5127fe983af2ef0a6315ec">_currentState</a> = <a class="code" href="class_m_c_n_1_1_state_machine.html#adf0f1417aacb073306b88563e7b3d740">_states</a>[stateName];</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="class_m_c_n_1_1_state_machine.html#a040bf7c13d5127fe983af2ef0a6315ec">_currentState</a> != null)</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            {</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <a class="code" href="class_m_c_n_1_1_state_machine.html#a040bf7c13d5127fe983af2ef0a6315ec">_currentState</a>.Run();</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            }</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        }</div><div class="ttc" id="class_m_c_n_1_1_state_machine_html_a040bf7c13d5127fe983af2ef0a6315ec"><div class="ttname"><a href="class_m_c_n_1_1_state_machine.html#a040bf7c13d5127fe983af2ef0a6315ec">MCN.StateMachine._currentState</a></div><div class="ttdeci">T _currentState</div><div class="ttdef"><b>Definition:</b> <a href="_state_8cs_source.html#l00040">State.cs:40</a></div></div>
-<div class="ttc" id="class_m_c_n_1_1_state_machine_html_adf0f1417aacb073306b88563e7b3d740"><div class="ttname"><a href="class_m_c_n_1_1_state_machine.html#adf0f1417aacb073306b88563e7b3d740">MCN.StateMachine._states</a></div><div class="ttdeci">Dictionary&lt; string, T &gt; _states</div><div class="ttdef"><b>Definition:</b> <a href="_state_8cs_source.html#l00039">State.cs:39</a></div></div>
+<p><a class="el" href="_state_8cs_source.html">State.cs</a> 파일의 <a class="el" href="_state_8cs_source.html#l00064">64</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        {</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="class_m_c_n_1_1_state_machine.html#a040bf7c13d5127fe983af2ef0a6315ec">_currentState</a> != null)</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            {</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <a class="code" href="class_m_c_n_1_1_state_machine.html#a040bf7c13d5127fe983af2ef0a6315ec">_currentState</a>.Finish();</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            }</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <a class="code" href="class_m_c_n_1_1_state_machine.html#a040bf7c13d5127fe983af2ef0a6315ec">_currentState</a> = <a class="code" href="class_m_c_n_1_1_state_machine.html#adf0f1417aacb073306b88563e7b3d740">_states</a>[stateName];</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="class_m_c_n_1_1_state_machine.html#a040bf7c13d5127fe983af2ef0a6315ec">_currentState</a> != null)</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            {</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                <a class="code" href="class_m_c_n_1_1_state_machine.html#a040bf7c13d5127fe983af2ef0a6315ec">_currentState</a>.Run();</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            }</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        }</div><div class="ttc" id="class_m_c_n_1_1_state_machine_html_a040bf7c13d5127fe983af2ef0a6315ec"><div class="ttname"><a href="class_m_c_n_1_1_state_machine.html#a040bf7c13d5127fe983af2ef0a6315ec">MCN.StateMachine._currentState</a></div><div class="ttdeci">T _currentState</div><div class="ttdef"><b>Definition:</b> <a href="_state_8cs_source.html#l00052">State.cs:52</a></div></div>
+<div class="ttc" id="class_m_c_n_1_1_state_machine_html_adf0f1417aacb073306b88563e7b3d740"><div class="ttname"><a href="class_m_c_n_1_1_state_machine.html#adf0f1417aacb073306b88563e7b3d740">MCN.StateMachine._states</a></div><div class="ttdeci">Dictionary&lt; string, T &gt; _states</div><div class="ttdef"><b>Definition:</b> <a href="_state_8cs_source.html#l00051">State.cs:51</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -184,8 +189,8 @@ Private 속성</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="_state_8cs_source.html">State.cs</a> 파일의 <a class="el" href="_state_8cs_source.html#l00067">67</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        {</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">foreach</span>(var state <span class="keywordflow">in</span> <a class="code" href="class_m_c_n_1_1_state_machine.html#adf0f1417aacb073306b88563e7b3d740">_states</a>)</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            {</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <span class="keywordflow">if</span>(state.Value != null)</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                {</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                    state.Value.Dispose();</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                }</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            }</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            _states.Clear();</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        }</div><div class="ttc" id="class_m_c_n_1_1_state_machine_html_adf0f1417aacb073306b88563e7b3d740"><div class="ttname"><a href="class_m_c_n_1_1_state_machine.html#adf0f1417aacb073306b88563e7b3d740">MCN.StateMachine._states</a></div><div class="ttdeci">Dictionary&lt; string, T &gt; _states</div><div class="ttdef"><b>Definition:</b> <a href="_state_8cs_source.html#l00039">State.cs:39</a></div></div>
+<p><a class="el" href="_state_8cs_source.html">State.cs</a> 파일의 <a class="el" href="_state_8cs_source.html#l00079">79</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        {</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <span class="keywordflow">foreach</span>(var state <span class="keywordflow">in</span> <a class="code" href="class_m_c_n_1_1_state_machine.html#adf0f1417aacb073306b88563e7b3d740">_states</a>)</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            {</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                <span class="keywordflow">if</span>(state.Value != null)</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                {</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                    state.Value.Dispose();</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                }</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            }</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            _states.Clear();</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        }</div><div class="ttc" id="class_m_c_n_1_1_state_machine_html_adf0f1417aacb073306b88563e7b3d740"><div class="ttname"><a href="class_m_c_n_1_1_state_machine.html#adf0f1417aacb073306b88563e7b3d740">MCN.StateMachine._states</a></div><div class="ttdeci">Dictionary&lt; string, T &gt; _states</div><div class="ttdef"><b>Definition:</b> <a href="_state_8cs_source.html#l00051">State.cs:51</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -202,8 +207,8 @@ Private 속성</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="_state_8cs_source.html">State.cs</a> 파일의 <a class="el" href="_state_8cs_source.html#l00047">47</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        {</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="class_m_c_n_1_1_state_machine.html#a040bf7c13d5127fe983af2ef0a6315ec">_currentState</a>;</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        }</div><div class="ttc" id="class_m_c_n_1_1_state_machine_html_a040bf7c13d5127fe983af2ef0a6315ec"><div class="ttname"><a href="class_m_c_n_1_1_state_machine.html#a040bf7c13d5127fe983af2ef0a6315ec">MCN.StateMachine._currentState</a></div><div class="ttdeci">T _currentState</div><div class="ttdef"><b>Definition:</b> <a href="_state_8cs_source.html#l00040">State.cs:40</a></div></div>
+<p><a class="el" href="_state_8cs_source.html">State.cs</a> 파일의 <a class="el" href="_state_8cs_source.html#l00059">59</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        {</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="class_m_c_n_1_1_state_machine.html#a040bf7c13d5127fe983af2ef0a6315ec">_currentState</a>;</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        }</div><div class="ttc" id="class_m_c_n_1_1_state_machine_html_a040bf7c13d5127fe983af2ef0a6315ec"><div class="ttname"><a href="class_m_c_n_1_1_state_machine.html#a040bf7c13d5127fe983af2ef0a6315ec">MCN.StateMachine._currentState</a></div><div class="ttdeci">T _currentState</div><div class="ttdef"><b>Definition:</b> <a href="_state_8cs_source.html#l00052">State.cs:52</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -231,8 +236,8 @@ Private 속성</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="_state_8cs_source.html">State.cs</a> 파일의 <a class="el" href="_state_8cs_source.html#l00042">42</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        {</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <a class="code" href="class_m_c_n_1_1_state_machine.html#adf0f1417aacb073306b88563e7b3d740">_states</a>.Add(stateName, state);</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        }</div><div class="ttc" id="class_m_c_n_1_1_state_machine_html_adf0f1417aacb073306b88563e7b3d740"><div class="ttname"><a href="class_m_c_n_1_1_state_machine.html#adf0f1417aacb073306b88563e7b3d740">MCN.StateMachine._states</a></div><div class="ttdeci">Dictionary&lt; string, T &gt; _states</div><div class="ttdef"><b>Definition:</b> <a href="_state_8cs_source.html#l00039">State.cs:39</a></div></div>
+<p><a class="el" href="_state_8cs_source.html">State.cs</a> 파일의 <a class="el" href="_state_8cs_source.html#l00054">54</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        {</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <a class="code" href="class_m_c_n_1_1_state_machine.html#adf0f1417aacb073306b88563e7b3d740">_states</a>.Add(stateName, state);</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div><div class="ttc" id="class_m_c_n_1_1_state_machine_html_adf0f1417aacb073306b88563e7b3d740"><div class="ttname"><a href="class_m_c_n_1_1_state_machine.html#adf0f1417aacb073306b88563e7b3d740">MCN.StateMachine._states</a></div><div class="ttdeci">Dictionary&lt; string, T &gt; _states</div><div class="ttdef"><b>Definition:</b> <a href="_state_8cs_source.html#l00051">State.cs:51</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -255,7 +260,7 @@ Private 속성</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="_state_8cs_source.html">State.cs</a> 파일의 <a class="el" href="_state_8cs_source.html#l00040">40</a> 번째 라인에서 정의되었습니다.</p>
+<p><a class="el" href="_state_8cs_source.html">State.cs</a> 파일의 <a class="el" href="_state_8cs_source.html#l00052">52</a> 번째 라인에서 정의되었습니다.</p>
 
 </div>
 </div>
@@ -277,7 +282,7 @@ Private 속성</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="_state_8cs_source.html">State.cs</a> 파일의 <a class="el" href="_state_8cs_source.html#l00039">39</a> 번째 라인에서 정의되었습니다.</p>
+<p><a class="el" href="_state_8cs_source.html">State.cs</a> 파일의 <a class="el" href="_state_8cs_source.html#l00051">51</a> 번째 라인에서 정의되었습니다.</p>
 
 </div>
 </div>
