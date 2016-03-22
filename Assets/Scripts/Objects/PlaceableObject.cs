@@ -2,7 +2,7 @@
 using System;
 using System.Collections;
 
-public class PlaceableObject : TacticsObject, IDisposable, ITileActive
+public class PlaceableObject : MCN.DecoInstance, IDisposable
 {
     protected Tile _placedTile;
 
@@ -60,6 +60,4 @@ public class PlaceableObject : TacticsObject, IDisposable, ITileActive
     {
         GameManager.Instance.SelectedObj = null;
     }
-
-    public virtual void TileTouchAction(Tile activeTile) { }
 }

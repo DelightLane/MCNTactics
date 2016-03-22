@@ -3,12 +3,17 @@ using System.Collections;
 
 public class GameManager : MCN.Singletone<GameManager>
 {
-    private PlaceableObject _selectedObj;
+    private TacticsObject _selectedObj;
 
-    public PlaceableObject SelectedObj
+    public TacticsObject SelectedObj
     {
         get
         {
+            if(_selectedObj is MCN.DecoInstance)
+            {
+                return (_selectedObj as MCN.DecoInstance).Get;
+            }
+
             return _selectedObj;
         }
 

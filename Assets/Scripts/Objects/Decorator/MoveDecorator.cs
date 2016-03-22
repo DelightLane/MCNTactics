@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System;
-using System.Collections;
+using System.Collections.Generic;
 
 public enum eMoveableType
 {
@@ -8,7 +8,7 @@ public enum eMoveableType
     MOVE
 }
 
-public class MoveableObject : PlaceableObject, MCN.IObserver<eTouchEvent>
+public class MoveDecorator : MCN.Decorator, MCN.IObserver<eTouchEvent>
 {
     [SerializeField]
     private int moveRange = 0;
@@ -20,15 +20,15 @@ public class MoveableObject : PlaceableObject, MCN.IObserver<eTouchEvent>
     {
         public MoveableState(TacticsObject target) : base(target)
         {
-            var moveable = target as MoveableObject;
+            var moveable = target as MoveDecorator;
 
-            if(moveable != null && moveable._moveableStateMachine != null)
+            if (moveable != null && moveable._moveableStateMachine != null)
             {
                 moveable._moveableStateMachine.StorageState(GetCurrentType().ToString(), this);
             }
         }
 
-        public virtual void TileTouchAction(Tile activeTile) { }
+        public virtual void Interactive(Tile activeTile) { }
 
         public abstract eMoveableType GetCurrentType();
 
@@ -46,45 +46,65 @@ public class MoveableObject : PlaceableObject, MCN.IObserver<eTouchEvent>
 
         public override void OnTouchEvent()
         {
-            var moveable = Target as MoveableObject;
+            var moveable = Target as MoveDecorator;
 
             if (moveable != null)
             {
-                if (moveable.IsSelected())
+                var placeable = moveable.DecoTarget as PlaceableObject;
+
+                if (placeable != null)
                 {
-                    moveable.ChangeMoveableState(eMoveableType.NORMAL);
+                    if (placeable.IsSelected())
+                    {
+                        moveable.ChangeState(eMoveableType.NORMAL);
+                    }
                 }
             }
         }
 
         public override void Run()
         {
-            var moveable = Target as MoveableObject;
+            var moveable = Target as MoveDecorator;
 
             if (moveable != null)
             {
-                moveable.Select();
+                var placeable = moveable.DecoTarget as PlaceableObject;
 
-                if (moveable._placedTile != null)
+                if (placeable != null)
                 {
-                    MapManager.Instance.ChangeAllTileState(eTileType.DEACTIVE);
+                    placeable.Select();
 
-                    moveable._placedTile.ShowChainActiveTile(moveable.moveRange);
+                    if (placeable.GetPlacedTile() != null)
+                    {
+                        MapManager.Instance.ChangeAllTileState(eTileType.DEACTIVE);
+
+                        var placedTile = placeable.GetPlacedTile();
+
+                        placedTile.ShowChainActiveTile(moveable.moveRange);
+                    }
                 }
             }
         }
 
-        public override void TileTouchAction(Tile activeTile)
+        public override void Interactive(Tile activeTile)
         {
-            var moveable = Target as MoveableObject;
+            var moveable = Target as MoveDecorator;
 
-            if(moveable != null)
+            if (moveable != null)
             {
-                bool isSuccess = activeTile.AttachObject(moveable);
+                var placeable = moveable.DecoTarget as PlaceableObject;
 
-                if (isSuccess)
+                if (placeable != null)
                 {
-                    moveable.ChangeMoveableState(eMoveableType.NORMAL);
+                    bool isSuccess = activeTile.AttachObject(placeable);
+
+                    if (isSuccess)
+                    {
+                        if (moveable != null)
+                        {
+                            moveable.ChangeState(eMoveableType.NORMAL);
+                        }
+                    }
                 }
             }
         }
@@ -101,26 +121,31 @@ public class MoveableObject : PlaceableObject, MCN.IObserver<eTouchEvent>
 
         public override void OnTouchEvent()
         {
-            var moveable = Target as MoveableObject;
+            var moveable = Target as MoveDecorator;
 
             if (moveable != null)
             {
                 if (GameManager.Instance.SelectedObj == null)
                 {
-                    moveable.ChangeMoveableState(eMoveableType.MOVE);
+                    moveable.ChangeState(eMoveableType.MOVE);
                 }
             }
         }
 
         public override void Run()
         {
-            var moveable = Target as MoveableObject;
+            var moveable = Target as MoveDecorator;
 
             if (moveable != null)
             {
-                moveable.Deselect();
+                var placeable = moveable.DecoTarget as PlaceableObject;
 
-                MapManager.Instance.ChangeAllTileState(eTileType.NORMAL);
+                if (placeable != null)
+                {
+                    placeable.Deselect();
+
+                    MapManager.Instance.ChangeAllTileState(eTileType.NORMAL);
+                }
             }
         }
     }
@@ -132,7 +157,7 @@ public class MoveableObject : PlaceableObject, MCN.IObserver<eTouchEvent>
 
         StorageStates();
 
-        ChangeMoveableState(eMoveableType.NORMAL);
+        ChangeState(eMoveableType.NORMAL);
     }
 
     void Destroy()
@@ -146,21 +171,11 @@ public class MoveableObject : PlaceableObject, MCN.IObserver<eTouchEvent>
         new MoveableState_Move(this);
     }
 
-    public override void TileTouchAction(Tile activeTile)
-    {
-        var state = GetCurrentMoveableState();
-
-        if (state != null)
-        {
-            state.TileTouchAction(activeTile);
-        }
-    }
-
     public void OnNext(eTouchEvent touchEvent)
     {
         if (touchEvent == eTouchEvent.TOUCH)
         {
-            var state = GetCurrentMoveableState();
+            var state = GetCurrentState();
 
             if (state != null)
             {
@@ -169,10 +184,10 @@ public class MoveableObject : PlaceableObject, MCN.IObserver<eTouchEvent>
         }
     }
 
-    private MoveableState GetCurrentMoveableState()
+    private MoveableState GetCurrentState()
     {
         var state = _moveableStateMachine.GetCurrentState();
-        if(state != null && state is MoveableState)
+        if (state != null && state is MoveableState)
         {
             return state as MoveableState;
         }
@@ -180,11 +195,11 @@ public class MoveableObject : PlaceableObject, MCN.IObserver<eTouchEvent>
         throw new UnityException("don't have moveable state.");
     }
 
-    private eMoveableType GetMoveableCurrentStateType()
+    private eMoveableType GetCurrentStateType()
     {
-        var state = GetCurrentMoveableState();
+        var state = GetCurrentState();
 
-        if(state != null)
+        if (state != null)
         {
             return state.GetCurrentType();
         }
@@ -192,11 +207,26 @@ public class MoveableObject : PlaceableObject, MCN.IObserver<eTouchEvent>
         throw new UnityException("don't have moveable state.");
     }
 
-    private void ChangeMoveableState(eMoveableType type)
+    private void ChangeState(eMoveableType type)
     {
-        if(_moveableStateMachine != null)
+        if (_moveableStateMachine != null)
         {
             _moveableStateMachine.ChangeState(type.ToString());
+        }
+    }
+
+    protected override void DecoInteractive(TacticsObject interactTarget)
+    {
+        var tile = interactTarget as Tile;
+
+        if (tile != null)
+        {
+            var state = GetCurrentState();
+
+            if (state != null)
+            {
+                state.Interactive(tile);
+            }
         }
     }
 }

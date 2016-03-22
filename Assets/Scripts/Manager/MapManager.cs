@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using System;
+using System.Reflection;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -14,6 +16,7 @@ public class MapManager : MCN.MonoSingletone<MapManager> {
     {
         public Vector2 pos;
         public string prefabName;
+        public List<string> decoClassName;
     }
 
 #if UNITY_EDITOR
@@ -109,12 +112,42 @@ public class MapManager : MCN.MonoSingletone<MapManager> {
 
                     if (placeableObj != null)
                     {
+                        DecorateObject(ref targetObj, objInfo);
                         this.AttachObject(objInfo.pos, placeableObj);
                     }
                     else
                     {
                         Debug.LogWarning(string.Format("Prefab {0} don't have 'PlaceableObject'", objInfo.prefabName));
                     }
+                }
+            }
+        }
+    }
+
+    private void DecorateObject(ref GameObject obj, PlaceInfo info)
+    {
+        var decoTarget = obj.GetComponent<PlaceableObject>() as MCN.Decoable;
+
+        if (decoTarget != null)
+        {
+            foreach (var decoName in info.decoClassName)
+            {
+                Assembly assembly = Assembly.GetExecutingAssembly();
+                try
+                {
+                    var rawDeco = obj.AddComponent(assembly.GetType(decoName));
+
+                    var deco = rawDeco as MCN.Decorator;
+                    if (deco != null)
+                    {
+                        deco.Decoration(decoTarget);
+
+                        decoTarget = deco;
+                    }
+                }
+                catch(Exception e)
+                {
+                    throw new UnityException(e.ToString());
                 }
             }
         }

@@ -73,7 +73,10 @@ namespace MCN
                 return _instance;
             }
         }
-
+        /**
+        *@brief 모노 싱글톤의 오브젝트 이름
+        *@details 싱글톤 객체가 생성될 때 생성되는 GameObject의 객체 이름을 리턴한다.
+        */
         protected abstract string CreatedObjectName();
     }
 }

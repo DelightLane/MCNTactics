@@ -17,12 +17,6 @@ public enum eTileType
     DEACTIVE
 }
 
-// Tile이 active 상태일 때 실행하는 액션
-public interface ITileActive
-{
-    void TileTouchAction(Tile activeTile);
-}
-
 public class Tile : TacticsObject, IDisposable, MCN.IObserver<eTouchEvent>
 {
     private Vector2 _position;
@@ -110,7 +104,7 @@ public class Tile : TacticsObject, IDisposable, MCN.IObserver<eTouchEvent>
         {
             if (touch == eTouchEvent.TOUCH)
             {
-                var selected = GameManager.Instance.SelectedObj as ITileActive;
+                var selected = GameManager.Instance.SelectedObj as MCN.Decoable;
 
                 if(selected != null)
                 {
@@ -118,7 +112,7 @@ public class Tile : TacticsObject, IDisposable, MCN.IObserver<eTouchEvent>
 
                     if (tile != null)
                     {
-                        selected.TileTouchAction(tile);
+                        selected.Interactive(tile);
                     }
                 }
             }
