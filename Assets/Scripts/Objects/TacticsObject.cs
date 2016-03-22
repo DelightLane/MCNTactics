@@ -4,6 +4,7 @@ using System.Collections;
 // 본 게임 내부의 모든 오브젝트 컨트롤 클래스들의 최상위 부모 클래스
 public abstract class TacticsObject : MonoBehaviour
 {
+    #region operator overloading
     // Decoable == 연산자 오버로딩 대응을 위한 연산자 오버로딩
     public static bool operator ==(TacticsObject lt, TacticsObject rt)
     {
@@ -44,7 +45,7 @@ public abstract class TacticsObject : MonoBehaviour
     {
         return base.GetHashCode();
     }
-
+    #endregion
 
     public virtual void Interactive(TacticsObject interactTarget) { }
 }

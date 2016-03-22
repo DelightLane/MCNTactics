@@ -40,7 +40,7 @@ public class Tile : TacticsObject, IDisposable, MCN.IObserver<eTouchEvent>
 
         public abstract eTileType GetCurrentType();
 
-        public virtual void TouchEvent(eTouchEvent touch) { }
+        public virtual void OnTouchEvent(eTouchEvent touch) { }
     }
 
     private class TileState_Normal : TileState
@@ -100,20 +100,15 @@ public class Tile : TacticsObject, IDisposable, MCN.IObserver<eTouchEvent>
             }
         }
 
-        public override void TouchEvent(eTouchEvent touch)
+        public override void OnTouchEvent(eTouchEvent touch)
         {
             if (touch == eTouchEvent.TOUCH)
             {
-                var selected = GameManager.Instance.SelectedObj as MCN.Decoable;
+                var selected = GameManager.Instance.SelectedObj;
 
-                if(selected != null)
+                if (selected != null)
                 {
-                    var tile = Target as Tile;
-
-                    if (tile != null)
-                    {
-                        selected.Interactive(tile);
-                    }
+                    selected.Interactive(Target);
                 }
             }
         }
@@ -340,6 +335,6 @@ public class Tile : TacticsObject, IDisposable, MCN.IObserver<eTouchEvent>
 
     public void OnNext(eTouchEvent data)
     {
-        GetCurrentState().TouchEvent(data);
+        GetCurrentState().OnTouchEvent(data);
     }
 }

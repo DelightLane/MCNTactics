@@ -5,6 +5,7 @@ namespace MCN
 {
     public abstract class Decoable : TacticsObject
     {
+        #region operator overloading
         // 항상 DecoInstance끼리 비교하게 하기 위해 == 연산자 오버로딩
         public static bool operator ==(Decoable lt, Decoable rt)
         {
@@ -55,6 +56,7 @@ namespace MCN
         {
             return base.GetHashCode();
         }
+        #endregion
     }
 
     public class DecoInstance : Decoable
@@ -69,6 +71,7 @@ namespace MCN
             }
         }
 
+        #region operator overloading
         public static bool operator ==(DecoInstance lt, Decorator rt)
         {
             if (System.Object.ReferenceEquals(lt, rt))
@@ -113,6 +116,7 @@ namespace MCN
         {
             return base.GetHashCode();
         }
+        #endregion
 
         public void Decorated(Decorator deco)
         {
@@ -150,6 +154,7 @@ namespace MCN
             }
         }
 
+        #region operator overloading
         public static bool operator ==(Decorator lt, DecoInstance rt)
         {
             if (System.Object.ReferenceEquals(lt, rt))
@@ -194,6 +199,7 @@ namespace MCN
         {
             return base.GetHashCode();
         }
+        #endregion
 
         public override void Interactive(TacticsObject interactTarget)
         {
