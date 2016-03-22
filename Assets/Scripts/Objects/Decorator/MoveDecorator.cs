@@ -10,9 +10,6 @@ public enum eMoveableType
 
 public class MoveDecorator : MCN.Decorator, MCN.IObserver<eTouchEvent>
 {
-    [SerializeField]
-    private int moveRange = 0;
-
     #region state
     private MCN.StateMachine<MoveableState> _moveableStateMachine = new MCN.StateMachine<MoveableState>();
 
@@ -80,7 +77,7 @@ public class MoveDecorator : MCN.Decorator, MCN.IObserver<eTouchEvent>
 
                         var placedTile = placeable.GetPlacedTile();
 
-                        placedTile.ShowChainActiveTile(moveable.moveRange);
+                        placedTile.ShowChainActiveTile(moveable.Weight);
                     }
                 }
             }

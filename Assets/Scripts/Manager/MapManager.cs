@@ -16,7 +16,14 @@ public class MapManager : MCN.MonoSingletone<MapManager> {
     {
         public Vector2 pos;
         public string prefabName;
-        public List<string> decoClassName;
+        public List<DecoClassInfo> decoClassInfo;
+    }
+
+    [System.Serializable]
+    public class DecoClassInfo
+    {
+        public string className;
+        public int weight;
     }
 
 #if UNITY_EDITOR
@@ -130,17 +137,18 @@ public class MapManager : MCN.MonoSingletone<MapManager> {
 
         if (decoTarget != null)
         {
-            foreach (var decoName in info.decoClassName)
+            foreach (var decoInfo in info.decoClassInfo)
             {
                 Assembly assembly = Assembly.GetExecutingAssembly();
                 try
                 {
-                    var rawDeco = obj.AddComponent(assembly.GetType(decoName));
+                    var rawDeco = obj.AddComponent(assembly.GetType(decoInfo.className));
 
                     var deco = rawDeco as MCN.Decorator;
                     if (deco != null)
                     {
                         deco.Decoration(decoTarget);
+                        deco.Weight = decoInfo.weight;
 
                         decoTarget = deco;
                     }

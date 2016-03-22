@@ -1,4 +1,5 @@
-﻿using System;
+﻿using UnityEngine;
+using System;
 using System.Collections.Generic;
 
 namespace MCN
@@ -126,6 +127,11 @@ namespace MCN
 
     public abstract class Decorator : Decoable
     {
+        // 각 데코레이터 별로 필요한 가중치를 설정한다.
+        // ex) MoveDecorator에서 weight는 이동 범위이다.
+        [SerializeField]
+        private int _weight = 0;
+
         private Decoable _decoTarget;
 
         // 최상위를 리턴시킨다.
@@ -139,6 +145,18 @@ namespace MCN
                 }
 
                 return _decoTarget;
+            }
+        }
+
+        public int Weight
+        {
+            get
+            {
+                return _weight;
+            }
+            set
+            {
+                _weight = value;
             }
         }
 
