@@ -129,12 +129,8 @@ GameManager에 대한 협력 다이어그램:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_game_manager__coll__graph.png" border="0" usemap="#_game_manager_coll__map" alt="Collaboration graph"/></div>
 <map name="_game_manager_coll__map" id="_game_manager_coll__map">
-<area shape="rect" id="node2" href="class_m_c_n_1_1_singletone.html" title="{MCN::Singletone\&lt; GameManager \&gt;\n|+ Instance\l# _instance\l|&#45; CreateInstance()\l}" alt="" coords="5,310,235,402"/>
-<area shape="rect" id="node3" href="class_placeable_object.html" title="{PlaceableObject\n||+ Attach()\l+ Detach()\l+ GetPlacedTile()\l+ Dispose()\l+ IsSelected()\l+ Select()\l+ Deselect()\l+ TileTouchAction()\l&#45; Place()\l}" alt="" coords="259,259,394,453"/>
-<area shape="rect" id="node8" href="class_tile.html" title="{Tile\n|+ TILE_SIZE\l&#45; _position\l|+ Dispose()\l+ SetPosition()\l+ GetAttachObject()\l+ AttachObject()\l+ DetachObject()\l+ GetClosedTiles()\l+ GetClosedTile()\l+ ShowChainActiveTile()\l+ ChangeState()\l+ OnNext()\l+ CreateTile()\l&#45; Tile()\l&#45; Awake()\l&#45; StorageStates()\l&#45; GetCurrentState()\l}" alt="" coords="495,516,657,813"/>
-<area shape="rect" id="node4" href="class_tactics_object.html" title="{TacticsObject\n||}" alt="" coords="511,132,614,209"/>
-<area shape="rect" id="node7" href="interface_i_tile_active.html" title="{ITileActive\n||+ TileTouchAction()\l}" alt="" coords="259,132,394,209"/>
-<area shape="rect" id="node9" href="interface_m_c_n_1_1_i_observer.html" title="{MCN::IObserver\&lt; eTouchEvent \&gt;\n||+ OnNext()\l}" alt="" coords="419,317,629,395"/>
+<area shape="rect" id="node2" href="class_m_c_n_1_1_singletone.html" title="{MCN::Singletone\&lt; GameManager \&gt;\n|+ Instance\l# _instance\l|&#45; CreateInstance()\l}" alt="" coords="5,161,235,253"/>
+<area shape="rect" id="node3" href="class_tactics_object.html" title="{TacticsObject\n||+ Equals()\l+ GetHashCode()\l+ Interactive()\l+ OnTouchEvent()\l+ operator==()\l+ operator!=()\l}" alt="" coords="259,132,386,283"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -145,8 +141,8 @@ GameManager에 대한 협력 다이어그램:</div>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 속성</h2></td></tr>
-<tr class="memitem:afe043cc0216cce9ef00ddff0413e6edf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_placeable_object.html">PlaceableObject</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#afe043cc0216cce9ef00ddff0413e6edf">SelectedObj</a><code> [get, set]</code></td></tr>
-<tr class="separator:afe043cc0216cce9ef00ddff0413e6edf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a708d9fb61ea9f34e4c3a55d34c31acf2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_tactics_object.html">TacticsObject</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a708d9fb61ea9f34e4c3a55d34c31acf2">SelectedObj</a><code> [get, set]</code></td></tr>
+<tr class="separator:a708d9fb61ea9f34e4c3a55d34c31acf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46dbbebd93e96a9592a9803c51f35602"><td class="memItemLeft" align="right" valign="top">static T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_c_n_1_1_singletone.html#a46dbbebd93e96a9592a9803c51f35602">Instance</a><code> [get]</code></td></tr>
 <tr class="separator:a46dbbebd93e96a9592a9803c51f35602"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -157,8 +153,8 @@ Private 멤버 함수</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private 속성</h2></td></tr>
-<tr class="memitem:a91b01fa0f592596b6129866dedccd015"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_placeable_object.html">PlaceableObject</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a91b01fa0f592596b6129866dedccd015">_selectedObj</a></td></tr>
-<tr class="separator:a91b01fa0f592596b6129866dedccd015"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a9b1c2a22af163ddb89c8a55d2f1603"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_tactics_object.html">TacticsObject</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a5a9b1c2a22af163ddb89c8a55d2f1603">_selectedObj</a></td></tr>
+<tr class="separator:a5a9b1c2a22af163ddb89c8a55d2f1603"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">상세한 설명</h2>
 <div class="textblock">
@@ -185,8 +181,8 @@ Private 속성</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="_game_manager_8cs_source.html">GameManager.cs</a> 파일의 <a class="el" href="_game_manager_8cs_source.html#l00021">21</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{}</div></div><!-- fragment -->
+<p><a class="el" href="_game_manager_8cs_source.html">GameManager.cs</a> 파일의 <a class="el" href="_game_manager_8cs_source.html#l00026">26</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{}</div></div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">멤버 데이타 문서화</h2>
@@ -212,7 +208,7 @@ Private 속성</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a91b01fa0f592596b6129866dedccd015"></a>
+<a class="anchor" id="a5a9b1c2a22af163ddb89c8a55d2f1603"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -220,7 +216,7 @@ Private 속성</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_placeable_object.html">PlaceableObject</a> GameManager._selectedObj</td>
+          <td class="memname"><a class="el" href="class_tactics_object.html">TacticsObject</a> GameManager._selectedObj</td>
         </tr>
       </table>
   </td>
@@ -257,7 +253,7 @@ Private 속성</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="afe043cc0216cce9ef00ddff0413e6edf"></a>
+<a class="anchor" id="a708d9fb61ea9f34e4c3a55d34c31acf2"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -265,7 +261,7 @@ Private 속성</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_placeable_object.html">PlaceableObject</a> GameManager.SelectedObj</td>
+          <td class="memname"><a class="el" href="class_tactics_object.html">TacticsObject</a> GameManager.SelectedObj</td>
         </tr>
       </table>
   </td>

@@ -1,0 +1,8 @@
+<map id="Tile.Tile" name="Tile.Tile">
+<area shape="rect" id="node2" href="$class_tile_1_1_tile_state.html#a074f350ff6dd6d5456fdb800b9402952" title="Tile.TileState.TileState" alt="" coords="129,5,281,32"/>
+<area shape="rect" id="node5" href="$class_tile_1_1_tile_state___normal.html#a81d8bc6e280e6143ff42a292e863307e" title="Tile.TileState_Normal.Set\lTileColor" alt="" coords="120,57,289,98"/>
+<area shape="rect" id="node6" href="$class_tile_1_1_tile_state___active.html#a89a5859b28fa5ad021e8dcee572aacc9" title="Tile.TileState_Active.Set\lTileColor" alt="" coords="123,122,286,163"/>
+<area shape="rect" id="node7" href="$class_tile_1_1_tile_state___deactive.html#ac0b9d7d4a64b2c320eeb2679fc6ad459" title="Tile.TileState_Deactive.\lSetTileColor" alt="" coords="126,187,283,229"/>
+<area shape="rect" id="node3" href="$class_tile.html#ae37e08e39263e766fdc612de94fb7a0d" title="Tile.GetCurrentState" alt="" coords="337,5,477,32"/>
+<area shape="rect" id="node4" href="$class_tile.html#a6133171796d47353aa5d57cd336e0a07" title="Tile.OnNext" alt="" coords="525,5,616,32"/>
+</map>

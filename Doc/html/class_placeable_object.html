@@ -108,7 +108,9 @@ $(document).ready(function(){initNavTree('class_placeable_object.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public 멤버 함수</a> &#124;
+<a href="#pub-static-methods">정적 Public 멤버 함수</a> &#124;
 <a href="#pro-attribs">Protected 속성</a> &#124;
+<a href="#properties">속성</a> &#124;
 <a href="#pri-methods">Private 멤버 함수</a> &#124;
 <a href="class_placeable_object-members.html">모든 멤버 목록</a>  </div>
   <div class="headertitle">
@@ -119,22 +121,13 @@ $(document).ready(function(){initNavTree('class_placeable_object.html','');});
 PlaceableObject에 대한 상속 다이어그램 : </div>
 <div class="dyncontent">
 <div class="center"><img src="class_placeable_object__inherit__graph.png" border="0" usemap="#_placeable_object_inherit__map" alt="Inheritance graph"/></div>
-<map name="_placeable_object_inherit__map" id="_placeable_object_inherit__map">
-<area shape="rect" id="node6" href="class_moveable_object.html" title="{MoveableObject\n|&#45; moveRange\l&#45; _moveableStateMachine\l|+ TileTouchAction()\l+ OnNext()\l&#45; Awake()\l&#45; Destroy()\l&#45; StorageStates()\l&#45; GetCurrentMoveableState()\l&#45; GetMoveableCurrentStateType()\l&#45; ChangeMoveableState()\l}" alt="" coords="73,499,288,693"/>
-<area shape="rect" id="node2" href="class_tactics_object.html" title="{TacticsObject\n||}" alt="" coords="9,131,112,208"/>
-<area shape="rect" id="node5" href="interface_i_tile_active.html" title="{ITileActive\n||+ TileTouchAction()\l}" alt="" coords="249,131,384,208"/>
-</map>
+<!-- MAP 0 -->
 </div>
 <div class="dynheader">
 PlaceableObject에 대한 협력 다이어그램:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_placeable_object__coll__graph.png" border="0" usemap="#_placeable_object_coll__map" alt="Collaboration graph"/></div>
-<map name="_placeable_object_coll__map" id="_placeable_object_coll__map">
-<area shape="rect" id="node6" href="class_tile.html" title="{Tile\n|+ TILE_SIZE\l&#45; _position\l|+ Dispose()\l+ SetPosition()\l+ GetAttachObject()\l+ AttachObject()\l+ DetachObject()\l+ GetClosedTiles()\l+ GetClosedTile()\l+ ShowChainActiveTile()\l+ ChangeState()\l+ OnNext()\l+ CreateTile()\l&#45; Tile()\l&#45; Awake()\l&#45; StorageStates()\l&#45; GetCurrentState()\l}" alt="" coords="193,516,355,813"/>
-<area shape="rect" id="node2" href="class_tactics_object.html" title="{TacticsObject\n||}" alt="" coords="9,132,112,209"/>
-<area shape="rect" id="node5" href="interface_i_tile_active.html" title="{ITileActive\n||+ TileTouchAction()\l}" alt="" coords="136,132,271,209"/>
-<area shape="rect" id="node7" href="interface_m_c_n_1_1_i_observer.html" title="{MCN::IObserver\&lt; eTouchEvent \&gt;\n||+ OnNext()\l}" alt="" coords="361,317,571,395"/>
-</map>
+<!-- MAP 1 -->
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -153,13 +146,43 @@ Public 멤버 함수</h2></td></tr>
 <tr class="separator:a019818f3f6c6eb715fed163efa921f5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c1248b1f9981ddbf68e6f70a6498f3d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_placeable_object.html#a0c1248b1f9981ddbf68e6f70a6498f3d">Deselect</a> ()</td></tr>
 <tr class="separator:a0c1248b1f9981ddbf68e6f70a6498f3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae61aaa6cf5c16ca879efe8cba08fdfcf"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_placeable_object.html#ae61aaa6cf5c16ca879efe8cba08fdfcf">TileTouchAction</a> (<a class="el" href="class_tile.html">Tile</a> activeTile)</td></tr>
-<tr class="separator:ae61aaa6cf5c16ca879efe8cba08fdfcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac327fa53871e183c0e46ac9c66ba00bc"><td class="memItemLeft" align="right" valign="top">override bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_c_n_1_1_deco_instance.html#ac327fa53871e183c0e46ac9c66ba00bc">Equals</a> (object o)</td></tr>
+<tr class="separator:ac327fa53871e183c0e46ac9c66ba00bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a179363468337afa0d1401ff9da1813f0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_c_n_1_1_deco_instance.html#a179363468337afa0d1401ff9da1813f0">Equals</a> (Decorator o)</td></tr>
+<tr class="separator:a179363468337afa0d1401ff9da1813f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8768bdf4ece9568cc120411c286bfb5"><td class="memItemLeft" align="right" valign="top">override int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_c_n_1_1_deco_instance.html#ab8768bdf4ece9568cc120411c286bfb5">GetHashCode</a> ()</td></tr>
+<tr class="separator:ab8768bdf4ece9568cc120411c286bfb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6c8520c7bb40840651026e3693afcb4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_c_n_1_1_deco_instance.html#af6c8520c7bb40840651026e3693afcb4">Decorated</a> (Decorator deco)</td></tr>
+<tr class="separator:af6c8520c7bb40840651026e3693afcb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f94ed01497a7072a2785163f4cbc57b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tactics_object.html#a5f94ed01497a7072a2785163f4cbc57b">Interactive</a> (<a class="el" href="class_tactics_object.html">TacticsObject</a> interactTarget)</td></tr>
+<tr class="separator:a5f94ed01497a7072a2785163f4cbc57b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0353d47981c71db7fe32bd414f025e9b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tactics_object.html#a0353d47981c71db7fe32bd414f025e9b">OnTouchEvent</a> (<a class="el" href="_touch_manager_8cs.html#ae33e321a424fe84ba8b2fdb81ad40a68">eTouchEvent</a> touch)</td></tr>
+<tr class="separator:a0353d47981c71db7fe32bd414f025e9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+정적 Public 멤버 함수</h2></td></tr>
+<tr class="memitem:abc697d911069827ae8ead07cd33ee2b9"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_c_n_1_1_deco_instance.html#abc697d911069827ae8ead07cd33ee2b9">operator==</a> (DecoInstance lt, Decorator rt)</td></tr>
+<tr class="separator:abc697d911069827ae8ead07cd33ee2b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6004bbc5f208c3031388c9d6e8f8359b"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_c_n_1_1_decoable.html#a6004bbc5f208c3031388c9d6e8f8359b">operator==</a> (Decoable lt, Decoable rt)</td></tr>
+<tr class="separator:a6004bbc5f208c3031388c9d6e8f8359b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18f2979a4bf81dc755fbc17e425809f0"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tactics_object.html#a18f2979a4bf81dc755fbc17e425809f0">operator==</a> (<a class="el" href="class_tactics_object.html">TacticsObject</a> lt, <a class="el" href="class_tactics_object.html">TacticsObject</a> rt)</td></tr>
+<tr class="separator:a18f2979a4bf81dc755fbc17e425809f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34da62189ea05cbf8e93d50b1132f306"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_c_n_1_1_deco_instance.html#a34da62189ea05cbf8e93d50b1132f306">operator!=</a> (DecoInstance lt, Decorator rt)</td></tr>
+<tr class="separator:a34da62189ea05cbf8e93d50b1132f306"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa75e4102ebd7265f577028b407534d27"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_c_n_1_1_decoable.html#aa75e4102ebd7265f577028b407534d27">operator!=</a> (Decoable lt, Decoable rt)</td></tr>
+<tr class="separator:aa75e4102ebd7265f577028b407534d27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49e235618a22126faa6271243cd89710"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tactics_object.html#a49e235618a22126faa6271243cd89710">operator!=</a> (<a class="el" href="class_tactics_object.html">TacticsObject</a> lt, <a class="el" href="class_tactics_object.html">TacticsObject</a> rt)</td></tr>
+<tr class="separator:a49e235618a22126faa6271243cd89710"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected 속성</h2></td></tr>
 <tr class="memitem:a0fd0566f0bb15c71b0630322762342d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_tile.html">Tile</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_placeable_object.html#a0fd0566f0bb15c71b0630322762342d8">_placedTile</a></td></tr>
 <tr class="separator:a0fd0566f0bb15c71b0630322762342d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
+속성</h2></td></tr>
+<tr class="memitem:af02857ad80446cb4fdd1bf982bda95c5"><td class="memItemLeft" align="right" valign="top">Decoable&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_c_n_1_1_deco_instance.html#af02857ad80446cb4fdd1bf982bda95c5">Get</a><code> [get]</code></td></tr>
+<tr class="separator:af02857ad80446cb4fdd1bf982bda95c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private 멤버 함수</h2></td></tr>
@@ -206,11 +229,42 @@ Private 멤버 함수</h2></td></tr>
 이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_placeable_object_a3176ec3d5d26b2a83cdc58b01e630aa1_icgraph.png" border="0" usemap="#class_placeable_object_a3176ec3d5d26b2a83cdc58b01e630aa1_icgraph" alt=""/></div>
-<map name="class_placeable_object_a3176ec3d5d26b2a83cdc58b01e630aa1_icgraph" id="class_placeable_object_a3176ec3d5d26b2a83cdc58b01e630aa1_icgraph">
-<area shape="rect" id="node2" href="class_tile.html#a1969ee41c320c6e7748a33374942e07e" title="Tile.AttachObject" alt="" coords="212,21,335,47"/>
-<area shape="rect" id="node3" href="class_moveable_object_1_1_moveable_state___move.html#a38a7adcb49e881666e2f4a4728cc917d" title="MoveableObject.MoveableState\l_Move.TileTouchAction" alt="" coords="383,5,585,47"/>
-<area shape="rect" id="node4" href="class_placeable_object.html#a06a30cf4396743908cc88733cb216df5" title="PlaceableObject.Place" alt="" coords="407,71,561,98"/>
-</map>
+<!-- MAP 2 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="af6c8520c7bb40840651026e3693afcb4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MCN.DecoInstance.Decorated </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_m_c_n_1_1_decorator.html">Decorator</a>&#160;</td>
+          <td class="paramname"><em>deco</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="_decorator_8cs_source.html">Decorator.cs</a> 파일의 <a class="el" href="_decorator_8cs_source.html#l00126">126</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        {</div><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            <a class="code" href="class_m_c_n_1_1_deco_instance.html#a5b829d23c217099a75a3193a9f60fba1">_decoTarget</a> = deco;</div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        }</div><div class="ttc" id="class_m_c_n_1_1_deco_instance_html_a5b829d23c217099a75a3193a9f60fba1"><div class="ttname"><a href="class_m_c_n_1_1_deco_instance.html#a5b829d23c217099a75a3193a9f60fba1">MCN.DecoInstance._decoTarget</a></div><div class="ttdeci">Decoable _decoTarget</div><div class="ttdef"><b>Definition:</b> <a href="_decorator_8cs_source.html#l00065">Decorator.cs:65</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_m_c_n_1_1_deco_instance_af6c8520c7bb40840651026e3693afcb4_icgraph.png" border="0" usemap="#class_m_c_n_1_1_deco_instance_af6c8520c7bb40840651026e3693afcb4_icgraph" alt=""/></div>
+<!-- MAP 3 -->
 </div>
 </p>
 
@@ -237,9 +291,7 @@ Private 멤버 함수</h2></td></tr>
 이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_placeable_object_a0c1248b1f9981ddbf68e6f70a6498f3d_icgraph.png" border="0" usemap="#class_placeable_object_a0c1248b1f9981ddbf68e6f70a6498f3d_icgraph" alt=""/></div>
-<map name="class_placeable_object_a0c1248b1f9981ddbf68e6f70a6498f3d_icgraph" id="class_placeable_object_a0c1248b1f9981ddbf68e6f70a6498f3d_icgraph">
-<area shape="rect" id="node2" href="class_moveable_object_1_1_moveable_state___normal.html#a38a7f7f88e4b203f6202a56d03c4b5b5" title="MoveableObject.MoveableState\l_Normal.Run" alt="" coords="225,5,428,47"/>
-</map>
+<!-- MAP 4 -->
 </div>
 </p>
 
@@ -265,13 +317,7 @@ Private 멤버 함수</h2></td></tr>
 이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_placeable_object_aef2018b58bf7c8c0fab5aaf3d9a154d4_icgraph.png" border="0" usemap="#class_placeable_object_aef2018b58bf7c8c0fab5aaf3d9a154d4_icgraph" alt=""/></div>
-<map name="class_placeable_object_aef2018b58bf7c8c0fab5aaf3d9a154d4_icgraph" id="class_placeable_object_aef2018b58bf7c8c0fab5aaf3d9a154d4_icgraph">
-<area shape="rect" id="node2" href="class_tile.html#ab8ab187ab674cfb222f761feac3b20b3" title="Tile.DetachObject" alt="" coords="216,71,341,98"/>
-<area shape="rect" id="node3" href="class_tile.html#a1969ee41c320c6e7748a33374942e07e" title="Tile.AttachObject" alt="" coords="389,71,512,98"/>
-<area shape="rect" id="node4" href="class_moveable_object_1_1_moveable_state___move.html#a38a7adcb49e881666e2f4a4728cc917d" title="MoveableObject.MoveableState\l_Move.TileTouchAction" alt="" coords="560,5,763,47"/>
-<area shape="rect" id="node5" href="class_placeable_object.html#a06a30cf4396743908cc88733cb216df5" title="PlaceableObject.Place" alt="" coords="584,71,739,98"/>
-<area shape="rect" id="node6" href="class_placeable_object.html#a3176ec3d5d26b2a83cdc58b01e630aa1" title="PlaceableObject.Attach" alt="" coords="811,97,969,123"/>
-</map>
+<!-- MAP 5 -->
 </div>
 </p>
 
@@ -310,6 +356,92 @@ Private 멤버 함수</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ac327fa53871e183c0e46ac9c66ba00bc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override bool MCN.DecoInstance.Equals </td>
+          <td>(</td>
+          <td class="paramtype">object&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="_decorator_8cs_source.html">Decorator.cs</a> 파일의 <a class="el" href="_decorator_8cs_source.html#l00100">100</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        {</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="keywordflow">if</span> (o is Decorator)</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            {</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                this.<a class="code" href="class_m_c_n_1_1_deco_instance.html#ac327fa53871e183c0e46ac9c66ba00bc">Equals</a>(o as Decorator);</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            }</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <span class="keywordflow">return</span> base.Equals(o);</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        }</div><div class="ttc" id="class_m_c_n_1_1_deco_instance_html_ac327fa53871e183c0e46ac9c66ba00bc"><div class="ttname"><a href="class_m_c_n_1_1_deco_instance.html#ac327fa53871e183c0e46ac9c66ba00bc">MCN.DecoInstance.Equals</a></div><div class="ttdeci">override bool Equals(object o)</div><div class="ttdef"><b>Definition:</b> <a href="_decorator_8cs_source.html#l00100">Decorator.cs:100</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_m_c_n_1_1_deco_instance_ac327fa53871e183c0e46ac9c66ba00bc_cgraph.png" border="0" usemap="#class_m_c_n_1_1_deco_instance_ac327fa53871e183c0e46ac9c66ba00bc_cgraph" alt=""/></div>
+<!-- MAP 6 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a179363468337afa0d1401ff9da1813f0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MCN.DecoInstance.Equals </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_m_c_n_1_1_decorator.html">Decorator</a>&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="_decorator_8cs_source.html">Decorator.cs</a> 파일의 <a class="el" href="_decorator_8cs_source.html#l00110">110</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        {</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <span class="keywordflow">if</span> (o == null)</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            {</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            }</div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <span class="keywordflow">return</span> o == <span class="keyword">this</span>;</div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        }</div></div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ab8768bdf4ece9568cc120411c286bfb5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override int MCN.DecoInstance.GetHashCode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="_decorator_8cs_source.html">Decorator.cs</a> 파일의 <a class="el" href="_decorator_8cs_source.html#l00120">120</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        {</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            <span class="keywordflow">return</span> base.GetHashCode();</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        }</div></div><!-- fragment -->
+</div>
+</div>
 <a class="anchor" id="ab44a9b122632ac3cf0babb5040e8a201"></a>
 <div class="memitem">
 <div class="memproto">
@@ -330,12 +462,43 @@ Private 멤버 함수</h2></td></tr>
 이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_placeable_object_ab44a9b122632ac3cf0babb5040e8a201_icgraph.png" border="0" usemap="#class_placeable_object_ab44a9b122632ac3cf0babb5040e8a201_icgraph" alt=""/></div>
-<map name="class_placeable_object_ab44a9b122632ac3cf0babb5040e8a201_icgraph" id="class_placeable_object_ab44a9b122632ac3cf0babb5040e8a201_icgraph">
-<area shape="rect" id="node2" href="class_tile.html#a1969ee41c320c6e7748a33374942e07e" title="Tile.AttachObject" alt="" coords="256,71,379,98"/>
-<area shape="rect" id="node3" href="class_moveable_object_1_1_moveable_state___move.html#a38a7adcb49e881666e2f4a4728cc917d" title="MoveableObject.MoveableState\l_Move.TileTouchAction" alt="" coords="427,5,629,47"/>
-<area shape="rect" id="node4" href="class_placeable_object.html#a06a30cf4396743908cc88733cb216df5" title="PlaceableObject.Place" alt="" coords="451,71,605,98"/>
-<area shape="rect" id="node5" href="class_placeable_object.html#a3176ec3d5d26b2a83cdc58b01e630aa1" title="PlaceableObject.Attach" alt="" coords="677,97,836,123"/>
-</map>
+<!-- MAP 7 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a5f94ed01497a7072a2785163f4cbc57b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void TacticsObject.Interactive </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_tactics_object.html">TacticsObject</a>&#160;</td>
+          <td class="paramname"><em>interactTarget</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_m_c_n_1_1_decorator.html#ae58cb79cf1ee47006b7dbdac82b97dc5">MCN.Decorator</a>에서 재구현되었습니다.</p>
+
+<p><a class="el" href="_tactics_object_8cs_source.html">TacticsObject.cs</a> 파일의 <a class="el" href="_tactics_object_8cs_source.html#l00050">50</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{ }</div></div><!-- fragment -->
+<p><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_tactics_object_a5f94ed01497a7072a2785163f4cbc57b_icgraph.png" border="0" usemap="#class_tactics_object_a5f94ed01497a7072a2785163f4cbc57b_icgraph" alt=""/></div>
+<!-- MAP 8 -->
 </div>
 </p>
 
@@ -357,6 +520,263 @@ Private 멤버 함수</h2></td></tr>
 <p><a class="el" href="_placeable_object_8cs_source.html">PlaceableObject.cs</a> 파일의 <a class="el" href="_placeable_object_8cs_source.html#l00049">49</a> 번째 라인에서 정의되었습니다.</p>
 <div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    {</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_game_manager.html">GameManager</a>.<a class="code" href="class_m_c_n_1_1_singletone.html#a46dbbebd93e96a9592a9803c51f35602">Instance</a>.SelectedObj == <span class="keyword">this</span>;</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div><div class="ttc" id="class_m_c_n_1_1_singletone_html_a46dbbebd93e96a9592a9803c51f35602"><div class="ttname"><a href="class_m_c_n_1_1_singletone.html#a46dbbebd93e96a9592a9803c51f35602">MCN.Singletone.Instance</a></div><div class="ttdeci">static T Instance</div><div class="ttdef"><b>Definition:</b> <a href="_singletone_8cs_source.html#l00018">Singletone.cs:18</a></div></div>
 <div class="ttc" id="class_game_manager_html"><div class="ttname"><a href="class_game_manager.html">GameManager</a></div><div class="ttdef"><b>Definition:</b> <a href="_game_manager_8cs_source.html#l00004">GameManager.cs:4</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a0353d47981c71db7fe32bd414f025e9b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void TacticsObject.OnTouchEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_touch_manager_8cs.html#ae33e321a424fe84ba8b2fdb81ad40a68">eTouchEvent</a>&#160;</td>
+          <td class="paramname"><em>touch</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_m_c_n_1_1_decorator.html#ab99273d32a380d567f03737ea57ec083">MCN.Decorator</a>에서 재구현되었습니다.</p>
+
+<p><a class="el" href="_tactics_object_8cs_source.html">TacticsObject.cs</a> 파일의 <a class="el" href="_tactics_object_8cs_source.html#l00052">52</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{ }</div></div><!-- fragment -->
+<p><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_tactics_object_a0353d47981c71db7fe32bd414f025e9b_icgraph.png" border="0" usemap="#class_tactics_object_a0353d47981c71db7fe32bd414f025e9b_icgraph" alt=""/></div>
+<!-- MAP 9 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a49e235618a22126faa6271243cd89710"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool TacticsObject.operator!= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_tactics_object.html">TacticsObject</a>&#160;</td>
+          <td class="paramname"><em>lt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_tactics_object.html">TacticsObject</a>&#160;</td>
+          <td class="paramname"><em>rt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="_tactics_object_8cs_source.html">TacticsObject.cs</a> 파일의 <a class="el" href="_tactics_object_8cs_source.html#l00029">29</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    {</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">return</span> !(rt == lt);</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div></div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aa75e4102ebd7265f577028b407534d27"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool MCN.Decoable.operator!= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_m_c_n_1_1_decoable.html">Decoable</a>&#160;</td>
+          <td class="paramname"><em>lt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_m_c_n_1_1_decoable.html">Decoable</a>&#160;</td>
+          <td class="paramname"><em>rt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="_decorator_8cs_source.html">Decorator.cs</a> 파일의 <a class="el" href="_decorator_8cs_source.html#l00036">36</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        {</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordflow">return</span> !(rt == lt);</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        }</div></div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a34da62189ea05cbf8e93d50b1132f306"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool MCN.DecoInstance.operator!= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_m_c_n_1_1_deco_instance.html">DecoInstance</a>&#160;</td>
+          <td class="paramname"><em>lt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_m_c_n_1_1_decorator.html">Decorator</a>&#160;</td>
+          <td class="paramname"><em>rt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="_decorator_8cs_source.html">Decorator.cs</a> 파일의 <a class="el" href="_decorator_8cs_source.html#l00095">95</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        {</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <span class="keywordflow">return</span> !(rt == lt);</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        }</div></div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a18f2979a4bf81dc755fbc17e425809f0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool TacticsObject.operator== </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_tactics_object.html">TacticsObject</a>&#160;</td>
+          <td class="paramname"><em>lt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_tactics_object.html">TacticsObject</a>&#160;</td>
+          <td class="paramname"><em>rt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="_tactics_object_8cs_source.html">TacticsObject.cs</a> 파일의 <a class="el" href="_tactics_object_8cs_source.html#l00009">9</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    {</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="namespace_system.html">System</a>.Object.ReferenceEquals(lt, rt))</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        {</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        }</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keywordflow">if</span> (((<span class="keywordtype">object</span>)lt == null) || ((object)rt == null))</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        {</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        }</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordflow">if</span> (lt is <a class="code" href="namespace_m_c_n.html">MCN</a>.<a class="code" href="class_m_c_n_1_1_decoable.html">Decoable</a> &amp;&amp; rt is <a class="code" href="namespace_m_c_n.html">MCN</a>.<a class="code" href="class_m_c_n_1_1_decoable.html">Decoable</a>)</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        {</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keywordflow">return</span> (lt as <a class="code" href="namespace_m_c_n.html">MCN</a>.<a class="code" href="class_m_c_n_1_1_decoable.html">Decoable</a>) == (rt as <a class="code" href="namespace_m_c_n.html">MCN</a>.<a class="code" href="class_m_c_n_1_1_decoable.html">Decoable</a>);</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        }</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        </div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">return</span> (<span class="keywordtype">object</span>)lt == (object)rt;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div><div class="ttc" id="namespace_system_html"><div class="ttname"><a href="namespace_system.html">System</a></div></div>
+<div class="ttc" id="namespace_m_c_n_html"><div class="ttname"><a href="namespace_m_c_n.html">MCN</a></div><div class="ttdef"><b>Definition:</b> <a href="_decorator_8cs_source.html#l00005">Decorator.cs:5</a></div></div>
+<div class="ttc" id="class_m_c_n_1_1_decoable_html"><div class="ttname"><a href="class_m_c_n_1_1_decoable.html">MCN.Decoable</a></div><div class="ttdef"><b>Definition:</b> <a href="_decorator_8cs_source.html#l00007">Decorator.cs:7</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a6004bbc5f208c3031388c9d6e8f8359b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool MCN.Decoable.operator== </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_m_c_n_1_1_decoable.html">Decoable</a>&#160;</td>
+          <td class="paramname"><em>lt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_m_c_n_1_1_decoable.html">Decoable</a>&#160;</td>
+          <td class="paramname"><em>rt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="_decorator_8cs_source.html">Decorator.cs</a> 파일의 <a class="el" href="_decorator_8cs_source.html#l00011">11</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        {</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="namespace_system.html">System</a>.Object.ReferenceEquals(lt, rt))</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            {</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            }</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <span class="keywordflow">if</span> (((<span class="keywordtype">object</span>)lt == null) || ((object)rt == null))</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            {</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            }</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            </div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keywordflow">if</span>(lt is DecoInstance &amp;&amp; rt is Decorator)</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            {</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                <span class="keywordflow">return</span> (lt as DecoInstance) == (rt as Decorator);</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            }</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="keywordflow">if</span> (rt is DecoInstance &amp;&amp; lt is Decorator)</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            {</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                <span class="keywordflow">return</span> (rt as DecoInstance) == (lt as Decorator);</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            }</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="keywordflow">return</span> (<span class="keywordtype">object</span>)lt == (object)rt;</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div><div class="ttc" id="namespace_system_html"><div class="ttname"><a href="namespace_system.html">System</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="abc697d911069827ae8ead07cd33ee2b9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool MCN.DecoInstance.operator== </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_m_c_n_1_1_deco_instance.html">DecoInstance</a>&#160;</td>
+          <td class="paramname"><em>lt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_m_c_n_1_1_decorator.html">Decorator</a>&#160;</td>
+          <td class="paramname"><em>rt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="_decorator_8cs_source.html">Decorator.cs</a> 파일의 <a class="el" href="_decorator_8cs_source.html#l00080">80</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        {</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="namespace_system.html">System</a>.Object.ReferenceEquals(lt, rt))</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            {</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            }</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="keywordflow">if</span> (((<span class="keywordtype">object</span>)lt == null) || ((object)rt == null))</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            {</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            }</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keywordflow">return</span> rt == lt;</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        }</div><div class="ttc" id="namespace_system_html"><div class="ttname"><a href="namespace_system.html">System</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -383,7 +803,7 @@ Private 멤버 함수</h2></td></tr>
 </div><div class="memdoc">
 
 <p><a class="el" href="_placeable_object_8cs_source.html">PlaceableObject.cs</a> 파일의 <a class="el" href="_placeable_object_8cs_source.html#l00038">38</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    {</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">if</span> (tile != null)</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        {</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            transform.parent = tile.transform;</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            transform.localPosition = <span class="keyword">new</span> Vector3(0, transform.localScale.y / 2, 0);</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            tile.<a class="code" href="class_tile.html#a1969ee41c320c6e7748a33374942e07e">AttachObject</a>(<span class="keyword">this</span>);</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        }</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div><div class="ttc" id="class_tile_html_a1969ee41c320c6e7748a33374942e07e"><div class="ttname"><a href="class_tile.html#a1969ee41c320c6e7748a33374942e07e">Tile.AttachObject</a></div><div class="ttdeci">bool AttachObject(PlaceableObject obj)</div><div class="ttdef"><b>Definition:</b> <a href="_tile_8cs_source.html#l00226">Tile.cs:226</a></div></div>
+<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    {</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">if</span> (tile != null)</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        {</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            transform.parent = tile.transform;</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            transform.localPosition = <span class="keyword">new</span> Vector3(0, transform.localScale.y / 2, 0);</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            tile.<a class="code" href="class_tile.html#a1969ee41c320c6e7748a33374942e07e">AttachObject</a>(<span class="keyword">this</span>);</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        }</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div><div class="ttc" id="class_tile_html_a1969ee41c320c6e7748a33374942e07e"><div class="ttname"><a href="class_tile.html#a1969ee41c320c6e7748a33374942e07e">Tile.AttachObject</a></div><div class="ttdeci">bool AttachObject(PlaceableObject obj)</div><div class="ttdef"><b>Definition:</b> <a href="_tile_8cs_source.html#l00225">Tile.cs:225</a></div></div>
 </div><!-- fragment -->
 <p><div class="dynheader">
 이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
@@ -403,11 +823,7 @@ Private 멤버 함수</h2></td></tr>
 이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_placeable_object_a06a30cf4396743908cc88733cb216df5_icgraph.png" border="0" usemap="#class_placeable_object_a06a30cf4396743908cc88733cb216df5_icgraph" alt=""/></div>
-<map name="class_placeable_object_a06a30cf4396743908cc88733cb216df5_icgraph" id="class_placeable_object_a06a30cf4396743908cc88733cb216df5_icgraph">
-<area shape="rect" id="node2" href="class_placeable_object.html#a3176ec3d5d26b2a83cdc58b01e630aa1" title="PlaceableObject.Attach" alt="" coords="208,5,367,32"/>
-<area shape="rect" id="node3" href="class_tile.html#a1969ee41c320c6e7748a33374942e07e" title="Tile.AttachObject" alt="" coords="415,31,537,57"/>
-<area shape="rect" id="node4" href="class_moveable_object_1_1_moveable_state___move.html#a38a7adcb49e881666e2f4a4728cc917d" title="MoveableObject.MoveableState\l_Move.TileTouchAction" alt="" coords="585,23,788,65"/>
-</map>
+<!-- MAP 10 -->
 </div>
 </p>
 
@@ -434,42 +850,10 @@ Private 멤버 함수</h2></td></tr>
 이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_placeable_object_a019818f3f6c6eb715fed163efa921f5a_icgraph.png" border="0" usemap="#class_placeable_object_a019818f3f6c6eb715fed163efa921f5a_icgraph" alt=""/></div>
-<map name="class_placeable_object_a019818f3f6c6eb715fed163efa921f5a_icgraph" id="class_placeable_object_a019818f3f6c6eb715fed163efa921f5a_icgraph">
-<area shape="rect" id="node2" href="class_moveable_object_1_1_moveable_state___move.html#aa738e589c4c0f1634599b50a6f681aa7" title="MoveableObject.MoveableState\l_Move.Run" alt="" coords="212,5,415,47"/>
-</map>
+<!-- MAP 11 -->
 </div>
 </p>
 
-</div>
-</div>
-<a class="anchor" id="ae61aaa6cf5c16ca879efe8cba08fdfcf"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void PlaceableObject.TileTouchAction </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_tile.html">Tile</a>&#160;</td>
-          <td class="paramname"><em>activeTile</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><a class="el" href="interface_i_tile_active.html#a07ebe88789d5f0fbca430d50dbb87c08">ITileActive</a>를 구현.</p>
-
-<p><a class="el" href="class_moveable_object.html#a8aa14fd4e56b9911e895f5e899e0d9a0">MoveableObject</a>에서 재구현되었습니다.</p>
-
-<p><a class="el" href="_placeable_object_8cs_source.html">PlaceableObject.cs</a> 파일의 <a class="el" href="_placeable_object_8cs_source.html#l00064">64</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{ }</div></div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">멤버 데이타 문서화</h2>
@@ -492,6 +876,29 @@ Private 멤버 함수</h2></td></tr>
 </div><div class="memdoc">
 
 <p><a class="el" href="_placeable_object_8cs_source.html">PlaceableObject.cs</a> 파일의 <a class="el" href="_placeable_object_8cs_source.html#l00007">7</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<h2 class="groupheader">속성 문서화</h2>
+<a class="anchor" id="af02857ad80446cb4fdd1bf982bda95c5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Decoable MCN.DecoInstance.Get</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="_decorator_8cs_source.html">Decorator.cs</a> 파일의 <a class="el" href="_decorator_8cs_source.html#l00068">68</a> 번째 라인에서 정의되었습니다.</p>
 
 </div>
 </div>

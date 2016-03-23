@@ -1,9 +1,9 @@
 <map id="MCN.State" name="MCN.State">
-<area shape="rect" id="node3" href="$class_moveable_object_1_1_moveable_state.html" title="{MoveableObject.MoveableState\n||+ MoveableState()\l+ TileTouchAction()\l+ GetCurrentType()\l+ OnTouchEvent()\l}" alt="" coords="269,344,472,465"/>
-<area shape="rect" id="node6" href="$class_tile_1_1_tile_state.html" title="{Tile.TileState\n||+ TileState()\l+ GetCurrentType()\l+ TouchEvent()\l}" alt="" coords="584,351,717,458"/>
-<area shape="rect" id="node4" href="$class_moveable_object_1_1_moveable_state___move.html" title="{MoveableObject.MoveableState_Move\n||+ MoveableState_Move()\l+ GetCurrentType()\l+ OnTouchEvent()\l+ Run()\l+ TileTouchAction()\l}" alt="" coords="5,513,245,649"/>
-<area shape="rect" id="node5" href="$class_moveable_object_1_1_moveable_state___normal.html" title="{MoveableObject.MoveableState\l_Normal\n||+ MoveableState_Normal()\l+ GetCurrentType()\l+ OnTouchEvent()\l+ Run()\l}" alt="" coords="269,513,472,649"/>
-<area shape="rect" id="node7" href="$class_tile_1_1_tile_state___active.html" title="{Tile.TileState_Active\n||+ TileState_Active()\l+ Run()\l+ GetCurrentType()\l+ TouchEvent()\l&#45; SetTileColor()\l}" alt="" coords="496,513,635,649"/>
-<area shape="rect" id="node8" href="$class_tile_1_1_tile_state___deactive.html" title="{Tile.TileState_Deactive\n||+ TileState_Deactive()\l+ Run()\l+ GetCurrentType()\l&#45; SetTileColor()\l}" alt="" coords="659,521,813,642"/>
-<area shape="rect" id="node9" href="$class_tile_1_1_tile_state___normal.html" title="{Tile.TileState_Normal\n||+ TileState_Normal()\l+ Run()\l+ GetCurrentType()\l&#45; SetTileColor()\l}" alt="" coords="837,521,982,642"/>
+<area shape="rect" id="node3" href="$class_move_decorator_1_1_moveable_state.html" title="{MoveDecorator.MoveableState\n||+ MoveableState()\l+ Interactive()\l+ GetCurrentType()\l+ OnTouchEvent()\l}" alt="" coords="264,344,461,465"/>
+<area shape="rect" id="node6" href="$class_tile_1_1_tile_state.html" title="{Tile.TileState\n||+ TileState()\l+ GetCurrentType()\l+ OnTouchEvent()\l}" alt="" coords="573,351,707,458"/>
+<area shape="rect" id="node4" href="$class_move_decorator_1_1_moveable_state___move.html" title="{MoveDecorator.MoveableState_Move\n||+ MoveableState_Move()\l+ GetCurrentType()\l+ OnTouchEvent()\l+ Run()\l+ Interactive()\l}" alt="" coords="5,513,240,649"/>
+<area shape="rect" id="node5" href="$class_move_decorator_1_1_moveable_state___normal.html" title="{MoveDecorator.MoveableState\l_Normal\n||+ MoveableState_Normal()\l+ GetCurrentType()\l+ OnTouchEvent()\l+ Run()\l}" alt="" coords="264,513,461,649"/>
+<area shape="rect" id="node7" href="$class_tile_1_1_tile_state___active.html" title="{Tile.TileState_Active\n||+ TileState_Active()\l+ Run()\l+ GetCurrentType()\l+ OnTouchEvent()\l&#45; SetTileColor()\l}" alt="" coords="485,513,624,649"/>
+<area shape="rect" id="node8" href="$class_tile_1_1_tile_state___deactive.html" title="{Tile.TileState_Deactive\n||+ TileState_Deactive()\l+ Run()\l+ GetCurrentType()\l&#45; SetTileColor()\l}" alt="" coords="649,521,802,642"/>
+<area shape="rect" id="node9" href="$class_tile_1_1_tile_state___normal.html" title="{Tile.TileState_Normal\n||+ TileState_Normal()\l+ Run()\l+ GetCurrentType()\l&#45; SetTileColor()\l}" alt="" coords="826,521,971,642"/>
 </map>

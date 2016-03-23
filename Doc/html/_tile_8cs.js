@@ -1,6 +1,5 @@
 var _tile_8cs =
 [
-    [ "ITileActive", "interface_i_tile_active.html", "interface_i_tile_active" ],
     [ "Tile", "class_tile.html", "class_tile" ],
     [ "TileState", "class_tile_1_1_tile_state.html", "class_tile_1_1_tile_state" ],
     [ "TileState_Normal", "class_tile_1_1_tile_state___normal.html", "class_tile_1_1_tile_state___normal" ],

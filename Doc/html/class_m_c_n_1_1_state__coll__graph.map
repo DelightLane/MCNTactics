@@ -1,3 +1,3 @@
 <map id="MCN.State" name="MCN.State">
-<area shape="rect" id="node3" href="$class_tactics_object.html" title="{TacticsObject\n||}" alt="" coords="119,132,221,209"/>
+<area shape="rect" id="node3" href="$class_tactics_object.html" title="{TacticsObject\n||+ Equals()\l+ GetHashCode()\l+ Interactive()\l+ OnTouchEvent()\l+ operator==()\l+ operator!=()\l}" alt="" coords="119,132,245,283"/>
 </map>

@@ -1,11 +1,13 @@
 var class_map_manager =
 [
+    [ "DecoClassInfo", "class_map_manager_1_1_deco_class_info.html", "class_map_manager_1_1_deco_class_info" ],
     [ "PlaceInfo", "class_map_manager_1_1_place_info.html", "class_map_manager_1_1_place_info" ],
     [ "AttachObject", "class_map_manager.html#ab8cbf46e369a9c59ff183a1b6c3b20bb", null ],
     [ "Awake", "class_map_manager.html#ad633984007048c7d63eab44aaeb0c32d", null ],
     [ "ChangeAllTileState", "class_map_manager.html#a68f796431393b7239320ab1f5200213a", null ],
     [ "CreatedObjectName", "class_map_manager.html#aa3459a9fe2d748c6e9f2c3da8a6273cd", null ],
     [ "CreateTilemap", "class_map_manager.html#aa6125f2ca4b3c4e8858f73f5e65d385b", null ],
+    [ "DecorateObject", "class_map_manager.html#a31c2b0b9cf8f208a596b65e7f1d88873", null ],
     [ "GetTile", "class_map_manager.html#ae457099efdd1a804add3b851b2bc7691", null ],
     [ "IsExistMap", "class_map_manager.html#a9a18efae73b0d690d2bc6c8ac8703a02", null ],
     [ "IsInMapSize", "class_map_manager.html#a504d7a68ace64557bc3c3254a8b1cddc", null ],

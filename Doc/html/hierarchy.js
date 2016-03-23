@@ -1,10 +1,11 @@
 var hierarchy =
 [
+    [ "MapManager.DecoClassInfo", "class_map_manager_1_1_deco_class_info.html", null ],
     [ "IDisposable", null, [
       [ "MCN.State", "class_m_c_n_1_1_state.html", [
-        [ "MoveableObject.MoveableState", "class_moveable_object_1_1_moveable_state.html", [
-          [ "MoveableObject.MoveableState_Move", "class_moveable_object_1_1_moveable_state___move.html", null ],
-          [ "MoveableObject.MoveableState_Normal", "class_moveable_object_1_1_moveable_state___normal.html", null ]
+        [ "MoveDecorator.MoveableState", "class_move_decorator_1_1_moveable_state.html", [
+          [ "MoveDecorator.MoveableState_Move", "class_move_decorator_1_1_moveable_state___move.html", null ],
+          [ "MoveDecorator.MoveableState_Normal", "class_move_decorator_1_1_moveable_state___normal.html", null ]
         ] ],
         [ "Tile.TileState", "class_tile_1_1_tile_state.html", [
           [ "Tile.TileState_Active", "class_tile_1_1_tile_state___active.html", null ],
@@ -12,9 +13,7 @@ var hierarchy =
           [ "Tile.TileState_Normal", "class_tile_1_1_tile_state___normal.html", null ]
         ] ]
       ] ],
-      [ "PlaceableObject", "class_placeable_object.html", [
-        [ "MoveableObject", "class_moveable_object.html", null ]
-      ] ],
+      [ "PlaceableObject", "class_placeable_object.html", null ],
       [ "Tile", "class_tile.html", null ]
     ] ],
     [ "MCN.IObservable< T >", "interface_m_c_n_1_1_i_observable.html", null ],
@@ -23,17 +22,20 @@ var hierarchy =
     ] ],
     [ "MCN.IObserver< T >", "interface_m_c_n_1_1_i_observer.html", null ],
     [ "MCN.IObserver< eTouchEvent >", "interface_m_c_n_1_1_i_observer.html", [
-      [ "MoveableObject", "class_moveable_object.html", null ],
       [ "Tile", "class_tile.html", null ]
-    ] ],
-    [ "ITileActive", "interface_i_tile_active.html", [
-      [ "PlaceableObject", "class_placeable_object.html", null ]
     ] ],
     [ "MapCreator", "class_map_creator.html", null ],
     [ "MonoBehaviour", null, [
       [ "MCN.MonoSingletone< T >", "class_m_c_n_1_1_mono_singletone.html", null ],
       [ "TacticsObject", "class_tactics_object.html", [
-        [ "PlaceableObject", "class_placeable_object.html", null ],
+        [ "MCN.Decoable", "class_m_c_n_1_1_decoable.html", [
+          [ "MCN.DecoInstance", "class_m_c_n_1_1_deco_instance.html", [
+            [ "PlaceableObject", "class_placeable_object.html", null ]
+          ] ],
+          [ "MCN.Decorator", "class_m_c_n_1_1_decorator.html", [
+            [ "MoveDecorator", "class_move_decorator.html", null ]
+          ] ]
+        ] ],
         [ "Tile", "class_tile.html", null ]
       ] ]
     ] ],

@@ -1,0 +1,8 @@
+<map id="MoveDecorator.MoveableState.GetCurrentType" name="MoveDecorator.MoveableState.GetCurrentType">
+<area shape="rect" id="node2" href="$class_move_decorator_1_1_moveable_state.html#ae0130d6fdd6bb1dfd07a1f4c202dd6b0" title="MoveDecorator.MoveableState.\lMoveableState" alt="" coords="255,71,456,112"/>
+<area shape="rect" id="node7" href="$class_move_decorator_1_1_moveable_state.html#a1e66885aa7daf1021fc654b706b53ab8" title="MoveDecorator.MoveableState.\lInteractive" alt="" coords="255,136,456,177"/>
+<area shape="rect" id="node3" href="$class_move_decorator.html#ad6f988cbbd3dce9e33bb0c08609f012f" title="MoveDecorator.GetCurrent\lState" alt="" coords="504,71,679,112"/>
+<area shape="rect" id="node4" href="$class_move_decorator.html#a4da4b651ccf38b250af93eaeeddd1912" title="MoveDecorator.GetCurrent\lStateType" alt="" coords="739,5,914,47"/>
+<area shape="rect" id="node5" href="$class_move_decorator.html#ac4276fd2b79d3a3f6a89968e62271623" title="MoveDecorator.DecoOnTouch\lEvent" alt="" coords="729,71,924,112"/>
+<area shape="rect" id="node6" href="$class_move_decorator.html#a5d25ac6e9eacf33c5ab0423059ebcadc" title="MoveDecorator.DecoInteractive" alt="" coords="727,137,927,163"/>
+</map>

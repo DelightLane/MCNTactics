@@ -118,21 +118,13 @@ $(document).ready(function(){initNavTree('class_tile_1_1_tile_state.html','');})
 Tile.TileState에 대한 상속 다이어그램 : </div>
 <div class="dyncontent">
 <div class="center"><img src="class_tile_1_1_tile_state__inherit__graph.png" border="0" usemap="#_tile_8_tile_state_inherit__map" alt="Inheritance graph"/></div>
-<map name="_tile_8_tile_state_inherit__map" id="_tile_8_tile_state_inherit__map">
-<area shape="rect" id="node4" href="class_tile_1_1_tile_state___active.html" title="{Tile.TileState_Active\n||+ TileState_Active()\l+ Run()\l+ GetCurrentType()\l+ TouchEvent()\l&#45; SetTileColor()\l}" alt="" coords="5,499,144,635"/>
-<area shape="rect" id="node5" href="class_tile_1_1_tile_state___deactive.html" title="{Tile.TileState_Deactive\n||+ TileState_Deactive()\l+ Run()\l+ GetCurrentType()\l&#45; SetTileColor()\l}" alt="" coords="169,506,322,627"/>
-<area shape="rect" id="node6" href="class_tile_1_1_tile_state___normal.html" title="{Tile.TileState_Normal\n||+ TileState_Normal()\l+ Run()\l+ GetCurrentType()\l&#45; SetTileColor()\l}" alt="" coords="346,506,491,627"/>
-<area shape="rect" id="node2" href="class_m_c_n_1_1_state.html" title="상태 추상 클래스 " alt="" coords="200,131,291,296"/>
-</map>
+<!-- MAP 0 -->
 </div>
 <div class="dynheader">
 Tile.TileState에 대한 협력 다이어그램:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_tile_1_1_tile_state__coll__graph.png" border="0" usemap="#_tile_8_tile_state_coll__map" alt="Collaboration graph"/></div>
-<map name="_tile_8_tile_state_coll__map" id="_tile_8_tile_state_coll__map">
-<area shape="rect" id="node2" href="class_m_c_n_1_1_state.html" title="상태 추상 클래스 " alt="" coords="45,272,135,423"/>
-<area shape="rect" id="node4" href="class_tactics_object.html" title="{TacticsObject\n||}" alt="" coords="119,132,221,209"/>
-</map>
+<!-- MAP 1 -->
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -141,8 +133,8 @@ Public 멤버 함수</h2></td></tr>
 <tr class="separator:a074f350ff6dd6d5456fdb800b9402952"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9649a2b7b7cb3ae49eb35df6b6eef43e"><td class="memItemLeft" align="right" valign="top">abstract <a class="el" href="_tile_8cs.html#a271bc07be325bca511bcb747e0ff2fda">eTileType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tile_1_1_tile_state.html#a9649a2b7b7cb3ae49eb35df6b6eef43e">GetCurrentType</a> ()</td></tr>
 <tr class="separator:a9649a2b7b7cb3ae49eb35df6b6eef43e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ddb7ad41bed1404287b6847dd4edf05"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tile_1_1_tile_state.html#a3ddb7ad41bed1404287b6847dd4edf05">TouchEvent</a> (<a class="el" href="_touch_manager_8cs.html#ae33e321a424fe84ba8b2fdb81ad40a68">eTouchEvent</a> touch)</td></tr>
-<tr class="separator:a3ddb7ad41bed1404287b6847dd4edf05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8687f7cb0e2c1a436c5ac395f4f6d07a"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tile_1_1_tile_state.html#a8687f7cb0e2c1a436c5ac395f4f6d07a">OnTouchEvent</a> (<a class="el" href="_touch_manager_8cs.html#ae33e321a424fe84ba8b2fdb81ad40a68">eTouchEvent</a> touch)</td></tr>
+<tr class="separator:a8687f7cb0e2c1a436c5ac395f4f6d07a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5be59bc891e64cbbe4322d74a6746908"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_c_n_1_1_state.html#a5be59bc891e64cbbe4322d74a6746908">Initialize</a> ()</td></tr>
 <tr class="separator:a5be59bc891e64cbbe4322d74a6746908"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aebf48ef248bbf185d6aae91d9789459e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_c_n_1_1_state.html#aebf48ef248bbf185d6aae91d9789459e">Destroy</a> ()</td></tr>
@@ -161,7 +153,7 @@ Public 멤버 함수</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">상세한 설명</h2>
 <div class="textblock">
-<p><a class="el" href="_tile_8cs_source.html">Tile.cs</a> 파일의 <a class="el" href="_tile_8cs_source.html#l00036">36</a> 번째 라인에서 정의되었습니다.</p>
+<p><a class="el" href="_tile_8cs_source.html">Tile.cs</a> 파일의 <a class="el" href="_tile_8cs_source.html#l00030">30</a> 번째 라인에서 정의되었습니다.</p>
 </div><h2 class="groupheader">생성자 &amp; 소멸자 문서화</h2>
 <a class="anchor" id="a074f350ff6dd6d5456fdb800b9402952"></a>
 <div class="memitem">
@@ -177,11 +169,27 @@ Public 멤버 함수</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="_tile_8cs_source.html">Tile.cs</a> 파일의 <a class="el" href="_tile_8cs_source.html#l00038">38</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                               : base(target)</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        {</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            var tile = <a class="code" href="class_m_c_n_1_1_state.html#a79a563b32f183c9adc9a96679fc57eb8">Target</a> as <a class="code" href="class_tile.html#a7684d2e86beeb06d844ebb7819b11b33">Tile</a>;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordflow">if</span> (tile != null)</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            {</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                tile._stateMachine.StorageState(<a class="code" href="class_tile_1_1_tile_state.html#a9649a2b7b7cb3ae49eb35df6b6eef43e">GetCurrentType</a>().ToString(), <span class="keyword">this</span>);</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            }</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        }</div><div class="ttc" id="class_tile_1_1_tile_state_html_a9649a2b7b7cb3ae49eb35df6b6eef43e"><div class="ttname"><a href="class_tile_1_1_tile_state.html#a9649a2b7b7cb3ae49eb35df6b6eef43e">Tile.TileState.GetCurrentType</a></div><div class="ttdeci">abstract eTileType GetCurrentType()</div></div>
+<p><a class="el" href="_tile_8cs_source.html">Tile.cs</a> 파일의 <a class="el" href="_tile_8cs_source.html#l00032">32</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                                               : base(target)</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        {</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            var tile = <a class="code" href="class_m_c_n_1_1_state.html#a79a563b32f183c9adc9a96679fc57eb8">Target</a> as <a class="code" href="class_tile.html#a7684d2e86beeb06d844ebb7819b11b33">Tile</a>;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <span class="keywordflow">if</span> (tile != null)</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            {</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                tile._stateMachine.StorageState(<a class="code" href="class_tile_1_1_tile_state.html#a9649a2b7b7cb3ae49eb35df6b6eef43e">GetCurrentType</a>().ToString(), <span class="keyword">this</span>);</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            }</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        }</div><div class="ttc" id="class_tile_1_1_tile_state_html_a9649a2b7b7cb3ae49eb35df6b6eef43e"><div class="ttname"><a href="class_tile_1_1_tile_state.html#a9649a2b7b7cb3ae49eb35df6b6eef43e">Tile.TileState.GetCurrentType</a></div><div class="ttdeci">abstract eTileType GetCurrentType()</div></div>
 <div class="ttc" id="class_m_c_n_1_1_state_html_a79a563b32f183c9adc9a96679fc57eb8"><div class="ttname"><a href="class_m_c_n_1_1_state.html#a79a563b32f183c9adc9a96679fc57eb8">MCN.State.Target</a></div><div class="ttdeci">TacticsObject Target</div><div class="ttdef"><b>Definition:</b> <a href="_state_8cs_source.html#l00017">State.cs:17</a></div></div>
-<div class="ttc" id="class_tile_html_a7684d2e86beeb06d844ebb7819b11b33"><div class="ttname"><a href="class_tile.html#a7684d2e86beeb06d844ebb7819b11b33">Tile.Tile</a></div><div class="ttdeci">Tile()</div><div class="ttdef"><b>Definition:</b> <a href="_tile_8cs_source.html#l00158">Tile.cs:158</a></div></div>
+<div class="ttc" id="class_tile_html_a7684d2e86beeb06d844ebb7819b11b33"><div class="ttname"><a href="class_tile.html#a7684d2e86beeb06d844ebb7819b11b33">Tile.Tile</a></div><div class="ttdeci">Tile()</div><div class="ttdef"><b>Definition:</b> <a href="_tile_8cs_source.html#l00152">Tile.cs:152</a></div></div>
 </div><!-- fragment -->
+<p><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_tile_1_1_tile_state_a074f350ff6dd6d5456fdb800b9402952_cgraph.png" border="0" usemap="#class_tile_1_1_tile_state_a074f350ff6dd6d5456fdb800b9402952_cgraph" alt=""/></div>
+<!-- MAP 2 -->
+</div>
+</p>
+
+<p><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_tile_1_1_tile_state_a074f350ff6dd6d5456fdb800b9402952_icgraph.png" border="0" usemap="#class_tile_1_1_tile_state_a074f350ff6dd6d5456fdb800b9402952_icgraph" alt=""/></div>
+<!-- MAP 3 -->
+</div>
+</p>
+
 </div>
 </div>
 <h2 class="groupheader">멤버 함수 문서화</h2>
@@ -324,6 +332,14 @@ Public 멤버 함수</h2></td></tr>
 
 <p><a class="el" href="class_tile_1_1_tile_state___deactive.html#a1aed8e0336e11dcb55cb598119c53eda">Tile.TileState_Deactive</a>, <a class="el" href="class_tile_1_1_tile_state___active.html#afdc52754ce22e231c691a52d213dd92d">Tile.TileState_Active</a>, <a class="el" href="class_tile_1_1_tile_state___normal.html#ad649955a61ea5ca2158b3c379ea8c505">Tile.TileState_Normal</a>에서 구현되었습니다.</p>
 
+<p><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_tile_1_1_tile_state_a9649a2b7b7cb3ae49eb35df6b6eef43e_icgraph.png" border="0" usemap="#class_tile_1_1_tile_state_a9649a2b7b7cb3ae49eb35df6b6eef43e_icgraph" alt=""/></div>
+<!-- MAP 4 -->
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a5be59bc891e64cbbe4322d74a6746908"></a>
@@ -361,6 +377,42 @@ Public 멤버 함수</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a8687f7cb0e2c1a436c5ac395f4f6d07a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool Tile.TileState.OnTouchEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_touch_manager_8cs.html#ae33e321a424fe84ba8b2fdb81ad40a68">eTouchEvent</a>&#160;</td>
+          <td class="paramname"><em>touch</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_tile_1_1_tile_state___active.html#a7a9e2832931f69884ee0d9917ab619a8">Tile.TileState_Active</a>에서 재구현되었습니다.</p>
+
+<p><a class="el" href="_tile_8cs_source.html">Tile.cs</a> 파일의 <a class="el" href="_tile_8cs_source.html#l00044">44</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{ <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div></div><!-- fragment -->
+<p><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_tile_1_1_tile_state_a8687f7cb0e2c1a436c5ac395f4f6d07a_icgraph.png" border="0" usemap="#class_tile_1_1_tile_state_a8687f7cb0e2c1a436c5ac395f4f6d07a_icgraph" alt=""/></div>
+<!-- MAP 5 -->
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="afdec72a816a8a8ec584cac758a027215"></a>
 <div class="memitem">
 <div class="memproto">
@@ -382,7 +434,7 @@ Public 멤버 함수</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="class_tile_1_1_tile_state___deactive.html#a806c5dbc5eb43903ad41d448f3d25c61">Tile.TileState_Deactive</a>, <a class="el" href="class_moveable_object_1_1_moveable_state___normal.html#a38a7f7f88e4b203f6202a56d03c4b5b5">MoveableObject.MoveableState_Normal</a>, <a class="el" href="class_tile_1_1_tile_state___active.html#ab53c7c818d65122d6d36c9681ca53bf9">Tile.TileState_Active</a>, <a class="el" href="class_moveable_object_1_1_moveable_state___move.html#aa738e589c4c0f1634599b50a6f681aa7">MoveableObject.MoveableState_Move</a>, <a class="el" href="class_tile_1_1_tile_state___normal.html#acf613382b6ddeff2fcc226d8caeb0b53">Tile.TileState_Normal</a>에서 구현되었습니다.</p>
+<p><a class="el" href="class_move_decorator_1_1_moveable_state___normal.html#a9e4e591aa61c13840a15facffa2148d6">MoveDecorator.MoveableState_Normal</a>, <a class="el" href="class_tile_1_1_tile_state___deactive.html#a806c5dbc5eb43903ad41d448f3d25c61">Tile.TileState_Deactive</a>, <a class="el" href="class_tile_1_1_tile_state___active.html#ab53c7c818d65122d6d36c9681ca53bf9">Tile.TileState_Active</a>, <a class="el" href="class_move_decorator_1_1_moveable_state___move.html#ae1bb2c9ca5992373aa872788775d3e4a">MoveDecorator.MoveableState_Move</a>, <a class="el" href="class_tile_1_1_tile_state___normal.html#acf613382b6ddeff2fcc226d8caeb0b53">Tile.TileState_Normal</a>에서 구현되었습니다.</p>
 
 <p><div class="dynheader">
 이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
@@ -400,34 +452,6 @@ Public 멤버 함수</h2></td></tr>
 </div>
 </p>
 
-</div>
-</div>
-<a class="anchor" id="a3ddb7ad41bed1404287b6847dd4edf05"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void Tile.TileState.TouchEvent </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="_touch_manager_8cs.html#ae33e321a424fe84ba8b2fdb81ad40a68">eTouchEvent</a>&#160;</td>
-          <td class="paramname"><em>touch</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><a class="el" href="class_tile_1_1_tile_state___active.html#a97fa0ec14e2edc6534c4fcd3d3b3ba18">Tile.TileState_Active</a>에서 재구현되었습니다.</p>
-
-<p><a class="el" href="_tile_8cs_source.html">Tile.cs</a> 파일의 <a class="el" href="_tile_8cs_source.html#l00049">49</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{ }</div></div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">속성 문서화</h2>

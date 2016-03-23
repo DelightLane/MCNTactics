@@ -1,0 +1,5 @@
+<map id="Tile.GetAttachObject" name="Tile.GetAttachObject">
+<area shape="rect" id="node2" href="$class_tile.html#a81b4dd833bdeade289583aabbdcaff73" title="Tile.GetChainActiveTileCost" alt="" coords="196,5,379,32"/>
+<area shape="rect" id="node4" href="$class_tile.html#a6133171796d47353aa5d57cd336e0a07" title="Tile.OnNext" alt="" coords="242,56,333,83"/>
+<area shape="rect" id="node3" href="$class_tile.html#a6172e6a33d37d2992a1b0b6f5c2ed117" title="Tile.ShowChainActiveTile" alt="" coords="427,5,593,32"/>
+</map>

@@ -27,8 +27,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_game_manager_8cs.html",
-"interface_m_c_n_1_1_i_observable.html#a84e57296a612a2d49afbcc7f841ceb0b"
+"_decorator_8cs.html",
+"class_tile.html#a822a1bffe56b1193b8c5c61070ea7827"
 ];
 
 var SYNCONMSG = '패널 동기화를 비활성화하기 위해 클릭하십시오';

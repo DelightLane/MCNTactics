@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['tile_5fsize',['TILE_SIZE',['../class_tile.html#a51b7dea4344573ba12a461a32517e683',1,'Tile']]]
+  ['pos',['pos',['../class_map_manager_1_1_place_info.html#a892976a463c8f25b15b248220f10289e',1,'MapManager::PlaceInfo']]],
+  ['prefabname',['prefabName',['../class_map_manager_1_1_place_info.html#a82ac5b1455ed7b78f7338784ac91fe1b',1,'MapManager::PlaceInfo']]]
 ];

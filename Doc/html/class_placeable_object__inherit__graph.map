@@ -1,5 +1,5 @@
 <map id="PlaceableObject" name="PlaceableObject">
-<area shape="rect" id="node6" href="$class_moveable_object.html" title="{MoveableObject\n|&#45; moveRange\l&#45; _moveableStateMachine\l|+ TileTouchAction()\l+ OnNext()\l&#45; Awake()\l&#45; Destroy()\l&#45; StorageStates()\l&#45; GetCurrentMoveableState()\l&#45; GetMoveableCurrentStateType()\l&#45; ChangeMoveableState()\l}" alt="" coords="73,499,288,693"/>
-<area shape="rect" id="node2" href="$class_tactics_object.html" title="{TacticsObject\n||}" alt="" coords="9,131,112,208"/>
-<area shape="rect" id="node5" href="$interface_i_tile_active.html" title="{ITileActive\n||+ TileTouchAction()\l}" alt="" coords="249,131,384,208"/>
+<area shape="rect" id="node2" href="$class_m_c_n_1_1_deco_instance.html" title="{MCN::DecoInstance\n|+ Get\l&#45; _decoTarget\l|+ Equals()\l+ Equals()\l+ GetHashCode()\l+ Decorated()\l+ operator==()\l+ operator!=()\l}" alt="" coords="5,499,144,664"/>
+<area shape="rect" id="node3" href="$class_m_c_n_1_1_decoable.html" title="{Decoable\n||+ Equals()\l+ GetHashCode()\l+ operator==()\l+ operator!=()\l}" alt="" coords="13,329,136,451"/>
+<area shape="rect" id="node4" href="$class_tactics_object.html" title="{TacticsObject\n||+ Equals()\l+ GetHashCode()\l+ Interactive()\l+ OnTouchEvent()\l+ operator==()\l+ operator!=()\l}" alt="" coords="11,131,138,281"/>
 </map>

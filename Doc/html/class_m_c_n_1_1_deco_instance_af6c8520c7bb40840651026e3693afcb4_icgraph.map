@@ -1,0 +1,6 @@
+<map id="MCN.DecoInstance.Decorated" name="MCN.DecoInstance.Decorated">
+<area shape="rect" id="node2" href="$class_m_c_n_1_1_decorator.html#ab82c83f62182a25a72dc81530c743c32" title="MCN.Decorator.Decoration" alt="" coords="251,5,428,32"/>
+<area shape="rect" id="node3" href="$class_map_manager.html#a31c2b0b9cf8f208a596b65e7f1d88873" title="MapManager.DecorateObject" alt="" coords="476,5,667,32"/>
+<area shape="rect" id="node4" href="$class_map_manager.html#a4213ccbaa1a81d0a47884de50a28de32" title="MapManager.PlaceObjacts" alt="" coords="715,5,893,32"/>
+<area shape="rect" id="node5" href="$class_map_manager.html#ad633984007048c7d63eab44aaeb0c32d" title="MapManager.Awake" alt="" coords="941,5,1081,32"/>
+</map>

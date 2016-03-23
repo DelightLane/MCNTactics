@@ -1,0 +1,5 @@
+<map id="MCN.DecoInstance" name="MCN.DecoInstance">
+<area shape="rect" id="node5" href="$class_placeable_object.html" title="{PlaceableObject\n|# _placedTile\l|+ Attach()\l+ Detach()\l+ GetPlacedTile()\l+ Dispose()\l+ IsSelected()\l+ Select()\l+ Deselect()\l&#45; Place()\l}" alt="" coords="11,712,134,892"/>
+<area shape="rect" id="node2" href="$class_m_c_n_1_1_decoable.html" title="{Decoable\n||+ Equals()\l+ GetHashCode()\l+ operator==()\l+ operator!=()\l}" alt="" coords="11,329,134,451"/>
+<area shape="rect" id="node3" href="$class_tactics_object.html" title="{TacticsObject\n||+ Equals()\l+ GetHashCode()\l+ Interactive()\l+ OnTouchEvent()\l+ operator==()\l+ operator!=()\l}" alt="" coords="9,131,136,281"/>
+</map>

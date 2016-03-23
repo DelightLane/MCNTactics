@@ -1,0 +1,4 @@
+<map id="Tile.TileState.TileState" name="Tile.TileState.TileState">
+<area shape="rect" id="node2" href="$class_tile.html#ae37e08e39263e766fdc612de94fb7a0d" title="Tile.GetCurrentState" alt="" coords="205,5,345,32"/>
+<area shape="rect" id="node3" href="$class_tile.html#a6133171796d47353aa5d57cd336e0a07" title="Tile.OnNext" alt="" coords="393,5,484,32"/>
+</map>

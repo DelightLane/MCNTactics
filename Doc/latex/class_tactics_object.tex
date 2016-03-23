@@ -2,22 +2,30 @@
 \label{class_tactics_object}\index{Tactics\+Object@{Tactics\+Object}}
 
 
-Tactics\+Object에 대한 상속 다이어그램 \+: \nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[height=550pt]{class_tactics_object__inherit__graph}
-\end{center}
-\end{figure}
+Tactics\+Object에 대한 상속 다이어그램 \+: 
+% FIG 0
 
 
-Tactics\+Object에 대한 협력 다이어그램\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=163pt]{class_tactics_object__coll__graph}
-\end{center}
-\end{figure}
+Tactics\+Object에 대한 협력 다이어그램\+:
+% FIG 1
+\subsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+override bool \hyperlink{class_tactics_object_aa445b127fafc61d84a064b423a155c1a}{Equals} (object o)
+\item 
+override int \hyperlink{class_tactics_object_a5fe0e8c99cec56daa7909754f037ac26}{Get\+Hash\+Code} ()
+\item 
+virtual void \hyperlink{class_tactics_object_a5f94ed01497a7072a2785163f4cbc57b}{Interactive} (\hyperlink{class_tactics_object}{Tactics\+Object} interact\+Target)
+\item 
+virtual void \hyperlink{class_tactics_object_a0353d47981c71db7fe32bd414f025e9b}{On\+Touch\+Event} (\hyperlink{_touch_manager_8cs_ae33e321a424fe84ba8b2fdb81ad40a68}{e\+Touch\+Event} touch)
+\end{DoxyCompactItemize}
+\subsection*{정적 Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{class_tactics_object_a18f2979a4bf81dc755fbc17e425809f0}{operator==} (\hyperlink{class_tactics_object}{Tactics\+Object} lt, \hyperlink{class_tactics_object}{Tactics\+Object} rt)
+\item 
+static bool \hyperlink{class_tactics_object_a49e235618a22126faa6271243cd89710}{operator!=} (\hyperlink{class_tactics_object}{Tactics\+Object} lt, \hyperlink{class_tactics_object}{Tactics\+Object} rt)
+\end{DoxyCompactItemize}
 
 
 \subsection{상세한 설명}
@@ -25,6 +33,149 @@ Tactics\+Object에 대한 협력 다이어그램\+:\nopagebreak
 
 Tactics\+Object.\+cs 파일의 5 번째 라인에서 정의되었습니다.
 
+
+
+\subsection{멤버 함수 문서화}
+\index{Tactics\+Object@{Tactics\+Object}!Equals@{Equals}}
+\index{Equals@{Equals}!Tactics\+Object@{Tactics\+Object}}
+\subsubsection[{\texorpdfstring{Equals(object o)}{Equals(object o)}}]{\setlength{\rightskip}{0pt plus 5cm}override bool Tactics\+Object.\+Equals (
+\begin{DoxyParamCaption}
+\item[{object}]{o}
+\end{DoxyParamCaption}
+)}\hypertarget{class_tactics_object_aa445b127fafc61d84a064b423a155c1a}{}\label{class_tactics_object_aa445b127fafc61d84a064b423a155c1a}
+
+
+Tactics\+Object.\+cs 파일의 34 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+35     \{
+36         \textcolor{keywordflow}{if} (\textcolor{keyword}{this} is \hyperlink{namespace_m_c_n}{MCN}.\hyperlink{class_m_c_n_1_1_decoable}{Decoable})
+37         \{
+38             (\textcolor{keyword}{this} as \hyperlink{namespace_m_c_n}{MCN}.\hyperlink{class_m_c_n_1_1_decoable}{Decoable}).\hyperlink{class_tactics_object_aa445b127fafc61d84a064b423a155c1a}{Equals}(o);
+39         \}
+40 
+41         \textcolor{keywordflow}{return} base.Equals(o);
+42     \}
+\end{DoxyCode}
+\index{Tactics\+Object@{Tactics\+Object}!Get\+Hash\+Code@{Get\+Hash\+Code}}
+\index{Get\+Hash\+Code@{Get\+Hash\+Code}!Tactics\+Object@{Tactics\+Object}}
+\subsubsection[{\texorpdfstring{Get\+Hash\+Code()}{GetHashCode()}}]{\setlength{\rightskip}{0pt plus 5cm}override int Tactics\+Object.\+Get\+Hash\+Code (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_tactics_object_a5fe0e8c99cec56daa7909754f037ac26}{}\label{class_tactics_object_a5fe0e8c99cec56daa7909754f037ac26}
+
+
+Tactics\+Object.\+cs 파일의 44 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+45     \{
+46         \textcolor{keywordflow}{return} base.GetHashCode();
+47     \}
+\end{DoxyCode}
+\index{Tactics\+Object@{Tactics\+Object}!Interactive@{Interactive}}
+\index{Interactive@{Interactive}!Tactics\+Object@{Tactics\+Object}}
+\subsubsection[{\texorpdfstring{Interactive(\+Tactics\+Object interact\+Target)}{Interactive(TacticsObject interactTarget)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Tactics\+Object.\+Interactive (
+\begin{DoxyParamCaption}
+\item[{{\bf Tactics\+Object}}]{interact\+Target}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_tactics_object_a5f94ed01497a7072a2785163f4cbc57b}{}\label{class_tactics_object_a5f94ed01497a7072a2785163f4cbc57b}
+
+
+\hyperlink{class_m_c_n_1_1_decorator_ae58cb79cf1ee47006b7dbdac82b97dc5}{M\+C\+N.\+Decorator}에서 재구현되었습니다.
+
+
+
+Tactics\+Object.\+cs 파일의 50 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+50 \{ \}
+\end{DoxyCode}
+
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 2
+
+
+\index{Tactics\+Object@{Tactics\+Object}!On\+Touch\+Event@{On\+Touch\+Event}}
+\index{On\+Touch\+Event@{On\+Touch\+Event}!Tactics\+Object@{Tactics\+Object}}
+\subsubsection[{\texorpdfstring{On\+Touch\+Event(e\+Touch\+Event touch)}{OnTouchEvent(eTouchEvent touch)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Tactics\+Object.\+On\+Touch\+Event (
+\begin{DoxyParamCaption}
+\item[{{\bf e\+Touch\+Event}}]{touch}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_tactics_object_a0353d47981c71db7fe32bd414f025e9b}{}\label{class_tactics_object_a0353d47981c71db7fe32bd414f025e9b}
+
+
+\hyperlink{class_m_c_n_1_1_decorator_ab99273d32a380d567f03737ea57ec083}{M\+C\+N.\+Decorator}에서 재구현되었습니다.
+
+
+
+Tactics\+Object.\+cs 파일의 52 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+52 \{ \}
+\end{DoxyCode}
+
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 3
+
+
+\index{Tactics\+Object@{Tactics\+Object}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Tactics\+Object@{Tactics\+Object}}
+\subsubsection[{\texorpdfstring{operator"!=(\+Tactics\+Object lt, Tactics\+Object rt)}{operator!=(TacticsObject lt, TacticsObject rt)}}]{\setlength{\rightskip}{0pt plus 5cm}static bool Tactics\+Object.\+operator!= (
+\begin{DoxyParamCaption}
+\item[{{\bf Tactics\+Object}}]{lt, }
+\item[{{\bf Tactics\+Object}}]{rt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_tactics_object_a49e235618a22126faa6271243cd89710}{}\label{class_tactics_object_a49e235618a22126faa6271243cd89710}
+
+
+Tactics\+Object.\+cs 파일의 29 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+30     \{
+31         \textcolor{keywordflow}{return} !(rt == lt);
+32     \}
+\end{DoxyCode}
+\index{Tactics\+Object@{Tactics\+Object}!operator==@{operator==}}
+\index{operator==@{operator==}!Tactics\+Object@{Tactics\+Object}}
+\subsubsection[{\texorpdfstring{operator==(\+Tactics\+Object lt, Tactics\+Object rt)}{operator==(TacticsObject lt, TacticsObject rt)}}]{\setlength{\rightskip}{0pt plus 5cm}static bool Tactics\+Object.\+operator== (
+\begin{DoxyParamCaption}
+\item[{{\bf Tactics\+Object}}]{lt, }
+\item[{{\bf Tactics\+Object}}]{rt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_tactics_object_a18f2979a4bf81dc755fbc17e425809f0}{}\label{class_tactics_object_a18f2979a4bf81dc755fbc17e425809f0}
+
+
+Tactics\+Object.\+cs 파일의 9 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+10     \{
+11         \textcolor{keywordflow}{if} (\hyperlink{namespace_system}{System}.Object.ReferenceEquals(lt, rt))
+12         \{
+13             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+14         \}
+15 
+16         \textcolor{keywordflow}{if} (((\textcolor{keywordtype}{object})lt == null) || ((object)rt == null))
+17         \{
+18             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+19         \}
+20 
+21         \textcolor{keywordflow}{if} (lt is \hyperlink{namespace_m_c_n}{MCN}.\hyperlink{class_m_c_n_1_1_decoable}{Decoable} && rt is \hyperlink{namespace_m_c_n}{MCN}.\hyperlink{class_m_c_n_1_1_decoable}{Decoable})
+22         \{
+23             \textcolor{keywordflow}{return} (lt as \hyperlink{namespace_m_c_n}{MCN}.\hyperlink{class_m_c_n_1_1_decoable}{Decoable}) == (rt as \hyperlink{namespace_m_c_n}{MCN}.\hyperlink{class_m_c_n_1_1_decoable}{Decoable});
+24         \}
+25         
+26         \textcolor{keywordflow}{return} (\textcolor{keywordtype}{object})lt == (object)rt;
+27     \}
+\end{DoxyCode}
 
 
 이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
