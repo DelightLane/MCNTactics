@@ -8,7 +8,7 @@ public enum eMoveableType
     MOVE
 }
 
-public class MoveDecorator : MCN.Decorator, MCN.IObserver<eTouchEvent>
+public class MoveDecorator : MCN.Decorator
 {
     #region state
     private MCN.StateMachine<MoveableState> _moveableStateMachine = new MCN.StateMachine<MoveableState>();
@@ -77,7 +77,7 @@ public class MoveDecorator : MCN.Decorator, MCN.IObserver<eTouchEvent>
 
                         var placedTile = placeable.GetPlacedTile();
 
-                        placedTile.ShowChainActiveTile(moveable.Weight, Target);
+                        placedTile.ShowChainActiveTile(moveable.Weight);
                     }
                 }
             }
@@ -150,35 +150,15 @@ public class MoveDecorator : MCN.Decorator, MCN.IObserver<eTouchEvent>
 
     void Awake()
     {
-        TouchManager.Instance.Subscribe(this);
-
         StorageStates();
 
         ChangeState(eMoveableType.NORMAL);
-    }
-
-    void Destroy()
-    {
-        TouchManager.Instance.Unsubscribe(this);
     }
 
     private void StorageStates()
     {
         new MoveableState_Normal(this);
         new MoveableState_Move(this);
-    }
-
-    public void OnNext(eTouchEvent touchEvent)
-    {
-        if (touchEvent == eTouchEvent.TOUCH)
-        {
-            var state = GetCurrentState();
-
-            if (state != null)
-            {
-                state.OnTouchEvent();
-            }
-        }
     }
 
     private MoveableState GetCurrentState()
@@ -209,6 +189,16 @@ public class MoveDecorator : MCN.Decorator, MCN.IObserver<eTouchEvent>
         if (_moveableStateMachine != null)
         {
             _moveableStateMachine.ChangeState(type.ToString());
+        }
+    }
+
+    protected override void DecoOnTouchEvent(eTouchEvent touch)
+    {
+        var state = GetCurrentState();
+
+        if (state != null)
+        {
+            state.OnTouchEvent();
         }
     }
 

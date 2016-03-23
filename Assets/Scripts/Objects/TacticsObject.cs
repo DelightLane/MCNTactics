@@ -48,4 +48,6 @@ public abstract class TacticsObject : MonoBehaviour
     #endregion
 
     public virtual void Interactive(TacticsObject interactTarget) { }
+
+    public virtual void OnTouchEvent(eTouchEvent touch) { }
 }

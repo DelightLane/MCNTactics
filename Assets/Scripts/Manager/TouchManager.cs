@@ -24,17 +24,20 @@ public class TouchManager : MonoSingletone<TouchManager>, IObservable<eTouchEven
         if (Input.GetMouseButtonUp(0))
         {
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit))
+            RaycastHit[] hits = Physics.RaycastAll(ray);
+            if (hits.Length > 0)
             {
                 foreach (var observer in _observers)
                 {
                     var gameObjObserver = observer as MonoBehaviour;
                     if (gameObjObserver != null)
                     {
-                        if (gameObjObserver.transform == hit.transform)
+                        foreach (var hit in hits)
                         {
-                            observer.OnNext(eTouchEvent.TOUCH);
+                            if (gameObjObserver.transform == hit.transform)
+                            {
+                                observer.OnNext(eTouchEvent.TOUCH);
+                            }
                         }
                     }
                 }

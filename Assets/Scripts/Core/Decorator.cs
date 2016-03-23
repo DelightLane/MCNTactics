@@ -68,6 +68,10 @@ namespace MCN
         {
             get
             {
+                if(_decoTarget == null)
+                {
+                    _decoTarget = this;
+                }
                 return _decoTarget;
             }
         }
@@ -219,13 +223,26 @@ namespace MCN
         }
         #endregion
 
-        public override void Interactive(TacticsObject interactTarget)
+        sealed public override void OnTouchEvent(eTouchEvent touch)
         {
+            base.OnTouchEvent(touch);
+
+            _decoTarget.OnTouchEvent(touch);
+
+            DecoOnTouchEvent(touch);
+        }
+
+        sealed public override void Interactive(TacticsObject interactTarget)
+        {
+            base.Interactive(interactTarget);
+
             _decoTarget.Interactive(interactTarget);
 
             DecoInteractive(interactTarget);
         }
 
-        protected abstract void DecoInteractive(TacticsObject interactTarget);
+        protected virtual void DecoInteractive(TacticsObject interactTarget) { }
+
+        protected virtual void DecoOnTouchEvent(eTouchEvent touch) { }
     }
 }

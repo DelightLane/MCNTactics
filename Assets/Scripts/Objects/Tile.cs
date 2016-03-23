@@ -40,7 +40,8 @@ public class Tile : TacticsObject, IDisposable, MCN.IObserver<eTouchEvent>
 
         public abstract eTileType GetCurrentType();
 
-        public virtual void OnTouchEvent(eTouchEvent touch) { }
+        // 타일에 붙은 오브젝트에 터치 이벤트를 넘기고 싶지 않을 때 false를 리턴한다.
+        public virtual bool OnTouchEvent(eTouchEvent touch) { return true; }
     }
 
     private class TileState_Normal : TileState
@@ -100,7 +101,7 @@ public class Tile : TacticsObject, IDisposable, MCN.IObserver<eTouchEvent>
             }
         }
 
-        public override void OnTouchEvent(eTouchEvent touch)
+        public override bool OnTouchEvent(eTouchEvent touch)
         {
             if (touch == eTouchEvent.TOUCH)
             {
@@ -109,8 +110,12 @@ public class Tile : TacticsObject, IDisposable, MCN.IObserver<eTouchEvent>
                 if (selected != null)
                 {
                     selected.Interactive(Target);
+
+                    return false;
                 }
             }
+
+            return true;
         }
     }
 
@@ -207,9 +212,14 @@ public class Tile : TacticsObject, IDisposable, MCN.IObserver<eTouchEvent>
         _position = pos;
     }
 
-    public PlaceableObject GetAttachObject()
+    public MCN.Decoable GetAttachObject()
     {
-        return _attached;
+        if (_attached != null)
+        {
+            return _attached.Get;
+        }
+
+        return null;
     }
 
     public bool AttachObject(PlaceableObject obj)
@@ -287,6 +297,14 @@ public class Tile : TacticsObject, IDisposable, MCN.IObserver<eTouchEvent>
         return null;
     }
 
+    public void ShowChainActiveTile(int range)
+    {
+        if (_attached != null)
+        {
+            ShowChainActiveTile(range, _attached);
+        }
+    }
+
     public void ShowChainActiveTile(int range, TacticsObject startedObj)
     {
         if (range <= 0)
@@ -360,9 +378,17 @@ public class Tile : TacticsObject, IDisposable, MCN.IObserver<eTouchEvent>
 
         throw new UnityException("_stateMachine is null.");
     }
-
-    public void OnNext(eTouchEvent data)
+    
+    // 모든 터치 이벤트는 타일이 기준.
+    // 그러므로 모든 터치 이벤트는 이곳을 기점으로 시작된다.
+    public void OnNext(eTouchEvent touch)
     {
-        GetCurrentState().OnTouchEvent(data);
+        if (GetCurrentState().OnTouchEvent(touch))
+        {
+            if (GetAttachObject() != null)
+            {
+                GetAttachObject().OnTouchEvent(touch);
+            }
+        }
     }
 }
