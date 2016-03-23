@@ -287,25 +287,53 @@ public class Tile : TacticsObject, IDisposable, MCN.IObserver<eTouchEvent>
         return null;
     }
 
-    public void ShowChainActiveTile(int range)
+    public void ShowChainActiveTile(int range, TacticsObject startedObj)
     {
         if (range <= 0)
         {
             return;
         }
 
-        this.ChangeState(eTileType.ACTIVE);
-
         var closedTiles = this.GetClosedTiles();
+
+        int obstacleCost = GetChainActiveTileCost(startedObj);
 
         foreach (var closedTile in closedTiles)
         {
             if (closedTile != null)
             {
+                if (closedTile.GetAttachObject() != null)
+                {
+                    continue;
+                }
+
                 closedTile.ChangeState(eTileType.ACTIVE);
-                closedTile.ShowChainActiveTile(range - 1);
+                closedTile.ShowChainActiveTile(range - 1 - obstacleCost, startedObj);
             }
         }
+    }
+
+    private int GetChainActiveTileCost(TacticsObject startedObj)
+    {
+        var closedTiles = this.GetClosedTiles();
+
+        int obstacleCost = 0;
+
+        if (this.GetAttachObject() != startedObj)
+        {
+            foreach (var closedTile in closedTiles)
+            {
+                if (closedTile != null)
+                {
+                    if (closedTile.GetAttachObject() != null && closedTile.GetAttachObject() != startedObj)
+                    {
+                        ++obstacleCost;
+                    }
+                }
+            }
+        }
+
+        return obstacleCost;
     }
 
     public void ChangeState(eTileType interaction)

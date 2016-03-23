@@ -77,7 +77,7 @@ public class MoveDecorator : MCN.Decorator, MCN.IObserver<eTouchEvent>
 
                         var placedTile = placeable.GetPlacedTile();
 
-                        placedTile.ShowChainActiveTile(moveable.Weight);
+                        placedTile.ShowChainActiveTile(moveable.Weight, Target);
                     }
                 }
             }
