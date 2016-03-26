@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\Manager\MapCreator.cs" />
     <Compile Include="Assets\Scripts\Manager\MapManager.cs" />
     <Compile Include="Assets\Scripts\Manager\TouchManager.cs" />
+    <Compile Include="Assets\Scripts\Objects\Decorator\AttackDecorator.cs" />
     <Compile Include="Assets\Scripts\Objects\Decorator\MoveDecorator.cs" />
     <Compile Include="Assets\Scripts\Objects\PlaceableObject.cs" />
     <Compile Include="Assets\Scripts\Objects\TacticsObject.cs" />

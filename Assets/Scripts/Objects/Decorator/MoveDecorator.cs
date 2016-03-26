@@ -5,7 +5,8 @@ using System.Collections.Generic;
 public enum eMoveableType
 {
     NORMAL,
-    MOVE
+    MOVE,
+    DONE
 }
 
 public class MoveDecorator : MCN.Decorator
@@ -45,6 +46,23 @@ public class MoveDecorator : MCN.Decorator
         public abstract eMoveableType GetCurrentType();
 
         public abstract void OnTouchEvent();
+
+        protected void AllTileToNormal()
+        {
+            var moveable = Target as MoveDecorator;
+
+            if (moveable != null)
+            {
+                var placeable = moveable.DecoTarget as PlaceableObject;
+
+                if (placeable != null)
+                {
+                    placeable.Deselect();
+
+                    MapManager.Instance.ChangeAllTileState(eTileType.NORMAL);
+                }
+            }
+        }
     }
 
     private class MoveableState_Move : MoveableState
@@ -114,7 +132,7 @@ public class MoveDecorator : MCN.Decorator
                     {
                         if (moveable != null)
                         {
-                            moveable.ChangeState(eMoveableType.NORMAL);
+                            moveable.ChangeState(eMoveableType.DONE);
                         }
                     }
                 }
@@ -137,28 +155,36 @@ public class MoveDecorator : MCN.Decorator
 
             if (moveable != null)
             {
-                if (GameManager.Instance.SelectedObj == null)
+                if (moveable.GetCurrentStateType() != eMoveableType.DONE)
                 {
-                    moveable.ChangeState(eMoveableType.MOVE);
+                    if (GameManager.Instance.SelectedObj == null)
+                    {
+                        moveable.ChangeState(eMoveableType.MOVE);
+                    }
                 }
             }
         }
 
         public override void Run()
         {
-            var moveable = Target as MoveDecorator;
+            AllTileToNormal();
+        }
+    }
 
-            if (moveable != null)
-            {
-                var placeable = moveable.DecoTarget as PlaceableObject;
+    private class MoveableState_Done : MoveableState
+    {
+        public MoveableState_Done(TacticsObject target) : base(target) { }
 
-                if (placeable != null)
-                {
-                    placeable.Deselect();
+        public override eMoveableType GetCurrentType()
+        {
+            return eMoveableType.DONE;
+        }
 
-                    MapManager.Instance.ChangeAllTileState(eTileType.NORMAL);
-                }
-            }
+        public override void OnTouchEvent() { }
+
+        public override void Run()
+        {
+            AllTileToNormal();
         }
     }
     #endregion
@@ -174,6 +200,7 @@ public class MoveDecorator : MCN.Decorator
     {
         new MoveableState_Normal(this);
         new MoveableState_Move(this);
+        new MoveableState_Done(this);
     }
 
     private MoveableState GetCurrentState()

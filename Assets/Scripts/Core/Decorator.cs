@@ -160,7 +160,7 @@ namespace MCN
             {
                 if(_weight == null || !_weight.ContainsKey(key))
                 {
-                    throw new Exception(string.Format("{0} is not available. because weight '{1}' key is not initialized.", this.GetType().Name, key));
+                    throw new UnityException(string.Format("{0} is not available. because weight '{1}' key is not initialized.", this.GetType().Name, key));
                 }
             }
         }
