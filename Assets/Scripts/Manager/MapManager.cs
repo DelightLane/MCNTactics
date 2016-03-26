@@ -3,6 +3,7 @@ using System;
 using System.Reflection;
 using System.Collections;
 using System.Collections.Generic;
+using MCN;
 
 public class MapManager : MCN.MonoSingletone<MapManager> {
     [SerializeField]
@@ -10,21 +11,6 @@ public class MapManager : MCN.MonoSingletone<MapManager> {
 
     [SerializeField]
     private List<PlaceInfo> _placeObjInfos;
-
-    [System.Serializable]
-    public class PlaceInfo
-    {
-        public Vector2 pos;
-        public string prefabName;
-        public List<DecoClassInfo> decoClassInfo;
-    }
-
-    [System.Serializable]
-    public class DecoClassInfo
-    {
-        public string className;
-        public int weight;
-    }
 
 #if UNITY_EDITOR
     private class DebugMapManager
@@ -148,7 +134,10 @@ public class MapManager : MCN.MonoSingletone<MapManager> {
                     if (deco != null)
                     {
                         deco.Decoration(decoTarget);
-                        deco.Weight = decoInfo.weight;
+                        foreach(var decoWeight in decoInfo.weight)
+                        {
+                            deco.SetWeight(decoWeight);
+                        }
 
                         decoTarget = deco;
                     }

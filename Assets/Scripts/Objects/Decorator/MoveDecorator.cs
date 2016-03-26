@@ -10,6 +10,21 @@ public enum eMoveableType
 
 public class MoveDecorator : MCN.Decorator
 {
+    #region weight
+    private int Range
+    {
+        get
+        {
+            return GetWeight("range");
+        }
+    }
+
+    protected override string[] AbsoluteWeightKey()
+    {
+        return new string[] { "range" };
+    }
+    #endregion
+
     #region state
     private MCN.StateMachine<MoveableState> _moveableStateMachine = new MCN.StateMachine<MoveableState>();
 
@@ -77,7 +92,7 @@ public class MoveDecorator : MCN.Decorator
 
                         var placedTile = placeable.GetPlacedTile();
 
-                        placedTile.ShowChainActiveTile(moveable.Weight);
+                        placedTile.ShowChainActiveTile(moveable.Range);
                     }
                 }
             }

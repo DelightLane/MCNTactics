@@ -134,9 +134,11 @@ namespace MCN
         // 각 데코레이터 별로 필요한 가중치를 설정한다.
         // ex) MoveDecorator에서 weight는 이동 범위이다.
         [SerializeField]
-        private int _weight = 0;
+        private Dictionary<string, int> _weight;
 
         private Decoable _decoTarget;
+
+        protected abstract string[] AbsoluteWeightKey();
 
         // 최상위를 리턴시킨다.
         protected MCN.Decoable DecoTarget
@@ -152,15 +154,42 @@ namespace MCN
             }
         }
 
-        public int Weight
+        void Start()
         {
-            get
+            foreach(var key in AbsoluteWeightKey())
             {
-                return _weight;
+                if(_weight == null || !_weight.ContainsKey(key))
+                {
+                    throw new Exception(string.Format("{0} is not available. because weight '{1}' key is not initialized.", this.GetType().Name, key));
+                }
             }
-            set
+        }
+
+        public int GetWeight(string key)
+        {
+            if(_weight.ContainsKey(key))
             {
-                _weight = value;
+                return _weight[key];
+            }
+
+            return 0;
+        }
+
+        public void SetWeight(string key, int weight)
+        {
+            _weight[key] = weight;
+        }
+
+        public void SetWeight(Pair<string, int> info)
+        {
+            if(info != null)
+            {
+                if(_weight == null)
+                {
+                    _weight = new Dictionary<string, int>();
+                }
+
+                _weight[info.key] = info.value;
             }
         }
 
