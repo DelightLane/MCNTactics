@@ -252,13 +252,14 @@ namespace MCN
         }
         #endregion
 
-        sealed public override void OnTouchEvent(eTouchEvent touch)
+        sealed public override bool OnTouchEvent(eTouchEvent touch)
         {
             base.OnTouchEvent(touch);
 
-            _decoTarget.OnTouchEvent(touch);
-
-            DecoOnTouchEvent(touch);
+            // 만약 먼저 추가된 데코레이터의 touchEvent가 false를 반환한다면
+            // 그 후에 추가된 데코레이터에는 터치 이벤트가 전달되지 않는다.
+            return (_decoTarget.OnTouchEvent(touch) &&
+                    DecoOnTouchEvent(touch));
         }
 
         sealed public override void Interactive(TacticsObject interactTarget)
@@ -272,6 +273,6 @@ namespace MCN
 
         protected virtual void DecoInteractive(TacticsObject interactTarget) { }
 
-        protected virtual void DecoOnTouchEvent(eTouchEvent touch) { }
+        protected virtual bool DecoOnTouchEvent(eTouchEvent touch) { return true; }
     }
 }

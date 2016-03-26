@@ -45,7 +45,7 @@ public class MoveDecorator : MCN.Decorator
 
         public abstract eMoveableType GetCurrentType();
 
-        public abstract void OnTouchEvent();
+        public abstract bool OnTouchEvent();
 
         protected void AllTileToNormal()
         {
@@ -74,7 +74,7 @@ public class MoveDecorator : MCN.Decorator
             return eMoveableType.MOVE;
         }
 
-        public override void OnTouchEvent()
+        public override bool OnTouchEvent()
         {
             var moveable = Target as MoveDecorator;
 
@@ -90,6 +90,8 @@ public class MoveDecorator : MCN.Decorator
                     }
                 }
             }
+
+            return false;
         }
 
         public override void Run()
@@ -149,7 +151,7 @@ public class MoveDecorator : MCN.Decorator
             return eMoveableType.NORMAL;
         }
 
-        public override void OnTouchEvent()
+        public override bool OnTouchEvent()
         {
             var moveable = Target as MoveDecorator;
 
@@ -163,6 +165,8 @@ public class MoveDecorator : MCN.Decorator
                     }
                 }
             }
+
+            return false;
         }
 
         public override void Run()
@@ -180,7 +184,10 @@ public class MoveDecorator : MCN.Decorator
             return eMoveableType.DONE;
         }
 
-        public override void OnTouchEvent() { }
+        public override bool OnTouchEvent()
+        {
+            return true;
+        }
 
         public override void Run()
         {
@@ -234,14 +241,16 @@ public class MoveDecorator : MCN.Decorator
         }
     }
 
-    protected override void DecoOnTouchEvent(eTouchEvent touch)
+    protected override bool DecoOnTouchEvent(eTouchEvent touch)
     {
         var state = GetCurrentState();
 
         if (state != null)
         {
-            state.OnTouchEvent();
+            return state.OnTouchEvent();
         }
+
+        throw new UnityException("don't have moveable state.");
     }
 
     protected override void DecoInteractive(TacticsObject interactTarget)

@@ -53,7 +53,7 @@ public class AttackDecorator : MCN.Decorator
 
         public abstract eAttackableType GetCurrentType();
 
-        public abstract void OnTouchEvent();
+        public abstract bool OnTouchEvent();
 
         protected void AllTileToNormal()
         {
@@ -117,14 +117,16 @@ public class AttackDecorator : MCN.Decorator
         }
     }
 
-    protected override void DecoOnTouchEvent(eTouchEvent touch)
+    protected override bool DecoOnTouchEvent(eTouchEvent touch)
     {
         var state = GetCurrentState();
 
         if (state != null)
         {
-            state.OnTouchEvent();
+            return state.OnTouchEvent();
         }
+
+        throw new UnityException("don't have attackable state.");
     }
 
     protected override void DecoInteractive(TacticsObject interactTarget)
