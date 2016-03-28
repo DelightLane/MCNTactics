@@ -1,0 +1,365 @@
+\hypertarget{class_attack_decorator_1_1_attackable_state}{}\section{Attack\+Decorator.\+Attackable\+State 클래스 참조}
+\label{class_attack_decorator_1_1_attackable_state}\index{Attack\+Decorator.\+Attackable\+State@{Attack\+Decorator.\+Attackable\+State}}
+
+
+Attack\+Decorator.\+Attackable\+State에 대한 상속 다이어그램 \+: 
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{class_attack_decorator_1_1_attackable_state__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Attack\+Decorator.\+Attackable\+State에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_attack_decorator_1_1_attackable_state__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_attack_decorator_1_1_attackable_state_ab42449bc9d397049c81f2a6e6d2ac9b7}{Attackable\+State} (\hyperlink{class_tactics_object}{Tactics\+Object} target)
+\item 
+virtual void \hyperlink{class_attack_decorator_1_1_attackable_state_a8dc1edc91e271393dc3097e92c9563a3}{Interactive} (\hyperlink{class_placeable_object}{Placeable\+Object} target)
+\item 
+abstract \hyperlink{_attack_decorator_8cs_a11dd66d5fec1bd5b34c8ca6934344cad}{e\+Attackable\+Type} \hyperlink{class_attack_decorator_1_1_attackable_state_a02247dd3afd57a7c3a81540b192fbaa7}{Get\+Current\+Type} ()
+\item 
+abstract bool \hyperlink{class_attack_decorator_1_1_attackable_state_ac9cf679f51eb8a57cab007476c583dca}{On\+Touch\+Event} ()
+\item 
+virtual void \hyperlink{class_m_c_n_1_1_state_a5be59bc891e64cbbe4322d74a6746908}{Initialize} ()
+\item 
+virtual void \hyperlink{class_m_c_n_1_1_state_aebf48ef248bbf185d6aae91d9789459e}{Destroy} ()
+\item 
+abstract void \hyperlink{class_m_c_n_1_1_state_afdec72a816a8a8ec584cac758a027215}{Run} ()
+\item 
+virtual void \hyperlink{class_m_c_n_1_1_state_a2492ca731678b8216c02134dddeeb745}{Finish} ()
+\item 
+void \hyperlink{class_m_c_n_1_1_state_af6df0477e0dead784489688cb2c2093e}{Dispose} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_attack_decorator_1_1_attackable_state_ad1be8431e8606ed79d375fe520b65e47}{All\+Tile\+To\+Normal} ()
+\end{DoxyCompactItemize}
+\subsection*{속성}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_tactics_object}{Tactics\+Object} \hyperlink{class_m_c_n_1_1_state_a79a563b32f183c9adc9a96679fc57eb8}{Target}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\subsection{상세한 설명}
+
+
+Attack\+Decorator.\+cs 파일의 40 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{생성자 \& 소멸자 문서화}
+\index{Attack\+Decorator\+::\+Attackable\+State@{Attack\+Decorator\+::\+Attackable\+State}!Attackable\+State@{Attackable\+State}}
+\index{Attackable\+State@{Attackable\+State}!Attack\+Decorator\+::\+Attackable\+State@{Attack\+Decorator\+::\+Attackable\+State}}
+\subsubsection[{\texorpdfstring{Attackable\+State(\+Tactics\+Object target)}{AttackableState(TacticsObject target)}}]{\setlength{\rightskip}{0pt plus 5cm}Attack\+Decorator.\+Attackable\+State.\+Attackable\+State (
+\begin{DoxyParamCaption}
+\item[{{\bf Tactics\+Object}}]{target}
+\end{DoxyParamCaption}
+)}\hypertarget{class_attack_decorator_1_1_attackable_state_ab42449bc9d397049c81f2a6e6d2ac9b7}{}\label{class_attack_decorator_1_1_attackable_state_ab42449bc9d397049c81f2a6e6d2ac9b7}
+
+
+Attack\+Decorator.\+cs 파일의 42 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+42                                                      : base(target)
+43         \{
+44             var attackable = target as \hyperlink{class_attack_decorator}{AttackDecorator};
+45 
+46             \textcolor{keywordflow}{if} (attackable != null && attackable.\_attackableStateMachine != null)
+47             \{
+48                 attackable.\hyperlink{class_attack_decorator_a0ddeffefa8d7bce11d4681c07c50183c}{\_attackableStateMachine}.StorageState(
+      \hyperlink{class_attack_decorator_1_1_attackable_state_a02247dd3afd57a7c3a81540b192fbaa7}{GetCurrentType}().ToString(), \textcolor{keyword}{this});
+49             \}
+50         \}
+\end{DoxyCode}
+
+
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_attack_decorator_1_1_attackable_state_ab42449bc9d397049c81f2a6e6d2ac9b7_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_attack_decorator_1_1_attackable_state_ab42449bc9d397049c81f2a6e6d2ac9b7_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{멤버 함수 문서화}
+\index{Attack\+Decorator\+::\+Attackable\+State@{Attack\+Decorator\+::\+Attackable\+State}!All\+Tile\+To\+Normal@{All\+Tile\+To\+Normal}}
+\index{All\+Tile\+To\+Normal@{All\+Tile\+To\+Normal}!Attack\+Decorator\+::\+Attackable\+State@{Attack\+Decorator\+::\+Attackable\+State}}
+\subsubsection[{\texorpdfstring{All\+Tile\+To\+Normal()}{AllTileToNormal()}}]{\setlength{\rightskip}{0pt plus 5cm}void Attack\+Decorator.\+Attackable\+State.\+All\+Tile\+To\+Normal (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_attack_decorator_1_1_attackable_state_ad1be8431e8606ed79d375fe520b65e47}{}\label{class_attack_decorator_1_1_attackable_state_ad1be8431e8606ed79d375fe520b65e47}
+
+
+Attack\+Decorator.\+cs 파일의 58 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+59         \{
+60             var attackable = \hyperlink{class_m_c_n_1_1_state_a79a563b32f183c9adc9a96679fc57eb8}{Target} as \hyperlink{class_attack_decorator}{AttackDecorator};
+61 
+62             \textcolor{keywordflow}{if} (attackable != null)
+63             \{
+64                 var placeable = attackable.\hyperlink{class_m_c_n_1_1_decorator_a1306a0a8b814650cd5970a1ffc7ba2fe}{DecoTarget} as 
+      \hyperlink{class_placeable_object}{PlaceableObject};
+65 
+66                 \textcolor{keywordflow}{if} (placeable != null)
+67                 \{
+68                     placeable.\hyperlink{class_placeable_object_a0c1248b1f9981ddbf68e6f70a6498f3d}{Deselect}();
+69 
+70                     \hyperlink{class_map_manager}{MapManager}.\hyperlink{class_m_c_n_1_1_mono_singletone_aa50c027cca64cf4ad30c1ee5c83e0b78}{Instance}.ChangeAllTileState(
+      \hyperlink{_tile_8cs_a271bc07be325bca511bcb747e0ff2fda}{eTileType}.NORMAL);
+71                 \}
+72             \}
+73         \}
+\end{DoxyCode}
+
+
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_attack_decorator_1_1_attackable_state_ad1be8431e8606ed79d375fe520b65e47_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Attack\+Decorator\+::\+Attackable\+State@{Attack\+Decorator\+::\+Attackable\+State}!Destroy@{Destroy}}
+\index{Destroy@{Destroy}!Attack\+Decorator\+::\+Attackable\+State@{Attack\+Decorator\+::\+Attackable\+State}}
+\subsubsection[{\texorpdfstring{Destroy()}{Destroy()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void M\+C\+N.\+State.\+Destroy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\hypertarget{class_m_c_n_1_1_state_aebf48ef248bbf185d6aae91d9789459e}{}\label{class_m_c_n_1_1_state_aebf48ef248bbf185d6aae91d9789459e}
+
+
+State.\+cs 파일의 32 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+32 \{ \}
+\end{DoxyCode}
+
+
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{class_m_c_n_1_1_state_aebf48ef248bbf185d6aae91d9789459e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_m_c_n_1_1_state_aebf48ef248bbf185d6aae91d9789459e_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Attack\+Decorator\+::\+Attackable\+State@{Attack\+Decorator\+::\+Attackable\+State}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!Attack\+Decorator\+::\+Attackable\+State@{Attack\+Decorator\+::\+Attackable\+State}}
+\subsubsection[{\texorpdfstring{Dispose()}{Dispose()}}]{\setlength{\rightskip}{0pt plus 5cm}void M\+C\+N.\+State.\+Dispose (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\hypertarget{class_m_c_n_1_1_state_af6df0477e0dead784489688cb2c2093e}{}\label{class_m_c_n_1_1_state_af6df0477e0dead784489688cb2c2093e}
+
+
+State.\+cs 파일의 37 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+38         \{
+39             \hyperlink{class_m_c_n_1_1_state_a13fe398868da354cfde9ff644e12e9f2}{\_target} = null;
+40         \}
+\end{DoxyCode}
+
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_m_c_n_1_1_state_af6df0477e0dead784489688cb2c2093e_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Attack\+Decorator\+::\+Attackable\+State@{Attack\+Decorator\+::\+Attackable\+State}!Finish@{Finish}}
+\index{Finish@{Finish}!Attack\+Decorator\+::\+Attackable\+State@{Attack\+Decorator\+::\+Attackable\+State}}
+\subsubsection[{\texorpdfstring{Finish()}{Finish()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void M\+C\+N.\+State.\+Finish (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\hypertarget{class_m_c_n_1_1_state_a2492ca731678b8216c02134dddeeb745}{}\label{class_m_c_n_1_1_state_a2492ca731678b8216c02134dddeeb745}
+
+
+State.\+cs 파일의 35 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+35 \{ \}
+\end{DoxyCode}
+\index{Attack\+Decorator\+::\+Attackable\+State@{Attack\+Decorator\+::\+Attackable\+State}!Get\+Current\+Type@{Get\+Current\+Type}}
+\index{Get\+Current\+Type@{Get\+Current\+Type}!Attack\+Decorator\+::\+Attackable\+State@{Attack\+Decorator\+::\+Attackable\+State}}
+\subsubsection[{\texorpdfstring{Get\+Current\+Type()}{GetCurrentType()}}]{\setlength{\rightskip}{0pt plus 5cm}abstract {\bf e\+Attackable\+Type} Attack\+Decorator.\+Attackable\+State.\+Get\+Current\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_attack_decorator_1_1_attackable_state_a02247dd3afd57a7c3a81540b192fbaa7}{}\label{class_attack_decorator_1_1_attackable_state_a02247dd3afd57a7c3a81540b192fbaa7}
+
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_attack_decorator_1_1_attackable_state_a02247dd3afd57a7c3a81540b192fbaa7_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Attack\+Decorator\+::\+Attackable\+State@{Attack\+Decorator\+::\+Attackable\+State}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!Attack\+Decorator\+::\+Attackable\+State@{Attack\+Decorator\+::\+Attackable\+State}}
+\subsubsection[{\texorpdfstring{Initialize()}{Initialize()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void M\+C\+N.\+State.\+Initialize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\hypertarget{class_m_c_n_1_1_state_a5be59bc891e64cbbe4322d74a6746908}{}\label{class_m_c_n_1_1_state_a5be59bc891e64cbbe4322d74a6746908}
+
+
+State.\+cs 파일의 31 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+31 \{ \}
+\end{DoxyCode}
+
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{class_m_c_n_1_1_state_a5be59bc891e64cbbe4322d74a6746908_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Attack\+Decorator\+::\+Attackable\+State@{Attack\+Decorator\+::\+Attackable\+State}!Interactive@{Interactive}}
+\index{Interactive@{Interactive}!Attack\+Decorator\+::\+Attackable\+State@{Attack\+Decorator\+::\+Attackable\+State}}
+\subsubsection[{\texorpdfstring{Interactive(\+Placeable\+Object target)}{Interactive(PlaceableObject target)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Attack\+Decorator.\+Attackable\+State.\+Interactive (
+\begin{DoxyParamCaption}
+\item[{{\bf Placeable\+Object}}]{target}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_attack_decorator_1_1_attackable_state_a8dc1edc91e271393dc3097e92c9563a3}{}\label{class_attack_decorator_1_1_attackable_state_a8dc1edc91e271393dc3097e92c9563a3}
+
+
+Attack\+Decorator.\+cs 파일의 52 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+52 \{ \}
+\end{DoxyCode}
+
+
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_attack_decorator_1_1_attackable_state_a8dc1edc91e271393dc3097e92c9563a3_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Attack\+Decorator\+::\+Attackable\+State@{Attack\+Decorator\+::\+Attackable\+State}!On\+Touch\+Event@{On\+Touch\+Event}}
+\index{On\+Touch\+Event@{On\+Touch\+Event}!Attack\+Decorator\+::\+Attackable\+State@{Attack\+Decorator\+::\+Attackable\+State}}
+\subsubsection[{\texorpdfstring{On\+Touch\+Event()}{OnTouchEvent()}}]{\setlength{\rightskip}{0pt plus 5cm}abstract bool Attack\+Decorator.\+Attackable\+State.\+On\+Touch\+Event (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_attack_decorator_1_1_attackable_state_ac9cf679f51eb8a57cab007476c583dca}{}\label{class_attack_decorator_1_1_attackable_state_ac9cf679f51eb8a57cab007476c583dca}
+
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_attack_decorator_1_1_attackable_state_ac9cf679f51eb8a57cab007476c583dca_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Attack\+Decorator\+::\+Attackable\+State@{Attack\+Decorator\+::\+Attackable\+State}!Run@{Run}}
+\index{Run@{Run}!Attack\+Decorator\+::\+Attackable\+State@{Attack\+Decorator\+::\+Attackable\+State}}
+\subsubsection[{\texorpdfstring{Run()}{Run()}}]{\setlength{\rightskip}{0pt plus 5cm}abstract void M\+C\+N.\+State.\+Run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [inherited]}}\hypertarget{class_m_c_n_1_1_state_afdec72a816a8a8ec584cac758a027215}{}\label{class_m_c_n_1_1_state_afdec72a816a8a8ec584cac758a027215}
+
+
+\hyperlink{class_move_decorator_1_1_moveable_state___done_ad6aac25a9f42d14a958d1c93e3b6bd79}{Move\+Decorator.\+Moveable\+State\+\_\+\+Done}, \hyperlink{class_move_decorator_1_1_moveable_state___normal_a9e4e591aa61c13840a15facffa2148d6}{Move\+Decorator.\+Moveable\+State\+\_\+\+Normal}, \hyperlink{class_tile_1_1_tile_state___deactive_a806c5dbc5eb43903ad41d448f3d25c61}{Tile.\+Tile\+State\+\_\+\+Deactive}, \hyperlink{class_move_decorator_1_1_moveable_state___move_ae1bb2c9ca5992373aa872788775d3e4a}{Move\+Decorator.\+Moveable\+State\+\_\+\+Move}, \hyperlink{class_tile_1_1_tile_state___active_ab53c7c818d65122d6d36c9681ca53bf9}{Tile.\+Tile\+State\+\_\+\+Active}, \hyperlink{class_tile_1_1_tile_state___normal_acf613382b6ddeff2fcc226d8caeb0b53}{Tile.\+Tile\+State\+\_\+\+Normal}에서 구현되었습니다.
+
+
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_m_c_n_1_1_state_afdec72a816a8a8ec584cac758a027215_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{속성 문서화}
+\index{Attack\+Decorator\+::\+Attackable\+State@{Attack\+Decorator\+::\+Attackable\+State}!Target@{Target}}
+\index{Target@{Target}!Attack\+Decorator\+::\+Attackable\+State@{Attack\+Decorator\+::\+Attackable\+State}}
+\subsubsection[{\texorpdfstring{Target}{Target}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tactics\+Object} M\+C\+N.\+State.\+Target\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\hypertarget{class_m_c_n_1_1_state_a79a563b32f183c9adc9a96679fc57eb8}{}\label{class_m_c_n_1_1_state_a79a563b32f183c9adc9a96679fc57eb8}
+
+
+State.\+cs 파일의 17 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Git\+Hub/\+M\+C\+N\+Tactics/\+Assets/\+Scripts/\+Objects/\+Decorator/\hyperlink{_attack_decorator_8cs}{Attack\+Decorator.\+cs}\end{DoxyCompactItemize}

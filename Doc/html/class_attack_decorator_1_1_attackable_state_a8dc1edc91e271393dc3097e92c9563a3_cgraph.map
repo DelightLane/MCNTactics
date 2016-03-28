@@ -1,0 +1,4 @@
+<map id="AttackDecorator.AttackableState.Interactive" name="AttackDecorator.AttackableState.Interactive">
+<area shape="rect" id="node2" href="$class_attack_decorator_1_1_attackable_state.html#a02247dd3afd57a7c3a81540b192fbaa7" title="AttackDecorator.Attackable\lState.GetCurrentType" alt="" coords="236,5,419,47"/>
+<area shape="rect" id="node3" href="$class_attack_decorator_1_1_attackable_state.html#ac9cf679f51eb8a57cab007476c583dca" title="AttackDecorator.Attackable\lState.OnTouchEvent" alt="" coords="236,71,419,112"/>
+</map>

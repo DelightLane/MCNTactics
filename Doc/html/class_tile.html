@@ -122,13 +122,23 @@ $(document).ready(function(){initNavTree('class_tile.html','');});
 Tile에 대한 상속 다이어그램 : </div>
 <div class="dyncontent">
 <div class="center"><img src="class_tile__inherit__graph.png" border="0" usemap="#_tile_inherit__map" alt="Inheritance graph"/></div>
-<!-- MAP 0 -->
+<map name="_tile_inherit__map" id="_tile_inherit__map">
+<area shape="rect" id="node2" href="class_tactics_object.html" title="{TacticsObject\n||+ Equals()\l+ GetHashCode()\l+ Interactive()\l+ OnTouchEvent()\l+ operator==()\l+ operator!=()\l}" alt="" coords="5,131,132,281"/>
+<area shape="rect" id="node5" href="interface_m_c_n_1_1_i_observer.html" title="{MCN::IObserver\&lt; eTouchEvent \&gt;\n||+ OnNext()\l}" alt="" coords="270,167,481,245"/>
+</map>
 </div>
 <div class="dynheader">
 Tile에 대한 협력 다이어그램:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_tile__coll__graph.png" border="0" usemap="#_tile_coll__map" alt="Collaboration graph"/></div>
-<!-- MAP 1 -->
+<map name="_tile_coll__map" id="_tile_coll__map">
+<area shape="rect" id="node7" href="class_placeable_object.html" title="{PlaceableObject\n||+ Attach()\l+ Detach()\l+ GetPlacedTile()\l+ Dispose()\l+ IsSelected()\l+ Select()\l+ Deselect()\l&#45; Place()\l}" alt="" coords="291,905,413,1085"/>
+<area shape="rect" id="node2" href="class_tactics_object.html" title="{TacticsObject\n||+ Equals()\l+ GetHashCode()\l+ Interactive()\l+ OnTouchEvent()\l+ operator==()\l+ operator!=()\l}" alt="" coords="150,132,277,283"/>
+<area shape="rect" id="node9" href="class_m_c_n_1_1_decoable.html" title="{Decoable\n||+ Equals()\l+ GetHashCode()\l+ operator==()\l+ operator!=()\l}" alt="" coords="152,332,275,453"/>
+<area shape="rect" id="node10" href="class_m_c_n_1_1_decoable.html" title="{MCN.Decoable\n||+ Equals()\l+ GetHashCode()\l+ operator==()\l+ operator!=()\l}" alt="" coords="5,332,128,453"/>
+<area shape="rect" id="node5" href="interface_m_c_n_1_1_i_observer.html" title="{MCN::IObserver\&lt; eTouchEvent \&gt;\n||+ OnNext()\l}" alt="" coords="584,354,795,431"/>
+<area shape="rect" id="node8" href="class_m_c_n_1_1_deco_instance.html" title="{MCN::DecoInstance\n|+ Get\l|+ Equals()\l+ Equals()\l+ GetHashCode()\l+ Decorated()\l+ operator==()\l+ operator!=()\l}" alt="" coords="144,604,283,755"/>
+</map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
@@ -172,8 +182,8 @@ Public 멤버 함수</h2></td></tr>
 <tr class="separator:a5fe0e8c99cec56daa7909754f037ac26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f94ed01497a7072a2785163f4cbc57b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tactics_object.html#a5f94ed01497a7072a2785163f4cbc57b">Interactive</a> (<a class="el" href="class_tactics_object.html">TacticsObject</a> interactTarget)</td></tr>
 <tr class="separator:a5f94ed01497a7072a2785163f4cbc57b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0353d47981c71db7fe32bd414f025e9b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tactics_object.html#a0353d47981c71db7fe32bd414f025e9b">OnTouchEvent</a> (<a class="el" href="_touch_manager_8cs.html#ae33e321a424fe84ba8b2fdb81ad40a68">eTouchEvent</a> touch)</td></tr>
-<tr class="separator:a0353d47981c71db7fe32bd414f025e9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af34052e62ea471d21e4c601cc79ff717"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tactics_object.html#af34052e62ea471d21e4c601cc79ff717">OnTouchEvent</a> (<a class="el" href="_touch_manager_8cs.html#ae33e321a424fe84ba8b2fdb81ad40a68">eTouchEvent</a> touch)</td></tr>
+<tr class="separator:af34052e62ea471d21e4c601cc79ff717"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f934b71aa4ddf6f936670d32c3cdff7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_m_c_n_1_1_i_observer.html#a2f934b71aa4ddf6f936670d32c3cdff7">OnNext</a> (T data)</td></tr>
 <tr class="memdesc:a2f934b71aa4ddf6f936670d32c3cdff7"><td class="mdescLeft">&#160;</td><td class="mdescRight">변경 통지 메소드  <a href="#a2f934b71aa4ddf6f936670d32c3cdff7">더 자세히 ...</a><br /></td></tr>
 <tr class="separator:a2f934b71aa4ddf6f936670d32c3cdff7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -245,7 +255,14 @@ Private 속성</h2></td></tr>
 이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_tile_a7684d2e86beeb06d844ebb7819b11b33_icgraph.png" border="0" usemap="#class_tile_a7684d2e86beeb06d844ebb7819b11b33_icgraph" alt=""/></div>
-<!-- MAP 2 -->
+<map name="class_tile_a7684d2e86beeb06d844ebb7819b11b33_icgraph" id="class_tile_a7684d2e86beeb06d844ebb7819b11b33_icgraph">
+<area shape="rect" id="node2" href="class_tile_1_1_tile_state.html#a074f350ff6dd6d5456fdb800b9402952" title="Tile.TileState.TileState" alt="" coords="129,5,281,32"/>
+<area shape="rect" id="node5" href="class_tile_1_1_tile_state___normal.html#a81d8bc6e280e6143ff42a292e863307e" title="Tile.TileState_Normal.Set\lTileColor" alt="" coords="120,57,289,98"/>
+<area shape="rect" id="node6" href="class_tile_1_1_tile_state___active.html#a89a5859b28fa5ad021e8dcee572aacc9" title="Tile.TileState_Active.Set\lTileColor" alt="" coords="123,122,286,163"/>
+<area shape="rect" id="node7" href="class_tile_1_1_tile_state___deactive.html#ac0b9d7d4a64b2c320eeb2679fc6ad459" title="Tile.TileState_Deactive.\lSetTileColor" alt="" coords="126,187,283,229"/>
+<area shape="rect" id="node3" href="class_tile.html#ae37e08e39263e766fdc612de94fb7a0d" title="Tile.GetCurrentState" alt="" coords="337,5,477,32"/>
+<area shape="rect" id="node4" href="class_tile.html#a6133171796d47353aa5d57cd336e0a07" title="Tile.OnNext" alt="" coords="525,5,616,32"/>
+</map>
 </div>
 </p>
 
@@ -290,7 +307,11 @@ Private 속성</h2></td></tr>
 이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_tile_a1969ee41c320c6e7748a33374942e07e_icgraph.png" border="0" usemap="#class_tile_a1969ee41c320c6e7748a33374942e07e_icgraph" alt=""/></div>
-<!-- MAP 3 -->
+<map name="class_tile_a1969ee41c320c6e7748a33374942e07e_icgraph" id="class_tile_a1969ee41c320c6e7748a33374942e07e_icgraph">
+<area shape="rect" id="node2" href="class_move_decorator_1_1_moveable_state___move.html#a9e9c360898b9c25fcc478ef2db20f316" title="MoveDecorator.MoveableState\l_Move.Interactive" alt="" coords="176,5,373,47"/>
+<area shape="rect" id="node3" href="class_placeable_object.html#a06a30cf4396743908cc88733cb216df5" title="PlaceableObject.Place" alt="" coords="197,71,352,98"/>
+<area shape="rect" id="node4" href="class_placeable_object.html#a3176ec3d5d26b2a83cdc58b01e630aa1" title="PlaceableObject.Attach" alt="" coords="421,97,580,123"/>
+</map>
 </div>
 </p>
 
@@ -326,7 +347,10 @@ Private 속성</h2></td></tr>
 이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_tile_a4fbf82b2a26cdeb792dc78192d7247dc_cgraph.png" border="0" usemap="#class_tile_a4fbf82b2a26cdeb792dc78192d7247dc_cgraph" alt=""/></div>
-<!-- MAP 4 -->
+<map name="class_tile_a4fbf82b2a26cdeb792dc78192d7247dc_cgraph" id="class_tile_a4fbf82b2a26cdeb792dc78192d7247dc_cgraph">
+<area shape="rect" id="node2" href="class_tile.html#a6cb69a9fad04bee1fa3473aec22428de" title="Tile.StorageStates" alt="" coords="139,5,268,32"/>
+<area shape="rect" id="node3" href="class_tile.html#a2bb5c747e9483b803ea65b4341ce5af6" title="Tile.ChangeState" alt="" coords="143,56,264,83"/>
+</map>
 </div>
 </p>
 
@@ -353,7 +377,9 @@ Private 속성</h2></td></tr>
 이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_tile_a2bb5c747e9483b803ea65b4341ce5af6_icgraph.png" border="0" usemap="#class_tile_a2bb5c747e9483b803ea65b4341ce5af6_icgraph" alt=""/></div>
-<!-- MAP 5 -->
+<map name="class_tile_a2bb5c747e9483b803ea65b4341ce5af6_icgraph" id="class_tile_a2bb5c747e9483b803ea65b4341ce5af6_icgraph">
+<area shape="rect" id="node2" href="class_tile.html#a4fbf82b2a26cdeb792dc78192d7247dc" title="Tile.Awake" alt="" coords="175,5,260,32"/>
+</map>
 </div>
 </p>
 
@@ -433,7 +459,12 @@ Private 속성</h2></td></tr>
 이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_tile_ab8ab187ab674cfb222f761feac3b20b3_icgraph.png" border="0" usemap="#class_tile_ab8ab187ab674cfb222f761feac3b20b3_icgraph" alt=""/></div>
-<!-- MAP 6 -->
+<map name="class_tile_ab8ab187ab674cfb222f761feac3b20b3_icgraph" id="class_tile_ab8ab187ab674cfb222f761feac3b20b3_icgraph">
+<area shape="rect" id="node2" href="class_tile.html#a1969ee41c320c6e7748a33374942e07e" title="Tile.AttachObject" alt="" coords="179,71,301,98"/>
+<area shape="rect" id="node3" href="class_move_decorator_1_1_moveable_state___move.html#a9e9c360898b9c25fcc478ef2db20f316" title="MoveDecorator.MoveableState\l_Move.Interactive" alt="" coords="349,5,547,47"/>
+<area shape="rect" id="node4" href="class_placeable_object.html#a06a30cf4396743908cc88733cb216df5" title="PlaceableObject.Place" alt="" coords="371,71,525,98"/>
+<area shape="rect" id="node5" href="class_placeable_object.html#a3176ec3d5d26b2a83cdc58b01e630aa1" title="PlaceableObject.Attach" alt="" coords="595,97,753,123"/>
+</map>
 </div>
 </p>
 
@@ -537,7 +568,11 @@ Private 속성</h2></td></tr>
 이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_tile_a6c6758ca210a37d98f8e73e87c65f1d2_icgraph.png" border="0" usemap="#class_tile_a6c6758ca210a37d98f8e73e87c65f1d2_icgraph" alt=""/></div>
-<!-- MAP 7 -->
+<map name="class_tile_a6c6758ca210a37d98f8e73e87c65f1d2_icgraph" id="class_tile_a6c6758ca210a37d98f8e73e87c65f1d2_icgraph">
+<area shape="rect" id="node2" href="class_tile.html#a81b4dd833bdeade289583aabbdcaff73" title="Tile.GetChainActiveTileCost" alt="" coords="196,5,379,32"/>
+<area shape="rect" id="node4" href="class_tile.html#a6133171796d47353aa5d57cd336e0a07" title="Tile.OnNext" alt="" coords="242,56,333,83"/>
+<area shape="rect" id="node3" href="class_tile.html#a6172e6a33d37d2992a1b0b6f5c2ed117" title="Tile.ShowChainActiveTile" alt="" coords="427,5,593,32"/>
+</map>
 </div>
 </p>
 
@@ -573,7 +608,11 @@ Private 속성</h2></td></tr>
 이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_tile_a81b4dd833bdeade289583aabbdcaff73_cgraph.png" border="0" usemap="#class_tile_a81b4dd833bdeade289583aabbdcaff73_cgraph" alt=""/></div>
-<!-- MAP 8 -->
+<map name="class_tile_a81b4dd833bdeade289583aabbdcaff73_cgraph" id="class_tile_a81b4dd833bdeade289583aabbdcaff73_cgraph">
+<area shape="rect" id="node2" href="class_tile.html#a38b9f5c215f16448118e83e0d10aed05" title="Tile.GetClosedTiles" alt="" coords="240,5,375,32"/>
+<area shape="rect" id="node4" href="class_tile.html#a6c6758ca210a37d98f8e73e87c65f1d2" title="Tile.GetAttachObject" alt="" coords="236,56,379,83"/>
+<area shape="rect" id="node3" href="class_tile.html#a838aaa6a94321629d04e944ed3bf8b9f" title="Tile.GetClosedTile" alt="" coords="427,5,553,32"/>
+</map>
 </div>
 </p>
 
@@ -581,7 +620,9 @@ Private 속성</h2></td></tr>
 이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_tile_a81b4dd833bdeade289583aabbdcaff73_icgraph.png" border="0" usemap="#class_tile_a81b4dd833bdeade289583aabbdcaff73_icgraph" alt=""/></div>
-<!-- MAP 9 -->
+<map name="class_tile_a81b4dd833bdeade289583aabbdcaff73_icgraph" id="class_tile_a81b4dd833bdeade289583aabbdcaff73_icgraph">
+<area shape="rect" id="node2" href="class_tile.html#a6172e6a33d37d2992a1b0b6f5c2ed117" title="Tile.ShowChainActiveTile" alt="" coords="236,5,403,32"/>
+</map>
 </div>
 </p>
 
@@ -602,7 +643,7 @@ Private 속성</h2></td></tr>
 </div><div class="memdoc">
 
 <p><a class="el" href="_tile_8cs_source.html">Tile.cs</a> 파일의 <a class="el" href="_tile_8cs_source.html#l00269">269</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    {</div><div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        Vector2 closedTilePos = this.<a class="code" href="class_tile.html#a56d02616cede51da0afdceff82ca958d">_position</a>;</div><div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;</div><div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        <span class="keywordflow">switch</span> (direct)</div><div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        {</div><div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="_tile_8cs.html#a082f743a62d2d8e13dac8fd38af246d7">eTileDirect</a>.UP:</div><div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                closedTilePos += <span class="keyword">new</span> Vector2(0, 1);</div><div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                <span class="keywordflow">break</span>;</div><div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="_tile_8cs.html#a082f743a62d2d8e13dac8fd38af246d7">eTileDirect</a>.DOWN:</div><div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                closedTilePos += <span class="keyword">new</span> Vector2(0, -1);</div><div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                <span class="keywordflow">break</span>;</div><div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="_tile_8cs.html#a082f743a62d2d8e13dac8fd38af246d7">eTileDirect</a>.RIGHT:</div><div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                closedTilePos += <span class="keyword">new</span> Vector2(1, 0);</div><div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                <span class="keywordflow">break</span>;</div><div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="_tile_8cs.html#a082f743a62d2d8e13dac8fd38af246d7">eTileDirect</a>.LEFT:</div><div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                closedTilePos += <span class="keyword">new</span> Vector2(-1, 0);</div><div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                <span class="keywordflow">break</span>;</div><div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        }</div><div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;</div><div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        <span class="keywordflow">if</span> (closedTilePos.x &gt;= 0 &amp;&amp; closedTilePos.y &gt;= 0)</div><div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        {</div><div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_map_manager.html">MapManager</a>.<a class="code" href="class_m_c_n_1_1_mono_singletone.html#aa50c027cca64cf4ad30c1ee5c83e0b78">Instance</a>.IsExistMap())</div><div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;            {</div><div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="class_map_manager.html">MapManager</a>.<a class="code" href="class_m_c_n_1_1_mono_singletone.html#aa50c027cca64cf4ad30c1ee5c83e0b78">Instance</a>.GetTile(closedTilePos);</div><div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;            }</div><div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        }</div><div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;</div><div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        <span class="keywordflow">return</span> null;</div><div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    }</div><div class="ttc" id="class_map_manager_html"><div class="ttname"><a href="class_map_manager.html">MapManager</a></div><div class="ttdef"><b>Definition:</b> <a href="_map_manager_8cs_source.html#l00007">MapManager.cs:7</a></div></div>
+<div class="fragment"><div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    {</div><div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        Vector2 closedTilePos = this.<a class="code" href="class_tile.html#a56d02616cede51da0afdceff82ca958d">_position</a>;</div><div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;</div><div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        <span class="keywordflow">switch</span> (direct)</div><div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        {</div><div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="_tile_8cs.html#a082f743a62d2d8e13dac8fd38af246d7">eTileDirect</a>.UP:</div><div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                closedTilePos += <span class="keyword">new</span> Vector2(0, 1);</div><div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                <span class="keywordflow">break</span>;</div><div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="_tile_8cs.html#a082f743a62d2d8e13dac8fd38af246d7">eTileDirect</a>.DOWN:</div><div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                closedTilePos += <span class="keyword">new</span> Vector2(0, -1);</div><div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                <span class="keywordflow">break</span>;</div><div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="_tile_8cs.html#a082f743a62d2d8e13dac8fd38af246d7">eTileDirect</a>.RIGHT:</div><div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                closedTilePos += <span class="keyword">new</span> Vector2(1, 0);</div><div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                <span class="keywordflow">break</span>;</div><div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="_tile_8cs.html#a082f743a62d2d8e13dac8fd38af246d7">eTileDirect</a>.LEFT:</div><div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                closedTilePos += <span class="keyword">new</span> Vector2(-1, 0);</div><div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                <span class="keywordflow">break</span>;</div><div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        }</div><div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;</div><div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        <span class="keywordflow">if</span> (closedTilePos.x &gt;= 0 &amp;&amp; closedTilePos.y &gt;= 0)</div><div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        {</div><div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_map_manager.html">MapManager</a>.<a class="code" href="class_m_c_n_1_1_mono_singletone.html#aa50c027cca64cf4ad30c1ee5c83e0b78">Instance</a>.IsExistMap())</div><div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;            {</div><div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="class_map_manager.html">MapManager</a>.<a class="code" href="class_m_c_n_1_1_mono_singletone.html#aa50c027cca64cf4ad30c1ee5c83e0b78">Instance</a>.GetTile(closedTilePos);</div><div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;            }</div><div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        }</div><div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;</div><div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        <span class="keywordflow">return</span> null;</div><div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    }</div><div class="ttc" id="class_map_manager_html"><div class="ttname"><a href="class_map_manager.html">MapManager</a></div><div class="ttdef"><b>Definition:</b> <a href="_map_manager_8cs_source.html#l00008">MapManager.cs:8</a></div></div>
 <div class="ttc" id="class_tile_html_a56d02616cede51da0afdceff82ca958d"><div class="ttname"><a href="class_tile.html#a56d02616cede51da0afdceff82ca958d">Tile._position</a></div><div class="ttdeci">Vector2 _position</div><div class="ttdef"><b>Definition:</b> <a href="_tile_8cs_source.html#l00022">Tile.cs:22</a></div></div>
 <div class="ttc" id="_tile_8cs_html_a082f743a62d2d8e13dac8fd38af246d7"><div class="ttname"><a href="_tile_8cs.html#a082f743a62d2d8e13dac8fd38af246d7">eTileDirect</a></div><div class="ttdeci">eTileDirect</div><div class="ttdef"><b>Definition:</b> <a href="_tile_8cs_source.html#l00005">Tile.cs:5</a></div></div>
 <div class="ttc" id="class_m_c_n_1_1_mono_singletone_html_aa50c027cca64cf4ad30c1ee5c83e0b78"><div class="ttname"><a href="class_m_c_n_1_1_mono_singletone.html#aa50c027cca64cf4ad30c1ee5c83e0b78">MCN.MonoSingletone.Instance</a></div><div class="ttdeci">static T Instance</div><div class="ttdef"><b>Definition:</b> <a href="_singletone_8cs_source.html#l00058">Singletone.cs:58</a></div></div>
@@ -611,7 +652,11 @@ Private 속성</h2></td></tr>
 이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_tile_a838aaa6a94321629d04e944ed3bf8b9f_icgraph.png" border="0" usemap="#class_tile_a838aaa6a94321629d04e944ed3bf8b9f_icgraph" alt=""/></div>
-<!-- MAP 10 -->
+<map name="class_tile_a838aaa6a94321629d04e944ed3bf8b9f_icgraph" id="class_tile_a838aaa6a94321629d04e944ed3bf8b9f_icgraph">
+<area shape="rect" id="node2" href="class_tile.html#a38b9f5c215f16448118e83e0d10aed05" title="Tile.GetClosedTiles" alt="" coords="180,5,315,32"/>
+<area shape="rect" id="node3" href="class_tile.html#a6172e6a33d37d2992a1b0b6f5c2ed117" title="Tile.ShowChainActiveTile" alt="" coords="593,5,760,32"/>
+<area shape="rect" id="node4" href="class_tile.html#a81b4dd833bdeade289583aabbdcaff73" title="Tile.GetChainActiveTileCost" alt="" coords="363,31,545,57"/>
+</map>
 </div>
 </p>
 
@@ -639,7 +684,9 @@ Private 속성</h2></td></tr>
 이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_tile_a38b9f5c215f16448118e83e0d10aed05_cgraph.png" border="0" usemap="#class_tile_a38b9f5c215f16448118e83e0d10aed05_cgraph" alt=""/></div>
-<!-- MAP 11 -->
+<map name="class_tile_a38b9f5c215f16448118e83e0d10aed05_cgraph" id="class_tile_a38b9f5c215f16448118e83e0d10aed05_cgraph">
+<area shape="rect" id="node2" href="class_tile.html#a838aaa6a94321629d04e944ed3bf8b9f" title="Tile.GetClosedTile" alt="" coords="188,5,315,32"/>
+</map>
 </div>
 </p>
 
@@ -647,7 +694,10 @@ Private 속성</h2></td></tr>
 이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_tile_a38b9f5c215f16448118e83e0d10aed05_icgraph.png" border="0" usemap="#class_tile_a38b9f5c215f16448118e83e0d10aed05_icgraph" alt=""/></div>
-<!-- MAP 12 -->
+<map name="class_tile_a38b9f5c215f16448118e83e0d10aed05_icgraph" id="class_tile_a38b9f5c215f16448118e83e0d10aed05_icgraph">
+<area shape="rect" id="node2" href="class_tile.html#a6172e6a33d37d2992a1b0b6f5c2ed117" title="Tile.ShowChainActiveTile" alt="" coords="419,5,585,32"/>
+<area shape="rect" id="node3" href="class_tile.html#a81b4dd833bdeade289583aabbdcaff73" title="Tile.GetChainActiveTileCost" alt="" coords="188,31,371,57"/>
+</map>
 </div>
 </p>
 
@@ -681,7 +731,11 @@ Private 속성</h2></td></tr>
 이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_tile_ae37e08e39263e766fdc612de94fb7a0d_cgraph.png" border="0" usemap="#class_tile_ae37e08e39263e766fdc612de94fb7a0d_cgraph" alt=""/></div>
-<!-- MAP 13 -->
+<map name="class_tile_ae37e08e39263e766fdc612de94fb7a0d_cgraph" id="class_tile_ae37e08e39263e766fdc612de94fb7a0d_cgraph">
+<area shape="rect" id="node2" href="class_tile_1_1_tile_state.html#a074f350ff6dd6d5456fdb800b9402952" title="Tile.TileState.TileState" alt="" coords="193,31,345,57"/>
+<area shape="rect" id="node3" href="class_tile.html#a7684d2e86beeb06d844ebb7819b11b33" title="Tile.Tile" alt="" coords="456,5,523,32"/>
+<area shape="rect" id="node4" href="class_tile_1_1_tile_state.html#a9649a2b7b7cb3ae49eb35df6b6eef43e" title="Tile.TileState.GetCurrentType" alt="" coords="393,56,585,83"/>
+</map>
 </div>
 </p>
 
@@ -689,7 +743,9 @@ Private 속성</h2></td></tr>
 이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_tile_ae37e08e39263e766fdc612de94fb7a0d_icgraph.png" border="0" usemap="#class_tile_ae37e08e39263e766fdc612de94fb7a0d_icgraph" alt=""/></div>
-<!-- MAP 14 -->
+<map name="class_tile_ae37e08e39263e766fdc612de94fb7a0d_icgraph" id="class_tile_ae37e08e39263e766fdc612de94fb7a0d_icgraph">
+<area shape="rect" id="node2" href="class_tile.html#a6133171796d47353aa5d57cd336e0a07" title="Tile.OnNext" alt="" coords="193,5,284,32"/>
+</map>
 </div>
 </p>
 
@@ -750,7 +806,9 @@ Private 속성</h2></td></tr>
 이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_tactics_object_a5f94ed01497a7072a2785163f4cbc57b_icgraph.png" border="0" usemap="#class_tactics_object_a5f94ed01497a7072a2785163f4cbc57b_icgraph" alt=""/></div>
-<!-- MAP 15 -->
+<map name="class_tactics_object_a5f94ed01497a7072a2785163f4cbc57b_icgraph" id="class_tactics_object_a5f94ed01497a7072a2785163f4cbc57b_icgraph">
+<area shape="rect" id="node2" href="class_m_c_n_1_1_decorator.html#ae58cb79cf1ee47006b7dbdac82b97dc5" title="MCN.Decorator.Interactive" alt="" coords="217,5,391,32"/>
+</map>
 </div>
 </p>
 
@@ -798,21 +856,28 @@ Private 속성</h2></td></tr>
 </div><div class="memdoc">
 
 <p><a class="el" href="_tile_8cs_source.html">Tile.cs</a> 파일의 <a class="el" href="_tile_8cs_source.html#l00384">384</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    {</div><div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_tile.html#ae37e08e39263e766fdc612de94fb7a0d">GetCurrentState</a>().<a class="code" href="class_tactics_object.html#a0353d47981c71db7fe32bd414f025e9b">OnTouchEvent</a>(touch))</div><div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        {</div><div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_tile.html#a6c6758ca210a37d98f8e73e87c65f1d2">GetAttachObject</a>() != null)</div><div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;            {</div><div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;                <a class="code" href="class_tile.html#a6c6758ca210a37d98f8e73e87c65f1d2">GetAttachObject</a>().OnTouchEvent(touch);</div><div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;            }</div><div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;        }</div><div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    }</div><div class="ttc" id="class_tile_html_a6c6758ca210a37d98f8e73e87c65f1d2"><div class="ttname"><a href="class_tile.html#a6c6758ca210a37d98f8e73e87c65f1d2">Tile.GetAttachObject</a></div><div class="ttdeci">MCN.Decoable GetAttachObject()</div><div class="ttdef"><b>Definition:</b> <a href="_tile_8cs_source.html#l00215">Tile.cs:215</a></div></div>
-<div class="ttc" id="class_tactics_object_html_a0353d47981c71db7fe32bd414f025e9b"><div class="ttname"><a href="class_tactics_object.html#a0353d47981c71db7fe32bd414f025e9b">TacticsObject.OnTouchEvent</a></div><div class="ttdeci">virtual void OnTouchEvent(eTouchEvent touch)</div><div class="ttdef"><b>Definition:</b> <a href="_tactics_object_8cs_source.html#l00052">TacticsObject.cs:52</a></div></div>
+<div class="fragment"><div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    {</div><div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_tile.html#ae37e08e39263e766fdc612de94fb7a0d">GetCurrentState</a>().<a class="code" href="class_tactics_object.html#af34052e62ea471d21e4c601cc79ff717">OnTouchEvent</a>(touch))</div><div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        {</div><div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_tile.html#a6c6758ca210a37d98f8e73e87c65f1d2">GetAttachObject</a>() != null)</div><div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;            {</div><div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;                <a class="code" href="class_tile.html#a6c6758ca210a37d98f8e73e87c65f1d2">GetAttachObject</a>().OnTouchEvent(touch);</div><div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;            }</div><div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;        }</div><div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    }</div><div class="ttc" id="class_tile_html_a6c6758ca210a37d98f8e73e87c65f1d2"><div class="ttname"><a href="class_tile.html#a6c6758ca210a37d98f8e73e87c65f1d2">Tile.GetAttachObject</a></div><div class="ttdeci">MCN.Decoable GetAttachObject()</div><div class="ttdef"><b>Definition:</b> <a href="_tile_8cs_source.html#l00215">Tile.cs:215</a></div></div>
+<div class="ttc" id="class_tactics_object_html_af34052e62ea471d21e4c601cc79ff717"><div class="ttname"><a href="class_tactics_object.html#af34052e62ea471d21e4c601cc79ff717">TacticsObject.OnTouchEvent</a></div><div class="ttdeci">virtual bool OnTouchEvent(eTouchEvent touch)</div><div class="ttdef"><b>Definition:</b> <a href="_tactics_object_8cs_source.html#l00052">TacticsObject.cs:52</a></div></div>
 <div class="ttc" id="class_tile_html_ae37e08e39263e766fdc612de94fb7a0d"><div class="ttname"><a href="class_tile.html#ae37e08e39263e766fdc612de94fb7a0d">Tile.GetCurrentState</a></div><div class="ttdeci">TileState GetCurrentState()</div><div class="ttdef"><b>Definition:</b> <a href="_tile_8cs_source.html#l00365">Tile.cs:365</a></div></div>
 </div><!-- fragment -->
 <p><div class="dynheader">
 이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_tile_a6133171796d47353aa5d57cd336e0a07_cgraph.png" border="0" usemap="#class_tile_a6133171796d47353aa5d57cd336e0a07_cgraph" alt=""/></div>
-<!-- MAP 16 -->
+<map name="class_tile_a6133171796d47353aa5d57cd336e0a07_cgraph" id="class_tile_a6133171796d47353aa5d57cd336e0a07_cgraph">
+<area shape="rect" id="node2" href="class_tile.html#ae37e08e39263e766fdc612de94fb7a0d" title="Tile.GetCurrentState" alt="" coords="167,31,307,57"/>
+<area shape="rect" id="node6" href="class_tile_1_1_tile_state.html#a8687f7cb0e2c1a436c5ac395f4f6d07a" title="Tile.TileState.OnTouchEvent" alt="" coords="144,81,329,108"/>
+<area shape="rect" id="node7" href="class_tile.html#a6c6758ca210a37d98f8e73e87c65f1d2" title="Tile.GetAttachObject" alt="" coords="165,132,308,159"/>
+<area shape="rect" id="node3" href="class_tile_1_1_tile_state.html#a074f350ff6dd6d5456fdb800b9402952" title="Tile.TileState.TileState" alt="" coords="377,31,529,57"/>
+<area shape="rect" id="node4" href="class_tile.html#a7684d2e86beeb06d844ebb7819b11b33" title="Tile.Tile" alt="" coords="640,5,707,32"/>
+<area shape="rect" id="node5" href="class_tile_1_1_tile_state.html#a9649a2b7b7cb3ae49eb35df6b6eef43e" title="Tile.TileState.GetCurrentType" alt="" coords="577,56,769,83"/>
+</map>
 </div>
 </p>
 
 </div>
 </div>
-<a class="anchor" id="a0353d47981c71db7fe32bd414f025e9b"></a>
+<a class="anchor" id="af34052e62ea471d21e4c601cc79ff717"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -820,7 +885,7 @@ Private 속성</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void TacticsObject.OnTouchEvent </td>
+          <td class="memname">virtual bool TacticsObject.OnTouchEvent </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="_touch_manager_8cs.html#ae33e321a424fe84ba8b2fdb81ad40a68">eTouchEvent</a>&#160;</td>
           <td class="paramname"><em>touch</em></td><td>)</td>
@@ -834,15 +899,17 @@ Private 속성</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="class_m_c_n_1_1_decorator.html#ab99273d32a380d567f03737ea57ec083">MCN.Decorator</a>에서 재구현되었습니다.</p>
+<p><a class="el" href="class_m_c_n_1_1_decorator.html#ac45ab12c190bd9f5188c9f748f8ddbbf">MCN.Decorator</a>에서 재구현되었습니다.</p>
 
 <p><a class="el" href="_tactics_object_8cs_source.html">TacticsObject.cs</a> 파일의 <a class="el" href="_tactics_object_8cs_source.html#l00052">52</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{ }</div></div><!-- fragment -->
+<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{ <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div></div><!-- fragment -->
 <p><div class="dynheader">
 이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_tactics_object_a0353d47981c71db7fe32bd414f025e9b_icgraph.png" border="0" usemap="#class_tactics_object_a0353d47981c71db7fe32bd414f025e9b_icgraph" alt=""/></div>
-<!-- MAP 17 -->
+<div class="center"><img src="class_tactics_object_af34052e62ea471d21e4c601cc79ff717_icgraph.png" border="0" usemap="#class_tactics_object_af34052e62ea471d21e4c601cc79ff717_icgraph" alt=""/></div>
+<map name="class_tactics_object_af34052e62ea471d21e4c601cc79ff717_icgraph" id="class_tactics_object_af34052e62ea471d21e4c601cc79ff717_icgraph">
+<area shape="rect" id="node2" href="class_m_c_n_1_1_decorator.html#ac45ab12c190bd9f5188c9f748f8ddbbf" title="MCN.Decorator.OnTouchEvent" alt="" coords="244,5,443,32"/>
+</map>
 </div>
 </p>
 
@@ -1008,7 +1075,12 @@ Private 속성</h2></td></tr>
 이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_tile_a6172e6a33d37d2992a1b0b6f5c2ed117_cgraph.png" border="0" usemap="#class_tile_a6172e6a33d37d2992a1b0b6f5c2ed117_cgraph" alt=""/></div>
-<!-- MAP 18 -->
+<map name="class_tile_a6172e6a33d37d2992a1b0b6f5c2ed117_cgraph" id="class_tile_a6172e6a33d37d2992a1b0b6f5c2ed117_cgraph">
+<area shape="rect" id="node2" href="class_tile.html#a38b9f5c215f16448118e83e0d10aed05" title="Tile.GetClosedTiles" alt="" coords="455,5,589,32"/>
+<area shape="rect" id="node4" href="class_tile.html#a81b4dd833bdeade289583aabbdcaff73" title="Tile.GetChainActiveTileCost" alt="" coords="220,56,403,83"/>
+<area shape="rect" id="node3" href="class_tile.html#a838aaa6a94321629d04e944ed3bf8b9f" title="Tile.GetClosedTile" alt="" coords="641,5,768,32"/>
+<area shape="rect" id="node5" href="class_tile.html#a6c6758ca210a37d98f8e73e87c65f1d2" title="Tile.GetAttachObject" alt="" coords="451,56,593,83"/>
+</map>
 </div>
 </p>
 
@@ -1041,7 +1113,9 @@ Private 속성</h2></td></tr>
 이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_tile_a6cb69a9fad04bee1fa3473aec22428de_icgraph.png" border="0" usemap="#class_tile_a6cb69a9fad04bee1fa3473aec22428de_icgraph" alt=""/></div>
-<!-- MAP 19 -->
+<map name="class_tile_a6cb69a9fad04bee1fa3473aec22428de_icgraph" id="class_tile_a6cb69a9fad04bee1fa3473aec22428de_icgraph">
+<area shape="rect" id="node2" href="class_tile.html#a4fbf82b2a26cdeb792dc78192d7247dc" title="Tile.Awake" alt="" coords="183,5,268,32"/>
+</map>
 </div>
 </p>
 

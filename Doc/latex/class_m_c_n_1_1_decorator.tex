@@ -3,13 +3,31 @@
 
 
 M\+C\+N.\+Decorator에 대한 상속 다이어그램 \+: 
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_m_c_n_1_1_decorator__inherit__graph}
+\end{center}
+\end{figure}
 
 
 M\+C\+N.\+Decorator에 대한 협력 다이어그램\+:
-% FIG 1
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_m_c_n_1_1_decorator__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public 멤버 함수}
 \begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_m_c_n_1_1_decorator_a2fa8df5e51cc3fdaa63b28c4e4917670}{Get\+Weight} (string key)
+\item 
+void \hyperlink{class_m_c_n_1_1_decorator_a0658f2776c28dad0517b56085910162c}{Set\+Weight} (string key, int weight)
+\item 
+void \hyperlink{class_m_c_n_1_1_decorator_aa64c6b8a8f30f4e8083da6dd0fab226c}{Set\+Weight} (\hyperlink{class_m_c_n_1_1_pair}{Pair}$<$ string, int $>$ info)
 \item 
 void \hyperlink{class_m_c_n_1_1_decorator_ab82c83f62182a25a72dc81530c743c32}{Decoration} (\hyperlink{class_m_c_n_1_1_decoable}{Decoable} target)
 \item 
@@ -19,7 +37,7 @@ bool \hyperlink{class_m_c_n_1_1_decorator_a3ad7a8cf76c976907116f85a65a9f8e9}{Equ
 \item 
 override int \hyperlink{class_m_c_n_1_1_decorator_a6df84cd2af5b096128e84791455c083f}{Get\+Hash\+Code} ()
 \item 
-sealed override void \hyperlink{class_m_c_n_1_1_decorator_ab99273d32a380d567f03737ea57ec083}{On\+Touch\+Event} (\hyperlink{_touch_manager_8cs_ae33e321a424fe84ba8b2fdb81ad40a68}{e\+Touch\+Event} touch)
+sealed override bool \hyperlink{class_m_c_n_1_1_decorator_ac45ab12c190bd9f5188c9f748f8ddbbf}{On\+Touch\+Event} (\hyperlink{_touch_manager_8cs_ae33e321a424fe84ba8b2fdb81ad40a68}{e\+Touch\+Event} touch)
 \item 
 sealed override void \hyperlink{class_m_c_n_1_1_decorator_ae58cb79cf1ee47006b7dbdac82b97dc5}{Interactive} (\hyperlink{class_tactics_object}{Tactics\+Object} interact\+Target)
 \end{DoxyCompactItemize}
@@ -41,21 +59,26 @@ static bool \hyperlink{class_tactics_object_a49e235618a22126faa6271243cd89710}{o
 \subsection*{Protected 멤버 함수}
 \begin{DoxyCompactItemize}
 \item 
+abstract string\mbox{[}$\,$\mbox{]} \hyperlink{class_m_c_n_1_1_decorator_add763642ece4015f68d63504291fc783}{Absolute\+Weight\+Key} ()
+\item 
 virtual void \hyperlink{class_m_c_n_1_1_decorator_a317f646a9053334fdbe28b9f1ae690a5}{Deco\+Interactive} (\hyperlink{class_tactics_object}{Tactics\+Object} interact\+Target)
 \item 
-virtual void \hyperlink{class_m_c_n_1_1_decorator_a7e4b756a1ab1d0791ddfa441102db8d2}{Deco\+On\+Touch\+Event} (\hyperlink{_touch_manager_8cs_ae33e321a424fe84ba8b2fdb81ad40a68}{e\+Touch\+Event} touch)
+virtual bool \hyperlink{class_m_c_n_1_1_decorator_abc499f6479fad929fc812e218d39a06d}{Deco\+On\+Touch\+Event} (\hyperlink{_touch_manager_8cs_ae33e321a424fe84ba8b2fdb81ad40a68}{e\+Touch\+Event} touch)
 \end{DoxyCompactItemize}
 \subsection*{속성}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_m_c_n_1_1_decoable}{M\+C\+N.\+Decoable} \hyperlink{class_m_c_n_1_1_decorator_a1306a0a8b814650cd5970a1ffc7ba2fe}{Deco\+Target}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\subsection*{Private 멤버 함수}
+\begin{DoxyCompactItemize}
 \item 
-int \hyperlink{class_m_c_n_1_1_decorator_a6f6dcca5e0dfb225bcfe2fa73c0ef752}{Weight}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+void \hyperlink{class_m_c_n_1_1_decorator_a964c91893ddf183627d4dd898b4d8f47}{Start} ()
 \end{DoxyCompactItemize}
 \subsection*{Private 속성}
 \begin{DoxyCompactItemize}
 \item 
-int \hyperlink{class_m_c_n_1_1_decorator_af352c49463e8b4c138f783b292642f98}{\+\_\+weight} = 0
+Dictionary$<$ string, int $>$ \hyperlink{class_m_c_n_1_1_decorator_a1f9dd0c30a2fc261b7987d3ce36d8673}{\+\_\+weight}
 \item 
 \hyperlink{class_m_c_n_1_1_decoable}{Decoable} \hyperlink{class_m_c_n_1_1_decorator_a1ec6050ce16016f709aa8e8c19444678}{\+\_\+deco\+Target}
 \end{DoxyCompactItemize}
@@ -69,6 +92,17 @@ Decorator.\+cs 파일의 132 번째 라인에서 정의되었습니다.
 
 
 \subsection{멤버 함수 문서화}
+\index{M\+C\+N\+::\+Decorator@{M\+C\+N\+::\+Decorator}!Absolute\+Weight\+Key@{Absolute\+Weight\+Key}}
+\index{Absolute\+Weight\+Key@{Absolute\+Weight\+Key}!M\+C\+N\+::\+Decorator@{M\+C\+N\+::\+Decorator}}
+\subsubsection[{\texorpdfstring{Absolute\+Weight\+Key()}{AbsoluteWeightKey()}}]{\setlength{\rightskip}{0pt plus 5cm}abstract string \mbox{[}$\,$\mbox{]} M\+C\+N.\+Decorator.\+Absolute\+Weight\+Key (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\hypertarget{class_m_c_n_1_1_decorator_add763642ece4015f68d63504291fc783}{}\label{class_m_c_n_1_1_decorator_add763642ece4015f68d63504291fc783}
+
+
+\hyperlink{class_attack_decorator_aa0fdb6701a08f63d011aacf6bd6d6df7}{Attack\+Decorator}, \hyperlink{class_move_decorator_a46aea0fa3f7be5fd9b6ab35801166af4}{Move\+Decorator}에서 구현되었습니다.
+
 \index{M\+C\+N\+::\+Decorator@{M\+C\+N\+::\+Decorator}!Deco\+Interactive@{Deco\+Interactive}}
 \index{Deco\+Interactive@{Deco\+Interactive}!M\+C\+N\+::\+Decorator@{M\+C\+N\+::\+Decorator}}
 \subsubsection[{\texorpdfstring{Deco\+Interactive(\+Tactics\+Object interact\+Target)}{DecoInteractive(TacticsObject interactTarget)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void M\+C\+N.\+Decorator.\+Deco\+Interactive (
@@ -78,34 +112,34 @@ Decorator.\+cs 파일의 132 번째 라인에서 정의되었습니다.
 )\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{class_m_c_n_1_1_decorator_a317f646a9053334fdbe28b9f1ae690a5}{}\label{class_m_c_n_1_1_decorator_a317f646a9053334fdbe28b9f1ae690a5}
 
 
-\hyperlink{class_move_decorator_a5d25ac6e9eacf33c5ab0423059ebcadc}{Move\+Decorator}에서 재구현되었습니다.
+\hyperlink{class_move_decorator_a5d25ac6e9eacf33c5ab0423059ebcadc}{Move\+Decorator}, \hyperlink{class_attack_decorator_ac0de076a7e28dbb6253aa5b1555195b3}{Attack\+Decorator}에서 재구현되었습니다.
 
 
 
-Decorator.\+cs 파일의 244 번째 라인에서 정의되었습니다.
+Decorator.\+cs 파일의 274 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-244 \{ \}
+274 \{ \}
 \end{DoxyCode}
 \index{M\+C\+N\+::\+Decorator@{M\+C\+N\+::\+Decorator}!Deco\+On\+Touch\+Event@{Deco\+On\+Touch\+Event}}
 \index{Deco\+On\+Touch\+Event@{Deco\+On\+Touch\+Event}!M\+C\+N\+::\+Decorator@{M\+C\+N\+::\+Decorator}}
-\subsubsection[{\texorpdfstring{Deco\+On\+Touch\+Event(e\+Touch\+Event touch)}{DecoOnTouchEvent(eTouchEvent touch)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void M\+C\+N.\+Decorator.\+Deco\+On\+Touch\+Event (
+\subsubsection[{\texorpdfstring{Deco\+On\+Touch\+Event(e\+Touch\+Event touch)}{DecoOnTouchEvent(eTouchEvent touch)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool M\+C\+N.\+Decorator.\+Deco\+On\+Touch\+Event (
 \begin{DoxyParamCaption}
 \item[{{\bf e\+Touch\+Event}}]{touch}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{class_m_c_n_1_1_decorator_a7e4b756a1ab1d0791ddfa441102db8d2}{}\label{class_m_c_n_1_1_decorator_a7e4b756a1ab1d0791ddfa441102db8d2}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{class_m_c_n_1_1_decorator_abc499f6479fad929fc812e218d39a06d}{}\label{class_m_c_n_1_1_decorator_abc499f6479fad929fc812e218d39a06d}
 
 
-\hyperlink{class_move_decorator_ac4276fd2b79d3a3f6a89968e62271623}{Move\+Decorator}에서 재구현되었습니다.
+\hyperlink{class_move_decorator_acd118d50499d78a03d810aff30b7b50e}{Move\+Decorator}, \hyperlink{class_attack_decorator_abff1ff6a1fa1b896f3f0251cf7652eb0}{Attack\+Decorator}에서 재구현되었습니다.
 
 
 
-Decorator.\+cs 파일의 246 번째 라인에서 정의되었습니다.
+Decorator.\+cs 파일의 276 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-246 \{ \}
+276 \{ \textcolor{keywordflow}{return} \textcolor{keyword}{true}; \}
 \end{DoxyCode}
 \index{M\+C\+N\+::\+Decorator@{M\+C\+N\+::\+Decorator}!Decoration@{Decoration}}
 \index{Decoration@{Decoration}!M\+C\+N\+::\+Decorator@{M\+C\+N\+::\+Decorator}}
@@ -116,31 +150,41 @@ Decorator.\+cs 파일의 246 번째 라인에서 정의되었습니다.
 )}\hypertarget{class_m_c_n_1_1_decorator_ab82c83f62182a25a72dc81530c743c32}{}\label{class_m_c_n_1_1_decorator_ab82c83f62182a25a72dc81530c743c32}
 
 
-Decorator.\+cs 파일의 167 번째 라인에서 정의되었습니다.
+Decorator.\+cs 파일의 196 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-168         \{
-169             this.\hyperlink{class_m_c_n_1_1_decorator_a1ec6050ce16016f709aa8e8c19444678}{\_decoTarget} = target;
-170 
-171             var root = \hyperlink{class_m_c_n_1_1_decorator_a1306a0a8b814650cd5970a1ffc7ba2fe}{DecoTarget} as DecoInstance;
-172 
-173             \textcolor{keywordflow}{if}(root != null)
-174             \{
-175                 root.Decorated(\textcolor{keyword}{this});
-176             \}
-177         \}
+197         \{
+198             this.\hyperlink{class_m_c_n_1_1_decorator_a1ec6050ce16016f709aa8e8c19444678}{\_decoTarget} = target;
+199 
+200             var root = \hyperlink{class_m_c_n_1_1_decorator_a1306a0a8b814650cd5970a1ffc7ba2fe}{DecoTarget} as DecoInstance;
+201 
+202             \textcolor{keywordflow}{if}(root != null)
+203             \{
+204                 root.Decorated(\textcolor{keyword}{this});
+205             \}
+206         \}
 \end{DoxyCode}
 
 
-이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
-% FIG 2
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_m_c_n_1_1_decorator_ab82c83f62182a25a72dc81530c743c32_cgraph}
+\end{center}
+\end{figure}
 
 
 
 
-이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
-% FIG 3
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_m_c_n_1_1_decorator_ab82c83f62182a25a72dc81530c743c32_icgraph}
+\end{center}
+\end{figure}
 
 
 \index{M\+C\+N\+::\+Decorator@{M\+C\+N\+::\+Decorator}!Equals@{Equals}}
@@ -152,23 +196,28 @@ Decorator.\+cs 파일의 167 번째 라인에서 정의되었습니다.
 )}\hypertarget{class_m_c_n_1_1_decorator_ae2a5432ce00298c80dcb433a75bbe45d}{}\label{class_m_c_n_1_1_decorator_ae2a5432ce00298c80dcb433a75bbe45d}
 
 
-Decorator.\+cs 파일의 200 번째 라인에서 정의되었습니다.
+Decorator.\+cs 파일의 229 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-201         \{
-202             \textcolor{keywordflow}{if} (o is DecoInstance)
-203             \{
-204                 this.\hyperlink{class_m_c_n_1_1_decorator_ae2a5432ce00298c80dcb433a75bbe45d}{Equals}(o as DecoInstance);
-205             \}
-206 
-207             \textcolor{keywordflow}{return} base.Equals(o);
-208         \}
+230         \{
+231             \textcolor{keywordflow}{if} (o is DecoInstance)
+232             \{
+233                 this.\hyperlink{class_m_c_n_1_1_decorator_ae2a5432ce00298c80dcb433a75bbe45d}{Equals}(o as DecoInstance);
+234             \}
+235 
+236             \textcolor{keywordflow}{return} base.Equals(o);
+237         \}
 \end{DoxyCode}
 
 
-이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
-% FIG 4
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{class_m_c_n_1_1_decorator_ae2a5432ce00298c80dcb433a75bbe45d_cgraph}
+\end{center}
+\end{figure}
 
 
 \index{M\+C\+N\+::\+Decorator@{M\+C\+N\+::\+Decorator}!Equals@{Equals}}
@@ -180,18 +229,18 @@ Decorator.\+cs 파일의 200 번째 라인에서 정의되었습니다.
 )}\hypertarget{class_m_c_n_1_1_decorator_a3ad7a8cf76c976907116f85a65a9f8e9}{}\label{class_m_c_n_1_1_decorator_a3ad7a8cf76c976907116f85a65a9f8e9}
 
 
-Decorator.\+cs 파일의 210 번째 라인에서 정의되었습니다.
+Decorator.\+cs 파일의 239 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-211         \{
-212             \textcolor{keywordflow}{if} (o == null)
-213             \{
-214                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-215             \}
-216 
-217             \textcolor{keywordflow}{return} \textcolor{keyword}{this} == o;
-218         \}
+240         \{
+241             \textcolor{keywordflow}{if} (o == null)
+242             \{
+243                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+244             \}
+245 
+246             \textcolor{keywordflow}{return} \textcolor{keyword}{this} == o;
+247         \}
 \end{DoxyCode}
 \index{M\+C\+N\+::\+Decorator@{M\+C\+N\+::\+Decorator}!Get\+Hash\+Code@{Get\+Hash\+Code}}
 \index{Get\+Hash\+Code@{Get\+Hash\+Code}!M\+C\+N\+::\+Decorator@{M\+C\+N\+::\+Decorator}}
@@ -202,13 +251,35 @@ Decorator.\+cs 파일의 210 번째 라인에서 정의되었습니다.
 )}\hypertarget{class_m_c_n_1_1_decorator_a6df84cd2af5b096128e84791455c083f}{}\label{class_m_c_n_1_1_decorator_a6df84cd2af5b096128e84791455c083f}
 
 
-Decorator.\+cs 파일의 220 번째 라인에서 정의되었습니다.
+Decorator.\+cs 파일의 249 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-221         \{
-222             \textcolor{keywordflow}{return} base.GetHashCode();
-223         \}
+250         \{
+251             \textcolor{keywordflow}{return} base.GetHashCode();
+252         \}
+\end{DoxyCode}
+\index{M\+C\+N\+::\+Decorator@{M\+C\+N\+::\+Decorator}!Get\+Weight@{Get\+Weight}}
+\index{Get\+Weight@{Get\+Weight}!M\+C\+N\+::\+Decorator@{M\+C\+N\+::\+Decorator}}
+\subsubsection[{\texorpdfstring{Get\+Weight(string key)}{GetWeight(string key)}}]{\setlength{\rightskip}{0pt plus 5cm}int M\+C\+N.\+Decorator.\+Get\+Weight (
+\begin{DoxyParamCaption}
+\item[{string}]{key}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_c_n_1_1_decorator_a2fa8df5e51cc3fdaa63b28c4e4917670}{}\label{class_m_c_n_1_1_decorator_a2fa8df5e51cc3fdaa63b28c4e4917670}
+
+
+Decorator.\+cs 파일의 168 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+169         \{
+170             \textcolor{keywordflow}{if}(\hyperlink{class_m_c_n_1_1_decorator_a1f9dd0c30a2fc261b7987d3ce36d8673}{\_weight}.ContainsKey(key))
+171             \{
+172                 \textcolor{keywordflow}{return} \hyperlink{class_m_c_n_1_1_decorator_a1f9dd0c30a2fc261b7987d3ce36d8673}{\_weight}[key];
+173             \}
+174 
+175             \textcolor{keywordflow}{return} 0;
+176         \}
 \end{DoxyCode}
 \index{M\+C\+N\+::\+Decorator@{M\+C\+N\+::\+Decorator}!Interactive@{Interactive}}
 \index{Interactive@{Interactive}!M\+C\+N\+::\+Decorator@{M\+C\+N\+::\+Decorator}}
@@ -223,53 +294,65 @@ Decorator.\+cs 파일의 220 번째 라인에서 정의되었습니다.
 
 
 
-Decorator.\+cs 파일의 235 번째 라인에서 정의되었습니다.
+Decorator.\+cs 파일의 265 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-236         \{
-237             base.Interactive(interactTarget);
-238 
-239             \hyperlink{class_m_c_n_1_1_decorator_a1ec6050ce16016f709aa8e8c19444678}{\_decoTarget}.\hyperlink{class_tactics_object_a5f94ed01497a7072a2785163f4cbc57b}{Interactive}(interactTarget);
-240 
-241             \hyperlink{class_m_c_n_1_1_decorator_a317f646a9053334fdbe28b9f1ae690a5}{DecoInteractive}(interactTarget);
-242         \}
+266         \{
+267             base.Interactive(interactTarget);
+268 
+269             \hyperlink{class_m_c_n_1_1_decorator_a1ec6050ce16016f709aa8e8c19444678}{\_decoTarget}.\hyperlink{class_tactics_object_a5f94ed01497a7072a2785163f4cbc57b}{Interactive}(interactTarget);
+270 
+271             \hyperlink{class_m_c_n_1_1_decorator_a317f646a9053334fdbe28b9f1ae690a5}{DecoInteractive}(interactTarget);
+272         \}
 \end{DoxyCode}
 
 
-이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
-% FIG 5
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_m_c_n_1_1_decorator_ae58cb79cf1ee47006b7dbdac82b97dc5_cgraph}
+\end{center}
+\end{figure}
 
 
 \index{M\+C\+N\+::\+Decorator@{M\+C\+N\+::\+Decorator}!On\+Touch\+Event@{On\+Touch\+Event}}
 \index{On\+Touch\+Event@{On\+Touch\+Event}!M\+C\+N\+::\+Decorator@{M\+C\+N\+::\+Decorator}}
-\subsubsection[{\texorpdfstring{On\+Touch\+Event(e\+Touch\+Event touch)}{OnTouchEvent(eTouchEvent touch)}}]{\setlength{\rightskip}{0pt plus 5cm}sealed override void M\+C\+N.\+Decorator.\+On\+Touch\+Event (
+\subsubsection[{\texorpdfstring{On\+Touch\+Event(e\+Touch\+Event touch)}{OnTouchEvent(eTouchEvent touch)}}]{\setlength{\rightskip}{0pt plus 5cm}sealed override bool M\+C\+N.\+Decorator.\+On\+Touch\+Event (
 \begin{DoxyParamCaption}
 \item[{{\bf e\+Touch\+Event}}]{touch}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_m_c_n_1_1_decorator_ab99273d32a380d567f03737ea57ec083}{}\label{class_m_c_n_1_1_decorator_ab99273d32a380d567f03737ea57ec083}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_m_c_n_1_1_decorator_ac45ab12c190bd9f5188c9f748f8ddbbf}{}\label{class_m_c_n_1_1_decorator_ac45ab12c190bd9f5188c9f748f8ddbbf}
 
 
-\hyperlink{class_tactics_object_a0353d47981c71db7fe32bd414f025e9b}{Tactics\+Object}(으)로부터 재구현되었습니다.
+\hyperlink{class_tactics_object_af34052e62ea471d21e4c601cc79ff717}{Tactics\+Object}(으)로부터 재구현되었습니다.
 
 
 
-Decorator.\+cs 파일의 226 번째 라인에서 정의되었습니다.
+Decorator.\+cs 파일의 255 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-227         \{
-228             base.OnTouchEvent(touch);
-229 
-230             \hyperlink{class_m_c_n_1_1_decorator_a1ec6050ce16016f709aa8e8c19444678}{\_decoTarget}.\hyperlink{class_tactics_object_a0353d47981c71db7fe32bd414f025e9b}{OnTouchEvent}(touch);
-231 
-232             \hyperlink{class_m_c_n_1_1_decorator_a7e4b756a1ab1d0791ddfa441102db8d2}{DecoOnTouchEvent}(touch);
-233         \}
+256         \{
+257             base.OnTouchEvent(touch);
+258 
+259             \textcolor{comment}{// 만약 먼저 추가된 데코레이터의 touchEvent가 false를 반환한다면}
+260             \textcolor{comment}{// 그 후에 추가된 데코레이터에는 터치 이벤트가 전달되지 않는다.}
+261             \textcolor{keywordflow}{return} (\hyperlink{class_m_c_n_1_1_decorator_a1ec6050ce16016f709aa8e8c19444678}{\_decoTarget}.\hyperlink{class_tactics_object_af34052e62ea471d21e4c601cc79ff717}{OnTouchEvent}(touch) &&
+262                     \hyperlink{class_m_c_n_1_1_decorator_abc499f6479fad929fc812e218d39a06d}{DecoOnTouchEvent}(touch));
+263         \}
 \end{DoxyCode}
 
 
 이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
-% FIG 6
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_m_c_n_1_1_decorator_ac45ab12c190bd9f5188c9f748f8ddbbf_cgraph}
+\end{center}
+\end{figure}
 
 
 \index{M\+C\+N\+::\+Decorator@{M\+C\+N\+::\+Decorator}!operator"!=@{operator"!=}}
@@ -318,13 +401,13 @@ Decorator.\+cs 파일의 36 번째 라인에서 정의되었습니다.
 )\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_m_c_n_1_1_decorator_a89e2f61a0974c51610a0c8d14ef6962a}{}\label{class_m_c_n_1_1_decorator_a89e2f61a0974c51610a0c8d14ef6962a}
 
 
-Decorator.\+cs 파일의 195 번째 라인에서 정의되었습니다.
+Decorator.\+cs 파일의 224 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-196         \{
-197             \textcolor{keywordflow}{return} !(rt == lt);
-198         \}
+225         \{
+226             \textcolor{keywordflow}{return} !(rt == lt);
+227         \}
 \end{DoxyCode}
 \index{M\+C\+N\+::\+Decorator@{M\+C\+N\+::\+Decorator}!operator==@{operator==}}
 \index{operator==@{operator==}!M\+C\+N\+::\+Decorator@{M\+C\+N\+::\+Decorator}}
@@ -407,23 +490,90 @@ Decorator.\+cs 파일의 11 번째 라인에서 정의되었습니다.
 )\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_m_c_n_1_1_decorator_a4c4c97e4a4dcf1a66e764740a5bbf3c6}{}\label{class_m_c_n_1_1_decorator_a4c4c97e4a4dcf1a66e764740a5bbf3c6}
 
 
-Decorator.\+cs 파일의 180 번째 라인에서 정의되었습니다.
+Decorator.\+cs 파일의 209 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-181         \{
-182             \textcolor{keywordflow}{if} (\hyperlink{namespace_system}{System}.Object.ReferenceEquals(lt, rt))
-183             \{
-184                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
-185             \}
-186 
-187             \textcolor{keywordflow}{if} (((\textcolor{keywordtype}{object})lt == null) || ((object)rt == null))
-188             \{
-189                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-190             \}
+210         \{
+211             \textcolor{keywordflow}{if} (\hyperlink{namespace_system}{System}.Object.ReferenceEquals(lt, rt))
+212             \{
+213                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+214             \}
+215 
+216             \textcolor{keywordflow}{if} (((\textcolor{keywordtype}{object})lt == null) || ((object)rt == null))
+217             \{
+218                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+219             \}
+220 
+221             \textcolor{keywordflow}{return} lt.DecoTarget == rt;
+222         \}
+\end{DoxyCode}
+\index{M\+C\+N\+::\+Decorator@{M\+C\+N\+::\+Decorator}!Set\+Weight@{Set\+Weight}}
+\index{Set\+Weight@{Set\+Weight}!M\+C\+N\+::\+Decorator@{M\+C\+N\+::\+Decorator}}
+\subsubsection[{\texorpdfstring{Set\+Weight(string key, int weight)}{SetWeight(string key, int weight)}}]{\setlength{\rightskip}{0pt plus 5cm}void M\+C\+N.\+Decorator.\+Set\+Weight (
+\begin{DoxyParamCaption}
+\item[{string}]{key, }
+\item[{int}]{weight}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_c_n_1_1_decorator_a0658f2776c28dad0517b56085910162c}{}\label{class_m_c_n_1_1_decorator_a0658f2776c28dad0517b56085910162c}
+
+
+Decorator.\+cs 파일의 178 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+179         \{
+180             \hyperlink{class_m_c_n_1_1_decorator_a1f9dd0c30a2fc261b7987d3ce36d8673}{\_weight}[key] = weight;
+181         \}
+\end{DoxyCode}
+\index{M\+C\+N\+::\+Decorator@{M\+C\+N\+::\+Decorator}!Set\+Weight@{Set\+Weight}}
+\index{Set\+Weight@{Set\+Weight}!M\+C\+N\+::\+Decorator@{M\+C\+N\+::\+Decorator}}
+\subsubsection[{\texorpdfstring{Set\+Weight(\+Pair$<$ string, int $>$ info)}{SetWeight(Pair< string, int > info)}}]{\setlength{\rightskip}{0pt plus 5cm}void M\+C\+N.\+Decorator.\+Set\+Weight (
+\begin{DoxyParamCaption}
+\item[{{\bf Pair}$<$ string, int $>$}]{info}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_c_n_1_1_decorator_aa64c6b8a8f30f4e8083da6dd0fab226c}{}\label{class_m_c_n_1_1_decorator_aa64c6b8a8f30f4e8083da6dd0fab226c}
+
+
+Decorator.\+cs 파일의 183 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+184         \{
+185             \textcolor{keywordflow}{if}(info != null)
+186             \{
+187                 \textcolor{keywordflow}{if}(\hyperlink{class_m_c_n_1_1_decorator_a1f9dd0c30a2fc261b7987d3ce36d8673}{\_weight} == null)
+188                 \{
+189                     \hyperlink{class_m_c_n_1_1_decorator_a1f9dd0c30a2fc261b7987d3ce36d8673}{\_weight} = \textcolor{keyword}{new} Dictionary<string, int>();
+190                 \}
 191 
-192             \textcolor{keywordflow}{return} lt.DecoTarget == rt;
-193         \}
+192                 \hyperlink{class_m_c_n_1_1_decorator_a1f9dd0c30a2fc261b7987d3ce36d8673}{\_weight}[info.\hyperlink{class_m_c_n_1_1_pair_a62c546d3829b8819a65f8c9d64200338}{key}] = info.\hyperlink{class_m_c_n_1_1_pair_a1980bbf37b60fcbfea22382f71250e84}{value};
+193             \}
+194         \}
+\end{DoxyCode}
+\index{M\+C\+N\+::\+Decorator@{M\+C\+N\+::\+Decorator}!Start@{Start}}
+\index{Start@{Start}!M\+C\+N\+::\+Decorator@{M\+C\+N\+::\+Decorator}}
+\subsubsection[{\texorpdfstring{Start()}{Start()}}]{\setlength{\rightskip}{0pt plus 5cm}void M\+C\+N.\+Decorator.\+Start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_m_c_n_1_1_decorator_a964c91893ddf183627d4dd898b4d8f47}{}\label{class_m_c_n_1_1_decorator_a964c91893ddf183627d4dd898b4d8f47}
+
+
+Decorator.\+cs 파일의 157 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+158         \{
+159             \textcolor{keywordflow}{foreach}(var key \textcolor{keywordflow}{in} \hyperlink{class_m_c_n_1_1_decorator_add763642ece4015f68d63504291fc783}{AbsoluteWeightKey}())
+160             \{
+161                 \textcolor{keywordflow}{if}(\hyperlink{class_m_c_n_1_1_decorator_a1f9dd0c30a2fc261b7987d3ce36d8673}{\_weight} == null || !\hyperlink{class_m_c_n_1_1_decorator_a1f9dd0c30a2fc261b7987d3ce36d8673}{\_weight}.ContainsKey(key))
+162                 \{
+163                     \textcolor{keywordflow}{throw} \textcolor{keyword}{new} UnityException(\textcolor{keywordtype}{string}.Format(\textcolor{stringliteral}{"\{0\} is not available. because weight '\{1\}' key
+       is not initialized."}, this.GetType().Name, key));
+164                 \}
+165             \}
+166         \}
 \end{DoxyCode}
 
 
@@ -437,7 +587,7 @@ Decorator.\+cs 파일의 139 번째 라인에서 정의되었습니다.
 
 \index{M\+C\+N\+::\+Decorator@{M\+C\+N\+::\+Decorator}!\+\_\+weight@{\+\_\+weight}}
 \index{\+\_\+weight@{\+\_\+weight}!M\+C\+N\+::\+Decorator@{M\+C\+N\+::\+Decorator}}
-\subsubsection[{\texorpdfstring{\+\_\+weight}{_weight}}]{\setlength{\rightskip}{0pt plus 5cm}int M\+C\+N.\+Decorator.\+\_\+weight = 0\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_m_c_n_1_1_decorator_af352c49463e8b4c138f783b292642f98}{}\label{class_m_c_n_1_1_decorator_af352c49463e8b4c138f783b292642f98}
+\subsubsection[{\texorpdfstring{\+\_\+weight}{_weight}}]{\setlength{\rightskip}{0pt plus 5cm}Dictionary$<$string, int$>$ M\+C\+N.\+Decorator.\+\_\+weight\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_m_c_n_1_1_decorator_a1f9dd0c30a2fc261b7987d3ce36d8673}{}\label{class_m_c_n_1_1_decorator_a1f9dd0c30a2fc261b7987d3ce36d8673}
 
 
 Decorator.\+cs 파일의 137 번째 라인에서 정의되었습니다.
@@ -450,14 +600,7 @@ Decorator.\+cs 파일의 137 번째 라인에서 정의되었습니다.
 \subsubsection[{\texorpdfstring{Deco\+Target}{DecoTarget}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\+C\+N.\+Decoable} M\+C\+N.\+Decorator.\+Deco\+Target\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected]}}\hypertarget{class_m_c_n_1_1_decorator_a1306a0a8b814650cd5970a1ffc7ba2fe}{}\label{class_m_c_n_1_1_decorator_a1306a0a8b814650cd5970a1ffc7ba2fe}
 
 
-Decorator.\+cs 파일의 143 번째 라인에서 정의되었습니다.
-
-\index{M\+C\+N\+::\+Decorator@{M\+C\+N\+::\+Decorator}!Weight@{Weight}}
-\index{Weight@{Weight}!M\+C\+N\+::\+Decorator@{M\+C\+N\+::\+Decorator}}
-\subsubsection[{\texorpdfstring{Weight}{Weight}}]{\setlength{\rightskip}{0pt plus 5cm}int M\+C\+N.\+Decorator.\+Weight\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_m_c_n_1_1_decorator_a6f6dcca5e0dfb225bcfe2fa73c0ef752}{}\label{class_m_c_n_1_1_decorator_a6f6dcca5e0dfb225bcfe2fa73c0ef752}
-
-
-Decorator.\+cs 파일의 156 번째 라인에서 정의되었습니다.
+Decorator.\+cs 파일의 145 번째 라인에서 정의되었습니다.
 
 
 

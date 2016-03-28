@@ -16,5 +16,11 @@ var dir_7db68f476bd50f9f6d9cf398af037e8e =
     [ "State.cs", "_state_8cs.html", [
       [ "State", "class_m_c_n_1_1_state.html", "class_m_c_n_1_1_state" ],
       [ "StateMachine", "class_m_c_n_1_1_state_machine.html", "class_m_c_n_1_1_state_machine" ]
+    ] ],
+    [ "Structure.cs", "_structure_8cs.html", [
+      [ "PlaceInfo", "class_m_c_n_1_1_place_info.html", "class_m_c_n_1_1_place_info" ],
+      [ "DecoClassInfo", "class_m_c_n_1_1_deco_class_info.html", "class_m_c_n_1_1_deco_class_info" ],
+      [ "Pair", "class_m_c_n_1_1_pair.html", "class_m_c_n_1_1_pair" ],
+      [ "StringIntPair", "class_m_c_n_1_1_string_int_pair.html", "class_m_c_n_1_1_string_int_pair" ]
     ] ]
 ];

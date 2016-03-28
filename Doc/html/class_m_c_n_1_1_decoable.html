@@ -118,13 +118,22 @@ $(document).ready(function(){initNavTree('class_m_c_n_1_1_decoable.html','');});
 MCN.Decoable에 대한 상속 다이어그램 : </div>
 <div class="dyncontent">
 <div class="center"><img src="class_m_c_n_1_1_decoable__inherit__graph.png" border="0" usemap="#_m_c_n_8_decoable_inherit__map" alt="Inheritance graph"/></div>
-<!-- MAP 0 -->
+<map name="_m_c_n_8_decoable_inherit__map" id="_m_c_n_8_decoable_inherit__map">
+<area shape="rect" id="node4" href="class_m_c_n_1_1_deco_instance.html" title="{MCN.DecoInstance\n|+ Get\l&#45; _decoTarget\l|+ Equals()\l+ Equals()\l+ GetHashCode()\l+ Decorated()\l+ operator==()\l+ operator!=()\l}" alt="" coords="5,572,140,737"/>
+<area shape="rect" id="node6" href="class_m_c_n_1_1_decorator.html" title="{MCN.Decorator\n|+ DecoTarget\l&#45; _weight\l&#45; _decoTarget\l|+ GetWeight()\l+ SetWeight()\l+ SetWeight()\l+ Decoration()\l+ Equals()\l+ Equals()\l+ GetHashCode()\l+ OnTouchEvent()\l+ Interactive()\l+ operator==()\l+ operator!=()\l# AbsoluteWeightKey()\l# DecoInteractive()\l# DecoOnTouchEvent()\l&#45; Start()\l}" alt="" coords="167,499,323,811"/>
+<area shape="rect" id="node2" href="class_tactics_object.html" title="{TacticsObject\n||+ Equals()\l+ GetHashCode()\l+ Interactive()\l+ OnTouchEvent()\l+ operator==()\l+ operator!=()\l}" alt="" coords="96,131,223,281"/>
+<area shape="rect" id="node5" href="class_placeable_object.html" title="{PlaceableObject\n|# _placedTile\l|+ Attach()\l+ Detach()\l+ GetPlacedTile()\l+ Dispose()\l+ IsSelected()\l+ Select()\l+ Deselect()\l&#45; Place()\l}" alt="" coords="9,873,131,1053"/>
+<area shape="rect" id="node7" href="class_attack_decorator.html" title="{AttackDecorator\n|+ Range\l+ Power\l&#45; _attackableStateMachine\l|# AbsoluteWeightKey()\l# DecoOnTouchEvent()\l# DecoInteractive()\l&#45; Awake()\l&#45; StorageStates()\l&#45; GetCurrentState()\l&#45; GetCurrentStateType()\l&#45; ChangeState()\l}" alt="" coords="156,859,333,1068"/>
+<area shape="rect" id="node8" href="class_move_decorator.html" title="{MoveDecorator\n|+ Range\l&#45; _moveableStateMachine\l|# AbsoluteWeightKey()\l# DecoOnTouchEvent()\l# DecoInteractive()\l&#45; Awake()\l&#45; StorageStates()\l&#45; GetCurrentState()\l&#45; GetCurrentStateType()\l&#45; ChangeState()\l}" alt="" coords="358,866,529,1061"/>
+</map>
 </div>
 <div class="dynheader">
 MCN.Decoable에 대한 협력 다이어그램:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_m_c_n_1_1_decoable__coll__graph.png" border="0" usemap="#_m_c_n_8_decoable_coll__map" alt="Collaboration graph"/></div>
-<!-- MAP 1 -->
+<map name="_m_c_n_8_decoable_coll__map" id="_m_c_n_8_decoable_coll__map">
+<area shape="rect" id="node2" href="class_tactics_object.html" title="{TacticsObject\n||+ Equals()\l+ GetHashCode()\l+ Interactive()\l+ OnTouchEvent()\l+ operator==()\l+ operator!=()\l}" alt="" coords="5,131,132,281"/>
+</map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -135,8 +144,8 @@ Public 멤버 함수</h2></td></tr>
 <tr class="separator:ad3068f4dce16b691595d54bb2f7a2d5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f94ed01497a7072a2785163f4cbc57b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tactics_object.html#a5f94ed01497a7072a2785163f4cbc57b">Interactive</a> (<a class="el" href="class_tactics_object.html">TacticsObject</a> interactTarget)</td></tr>
 <tr class="separator:a5f94ed01497a7072a2785163f4cbc57b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0353d47981c71db7fe32bd414f025e9b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tactics_object.html#a0353d47981c71db7fe32bd414f025e9b">OnTouchEvent</a> (<a class="el" href="_touch_manager_8cs.html#ae33e321a424fe84ba8b2fdb81ad40a68">eTouchEvent</a> touch)</td></tr>
-<tr class="separator:a0353d47981c71db7fe32bd414f025e9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af34052e62ea471d21e4c601cc79ff717"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tactics_object.html#af34052e62ea471d21e4c601cc79ff717">OnTouchEvent</a> (<a class="el" href="_touch_manager_8cs.html#ae33e321a424fe84ba8b2fdb81ad40a68">eTouchEvent</a> touch)</td></tr>
+<tr class="separator:af34052e62ea471d21e4c601cc79ff717"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 정적 Public 멤버 함수</h2></td></tr>
@@ -174,7 +183,10 @@ Public 멤버 함수</h2></td></tr>
 이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_m_c_n_1_1_decoable_a7c14e3879800d1f5d7e58a02e75540d9_icgraph.png" border="0" usemap="#class_m_c_n_1_1_decoable_a7c14e3879800d1f5d7e58a02e75540d9_icgraph" alt=""/></div>
-<!-- MAP 2 -->
+<map name="class_m_c_n_1_1_decoable_a7c14e3879800d1f5d7e58a02e75540d9_icgraph" id="class_m_c_n_1_1_decoable_a7c14e3879800d1f5d7e58a02e75540d9_icgraph">
+<area shape="rect" id="node2" href="class_m_c_n_1_1_deco_instance.html#ac327fa53871e183c0e46ac9c66ba00bc" title="MCN.DecoInstance.Equals" alt="" coords="207,5,385,32"/>
+<area shape="rect" id="node3" href="class_m_c_n_1_1_decorator.html#ae2a5432ce00298c80dcb433a75bbe45d" title="MCN.Decorator.Equals" alt="" coords="219,56,373,83"/>
+</map>
 </div>
 </p>
 
@@ -227,13 +239,15 @@ Public 멤버 함수</h2></td></tr>
 이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_tactics_object_a5f94ed01497a7072a2785163f4cbc57b_icgraph.png" border="0" usemap="#class_tactics_object_a5f94ed01497a7072a2785163f4cbc57b_icgraph" alt=""/></div>
-<!-- MAP 3 -->
+<map name="class_tactics_object_a5f94ed01497a7072a2785163f4cbc57b_icgraph" id="class_tactics_object_a5f94ed01497a7072a2785163f4cbc57b_icgraph">
+<area shape="rect" id="node2" href="class_m_c_n_1_1_decorator.html#ae58cb79cf1ee47006b7dbdac82b97dc5" title="MCN.Decorator.Interactive" alt="" coords="217,5,391,32"/>
+</map>
 </div>
 </p>
 
 </div>
 </div>
-<a class="anchor" id="a0353d47981c71db7fe32bd414f025e9b"></a>
+<a class="anchor" id="af34052e62ea471d21e4c601cc79ff717"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -241,7 +255,7 @@ Public 멤버 함수</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void TacticsObject.OnTouchEvent </td>
+          <td class="memname">virtual bool TacticsObject.OnTouchEvent </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="_touch_manager_8cs.html#ae33e321a424fe84ba8b2fdb81ad40a68">eTouchEvent</a>&#160;</td>
           <td class="paramname"><em>touch</em></td><td>)</td>
@@ -255,15 +269,17 @@ Public 멤버 함수</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="class_m_c_n_1_1_decorator.html#ab99273d32a380d567f03737ea57ec083">MCN.Decorator</a>에서 재구현되었습니다.</p>
+<p><a class="el" href="class_m_c_n_1_1_decorator.html#ac45ab12c190bd9f5188c9f748f8ddbbf">MCN.Decorator</a>에서 재구현되었습니다.</p>
 
 <p><a class="el" href="_tactics_object_8cs_source.html">TacticsObject.cs</a> 파일의 <a class="el" href="_tactics_object_8cs_source.html#l00052">52</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{ }</div></div><!-- fragment -->
+<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{ <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div></div><!-- fragment -->
 <p><div class="dynheader">
 이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_tactics_object_a0353d47981c71db7fe32bd414f025e9b_icgraph.png" border="0" usemap="#class_tactics_object_a0353d47981c71db7fe32bd414f025e9b_icgraph" alt=""/></div>
-<!-- MAP 4 -->
+<div class="center"><img src="class_tactics_object_af34052e62ea471d21e4c601cc79ff717_icgraph.png" border="0" usemap="#class_tactics_object_af34052e62ea471d21e4c601cc79ff717_icgraph" alt=""/></div>
+<map name="class_tactics_object_af34052e62ea471d21e4c601cc79ff717_icgraph" id="class_tactics_object_af34052e62ea471d21e4c601cc79ff717_icgraph">
+<area shape="rect" id="node2" href="class_m_c_n_1_1_decorator.html#ac45ab12c190bd9f5188c9f748f8ddbbf" title="MCN.Decorator.OnTouchEvent" alt="" coords="244,5,443,32"/>
+</map>
 </div>
 </p>
 

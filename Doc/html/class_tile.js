@@ -21,7 +21,7 @@ var class_tile =
     [ "Interactive", "class_tile.html#a5f94ed01497a7072a2785163f4cbc57b", null ],
     [ "OnNext", "class_tile.html#a2f934b71aa4ddf6f936670d32c3cdff7", null ],
     [ "OnNext", "class_tile.html#a6133171796d47353aa5d57cd336e0a07", null ],
-    [ "OnTouchEvent", "class_tile.html#a0353d47981c71db7fe32bd414f025e9b", null ],
+    [ "OnTouchEvent", "class_tile.html#af34052e62ea471d21e4c601cc79ff717", null ],
     [ "operator!=", "class_tile.html#a49e235618a22126faa6271243cd89710", null ],
     [ "operator==", "class_tile.html#a18f2979a4bf81dc755fbc17e425809f0", null ],
     [ "SetPosition", "class_tile.html#a4d7a81b36513066aad741ed675164690", null ],

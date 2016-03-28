@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['target',['Target',['../class_m_c_n_1_1_state.html#a79a563b32f183c9adc9a96679fc57eb8',1,'MCN::State']]]
+  ['range',['Range',['../class_attack_decorator.html#ad025c4d20cc5dba4326ecbd52562a3c4',1,'AttackDecorator.Range()'],['../class_move_decorator.html#aabb7a267f00c0ce5ad2d26e9daaa4b96',1,'MoveDecorator.Range()']]]
 ];

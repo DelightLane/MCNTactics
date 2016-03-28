@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['tile_5fsize',['TILE_SIZE',['../class_tile.html#a51b7dea4344573ba12a461a32517e683',1,'Tile']]]
+  ['pos',['pos',['../class_m_c_n_1_1_place_info.html#ab61c1f49a0d342fb132a2af87ee7c322',1,'MCN::PlaceInfo']]],
+  ['prefabname',['prefabName',['../class_m_c_n_1_1_place_info.html#aedf20cfad59c8298386c61bdcc266457',1,'MCN::PlaceInfo']]]
 ];

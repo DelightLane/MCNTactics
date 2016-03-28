@@ -1,3 +1,4 @@
 <map id="MoveDecorator.MoveableState_Normal.Run" name="MoveDecorator.MoveableState_Normal.Run">
-<area shape="rect" id="node2" href="$class_placeable_object.html#a0c1248b1f9981ddbf68e6f70a6498f3d" title="PlaceableObject.Deselect" alt="" coords="251,13,423,39"/>
+<area shape="rect" id="node2" href="$class_move_decorator_1_1_moveable_state.html#a2b63f058084f2548f8547c21715d271c" title="MoveDecorator.MoveableState.\lAllTileToNormal" alt="" coords="251,5,452,47"/>
+<area shape="rect" id="node3" href="$class_placeable_object.html#a0c1248b1f9981ddbf68e6f70a6498f3d" title="PlaceableObject.Deselect" alt="" coords="500,13,672,39"/>
 </map>

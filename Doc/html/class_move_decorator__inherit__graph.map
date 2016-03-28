@@ -1,5 +1,5 @@
 <map id="MoveDecorator" name="MoveDecorator">
-<area shape="rect" id="node2" href="$class_m_c_n_1_1_decorator.html" title="{MCN::Decorator\n|+ DecoTarget\l+ Weight\l&#45; _weight\l&#45; _decoTarget\l|+ Decoration()\l+ Equals()\l+ Equals()\l+ GetHashCode()\l+ OnTouchEvent()\l+ Interactive()\l+ operator==()\l+ operator!=()\l# DecoInteractive()\l# DecoOnTouchEvent()\l}" alt="" coords="13,499,168,752"/>
+<area shape="rect" id="node2" href="$class_m_c_n_1_1_decorator.html" title="{MCN::Decorator\n|+ DecoTarget\l&#45; _weight\l&#45; _decoTarget\l|+ GetWeight()\l+ SetWeight()\l+ SetWeight()\l+ Decoration()\l+ Equals()\l+ Equals()\l+ GetHashCode()\l+ OnTouchEvent()\l+ Interactive()\l+ operator==()\l+ operator!=()\l# AbsoluteWeightKey()\l# DecoInteractive()\l# DecoOnTouchEvent()\l&#45; Start()\l}" alt="" coords="13,499,169,811"/>
 <area shape="rect" id="node3" href="$class_m_c_n_1_1_decoable.html" title="{Decoable\n||+ Equals()\l+ GetHashCode()\l+ operator==()\l+ operator!=()\l}" alt="" coords="29,329,152,451"/>
 <area shape="rect" id="node4" href="$class_tactics_object.html" title="{TacticsObject\n||+ Equals()\l+ GetHashCode()\l+ Interactive()\l+ OnTouchEvent()\l+ operator==()\l+ operator!=()\l}" alt="" coords="27,131,154,281"/>
 </map>

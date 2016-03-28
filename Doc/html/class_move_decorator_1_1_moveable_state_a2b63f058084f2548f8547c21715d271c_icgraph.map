@@ -1,0 +1,4 @@
+<map id="MoveDecorator.MoveableState.AllTileToNormal" name="MoveDecorator.MoveableState.AllTileToNormal">
+<area shape="rect" id="node2" href="$class_move_decorator_1_1_moveable_state___normal.html#a9e4e591aa61c13840a15facffa2148d6" title="MoveDecorator.MoveableState\l_Normal.Run" alt="" coords="255,5,452,47"/>
+<area shape="rect" id="node3" href="$class_move_decorator_1_1_moveable_state___done.html#ad6aac25a9f42d14a958d1c93e3b6bd79" title="MoveDecorator.MoveableState\l_Done.Run" alt="" coords="255,71,452,112"/>
+</map>

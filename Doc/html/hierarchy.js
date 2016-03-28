@@ -1,9 +1,11 @@
 var hierarchy =
 [
-    [ "MapManager.DecoClassInfo", "class_map_manager_1_1_deco_class_info.html", null ],
+    [ "MCN.DecoClassInfo", "class_m_c_n_1_1_deco_class_info.html", null ],
     [ "IDisposable", null, [
       [ "MCN.State", "class_m_c_n_1_1_state.html", [
+        [ "AttackDecorator.AttackableState", "class_attack_decorator_1_1_attackable_state.html", null ],
         [ "MoveDecorator.MoveableState", "class_move_decorator_1_1_moveable_state.html", [
+          [ "MoveDecorator.MoveableState_Done", "class_move_decorator_1_1_moveable_state___done.html", null ],
           [ "MoveDecorator.MoveableState_Move", "class_move_decorator_1_1_moveable_state___move.html", null ],
           [ "MoveDecorator.MoveableState_Normal", "class_move_decorator_1_1_moveable_state___normal.html", null ]
         ] ],
@@ -33,6 +35,7 @@ var hierarchy =
             [ "PlaceableObject", "class_placeable_object.html", null ]
           ] ],
           [ "MCN.Decorator", "class_m_c_n_1_1_decorator.html", [
+            [ "AttackDecorator", "class_attack_decorator.html", null ],
             [ "MoveDecorator", "class_move_decorator.html", null ]
           ] ]
         ] ],
@@ -45,7 +48,11 @@ var hierarchy =
     [ "MCN.MonoSingletone< TouchManager >", "class_m_c_n_1_1_mono_singletone.html", [
       [ "TouchManager", "class_touch_manager.html", null ]
     ] ],
-    [ "MapManager.PlaceInfo", "class_map_manager_1_1_place_info.html", null ],
+    [ "MCN.Pair< T, T2 >", "class_m_c_n_1_1_pair.html", null ],
+    [ "MCN.Pair< string, int >", "class_m_c_n_1_1_pair.html", [
+      [ "MCN.StringIntPair", "class_m_c_n_1_1_string_int_pair.html", null ]
+    ] ],
+    [ "MCN.PlaceInfo", "class_m_c_n_1_1_place_info.html", null ],
     [ "MCN.Singletone< T >", "class_m_c_n_1_1_singletone.html", null ],
     [ "MCN.Singletone< GameManager >", "class_m_c_n_1_1_singletone.html", [
       [ "GameManager", "class_game_manager.html", null ]

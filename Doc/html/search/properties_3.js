@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['selectedobj',['SelectedObj',['../class_game_manager.html#a708d9fb61ea9f34e4c3a55d34c31acf2',1,'GameManager']]]
+  ['power',['Power',['../class_attack_decorator.html#a3305d359c9c0faaf4f12aa261492ee7c',1,'AttackDecorator']]]
 ];

@@ -3,11 +3,23 @@
 
 
 Move\+Decorator.\+Moveable\+State에 대한 상속 다이어그램 \+: 
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_move_decorator_1_1_moveable_state__inherit__graph}
+\end{center}
+\end{figure}
 
 
 Move\+Decorator.\+Moveable\+State에 대한 협력 다이어그램\+:
-% FIG 1
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_move_decorator_1_1_moveable_state__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public 멤버 함수}
 \begin{DoxyCompactItemize}
 \item 
@@ -17,7 +29,7 @@ virtual void \hyperlink{class_move_decorator_1_1_moveable_state_a1e66885aa7daf10
 \item 
 abstract \hyperlink{_move_decorator_8cs_a90215797ba850e199f3ef63d7c56f132}{e\+Moveable\+Type} \hyperlink{class_move_decorator_1_1_moveable_state_a4759ac86dafc924c1de16e715c759ad6}{Get\+Current\+Type} ()
 \item 
-abstract void \hyperlink{class_move_decorator_1_1_moveable_state_a062a71b13cc331b5cfb805a2918e5ecc}{On\+Touch\+Event} ()
+abstract bool \hyperlink{class_move_decorator_1_1_moveable_state_a157667c151f6b77c89f0ea7f37858525}{On\+Touch\+Event} ()
 \item 
 virtual void \hyperlink{class_m_c_n_1_1_state_a5be59bc891e64cbbe4322d74a6746908}{Initialize} ()
 \item 
@@ -29,6 +41,11 @@ virtual void \hyperlink{class_m_c_n_1_1_state_a2492ca731678b8216c02134dddeeb745}
 \item 
 void \hyperlink{class_m_c_n_1_1_state_af6df0477e0dead784489688cb2c2093e}{Dispose} ()
 \end{DoxyCompactItemize}
+\subsection*{Protected 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_move_decorator_1_1_moveable_state_a2b63f058084f2548f8547c21715d271c}{All\+Tile\+To\+Normal} ()
+\end{DoxyCompactItemize}
 \subsection*{속성}
 \begin{DoxyCompactItemize}
 \item 
@@ -39,7 +56,7 @@ void \hyperlink{class_m_c_n_1_1_state_af6df0477e0dead784489688cb2c2093e}{Dispose
 \subsection{상세한 설명}
 
 
-Move\+Decorator.\+cs 파일의 16 번째 라인에서 정의되었습니다.
+Move\+Decorator.\+cs 파일의 32 번째 라인에서 정의되었습니다.
 
 
 
@@ -53,36 +70,101 @@ Move\+Decorator.\+cs 파일의 16 번째 라인에서 정의되었습니다.
 )}\hypertarget{class_move_decorator_1_1_moveable_state_ae0130d6fdd6bb1dfd07a1f4c202dd6b0}{}\label{class_move_decorator_1_1_moveable_state_ae0130d6fdd6bb1dfd07a1f4c202dd6b0}
 
 
-Move\+Decorator.\+cs 파일의 18 번째 라인에서 정의되었습니다.
+Move\+Decorator.\+cs 파일의 34 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-18                                                    : base(target)
-19         \{
-20             var moveable = target as \hyperlink{class_move_decorator}{MoveDecorator};
-21 
-22             \textcolor{keywordflow}{if} (moveable != null && moveable.\_moveableStateMachine != null)
-23             \{
-24                 moveable.\hyperlink{class_move_decorator_a699616462ff8c3f628be94d157064c79}{\_moveableStateMachine}.StorageState(
+34                                                    : base(target)
+35         \{
+36             var moveable = target as \hyperlink{class_move_decorator}{MoveDecorator};
+37 
+38             \textcolor{keywordflow}{if} (moveable != null && moveable.\_moveableStateMachine != null)
+39             \{
+40                 moveable.\hyperlink{class_move_decorator_a699616462ff8c3f628be94d157064c79}{\_moveableStateMachine}.StorageState(
       \hyperlink{class_move_decorator_1_1_moveable_state_a4759ac86dafc924c1de16e715c759ad6}{GetCurrentType}().ToString(), \textcolor{keyword}{this});
-25             \}
-26         \}
+41             \}
+42         \}
 \end{DoxyCode}
 
 
-이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
-% FIG 2
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_move_decorator_1_1_moveable_state_ae0130d6fdd6bb1dfd07a1f4c202dd6b0_cgraph}
+\end{center}
+\end{figure}
 
 
 
 
 이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
-% FIG 3
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_move_decorator_1_1_moveable_state_ae0130d6fdd6bb1dfd07a1f4c202dd6b0_icgraph}
+\end{center}
+\end{figure}
 
 
 
 
 \subsection{멤버 함수 문서화}
+\index{Move\+Decorator\+::\+Moveable\+State@{Move\+Decorator\+::\+Moveable\+State}!All\+Tile\+To\+Normal@{All\+Tile\+To\+Normal}}
+\index{All\+Tile\+To\+Normal@{All\+Tile\+To\+Normal}!Move\+Decorator\+::\+Moveable\+State@{Move\+Decorator\+::\+Moveable\+State}}
+\subsubsection[{\texorpdfstring{All\+Tile\+To\+Normal()}{AllTileToNormal()}}]{\setlength{\rightskip}{0pt plus 5cm}void Move\+Decorator.\+Moveable\+State.\+All\+Tile\+To\+Normal (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_move_decorator_1_1_moveable_state_a2b63f058084f2548f8547c21715d271c}{}\label{class_move_decorator_1_1_moveable_state_a2b63f058084f2548f8547c21715d271c}
+
+
+Move\+Decorator.\+cs 파일의 50 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+51         \{
+52             var moveable = \hyperlink{class_m_c_n_1_1_state_a79a563b32f183c9adc9a96679fc57eb8}{Target} as \hyperlink{class_move_decorator}{MoveDecorator};
+53 
+54             \textcolor{keywordflow}{if} (moveable != null)
+55             \{
+56                 var placeable = moveable.\hyperlink{class_m_c_n_1_1_decorator_a1306a0a8b814650cd5970a1ffc7ba2fe}{DecoTarget} as \hyperlink{class_placeable_object}{PlaceableObject};
+57 
+58                 \textcolor{keywordflow}{if} (placeable != null)
+59                 \{
+60                     placeable.\hyperlink{class_placeable_object_a0c1248b1f9981ddbf68e6f70a6498f3d}{Deselect}();
+61 
+62                     \hyperlink{class_map_manager}{MapManager}.\hyperlink{class_m_c_n_1_1_mono_singletone_aa50c027cca64cf4ad30c1ee5c83e0b78}{Instance}.ChangeAllTileState(
+      \hyperlink{_tile_8cs_a271bc07be325bca511bcb747e0ff2fda}{eTileType}.NORMAL);
+63                 \}
+64             \}
+65         \}
+\end{DoxyCode}
+
+
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_move_decorator_1_1_moveable_state_a2b63f058084f2548f8547c21715d271c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_move_decorator_1_1_moveable_state_a2b63f058084f2548f8547c21715d271c_icgraph}
+\end{center}
+\end{figure}
+
+
 \index{Move\+Decorator\+::\+Moveable\+State@{Move\+Decorator\+::\+Moveable\+State}!Destroy@{Destroy}}
 \index{Destroy@{Destroy}!Move\+Decorator\+::\+Moveable\+State@{Move\+Decorator\+::\+Moveable\+State}}
 \subsubsection[{\texorpdfstring{Destroy()}{Destroy()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void M\+C\+N.\+State.\+Destroy (
@@ -172,12 +254,18 @@ State.\+cs 파일의 35 번째 라인에서 정의되었습니다.
 )\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_move_decorator_1_1_moveable_state_a4759ac86dafc924c1de16e715c759ad6}{}\label{class_move_decorator_1_1_moveable_state_a4759ac86dafc924c1de16e715c759ad6}
 
 
-\hyperlink{class_move_decorator_1_1_moveable_state___normal_accc4ab296d5b1c1cf0f465b9a2b5f2dd}{Move\+Decorator.\+Moveable\+State\+\_\+\+Normal}, \hyperlink{class_move_decorator_1_1_moveable_state___move_a92389a089bde6eb88cf9b1467f7f4df5}{Move\+Decorator.\+Moveable\+State\+\_\+\+Move}에서 구현되었습니다.
+\hyperlink{class_move_decorator_1_1_moveable_state___done_acc33dcadba0272ede2c801abe30a008c}{Move\+Decorator.\+Moveable\+State\+\_\+\+Done}, \hyperlink{class_move_decorator_1_1_moveable_state___normal_accc4ab296d5b1c1cf0f465b9a2b5f2dd}{Move\+Decorator.\+Moveable\+State\+\_\+\+Normal}, \hyperlink{class_move_decorator_1_1_moveable_state___move_a92389a089bde6eb88cf9b1467f7f4df5}{Move\+Decorator.\+Moveable\+State\+\_\+\+Move}에서 구현되었습니다.
 
 
 
 이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
-% FIG 4
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_move_decorator_1_1_moveable_state_a4759ac86dafc924c1de16e715c759ad6_icgraph}
+\end{center}
+\end{figure}
 
 
 \index{Move\+Decorator\+::\+Moveable\+State@{Move\+Decorator\+::\+Moveable\+State}!Initialize@{Initialize}}
@@ -219,33 +307,45 @@ State.\+cs 파일의 31 번째 라인에서 정의되었습니다.
 
 
 
-Move\+Decorator.\+cs 파일의 28 번째 라인에서 정의되었습니다.
+Move\+Decorator.\+cs 파일의 44 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-28 \{ \}
+44 \{ \}
 \end{DoxyCode}
 
 
 이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
-% FIG 5
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_move_decorator_1_1_moveable_state_a1e66885aa7daf1021fc654b706b53ab8_cgraph}
+\end{center}
+\end{figure}
 
 
 \index{Move\+Decorator\+::\+Moveable\+State@{Move\+Decorator\+::\+Moveable\+State}!On\+Touch\+Event@{On\+Touch\+Event}}
 \index{On\+Touch\+Event@{On\+Touch\+Event}!Move\+Decorator\+::\+Moveable\+State@{Move\+Decorator\+::\+Moveable\+State}}
-\subsubsection[{\texorpdfstring{On\+Touch\+Event()}{OnTouchEvent()}}]{\setlength{\rightskip}{0pt plus 5cm}abstract void Move\+Decorator.\+Moveable\+State.\+On\+Touch\+Event (
+\subsubsection[{\texorpdfstring{On\+Touch\+Event()}{OnTouchEvent()}}]{\setlength{\rightskip}{0pt plus 5cm}abstract bool Move\+Decorator.\+Moveable\+State.\+On\+Touch\+Event (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_move_decorator_1_1_moveable_state_a062a71b13cc331b5cfb805a2918e5ecc}{}\label{class_move_decorator_1_1_moveable_state_a062a71b13cc331b5cfb805a2918e5ecc}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_move_decorator_1_1_moveable_state_a157667c151f6b77c89f0ea7f37858525}{}\label{class_move_decorator_1_1_moveable_state_a157667c151f6b77c89f0ea7f37858525}
 
 
-\hyperlink{class_move_decorator_1_1_moveable_state___normal_a25b9dab13f2acd558ccadd0e98273f90}{Move\+Decorator.\+Moveable\+State\+\_\+\+Normal}, \hyperlink{class_move_decorator_1_1_moveable_state___move_a8ca9e04efc9369fd9ca9f200bb0dd0a6}{Move\+Decorator.\+Moveable\+State\+\_\+\+Move}에서 구현되었습니다.
+\hyperlink{class_move_decorator_1_1_moveable_state___done_a650337320d3012ec1a8b1fd5a2d4afa5}{Move\+Decorator.\+Moveable\+State\+\_\+\+Done}, \hyperlink{class_move_decorator_1_1_moveable_state___normal_a957e8d66d3d196316ba51794e633b7a0}{Move\+Decorator.\+Moveable\+State\+\_\+\+Normal}, \hyperlink{class_move_decorator_1_1_moveable_state___move_a341a523047c57aae78495154f0205b0c}{Move\+Decorator.\+Moveable\+State\+\_\+\+Move}에서 구현되었습니다.
 
 
 
 이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
-% FIG 6
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_move_decorator_1_1_moveable_state_a157667c151f6b77c89f0ea7f37858525_icgraph}
+\end{center}
+\end{figure}
 
 
 \index{Move\+Decorator\+::\+Moveable\+State@{Move\+Decorator\+::\+Moveable\+State}!Run@{Run}}
@@ -257,7 +357,7 @@ Move\+Decorator.\+cs 파일의 28 번째 라인에서 정의되었습니다.
 )\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [inherited]}}\hypertarget{class_m_c_n_1_1_state_afdec72a816a8a8ec584cac758a027215}{}\label{class_m_c_n_1_1_state_afdec72a816a8a8ec584cac758a027215}
 
 
-\hyperlink{class_move_decorator_1_1_moveable_state___normal_a9e4e591aa61c13840a15facffa2148d6}{Move\+Decorator.\+Moveable\+State\+\_\+\+Normal}, \hyperlink{class_tile_1_1_tile_state___deactive_a806c5dbc5eb43903ad41d448f3d25c61}{Tile.\+Tile\+State\+\_\+\+Deactive}, \hyperlink{class_tile_1_1_tile_state___active_ab53c7c818d65122d6d36c9681ca53bf9}{Tile.\+Tile\+State\+\_\+\+Active}, \hyperlink{class_move_decorator_1_1_moveable_state___move_ae1bb2c9ca5992373aa872788775d3e4a}{Move\+Decorator.\+Moveable\+State\+\_\+\+Move}, \hyperlink{class_tile_1_1_tile_state___normal_acf613382b6ddeff2fcc226d8caeb0b53}{Tile.\+Tile\+State\+\_\+\+Normal}에서 구현되었습니다.
+\hyperlink{class_move_decorator_1_1_moveable_state___done_ad6aac25a9f42d14a958d1c93e3b6bd79}{Move\+Decorator.\+Moveable\+State\+\_\+\+Done}, \hyperlink{class_move_decorator_1_1_moveable_state___normal_a9e4e591aa61c13840a15facffa2148d6}{Move\+Decorator.\+Moveable\+State\+\_\+\+Normal}, \hyperlink{class_tile_1_1_tile_state___deactive_a806c5dbc5eb43903ad41d448f3d25c61}{Tile.\+Tile\+State\+\_\+\+Deactive}, \hyperlink{class_move_decorator_1_1_moveable_state___move_ae1bb2c9ca5992373aa872788775d3e4a}{Move\+Decorator.\+Moveable\+State\+\_\+\+Move}, \hyperlink{class_tile_1_1_tile_state___active_ab53c7c818d65122d6d36c9681ca53bf9}{Tile.\+Tile\+State\+\_\+\+Active}, \hyperlink{class_tile_1_1_tile_state___normal_acf613382b6ddeff2fcc226d8caeb0b53}{Tile.\+Tile\+State\+\_\+\+Normal}에서 구현되었습니다.
 
 
 

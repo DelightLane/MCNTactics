@@ -1,5 +1,6 @@
 <map id="MCN.Decorator" name="MCN.Decorator">
-<area shape="rect" id="node5" href="$class_move_decorator.html" title="{MoveDecorator\n|&#45; _moveableStateMachine\l|# DecoOnTouchEvent()\l# DecoInteractive()\l&#45; Awake()\l&#45; StorageStates()\l&#45; GetCurrentState()\l&#45; GetCurrentStateType()\l&#45; ChangeState()\l}" alt="" coords="5,800,176,965"/>
-<area shape="rect" id="node2" href="$class_m_c_n_1_1_decoable.html" title="{Decoable\n||+ Equals()\l+ GetHashCode()\l+ operator==()\l+ operator!=()\l}" alt="" coords="29,329,152,451"/>
-<area shape="rect" id="node3" href="$class_tactics_object.html" title="{TacticsObject\n||+ Equals()\l+ GetHashCode()\l+ Interactive()\l+ OnTouchEvent()\l+ operator==()\l+ operator!=()\l}" alt="" coords="27,131,154,281"/>
+<area shape="rect" id="node5" href="$class_attack_decorator.html" title="{AttackDecorator\n|+ Range\l+ Power\l&#45; _attackableStateMachine\l|# AbsoluteWeightKey()\l# DecoOnTouchEvent()\l# DecoInteractive()\l&#45; Awake()\l&#45; StorageStates()\l&#45; GetCurrentState()\l&#45; GetCurrentStateType()\l&#45; ChangeState()\l}" alt="" coords="5,859,183,1068"/>
+<area shape="rect" id="node6" href="$class_move_decorator.html" title="{MoveDecorator\n|+ Range\l&#45; _moveableStateMachine\l|# AbsoluteWeightKey()\l# DecoOnTouchEvent()\l# DecoInteractive()\l&#45; Awake()\l&#45; StorageStates()\l&#45; GetCurrentState()\l&#45; GetCurrentStateType()\l&#45; ChangeState()\l}" alt="" coords="207,866,378,1061"/>
+<area shape="rect" id="node2" href="$class_m_c_n_1_1_decoable.html" title="{Decoable\n||+ Equals()\l+ GetHashCode()\l+ operator==()\l+ operator!=()\l}" alt="" coords="131,329,254,451"/>
+<area shape="rect" id="node3" href="$class_tactics_object.html" title="{TacticsObject\n||+ Equals()\l+ GetHashCode()\l+ Interactive()\l+ OnTouchEvent()\l+ operator==()\l+ operator!=()\l}" alt="" coords="129,131,256,281"/>
 </map>

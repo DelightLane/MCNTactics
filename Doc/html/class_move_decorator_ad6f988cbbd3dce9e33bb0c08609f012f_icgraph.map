@@ -1,5 +1,5 @@
 <map id="MoveDecorator.GetCurrentState" name="MoveDecorator.GetCurrentState">
 <area shape="rect" id="node2" href="$class_move_decorator.html#a4da4b651ccf38b250af93eaeeddd1912" title="MoveDecorator.GetCurrent\lStateType" alt="" coords="241,5,415,47"/>
-<area shape="rect" id="node3" href="$class_move_decorator.html#ac4276fd2b79d3a3f6a89968e62271623" title="MoveDecorator.DecoOnTouch\lEvent" alt="" coords="231,71,425,112"/>
+<area shape="rect" id="node3" href="$class_move_decorator.html#acd118d50499d78a03d810aff30b7b50e" title="MoveDecorator.DecoOnTouch\lEvent" alt="" coords="231,71,425,112"/>
 <area shape="rect" id="node4" href="$class_move_decorator.html#a5d25ac6e9eacf33c5ab0423059ebcadc" title="MoveDecorator.DecoInteractive" alt="" coords="228,137,428,163"/>
 </map>

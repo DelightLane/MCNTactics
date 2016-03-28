@@ -94,6 +94,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'검색');
       <li><a href="#index_f"><span>f</span></a></li>
       <li><a href="#index_g"><span>g</span></a></li>
       <li><a href="#index_i"><span>i</span></a></li>
+      <li><a href="#index_k"><span>k</span></a></li>
       <li><a href="#index_m"><span>m</span></a></li>
       <li><a href="#index_o"><span>o</span></a></li>
       <li><a href="#index_p"><span>p</span></a></li>
@@ -101,6 +102,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'검색');
       <li><a href="#index_s"><span>s</span></a></li>
       <li><a href="#index_t"><span>t</span></a></li>
       <li><a href="#index_u"><span>u</span></a></li>
+      <li><a href="#index_v"><span>v</span></a></li>
       <li class="current"><a href="#index_w"><span>w</span></a></li>
     </ul>
   </div>
@@ -139,6 +141,9 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <h3><a class="anchor" id="index__"></a>- _ -</h3><ul>
 <li>_attached
 : <a class="el" href="class_tile.html#aa548ae60732f4d054b6777436baefdd5">Tile</a>
+</li>
+<li>_attackableStateMachine
+: <a class="el" href="class_attack_decorator.html#a0ddeffefa8d7bce11d4681c07c50183c">AttackDecorator</a>
 </li>
 <li>_currentState
 : <a class="el" href="class_m_c_n_1_1_state_machine.html#a040bf7c13d5127fe983af2ef0a6315ec">MCN.StateMachine&lt; T &gt;</a>
@@ -188,12 +193,21 @@ $(document).ready(function(){initNavTree('functions.html','');});
 : <a class="el" href="class_map_manager.html#a58f7635d8e19795f3845a3f85e2b4ac3">MapManager</a>
 </li>
 <li>_weight
-: <a class="el" href="class_m_c_n_1_1_decorator.html#af352c49463e8b4c138f783b292642f98">MCN.Decorator</a>
+: <a class="el" href="class_m_c_n_1_1_decorator.html#a1f9dd0c30a2fc261b7987d3ce36d8673">MCN.Decorator</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_a"></a>- a -</h3><ul>
+<li>AbsoluteWeightKey()
+: <a class="el" href="class_attack_decorator.html#aa0fdb6701a08f63d011aacf6bd6d6df7">AttackDecorator</a>
+, <a class="el" href="class_m_c_n_1_1_decorator.html#add763642ece4015f68d63504291fc783">MCN.Decorator</a>
+, <a class="el" href="class_move_decorator.html#a46aea0fa3f7be5fd9b6ab35801166af4">MoveDecorator</a>
+</li>
+<li>AllTileToNormal()
+: <a class="el" href="class_attack_decorator_1_1_attackable_state.html#ad1be8431e8606ed79d375fe520b65e47">AttackDecorator.AttackableState</a>
+, <a class="el" href="class_move_decorator_1_1_moveable_state.html#a2b63f058084f2548f8547c21715d271c">MoveDecorator.MoveableState</a>
+</li>
 <li>Attach()
 : <a class="el" href="class_placeable_object.html#a3176ec3d5d26b2a83cdc58b01e630aa1">PlaceableObject</a>
 </li>
@@ -201,8 +215,12 @@ $(document).ready(function(){initNavTree('functions.html','');});
 : <a class="el" href="class_map_manager.html#ab8cbf46e369a9c59ff183a1b6c3b20bb">MapManager</a>
 , <a class="el" href="class_tile.html#a1969ee41c320c6e7748a33374942e07e">Tile</a>
 </li>
+<li>AttackableState()
+: <a class="el" href="class_attack_decorator_1_1_attackable_state.html#ab42449bc9d397049c81f2a6e6d2ac9b7">AttackDecorator.AttackableState</a>
+</li>
 <li>Awake()
-: <a class="el" href="class_map_manager.html#ad633984007048c7d63eab44aaeb0c32d">MapManager</a>
+: <a class="el" href="class_attack_decorator.html#a84bd4b501002dde5aaf3bedad223acad">AttackDecorator</a>
+, <a class="el" href="class_map_manager.html#ad633984007048c7d63eab44aaeb0c32d">MapManager</a>
 , <a class="el" href="class_move_decorator.html#a18f4c0f61c6b2581ebf291f976cb2756">MoveDecorator</a>
 , <a class="el" href="class_tile.html#a4fbf82b2a26cdeb792dc78192d7247dc">Tile</a>
 , <a class="el" href="class_touch_manager.html#a73c7b6bf98d9834ce87b72012a2a99f1">TouchManager</a>
@@ -215,12 +233,13 @@ $(document).ready(function(){initNavTree('functions.html','');});
 : <a class="el" href="class_map_manager.html#a68f796431393b7239320ab1f5200213a">MapManager</a>
 </li>
 <li>ChangeState()
-: <a class="el" href="class_m_c_n_1_1_state_machine.html#a81eb33948ad947f9ef9c0771542a8c47">MCN.StateMachine&lt; T &gt;</a>
+: <a class="el" href="class_attack_decorator.html#a754ed58a005e35f352b5eef1a9de46b2">AttackDecorator</a>
+, <a class="el" href="class_m_c_n_1_1_state_machine.html#a81eb33948ad947f9ef9c0771542a8c47">MCN.StateMachine&lt; T &gt;</a>
 , <a class="el" href="class_move_decorator.html#ac7ad3c87a970caf3ddd8ea0b74276d30">MoveDecorator</a>
 , <a class="el" href="class_tile.html#a2bb5c747e9483b803ea65b4341ce5af6">Tile</a>
 </li>
 <li>className
-: <a class="el" href="class_map_manager_1_1_deco_class_info.html#aa294d60b33f960fd11f4eedb25fe6ba4">MapManager.DecoClassInfo</a>
+: <a class="el" href="class_m_c_n_1_1_deco_class_info.html#a3b0fc8a06269e57ded3835ea02026859">MCN.DecoClassInfo</a>
 </li>
 <li>CreatedObjectName()
 : <a class="el" href="class_map_manager.html#aa3459a9fe2d748c6e9f2c3da8a6273cd">MapManager</a>
@@ -245,15 +264,17 @@ $(document).ready(function(){initNavTree('functions.html','');});
 
 <h3><a class="anchor" id="index_d"></a>- d -</h3><ul>
 <li>decoClassInfo
-: <a class="el" href="class_map_manager_1_1_place_info.html#a66fc5e48eee892ff19c2b4c4cd7661c7">MapManager.PlaceInfo</a>
+: <a class="el" href="class_m_c_n_1_1_place_info.html#a52b0fe979b2c0403be64f1f42262e086">MCN.PlaceInfo</a>
 </li>
 <li>DecoInteractive()
-: <a class="el" href="class_m_c_n_1_1_decorator.html#a317f646a9053334fdbe28b9f1ae690a5">MCN.Decorator</a>
+: <a class="el" href="class_attack_decorator.html#ac0de076a7e28dbb6253aa5b1555195b3">AttackDecorator</a>
+, <a class="el" href="class_m_c_n_1_1_decorator.html#a317f646a9053334fdbe28b9f1ae690a5">MCN.Decorator</a>
 , <a class="el" href="class_move_decorator.html#a5d25ac6e9eacf33c5ab0423059ebcadc">MoveDecorator</a>
 </li>
 <li>DecoOnTouchEvent()
-: <a class="el" href="class_m_c_n_1_1_decorator.html#a7e4b756a1ab1d0791ddfa441102db8d2">MCN.Decorator</a>
-, <a class="el" href="class_move_decorator.html#ac4276fd2b79d3a3f6a89968e62271623">MoveDecorator</a>
+: <a class="el" href="class_attack_decorator.html#abff1ff6a1fa1b896f3f0251cf7652eb0">AttackDecorator</a>
+, <a class="el" href="class_m_c_n_1_1_decorator.html#abc499f6479fad929fc812e218d39a06d">MCN.Decorator</a>
+, <a class="el" href="class_move_decorator.html#acd118d50499d78a03d810aff30b7b50e">MoveDecorator</a>
 </li>
 <li>Decorated()
 : <a class="el" href="class_m_c_n_1_1_deco_instance.html#af6c8520c7bb40840651026e3693afcb4">MCN.DecoInstance</a>
@@ -325,15 +346,19 @@ $(document).ready(function(){initNavTree('functions.html','');});
 : <a class="el" href="class_tile.html#a38b9f5c215f16448118e83e0d10aed05">Tile</a>
 </li>
 <li>GetCurrentState()
-: <a class="el" href="class_m_c_n_1_1_state_machine.html#a9c40c6eb8f992b4f7a2d81415376fd56">MCN.StateMachine&lt; T &gt;</a>
+: <a class="el" href="class_attack_decorator.html#af56bf418b8ba41fa9c7d8a697e39ce26">AttackDecorator</a>
+, <a class="el" href="class_m_c_n_1_1_state_machine.html#a9c40c6eb8f992b4f7a2d81415376fd56">MCN.StateMachine&lt; T &gt;</a>
 , <a class="el" href="class_move_decorator.html#ad6f988cbbd3dce9e33bb0c08609f012f">MoveDecorator</a>
 , <a class="el" href="class_tile.html#ae37e08e39263e766fdc612de94fb7a0d">Tile</a>
 </li>
 <li>GetCurrentStateType()
-: <a class="el" href="class_move_decorator.html#a4da4b651ccf38b250af93eaeeddd1912">MoveDecorator</a>
+: <a class="el" href="class_attack_decorator.html#a0fe90a081a8bf36c973b6a9b571c4966">AttackDecorator</a>
+, <a class="el" href="class_move_decorator.html#a4da4b651ccf38b250af93eaeeddd1912">MoveDecorator</a>
 </li>
 <li>GetCurrentType()
-: <a class="el" href="class_move_decorator_1_1_moveable_state.html#a4759ac86dafc924c1de16e715c759ad6">MoveDecorator.MoveableState</a>
+: <a class="el" href="class_attack_decorator_1_1_attackable_state.html#a02247dd3afd57a7c3a81540b192fbaa7">AttackDecorator.AttackableState</a>
+, <a class="el" href="class_move_decorator_1_1_moveable_state.html#a4759ac86dafc924c1de16e715c759ad6">MoveDecorator.MoveableState</a>
+, <a class="el" href="class_move_decorator_1_1_moveable_state___done.html#acc33dcadba0272ede2c801abe30a008c">MoveDecorator.MoveableState_Done</a>
 , <a class="el" href="class_move_decorator_1_1_moveable_state___move.html#a92389a089bde6eb88cf9b1467f7f4df5">MoveDecorator.MoveableState_Move</a>
 , <a class="el" href="class_move_decorator_1_1_moveable_state___normal.html#accc4ab296d5b1c1cf0f465b9a2b5f2dd">MoveDecorator.MoveableState_Normal</a>
 , <a class="el" href="class_tile_1_1_tile_state.html#a9649a2b7b7cb3ae49eb35df6b6eef43e">Tile.TileState</a>
@@ -356,6 +381,9 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>GetTile()
 : <a class="el" href="class_map_manager.html#ae457099efdd1a804add3b851b2bc7691">MapManager</a>
 </li>
+<li>GetWeight()
+: <a class="el" href="class_m_c_n_1_1_decorator.html#a2fa8df5e51cc3fdaa63b28c4e4917670">MCN.Decorator</a>
+</li>
 </ul>
 
 
@@ -368,7 +396,8 @@ $(document).ready(function(){initNavTree('functions.html','');});
 , <a class="el" href="class_m_c_n_1_1_singletone.html#a46dbbebd93e96a9592a9803c51f35602">MCN.Singletone&lt; T &gt;</a>
 </li>
 <li>Interactive()
-: <a class="el" href="class_m_c_n_1_1_decorator.html#ae58cb79cf1ee47006b7dbdac82b97dc5">MCN.Decorator</a>
+: <a class="el" href="class_attack_decorator_1_1_attackable_state.html#a8dc1edc91e271393dc3097e92c9563a3">AttackDecorator.AttackableState</a>
+, <a class="el" href="class_m_c_n_1_1_decorator.html#ae58cb79cf1ee47006b7dbdac82b97dc5">MCN.Decorator</a>
 , <a class="el" href="class_move_decorator_1_1_moveable_state.html#a1e66885aa7daf1021fc654b706b53ab8">MoveDecorator.MoveableState</a>
 , <a class="el" href="class_move_decorator_1_1_moveable_state___move.html#a9e9c360898b9c25fcc478ef2db20f316">MoveDecorator.MoveableState_Move</a>
 , <a class="el" href="class_tactics_object.html#a5f94ed01497a7072a2785163f4cbc57b">TacticsObject</a>
@@ -385,9 +414,19 @@ $(document).ready(function(){initNavTree('functions.html','');});
 </ul>
 
 
+<h3><a class="anchor" id="index_k"></a>- k -</h3><ul>
+<li>key
+: <a class="el" href="class_m_c_n_1_1_pair.html#a62c546d3829b8819a65f8c9d64200338">MCN.Pair&lt; T, T2 &gt;</a>
+</li>
+</ul>
+
+
 <h3><a class="anchor" id="index_m"></a>- m -</h3><ul>
 <li>MoveableState()
 : <a class="el" href="class_move_decorator_1_1_moveable_state.html#ae0130d6fdd6bb1dfd07a1f4c202dd6b0">MoveDecorator.MoveableState</a>
+</li>
+<li>MoveableState_Done()
+: <a class="el" href="class_move_decorator_1_1_moveable_state___done.html#a0638eb5d7515819aaa41dbaa70dd82e7">MoveDecorator.MoveableState_Done</a>
 </li>
 <li>MoveableState_Move()
 : <a class="el" href="class_move_decorator_1_1_moveable_state___move.html#a99f0c50b04a1bf2329d3cfed347f0e5a">MoveDecorator.MoveableState_Move</a>
@@ -404,11 +443,13 @@ $(document).ready(function(){initNavTree('functions.html','');});
 , <a class="el" href="class_tile.html#a6133171796d47353aa5d57cd336e0a07">Tile</a>
 </li>
 <li>OnTouchEvent()
-: <a class="el" href="class_m_c_n_1_1_decorator.html#ab99273d32a380d567f03737ea57ec083">MCN.Decorator</a>
-, <a class="el" href="class_move_decorator_1_1_moveable_state.html#a062a71b13cc331b5cfb805a2918e5ecc">MoveDecorator.MoveableState</a>
-, <a class="el" href="class_move_decorator_1_1_moveable_state___move.html#a8ca9e04efc9369fd9ca9f200bb0dd0a6">MoveDecorator.MoveableState_Move</a>
-, <a class="el" href="class_move_decorator_1_1_moveable_state___normal.html#a25b9dab13f2acd558ccadd0e98273f90">MoveDecorator.MoveableState_Normal</a>
-, <a class="el" href="class_tactics_object.html#a0353d47981c71db7fe32bd414f025e9b">TacticsObject</a>
+: <a class="el" href="class_attack_decorator_1_1_attackable_state.html#ac9cf679f51eb8a57cab007476c583dca">AttackDecorator.AttackableState</a>
+, <a class="el" href="class_m_c_n_1_1_decorator.html#ac45ab12c190bd9f5188c9f748f8ddbbf">MCN.Decorator</a>
+, <a class="el" href="class_move_decorator_1_1_moveable_state.html#a157667c151f6b77c89f0ea7f37858525">MoveDecorator.MoveableState</a>
+, <a class="el" href="class_move_decorator_1_1_moveable_state___done.html#a650337320d3012ec1a8b1fd5a2d4afa5">MoveDecorator.MoveableState_Done</a>
+, <a class="el" href="class_move_decorator_1_1_moveable_state___move.html#a341a523047c57aae78495154f0205b0c">MoveDecorator.MoveableState_Move</a>
+, <a class="el" href="class_move_decorator_1_1_moveable_state___normal.html#a957e8d66d3d196316ba51794e633b7a0">MoveDecorator.MoveableState_Normal</a>
+, <a class="el" href="class_tactics_object.html#af34052e62ea471d21e4c601cc79ff717">TacticsObject</a>
 , <a class="el" href="class_tile_1_1_tile_state.html#a8687f7cb0e2c1a436c5ac395f4f6d07a">Tile.TileState</a>
 , <a class="el" href="class_tile_1_1_tile_state___active.html#a7a9e2832931f69884ee0d9917ab619a8">Tile.TileState_Active</a>
 </li>
@@ -435,21 +476,29 @@ $(document).ready(function(){initNavTree('functions.html','');});
 : <a class="el" href="class_map_manager.html#a4213ccbaa1a81d0a47884de50a28de32">MapManager</a>
 </li>
 <li>pos
-: <a class="el" href="class_map_manager_1_1_place_info.html#a892976a463c8f25b15b248220f10289e">MapManager.PlaceInfo</a>
+: <a class="el" href="class_m_c_n_1_1_place_info.html#ab61c1f49a0d342fb132a2af87ee7c322">MCN.PlaceInfo</a>
+</li>
+<li>Power
+: <a class="el" href="class_attack_decorator.html#a3305d359c9c0faaf4f12aa261492ee7c">AttackDecorator</a>
 </li>
 <li>prefabName
-: <a class="el" href="class_map_manager_1_1_place_info.html#a82ac5b1455ed7b78f7338784ac91fe1b">MapManager.PlaceInfo</a>
+: <a class="el" href="class_m_c_n_1_1_place_info.html#aedf20cfad59c8298386c61bdcc266457">MCN.PlaceInfo</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_r"></a>- r -</h3><ul>
+<li>Range
+: <a class="el" href="class_attack_decorator.html#ad025c4d20cc5dba4326ecbd52562a3c4">AttackDecorator</a>
+, <a class="el" href="class_move_decorator.html#aabb7a267f00c0ce5ad2d26e9daaa4b96">MoveDecorator</a>
+</li>
 <li>RemoveTilemap()
 : <a class="el" href="class_map_creator.html#afb12afa9a9ca8fe04701af4b494e1c8a">MapCreator</a>
 , <a class="el" href="class_map_manager.html#aac20afabde4946e32ce1e719c72e0f50">MapManager</a>
 </li>
 <li>Run()
 : <a class="el" href="class_m_c_n_1_1_state.html#afdec72a816a8a8ec584cac758a027215">MCN.State</a>
+, <a class="el" href="class_move_decorator_1_1_moveable_state___done.html#ad6aac25a9f42d14a958d1c93e3b6bd79">MoveDecorator.MoveableState_Done</a>
 , <a class="el" href="class_move_decorator_1_1_moveable_state___move.html#ae1bb2c9ca5992373aa872788775d3e4a">MoveDecorator.MoveableState_Move</a>
 , <a class="el" href="class_move_decorator_1_1_moveable_state___normal.html#a9e4e591aa61c13840a15facffa2148d6">MoveDecorator.MoveableState_Normal</a>
 , <a class="el" href="class_tile_1_1_tile_state___active.html#ab53c7c818d65122d6d36c9681ca53bf9">Tile.TileState_Active</a>
@@ -474,8 +523,14 @@ $(document).ready(function(){initNavTree('functions.html','');});
 , <a class="el" href="class_tile_1_1_tile_state___deactive.html#ac0b9d7d4a64b2c320eeb2679fc6ad459">Tile.TileState_Deactive</a>
 , <a class="el" href="class_tile_1_1_tile_state___normal.html#a81d8bc6e280e6143ff42a292e863307e">Tile.TileState_Normal</a>
 </li>
+<li>SetWeight()
+: <a class="el" href="class_m_c_n_1_1_decorator.html#a0658f2776c28dad0517b56085910162c">MCN.Decorator</a>
+</li>
 <li>ShowChainActiveTile()
 : <a class="el" href="class_tile.html#a0ca6f4d1ddb0e7609749f1cf583b3c16">Tile</a>
+</li>
+<li>Start()
+: <a class="el" href="class_m_c_n_1_1_decorator.html#a964c91893ddf183627d4dd898b4d8f47">MCN.Decorator</a>
 </li>
 <li>State()
 : <a class="el" href="class_m_c_n_1_1_state.html#ad16fc582097e88164f2804183830344e">MCN.State</a>
@@ -484,7 +539,8 @@ $(document).ready(function(){initNavTree('functions.html','');});
 : <a class="el" href="class_m_c_n_1_1_state_machine.html#a30d168379929d5bdb050f211e6273a8b">MCN.StateMachine&lt; T &gt;</a>
 </li>
 <li>StorageStates()
-: <a class="el" href="class_move_decorator.html#a1a8b4d4a8a56735f3b33ea0912526cde">MoveDecorator</a>
+: <a class="el" href="class_attack_decorator.html#a4c5bb156eda734c19594c740c6d63aad">AttackDecorator</a>
+, <a class="el" href="class_move_decorator.html#a1a8b4d4a8a56735f3b33ea0912526cde">MoveDecorator</a>
 , <a class="el" href="class_tile.html#a6cb69a9fad04bee1fa3473aec22428de">Tile</a>
 </li>
 <li>Subscribe()
@@ -531,12 +587,16 @@ $(document).ready(function(){initNavTree('functions.html','');});
 </ul>
 
 
+<h3><a class="anchor" id="index_v"></a>- v -</h3><ul>
+<li>value
+: <a class="el" href="class_m_c_n_1_1_pair.html#a1980bbf37b60fcbfea22382f71250e84">MCN.Pair&lt; T, T2 &gt;</a>
+</li>
+</ul>
+
+
 <h3><a class="anchor" id="index_w"></a>- w -</h3><ul>
 <li>weight
-: <a class="el" href="class_map_manager_1_1_deco_class_info.html#a37049aed98cee0f82b631a6273e3a27b">MapManager.DecoClassInfo</a>
-</li>
-<li>Weight
-: <a class="el" href="class_m_c_n_1_1_decorator.html#a6f6dcca5e0dfb225bcfe2fa73c0ef752">MCN.Decorator</a>
+: <a class="el" href="class_m_c_n_1_1_deco_class_info.html#a04ed1d8d36502303fa7a2a1f872f1681">MCN.DecoClassInfo</a>
 </li>
 </ul>
 </div><!-- contents -->
