@@ -9,7 +9,7 @@ public enum eMoveableType
     DONE
 }
 
-public class MoveDecorator : MCN.Decorator
+public class MoveActor : MCN.Actor
 {
     #region weight
     private int Range
@@ -29,15 +29,13 @@ public class MoveDecorator : MCN.Decorator
     #region state
     private MCN.StateMachine<MoveableState> _moveableStateMachine = new MCN.StateMachine<MoveableState>();
 
-    private abstract class MoveableState : MCN.State
+    private abstract class MoveableState : MCN.State<MoveActor>
     {
-        public MoveableState(TacticsObject target) : base(target)
+        public MoveableState(MoveActor target) : base(target)
         {
-            var moveable = target as MoveDecorator;
-
-            if (moveable != null && moveable._moveableStateMachine != null)
+            if (Target != null && Target._moveableStateMachine != null)
             {
-                moveable._moveableStateMachine.StorageState(GetCurrentType().ToString(), this);
+                Target._moveableStateMachine.StorageState(GetCurrentType().ToString(), this);
             }
         }
 
@@ -49,11 +47,9 @@ public class MoveDecorator : MCN.Decorator
 
         protected void AllTileToNormal()
         {
-            var moveable = Target as MoveDecorator;
-
-            if (moveable != null)
+            if (Target != null)
             {
-                var placeable = moveable.DecoTarget as PlaceableObject;
+                var placeable = Target.ActTarget as PlaceableObject;
 
                 if (placeable != null)
                 {
@@ -67,7 +63,7 @@ public class MoveDecorator : MCN.Decorator
 
     private class MoveableState_Move : MoveableState
     {
-        public MoveableState_Move(TacticsObject target) : base(target) { }
+        public MoveableState_Move(MoveActor target) : base(target) { }
 
         public override eMoveableType GetCurrentType()
         {
@@ -76,17 +72,15 @@ public class MoveDecorator : MCN.Decorator
 
         public override bool OnTouchEvent()
         {
-            var moveable = Target as MoveDecorator;
-
-            if (moveable != null)
+            if (Target != null)
             {
-                var placeable = moveable.DecoTarget as PlaceableObject;
+                var placeable = Target.ActTarget as PlaceableObject;
 
                 if (placeable != null)
                 {
                     if (placeable.IsSelected())
                     {
-                        moveable.ChangeState(eMoveableType.NORMAL);
+                        Target.ChangeState(eMoveableType.NORMAL);
                     }
                 }
             }
@@ -96,11 +90,9 @@ public class MoveDecorator : MCN.Decorator
 
         public override void Run()
         {
-            var moveable = Target as MoveDecorator;
-
-            if (moveable != null)
+            if (Target != null)
             {
-                var placeable = moveable.DecoTarget as PlaceableObject;
+                var placeable = Target.ActTarget as PlaceableObject;
 
                 if (placeable != null)
                 {
@@ -112,7 +104,7 @@ public class MoveDecorator : MCN.Decorator
 
                         var placedTile = placeable.GetPlacedTile();
 
-                        placedTile.ShowChainActiveTile(moveable.Range);
+                        placedTile.ShowChainActiveTile(Target.Range);
                     }
                 }
             }
@@ -120,11 +112,9 @@ public class MoveDecorator : MCN.Decorator
 
         public override void Interactive(Tile activeTile)
         {
-            var moveable = Target as MoveDecorator;
-
-            if (moveable != null)
+            if (Target != null)
             {
-                var placeable = moveable.DecoTarget as PlaceableObject;
+                var placeable = Target.ActTarget as PlaceableObject;
 
                 if (placeable != null)
                 {
@@ -132,9 +122,9 @@ public class MoveDecorator : MCN.Decorator
 
                     if (isSuccess)
                     {
-                        if (moveable != null)
+                        if (Target != null)
                         {
-                            moveable.ChangeState(eMoveableType.DONE);
+                            Target.ChangeState(eMoveableType.DONE);
                         }
                     }
                 }
@@ -144,7 +134,7 @@ public class MoveDecorator : MCN.Decorator
 
     private class MoveableState_Normal : MoveableState
     {
-        public MoveableState_Normal(TacticsObject target) : base(target) { }
+        public MoveableState_Normal(MoveActor target) : base(target) { }
 
         public override eMoveableType GetCurrentType()
         {
@@ -153,15 +143,13 @@ public class MoveDecorator : MCN.Decorator
 
         public override bool OnTouchEvent()
         {
-            var moveable = Target as MoveDecorator;
-
-            if (moveable != null)
+            if (Target != null)
             {
-                if (moveable.GetCurrentStateType() != eMoveableType.DONE)
+                if (Target.GetCurrentStateType() != eMoveableType.DONE)
                 {
                     if (GameManager.Instance.SelectedObj == null)
                     {
-                        moveable.ChangeState(eMoveableType.MOVE);
+                        Target.ChangeState(eMoveableType.MOVE);
                     }
                 }
             }
@@ -177,7 +165,7 @@ public class MoveDecorator : MCN.Decorator
 
     private class MoveableState_Done : MoveableState
     {
-        public MoveableState_Done(TacticsObject target) : base(target) { }
+        public MoveableState_Done(MoveActor target) : base(target) { }
 
         public override eMoveableType GetCurrentType()
         {
@@ -192,12 +180,16 @@ public class MoveDecorator : MCN.Decorator
         public override void Run()
         {
             AllTileToNormal();
+
+            Target.FinishActor();
         }
     }
     #endregion
 
-    void Awake()
+    protected override void Initialize()
     {
+        base.Initialize();
+
         StorageStates();
 
         ChangeState(eMoveableType.NORMAL);
@@ -218,7 +210,7 @@ public class MoveDecorator : MCN.Decorator
             return state as MoveableState;
         }
 
-        throw new UnityException("don't have moveable state.");
+        throw new UnityException("don't have moveAct state.");
     }
 
     private eMoveableType GetCurrentStateType()
@@ -230,7 +222,7 @@ public class MoveDecorator : MCN.Decorator
             return state.GetCurrentType();
         }
 
-        throw new UnityException("don't have moveable state.");
+        throw new UnityException("don't have moveAct state.");
     }
 
     private void ChangeState(eMoveableType type)
@@ -241,8 +233,10 @@ public class MoveDecorator : MCN.Decorator
         }
     }
 
-    protected override bool DecoOnTouchEvent(eTouchEvent touch)
+    public override bool OnTouchEvent(eTouchEvent touch)
     {
+        base.OnTouchEvent(touch);
+
         var state = GetCurrentState();
 
         if (state != null)
@@ -250,11 +244,13 @@ public class MoveDecorator : MCN.Decorator
             return state.OnTouchEvent();
         }
 
-        throw new UnityException("don't have moveable state.");
+        throw new UnityException("don't have moveAct state.");
     }
 
-    protected override void DecoInteractive(TacticsObject interactTarget)
+    public override void Interactive(TacticsObject interactTarget)
     {
+        base.Interactive(interactTarget);
+
         var tile = interactTarget as Tile;
 
         if (tile != null)
@@ -264,7 +260,11 @@ public class MoveDecorator : MCN.Decorator
             if (state != null)
             {
                 state.Interactive(tile);
+
+                return;
             }
         }
+
+        throw new UnityException("don't have moveAct state.");
     }
 }

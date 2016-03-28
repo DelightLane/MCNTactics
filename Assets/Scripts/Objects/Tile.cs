@@ -27,9 +27,9 @@ public class Tile : TacticsObject, IDisposable, MCN.IObserver<eTouchEvent>
     #region Tile State
     private MCN.StateMachine<TileState> _stateMachine = new MCN.StateMachine<TileState>();
 
-    private abstract class TileState : MCN.State
+    private abstract class TileState : MCN.State<Tile>
     {
-        public TileState(TacticsObject target) : base(target)
+        public TileState(Tile target) : base(target)
         {
             var tile = Target as Tile;
             if (tile != null)
@@ -46,7 +46,7 @@ public class Tile : TacticsObject, IDisposable, MCN.IObserver<eTouchEvent>
 
     private class TileState_Normal : TileState
     {
-        public TileState_Normal(TacticsObject target) : base(target) { }
+        public TileState_Normal(Tile target) : base(target) { }
 
         public override void Run()
         {
@@ -60,11 +60,9 @@ public class Tile : TacticsObject, IDisposable, MCN.IObserver<eTouchEvent>
 
         private void SetTileColor()
         {
-            var tile = Target as Tile;
-
-            if (tile != null)
+            if (Target != null)
             {
-                var renderer = tile.transform.GetComponent<Renderer>();
+                var renderer = Target.transform.GetComponent<Renderer>();
                 if (renderer != null)
                 {
                     renderer.material.color = Color.white;
@@ -75,7 +73,7 @@ public class Tile : TacticsObject, IDisposable, MCN.IObserver<eTouchEvent>
 
     private class TileState_Active : TileState
     {
-        public TileState_Active(TacticsObject target) : base(target) { }
+        public TileState_Active(Tile target) : base(target) { }
 
         public override void Run()
         {
@@ -89,11 +87,9 @@ public class Tile : TacticsObject, IDisposable, MCN.IObserver<eTouchEvent>
 
         private void SetTileColor()
         {
-            var tile = Target as Tile;
-
-            if (tile != null)
+            if (Target != null)
             {
-                var renderer = tile.transform.GetComponent<Renderer>();
+                var renderer = Target.transform.GetComponent<Renderer>();
                 if (renderer != null)
                 {
                     renderer.material.color = Color.red;
@@ -121,7 +117,7 @@ public class Tile : TacticsObject, IDisposable, MCN.IObserver<eTouchEvent>
 
     private class TileState_Deactive : TileState
     {
-        public TileState_Deactive(TacticsObject target) : base(target) { }
+        public TileState_Deactive(Tile target) : base(target) { }
 
         public override void Run()
         {
@@ -135,11 +131,9 @@ public class Tile : TacticsObject, IDisposable, MCN.IObserver<eTouchEvent>
 
         private void SetTileColor()
         {
-            var tile = Target as Tile;
-
-            if (tile != null)
+            if (Target != null)
             {
-                var renderer = tile.transform.GetComponent<Renderer>();
+                var renderer = Target.transform.GetComponent<Renderer>();
                 if (renderer != null)
                 {
                     renderer.material.color = Color.black;
@@ -212,11 +206,11 @@ public class Tile : TacticsObject, IDisposable, MCN.IObserver<eTouchEvent>
         _position = pos;
     }
 
-    public MCN.Decoable GetAttachObject()
+    public PlaceableObject GetAttachObject()
     {
         if (_attached != null)
         {
-            return _attached.Get;
+            return _attached;
         }
 
         return null;

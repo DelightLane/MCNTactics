@@ -9,11 +9,11 @@ namespace MCN
     {
         public Vector2 pos;
         public string prefabName;
-        public List<DecoClassInfo> decoClassInfo;
+        public List<ActorClassInfo> actorClassInfo;
     }
 
     [System.Serializable]
-    public class DecoClassInfo
+    public class ActorClassInfo
     {
         public string className;
         public List<StringIntPair> weight;

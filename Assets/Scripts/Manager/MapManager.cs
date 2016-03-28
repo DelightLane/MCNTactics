@@ -105,7 +105,7 @@ public class MapManager : MCN.MonoSingletone<MapManager> {
 
                     if (placeableObj != null)
                     {
-                        DecorateObject(ref targetObj, objInfo);
+                        AddActor(ref placeableObj, objInfo);
                         this.AttachObject(objInfo.pos, placeableObj);
                     }
                     else
@@ -117,30 +117,33 @@ public class MapManager : MCN.MonoSingletone<MapManager> {
         }
     }
 
-    private void DecorateObject(ref GameObject obj, PlaceInfo info)
+    private void AddActor(ref PlaceableObject obj, PlaceInfo info)
     {
-        var decoTarget = obj.GetComponent<PlaceableObject>() as MCN.Decoable;
-
-        if (decoTarget != null)
+        if (obj != null)
         {
-            foreach (var decoInfo in info.decoClassInfo)
+            foreach (var actorInfo in info.actorClassInfo)
             {
                 Assembly assembly = Assembly.GetExecutingAssembly();
                 try
                 {
-                    var rawDeco = obj.AddComponent(assembly.GetType(decoInfo.className));
+                    Type actorType = assembly.GetType(actorInfo.className);
 
-                    var deco = rawDeco as MCN.Decorator;
-                    if (deco != null)
+                    Actor actor = (Actor)Activator.CreateInstance(actorType);
+
+                    if (actor != null)
                     {
-                        deco.Decoration(decoTarget);
-                        foreach(var decoWeight in decoInfo.weight)
-                        {
-                            deco.SetWeight(decoWeight);
-                        }
+                        actor.Initialize(obj);
 
-                        decoTarget = deco;
+                        foreach(var actorWeight in actorInfo.weight)
+                        {
+                            actor.SetWeight(actorWeight);
+                        }
                     }
+
+                    obj.AddActor(actor);
+
+                    // 이건 디버깅용으로.. 무조껀 큐에 삽입한다.
+                    obj.RunActor(actor.GetType());
                 }
                 catch(Exception e)
                 {

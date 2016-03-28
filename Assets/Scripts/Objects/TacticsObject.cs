@@ -1,53 +1,68 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 // 본 게임 내부의 모든 오브젝트 컨트롤 클래스들의 최상위 부모 클래스
 public abstract class TacticsObject : MonoBehaviour
 {
-    #region operator overloading
-    // Decoable == 연산자 오버로딩 대응을 위한 연산자 오버로딩
-    public static bool operator ==(TacticsObject lt, TacticsObject rt)
+    // Actor의 큐. 만약 큐에 Actor가 있다면 그 Actor는 사용될 준비가 된 것이다.
+    private LinkedList<MCN.Actor> _actorQueue = new LinkedList<MCN.Actor>();
+
+    // Actor의 큐를 디버깅하기 위해 Inspector에 노출시키기 위한 리스트
+    [SerializeField]
+    private List<string> _actorDebugQueue = new List<string>();
+
+    // 해당 TacticsObject가 행동을 취할 수 있는 Actor들
+    private Dictionary<string, MCN.Actor> _actors = new Dictionary<string, MCN.Actor>();
+
+    public void AddActor(MCN.Actor actor)
     {
-        if (System.Object.ReferenceEquals(lt, rt))
+        if (actor.CheckAbsoluteWeightKey())
         {
-            return true;
+            _actors.Add(actor.GetType().ToString(), actor);
         }
-
-        if (((object)lt == null) || ((object)rt == null))
-        {
-            return false;
-        }
-
-        if (lt is MCN.Decoable && rt is MCN.Decoable)
-        {
-            return (lt as MCN.Decoable) == (rt as MCN.Decoable);
-        }
-        
-        return (object)lt == (object)rt;
     }
 
-    public static bool operator !=(TacticsObject lt, TacticsObject rt)
+    public void RunActor(System.Type actorType)
     {
-        return !(rt == lt);
-    }
-
-    public override bool Equals(object o)
-    {
-        if (this is MCN.Decoable)
+        if(!actorType.IsSubclassOf(typeof(MCN.Actor)) ||
+           !_actors.ContainsKey(actorType.ToString()))
         {
-            (this as MCN.Decoable).Equals(o);
+            throw new UnityException("Actor's type is not correct.");
         }
 
-        return base.Equals(o);
+        _actorQueue.AddLast(_actors[actorType.ToString()]);
+        _actorDebugQueue.Add(actorType.ToString());
     }
 
-    public override int GetHashCode()
+    public void FinishActor()
     {
-        return base.GetHashCode();
+        if (_actorQueue.Count > 0)
+        {
+            _actorQueue.RemoveFirst();
+            _actorDebugQueue.RemoveAt(0);
+        }
     }
-    #endregion
 
-    public virtual void Interactive(TacticsObject interactTarget) { }
+    public virtual void Interactive(TacticsObject interactTarget)
+    {
+        if(_actorQueue.Count > 0)
+        {
+            var actor = _actorQueue.First.Value;
 
-    public virtual bool OnTouchEvent(eTouchEvent touch) { return true; }
+            actor.Interactive(interactTarget);
+        }
+    }
+
+    public virtual bool OnTouchEvent(eTouchEvent touch)
+    {
+        if (_actorQueue.Count > 0)
+        {
+            var actor = _actorQueue.First.Value;
+
+            actor.OnTouchEvent(touch);
+        }
+
+        return true;
+    }
 }

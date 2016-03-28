@@ -9,11 +9,6 @@ public class GameManager : MCN.Singletone<GameManager>
     {
         get
         {
-            if(_selectedObj is MCN.DecoInstance)
-            {
-                return (_selectedObj as MCN.DecoInstance).Get;
-            }
-
             return _selectedObj;
         }
 

@@ -2,7 +2,7 @@
 using System;
 using System.Collections;
 
-public class PlaceableObject : MCN.DecoInstance, IDisposable
+public class PlaceableObject : TacticsObject, IDisposable
 {
     protected Tile _placedTile;
 
