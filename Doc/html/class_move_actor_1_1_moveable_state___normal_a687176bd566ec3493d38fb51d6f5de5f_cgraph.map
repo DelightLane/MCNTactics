@@ -1,0 +1,4 @@
+<map id="MoveActor.MoveableState_Normal.Run" name="MoveActor.MoveableState_Normal.Run">
+<area shape="rect" id="node2" href="$class_move_actor_1_1_moveable_state.html#a2da1a565b497b15a220f5ff494ec7a1e" title="MoveActor.MoveableState.\lAllTileToNormal" alt="" coords="225,5,401,47"/>
+<area shape="rect" id="node3" href="$class_placeable_object.html#a0c1248b1f9981ddbf68e6f70a6498f3d" title="PlaceableObject.Deselect" alt="" coords="449,13,621,39"/>
+</map>

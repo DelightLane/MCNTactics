@@ -1,0 +1,5 @@
+<map id="MapManager.AddActor" name="MapManager.AddActor">
+<area shape="rect" id="node2" href="$class_m_c_n_1_1_actor.html#aadb5d1045def818bbcba4cd2248f2f1c" title="MCN.Actor.Initialize" alt="" coords="215,5,352,32"/>
+<area shape="rect" id="node4" href="$class_m_c_n_1_1_actor.html#a8d8020782aefa7fff625f5f8e09f7539" title="MCN.Actor.SetWeight" alt="" coords="208,56,359,83"/>
+<area shape="rect" id="node3" href="$class_m_c_n_1_1_actor.html#a37e76fad4625e138478764ae6c5ce959" title="MCN.Actor.Initialize" alt="" coords="407,5,544,32"/>
+</map>

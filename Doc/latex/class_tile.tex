@@ -36,7 +36,7 @@ void \hyperlink{class_tile_a6e8a801e95a29156cbf32024e45c6596}{Dispose} ()
 \item 
 void \hyperlink{class_tile_a4d7a81b36513066aad741ed675164690}{Set\+Position} (Vector2 pos)
 \item 
-\hyperlink{class_m_c_n_1_1_decoable}{M\+C\+N.\+Decoable} \hyperlink{class_tile_a6c6758ca210a37d98f8e73e87c65f1d2}{Get\+Attach\+Object} ()
+\hyperlink{class_placeable_object}{Placeable\+Object} \hyperlink{class_tile_a02150b69b975e8e9de1c3e10070a8dda}{Get\+Attach\+Object} ()
 \item 
 bool \hyperlink{class_tile_a1969ee41c320c6e7748a33374942e07e}{Attach\+Object} (\hyperlink{class_placeable_object}{Placeable\+Object} obj)
 \item 
@@ -54,9 +54,11 @@ void \hyperlink{class_tile_a2bb5c747e9483b803ea65b4341ce5af6}{Change\+State} (\h
 \item 
 void \hyperlink{class_tile_a6133171796d47353aa5d57cd336e0a07}{On\+Next} (\hyperlink{_touch_manager_8cs_ae33e321a424fe84ba8b2fdb81ad40a68}{e\+Touch\+Event} touch)
 \item 
-override bool \hyperlink{class_tactics_object_aa445b127fafc61d84a064b423a155c1a}{Equals} (object o)
+void \hyperlink{class_tactics_object_a2c2b15e6cdb3639a2273978e9b9f294f}{Add\+Actor} (\hyperlink{class_m_c_n_1_1_actor}{M\+C\+N.\+Actor} actor)
 \item 
-override int \hyperlink{class_tactics_object_a5fe0e8c99cec56daa7909754f037ac26}{Get\+Hash\+Code} ()
+void \hyperlink{class_tactics_object_ac24894e1e9355ac7bb7c94b7ea51ef02}{Run\+Actor} (System.\+Type actor\+Type)
+\item 
+void \hyperlink{class_tactics_object_a4e08c233c75e0f0025f13f92b4e3ec1a}{Finish\+Actor} ()
 \item 
 virtual void \hyperlink{class_tactics_object_a5f94ed01497a7072a2785163f4cbc57b}{Interactive} (\hyperlink{class_tactics_object}{Tactics\+Object} interact\+Target)
 \item 
@@ -68,10 +70,6 @@ void \hyperlink{interface_m_c_n_1_1_i_observer_a2f934b71aa4ddf6f936670d32c3cdff7
 \begin{DoxyCompactItemize}
 \item 
 static Game\+Object \hyperlink{class_tile_aec3cdb55a67f4c12d3056355c15bdba2}{Create\+Tile} (Vector2 pos)
-\item 
-static bool \hyperlink{class_tactics_object_a18f2979a4bf81dc755fbc17e425809f0}{operator==} (\hyperlink{class_tactics_object}{Tactics\+Object} lt, \hyperlink{class_tactics_object}{Tactics\+Object} rt)
-\item 
-static bool \hyperlink{class_tactics_object_a49e235618a22126faa6271243cd89710}{operator!=} (\hyperlink{class_tactics_object}{Tactics\+Object} lt, \hyperlink{class_tactics_object}{Tactics\+Object} rt)
 \end{DoxyCompactItemize}
 \subsection*{정적 Public 속성}
 \begin{DoxyCompactItemize}
@@ -119,11 +117,11 @@ Tile.\+cs 파일의 20 번째 라인에서 정의되었습니다.
 )\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_tile_a7684d2e86beeb06d844ebb7819b11b33}{}\label{class_tile_a7684d2e86beeb06d844ebb7819b11b33}
 
 
-Tile.\+cs 파일의 152 번째 라인에서 정의되었습니다.
+Tile.\+cs 파일의 146 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-152 \{ \}
+146 \{ \}
 \end{DoxyCode}
 
 
@@ -139,6 +137,26 @@ Tile.\+cs 파일의 152 번째 라인에서 정의되었습니다.
 
 
 \subsection{멤버 함수 문서화}
+\index{Tile@{Tile}!Add\+Actor@{Add\+Actor}}
+\index{Add\+Actor@{Add\+Actor}!Tile@{Tile}}
+\subsubsection[{\texorpdfstring{Add\+Actor(\+M\+C\+N.\+Actor actor)}{AddActor(MCN.Actor actor)}}]{\setlength{\rightskip}{0pt plus 5cm}void Tactics\+Object.\+Add\+Actor (
+\begin{DoxyParamCaption}
+\item[{{\bf M\+C\+N.\+Actor}}]{actor}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\hypertarget{class_tactics_object_a2c2b15e6cdb3639a2273978e9b9f294f}{}\label{class_tactics_object_a2c2b15e6cdb3639a2273978e9b9f294f}
+
+
+Tactics\+Object.\+cs 파일의 18 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+19     \{
+20         \textcolor{keywordflow}{if} (actor.CheckAbsoluteWeightKey())
+21         \{
+22             \hyperlink{class_tactics_object_ab16a5fde2c93cad13e6b74453664c2a9}{\_actors}.Add(actor.GetType().ToString(), actor);
+23         \}
+24     \}
+\end{DoxyCode}
 \index{Tile@{Tile}!Attach\+Object@{Attach\+Object}}
 \index{Attach\+Object@{Attach\+Object}!Tile@{Tile}}
 \subsubsection[{\texorpdfstring{Attach\+Object(\+Placeable\+Object obj)}{AttachObject(PlaceableObject obj)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Tile.\+Attach\+Object (
@@ -148,30 +166,30 @@ Tile.\+cs 파일의 152 번째 라인에서 정의되었습니다.
 )}\hypertarget{class_tile_a1969ee41c320c6e7748a33374942e07e}{}\label{class_tile_a1969ee41c320c6e7748a33374942e07e}
 
 
-Tile.\+cs 파일의 225 번째 라인에서 정의되었습니다.
+Tile.\+cs 파일의 219 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-226     \{
-227         \textcolor{keywordflow}{if} (\hyperlink{class_tile_aa548ae60732f4d054b6777436baefdd5}{\_attached} == null)
-228         \{
-229             var prevTile = obj.\hyperlink{class_placeable_object_ab44a9b122632ac3cf0babb5040e8a201}{GetPlacedTile}();
-230 
-231             \textcolor{keywordflow}{if}(prevTile != null)
-232             \{
-233                 prevTile.\hyperlink{class_tile_ab8ab187ab674cfb222f761feac3b20b3}{DetachObject}();
-234             \}
-235 
-236             \textcolor{comment}{// 순환 참조 적용. 레퍼런스 관리에 신경 쓸 것}
-237             \hyperlink{class_tile_aa548ae60732f4d054b6777436baefdd5}{\_attached} = obj;
-238 
-239             obj.\hyperlink{class_placeable_object_a3176ec3d5d26b2a83cdc58b01e630aa1}{Attach}(\textcolor{keyword}{this});
-240 
-241             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
-242         \}
-243 
-244         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-245     \}
+220     \{
+221         \textcolor{keywordflow}{if} (\hyperlink{class_tile_aa548ae60732f4d054b6777436baefdd5}{\_attached} == null)
+222         \{
+223             var prevTile = obj.\hyperlink{class_placeable_object_ab44a9b122632ac3cf0babb5040e8a201}{GetPlacedTile}();
+224 
+225             \textcolor{keywordflow}{if}(prevTile != null)
+226             \{
+227                 prevTile.\hyperlink{class_tile_ab8ab187ab674cfb222f761feac3b20b3}{DetachObject}();
+228             \}
+229 
+230             \textcolor{comment}{// 순환 참조 적용. 레퍼런스 관리에 신경 쓸 것}
+231             \hyperlink{class_tile_aa548ae60732f4d054b6777436baefdd5}{\_attached} = obj;
+232 
+233             obj.\hyperlink{class_placeable_object_a3176ec3d5d26b2a83cdc58b01e630aa1}{Attach}(\textcolor{keyword}{this});
+234 
+235             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+236         \}
+237 
+238         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+239     \}
 \end{DoxyCode}
 
 
@@ -204,15 +222,15 @@ Tile.\+cs 파일의 225 번째 라인에서 정의되었습니다.
 )\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_tile_a4fbf82b2a26cdeb792dc78192d7247dc}{}\label{class_tile_a4fbf82b2a26cdeb792dc78192d7247dc}
 
 
-Tile.\+cs 파일의 196 번째 라인에서 정의되었습니다.
+Tile.\+cs 파일의 190 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-197     \{
-198         \hyperlink{class_tile_a6cb69a9fad04bee1fa3473aec22428de}{StorageStates}();
-199 
-200         \hyperlink{class_tile_a2bb5c747e9483b803ea65b4341ce5af6}{ChangeState}(\hyperlink{_tile_8cs_a271bc07be325bca511bcb747e0ff2fda}{eTileType}.NORMAL);
-201     \}
+191     \{
+192         \hyperlink{class_tile_a6cb69a9fad04bee1fa3473aec22428de}{StorageStates}();
+193 
+194         \hyperlink{class_tile_a2bb5c747e9483b803ea65b4341ce5af6}{ChangeState}(\hyperlink{_tile_8cs_a271bc07be325bca511bcb747e0ff2fda}{eTileType}.NORMAL);
+195     \}
 \end{DoxyCode}
 
 
@@ -234,16 +252,16 @@ Tile.\+cs 파일의 196 번째 라인에서 정의되었습니다.
 )}\hypertarget{class_tile_a2bb5c747e9483b803ea65b4341ce5af6}{}\label{class_tile_a2bb5c747e9483b803ea65b4341ce5af6}
 
 
-Tile.\+cs 파일의 357 번째 라인에서 정의되었습니다.
+Tile.\+cs 파일의 351 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-358     \{
-359         \textcolor{keywordflow}{if} (\hyperlink{class_tile_a822a1bffe56b1193b8c5c61070ea7827}{\_stateMachine} != null)
-360         \{
-361             \hyperlink{class_tile_a822a1bffe56b1193b8c5c61070ea7827}{\_stateMachine}.ChangeState(interaction.ToString());
-362         \}
-363     \}
+352     \{
+353         \textcolor{keywordflow}{if} (\hyperlink{class_tile_a822a1bffe56b1193b8c5c61070ea7827}{\_stateMachine} != null)
+354         \{
+355             \hyperlink{class_tile_a822a1bffe56b1193b8c5c61070ea7827}{\_stateMachine}.ChangeState(interaction.ToString());
+356         \}
+357     \}
 \end{DoxyCode}
 
 
@@ -265,27 +283,27 @@ Tile.\+cs 파일의 357 번째 라인에서 정의되었습니다.
 )\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_tile_aec3cdb55a67f4c12d3056355c15bdba2}{}\label{class_tile_aec3cdb55a67f4c12d3056355c15bdba2}
 
 
-Tile.\+cs 파일의 154 번째 라인에서 정의되었습니다.
+Tile.\+cs 파일의 148 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-155     \{
-156         var tile = GameObject.CreatePrimitive(PrimitiveType.Cube);
-157         tile.name = String.Format(\textcolor{stringliteral}{"\{0\}\_\{1\}"}, pos.x, pos.y);
-158 
-159         var material = Resources.Load(\textcolor{stringliteral}{"Material/Notthing"}, typeof(Material)) as Material;
-160 
-161         var renderer = tile.GetComponent<Renderer>();
-162         renderer.material = material;
-163 
-164         tile.transform.localScale = \textcolor{keyword}{new} Vector3(\hyperlink{class_tile_a51b7dea4344573ba12a461a32517e683}{TILE\_SIZE}, 0.05f, 
+149     \{
+150         var tile = GameObject.CreatePrimitive(PrimitiveType.Cube);
+151         tile.name = String.Format(\textcolor{stringliteral}{"\{0\}\_\{1\}"}, pos.x, pos.y);
+152 
+153         var material = Resources.Load(\textcolor{stringliteral}{"Material/Notthing"}, typeof(Material)) as Material;
+154 
+155         var renderer = tile.GetComponent<Renderer>();
+156         renderer.material = material;
+157 
+158         tile.transform.localScale = \textcolor{keyword}{new} Vector3(\hyperlink{class_tile_a51b7dea4344573ba12a461a32517e683}{TILE\_SIZE}, 0.05f, 
       \hyperlink{class_tile_a51b7dea4344573ba12a461a32517e683}{TILE\_SIZE});
-165 
-166         var tileComp = tile.AddComponent<\hyperlink{class_tile}{Tile}>();
-167         \hyperlink{class_touch_manager}{TouchManager}.\hyperlink{class_m_c_n_1_1_mono_singletone_aa50c027cca64cf4ad30c1ee5c83e0b78}{Instance}.Subscribe(tileComp);
-168 
-169         \textcolor{keywordflow}{return} tile;
-170     \}
+159 
+160         var tileComp = tile.AddComponent<\hyperlink{class_tile}{Tile}>();
+161         \hyperlink{class_touch_manager}{TouchManager}.\hyperlink{class_m_c_n_1_1_mono_singletone_aa50c027cca64cf4ad30c1ee5c83e0b78}{Instance}.Subscribe(tileComp);
+162 
+163         \textcolor{keywordflow}{return} tile;
+164     \}
 \end{DoxyCode}
 
 
@@ -307,18 +325,18 @@ Tile.\+cs 파일의 154 번째 라인에서 정의되었습니다.
 )}\hypertarget{class_tile_ab8ab187ab674cfb222f761feac3b20b3}{}\label{class_tile_ab8ab187ab674cfb222f761feac3b20b3}
 
 
-Tile.\+cs 파일의 247 번째 라인에서 정의되었습니다.
+Tile.\+cs 파일의 241 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-248     \{
-249         \textcolor{keywordflow}{if}(\hyperlink{class_tile_aa548ae60732f4d054b6777436baefdd5}{\_attached} != null)
-250         \{
-251             \hyperlink{class_tile_aa548ae60732f4d054b6777436baefdd5}{\_attached}.\hyperlink{class_placeable_object_aef2018b58bf7c8c0fab5aaf3d9a154d4}{Detach}();
-252 
-253             \hyperlink{class_tile_aa548ae60732f4d054b6777436baefdd5}{\_attached} = null;
-254         \}
-255     \}
+242     \{
+243         \textcolor{keywordflow}{if}(\hyperlink{class_tile_aa548ae60732f4d054b6777436baefdd5}{\_attached} != null)
+244         \{
+245             \hyperlink{class_tile_aa548ae60732f4d054b6777436baefdd5}{\_attached}.\hyperlink{class_placeable_object_aef2018b58bf7c8c0fab5aaf3d9a154d4}{Detach}();
+246 
+247             \hyperlink{class_tile_aa548ae60732f4d054b6777436baefdd5}{\_attached} = null;
+248         \}
+249     \}
 \end{DoxyCode}
 
 
@@ -351,32 +369,32 @@ Tile.\+cs 파일의 247 번째 라인에서 정의되었습니다.
 )}\hypertarget{class_tile_a6e8a801e95a29156cbf32024e45c6596}{}\label{class_tile_a6e8a801e95a29156cbf32024e45c6596}
 
 
-Tile.\+cs 파일의 172 번째 라인에서 정의되었습니다.
+Tile.\+cs 파일의 166 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-173     \{
-174         \textcolor{keywordflow}{if} (\hyperlink{class_tile_aa548ae60732f4d054b6777436baefdd5}{\_attached} != null)
-175         \{
-176             var placeable = \hyperlink{class_tile_aa548ae60732f4d054b6777436baefdd5}{\_attached}.GetComponent<\hyperlink{class_placeable_object}{PlaceableObject}>();
-177 
-178             \textcolor{keywordflow}{if} (placeable != null)
-179             \{
-180                 placeable.\hyperlink{class_placeable_object_a8bd49b7db556556502a0518fc833be48}{Dispose}();
-181             \}
-182 
-183             \hyperlink{class_tile_aa548ae60732f4d054b6777436baefdd5}{\_attached} = null;
-184         \}
-185 
-186         \textcolor{keywordflow}{if}(\hyperlink{class_tile_a822a1bffe56b1193b8c5c61070ea7827}{\_stateMachine} != null)
-187         \{
-188             \hyperlink{class_tile_a822a1bffe56b1193b8c5c61070ea7827}{\_stateMachine}.Dispose();
-189 
-190             \hyperlink{class_tile_a822a1bffe56b1193b8c5c61070ea7827}{\_stateMachine} = null;
-191         \}
-192 
-193         GameObject.Destroy(gameObject);
-194     \}
+167     \{
+168         \textcolor{keywordflow}{if} (\hyperlink{class_tile_aa548ae60732f4d054b6777436baefdd5}{\_attached} != null)
+169         \{
+170             var placeable = \hyperlink{class_tile_aa548ae60732f4d054b6777436baefdd5}{\_attached}.GetComponent<\hyperlink{class_placeable_object}{PlaceableObject}>();
+171 
+172             \textcolor{keywordflow}{if} (placeable != null)
+173             \{
+174                 placeable.\hyperlink{class_placeable_object_a8bd49b7db556556502a0518fc833be48}{Dispose}();
+175             \}
+176 
+177             \hyperlink{class_tile_aa548ae60732f4d054b6777436baefdd5}{\_attached} = null;
+178         \}
+179 
+180         \textcolor{keywordflow}{if}(\hyperlink{class_tile_a822a1bffe56b1193b8c5c61070ea7827}{\_stateMachine} != null)
+181         \{
+182             \hyperlink{class_tile_a822a1bffe56b1193b8c5c61070ea7827}{\_stateMachine}.Dispose();
+183 
+184             \hyperlink{class_tile_a822a1bffe56b1193b8c5c61070ea7827}{\_stateMachine} = null;
+185         \}
+186 
+187         GameObject.Destroy(gameObject);
+188     \}
 \end{DoxyCode}
 
 
@@ -384,7 +402,7 @@ Tile.\+cs 파일의 172 번째 라인에서 정의되었습니다.
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_tile_a6e8a801e95a29156cbf32024e45c6596_cgraph}
+\includegraphics[width=312pt]{class_tile_a6e8a801e95a29156cbf32024e45c6596_cgraph}
 \end{center}
 \end{figure}
 
@@ -400,49 +418,26 @@ Tile.\+cs 파일의 172 번째 라인에서 정의되었습니다.
 \end{figure}
 
 
-\index{Tile@{Tile}!Equals@{Equals}}
-\index{Equals@{Equals}!Tile@{Tile}}
-\subsubsection[{\texorpdfstring{Equals(object o)}{Equals(object o)}}]{\setlength{\rightskip}{0pt plus 5cm}override bool Tactics\+Object.\+Equals (
-\begin{DoxyParamCaption}
-\item[{object}]{o}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inherited]}}\hypertarget{class_tactics_object_aa445b127fafc61d84a064b423a155c1a}{}\label{class_tactics_object_aa445b127fafc61d84a064b423a155c1a}
-
-
-Tactics\+Object.\+cs 파일의 34 번째 라인에서 정의되었습니다.
-
-
-\begin{DoxyCode}
-35     \{
-36         \textcolor{keywordflow}{if} (\textcolor{keyword}{this} is \hyperlink{namespace_m_c_n}{MCN}.\hyperlink{class_m_c_n_1_1_decoable}{Decoable})
-37         \{
-38             (\textcolor{keyword}{this} as \hyperlink{namespace_m_c_n}{MCN}.\hyperlink{class_m_c_n_1_1_decoable}{Decoable}).\hyperlink{class_tactics_object_aa445b127fafc61d84a064b423a155c1a}{Equals}(o);
-39         \}
-40 
-41         \textcolor{keywordflow}{return} base.Equals(o);
-42     \}
-\end{DoxyCode}
-\index{Tile@{Tile}!Get\+Attach\+Object@{Get\+Attach\+Object}}
-\index{Get\+Attach\+Object@{Get\+Attach\+Object}!Tile@{Tile}}
-\subsubsection[{\texorpdfstring{Get\+Attach\+Object()}{GetAttachObject()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\+C\+N.\+Decoable} Tile.\+Get\+Attach\+Object (
+\index{Tile@{Tile}!Finish\+Actor@{Finish\+Actor}}
+\index{Finish\+Actor@{Finish\+Actor}!Tile@{Tile}}
+\subsubsection[{\texorpdfstring{Finish\+Actor()}{FinishActor()}}]{\setlength{\rightskip}{0pt plus 5cm}void Tactics\+Object.\+Finish\+Actor (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}\hypertarget{class_tile_a6c6758ca210a37d98f8e73e87c65f1d2}{}\label{class_tile_a6c6758ca210a37d98f8e73e87c65f1d2}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\hypertarget{class_tactics_object_a4e08c233c75e0f0025f13f92b4e3ec1a}{}\label{class_tactics_object_a4e08c233c75e0f0025f13f92b4e3ec1a}
 
 
-Tile.\+cs 파일의 215 번째 라인에서 정의되었습니다.
+Tactics\+Object.\+cs 파일의 38 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-216     \{
-217         \textcolor{keywordflow}{if} (\hyperlink{class_tile_aa548ae60732f4d054b6777436baefdd5}{\_attached} != null)
-218         \{
-219             \textcolor{keywordflow}{return} \hyperlink{class_tile_aa548ae60732f4d054b6777436baefdd5}{\_attached}.\hyperlink{class_m_c_n_1_1_deco_instance_af02857ad80446cb4fdd1bf982bda95c5}{Get};
-220         \}
-221 
-222         \textcolor{keywordflow}{return} null;
-223     \}
+39     \{
+40         \textcolor{keywordflow}{if} (\hyperlink{class_tactics_object_a816dd74a6daa037c17a43fb28c12ca09}{\_actorQueue}.Count > 0)
+41         \{
+42             \hyperlink{class_tactics_object_a816dd74a6daa037c17a43fb28c12ca09}{\_actorQueue}.RemoveFirst();
+43             \hyperlink{class_tactics_object_ac26a5e81a142ce350e9a481d59bd0daa}{\_actorDebugQueue}.RemoveAt(0);
+44         \}
+45     \}
 \end{DoxyCode}
 
 
@@ -450,7 +445,40 @@ Tile.\+cs 파일의 215 번째 라인에서 정의되었습니다.
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_tile_a6c6758ca210a37d98f8e73e87c65f1d2_icgraph}
+\includegraphics[width=350pt]{class_tactics_object_a4e08c233c75e0f0025f13f92b4e3ec1a_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Tile@{Tile}!Get\+Attach\+Object@{Get\+Attach\+Object}}
+\index{Get\+Attach\+Object@{Get\+Attach\+Object}!Tile@{Tile}}
+\subsubsection[{\texorpdfstring{Get\+Attach\+Object()}{GetAttachObject()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Placeable\+Object} Tile.\+Get\+Attach\+Object (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_tile_a02150b69b975e8e9de1c3e10070a8dda}{}\label{class_tile_a02150b69b975e8e9de1c3e10070a8dda}
+
+
+Tile.\+cs 파일의 209 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+210     \{
+211         \textcolor{keywordflow}{if} (\hyperlink{class_tile_aa548ae60732f4d054b6777436baefdd5}{\_attached} != null)
+212         \{
+213             \textcolor{keywordflow}{return} \hyperlink{class_tile_aa548ae60732f4d054b6777436baefdd5}{\_attached};
+214         \}
+215 
+216         \textcolor{keywordflow}{return} null;
+217     \}
+\end{DoxyCode}
+
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_tile_a02150b69b975e8e9de1c3e10070a8dda_icgraph}
 \end{center}
 \end{figure}
 
@@ -464,31 +492,31 @@ Tile.\+cs 파일의 215 번째 라인에서 정의되었습니다.
 )\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_tile_a81b4dd833bdeade289583aabbdcaff73}{}\label{class_tile_a81b4dd833bdeade289583aabbdcaff73}
 
 
-Tile.\+cs 파일의 334 번째 라인에서 정의되었습니다.
+Tile.\+cs 파일의 328 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-335     \{
-336         var closedTiles = this.\hyperlink{class_tile_a38b9f5c215f16448118e83e0d10aed05}{GetClosedTiles}();
-337 
-338         \textcolor{keywordtype}{int} obstacleCost = 0;
-339 
-340         \textcolor{keywordflow}{if} (this.\hyperlink{class_tile_a6c6758ca210a37d98f8e73e87c65f1d2}{GetAttachObject}() != startedObj)
-341         \{
-342             \textcolor{keywordflow}{foreach} (var closedTile \textcolor{keywordflow}{in} closedTiles)
-343             \{
-344                 \textcolor{keywordflow}{if} (closedTile != null)
-345                 \{
-346                     \textcolor{keywordflow}{if} (closedTile.GetAttachObject() != null && closedTile.GetAttachObject() != startedObj)
-347                     \{
-348                         ++obstacleCost;
-349                     \}
-350                 \}
-351             \}
-352         \}
-353 
-354         \textcolor{keywordflow}{return} obstacleCost;
-355     \}
+329     \{
+330         var closedTiles = this.\hyperlink{class_tile_a38b9f5c215f16448118e83e0d10aed05}{GetClosedTiles}();
+331 
+332         \textcolor{keywordtype}{int} obstacleCost = 0;
+333 
+334         \textcolor{keywordflow}{if} (this.\hyperlink{class_tile_a02150b69b975e8e9de1c3e10070a8dda}{GetAttachObject}() != startedObj)
+335         \{
+336             \textcolor{keywordflow}{foreach} (var closedTile \textcolor{keywordflow}{in} closedTiles)
+337             \{
+338                 \textcolor{keywordflow}{if} (closedTile != null)
+339                 \{
+340                     \textcolor{keywordflow}{if} (closedTile.GetAttachObject() != null && closedTile.GetAttachObject() != startedObj)
+341                     \{
+342                         ++obstacleCost;
+343                     \}
+344                 \}
+345             \}
+346         \}
+347 
+348         \textcolor{keywordflow}{return} obstacleCost;
+349     \}
 \end{DoxyCode}
 
 
@@ -521,39 +549,39 @@ Tile.\+cs 파일의 334 번째 라인에서 정의되었습니다.
 )}\hypertarget{class_tile_a838aaa6a94321629d04e944ed3bf8b9f}{}\label{class_tile_a838aaa6a94321629d04e944ed3bf8b9f}
 
 
-Tile.\+cs 파일의 269 번째 라인에서 정의되었습니다.
+Tile.\+cs 파일의 263 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-270     \{
-271         Vector2 closedTilePos = this.\hyperlink{class_tile_a56d02616cede51da0afdceff82ca958d}{\_position};
-272 
-273         \textcolor{keywordflow}{switch} (direct)
-274         \{
-275             \textcolor{keywordflow}{case} \hyperlink{_tile_8cs_a082f743a62d2d8e13dac8fd38af246d7}{eTileDirect}.UP:
-276                 closedTilePos += \textcolor{keyword}{new} Vector2(0, 1);
+264     \{
+265         Vector2 closedTilePos = this.\hyperlink{class_tile_a56d02616cede51da0afdceff82ca958d}{\_position};
+266 
+267         \textcolor{keywordflow}{switch} (direct)
+268         \{
+269             \textcolor{keywordflow}{case} \hyperlink{_tile_8cs_a082f743a62d2d8e13dac8fd38af246d7}{eTileDirect}.UP:
+270                 closedTilePos += \textcolor{keyword}{new} Vector2(0, 1);
+271                 \textcolor{keywordflow}{break};
+272             \textcolor{keywordflow}{case} \hyperlink{_tile_8cs_a082f743a62d2d8e13dac8fd38af246d7}{eTileDirect}.DOWN:
+273                 closedTilePos += \textcolor{keyword}{new} Vector2(0, -1);
+274                 \textcolor{keywordflow}{break};
+275             \textcolor{keywordflow}{case} \hyperlink{_tile_8cs_a082f743a62d2d8e13dac8fd38af246d7}{eTileDirect}.RIGHT:
+276                 closedTilePos += \textcolor{keyword}{new} Vector2(1, 0);
 277                 \textcolor{keywordflow}{break};
-278             \textcolor{keywordflow}{case} \hyperlink{_tile_8cs_a082f743a62d2d8e13dac8fd38af246d7}{eTileDirect}.DOWN:
-279                 closedTilePos += \textcolor{keyword}{new} Vector2(0, -1);
+278             \textcolor{keywordflow}{case} \hyperlink{_tile_8cs_a082f743a62d2d8e13dac8fd38af246d7}{eTileDirect}.LEFT:
+279                 closedTilePos += \textcolor{keyword}{new} Vector2(-1, 0);
 280                 \textcolor{keywordflow}{break};
-281             \textcolor{keywordflow}{case} \hyperlink{_tile_8cs_a082f743a62d2d8e13dac8fd38af246d7}{eTileDirect}.RIGHT:
-282                 closedTilePos += \textcolor{keyword}{new} Vector2(1, 0);
-283                 \textcolor{keywordflow}{break};
-284             \textcolor{keywordflow}{case} \hyperlink{_tile_8cs_a082f743a62d2d8e13dac8fd38af246d7}{eTileDirect}.LEFT:
-285                 closedTilePos += \textcolor{keyword}{new} Vector2(-1, 0);
-286                 \textcolor{keywordflow}{break};
-287         \}
-288 
-289         \textcolor{keywordflow}{if} (closedTilePos.x >= 0 && closedTilePos.y >= 0)
-290         \{
-291             \textcolor{keywordflow}{if} (\hyperlink{class_map_manager}{MapManager}.\hyperlink{class_m_c_n_1_1_mono_singletone_aa50c027cca64cf4ad30c1ee5c83e0b78}{Instance}.IsExistMap())
-292             \{
-293                 \textcolor{keywordflow}{return} \hyperlink{class_map_manager}{MapManager}.\hyperlink{class_m_c_n_1_1_mono_singletone_aa50c027cca64cf4ad30c1ee5c83e0b78}{Instance}.GetTile(closedTilePos);
-294             \}
-295         \}
-296 
-297         \textcolor{keywordflow}{return} null;
-298     \}
+281         \}
+282 
+283         \textcolor{keywordflow}{if} (closedTilePos.x >= 0 && closedTilePos.y >= 0)
+284         \{
+285             \textcolor{keywordflow}{if} (\hyperlink{class_map_manager}{MapManager}.\hyperlink{class_m_c_n_1_1_mono_singletone_aa50c027cca64cf4ad30c1ee5c83e0b78}{Instance}.IsExistMap())
+286             \{
+287                 \textcolor{keywordflow}{return} \hyperlink{class_map_manager}{MapManager}.\hyperlink{class_m_c_n_1_1_mono_singletone_aa50c027cca64cf4ad30c1ee5c83e0b78}{Instance}.GetTile(closedTilePos);
+288             \}
+289         \}
+290 
+291         \textcolor{keywordflow}{return} null;
+292     \}
 \end{DoxyCode}
 
 
@@ -575,20 +603,20 @@ Tile.\+cs 파일의 269 번째 라인에서 정의되었습니다.
 )}\hypertarget{class_tile_a38b9f5c215f16448118e83e0d10aed05}{}\label{class_tile_a38b9f5c215f16448118e83e0d10aed05}
 
 
-Tile.\+cs 파일의 257 번째 라인에서 정의되었습니다.
+Tile.\+cs 파일의 251 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-258     \{
-259         \hyperlink{class_tile}{Tile}[] closedTiles = \textcolor{keyword}{new} \hyperlink{class_tile}{Tile}[4];
-260 
-261         closedTiles[0] = \hyperlink{class_tile_a838aaa6a94321629d04e944ed3bf8b9f}{GetClosedTile}(\hyperlink{_tile_8cs_a082f743a62d2d8e13dac8fd38af246d7}{eTileDirect}.UP);
-262         closedTiles[1] = \hyperlink{class_tile_a838aaa6a94321629d04e944ed3bf8b9f}{GetClosedTile}(\hyperlink{_tile_8cs_a082f743a62d2d8e13dac8fd38af246d7}{eTileDirect}.DOWN);
-263         closedTiles[2] = \hyperlink{class_tile_a838aaa6a94321629d04e944ed3bf8b9f}{GetClosedTile}(\hyperlink{_tile_8cs_a082f743a62d2d8e13dac8fd38af246d7}{eTileDirect}.LEFT);
-264         closedTiles[3] = \hyperlink{class_tile_a838aaa6a94321629d04e944ed3bf8b9f}{GetClosedTile}(\hyperlink{_tile_8cs_a082f743a62d2d8e13dac8fd38af246d7}{eTileDirect}.RIGHT);
-265 
-266         \textcolor{keywordflow}{return} closedTiles;
-267     \}
+252     \{
+253         \hyperlink{class_tile}{Tile}[] closedTiles = \textcolor{keyword}{new} \hyperlink{class_tile}{Tile}[4];
+254 
+255         closedTiles[0] = \hyperlink{class_tile_a838aaa6a94321629d04e944ed3bf8b9f}{GetClosedTile}(\hyperlink{_tile_8cs_a082f743a62d2d8e13dac8fd38af246d7}{eTileDirect}.UP);
+256         closedTiles[1] = \hyperlink{class_tile_a838aaa6a94321629d04e944ed3bf8b9f}{GetClosedTile}(\hyperlink{_tile_8cs_a082f743a62d2d8e13dac8fd38af246d7}{eTileDirect}.DOWN);
+257         closedTiles[2] = \hyperlink{class_tile_a838aaa6a94321629d04e944ed3bf8b9f}{GetClosedTile}(\hyperlink{_tile_8cs_a082f743a62d2d8e13dac8fd38af246d7}{eTileDirect}.LEFT);
+258         closedTiles[3] = \hyperlink{class_tile_a838aaa6a94321629d04e944ed3bf8b9f}{GetClosedTile}(\hyperlink{_tile_8cs_a082f743a62d2d8e13dac8fd38af246d7}{eTileDirect}.RIGHT);
+259 
+260         \textcolor{keywordflow}{return} closedTiles;
+261     \}
 \end{DoxyCode}
 
 
@@ -621,25 +649,25 @@ Tile.\+cs 파일의 257 번째 라인에서 정의되었습니다.
 )\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_tile_ae37e08e39263e766fdc612de94fb7a0d}{}\label{class_tile_ae37e08e39263e766fdc612de94fb7a0d}
 
 
-Tile.\+cs 파일의 365 번째 라인에서 정의되었습니다.
+Tile.\+cs 파일의 359 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-366     \{
-367         \textcolor{keywordflow}{if}(\hyperlink{class_tile_a822a1bffe56b1193b8c5c61070ea7827}{\_stateMachine} != null)
-368         \{
-369             var tileState = \hyperlink{class_tile_a822a1bffe56b1193b8c5c61070ea7827}{\_stateMachine}.GetCurrentState() as TileState;
-370 
-371             \textcolor{keywordflow}{if}(tileState != null)
-372             \{
-373                 \textcolor{keywordflow}{return} tileState;
-374             \}
-375 
-376             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} UnityException(\textcolor{stringliteral}{"tileState isn't."});
-377         \}
-378 
-379         \textcolor{keywordflow}{throw} \textcolor{keyword}{new} UnityException(\textcolor{stringliteral}{"\_stateMachine is null."});
-380     \}
+360     \{
+361         \textcolor{keywordflow}{if}(\hyperlink{class_tile_a822a1bffe56b1193b8c5c61070ea7827}{\_stateMachine} != null)
+362         \{
+363             var tileState = \hyperlink{class_tile_a822a1bffe56b1193b8c5c61070ea7827}{\_stateMachine}.GetCurrentState() as TileState;
+364 
+365             \textcolor{keywordflow}{if}(tileState != null)
+366             \{
+367                 \textcolor{keywordflow}{return} tileState;
+368             \}
+369 
+370             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} UnityException(\textcolor{stringliteral}{"tileState isn't."});
+371         \}
+372 
+373         \textcolor{keywordflow}{throw} \textcolor{keyword}{new} UnityException(\textcolor{stringliteral}{"\_stateMachine is null."});
+374     \}
 \end{DoxyCode}
 
 
@@ -663,23 +691,6 @@ Tile.\+cs 파일의 365 번째 라인에서 정의되었습니다.
 \end{figure}
 
 
-\index{Tile@{Tile}!Get\+Hash\+Code@{Get\+Hash\+Code}}
-\index{Get\+Hash\+Code@{Get\+Hash\+Code}!Tile@{Tile}}
-\subsubsection[{\texorpdfstring{Get\+Hash\+Code()}{GetHashCode()}}]{\setlength{\rightskip}{0pt plus 5cm}override int Tactics\+Object.\+Get\+Hash\+Code (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inherited]}}\hypertarget{class_tactics_object_a5fe0e8c99cec56daa7909754f037ac26}{}\label{class_tactics_object_a5fe0e8c99cec56daa7909754f037ac26}
-
-
-Tactics\+Object.\+cs 파일의 44 번째 라인에서 정의되었습니다.
-
-
-\begin{DoxyCode}
-45     \{
-46         \textcolor{keywordflow}{return} base.GetHashCode();
-47     \}
-\end{DoxyCode}
 \index{Tile@{Tile}!Interactive@{Interactive}}
 \index{Interactive@{Interactive}!Tile@{Tile}}
 \subsubsection[{\texorpdfstring{Interactive(\+Tactics\+Object interact\+Target)}{Interactive(TacticsObject interactTarget)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Tactics\+Object.\+Interactive (
@@ -689,27 +700,19 @@ Tactics\+Object.\+cs 파일의 44 번째 라인에서 정의되었습니다.
 )\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\hypertarget{class_tactics_object_a5f94ed01497a7072a2785163f4cbc57b}{}\label{class_tactics_object_a5f94ed01497a7072a2785163f4cbc57b}
 
 
-\hyperlink{class_m_c_n_1_1_decorator_ae58cb79cf1ee47006b7dbdac82b97dc5}{M\+C\+N.\+Decorator}에서 재구현되었습니다.
-
-
-
-Tactics\+Object.\+cs 파일의 50 번째 라인에서 정의되었습니다.
+Tactics\+Object.\+cs 파일의 47 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-50 \{ \}
+48     \{
+49         \textcolor{keywordflow}{if}(\hyperlink{class_tactics_object_a816dd74a6daa037c17a43fb28c12ca09}{\_actorQueue}.Count > 0)
+50         \{
+51             var actor = \hyperlink{class_tactics_object_a816dd74a6daa037c17a43fb28c12ca09}{\_actorQueue}.First.Value;
+52 
+53             actor.Interactive(interactTarget);
+54         \}
+55     \}
 \end{DoxyCode}
-
-
-이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_tactics_object_a5f94ed01497a7072a2785163f4cbc57b_icgraph}
-\end{center}
-\end{figure}
-
-
 \index{Tile@{Tile}!On\+Next@{On\+Next}}
 \index{On\+Next@{On\+Next}!Tile@{Tile}}
 \subsubsection[{\texorpdfstring{On\+Next(\+T data)}{OnNext(T data)}}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf M\+C\+N.\+I\+Observer}$<$ T $>$.On\+Next (
@@ -730,19 +733,19 @@ subject의 변경이 통지되는 메소드. subject의 정보가 매개변수�
 )}\hypertarget{class_tile_a6133171796d47353aa5d57cd336e0a07}{}\label{class_tile_a6133171796d47353aa5d57cd336e0a07}
 
 
-Tile.\+cs 파일의 384 번째 라인에서 정의되었습니다.
+Tile.\+cs 파일의 378 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-385     \{
-386         \textcolor{keywordflow}{if} (\hyperlink{class_tile_ae37e08e39263e766fdc612de94fb7a0d}{GetCurrentState}().\hyperlink{class_tactics_object_af34052e62ea471d21e4c601cc79ff717}{OnTouchEvent}(touch))
-387         \{
-388             \textcolor{keywordflow}{if} (\hyperlink{class_tile_a6c6758ca210a37d98f8e73e87c65f1d2}{GetAttachObject}() != null)
-389             \{
-390                 \hyperlink{class_tile_a6c6758ca210a37d98f8e73e87c65f1d2}{GetAttachObject}().OnTouchEvent(touch);
-391             \}
-392         \}
-393     \}
+379     \{
+380         \textcolor{keywordflow}{if} (\hyperlink{class_tile_ae37e08e39263e766fdc612de94fb7a0d}{GetCurrentState}().\hyperlink{class_tactics_object_af34052e62ea471d21e4c601cc79ff717}{OnTouchEvent}(touch))
+381         \{
+382             \textcolor{keywordflow}{if} (\hyperlink{class_tile_a02150b69b975e8e9de1c3e10070a8dda}{GetAttachObject}() != null)
+383             \{
+384                 \hyperlink{class_tile_a02150b69b975e8e9de1c3e10070a8dda}{GetAttachObject}().\hyperlink{class_tactics_object_af34052e62ea471d21e4c601cc79ff717}{OnTouchEvent}(touch);
+385             \}
+386         \}
+387     \}
 \end{DoxyCode}
 
 
@@ -764,20 +767,24 @@ Tile.\+cs 파일의 384 번째 라인에서 정의되었습니다.
 )\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\hypertarget{class_tactics_object_af34052e62ea471d21e4c601cc79ff717}{}\label{class_tactics_object_af34052e62ea471d21e4c601cc79ff717}
 
 
-\hyperlink{class_m_c_n_1_1_decorator_ac45ab12c190bd9f5188c9f748f8ddbbf}{M\+C\+N.\+Decorator}에서 재구현되었습니다.
-
-
-
-Tactics\+Object.\+cs 파일의 52 번째 라인에서 정의되었습니다.
+Tactics\+Object.\+cs 파일의 57 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-52 \{ \textcolor{keywordflow}{return} \textcolor{keyword}{true}; \}
+58     \{
+59         \textcolor{keywordflow}{if} (\hyperlink{class_tactics_object_a816dd74a6daa037c17a43fb28c12ca09}{\_actorQueue}.Count > 0)
+60         \{
+61             var actor = \hyperlink{class_tactics_object_a816dd74a6daa037c17a43fb28c12ca09}{\_actorQueue}.First.Value;
+62 
+63             actor.OnTouchEvent(touch);
+64         \}
+65 
+66         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+67     \}
 \end{DoxyCode}
 
 
-이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
-\nopagebreak
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -786,56 +793,29 @@ Tactics\+Object.\+cs 파일의 52 번째 라인에서 정의되었습니다.
 \end{figure}
 
 
-\index{Tile@{Tile}!operator"!=@{operator"!=}}
-\index{operator"!=@{operator"!=}!Tile@{Tile}}
-\subsubsection[{\texorpdfstring{operator"!=(\+Tactics\+Object lt, Tactics\+Object rt)}{operator!=(TacticsObject lt, TacticsObject rt)}}]{\setlength{\rightskip}{0pt plus 5cm}static bool Tactics\+Object.\+operator!= (
+\index{Tile@{Tile}!Run\+Actor@{Run\+Actor}}
+\index{Run\+Actor@{Run\+Actor}!Tile@{Tile}}
+\subsubsection[{\texorpdfstring{Run\+Actor(\+System.\+Type actor\+Type)}{RunActor(System.Type actorType)}}]{\setlength{\rightskip}{0pt plus 5cm}void Tactics\+Object.\+Run\+Actor (
 \begin{DoxyParamCaption}
-\item[{{\bf Tactics\+Object}}]{lt, }
-\item[{{\bf Tactics\+Object}}]{rt}
+\item[{System.\+Type}]{actor\+Type}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\hypertarget{class_tactics_object_a49e235618a22126faa6271243cd89710}{}\label{class_tactics_object_a49e235618a22126faa6271243cd89710}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\hypertarget{class_tactics_object_ac24894e1e9355ac7bb7c94b7ea51ef02}{}\label{class_tactics_object_ac24894e1e9355ac7bb7c94b7ea51ef02}
 
 
-Tactics\+Object.\+cs 파일의 29 번째 라인에서 정의되었습니다.
+Tactics\+Object.\+cs 파일의 26 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-30     \{
-31         \textcolor{keywordflow}{return} !(rt == lt);
-32     \}
-\end{DoxyCode}
-\index{Tile@{Tile}!operator==@{operator==}}
-\index{operator==@{operator==}!Tile@{Tile}}
-\subsubsection[{\texorpdfstring{operator==(\+Tactics\+Object lt, Tactics\+Object rt)}{operator==(TacticsObject lt, TacticsObject rt)}}]{\setlength{\rightskip}{0pt plus 5cm}static bool Tactics\+Object.\+operator== (
-\begin{DoxyParamCaption}
-\item[{{\bf Tactics\+Object}}]{lt, }
-\item[{{\bf Tactics\+Object}}]{rt}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\hypertarget{class_tactics_object_a18f2979a4bf81dc755fbc17e425809f0}{}\label{class_tactics_object_a18f2979a4bf81dc755fbc17e425809f0}
-
-
-Tactics\+Object.\+cs 파일의 9 번째 라인에서 정의되었습니다.
-
-
-\begin{DoxyCode}
-10     \{
-11         \textcolor{keywordflow}{if} (\hyperlink{namespace_system}{System}.Object.ReferenceEquals(lt, rt))
-12         \{
-13             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
-14         \}
-15 
-16         \textcolor{keywordflow}{if} (((\textcolor{keywordtype}{object})lt == null) || ((object)rt == null))
-17         \{
-18             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-19         \}
-20 
-21         \textcolor{keywordflow}{if} (lt is \hyperlink{namespace_m_c_n}{MCN}.\hyperlink{class_m_c_n_1_1_decoable}{Decoable} && rt is \hyperlink{namespace_m_c_n}{MCN}.\hyperlink{class_m_c_n_1_1_decoable}{Decoable})
-22         \{
-23             \textcolor{keywordflow}{return} (lt as \hyperlink{namespace_m_c_n}{MCN}.\hyperlink{class_m_c_n_1_1_decoable}{Decoable}) == (rt as \hyperlink{namespace_m_c_n}{MCN}.\hyperlink{class_m_c_n_1_1_decoable}{Decoable});
-24         \}
-25         
-26         \textcolor{keywordflow}{return} (\textcolor{keywordtype}{object})lt == (object)rt;
-27     \}
+27     \{
+28         \textcolor{keywordflow}{if}(!actorType.IsSubclassOf(typeof(\hyperlink{namespace_m_c_n}{MCN}.\hyperlink{class_m_c_n_1_1_actor}{Actor})) ||
+29            !\hyperlink{class_tactics_object_ab16a5fde2c93cad13e6b74453664c2a9}{\_actors}.ContainsKey(actorType.ToString()))
+30         \{
+31             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} UnityException(\textcolor{stringliteral}{"Actor's type is not correct."});
+32         \}
+33 
+34         \hyperlink{class_tactics_object_a816dd74a6daa037c17a43fb28c12ca09}{\_actorQueue}.AddLast(\hyperlink{class_tactics_object_ab16a5fde2c93cad13e6b74453664c2a9}{\_actors}[actorType.ToString()]);
+35         \hyperlink{class_tactics_object_ac26a5e81a142ce350e9a481d59bd0daa}{\_actorDebugQueue}.Add(actorType.ToString());
+36     \}
 \end{DoxyCode}
 \index{Tile@{Tile}!Set\+Position@{Set\+Position}}
 \index{Set\+Position@{Set\+Position}!Tile@{Tile}}
@@ -846,13 +826,13 @@ Tactics\+Object.\+cs 파일의 9 번째 라인에서 정의되었습니다.
 )}\hypertarget{class_tile_a4d7a81b36513066aad741ed675164690}{}\label{class_tile_a4d7a81b36513066aad741ed675164690}
 
 
-Tile.\+cs 파일의 210 번째 라인에서 정의되었습니다.
+Tile.\+cs 파일의 204 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-211     \{
-212         \hyperlink{class_tile_a56d02616cede51da0afdceff82ca958d}{\_position} = pos;
-213     \}
+205     \{
+206         \hyperlink{class_tile_a56d02616cede51da0afdceff82ca958d}{\_position} = pos;
+207     \}
 \end{DoxyCode}
 
 
@@ -874,16 +854,16 @@ Tile.\+cs 파일의 210 번째 라인에서 정의되었습니다.
 )}\hypertarget{class_tile_a0ca6f4d1ddb0e7609749f1cf583b3c16}{}\label{class_tile_a0ca6f4d1ddb0e7609749f1cf583b3c16}
 
 
-Tile.\+cs 파일의 300 번째 라인에서 정의되었습니다.
+Tile.\+cs 파일의 294 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-301     \{
-302         \textcolor{keywordflow}{if} (\hyperlink{class_tile_aa548ae60732f4d054b6777436baefdd5}{\_attached} != null)
-303         \{
-304             \hyperlink{class_tile_a0ca6f4d1ddb0e7609749f1cf583b3c16}{ShowChainActiveTile}(range, \hyperlink{class_tile_aa548ae60732f4d054b6777436baefdd5}{\_attached});
-305         \}
-306     \}
+295     \{
+296         \textcolor{keywordflow}{if} (\hyperlink{class_tile_aa548ae60732f4d054b6777436baefdd5}{\_attached} != null)
+297         \{
+298             \hyperlink{class_tile_a0ca6f4d1ddb0e7609749f1cf583b3c16}{ShowChainActiveTile}(range, \hyperlink{class_tile_aa548ae60732f4d054b6777436baefdd5}{\_attached});
+299         \}
+300     \}
 \end{DoxyCode}
 \index{Tile@{Tile}!Show\+Chain\+Active\+Tile@{Show\+Chain\+Active\+Tile}}
 \index{Show\+Chain\+Active\+Tile@{Show\+Chain\+Active\+Tile}!Tile@{Tile}}
@@ -895,34 +875,34 @@ Tile.\+cs 파일의 300 번째 라인에서 정의되었습니다.
 )}\hypertarget{class_tile_a6172e6a33d37d2992a1b0b6f5c2ed117}{}\label{class_tile_a6172e6a33d37d2992a1b0b6f5c2ed117}
 
 
-Tile.\+cs 파일의 308 번째 라인에서 정의되었습니다.
+Tile.\+cs 파일의 302 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-309     \{
-310         \textcolor{keywordflow}{if} (range <= 0)
-311         \{
-312             \textcolor{keywordflow}{return};
-313         \}
-314 
-315         var closedTiles = this.\hyperlink{class_tile_a38b9f5c215f16448118e83e0d10aed05}{GetClosedTiles}();
-316 
-317         \textcolor{keywordtype}{int} obstacleCost = \hyperlink{class_tile_a81b4dd833bdeade289583aabbdcaff73}{GetChainActiveTileCost}(startedObj);
-318 
-319         \textcolor{keywordflow}{foreach} (var closedTile \textcolor{keywordflow}{in} closedTiles)
-320         \{
-321             \textcolor{keywordflow}{if} (closedTile != null)
-322             \{
-323                 \textcolor{keywordflow}{if} (closedTile.GetAttachObject() != null)
-324                 \{
-325                     \textcolor{keywordflow}{continue};
-326                 \}
-327 
-328                 closedTile.ChangeState(\hyperlink{_tile_8cs_a271bc07be325bca511bcb747e0ff2fda}{eTileType}.ACTIVE);
-329                 closedTile.ShowChainActiveTile(range - 1 - obstacleCost, startedObj);
-330             \}
-331         \}
-332     \}
+303     \{
+304         \textcolor{keywordflow}{if} (range <= 0)
+305         \{
+306             \textcolor{keywordflow}{return};
+307         \}
+308 
+309         var closedTiles = this.\hyperlink{class_tile_a38b9f5c215f16448118e83e0d10aed05}{GetClosedTiles}();
+310 
+311         \textcolor{keywordtype}{int} obstacleCost = \hyperlink{class_tile_a81b4dd833bdeade289583aabbdcaff73}{GetChainActiveTileCost}(startedObj);
+312 
+313         \textcolor{keywordflow}{foreach} (var closedTile \textcolor{keywordflow}{in} closedTiles)
+314         \{
+315             \textcolor{keywordflow}{if} (closedTile != null)
+316             \{
+317                 \textcolor{keywordflow}{if} (closedTile.GetAttachObject() != null)
+318                 \{
+319                     \textcolor{keywordflow}{continue};
+320                 \}
+321 
+322                 closedTile.ChangeState(\hyperlink{_tile_8cs_a271bc07be325bca511bcb747e0ff2fda}{eTileType}.ACTIVE);
+323                 closedTile.ShowChainActiveTile(range - 1 - obstacleCost, startedObj);
+324             \}
+325         \}
+326     \}
 \end{DoxyCode}
 
 
@@ -944,15 +924,15 @@ Tile.\+cs 파일의 308 번째 라인에서 정의되었습니다.
 )\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_tile_a6cb69a9fad04bee1fa3473aec22428de}{}\label{class_tile_a6cb69a9fad04bee1fa3473aec22428de}
 
 
-Tile.\+cs 파일의 203 번째 라인에서 정의되었습니다.
+Tile.\+cs 파일의 197 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-204     \{
-205         \textcolor{keyword}{new} TileState\_Normal(\textcolor{keyword}{this});
-206         \textcolor{keyword}{new} TileState\_Active(\textcolor{keyword}{this});
-207         \textcolor{keyword}{new} TileState\_Deactive(\textcolor{keyword}{this});
-208     \}
+198     \{
+199         \textcolor{keyword}{new} TileState\_Normal(\textcolor{keyword}{this});
+200         \textcolor{keyword}{new} TileState\_Active(\textcolor{keyword}{this});
+201         \textcolor{keyword}{new} TileState\_Deactive(\textcolor{keyword}{this});
+202     \}
 \end{DoxyCode}
 
 

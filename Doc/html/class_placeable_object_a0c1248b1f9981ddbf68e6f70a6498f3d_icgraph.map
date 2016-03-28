@@ -1,6 +1,5 @@
 <map id="PlaceableObject.Deselect" name="PlaceableObject.Deselect">
-<area shape="rect" id="node2" href="$class_attack_decorator_1_1_attackable_state.html#ad1be8431e8606ed79d375fe520b65e47" title="AttackDecorator.Attackable\lState.AllTileToNormal" alt="" coords="235,5,417,47"/>
-<area shape="rect" id="node3" href="$class_move_decorator_1_1_moveable_state.html#a2b63f058084f2548f8547c21715d271c" title="MoveDecorator.MoveableState.\lAllTileToNormal" alt="" coords="225,71,427,112"/>
-<area shape="rect" id="node4" href="$class_move_decorator_1_1_moveable_state___normal.html#a9e4e591aa61c13840a15facffa2148d6" title="MoveDecorator.MoveableState\l_Normal.Run" alt="" coords="475,37,672,79"/>
-<area shape="rect" id="node5" href="$class_move_decorator_1_1_moveable_state___done.html#ad6aac25a9f42d14a958d1c93e3b6bd79" title="MoveDecorator.MoveableState\l_Done.Run" alt="" coords="475,103,672,144"/>
+<area shape="rect" id="node2" href="$class_move_actor_1_1_moveable_state.html#a2da1a565b497b15a220f5ff494ec7a1e" title="MoveActor.MoveableState.\lAllTileToNormal" alt="" coords="225,39,401,80"/>
+<area shape="rect" id="node3" href="$class_move_actor_1_1_moveable_state___normal.html#a687176bd566ec3493d38fb51d6f5de5f" title="MoveActor.MoveableState\l_Normal.Run" alt="" coords="449,5,621,47"/>
+<area shape="rect" id="node4" href="$class_move_actor_1_1_moveable_state___done.html#a5fa0f074185fecf42c07697b3bf9ab2c" title="MoveActor.MoveableState\l_Done.Run" alt="" coords="449,71,621,112"/>
 </map>

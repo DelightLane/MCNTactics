@@ -1,0 +1,4 @@
+<map id="MoveActor.MoveableState.AllTileToNormal" name="MoveActor.MoveableState.AllTileToNormal">
+<area shape="rect" id="node2" href="$class_move_actor_1_1_moveable_state___normal.html#a687176bd566ec3493d38fb51d6f5de5f" title="MoveActor.MoveableState\l_Normal.Run" alt="" coords="229,5,401,47"/>
+<area shape="rect" id="node3" href="$class_move_actor_1_1_moveable_state___done.html#a5fa0f074185fecf42c07697b3bf9ab2c" title="MoveActor.MoveableState\l_Done.Run" alt="" coords="229,71,401,112"/>
+</map>

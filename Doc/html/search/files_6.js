@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['singletone_2ecs',['Singletone.cs',['../_singletone_8cs.html',1,'']]],
-  ['state_2ecs',['State.cs',['../_state_8cs.html',1,'']]],
-  ['structure_2ecs',['Structure.cs',['../_structure_8cs.html',1,'']]]
+  ['tacticsobject_2ecs',['TacticsObject.cs',['../_tactics_object_8cs.html',1,'']]],
+  ['tile_2ecs',['Tile.cs',['../_tile_8cs.html',1,'']]],
+  ['touchmanager_2ecs',['TouchManager.cs',['../_touch_manager_8cs.html',1,'']]]
 ];

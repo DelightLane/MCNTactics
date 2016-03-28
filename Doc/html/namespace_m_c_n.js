@@ -1,11 +1,10 @@
 var namespace_m_c_n =
 [
-    [ "Decoable", "class_m_c_n_1_1_decoable.html", "class_m_c_n_1_1_decoable" ],
-    [ "DecoClassInfo", "class_m_c_n_1_1_deco_class_info.html", "class_m_c_n_1_1_deco_class_info" ],
-    [ "DecoInstance", "class_m_c_n_1_1_deco_instance.html", "class_m_c_n_1_1_deco_instance" ],
-    [ "Decorator", "class_m_c_n_1_1_decorator.html", "class_m_c_n_1_1_decorator" ],
+    [ "Actor", "class_m_c_n_1_1_actor.html", "class_m_c_n_1_1_actor" ],
+    [ "ActorClassInfo", "class_m_c_n_1_1_actor_class_info.html", "class_m_c_n_1_1_actor_class_info" ],
     [ "IObservable", "interface_m_c_n_1_1_i_observable.html", "interface_m_c_n_1_1_i_observable" ],
     [ "IObserver", "interface_m_c_n_1_1_i_observer.html", "interface_m_c_n_1_1_i_observer" ],
+    [ "IState", "interface_m_c_n_1_1_i_state.html", "interface_m_c_n_1_1_i_state" ],
     [ "MonoSingletone", "class_m_c_n_1_1_mono_singletone.html", "class_m_c_n_1_1_mono_singletone" ],
     [ "Pair", "class_m_c_n_1_1_pair.html", "class_m_c_n_1_1_pair" ],
     [ "PlaceInfo", "class_m_c_n_1_1_place_info.html", "class_m_c_n_1_1_place_info" ],

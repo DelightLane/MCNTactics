@@ -1,0 +1,8 @@
+<map id="MoveActor.MoveableState.GetCurrentType" name="MoveActor.MoveableState.GetCurrentType">
+<area shape="rect" id="node2" href="$class_move_actor_1_1_moveable_state.html#a8aabee832e31e33507bf93a2737f520c" title="MoveActor.MoveableState.\lMoveableState" alt="" coords="229,49,405,90"/>
+<area shape="rect" id="node7" href="$class_move_actor_1_1_moveable_state.html#a2e7b5112230caf5048b95cbdc6b96e34" title="MoveActor.MoveableState.\lInteractive" alt="" coords="229,114,405,155"/>
+<area shape="rect" id="node3" href="$class_move_actor.html#a5b39cf27e1929b766133c6b56031ebdc" title="MoveActor.GetCurrentState" alt="" coords="453,56,635,83"/>
+<area shape="rect" id="node4" href="$class_move_actor.html#a85a48e1d0414d35588b56e36d42fbd3b" title="MoveActor.GetCurrentStateType" alt="" coords="683,5,892,32"/>
+<area shape="rect" id="node5" href="$class_move_actor.html#abbb2fe6a87e45fe6a4f7eeec674558d6" title="MoveActor.OnTouchEvent" alt="" coords="702,56,873,83"/>
+<area shape="rect" id="node6" href="$class_move_actor.html#ade9f1263ef53ad85968cf6cae50d6139" title="MoveActor.Interactive" alt="" coords="715,107,860,133"/>
+</map>

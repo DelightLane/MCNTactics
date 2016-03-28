@@ -1,0 +1,391 @@
+\hypertarget{class_m_c_n_1_1_actor}{}\section{M\+C\+N.\+Actor 클래스 참조}
+\label{class_m_c_n_1_1_actor}\index{M\+C\+N.\+Actor@{M\+C\+N.\+Actor}}
+
+
+M\+C\+N.\+Actor에 대한 상속 다이어그램 \+: \nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{class_m_c_n_1_1_actor__inherit__graph}
+\end{center}
+\end{figure}
+
+
+M\+C\+N.\+Actor에 대한 협력 다이어그램\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{class_m_c_n_1_1_actor__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_m_c_n_1_1_actor_a6a3b8a1620a77b18521d714a7657ab75}{Actor} ()
+\item 
+bool \hyperlink{class_m_c_n_1_1_actor_a493bb0a37cb9fc5b1aa8507ec69b04ac}{Check\+Absolute\+Weight\+Key} ()
+\item 
+void \hyperlink{class_m_c_n_1_1_actor_aadb5d1045def818bbcba4cd2248f2f1c}{Initialize} (\hyperlink{class_tactics_object}{Tactics\+Object} act\+Target)
+\item 
+int \hyperlink{class_m_c_n_1_1_actor_af264703ef93c3c77b5b7062aef828205}{Get\+Weight} (string key)
+\item 
+void \hyperlink{class_m_c_n_1_1_actor_a8d8020782aefa7fff625f5f8e09f7539}{Set\+Weight} (string key, int weight)
+\item 
+void \hyperlink{class_m_c_n_1_1_actor_a4337ef4d88c2086f18db4f2e6415eddd}{Set\+Weight} (\hyperlink{class_m_c_n_1_1_pair}{Pair}$<$ string, int $>$ info)
+\item 
+virtual void \hyperlink{class_m_c_n_1_1_actor_a8ca8f46410f6ee9557e529e22fd6f6d1}{Interactive} (\hyperlink{class_tactics_object}{Tactics\+Object} interact\+Target)
+\item 
+virtual bool \hyperlink{class_m_c_n_1_1_actor_a4891cf321e2a9ee25fd618c19b785331}{On\+Touch\+Event} (\hyperlink{_touch_manager_8cs_ae33e321a424fe84ba8b2fdb81ad40a68}{e\+Touch\+Event} touch)
+\end{DoxyCompactItemize}
+\subsection*{Protected 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+abstract string\mbox{[}$\,$\mbox{]} \hyperlink{class_m_c_n_1_1_actor_a54340ddb597852fbb6e9f2a35663bbc5}{Absolute\+Weight\+Key} ()
+\item 
+virtual void \hyperlink{class_m_c_n_1_1_actor_a37e76fad4625e138478764ae6c5ce959}{Initialize} ()
+\item 
+void \hyperlink{class_m_c_n_1_1_actor_ae86279ca7d290707cd010bc411f38966}{Finish\+Actor} ()
+\end{DoxyCompactItemize}
+\subsection*{속성}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_tactics_object}{Tactics\+Object} \hyperlink{class_m_c_n_1_1_actor_a4e2e573370bb52bb747f77d4c75dc7e1}{Act\+Target}\hspace{0.3cm}{\ttfamily  \mbox{[}get, private set\mbox{]}}
+\end{DoxyCompactItemize}
+\subsection*{Private 속성}
+\begin{DoxyCompactItemize}
+\item 
+Dictionary$<$ string, int $>$ \hyperlink{class_m_c_n_1_1_actor_abf0c60f05e2a904b0b225b4839a7296d}{\+\_\+weight}
+\end{DoxyCompactItemize}
+
+
+\subsection{상세한 설명}
+
+
+Actor.\+cs 파일의 9 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{생성자 \& 소멸자 문서화}
+\index{M\+C\+N\+::\+Actor@{M\+C\+N\+::\+Actor}!Actor@{Actor}}
+\index{Actor@{Actor}!M\+C\+N\+::\+Actor@{M\+C\+N\+::\+Actor}}
+\subsubsection[{\texorpdfstring{Actor()}{Actor()}}]{\setlength{\rightskip}{0pt plus 5cm}M\+C\+N.\+Actor.\+Actor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_c_n_1_1_actor_a6a3b8a1620a77b18521d714a7657ab75}{}\label{class_m_c_n_1_1_actor_a6a3b8a1620a77b18521d714a7657ab75}
+
+
+Actor.\+cs 파일의 20 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+20 \{ \}
+\end{DoxyCode}
+
+
+\subsection{멤버 함수 문서화}
+\index{M\+C\+N\+::\+Actor@{M\+C\+N\+::\+Actor}!Absolute\+Weight\+Key@{Absolute\+Weight\+Key}}
+\index{Absolute\+Weight\+Key@{Absolute\+Weight\+Key}!M\+C\+N\+::\+Actor@{M\+C\+N\+::\+Actor}}
+\subsubsection[{\texorpdfstring{Absolute\+Weight\+Key()}{AbsoluteWeightKey()}}]{\setlength{\rightskip}{0pt plus 5cm}abstract string \mbox{[}$\,$\mbox{]} M\+C\+N.\+Actor.\+Absolute\+Weight\+Key (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\hypertarget{class_m_c_n_1_1_actor_a54340ddb597852fbb6e9f2a35663bbc5}{}\label{class_m_c_n_1_1_actor_a54340ddb597852fbb6e9f2a35663bbc5}
+
+
+\hyperlink{class_move_actor_a1039b1d985874bc3aace417e85bf6676}{Move\+Actor}에서 구현되었습니다.
+
+
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_m_c_n_1_1_actor_a54340ddb597852fbb6e9f2a35663bbc5_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{M\+C\+N\+::\+Actor@{M\+C\+N\+::\+Actor}!Check\+Absolute\+Weight\+Key@{Check\+Absolute\+Weight\+Key}}
+\index{Check\+Absolute\+Weight\+Key@{Check\+Absolute\+Weight\+Key}!M\+C\+N\+::\+Actor@{M\+C\+N\+::\+Actor}}
+\subsubsection[{\texorpdfstring{Check\+Absolute\+Weight\+Key()}{CheckAbsoluteWeightKey()}}]{\setlength{\rightskip}{0pt plus 5cm}bool M\+C\+N.\+Actor.\+Check\+Absolute\+Weight\+Key (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_c_n_1_1_actor_a493bb0a37cb9fc5b1aa8507ec69b04ac}{}\label{class_m_c_n_1_1_actor_a493bb0a37cb9fc5b1aa8507ec69b04ac}
+
+
+Actor.\+cs 파일의 22 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+23         \{
+24             \textcolor{keywordflow}{foreach} (var key \textcolor{keywordflow}{in} \hyperlink{class_m_c_n_1_1_actor_a54340ddb597852fbb6e9f2a35663bbc5}{AbsoluteWeightKey}())
+25             \{
+26                 \textcolor{keywordflow}{if} (\hyperlink{class_m_c_n_1_1_actor_abf0c60f05e2a904b0b225b4839a7296d}{\_weight} == null || !\hyperlink{class_m_c_n_1_1_actor_abf0c60f05e2a904b0b225b4839a7296d}{\_weight}.ContainsKey(key))
+27                 \{
+28                     \textcolor{keywordflow}{throw} \textcolor{keyword}{new} UnityException(\textcolor{keywordtype}{string}.Format(\textcolor{stringliteral}{"\{0\} is not available. because weight '\{1\}' key
+       is not initialized."}, this.GetType().Name, key));
+29                 \}
+30             \}
+31 
+32             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+33         \}
+\end{DoxyCode}
+
+
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_m_c_n_1_1_actor_a493bb0a37cb9fc5b1aa8507ec69b04ac_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{M\+C\+N\+::\+Actor@{M\+C\+N\+::\+Actor}!Finish\+Actor@{Finish\+Actor}}
+\index{Finish\+Actor@{Finish\+Actor}!M\+C\+N\+::\+Actor@{M\+C\+N\+::\+Actor}}
+\subsubsection[{\texorpdfstring{Finish\+Actor()}{FinishActor()}}]{\setlength{\rightskip}{0pt plus 5cm}void M\+C\+N.\+Actor.\+Finish\+Actor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_m_c_n_1_1_actor_ae86279ca7d290707cd010bc411f38966}{}\label{class_m_c_n_1_1_actor_ae86279ca7d290707cd010bc411f38966}
+
+
+Actor.\+cs 파일의 49 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+50         \{
+51             \textcolor{keywordflow}{if} (\hyperlink{class_m_c_n_1_1_actor_a4e2e573370bb52bb747f77d4c75dc7e1}{ActTarget} != null)
+52             \{
+53                 \hyperlink{class_m_c_n_1_1_actor_a4e2e573370bb52bb747f77d4c75dc7e1}{ActTarget}.\hyperlink{class_tactics_object_a4e08c233c75e0f0025f13f92b4e3ec1a}{FinishActor}();
+54             \}
+55         \}
+\end{DoxyCode}
+
+
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_m_c_n_1_1_actor_ae86279ca7d290707cd010bc411f38966_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{M\+C\+N\+::\+Actor@{M\+C\+N\+::\+Actor}!Get\+Weight@{Get\+Weight}}
+\index{Get\+Weight@{Get\+Weight}!M\+C\+N\+::\+Actor@{M\+C\+N\+::\+Actor}}
+\subsubsection[{\texorpdfstring{Get\+Weight(string key)}{GetWeight(string key)}}]{\setlength{\rightskip}{0pt plus 5cm}int M\+C\+N.\+Actor.\+Get\+Weight (
+\begin{DoxyParamCaption}
+\item[{string}]{key}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_c_n_1_1_actor_af264703ef93c3c77b5b7062aef828205}{}\label{class_m_c_n_1_1_actor_af264703ef93c3c77b5b7062aef828205}
+
+
+Actor.\+cs 파일의 57 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+58         \{
+59             \textcolor{keywordflow}{if} (\hyperlink{class_m_c_n_1_1_actor_abf0c60f05e2a904b0b225b4839a7296d}{\_weight}.ContainsKey(key))
+60             \{
+61                 \textcolor{keywordflow}{return} \hyperlink{class_m_c_n_1_1_actor_abf0c60f05e2a904b0b225b4839a7296d}{\_weight}[key];
+62             \}
+63 
+64             \textcolor{keywordflow}{return} 0;
+65         \}
+\end{DoxyCode}
+\index{M\+C\+N\+::\+Actor@{M\+C\+N\+::\+Actor}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!M\+C\+N\+::\+Actor@{M\+C\+N\+::\+Actor}}
+\subsubsection[{\texorpdfstring{Initialize(\+Tactics\+Object act\+Target)}{Initialize(TacticsObject actTarget)}}]{\setlength{\rightskip}{0pt plus 5cm}void M\+C\+N.\+Actor.\+Initialize (
+\begin{DoxyParamCaption}
+\item[{{\bf Tactics\+Object}}]{act\+Target}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_c_n_1_1_actor_aadb5d1045def818bbcba4cd2248f2f1c}{}\label{class_m_c_n_1_1_actor_aadb5d1045def818bbcba4cd2248f2f1c}
+
+
+Actor.\+cs 파일의 35 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+36         \{
+37             \textcolor{keywordflow}{if} (actTarget == null)
+38             \{
+39                 \textcolor{keywordflow}{throw} \textcolor{keyword}{new} UnityException(\textcolor{stringliteral}{"Act Target is null."});
+40             \}
+41 
+42             this.\hyperlink{class_m_c_n_1_1_actor_a4e2e573370bb52bb747f77d4c75dc7e1}{ActTarget} = actTarget;
+43 
+44             \hyperlink{class_m_c_n_1_1_actor_a37e76fad4625e138478764ae6c5ce959}{Initialize}();
+45         \}
+\end{DoxyCode}
+
+
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{class_m_c_n_1_1_actor_aadb5d1045def818bbcba4cd2248f2f1c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_m_c_n_1_1_actor_aadb5d1045def818bbcba4cd2248f2f1c_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{M\+C\+N\+::\+Actor@{M\+C\+N\+::\+Actor}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!M\+C\+N\+::\+Actor@{M\+C\+N\+::\+Actor}}
+\subsubsection[{\texorpdfstring{Initialize()}{Initialize()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void M\+C\+N.\+Actor.\+Initialize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{class_m_c_n_1_1_actor_a37e76fad4625e138478764ae6c5ce959}{}\label{class_m_c_n_1_1_actor_a37e76fad4625e138478764ae6c5ce959}
+
+
+\hyperlink{class_move_actor_a5dadb0f5c892440b6a884da7ef56b538}{Move\+Actor}에서 재구현되었습니다.
+
+
+
+Actor.\+cs 파일의 47 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+47 \{ \}
+\end{DoxyCode}
+
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_m_c_n_1_1_actor_a37e76fad4625e138478764ae6c5ce959_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{M\+C\+N\+::\+Actor@{M\+C\+N\+::\+Actor}!Interactive@{Interactive}}
+\index{Interactive@{Interactive}!M\+C\+N\+::\+Actor@{M\+C\+N\+::\+Actor}}
+\subsubsection[{\texorpdfstring{Interactive(\+Tactics\+Object interact\+Target)}{Interactive(TacticsObject interactTarget)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void M\+C\+N.\+Actor.\+Interactive (
+\begin{DoxyParamCaption}
+\item[{{\bf Tactics\+Object}}]{interact\+Target}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_m_c_n_1_1_actor_a8ca8f46410f6ee9557e529e22fd6f6d1}{}\label{class_m_c_n_1_1_actor_a8ca8f46410f6ee9557e529e22fd6f6d1}
+
+
+\hyperlink{class_move_actor_ade9f1263ef53ad85968cf6cae50d6139}{Move\+Actor}에서 재구현되었습니다.
+
+
+
+Actor.\+cs 파일의 85 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+85 \{ \}
+\end{DoxyCode}
+\index{M\+C\+N\+::\+Actor@{M\+C\+N\+::\+Actor}!On\+Touch\+Event@{On\+Touch\+Event}}
+\index{On\+Touch\+Event@{On\+Touch\+Event}!M\+C\+N\+::\+Actor@{M\+C\+N\+::\+Actor}}
+\subsubsection[{\texorpdfstring{On\+Touch\+Event(e\+Touch\+Event touch)}{OnTouchEvent(eTouchEvent touch)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool M\+C\+N.\+Actor.\+On\+Touch\+Event (
+\begin{DoxyParamCaption}
+\item[{{\bf e\+Touch\+Event}}]{touch}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_m_c_n_1_1_actor_a4891cf321e2a9ee25fd618c19b785331}{}\label{class_m_c_n_1_1_actor_a4891cf321e2a9ee25fd618c19b785331}
+
+
+\hyperlink{class_move_actor_abbb2fe6a87e45fe6a4f7eeec674558d6}{Move\+Actor}에서 재구현되었습니다.
+
+
+
+Actor.\+cs 파일의 87 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+87 \{ \textcolor{keywordflow}{return} \textcolor{keyword}{true}; \}
+\end{DoxyCode}
+\index{M\+C\+N\+::\+Actor@{M\+C\+N\+::\+Actor}!Set\+Weight@{Set\+Weight}}
+\index{Set\+Weight@{Set\+Weight}!M\+C\+N\+::\+Actor@{M\+C\+N\+::\+Actor}}
+\subsubsection[{\texorpdfstring{Set\+Weight(string key, int weight)}{SetWeight(string key, int weight)}}]{\setlength{\rightskip}{0pt plus 5cm}void M\+C\+N.\+Actor.\+Set\+Weight (
+\begin{DoxyParamCaption}
+\item[{string}]{key, }
+\item[{int}]{weight}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_c_n_1_1_actor_a8d8020782aefa7fff625f5f8e09f7539}{}\label{class_m_c_n_1_1_actor_a8d8020782aefa7fff625f5f8e09f7539}
+
+
+Actor.\+cs 파일의 67 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+68         \{
+69             \hyperlink{class_m_c_n_1_1_actor_abf0c60f05e2a904b0b225b4839a7296d}{\_weight}[key] = weight;
+70         \}
+\end{DoxyCode}
+
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_m_c_n_1_1_actor_a8d8020782aefa7fff625f5f8e09f7539_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{M\+C\+N\+::\+Actor@{M\+C\+N\+::\+Actor}!Set\+Weight@{Set\+Weight}}
+\index{Set\+Weight@{Set\+Weight}!M\+C\+N\+::\+Actor@{M\+C\+N\+::\+Actor}}
+\subsubsection[{\texorpdfstring{Set\+Weight(\+Pair$<$ string, int $>$ info)}{SetWeight(Pair< string, int > info)}}]{\setlength{\rightskip}{0pt plus 5cm}void M\+C\+N.\+Actor.\+Set\+Weight (
+\begin{DoxyParamCaption}
+\item[{{\bf Pair}$<$ string, int $>$}]{info}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_c_n_1_1_actor_a4337ef4d88c2086f18db4f2e6415eddd}{}\label{class_m_c_n_1_1_actor_a4337ef4d88c2086f18db4f2e6415eddd}
+
+
+Actor.\+cs 파일의 72 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+73         \{
+74             \textcolor{keywordflow}{if} (info != null)
+75             \{
+76                 \textcolor{keywordflow}{if} (\hyperlink{class_m_c_n_1_1_actor_abf0c60f05e2a904b0b225b4839a7296d}{\_weight} == null)
+77                 \{
+78                     \hyperlink{class_m_c_n_1_1_actor_abf0c60f05e2a904b0b225b4839a7296d}{\_weight} = \textcolor{keyword}{new} Dictionary<string, int>();
+79                 \}
+80 
+81                 \hyperlink{class_m_c_n_1_1_actor_abf0c60f05e2a904b0b225b4839a7296d}{\_weight}[info.\hyperlink{class_m_c_n_1_1_pair_a62c546d3829b8819a65f8c9d64200338}{key}] = info.\hyperlink{class_m_c_n_1_1_pair_a1980bbf37b60fcbfea22382f71250e84}{value};
+82             \}
+83         \}
+\end{DoxyCode}
+
+
+\subsection{멤버 데이타 문서화}
+\index{M\+C\+N\+::\+Actor@{M\+C\+N\+::\+Actor}!\+\_\+weight@{\+\_\+weight}}
+\index{\+\_\+weight@{\+\_\+weight}!M\+C\+N\+::\+Actor@{M\+C\+N\+::\+Actor}}
+\subsubsection[{\texorpdfstring{\+\_\+weight}{_weight}}]{\setlength{\rightskip}{0pt plus 5cm}Dictionary$<$string, int$>$ M\+C\+N.\+Actor.\+\_\+weight\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_m_c_n_1_1_actor_abf0c60f05e2a904b0b225b4839a7296d}{}\label{class_m_c_n_1_1_actor_abf0c60f05e2a904b0b225b4839a7296d}
+
+
+Actor.\+cs 파일의 14 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{속성 문서화}
+\index{M\+C\+N\+::\+Actor@{M\+C\+N\+::\+Actor}!Act\+Target@{Act\+Target}}
+\index{Act\+Target@{Act\+Target}!M\+C\+N\+::\+Actor@{M\+C\+N\+::\+Actor}}
+\subsubsection[{\texorpdfstring{Act\+Target}{ActTarget}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tactics\+Object} M\+C\+N.\+Actor.\+Act\+Target\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [private set]}, {\ttfamily [protected]}}\hypertarget{class_m_c_n_1_1_actor_a4e2e573370bb52bb747f77d4c75dc7e1}{}\label{class_m_c_n_1_1_actor_a4e2e573370bb52bb747f77d4c75dc7e1}
+
+
+Actor.\+cs 파일의 16 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Git\+Hub/\+M\+C\+N\+Tactics/\+Assets/\+Scripts/\+Core/\hyperlink{_actor_8cs}{Actor.\+cs}\end{DoxyCompactItemize}

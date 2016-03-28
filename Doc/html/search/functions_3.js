@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['equals',['Equals',['../class_m_c_n_1_1_decoable.html#a7c14e3879800d1f5d7e58a02e75540d9',1,'MCN.Decoable.Equals()'],['../class_m_c_n_1_1_deco_instance.html#ac327fa53871e183c0e46ac9c66ba00bc',1,'MCN.DecoInstance.Equals(object o)'],['../class_m_c_n_1_1_deco_instance.html#a179363468337afa0d1401ff9da1813f0',1,'MCN.DecoInstance.Equals(Decorator o)'],['../class_m_c_n_1_1_decorator.html#ae2a5432ce00298c80dcb433a75bbe45d',1,'MCN.Decorator.Equals(object o)'],['../class_m_c_n_1_1_decorator.html#a3ad7a8cf76c976907116f85a65a9f8e9',1,'MCN.Decorator.Equals(DecoInstance o)'],['../class_tactics_object.html#aa445b127fafc61d84a064b423a155c1a',1,'TacticsObject.Equals()']]]
+  ['finish',['Finish',['../interface_m_c_n_1_1_i_state.html#aea35b0cb01dcaf4add21c55129e25bca',1,'MCN.IState.Finish()'],['../class_m_c_n_1_1_state.html#a6de4f94b23916fcd05f589759da9ac3f',1,'MCN.State.Finish()']]],
+  ['finishactor',['FinishActor',['../class_m_c_n_1_1_actor.html#ae86279ca7d290707cd010bc411f38966',1,'MCN.Actor.FinishActor()'],['../class_tactics_object.html#a4e08c233c75e0f0025f13f92b4e3ec1a',1,'TacticsObject.FinishActor()']]]
 ];

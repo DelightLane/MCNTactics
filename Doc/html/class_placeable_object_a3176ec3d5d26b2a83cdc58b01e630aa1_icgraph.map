@@ -1,5 +1,5 @@
 <map id="PlaceableObject.Attach" name="PlaceableObject.Attach">
 <area shape="rect" id="node2" href="$class_tile.html#a1969ee41c320c6e7748a33374942e07e" title="Tile.AttachObject" alt="" coords="212,21,335,47"/>
-<area shape="rect" id="node3" href="$class_move_decorator_1_1_moveable_state___move.html#a9e9c360898b9c25fcc478ef2db20f316" title="MoveDecorator.MoveableState\l_Move.Interactive" alt="" coords="383,5,580,47"/>
-<area shape="rect" id="node4" href="$class_placeable_object.html#a06a30cf4396743908cc88733cb216df5" title="PlaceableObject.Place" alt="" coords="404,71,559,98"/>
+<area shape="rect" id="node3" href="$class_move_actor_1_1_moveable_state___move.html#ab0fa6e69cbb4c179d2c7ee1381cda850" title="MoveActor.MoveableState\l_Move.Interactive" alt="" coords="383,5,555,47"/>
+<area shape="rect" id="node4" href="$class_placeable_object.html#a06a30cf4396743908cc88733cb216df5" title="PlaceableObject.Place" alt="" coords="391,71,546,98"/>
 </map>

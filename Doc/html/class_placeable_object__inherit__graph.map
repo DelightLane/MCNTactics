@@ -1,5 +1,3 @@
 <map id="PlaceableObject" name="PlaceableObject">
-<area shape="rect" id="node2" href="$class_m_c_n_1_1_deco_instance.html" title="{MCN::DecoInstance\n|+ Get\l&#45; _decoTarget\l|+ Equals()\l+ Equals()\l+ GetHashCode()\l+ Decorated()\l+ operator==()\l+ operator!=()\l}" alt="" coords="5,499,144,664"/>
-<area shape="rect" id="node3" href="$class_m_c_n_1_1_decoable.html" title="{Decoable\n||+ Equals()\l+ GetHashCode()\l+ operator==()\l+ operator!=()\l}" alt="" coords="13,329,136,451"/>
-<area shape="rect" id="node4" href="$class_tactics_object.html" title="{TacticsObject\n||+ Equals()\l+ GetHashCode()\l+ Interactive()\l+ OnTouchEvent()\l+ operator==()\l+ operator!=()\l}" alt="" coords="11,131,138,281"/>
+<area shape="rect" id="node2" href="$class_tactics_object.html" title="{TacticsObject\n|&#45; _actorQueue\l&#45; _actorDebugQueue\l&#45; _actors\l|+ AddActor()\l+ RunActor()\l+ FinishActor()\l+ Interactive()\l+ OnTouchEvent()\l}" alt="" coords="5,131,147,296"/>
 </map>

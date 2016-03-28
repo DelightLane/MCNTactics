@@ -1,12 +1,11 @@
 <map id="MapCreator.CreateTilemap" name="MapCreator.CreateTilemap">
 <area shape="rect" id="node2" href="$class_map_creator.html#afb12afa9a9ca8fe04701af4b494e1c8a" title="MapCreator.RemoveTilemap" alt="" coords="229,69,413,96"/>
-<area shape="rect" id="node8" href="$class_map_creator.html#aff7c3fbefa2dd4f091ded379ca000a23" title="MapCreator.CreateTiles" alt="" coords="242,145,401,172"/>
+<area shape="rect" id="node7" href="$class_map_creator.html#aff7c3fbefa2dd4f091ded379ca000a23" title="MapCreator.CreateTiles" alt="" coords="242,145,401,172"/>
 <area shape="rect" id="node3" href="$class_tile.html#a6e8a801e95a29156cbf32024e45c6596" title="Tile.Dispose" alt="" coords="485,56,579,83"/>
 <area shape="rect" id="node4" href="$class_placeable_object.html#a8bd49b7db556556502a0518fc833be48" title="PlaceableObject.Dispose" alt="" coords="651,5,819,32"/>
-<area shape="rect" id="node5" href="$class_m_c_n_1_1_state.html#af6df0477e0dead784489688cb2c2093e" title="MCN.State.Dispose" alt="" coords="666,56,803,83"/>
-<area shape="rect" id="node6" href="$class_m_c_n_1_1_state.html#aebf48ef248bbf185d6aae91d9789459e" title="MCN.State.Destroy" alt="" coords="667,107,802,133"/>
-<area shape="rect" id="node7" href="$class_m_c_n_1_1_state.html#afdec72a816a8a8ec584cac758a027215" title="MCN.State.Run" alt="" coords="867,107,980,133"/>
-<area shape="rect" id="node9" href="$class_tile.html#aec3cdb55a67f4c12d3056355c15bdba2" title="Tile.CreateTile" alt="" coords="480,107,584,133"/>
-<area shape="rect" id="node10" href="$class_map_creator.html#aa7308965858123141f44438bb017acc8" title="MapCreator.GetRoot" alt="" coords="461,157,603,184"/>
-<area shape="rect" id="node11" href="$class_tile.html#a4d7a81b36513066aad741ed675164690" title="Tile.SetPosition" alt="" coords="475,208,589,235"/>
+<area shape="rect" id="node5" href="$class_m_c_n_1_1_state.html#a6c53b2eda47e718ff469fd76a95cf02a" title="MCN.State.Dispose" alt="" coords="666,56,803,83"/>
+<area shape="rect" id="node6" href="$class_m_c_n_1_1_state.html#a32af22a6a0a979d3b3a80225426aa839" title="MCN.State.Destroy" alt="" coords="667,107,802,133"/>
+<area shape="rect" id="node8" href="$class_tile.html#aec3cdb55a67f4c12d3056355c15bdba2" title="Tile.CreateTile" alt="" coords="480,107,584,133"/>
+<area shape="rect" id="node9" href="$class_map_creator.html#aa7308965858123141f44438bb017acc8" title="MapCreator.GetRoot" alt="" coords="461,157,603,184"/>
+<area shape="rect" id="node10" href="$class_tile.html#a4d7a81b36513066aad741ed675164690" title="Tile.SetPosition" alt="" coords="475,208,589,235"/>
 </map>

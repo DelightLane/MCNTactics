@@ -54,7 +54,7 @@ void \hyperlink{class_map_manager_ad633984007048c7d63eab44aaeb0c32d}{Awake} ()
 \item 
 void \hyperlink{class_map_manager_aeaf61c0a498d98a5ac778db479353d77}{Update} ()
 \item 
-void \hyperlink{class_map_manager_a31c2b0b9cf8f208a596b65e7f1d88873}{Decorate\+Object} (ref Game\+Object obj, \hyperlink{class_m_c_n_1_1_place_info}{Place\+Info} info)
+void \hyperlink{class_map_manager_a3fd471f20bdfc00d53997d782bc3339a}{Add\+Actor} (ref \hyperlink{class_placeable_object}{Placeable\+Object} obj, \hyperlink{class_m_c_n_1_1_place_info}{Place\+Info} info)
 \end{DoxyCompactItemize}
 \subsection*{Private 속성}
 \begin{DoxyCompactItemize}
@@ -77,6 +77,77 @@ Map\+Manager.\+cs 파일의 8 번째 라인에서 정의되었습니다.
 
 
 \subsection{멤버 함수 문서화}
+\index{Map\+Manager@{Map\+Manager}!Add\+Actor@{Add\+Actor}}
+\index{Add\+Actor@{Add\+Actor}!Map\+Manager@{Map\+Manager}}
+\subsubsection[{\texorpdfstring{Add\+Actor(ref Placeable\+Object obj, Place\+Info info)}{AddActor(ref PlaceableObject obj, PlaceInfo info)}}]{\setlength{\rightskip}{0pt plus 5cm}void Map\+Manager.\+Add\+Actor (
+\begin{DoxyParamCaption}
+\item[{ref {\bf Placeable\+Object}}]{obj, }
+\item[{{\bf Place\+Info}}]{info}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_map_manager_a3fd471f20bdfc00d53997d782bc3339a}{}\label{class_map_manager_a3fd471f20bdfc00d53997d782bc3339a}
+
+
+Map\+Manager.\+cs 파일의 120 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+121     \{
+122         \textcolor{keywordflow}{if} (obj != null)
+123         \{
+124             \textcolor{keywordflow}{foreach} (var actorInfo \textcolor{keywordflow}{in} info.\hyperlink{class_m_c_n_1_1_place_info_a53e63fce0254eb635a1c6a302bce97d1}{actorClassInfo})
+125             \{
+126                 Assembly assembly = Assembly.GetExecutingAssembly();
+127                 \textcolor{keywordflow}{try}
+128                 \{
+129                     Type actorType = assembly.GetType(actorInfo.className);
+130 
+131                     \hyperlink{class_m_c_n_1_1_actor}{Actor} actor = (\hyperlink{class_m_c_n_1_1_actor}{Actor})Activator.CreateInstance(actorType);
+132 
+133                     \textcolor{keywordflow}{if} (actor != null)
+134                     \{
+135                         actor.\hyperlink{class_m_c_n_1_1_actor_aadb5d1045def818bbcba4cd2248f2f1c}{Initialize}(obj);
+136 
+137                         \textcolor{keywordflow}{foreach}(var actorWeight \textcolor{keywordflow}{in} actorInfo.weight)
+138                         \{
+139                             actor.\hyperlink{class_m_c_n_1_1_actor_a8d8020782aefa7fff625f5f8e09f7539}{SetWeight}(actorWeight);
+140                         \}
+141                     \}
+142 
+143                     obj.AddActor(actor);
+144 
+145                     \textcolor{comment}{// 이건 디버깅용으로.. 무조껀 큐에 삽입한다.}
+146                     obj.RunActor(actor.GetType());
+147                 \}
+148                 \textcolor{keywordflow}{catch}(Exception e)
+149                 \{
+150                     \textcolor{keywordflow}{throw} \textcolor{keyword}{new} UnityException(e.ToString());
+151                 \}
+152             \}
+153         \}
+154     \}
+\end{DoxyCode}
+
+
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_map_manager_a3fd471f20bdfc00d53997d782bc3339a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_map_manager_a3fd471f20bdfc00d53997d782bc3339a_icgraph}
+\end{center}
+\end{figure}
+
+
 \index{Map\+Manager@{Map\+Manager}!Attach\+Object@{Attach\+Object}}
 \index{Attach\+Object@{Attach\+Object}!Map\+Manager@{Map\+Manager}}
 \subsubsection[{\texorpdfstring{Attach\+Object(\+Vector2 pos, Placeable\+Object obj)}{AttachObject(Vector2 pos, PlaceableObject obj)}}]{\setlength{\rightskip}{0pt plus 5cm}void Map\+Manager.\+Attach\+Object (
@@ -87,18 +158,18 @@ Map\+Manager.\+cs 파일의 8 번째 라인에서 정의되었습니다.
 )}\hypertarget{class_map_manager_ab8cbf46e369a9c59ff183a1b6c3b20bb}{}\label{class_map_manager_ab8cbf46e369a9c59ff183a1b6c3b20bb}
 
 
-Map\+Manager.\+cs 파일의 175 번째 라인에서 정의되었습니다.
+Map\+Manager.\+cs 파일의 178 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-176     \{
-177         var tile = \hyperlink{class_map_manager_ae457099efdd1a804add3b851b2bc7691}{GetTile}(pos);
-178 
-179         \textcolor{keywordflow}{if} (tile != null)
-180         \{
-181             tile.AttachObject(obj);
-182         \}
-183     \}
+179     \{
+180         var tile = \hyperlink{class_map_manager_ae457099efdd1a804add3b851b2bc7691}{GetTile}(pos);
+181 
+182         \textcolor{keywordflow}{if} (tile != null)
+183         \{
+184             tile.AttachObject(obj);
+185         \}
+186     \}
 \end{DoxyCode}
 
 
@@ -176,16 +247,16 @@ Map\+Manager.\+cs 파일의 45 번째 라인에서 정의되었습니다.
 )}\hypertarget{class_map_manager_a68f796431393b7239320ab1f5200213a}{}\label{class_map_manager_a68f796431393b7239320ab1f5200213a}
 
 
-Map\+Manager.\+cs 파일의 185 번째 라인에서 정의되었습니다.
+Map\+Manager.\+cs 파일의 188 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-186     \{
-187         \textcolor{keywordflow}{foreach}(var tile \textcolor{keywordflow}{in} \hyperlink{class_map_manager_a58f7635d8e19795f3845a3f85e2b4ac3}{\_tilemap})
-188         \{
-189             tile.Value.ChangeState(state);
-190         \}
-191     \}
+189     \{
+190         \textcolor{keywordflow}{foreach}(var tile \textcolor{keywordflow}{in} \hyperlink{class_map_manager_a58f7635d8e19795f3845a3f85e2b4ac3}{\_tilemap})
+191         \{
+192             tile.Value.ChangeState(state);
+193         \}
+194     \}
 \end{DoxyCode}
 \index{Map\+Manager@{Map\+Manager}!Created\+Object\+Name@{Created\+Object\+Name}}
 \index{Created\+Object\+Name@{Created\+Object\+Name}!Map\+Manager@{Map\+Manager}}
@@ -255,75 +326,6 @@ Map\+Manager.\+cs 파일의 74 번째 라인에서 정의되었습니다.
 \end{figure}
 
 
-\index{Map\+Manager@{Map\+Manager}!Decorate\+Object@{Decorate\+Object}}
-\index{Decorate\+Object@{Decorate\+Object}!Map\+Manager@{Map\+Manager}}
-\subsubsection[{\texorpdfstring{Decorate\+Object(ref Game\+Object obj, Place\+Info info)}{DecorateObject(ref GameObject obj, PlaceInfo info)}}]{\setlength{\rightskip}{0pt plus 5cm}void Map\+Manager.\+Decorate\+Object (
-\begin{DoxyParamCaption}
-\item[{ref Game\+Object}]{obj, }
-\item[{{\bf Place\+Info}}]{info}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_map_manager_a31c2b0b9cf8f208a596b65e7f1d88873}{}\label{class_map_manager_a31c2b0b9cf8f208a596b65e7f1d88873}
-
-
-Map\+Manager.\+cs 파일의 120 번째 라인에서 정의되었습니다.
-
-
-\begin{DoxyCode}
-121     \{
-122         var decoTarget = obj.GetComponent<\hyperlink{class_placeable_object}{PlaceableObject}>() as 
-      \hyperlink{namespace_m_c_n}{MCN}.\hyperlink{class_m_c_n_1_1_decoable}{Decoable};
-123 
-124         if (decoTarget != null)
-125         \{
-126             \textcolor{keywordflow}{foreach} (var decoInfo \textcolor{keywordflow}{in} info.\hyperlink{class_m_c_n_1_1_place_info_a52b0fe979b2c0403be64f1f42262e086}{decoClassInfo})
-127             \{
-128                 Assembly assembly = Assembly.GetExecutingAssembly();
-129                 \textcolor{keywordflow}{try}
-130                 \{
-131                     var rawDeco = obj.AddComponent(assembly.GetType(decoInfo.className));
-132 
-133                     var deco = rawDeco as \hyperlink{namespace_m_c_n}{MCN}.\hyperlink{class_m_c_n_1_1_decorator}{Decorator};
-134                     \textcolor{keywordflow}{if} (deco != null)
-135                     \{
-136                         deco.\hyperlink{class_m_c_n_1_1_decorator_ab82c83f62182a25a72dc81530c743c32}{Decoration}(decoTarget);
-137                         \textcolor{keywordflow}{foreach}(var decoWeight \textcolor{keywordflow}{in} decoInfo.weight)
-138                         \{
-139                             deco.SetWeight(decoWeight);
-140                         \}
-141 
-142                         decoTarget = deco;
-143                     \}
-144                 \}
-145                 \textcolor{keywordflow}{catch}(Exception e)
-146                 \{
-147                     \textcolor{keywordflow}{throw} \textcolor{keyword}{new} UnityException(e.ToString());
-148                 \}
-149             \}
-150         \}
-151     \}
-\end{DoxyCode}
-
-
-이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_map_manager_a31c2b0b9cf8f208a596b65e7f1d88873_cgraph}
-\end{center}
-\end{figure}
-
-
-
-
-이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_map_manager_a31c2b0b9cf8f208a596b65e7f1d88873_icgraph}
-\end{center}
-\end{figure}
-
-
 \index{Map\+Manager@{Map\+Manager}!Get\+Tile@{Get\+Tile}}
 \index{Get\+Tile@{Get\+Tile}!Map\+Manager@{Map\+Manager}}
 \subsubsection[{\texorpdfstring{Get\+Tile(\+Vector2 position)}{GetTile(Vector2 position)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tile} Map\+Manager.\+Get\+Tile (
@@ -333,25 +335,25 @@ Map\+Manager.\+cs 파일의 120 번째 라인에서 정의되었습니다.
 )}\hypertarget{class_map_manager_ae457099efdd1a804add3b851b2bc7691}{}\label{class_map_manager_ae457099efdd1a804add3b851b2bc7691}
 
 
-Map\+Manager.\+cs 파일의 158 번째 라인에서 정의되었습니다.
+Map\+Manager.\+cs 파일의 161 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-159     \{
-160         \textcolor{keywordflow}{if} (\hyperlink{class_map_manager_a9a18efae73b0d690d2bc6c8ac8703a02}{IsExistMap}())
-161         \{
-162             \textcolor{keywordflow}{if} (\hyperlink{class_map_manager_a504d7a68ace64557bc3c3254a8b1cddc}{IsInMapSize}(position))
-163             \{
-164                 \textcolor{keywordflow}{return} \hyperlink{class_map_manager_a58f7635d8e19795f3845a3f85e2b4ac3}{\_tilemap}[position];
-165             \}
-166 
-167             \textcolor{keywordflow}{return} null;
-168         \}
-169         \textcolor{keywordflow}{else}
-170         \{
-171             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} UnityException(\textcolor{stringliteral}{"Tilemap is not exist."});
-172         \}
-173     \}
+162     \{
+163         \textcolor{keywordflow}{if} (\hyperlink{class_map_manager_a9a18efae73b0d690d2bc6c8ac8703a02}{IsExistMap}())
+164         \{
+165             \textcolor{keywordflow}{if} (\hyperlink{class_map_manager_a504d7a68ace64557bc3c3254a8b1cddc}{IsInMapSize}(position))
+166             \{
+167                 \textcolor{keywordflow}{return} \hyperlink{class_map_manager_a58f7635d8e19795f3845a3f85e2b4ac3}{\_tilemap}[position];
+168             \}
+169 
+170             \textcolor{keywordflow}{return} null;
+171         \}
+172         \textcolor{keywordflow}{else}
+173         \{
+174             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} UnityException(\textcolor{stringliteral}{"Tilemap is not exist."});
+175         \}
+176     \}
 \end{DoxyCode}
 
 
@@ -384,13 +386,13 @@ Map\+Manager.\+cs 파일의 158 번째 라인에서 정의되었습니다.
 )}\hypertarget{class_map_manager_a9a18efae73b0d690d2bc6c8ac8703a02}{}\label{class_map_manager_a9a18efae73b0d690d2bc6c8ac8703a02}
 
 
-Map\+Manager.\+cs 파일의 153 번째 라인에서 정의되었습니다.
+Map\+Manager.\+cs 파일의 156 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-154     \{
-155         \textcolor{keywordflow}{return} \hyperlink{class_map_manager_a58f7635d8e19795f3845a3f85e2b4ac3}{\_tilemap} == null ? \textcolor{keyword}{false} : \textcolor{keyword}{true};
-156     \}
+157     \{
+158         \textcolor{keywordflow}{return} \hyperlink{class_map_manager_a58f7635d8e19795f3845a3f85e2b4ac3}{\_tilemap} == null ? \textcolor{keyword}{false} : \textcolor{keyword}{true};
+159     \}
 \end{DoxyCode}
 
 
@@ -458,7 +460,7 @@ Map\+Manager.\+cs 파일의 95 번째 라인에서 정의되었습니다.
 105 
 106                     \textcolor{keywordflow}{if} (placeableObj != null)
 107                     \{
-108                         \hyperlink{class_map_manager_a31c2b0b9cf8f208a596b65e7f1d88873}{DecorateObject}(ref targetObj, objInfo);
+108                         \hyperlink{class_map_manager_a3fd471f20bdfc00d53997d782bc3339a}{AddActor}(ref placeableObj, objInfo);
 109                         this.\hyperlink{class_map_manager_ab8cbf46e369a9c59ff183a1b6c3b20bb}{AttachObject}(objInfo.pos, placeableObj);
 110                     \}
 111                     \textcolor{keywordflow}{else}

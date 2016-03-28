@@ -1,13 +1,14 @@
 var searchData=
 [
+  ['_5factordebugqueue',['_actorDebugQueue',['../class_tactics_object.html#ac26a5e81a142ce350e9a481d59bd0daa',1,'TacticsObject']]],
+  ['_5factorqueue',['_actorQueue',['../class_tactics_object.html#a816dd74a6daa037c17a43fb28c12ca09',1,'TacticsObject']]],
+  ['_5factors',['_actors',['../class_tactics_object.html#ab16a5fde2c93cad13e6b74453664c2a9',1,'TacticsObject']]],
   ['_5fattached',['_attached',['../class_tile.html#aa548ae60732f4d054b6777436baefdd5',1,'Tile']]],
-  ['_5fattackablestatemachine',['_attackableStateMachine',['../class_attack_decorator.html#a0ddeffefa8d7bce11d4681c07c50183c',1,'AttackDecorator']]],
   ['_5fcurrentstate',['_currentState',['../class_m_c_n_1_1_state_machine.html#a040bf7c13d5127fe983af2ef0a6315ec',1,'MCN::StateMachine']]],
-  ['_5fdecotarget',['_decoTarget',['../class_m_c_n_1_1_deco_instance.html#a5b829d23c217099a75a3193a9f60fba1',1,'MCN.DecoInstance._decoTarget()'],['../class_m_c_n_1_1_decorator.html#a1ec6050ce16016f709aa8e8c19444678',1,'MCN.Decorator._decoTarget()']]],
   ['_5finstance',['_instance',['../class_m_c_n_1_1_singletone.html#a267e8a9e6e7c073b988cda4f95e26eb1',1,'MCN.Singletone._instance()'],['../class_m_c_n_1_1_mono_singletone.html#a790a4dfd828c6e4f008ad64d33d61ac0',1,'MCN.MonoSingletone._instance()']]],
   ['_5fmapcreator',['_mapCreator',['../class_map_manager.html#aa837a852f355a33b263c1bb07c6c4ece',1,'MapManager']]],
   ['_5fmapsize',['_mapSize',['../class_map_manager.html#a960f398cc92f569f620ddc8c0140a5c7',1,'MapManager']]],
-  ['_5fmoveablestatemachine',['_moveableStateMachine',['../class_move_decorator.html#a699616462ff8c3f628be94d157064c79',1,'MoveDecorator']]],
+  ['_5fmoveablestatemachine',['_moveableStateMachine',['../class_move_actor.html#a72afe80e236dbb9a66b27f752e8231f1',1,'MoveActor']]],
   ['_5fobservers',['_observers',['../class_touch_manager.html#a90d8ccdafc722f2d17dd0c7c818631c4',1,'TouchManager']]],
   ['_5fplacedtile',['_placedTile',['../class_placeable_object.html#a0fd0566f0bb15c71b0630322762342d8',1,'PlaceableObject']]],
   ['_5fplaceobjinfos',['_placeObjInfos',['../class_map_manager.html#ab581d2c754246f74999a0b744ba2b14f',1,'MapManager']]],
@@ -15,7 +16,7 @@ var searchData=
   ['_5fselectedobj',['_selectedObj',['../class_game_manager.html#a5a9b1c2a22af163ddb89c8a55d2f1603',1,'GameManager']]],
   ['_5fstatemachine',['_stateMachine',['../class_tile.html#a822a1bffe56b1193b8c5c61070ea7827',1,'Tile']]],
   ['_5fstates',['_states',['../class_m_c_n_1_1_state_machine.html#adf0f1417aacb073306b88563e7b3d740',1,'MCN::StateMachine']]],
-  ['_5ftarget',['_target',['../class_m_c_n_1_1_state.html#a13fe398868da354cfde9ff644e12e9f2',1,'MCN::State']]],
+  ['_5ftarget',['_target',['../class_m_c_n_1_1_state.html#ab759357c7d076cf62dd0016b743d762e',1,'MCN::State']]],
   ['_5ftilemap',['_tilemap',['../class_map_manager.html#a58f7635d8e19795f3845a3f85e2b4ac3',1,'MapManager']]],
-  ['_5fweight',['_weight',['../class_m_c_n_1_1_decorator.html#a1f9dd0c30a2fc261b7987d3ce36d8673',1,'MCN::Decorator']]]
+  ['_5fweight',['_weight',['../class_m_c_n_1_1_actor.html#abf0c60f05e2a904b0b225b4839a7296d',1,'MCN::Actor']]]
 ];

@@ -1,6 +1,6 @@
 <map id="PlaceableObject.GetPlacedTile" name="PlaceableObject.GetPlacedTile">
 <area shape="rect" id="node2" href="$class_tile.html#a1969ee41c320c6e7748a33374942e07e" title="Tile.AttachObject" alt="" coords="256,71,379,98"/>
-<area shape="rect" id="node3" href="$class_move_decorator_1_1_moveable_state___move.html#a9e9c360898b9c25fcc478ef2db20f316" title="MoveDecorator.MoveableState\l_Move.Interactive" alt="" coords="427,5,624,47"/>
-<area shape="rect" id="node4" href="$class_placeable_object.html#a06a30cf4396743908cc88733cb216df5" title="PlaceableObject.Place" alt="" coords="448,71,603,98"/>
-<area shape="rect" id="node5" href="$class_placeable_object.html#a3176ec3d5d26b2a83cdc58b01e630aa1" title="PlaceableObject.Attach" alt="" coords="672,97,831,123"/>
+<area shape="rect" id="node3" href="$class_move_actor_1_1_moveable_state___move.html#ab0fa6e69cbb4c179d2c7ee1381cda850" title="MoveActor.MoveableState\l_Move.Interactive" alt="" coords="427,5,599,47"/>
+<area shape="rect" id="node4" href="$class_placeable_object.html#a06a30cf4396743908cc88733cb216df5" title="PlaceableObject.Place" alt="" coords="435,71,590,98"/>
+<area shape="rect" id="node5" href="$class_placeable_object.html#a3176ec3d5d26b2a83cdc58b01e630aa1" title="PlaceableObject.Attach" alt="" coords="647,97,805,123"/>
 </map>

@@ -1,5 +1,5 @@
-\hypertarget{class_m_c_n_1_1_state}{}\section{M\+C\+N.\+State 클래스 참조}
-\label{class_m_c_n_1_1_state}\index{M\+C\+N.\+State@{M\+C\+N.\+State}}
+\hypertarget{class_m_c_n_1_1_state}{}\section{M\+C\+N.\+State$<$ T $>$ 클래스 템플릿 참조}
+\label{class_m_c_n_1_1_state}\index{M\+C\+N.\+State$<$ T $>$@{M\+C\+N.\+State$<$ T $>$}}
 
 
 상태 추상 클래스  
@@ -7,47 +7,46 @@
 
 
 
-M\+C\+N.\+State에 대한 상속 다이어그램 \+: 
-\nopagebreak
+M\+C\+N.\+State$<$ T $>$에 대한 상속 다이어그램 \+: \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_m_c_n_1_1_state__inherit__graph}
+\includegraphics[width=232pt]{class_m_c_n_1_1_state__inherit__graph}
 \end{center}
 \end{figure}
 
 
-M\+C\+N.\+State에 대한 협력 다이어그램\+:\nopagebreak
+M\+C\+N.\+State$<$ T $>$에 대한 협력 다이어그램\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=260pt]{class_m_c_n_1_1_state__coll__graph}
+\includegraphics[width=232pt]{class_m_c_n_1_1_state__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public 멤버 함수}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_m_c_n_1_1_state_ad16fc582097e88164f2804183830344e}{State} (\hyperlink{class_tactics_object}{Tactics\+Object} target)
+\hyperlink{class_m_c_n_1_1_state_a63bbb5cb66bc266c6bde3d3568165a3d}{State} (T target)
 \item 
-virtual void \hyperlink{class_m_c_n_1_1_state_a5be59bc891e64cbbe4322d74a6746908}{Initialize} ()
+virtual void \hyperlink{class_m_c_n_1_1_state_a8eabaffe047e6dccd5c5d8aed7bf218a}{Initialize} ()
 \item 
-virtual void \hyperlink{class_m_c_n_1_1_state_aebf48ef248bbf185d6aae91d9789459e}{Destroy} ()
+virtual void \hyperlink{class_m_c_n_1_1_state_a32af22a6a0a979d3b3a80225426aa839}{Destroy} ()
 \item 
-abstract void \hyperlink{class_m_c_n_1_1_state_afdec72a816a8a8ec584cac758a027215}{Run} ()
+abstract void \hyperlink{class_m_c_n_1_1_state_a8adfea67c55997e5c0eefbae1e429f4d}{Run} ()
 \item 
-virtual void \hyperlink{class_m_c_n_1_1_state_a2492ca731678b8216c02134dddeeb745}{Finish} ()
+virtual void \hyperlink{class_m_c_n_1_1_state_a6de4f94b23916fcd05f589759da9ac3f}{Finish} ()
 \item 
-void \hyperlink{class_m_c_n_1_1_state_af6df0477e0dead784489688cb2c2093e}{Dispose} ()
+void \hyperlink{class_m_c_n_1_1_state_a6c53b2eda47e718ff469fd76a95cf02a}{Dispose} ()
 \end{DoxyCompactItemize}
 \subsection*{속성}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_tactics_object}{Tactics\+Object} \hyperlink{class_m_c_n_1_1_state_a79a563b32f183c9adc9a96679fc57eb8}{Target}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+T \hyperlink{class_m_c_n_1_1_state_a93ba2fd920292031bd6e65b1dc505cb3}{Target}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \end{DoxyCompactItemize}
 \subsection*{Private 속성}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_tactics_object}{Tactics\+Object} \hyperlink{class_m_c_n_1_1_state_a13fe398868da354cfde9ff644e12e9f2}{\+\_\+target}
+T \hyperlink{class_m_c_n_1_1_state_ab759357c7d076cf62dd0016b743d762e}{\+\_\+target}
 \end{DoxyCompactItemize}
 
 
@@ -59,97 +58,79 @@ Delight
 \end{DoxyAuthor}
 
 
-State.\+cs 파일의 14 번째 라인에서 정의되었습니다.
+State.\+cs 파일의 29 번째 라인에서 정의되었습니다.
 
 
 
 \subsection{생성자 \& 소멸자 문서화}
 \index{M\+C\+N\+::\+State@{M\+C\+N\+::\+State}!State@{State}}
 \index{State@{State}!M\+C\+N\+::\+State@{M\+C\+N\+::\+State}}
-\subsubsection[{\texorpdfstring{State(\+Tactics\+Object target)}{State(TacticsObject target)}}]{\setlength{\rightskip}{0pt plus 5cm}M\+C\+N.\+State.\+State (
+\subsubsection[{\texorpdfstring{State(\+T target)}{State(T target)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\+C\+N.\+State}$<$ T $>$.{\bf State} (
 \begin{DoxyParamCaption}
-\item[{{\bf Tactics\+Object}}]{target}
+\item[{T}]{target}
 \end{DoxyParamCaption}
-)}\hypertarget{class_m_c_n_1_1_state_ad16fc582097e88164f2804183830344e}{}\label{class_m_c_n_1_1_state_ad16fc582097e88164f2804183830344e}
+)}\hypertarget{class_m_c_n_1_1_state_a63bbb5cb66bc266c6bde3d3568165a3d}{}\label{class_m_c_n_1_1_state_a63bbb5cb66bc266c6bde3d3568165a3d}
 
 
-State.\+cs 파일의 24 번째 라인에서 정의되었습니다.
+State.\+cs 파일의 39 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-25         \{
-26             \hyperlink{class_m_c_n_1_1_state_a13fe398868da354cfde9ff644e12e9f2}{\_target} = target;
-27 
-28             \hyperlink{class_m_c_n_1_1_state_a5be59bc891e64cbbe4322d74a6746908}{Initialize}();
-29         \}
+40         \{
+41             \hyperlink{class_m_c_n_1_1_state_ab759357c7d076cf62dd0016b743d762e}{\_target} = target;
+42 
+43             \hyperlink{class_m_c_n_1_1_state_a8eabaffe047e6dccd5c5d8aed7bf218a}{Initialize}();
+44         \}
 \end{DoxyCode}
-
-
-이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=310pt]{class_m_c_n_1_1_state_ad16fc582097e88164f2804183830344e_cgraph}
-\end{center}
-\end{figure}
-
-
 
 
 \subsection{멤버 함수 문서화}
 \index{M\+C\+N\+::\+State@{M\+C\+N\+::\+State}!Destroy@{Destroy}}
 \index{Destroy@{Destroy}!M\+C\+N\+::\+State@{M\+C\+N\+::\+State}}
-\subsubsection[{\texorpdfstring{Destroy()}{Destroy()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void M\+C\+N.\+State.\+Destroy (
+\subsubsection[{\texorpdfstring{Destroy()}{Destroy()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void {\bf M\+C\+N.\+State}$<$ T $>$.Destroy (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_m_c_n_1_1_state_aebf48ef248bbf185d6aae91d9789459e}{}\label{class_m_c_n_1_1_state_aebf48ef248bbf185d6aae91d9789459e}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_m_c_n_1_1_state_a32af22a6a0a979d3b3a80225426aa839}{}\label{class_m_c_n_1_1_state_a32af22a6a0a979d3b3a80225426aa839}
 
 
-State.\+cs 파일의 32 번째 라인에서 정의되었습니다.
+\hyperlink{interface_m_c_n_1_1_i_state_a4438c769733e7d85f0150a03d21fdf29}{M\+C\+N.\+I\+State}를 구현.
+
+
+
+State.\+cs 파일의 47 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-32 \{ \}
+47 \{ \}
 \end{DoxyCode}
-
-
-이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=302pt]{class_m_c_n_1_1_state_aebf48ef248bbf185d6aae91d9789459e_cgraph}
-\end{center}
-\end{figure}
-
-
 
 
 이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_m_c_n_1_1_state_aebf48ef248bbf185d6aae91d9789459e_icgraph}
+\includegraphics[width=350pt]{class_m_c_n_1_1_state_a32af22a6a0a979d3b3a80225426aa839_icgraph}
 \end{center}
 \end{figure}
 
 
 \index{M\+C\+N\+::\+State@{M\+C\+N\+::\+State}!Dispose@{Dispose}}
 \index{Dispose@{Dispose}!M\+C\+N\+::\+State@{M\+C\+N\+::\+State}}
-\subsubsection[{\texorpdfstring{Dispose()}{Dispose()}}]{\setlength{\rightskip}{0pt plus 5cm}void M\+C\+N.\+State.\+Dispose (
+\subsubsection[{\texorpdfstring{Dispose()}{Dispose()}}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf M\+C\+N.\+State}$<$ T $>$.Dispose (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}\hypertarget{class_m_c_n_1_1_state_af6df0477e0dead784489688cb2c2093e}{}\label{class_m_c_n_1_1_state_af6df0477e0dead784489688cb2c2093e}
+)}\hypertarget{class_m_c_n_1_1_state_a6c53b2eda47e718ff469fd76a95cf02a}{}\label{class_m_c_n_1_1_state_a6c53b2eda47e718ff469fd76a95cf02a}
 
 
-State.\+cs 파일의 37 번째 라인에서 정의되었습니다.
+State.\+cs 파일의 52 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-38         \{
-39             \hyperlink{class_m_c_n_1_1_state_a13fe398868da354cfde9ff644e12e9f2}{\_target} = null;
-40         \}
+53         \{
+54             \hyperlink{class_m_c_n_1_1_state_ab759357c7d076cf62dd0016b743d762e}{\_target} = \textcolor{keywordflow}{default}(T);
+55         \}
 \end{DoxyCode}
 
 
@@ -157,93 +138,83 @@ State.\+cs 파일의 37 번째 라인에서 정의되었습니다.
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_m_c_n_1_1_state_af6df0477e0dead784489688cb2c2093e_icgraph}
+\includegraphics[width=350pt]{class_m_c_n_1_1_state_a6c53b2eda47e718ff469fd76a95cf02a_icgraph}
 \end{center}
 \end{figure}
 
 
 \index{M\+C\+N\+::\+State@{M\+C\+N\+::\+State}!Finish@{Finish}}
 \index{Finish@{Finish}!M\+C\+N\+::\+State@{M\+C\+N\+::\+State}}
-\subsubsection[{\texorpdfstring{Finish()}{Finish()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void M\+C\+N.\+State.\+Finish (
+\subsubsection[{\texorpdfstring{Finish()}{Finish()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void {\bf M\+C\+N.\+State}$<$ T $>$.Finish (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_m_c_n_1_1_state_a2492ca731678b8216c02134dddeeb745}{}\label{class_m_c_n_1_1_state_a2492ca731678b8216c02134dddeeb745}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_m_c_n_1_1_state_a6de4f94b23916fcd05f589759da9ac3f}{}\label{class_m_c_n_1_1_state_a6de4f94b23916fcd05f589759da9ac3f}
 
 
-State.\+cs 파일의 35 번째 라인에서 정의되었습니다.
+\hyperlink{interface_m_c_n_1_1_i_state_aea35b0cb01dcaf4add21c55129e25bca}{M\+C\+N.\+I\+State}를 구현.
+
+
+
+State.\+cs 파일의 50 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-35 \{ \}
+50 \{ \}
 \end{DoxyCode}
 \index{M\+C\+N\+::\+State@{M\+C\+N\+::\+State}!Initialize@{Initialize}}
 \index{Initialize@{Initialize}!M\+C\+N\+::\+State@{M\+C\+N\+::\+State}}
-\subsubsection[{\texorpdfstring{Initialize()}{Initialize()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void M\+C\+N.\+State.\+Initialize (
+\subsubsection[{\texorpdfstring{Initialize()}{Initialize()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void {\bf M\+C\+N.\+State}$<$ T $>$.Initialize (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_m_c_n_1_1_state_a5be59bc891e64cbbe4322d74a6746908}{}\label{class_m_c_n_1_1_state_a5be59bc891e64cbbe4322d74a6746908}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_m_c_n_1_1_state_a8eabaffe047e6dccd5c5d8aed7bf218a}{}\label{class_m_c_n_1_1_state_a8eabaffe047e6dccd5c5d8aed7bf218a}
 
 
-State.\+cs 파일의 31 번째 라인에서 정의되었습니다.
+\hyperlink{interface_m_c_n_1_1_i_state_a6b44077f3d7ec076646467189fe99042}{M\+C\+N.\+I\+State}를 구현.
+
+
+
+State.\+cs 파일의 46 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-31 \{ \}
+46 \{ \}
 \end{DoxyCode}
-
-
-이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=310pt]{class_m_c_n_1_1_state_a5be59bc891e64cbbe4322d74a6746908_icgraph}
-\end{center}
-\end{figure}
-
-
 \index{M\+C\+N\+::\+State@{M\+C\+N\+::\+State}!Run@{Run}}
 \index{Run@{Run}!M\+C\+N\+::\+State@{M\+C\+N\+::\+State}}
-\subsubsection[{\texorpdfstring{Run()}{Run()}}]{\setlength{\rightskip}{0pt plus 5cm}abstract void M\+C\+N.\+State.\+Run (
+\subsubsection[{\texorpdfstring{Run()}{Run()}}]{\setlength{\rightskip}{0pt plus 5cm}abstract void {\bf M\+C\+N.\+State}$<$ T $>$.Run (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_m_c_n_1_1_state_afdec72a816a8a8ec584cac758a027215}{}\label{class_m_c_n_1_1_state_afdec72a816a8a8ec584cac758a027215}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_m_c_n_1_1_state_a8adfea67c55997e5c0eefbae1e429f4d}{}\label{class_m_c_n_1_1_state_a8adfea67c55997e5c0eefbae1e429f4d}
 
 
-\hyperlink{class_move_decorator_1_1_moveable_state___done_ad6aac25a9f42d14a958d1c93e3b6bd79}{Move\+Decorator.\+Moveable\+State\+\_\+\+Done}, \hyperlink{class_move_decorator_1_1_moveable_state___normal_a9e4e591aa61c13840a15facffa2148d6}{Move\+Decorator.\+Moveable\+State\+\_\+\+Normal}, \hyperlink{class_tile_1_1_tile_state___deactive_a806c5dbc5eb43903ad41d448f3d25c61}{Tile.\+Tile\+State\+\_\+\+Deactive}, \hyperlink{class_move_decorator_1_1_moveable_state___move_ae1bb2c9ca5992373aa872788775d3e4a}{Move\+Decorator.\+Moveable\+State\+\_\+\+Move}, \hyperlink{class_tile_1_1_tile_state___active_ab53c7c818d65122d6d36c9681ca53bf9}{Tile.\+Tile\+State\+\_\+\+Active}, \hyperlink{class_tile_1_1_tile_state___normal_acf613382b6ddeff2fcc226d8caeb0b53}{Tile.\+Tile\+State\+\_\+\+Normal}에서 구현되었습니다.
+\hyperlink{interface_m_c_n_1_1_i_state_a6345ae1392685098bacef30ddf80362e}{M\+C\+N.\+I\+State}를 구현.
 
 
 
-이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_m_c_n_1_1_state_afdec72a816a8a8ec584cac758a027215_icgraph}
-\end{center}
-\end{figure}
-
+\hyperlink{class_move_actor_1_1_moveable_state___done_a5fa0f074185fecf42c07697b3bf9ab2c}{Move\+Actor.\+Moveable\+State\+\_\+\+Done}, \hyperlink{class_move_actor_1_1_moveable_state___normal_a687176bd566ec3493d38fb51d6f5de5f}{Move\+Actor.\+Moveable\+State\+\_\+\+Normal}, \hyperlink{class_tile_1_1_tile_state___deactive_a806c5dbc5eb43903ad41d448f3d25c61}{Tile.\+Tile\+State\+\_\+\+Deactive}, \hyperlink{class_move_actor_1_1_moveable_state___move_a81659255954f8ff95fcac87a0cfd3c73}{Move\+Actor.\+Moveable\+State\+\_\+\+Move}, \hyperlink{class_tile_1_1_tile_state___active_ab53c7c818d65122d6d36c9681ca53bf9}{Tile.\+Tile\+State\+\_\+\+Active}, \hyperlink{class_tile_1_1_tile_state___normal_acf613382b6ddeff2fcc226d8caeb0b53}{Tile.\+Tile\+State\+\_\+\+Normal}에서 구현되었습니다.
 
 
 
 \subsection{멤버 데이타 문서화}
 \index{M\+C\+N\+::\+State@{M\+C\+N\+::\+State}!\+\_\+target@{\+\_\+target}}
 \index{\+\_\+target@{\+\_\+target}!M\+C\+N\+::\+State@{M\+C\+N\+::\+State}}
-\subsubsection[{\texorpdfstring{\+\_\+target}{_target}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tactics\+Object} M\+C\+N.\+State.\+\_\+target\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_m_c_n_1_1_state_a13fe398868da354cfde9ff644e12e9f2}{}\label{class_m_c_n_1_1_state_a13fe398868da354cfde9ff644e12e9f2}
+\subsubsection[{\texorpdfstring{\+\_\+target}{_target}}]{\setlength{\rightskip}{0pt plus 5cm}T {\bf M\+C\+N.\+State}$<$ T $>$.\+\_\+target\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_m_c_n_1_1_state_ab759357c7d076cf62dd0016b743d762e}{}\label{class_m_c_n_1_1_state_ab759357c7d076cf62dd0016b743d762e}
 
 
-State.\+cs 파일의 16 번째 라인에서 정의되었습니다.
+State.\+cs 파일의 31 번째 라인에서 정의되었습니다.
 
 
 
 \subsection{속성 문서화}
 \index{M\+C\+N\+::\+State@{M\+C\+N\+::\+State}!Target@{Target}}
 \index{Target@{Target}!M\+C\+N\+::\+State@{M\+C\+N\+::\+State}}
-\subsubsection[{\texorpdfstring{Target}{Target}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tactics\+Object} M\+C\+N.\+State.\+Target\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected]}}\hypertarget{class_m_c_n_1_1_state_a79a563b32f183c9adc9a96679fc57eb8}{}\label{class_m_c_n_1_1_state_a79a563b32f183c9adc9a96679fc57eb8}
+\subsubsection[{\texorpdfstring{Target}{Target}}]{\setlength{\rightskip}{0pt plus 5cm}T {\bf M\+C\+N.\+State}$<$ T $>$.Target\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected]}}\hypertarget{class_m_c_n_1_1_state_a93ba2fd920292031bd6e65b1dc505cb3}{}\label{class_m_c_n_1_1_state_a93ba2fd920292031bd6e65b1dc505cb3}
 
 
-State.\+cs 파일의 17 번째 라인에서 정의되었습니다.
+State.\+cs 파일의 32 번째 라인에서 정의되었습니다.
 
 
 

@@ -1,8 +1,9 @@
 <map id="Tile.OnNext" name="Tile.OnNext">
-<area shape="rect" id="node2" href="$class_tile.html#ae37e08e39263e766fdc612de94fb7a0d" title="Tile.GetCurrentState" alt="" coords="167,31,307,57"/>
-<area shape="rect" id="node6" href="$class_tile_1_1_tile_state.html#a8687f7cb0e2c1a436c5ac395f4f6d07a" title="Tile.TileState.OnTouchEvent" alt="" coords="144,81,329,108"/>
-<area shape="rect" id="node7" href="$class_tile.html#a6c6758ca210a37d98f8e73e87c65f1d2" title="Tile.GetAttachObject" alt="" coords="165,132,308,159"/>
-<area shape="rect" id="node3" href="$class_tile_1_1_tile_state.html#a074f350ff6dd6d5456fdb800b9402952" title="Tile.TileState.TileState" alt="" coords="377,31,529,57"/>
-<area shape="rect" id="node4" href="$class_tile.html#a7684d2e86beeb06d844ebb7819b11b33" title="Tile.Tile" alt="" coords="640,5,707,32"/>
-<area shape="rect" id="node5" href="$class_tile_1_1_tile_state.html#a9649a2b7b7cb3ae49eb35df6b6eef43e" title="Tile.TileState.GetCurrentType" alt="" coords="577,56,769,83"/>
+<area shape="rect" id="node2" href="$class_tile.html#ae37e08e39263e766fdc612de94fb7a0d" title="Tile.GetCurrentState" alt="" coords="169,31,309,57"/>
+<area shape="rect" id="node6" href="$class_tile_1_1_tile_state.html#a8687f7cb0e2c1a436c5ac395f4f6d07a" title="Tile.TileState.OnTouchEvent" alt="" coords="147,81,332,108"/>
+<area shape="rect" id="node7" href="$class_tile.html#a02150b69b975e8e9de1c3e10070a8dda" title="Tile.GetAttachObject" alt="" coords="168,132,311,159"/>
+<area shape="rect" id="node8" href="$class_tactics_object.html#af34052e62ea471d21e4c601cc79ff717" title="TacticsObject.OnTouchEvent" alt="" coords="144,183,335,209"/>
+<area shape="rect" id="node3" href="$class_tile_1_1_tile_state.html#a3cb3d3d596f38e7fc846a115a74843b9" title="Tile.TileState.TileState" alt="" coords="383,31,535,57"/>
+<area shape="rect" id="node4" href="$class_tile.html#a7684d2e86beeb06d844ebb7819b11b33" title="Tile.Tile" alt="" coords="645,5,712,32"/>
+<area shape="rect" id="node5" href="$class_tile_1_1_tile_state.html#a9649a2b7b7cb3ae49eb35df6b6eef43e" title="Tile.TileState.GetCurrentType" alt="" coords="583,56,775,83"/>
 </map>

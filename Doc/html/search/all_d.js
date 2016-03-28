@@ -8,6 +8,5 @@ var searchData=
   ['placeinfo',['PlaceInfo',['../class_m_c_n_1_1_place_info.html',1,'MCN']]],
   ['placeobjacts',['PlaceObjacts',['../class_map_manager.html#a4213ccbaa1a81d0a47884de50a28de32',1,'MapManager']]],
   ['pos',['pos',['../class_m_c_n_1_1_place_info.html#ab61c1f49a0d342fb132a2af87ee7c322',1,'MCN::PlaceInfo']]],
-  ['power',['Power',['../class_attack_decorator.html#a3305d359c9c0faaf4f12aa261492ee7c',1,'AttackDecorator']]],
   ['prefabname',['prefabName',['../class_m_c_n_1_1_place_info.html#aedf20cfad59c8298386c61bdcc266457',1,'MCN::PlaceInfo']]]
 ];

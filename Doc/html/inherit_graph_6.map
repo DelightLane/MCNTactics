@@ -1,5 +1,9 @@
 <map id="그래픽컬한 클래스 계통도" name="그래픽컬한 클래스 계통도">
-<area shape="rect" id="node1" href="$interface_m_c_n_1_1_i_observable.html" title="MCN.IObservable\&lt; eTouchEvent \&gt;" alt="" coords="5,5,225,32"/>
-<area shape="rect" id="node2" href="$class_touch_manager.html" title="TouchManager" alt="" coords="273,35,380,61"/>
-<area shape="rect" id="node3" href="$class_m_c_n_1_1_mono_singletone.html" title="MCN.MonoSingletone\l\&lt; TouchManager \&gt;" alt="" coords="41,57,189,98"/>
+<area shape="rect" id="node2" href="$class_m_c_n_1_1_state.html" title="상태 추상 클래스 " alt="" coords="419,19,536,45"/>
+<area shape="rect" id="node3" href="$class_placeable_object.html" title="PlaceableObject" alt="" coords="419,81,536,108"/>
+<area shape="rect" id="node4" href="$class_tile.html" title="Tile" alt="" coords="456,157,499,184"/>
+<area shape="rect" id="node5" href="$interface_m_c_n_1_1_i_observer.html" title="MCN.IObserver\&lt; eTouchEvent \&gt;" alt="" coords="164,208,371,235"/>
+<area shape="rect" id="node6" href="$interface_m_c_n_1_1_i_state.html" title="상태 인터페이스 " alt="" coords="223,5,312,32"/>
+<area shape="rect" id="node8" href="$class_m_c_n_1_1_mono_singletone.html" title="모노 싱글톤 추상 클래스 " alt="" coords="178,107,357,133"/>
+<area shape="rect" id="node9" href="$class_tactics_object.html" title="TacticsObject" alt="" coords="216,157,319,184"/>
 </map>

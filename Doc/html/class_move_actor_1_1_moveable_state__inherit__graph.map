@@ -1,0 +1,6 @@
+<map id="MoveActor.MoveableState" name="MoveActor.MoveableState">
+<area shape="rect" id="node3" href="$class_move_actor_1_1_moveable_state___done.html" title="{MoveActor.MoveableState_Done\n||+ MoveableState_Done()\l+ GetCurrentType()\l+ OnTouchEvent()\l+ Run()\l}" alt="" coords="5,410,215,531"/>
+<area shape="rect" id="node4" href="$class_move_actor_1_1_moveable_state___move.html" title="{MoveActor.MoveableState_Move\n||+ MoveableState_Move()\l+ GetCurrentType()\l+ OnTouchEvent()\l+ Run()\l+ Interactive()\l}" alt="" coords="239,403,448,539"/>
+<area shape="rect" id="node5" href="$class_move_actor_1_1_moveable_state___normal.html" title="{MoveActor.MoveableState\l_Normal\n||+ MoveableState_Normal()\l+ GetCurrentType()\l+ OnTouchEvent()\l+ Run()\l}" alt="" coords="472,403,647,539"/>
+<area shape="rect" id="node2" href="$class_m_c_n_1_1_state.html" title="{MCN::State\&lt; MoveActor \&gt;\n|+ Target\l&#45; _target\l|+ State()\l+ Initialize()\l+ Destroy()\l+ Run()\l+ Finish()\l+ Dispose()\l}" alt="" coords="256,5,431,171"/>
+</map>

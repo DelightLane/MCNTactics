@@ -1,0 +1,5 @@
+<map id="MoveActor.Interactive" name="MoveActor.Interactive">
+<area shape="rect" id="node2" href="$class_move_actor.html#a5b39cf27e1929b766133c6b56031ebdc" title="MoveActor.GetCurrentState" alt="" coords="199,13,380,39"/>
+<area shape="rect" id="node3" href="$class_move_actor_1_1_moveable_state.html#a8aabee832e31e33507bf93a2737f520c" title="MoveActor.MoveableState.\lMoveableState" alt="" coords="428,5,604,47"/>
+<area shape="rect" id="node4" href="$class_move_actor_1_1_moveable_state.html#a0333e87600aceebfe26602fd0c697447" title="MoveActor.MoveableState.\lGetCurrentType" alt="" coords="652,5,828,47"/>
+</map>

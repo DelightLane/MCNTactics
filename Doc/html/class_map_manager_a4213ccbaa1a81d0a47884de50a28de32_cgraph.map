@@ -1,9 +1,10 @@
 <map id="MapManager.PlaceObjacts" name="MapManager.PlaceObjacts">
-<area shape="rect" id="node2" href="$class_map_manager.html#a504d7a68ace64557bc3c3254a8b1cddc" title="MapManager.IsInMapSize" alt="" coords="709,56,881,83"/>
-<area shape="rect" id="node3" href="$class_map_manager.html#a31c2b0b9cf8f208a596b65e7f1d88873" title="MapManager.DecorateObject" alt="" coords="232,5,423,32"/>
-<area shape="rect" id="node6" href="$class_map_manager.html#ab8cbf46e369a9c59ff183a1b6c3b20bb" title="MapManager.AttachObject" alt="" coords="239,107,416,133"/>
-<area shape="rect" id="node4" href="$class_m_c_n_1_1_decorator.html#ab82c83f62182a25a72dc81530c743c32" title="MCN.Decorator.Decoration" alt="" coords="471,5,648,32"/>
-<area shape="rect" id="node5" href="$class_m_c_n_1_1_deco_instance.html#af6c8520c7bb40840651026e3693afcb4" title="MCN.DecoInstance.Decorated" alt="" coords="696,5,893,32"/>
-<area shape="rect" id="node7" href="$class_map_manager.html#ae457099efdd1a804add3b851b2bc7691" title="MapManager.GetTile" alt="" coords="488,107,631,133"/>
-<area shape="rect" id="node8" href="$class_map_manager.html#a9a18efae73b0d690d2bc6c8ac8703a02" title="MapManager.IsExistMap" alt="" coords="711,107,878,133"/>
+<area shape="rect" id="node2" href="$class_map_manager.html#a504d7a68ace64557bc3c3254a8b1cddc" title="MapManager.IsInMapSize" alt="" coords="656,107,828,133"/>
+<area shape="rect" id="node3" href="$class_map_manager.html#a3fd471f20bdfc00d53997d782bc3339a" title="MapManager.AddActor" alt="" coords="243,56,398,83"/>
+<area shape="rect" id="node7" href="$class_map_manager.html#ab8cbf46e369a9c59ff183a1b6c3b20bb" title="MapManager.AttachObject" alt="" coords="232,157,409,184"/>
+<area shape="rect" id="node4" href="$class_m_c_n_1_1_actor.html#aadb5d1045def818bbcba4cd2248f2f1c" title="MCN.Actor.Initialize" alt="" coords="464,5,601,32"/>
+<area shape="rect" id="node6" href="$class_m_c_n_1_1_actor.html#a8d8020782aefa7fff625f5f8e09f7539" title="MCN.Actor.SetWeight" alt="" coords="457,56,608,83"/>
+<area shape="rect" id="node5" href="$class_m_c_n_1_1_actor.html#a37e76fad4625e138478764ae6c5ce959" title="MCN.Actor.Initialize" alt="" coords="673,5,811,32"/>
+<area shape="rect" id="node8" href="$class_map_manager.html#ae457099efdd1a804add3b851b2bc7691" title="MapManager.GetTile" alt="" coords="461,157,604,184"/>
+<area shape="rect" id="node9" href="$class_map_manager.html#a9a18efae73b0d690d2bc6c8ac8703a02" title="MapManager.IsExistMap" alt="" coords="659,157,825,184"/>
 </map>

@@ -1,25 +1,17 @@
 var class_placeable_object =
 [
+    [ "AddActor", "class_placeable_object.html#a2c2b15e6cdb3639a2273978e9b9f294f", null ],
     [ "Attach", "class_placeable_object.html#a3176ec3d5d26b2a83cdc58b01e630aa1", null ],
-    [ "Decorated", "class_placeable_object.html#af6c8520c7bb40840651026e3693afcb4", null ],
     [ "Deselect", "class_placeable_object.html#a0c1248b1f9981ddbf68e6f70a6498f3d", null ],
     [ "Detach", "class_placeable_object.html#aef2018b58bf7c8c0fab5aaf3d9a154d4", null ],
     [ "Dispose", "class_placeable_object.html#a8bd49b7db556556502a0518fc833be48", null ],
-    [ "Equals", "class_placeable_object.html#ac327fa53871e183c0e46ac9c66ba00bc", null ],
-    [ "Equals", "class_placeable_object.html#a179363468337afa0d1401ff9da1813f0", null ],
-    [ "GetHashCode", "class_placeable_object.html#ab8768bdf4ece9568cc120411c286bfb5", null ],
+    [ "FinishActor", "class_placeable_object.html#a4e08c233c75e0f0025f13f92b4e3ec1a", null ],
     [ "GetPlacedTile", "class_placeable_object.html#ab44a9b122632ac3cf0babb5040e8a201", null ],
     [ "Interactive", "class_placeable_object.html#a5f94ed01497a7072a2785163f4cbc57b", null ],
     [ "IsSelected", "class_placeable_object.html#a71fd42914caa0dc6229fe6a5ffe09b99", null ],
     [ "OnTouchEvent", "class_placeable_object.html#af34052e62ea471d21e4c601cc79ff717", null ],
-    [ "operator!=", "class_placeable_object.html#a49e235618a22126faa6271243cd89710", null ],
-    [ "operator!=", "class_placeable_object.html#aa75e4102ebd7265f577028b407534d27", null ],
-    [ "operator!=", "class_placeable_object.html#a34da62189ea05cbf8e93d50b1132f306", null ],
-    [ "operator==", "class_placeable_object.html#a18f2979a4bf81dc755fbc17e425809f0", null ],
-    [ "operator==", "class_placeable_object.html#a6004bbc5f208c3031388c9d6e8f8359b", null ],
-    [ "operator==", "class_placeable_object.html#abc697d911069827ae8ead07cd33ee2b9", null ],
     [ "Place", "class_placeable_object.html#a06a30cf4396743908cc88733cb216df5", null ],
+    [ "RunActor", "class_placeable_object.html#ac24894e1e9355ac7bb7c94b7ea51ef02", null ],
     [ "Select", "class_placeable_object.html#a019818f3f6c6eb715fed163efa921f5a", null ],
-    [ "_placedTile", "class_placeable_object.html#a0fd0566f0bb15c71b0630322762342d8", null ],
-    [ "Get", "class_placeable_object.html#af02857ad80446cb4fdd1bf982bda95c5", null ]
+    [ "_placedTile", "class_placeable_object.html#a0fd0566f0bb15c71b0630322762342d8", null ]
 ];

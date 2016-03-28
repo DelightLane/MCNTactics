@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['classname',['className',['../class_m_c_n_1_1_deco_class_info.html#a3b0fc8a06269e57ded3835ea02026859',1,'MCN::DecoClassInfo']]]
+  ['actorclassinfo',['actorClassInfo',['../class_m_c_n_1_1_place_info.html#a53e63fce0254eb635a1c6a302bce97d1',1,'MCN::PlaceInfo']]]
 ];
