@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-public enum eMoveableType
+public enum eMoveActType
 {
     NORMAL,
     MOVE,
@@ -27,21 +27,21 @@ public class MoveActor : MCN.Actor
     #endregion
 
     #region state
-    private MCN.StateMachine<MoveableState> _moveableStateMachine = new MCN.StateMachine<MoveableState>();
+    private MCN.StateMachine<MoveActState> _stateMachine = new MCN.StateMachine<MoveActState>();
 
-    private abstract class MoveableState : MCN.State<MoveActor>
+    private abstract class MoveActState : MCN.State<MoveActor>
     {
-        public MoveableState(MoveActor target) : base(target)
+        public MoveActState(MoveActor target) : base(target)
         {
-            if (Target != null && Target._moveableStateMachine != null)
+            if (Target != null && Target._stateMachine != null)
             {
-                Target._moveableStateMachine.StorageState(GetCurrentType().ToString(), this);
+                Target._stateMachine.StorageState(GetCurrentType().ToString(), this);
             }
         }
 
         public virtual void Interactive(Tile activeTile) { }
 
-        public abstract eMoveableType GetCurrentType();
+        public abstract eMoveActType GetCurrentType();
 
         public abstract bool OnTouchEvent();
 
@@ -61,13 +61,44 @@ public class MoveActor : MCN.Actor
         }
     }
 
-    private class MoveableState_Move : MoveableState
+    private class MoveActState_Normal : MoveActState
     {
-        public MoveableState_Move(MoveActor target) : base(target) { }
+        public MoveActState_Normal(MoveActor target) : base(target) { }
 
-        public override eMoveableType GetCurrentType()
+        public override eMoveActType GetCurrentType()
         {
-            return eMoveableType.MOVE;
+            return eMoveActType.NORMAL;
+        }
+
+        public override bool OnTouchEvent()
+        {
+            if (Target != null)
+            {
+                if (Target.GetCurrentStateType() != eMoveActType.DONE)
+                {
+                    if (GameManager.Instance.SelectedObj == null)
+                    {
+                        Target.ChangeState(eMoveActType.MOVE);
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        public override void Run()
+        {
+            AllTileToNormal();
+        }
+    }
+
+    private class MoveActState_Move : MoveActState
+    {
+        public MoveActState_Move(MoveActor target) : base(target) { }
+
+        public override eMoveActType GetCurrentType()
+        {
+            return eMoveActType.MOVE;
         }
 
         public override bool OnTouchEvent()
@@ -80,7 +111,7 @@ public class MoveActor : MCN.Actor
                 {
                     if (placeable.IsSelected())
                     {
-                        Target.ChangeState(eMoveableType.NORMAL);
+                        Target.ChangeState(eMoveActType.NORMAL);
                     }
                 }
             }
@@ -124,7 +155,7 @@ public class MoveActor : MCN.Actor
                     {
                         if (Target != null)
                         {
-                            Target.ChangeState(eMoveableType.DONE);
+                            Target.ChangeState(eMoveActType.DONE);
                         }
                     }
                 }
@@ -132,44 +163,13 @@ public class MoveActor : MCN.Actor
         }
     }
 
-    private class MoveableState_Normal : MoveableState
+    private class MoveActState_Done : MoveActState
     {
-        public MoveableState_Normal(MoveActor target) : base(target) { }
+        public MoveActState_Done(MoveActor target) : base(target) { }
 
-        public override eMoveableType GetCurrentType()
+        public override eMoveActType GetCurrentType()
         {
-            return eMoveableType.NORMAL;
-        }
-
-        public override bool OnTouchEvent()
-        {
-            if (Target != null)
-            {
-                if (Target.GetCurrentStateType() != eMoveableType.DONE)
-                {
-                    if (GameManager.Instance.SelectedObj == null)
-                    {
-                        Target.ChangeState(eMoveableType.MOVE);
-                    }
-                }
-            }
-
-            return false;
-        }
-
-        public override void Run()
-        {
-            AllTileToNormal();
-        }
-    }
-
-    private class MoveableState_Done : MoveableState
-    {
-        public MoveableState_Done(MoveActor target) : base(target) { }
-
-        public override eMoveableType GetCurrentType()
-        {
-            return eMoveableType.DONE;
+            return eMoveActType.DONE;
         }
 
         public override bool OnTouchEvent()
@@ -192,28 +192,28 @@ public class MoveActor : MCN.Actor
 
         StorageStates();
 
-        ChangeState(eMoveableType.NORMAL);
+        ChangeState(eMoveActType.NORMAL);
     }
 
     private void StorageStates()
     {
-        new MoveableState_Normal(this);
-        new MoveableState_Move(this);
-        new MoveableState_Done(this);
+        new MoveActState_Normal(this);
+        new MoveActState_Move(this);
+        new MoveActState_Done(this);
     }
 
-    private MoveableState GetCurrentState()
+    private MoveActState GetCurrentState()
     {
-        var state = _moveableStateMachine.GetCurrentState();
-        if (state != null && state is MoveableState)
+        var state = _stateMachine.GetCurrentState();
+        if (state != null && state is MoveActState)
         {
-            return state as MoveableState;
+            return state as MoveActState;
         }
 
         throw new UnityException("don't have moveAct state.");
     }
 
-    private eMoveableType GetCurrentStateType()
+    private eMoveActType GetCurrentStateType()
     {
         var state = GetCurrentState();
 
@@ -225,11 +225,11 @@ public class MoveActor : MCN.Actor
         throw new UnityException("don't have moveAct state.");
     }
 
-    private void ChangeState(eMoveableType type)
+    private void ChangeState(eMoveActType type)
     {
-        if (_moveableStateMachine != null)
+        if (_stateMachine != null)
         {
-            _moveableStateMachine.ChangeState(type.ToString());
+            _stateMachine.ChangeState(type.ToString());
         }
     }
 
