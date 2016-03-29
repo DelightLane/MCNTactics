@@ -1,11 +1,18 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using MCN;
 
 public class PlaceableObject : TacticsObject, IDisposable, MCN.IActorQueue
 {
     private ActorMachine _actorMachine = new ActorMachine();
+
+    // Actor의 큐를 디버깅하기 위해 Inspector에 노출시키기 위한 리스트
+#if UNITY_EDITOR
+    [SerializeField]
+    private List<string> _actorDebugQueue = new List<string>();
+#endif
 
     protected Tile _placedTile;
 
@@ -73,11 +80,19 @@ public class PlaceableObject : TacticsObject, IDisposable, MCN.IActorQueue
     public void EnqueueActor(Type actorType)
     {
         _actorMachine.EnqueueActor(actorType);
+
+#if UNITY_EDITOR
+        _actorDebugQueue.Add(actorType.ToString());
+#endif
     }
 
     public void DequeueActor()
     {
         _actorMachine.DequeueActor();
+
+#if UNITY_EDITOR
+        _actorDebugQueue.RemoveAt(0);
+#endif
     }
 
 
