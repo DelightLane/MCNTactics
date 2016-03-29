@@ -132,12 +132,7 @@ public class MapManager : MCN.MonoSingletone<MapManager> {
 
                     if (actor != null)
                     {
-                        actor.Initialize(obj);
-
-                        foreach(var actorWeight in actorInfo.weight)
-                        {
-                            actor.SetWeight(actorWeight);
-                        }
+                        actor.Initialize(obj, actorInfo.weight);
                     }
 
                     obj.AddActor(actor);

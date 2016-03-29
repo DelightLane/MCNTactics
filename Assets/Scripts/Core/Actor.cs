@@ -39,7 +39,7 @@ namespace MCN
             return true;
         }
 
-        public void Initialize(IActorQueue actTarget)
+        public void Initialize(IActorQueue actTarget, List<StringIntPair> weights)
         {
             if (actTarget == null)
             {
@@ -47,6 +47,11 @@ namespace MCN
             }
 
             this.ActTarget = actTarget;
+
+            foreach (var actorWeight in weights)
+            {
+                SetWeight(actorWeight);
+            }
 
             Initialize();
         }
