@@ -4,6 +4,13 @@ using System.Collections.Generic;
 
 namespace MCN
 {
+    public interface IActorQueue
+    {
+        void AddActor(MCN.Actor actor);
+        void EnqueueActor(System.Type actorType);
+        void DequeueActor();
+    }
+
     // 실행시 큐로 쌓이는 행동 추상 클래스
     // TacticsObject의 내부에 큐로 쌓이면서 실행된다.
     public abstract class Actor
@@ -13,7 +20,7 @@ namespace MCN
         [SerializeField]
         private Dictionary<string, int> _weight;
         
-        protected TacticsObject ActTarget { get; private set; }
+        protected IActorQueue ActTarget { get; private set; }
 
         protected abstract string[] AbsoluteWeightKey();
 
@@ -32,7 +39,7 @@ namespace MCN
             return true;
         }
 
-        public void Initialize(TacticsObject actTarget)
+        public void Initialize(IActorQueue actTarget)
         {
             if (actTarget == null)
             {
@@ -50,7 +57,7 @@ namespace MCN
         {
             if (ActTarget != null)
             {
-                ActTarget.FinishActor();
+                ActTarget.DequeueActor();
             }
         }
 
@@ -85,5 +92,65 @@ namespace MCN
         public virtual void Interactive(TacticsObject interactTarget) { }
 
         public virtual bool OnTouchEvent(eTouchEvent touch) { return true; }
+    }
+
+    public class ActorMachine : IActorQueue
+    {
+        // Actor의 큐. 만약 큐에 Actor가 있다면 그 Actor는 사용될 준비가 된 것이다.
+        private LinkedList<MCN.Actor> _actorQueue = new LinkedList<MCN.Actor>();
+
+        // Actor의 큐를 디버깅하기 위해 Inspector에 노출시키기 위한 리스트
+#if UNITY_EDITOR
+        [SerializeField]
+        private List<string> _actorDebugQueue = new List<string>();
+#endif
+
+        // 해당 TacticsObject가 행동을 취할 수 있는 Actor들
+        private Dictionary<string, MCN.Actor> _actors = new Dictionary<string, MCN.Actor>();
+
+        public void AddActor(MCN.Actor actor)
+        {
+            if (actor.CheckAbsoluteWeightKey())
+            {
+                _actors.Add(actor.GetType().ToString(), actor);
+            }
+        }
+
+        public void EnqueueActor(System.Type actorType)
+        {
+            if (!actorType.IsSubclassOf(typeof(MCN.Actor)) ||
+               !_actors.ContainsKey(actorType.ToString()))
+            {
+                throw new UnityException("Actor's type is not correct.");
+            }
+
+            _actorQueue.AddLast(_actors[actorType.ToString()]);
+#if UNITY_EDITOR
+            _actorDebugQueue.Add(actorType.ToString());
+#endif
+        }
+
+        public MCN.Actor GetActiveActor()
+        {
+            if (_actorQueue.Count > 0)
+            {
+                var actor = _actorQueue.First.Value;
+
+                return actor;
+            }
+
+            return null;
+        }
+
+        public void DequeueActor()
+        {
+            if (_actorQueue.Count > 0)
+            {
+                _actorQueue.RemoveFirst();
+#if UNITY_EDITOR
+                _actorDebugQueue.RemoveAt(0);
+#endif
+            }
+        }
     }
 }

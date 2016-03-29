@@ -142,8 +142,10 @@ public class MapManager : MCN.MonoSingletone<MapManager> {
 
                     obj.AddActor(actor);
 
+#if UNITY_EDITOR
                     // 이건 디버깅용으로.. 무조껀 큐에 삽입한다.
-                    obj.RunActor(actor.GetType());
+                    obj.EnqueueActor(actor.GetType());
+#endif
                 }
                 catch(Exception e)
                 {

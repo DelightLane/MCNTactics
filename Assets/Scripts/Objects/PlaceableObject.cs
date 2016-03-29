@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections;
+using MCN;
 
-public class PlaceableObject : TacticsObject, IDisposable
+public class PlaceableObject : TacticsObject, IDisposable, MCN.IActorQueue
 {
+    private ActorMachine _actorMachine = new ActorMachine();
+
     protected Tile _placedTile;
 
     // 타일에 놓는 건 타일의 AttachObject 메소드를 사용할 것.
@@ -59,5 +62,42 @@ public class PlaceableObject : TacticsObject, IDisposable
     public void Deselect()
     {
         GameManager.Instance.SelectedObj = null;
+    }
+
+    
+    public void AddActor(Actor actor)
+    {
+        _actorMachine.AddActor(actor);
+    }
+
+    public void EnqueueActor(Type actorType)
+    {
+        _actorMachine.EnqueueActor(actorType);
+    }
+
+    public void DequeueActor()
+    {
+        _actorMachine.DequeueActor();
+    }
+
+
+    public override void Interactive(TacticsObject interactTarget)
+    {
+        var activeActor = _actorMachine.GetActiveActor();
+        if (activeActor != null)
+        {
+            activeActor.Interactive(interactTarget);
+        }
+    }
+
+    public override bool OnTouchEvent(eTouchEvent touch)
+    {
+        var activeActor = _actorMachine.GetActiveActor();
+        if (activeActor != null)
+        {
+            activeActor.OnTouchEvent(touch);
+        }
+
+        return true;
     }
 }
