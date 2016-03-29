@@ -9,8 +9,10 @@ public abstract class TacticsObject : MonoBehaviour
     private LinkedList<MCN.Actor> _actorQueue = new LinkedList<MCN.Actor>();
 
     // Actor의 큐를 디버깅하기 위해 Inspector에 노출시키기 위한 리스트
+#if UNITY_EDITOR
     [SerializeField]
     private List<string> _actorDebugQueue = new List<string>();
+#endif
 
     // 해당 TacticsObject가 행동을 취할 수 있는 Actor들
     private Dictionary<string, MCN.Actor> _actors = new Dictionary<string, MCN.Actor>();
@@ -32,7 +34,9 @@ public abstract class TacticsObject : MonoBehaviour
         }
 
         _actorQueue.AddLast(_actors[actorType.ToString()]);
+#if UNITY_EDITOR
         _actorDebugQueue.Add(actorType.ToString());
+#endif
     }
 
     public void FinishActor()
@@ -40,7 +44,9 @@ public abstract class TacticsObject : MonoBehaviour
         if (_actorQueue.Count > 0)
         {
             _actorQueue.RemoveFirst();
+#if UNITY_EDITOR
             _actorDebugQueue.RemoveAt(0);
+#endif
         }
     }
 
