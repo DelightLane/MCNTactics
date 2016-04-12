@@ -1,1 +1,1 @@
-﻿{"UnitData":{"주인공":{"MoveActor":{"range":4}}}}
+﻿{"UnitData":[{"name":"주인공","prefabName":"aaa","MoveActor":{"range":4}},{"name":"여주","prefabName":"bbb","MoveActor":{"range":5}} ]}
