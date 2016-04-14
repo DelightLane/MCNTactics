@@ -1,1 +1,1 @@
-﻿{"UnitData":[{"no":1,"name":"주인공","prefabName":"aaa","MoveActor":{"range":4}},{"no":2,"name":"여주","prefabName":"bbb","MoveActor":{"range":5}} ]}
+﻿{"UnitData":[{"no":1,"name":"주인공","prefabName":"aaa","actor":[{"name":"MoveActor","weightName":["range" ],"weightValue":[4 ]} ]},{"no":2,"name":"여주","prefabName":"bbb","actor":[{"name":"MoveActor","weightName":["range" ],"weightValue":[3 ]} ]} ]}
