@@ -44,6 +44,9 @@ public class MapManager : MCN.MonoSingletone<MapManager> {
 
     void Awake()
     {
+        // TODO : 이 곳은 임시 위치. 모든 Awake보다 먼저 불리는 곳에서 데이터를 불러야 할텐데 방법이 없을까?
+        DataManager.Instance.LoadDatas();
+
         if (_mapCreator == null)
         {
             _mapCreator = new MapCreator();
@@ -98,41 +101,62 @@ public class MapManager : MCN.MonoSingletone<MapManager> {
         {
             if (IsInMapSize(objInfo.pos))
             {
-                var targetObj = Instantiate(Resources.Load(string.Format("Prefabs/{0}", objInfo.prefabName), typeof(GameObject))) as GameObject;
+                var placeableObj = CreatePlaceableObj(objInfo.unitNo);
+                if (placeableObj != null)
+                {
+                    this.AttachObject(objInfo.pos, placeableObj);
+                }
+                 
+            }
+        }
+    }
+
+    private PlaceableObject CreatePlaceableObj(int unitNo)
+    {
+        var unitData = DataManager.Instance.GetData(DataManager.DataType.UNIT) as UnitDataObject;
+
+        foreach(var unit in unitData.Data)
+        {
+            if(unit.no == unitNo)
+            {
+                var targetObj = Instantiate(Resources.Load(string.Format("Prefabs/{0}", unit.prefabName), typeof(GameObject))) as GameObject;
                 if (targetObj != null)
                 {
                     var placeableObj = targetObj.GetComponent<PlaceableObject>() as PlaceableObject;
 
                     if (placeableObj != null)
                     {
-                        AddActor(ref placeableObj, objInfo);
-                        this.AttachObject(objInfo.pos, placeableObj);
+                        AddActor(ref placeableObj, unit.actor);
                     }
                     else
                     {
-                        Debug.LogWarning(string.Format("Prefab {0} don't have 'PlaceableObject'", objInfo.prefabName));
+                        Debug.LogWarning(string.Format("Prefab {0} don't have 'PlaceableObject'", unit.prefabName));
                     }
+
+                    return placeableObj;
                 }
             }
         }
+
+        return null;
     }
 
-    private void AddActor(ref PlaceableObject obj, PlaceInfo info)
+    private void AddActor(ref PlaceableObject obj, List<ActorInfo> info)
     {
         if (obj != null)
         {
-            foreach (var actorInfo in info.actorClassInfo)
+            foreach (var actorInfo in info)
             {
                 Assembly assembly = Assembly.GetExecutingAssembly();
                 try
                 {
-                    Type actorType = assembly.GetType(actorInfo.className);
+                    Type actorType = assembly.GetType(actorInfo.name);
 
                     Actor actor = (Actor)Activator.CreateInstance(actorType);
 
                     if (actor != null)
                     {
-                        actor.Initialize(obj, actorInfo.weight);
+                        actor.Initialize(obj, actorInfo.weightName, actorInfo.weightValue);
                     }
 
                     obj.AddActor(actor);

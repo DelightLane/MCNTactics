@@ -56,6 +56,32 @@ namespace MCN
             Initialize();
         }
 
+        public void Initialize(IActorQueue actTarget, List<string> weightName, List<int> weightValue)
+        {
+            if (actTarget == null)
+            {
+                throw new UnityException("Act Target is null.");
+            }
+
+            this.ActTarget = actTarget;
+
+            for (int i = 0; i < weightName.Count; ++i)
+            {
+                var pair = new StringIntPair();
+
+                pair.key = weightName[i];
+
+                if (weightValue.Count > i)
+                {
+                    pair.value = weightValue[i];
+                }
+
+                SetWeight(pair);
+            }
+
+            Initialize();
+        }
+
         protected virtual void Initialize() { }
 
         protected void FinishActor()

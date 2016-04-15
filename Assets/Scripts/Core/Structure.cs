@@ -8,15 +8,7 @@ namespace MCN
     public class PlaceInfo
     {
         public Vector2 pos;
-        public string prefabName;
-        public List<ActorClassInfo> actorClassInfo;
-    }
-
-    [System.Serializable]
-    public class ActorClassInfo
-    {
-        public string className;
-        public List<StringIntPair> weight;
+        public int unitNo;
     }
 
     #region pairs

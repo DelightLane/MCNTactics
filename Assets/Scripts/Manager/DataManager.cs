@@ -5,13 +5,35 @@ using System.Collections.Generic;
 
 public class DataManager : MCN.Singletone<DataManager>
 {
+    public enum DataType
+    {
+        UNIT
+    }
+
     private DataManager() { }
 
-    private Dictionary<string, DataObject> _datas = new Dictionary<string, DataObject>();
+    private Dictionary<DataType, DataObject> _datas = new Dictionary<DataType, DataObject>();
+
+    public void LoadDatas()
+    {
+        // TODO : 나은 위치에서 로드하게 수정
+        // 리플랙션을 사용해서 데이터들을 로드하게 하는 건 어떨지?
+        LoadData(new UnitDataFactory());
+    }
 
     public void LoadData(DataFactory factory)
     {
-        _datas.Add(factory.GetName(), factory.LoadDatas());
+        _datas.Add(factory.GetType(), factory.LoadDatas());
+    }
+
+    public DataObject GetData(DataType type)
+    {
+        if (_datas.ContainsKey(type))
+        {
+            return _datas[type];
+        }
+
+        return null;
     }
 }
 
@@ -37,7 +59,9 @@ public abstract class DataFactory
         }
     }
 
-    public abstract string GetName();
+    protected abstract string GetName();
+
+    public abstract DataManager.DataType GetType();
 
     public abstract DataObject LoadDatas();
 
@@ -57,9 +81,14 @@ public abstract class DataFactory
 
 public class UnitDataFactory : DataFactory
 {
-    public override string GetName()
+    protected override string GetName()
     {
         return "unitData";
+    }
+
+    public override DataManager.DataType GetType()
+    {
+        return DataManager.DataType.UNIT;
     }
 
     public override DataObject LoadDatas()
