@@ -11,7 +11,7 @@ public class DataManager : MCN.Singletone<DataManager>
 
     public void LoadData(DataFactory factory)
     {
-        _datas.Add(factory.GetName(), factory.LoadData());
+        _datas.Add(factory.GetName(), factory.LoadDatas());
     }
 }
 
@@ -19,9 +19,28 @@ public class DataManager : MCN.Singletone<DataManager>
 
 public abstract class DataFactory
 {
-    public abstract DataObject LoadData();
+    protected class JsonParser<T>
+    {
+        public T LoadDatas(DataFactory factory)
+        {
+            T datas;
+            try
+            {
+                datas = JsonUtility.FromJson<T>(factory.GetJsonString());
+            }
+            catch (Exception e)
+            {
+                throw new UnityException(typeof(T) + " : " + e.ToString());
+            }
+
+            return datas;
+        }
+    }
 
     public abstract string GetName();
+
+    public abstract DataObject LoadDatas();
+
     protected string GetJsonString()
     {
         var textAsset = Resources.Load(string.Format("Data/{0}", GetName())) as TextAsset;
@@ -38,15 +57,15 @@ public abstract class DataFactory
 
 public class UnitDataFactory : DataFactory
 {
-    public override DataObject LoadData()
-    {
-        // TODO : 작동 안됨. 나은 JSON 파서로 변경
-        return JsonUtility.FromJson<UnitData>(GetJsonString());
-    }
-
     public override string GetName()
     {
         return "unitData";
     }
+
+    public override DataObject LoadDatas()
+    {
+        return new UnitDataObject(new JsonParser<UnitDatas>().LoadDatas(this));
+    }
 }
+
 #endregion
