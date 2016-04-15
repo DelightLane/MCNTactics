@@ -23,7 +23,7 @@ public class DataManager : MCN.Singletone<DataManager>
 
     public void LoadData(DataFactory factory)
     {
-        _datas.Add(factory.GetType(), factory.LoadDatas());
+        _datas.Add(factory.GetDataType(), factory.LoadDatas());
     }
 
     public DataObject GetData(DataType type)
@@ -61,7 +61,7 @@ public abstract class DataFactory
 
     protected abstract string GetName();
 
-    public abstract DataManager.DataType GetType();
+    public abstract DataManager.DataType GetDataType();
 
     public abstract DataObject LoadDatas();
 
@@ -86,7 +86,7 @@ public class UnitDataFactory : DataFactory
         return "unitData";
     }
 
-    public override DataManager.DataType GetType()
+    public override DataManager.DataType GetDataType()
     {
         return DataManager.DataType.UNIT;
     }
