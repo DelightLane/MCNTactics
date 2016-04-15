@@ -101,7 +101,7 @@ public class MapManager : MCN.MonoSingletone<MapManager> {
         {
             if (IsInMapSize(objInfo.pos))
             {
-                var placeableObj = CreatePlaceableObj(objInfo.unitNo);
+                var placeableObj = CreatePlaceableObj(objInfo.unitName);
                 if (placeableObj != null)
                 {
                     this.AttachObject(objInfo.pos, placeableObj);
@@ -111,13 +111,13 @@ public class MapManager : MCN.MonoSingletone<MapManager> {
         }
     }
 
-    private PlaceableObject CreatePlaceableObj(int unitNo)
+    private PlaceableObject CreatePlaceableObj(string unitName)
     {
         var unitData = DataManager.Instance.GetData(DataManager.DataType.UNIT) as UnitDataObject;
 
         foreach(var unit in unitData.Data)
         {
-            if(unit.no == unitNo)
+            if(unit.name == unitName)
             {
                 var targetObj = Instantiate(Resources.Load(string.Format("Prefabs/{0}", unit.prefabName), typeof(GameObject))) as GameObject;
                 if (targetObj != null)

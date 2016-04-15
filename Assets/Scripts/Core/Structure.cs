@@ -8,7 +8,7 @@ namespace MCN
     public class PlaceInfo
     {
         public Vector2 pos;
-        public int unitNo;
+        public string unitName;
     }
 
     #region pairs
