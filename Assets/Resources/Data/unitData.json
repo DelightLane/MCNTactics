@@ -1,1 +1,1 @@
-﻿{"UnitData":[{"no":1,"name":"주인공","prefabName":"Hero","actor":[{"name":"MoveActor","weightName":["range" ],"weightValue":[4 ]} ]},{"no":2,"name":"여주","prefabName":"Hero","actor":[{"name":"MoveActor","weightName":["range" ],"weightValue":[3 ]} ]} ]}
+﻿{"UnitData":[{"no":1,"name":"주인공","prefabName":"Hero","actor":[{"name":"MoveActor","weightName":["range" ],"weightValue":[4 ]},{"name":"AttackActor","weightName":["range","damage" ],"weightValue":[1,3 ]} ]},{"no":2,"name":"여주","prefabName":"Hero","actor":[{"name":"MoveActor","weightName":["range" ],"weightValue":[3 ]} ]} ]}
