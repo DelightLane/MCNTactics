@@ -12,7 +12,7 @@ public enum eMoveActType
 public class MoveActor : MCN.Actor
 {
     #region weight
-    private int Range
+    public int Range
     {
         get
         {
@@ -135,7 +135,7 @@ public class MoveActor : MCN.Actor
 
                         var placedTile = placeable.GetPlacedTile();
 
-                        placedTile.ShowChainActiveTile(Target.Range);
+                        placedTile.ShowChainActiveTile(Target.Range, (Tile tile)=> { return tile.GetAttachObject() != null; });
                     }
                 }
             }

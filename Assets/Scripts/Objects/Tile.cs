@@ -291,15 +291,15 @@ public class Tile : TacticsObject, IDisposable, MCN.IObserver<eTouchEvent>
         return null;
     }
 
-    public void ShowChainActiveTile(int range)
+    public void ShowChainActiveTile(int range, Func<Tile, bool> condition)
     {
         if (_attached != null)
         {
-            ShowChainActiveTile(range, _attached);
+            ShowChainActiveTile(range, _attached, condition);
         }
     }
 
-    public void ShowChainActiveTile(int range, TacticsObject startedObj)
+    public void ShowChainActiveTile(int range, TacticsObject startedObj, Func<Tile, bool> condition)
     {
         if (range <= 0)
         {
@@ -314,13 +314,13 @@ public class Tile : TacticsObject, IDisposable, MCN.IObserver<eTouchEvent>
         {
             if (closedTile != null)
             {
-                if (closedTile.GetAttachObject() != null)
+                if (condition != null && condition(closedTile))
                 {
                     continue;
                 }
 
                 closedTile.ChangeState(eTileType.ACTIVE);
-                closedTile.ShowChainActiveTile(range - 1 - obstacleCost, startedObj);
+                closedTile.ShowChainActiveTile(range - 1 - obstacleCost, startedObj, condition);
             }
         }
     }

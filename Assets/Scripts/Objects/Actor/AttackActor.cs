@@ -12,7 +12,7 @@ public enum eAttackActType
 public class AttackActor : MCN.Actor
 {
     #region weight
-    private int Range
+    public int Range
     {
         get
         {
@@ -20,11 +20,18 @@ public class AttackActor : MCN.Actor
         }
     }
 
-    private int Damage
+    public int Damage
     {
         get
         {
-            return GetWeight("damage");
+            int atk = 0;
+            var combatObj = ActTarget as CombatObject;
+            if(combatObj != null)
+            {
+                atk = combatObj.Atk;
+            }
+
+            return atk + GetWeight("damage");
         }
     }
 
@@ -142,8 +149,9 @@ public class AttackActor : MCN.Actor
                         MapManager.Instance.ChangeAllTileState(eTileType.DEACTIVE);
 
                         var placedTile = placeable.GetPlacedTile();
-
-                        placedTile.ShowChainActiveTile(Target.Range);
+                        
+                        // TODO : 적인지 아닌지 판단하는 로직이 condition에 들어가야 한다.
+                        placedTile.ShowChainActiveTile(Target.Range, (Tile tile) => { return tile.GetAttachObject() != null && !(tile.GetAttachObject() is CombatObject); });
                     }
                 }
             }
@@ -153,11 +161,13 @@ public class AttackActor : MCN.Actor
         {
             if (Target != null)
             {
-                var atkTarget = activeTile.GetAttachObject();
+                var damagedTarget = activeTile.GetAttachObject() as CombatObject;
 
-                if (atkTarget != null)
+                if (damagedTarget != null)
                 {
-                    // TODO : 데미지 받게 만듬
+                    damagedTarget.Damaged(Target);
+
+                    Target.ChangeState(eAttackActType.DONE);
                 }
             }
         }
