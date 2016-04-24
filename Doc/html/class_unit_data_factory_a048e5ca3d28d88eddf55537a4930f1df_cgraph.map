@@ -1,0 +1,6 @@
+<map id="UnitDataFactory.LoadDatas" name="UnitDataFactory.LoadDatas">
+<area shape="rect" id="node2" href="$class_data_manager.html#a00011c93858e3f4ff45ee740b62a6035" title="DataManager.LoadDatas" alt="" coords="236,31,401,57"/>
+<area shape="rect" id="node3" href="$class_data_manager.html#a458b89dc0fc8d8f2e744ec90e5c43a89" title="DataManager.LoadData" alt="" coords="449,31,608,57"/>
+<area shape="rect" id="node4" href="$class_data_factory.html#a801f5669364ffcfd2a926022d5aef950" title="DataFactory.GetDataType" alt="" coords="656,5,829,32"/>
+<area shape="rect" id="node5" href="$class_data_factory.html#a8ed29ae4a917c15aa824bb7f56418cbf" title="DataFactory.LoadDatas" alt="" coords="663,56,822,83"/>
+</map>

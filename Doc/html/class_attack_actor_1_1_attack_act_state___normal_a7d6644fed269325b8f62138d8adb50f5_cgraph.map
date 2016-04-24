@@ -1,0 +1,4 @@
+<map id="AttackActor.AttackActState_Normal.Run" name="AttackActor.AttackActState_Normal.Run">
+<area shape="rect" id="node2" href="$class_attack_actor_1_1_attack_act_state.html#a993762ec959af926e416f03fa7b71203" title="AttackActor.AttackActState.\lAllTileToNormal" alt="" coords="237,5,425,47"/>
+<area shape="rect" id="node3" href="$class_placeable_object.html#a0c1248b1f9981ddbf68e6f70a6498f3d" title="PlaceableObject.Deselect" alt="" coords="473,13,645,39"/>
+</map>

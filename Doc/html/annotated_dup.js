@@ -1,12 +1,27 @@
 var annotated_dup =
 [
     [ "MCN", "namespace_m_c_n.html", "namespace_m_c_n" ],
+    [ "ActorInfo", "class_actor_info.html", "class_actor_info" ],
+    [ "AttackActor", "class_attack_actor.html", "class_attack_actor" ],
+    [ "CombatAddedDeco", "class_combat_added_deco.html", "class_combat_added_deco" ],
+    [ "CombatInstance", "class_combat_instance.html", "class_combat_instance" ],
+    [ "CombatObject", "class_combat_object.html", "class_combat_object" ],
+    [ "DataFactory", "class_data_factory.html", "class_data_factory" ],
+    [ "DataManager", "class_data_manager.html", "class_data_manager" ],
+    [ "DataObject", "class_data_object.html", null ],
     [ "GameManager", "class_game_manager.html", "class_game_manager" ],
+    [ "ICombat", "interface_i_combat.html", "interface_i_combat" ],
     [ "MapCreator", "class_map_creator.html", "class_map_creator" ],
     [ "MapManager", "class_map_manager.html", "class_map_manager" ],
     [ "MoveActor", "class_move_actor.html", "class_move_actor" ],
+    [ "PlaceableCreator", "class_placeable_creator.html", "class_placeable_creator" ],
     [ "PlaceableObject", "class_placeable_object.html", "class_placeable_object" ],
+    [ "Status", "struct_status.html", "struct_status" ],
     [ "TacticsObject", "class_tactics_object.html", "class_tactics_object" ],
     [ "Tile", "class_tile.html", "class_tile" ],
-    [ "TouchManager", "class_touch_manager.html", "class_touch_manager" ]
+    [ "TouchManager", "class_touch_manager.html", "class_touch_manager" ],
+    [ "UnitData", "class_unit_data.html", "class_unit_data" ],
+    [ "UnitDataFactory", "class_unit_data_factory.html", "class_unit_data_factory" ],
+    [ "UnitDataObject", "class_unit_data_object.html", "class_unit_data_object" ],
+    [ "UnitDatas", "class_unit_datas.html", "class_unit_datas" ]
 ];

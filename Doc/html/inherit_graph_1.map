@@ -1,4 +1,4 @@
 <map id="그래픽컬한 클래스 계통도" name="그래픽컬한 클래스 계통도">
-<area shape="rect" id="node1" href="$class_m_c_n_1_1_actor.html" title="MCN.Actor" alt="" coords="5,5,92,32"/>
-<area shape="rect" id="node2" href="$class_move_actor.html" title="MoveActor" alt="" coords="140,5,223,32"/>
+<area shape="rect" id="node1" href="$class_data_factory.html" title="DataFactory" alt="" coords="5,5,99,32"/>
+<area shape="rect" id="node2" href="$class_unit_data_factory.html" title="UnitDataFactory" alt="" coords="147,5,263,32"/>
 </map>

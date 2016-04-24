@@ -1,0 +1,167 @@
+\hypertarget{class_placeable_creator}{}\section{Placeable\+Creator 클래스 참조}
+\label{class_placeable_creator}\index{Placeable\+Creator@{Placeable\+Creator}}
+
+
+Placeable\+Creator에 대한 협력 다이어그램\+:
+% FIG 0
+\subsection*{정적 Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_placeable_object}{Placeable\+Object} \hyperlink{class_placeable_creator_aab512359c3b021e0ad98fc56ff99ec28}{Create} (string unit\+Name)
+\item 
+static void \hyperlink{class_placeable_creator_a3786a5093e5df101e8fe16ab315dc236}{Add\+Actor} (ref \hyperlink{class_placeable_object}{Placeable\+Object} obj, List$<$ \hyperlink{class_actor_info}{Actor\+Info} $>$ info)
+\end{DoxyCompactItemize}
+\subsection*{Private 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_placeable_creator_a543761052b8e1bf3311344b091d886f0}{Placeable\+Creator} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{상세한 설명}
+
+
+Placeable\+Creator.\+cs 파일의 6 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{생성자 \& 소멸자 문서화}
+\index{Placeable\+Creator@{Placeable\+Creator}!Placeable\+Creator@{Placeable\+Creator}}
+\index{Placeable\+Creator@{Placeable\+Creator}!Placeable\+Creator@{Placeable\+Creator}}
+\subsubsection[{\texorpdfstring{Placeable\+Creator()}{PlaceableCreator()}}]{\setlength{\rightskip}{0pt plus 5cm}Placeable\+Creator.\+Placeable\+Creator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_placeable_creator_a543761052b8e1bf3311344b091d886f0}{}\label{class_placeable_creator_a543761052b8e1bf3311344b091d886f0}
+
+
+Placeable\+Creator.\+cs 파일의 8 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+8 \{ \}
+\end{DoxyCode}
+
+
+\subsection{멤버 함수 문서화}
+\index{Placeable\+Creator@{Placeable\+Creator}!Add\+Actor@{Add\+Actor}}
+\index{Add\+Actor@{Add\+Actor}!Placeable\+Creator@{Placeable\+Creator}}
+\subsubsection[{\texorpdfstring{Add\+Actor(ref Placeable\+Object obj, List$<$ Actor\+Info $>$ info)}{AddActor(ref PlaceableObject obj, List< ActorInfo > info)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Placeable\+Creator.\+Add\+Actor (
+\begin{DoxyParamCaption}
+\item[{ref {\bf Placeable\+Object}}]{obj, }
+\item[{List$<$ {\bf Actor\+Info} $>$}]{info}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_placeable_creator_a3786a5093e5df101e8fe16ab315dc236}{}\label{class_placeable_creator_a3786a5093e5df101e8fe16ab315dc236}
+
+
+Placeable\+Creator.\+cs 파일의 40 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+41     \{
+42         \textcolor{keywordflow}{if} (obj != null)
+43         \{
+44             \textcolor{keywordflow}{foreach} (var actorInfo \textcolor{keywordflow}{in} info)
+45             \{
+46                 Assembly assembly = Assembly.GetExecutingAssembly();
+47                 \textcolor{keywordflow}{try}
+48                 \{
+49                     Type actorType = assembly.GetType(actorInfo.name);
+50 
+51                     \hyperlink{namespace_m_c_n}{MCN}.\hyperlink{class_m_c_n_1_1_actor}{Actor} actor = (\hyperlink{namespace_m_c_n}{MCN}.\hyperlink{class_m_c_n_1_1_actor}{Actor})Activator.CreateInstance(actorType);
+52 
+53                     \textcolor{keywordflow}{if} (actor != null)
+54                     \{
+55                         actor.\hyperlink{class_m_c_n_1_1_actor_a27b307fecbbbf3aa53f8b5683de7ff36}{Initialize}(obj, actorInfo.weightName, actorInfo.weightValue);
+56                     \}
+57 
+58                     obj.AddActor(actor);
+59 
+60 \textcolor{preprocessor}{#if UNITY\_EDITOR}
+61                     \textcolor{comment}{// 이건 디버깅용으로.. 무조껀 큐에 삽입한다.}
+62                     obj.EnqueueActor(actor.GetType());
+63 \textcolor{preprocessor}{#endif}
+64                 \}
+65                 \textcolor{keywordflow}{catch} (Exception e)
+66                 \{
+67                     \textcolor{keywordflow}{throw} \textcolor{keyword}{new} UnityException(e.ToString());
+68                 \}
+69             \}
+70         \}
+71     \}
+\end{DoxyCode}
+
+
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 1
+
+
+
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 2
+
+
+\index{Placeable\+Creator@{Placeable\+Creator}!Create@{Create}}
+\index{Create@{Create}!Placeable\+Creator@{Placeable\+Creator}}
+\subsubsection[{\texorpdfstring{Create(string unit\+Name)}{Create(string unitName)}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Placeable\+Object} Placeable\+Creator.\+Create (
+\begin{DoxyParamCaption}
+\item[{string}]{unit\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_placeable_creator_aab512359c3b021e0ad98fc56ff99ec28}{}\label{class_placeable_creator_aab512359c3b021e0ad98fc56ff99ec28}
+
+
+Placeable\+Creator.\+cs 파일의 10 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+11     \{
+12         var unitData = \hyperlink{class_data_manager}{DataManager}.\hyperlink{class_m_c_n_1_1_singletone_a46dbbebd93e96a9592a9803c51f35602}{Instance}.GetData(
+      \hyperlink{class_data_manager}{DataManager}.\hyperlink{class_data_manager_ac9cb5bf021d3ebcc7f3eaa4bf5393408}{DataType}.UNIT) as \hyperlink{class_unit_data_object}{UnitDataObject};
+13 
+14         \textcolor{keywordflow}{foreach} (var unit \textcolor{keywordflow}{in} unitData.Data)
+15         \{
+16             \textcolor{keywordflow}{if} (unit.name == unitName)
+17             \{
+18                 var targetObj = GameObject.Instantiate(Resources.Load(\textcolor{keywordtype}{string}.Format(\textcolor{stringliteral}{"Prefabs/\{0\}"}, unit.
+      prefabName), typeof(GameObject))) as GameObject;
+19                 \textcolor{keywordflow}{if} (targetObj != null)
+20                 \{
+21                     var placeableObj = targetObj.GetComponent<\hyperlink{class_placeable_object}{PlaceableObject}>() as 
+      \hyperlink{class_placeable_object}{PlaceableObject};
+22 
+23                     \textcolor{keywordflow}{if} (placeableObj != null)
+24                     \{
+25                         \hyperlink{class_placeable_creator_a3786a5093e5df101e8fe16ab315dc236}{AddActor}(ref placeableObj, unit.actor);
+26                     \}
+27                     \textcolor{keywordflow}{else}
+28                     \{
+29                         Debug.LogWarning(\textcolor{keywordtype}{string}.Format(\textcolor{stringliteral}{"Prefab \{0\} don't have 'PlaceableObject'"}, unit.
+      prefabName));
+30                     \}
+31 
+32                     \textcolor{keywordflow}{return} placeableObj;
+33                 \}
+34             \}
+35         \}
+36 
+37         \textcolor{keywordflow}{return} null;
+38     \}
+\end{DoxyCode}
+
+
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 3
+
+
+
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 4
+
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Git\+Hub/\+M\+C\+N\+Tactics/\+Assets/\+Scripts/\+Manager/\hyperlink{_placeable_creator_8cs}{Placeable\+Creator.\+cs}\end{DoxyCompactItemize}

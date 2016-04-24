@@ -1,0 +1,5 @@
+<map id="DataManager.LoadData" name="DataManager.LoadData">
+<area shape="rect" id="node2" href="$class_data_manager.html#a00011c93858e3f4ff45ee740b62a6035" title="DataManager.LoadDatas" alt="" coords="212,42,377,69"/>
+<area shape="rect" id="node3" href="$class_data_factory_1_1_json_parser.html#aef625d66ef24c990b9ddde3a3b3af73d" title="DataFactory.JsonParser.Load\lDatas" alt="" coords="425,5,620,47"/>
+<area shape="rect" id="node4" href="$class_unit_data_factory.html#a048e5ca3d28d88eddf55537a4930f1df" title="UnitDataFactory.LoadDatas" alt="" coords="431,71,614,98"/>
+</map>

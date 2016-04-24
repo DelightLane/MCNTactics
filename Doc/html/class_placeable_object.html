@@ -110,6 +110,7 @@ $(document).ready(function(){initNavTree('class_placeable_object.html','');});
 <a href="#pub-methods">Public 멤버 함수</a> &#124;
 <a href="#pro-attribs">Protected 속성</a> &#124;
 <a href="#pri-methods">Private 멤버 함수</a> &#124;
+<a href="#pri-attribs">Private 속성</a> &#124;
 <a href="class_placeable_object-members.html">모든 멤버 목록</a>  </div>
   <div class="headertitle">
 <div class="title">PlaceableObject 클래스 참조</div>  </div>
@@ -119,19 +120,13 @@ $(document).ready(function(){initNavTree('class_placeable_object.html','');});
 PlaceableObject에 대한 상속 다이어그램 : </div>
 <div class="dyncontent">
 <div class="center"><img src="class_placeable_object__inherit__graph.png" border="0" usemap="#_placeable_object_inherit__map" alt="Inheritance graph"/></div>
-<map name="_placeable_object_inherit__map" id="_placeable_object_inherit__map">
-<area shape="rect" id="node2" href="class_tactics_object.html" title="{TacticsObject\n|&#45; _actorQueue\l&#45; _actorDebugQueue\l&#45; _actors\l|+ AddActor()\l+ RunActor()\l+ FinishActor()\l+ Interactive()\l+ OnTouchEvent()\l}" alt="" coords="5,131,147,296"/>
-</map>
+<!-- MAP 0 -->
 </div>
 <div class="dynheader">
 PlaceableObject에 대한 협력 다이어그램:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_placeable_object__coll__graph.png" border="0" usemap="#_placeable_object_coll__map" alt="Collaboration graph"/></div>
-<map name="_placeable_object_coll__map" id="_placeable_object_coll__map">
-<area shape="rect" id="node5" href="class_tile.html" title="{Tile\n|+ TILE_SIZE\l&#45; _position\l|+ Dispose()\l+ SetPosition()\l+ GetAttachObject()\l+ AttachObject()\l+ DetachObject()\l+ GetClosedTiles()\l+ GetClosedTile()\l+ ShowChainActiveTile()\l+ ShowChainActiveTile()\l+ ChangeState()\l+ OnNext()\l+ CreateTile()\l&#45; Tile()\l&#45; Awake()\l&#45; StorageStates()\l&#45; GetChainActiveTileCost()\l&#45; GetCurrentState()\l}" alt="" coords="142,589,317,916"/>
-<area shape="rect" id="node2" href="class_tactics_object.html" title="{TacticsObject\n|&#45; _actorQueue\l&#45; _actorDebugQueue\l&#45; _actors\l|+ AddActor()\l+ RunActor()\l+ FinishActor()\l+ Interactive()\l+ OnTouchEvent()\l}" alt="" coords="5,132,147,297"/>
-<area shape="rect" id="node6" href="interface_m_c_n_1_1_i_observer.html" title="{MCN::IObserver\&lt; eTouchEvent \&gt;\n||+ OnNext()\l}" alt="" coords="316,398,527,475"/>
-</map>
+<!-- MAP 1 -->
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -150,16 +145,20 @@ Public 멤버 함수</h2></td></tr>
 <tr class="separator:a019818f3f6c6eb715fed163efa921f5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c1248b1f9981ddbf68e6f70a6498f3d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_placeable_object.html#a0c1248b1f9981ddbf68e6f70a6498f3d">Deselect</a> ()</td></tr>
 <tr class="separator:a0c1248b1f9981ddbf68e6f70a6498f3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c2b15e6cdb3639a2273978e9b9f294f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tactics_object.html#a2c2b15e6cdb3639a2273978e9b9f294f">AddActor</a> (<a class="el" href="class_m_c_n_1_1_actor.html">MCN.Actor</a> actor)</td></tr>
-<tr class="separator:a2c2b15e6cdb3639a2273978e9b9f294f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac24894e1e9355ac7bb7c94b7ea51ef02"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tactics_object.html#ac24894e1e9355ac7bb7c94b7ea51ef02">RunActor</a> (System.Type actorType)</td></tr>
-<tr class="separator:ac24894e1e9355ac7bb7c94b7ea51ef02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e08c233c75e0f0025f13f92b4e3ec1a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tactics_object.html#a4e08c233c75e0f0025f13f92b4e3ec1a">FinishActor</a> ()</td></tr>
-<tr class="separator:a4e08c233c75e0f0025f13f92b4e3ec1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f94ed01497a7072a2785163f4cbc57b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tactics_object.html#a5f94ed01497a7072a2785163f4cbc57b">Interactive</a> (<a class="el" href="class_tactics_object.html">TacticsObject</a> interactTarget)</td></tr>
-<tr class="separator:a5f94ed01497a7072a2785163f4cbc57b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af34052e62ea471d21e4c601cc79ff717"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tactics_object.html#af34052e62ea471d21e4c601cc79ff717">OnTouchEvent</a> (<a class="el" href="_touch_manager_8cs.html#ae33e321a424fe84ba8b2fdb81ad40a68">eTouchEvent</a> touch)</td></tr>
-<tr class="separator:af34052e62ea471d21e4c601cc79ff717"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f7ac210f2729a35d88a22d7f286ade5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_placeable_object.html#a4f7ac210f2729a35d88a22d7f286ade5">AddActor</a> (<a class="el" href="class_m_c_n_1_1_actor.html">Actor</a> actor)</td></tr>
+<tr class="separator:a4f7ac210f2729a35d88a22d7f286ade5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad21b0a166f06cf406fd2ffdeee04eb3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_placeable_object.html#ad21b0a166f06cf406fd2ffdeee04eb3b">EnqueueActor</a> (Type actorType)</td></tr>
+<tr class="separator:ad21b0a166f06cf406fd2ffdeee04eb3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4df6b98c3e629a1deedb8c8b740e9b04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_placeable_object.html#a4df6b98c3e629a1deedb8c8b740e9b04">DequeueActor</a> ()</td></tr>
+<tr class="separator:a4df6b98c3e629a1deedb8c8b740e9b04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a167a3ebbac7456ea823c0b51ee37046d"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_placeable_object.html#a167a3ebbac7456ea823c0b51ee37046d">Interactive</a> (<a class="el" href="class_tactics_object.html">TacticsObject</a> interactTarget)</td></tr>
+<tr class="separator:a167a3ebbac7456ea823c0b51ee37046d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2807603db9cda7bcec8c9d83aa08e44b"><td class="memItemLeft" align="right" valign="top">override bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_placeable_object.html#a2807603db9cda7bcec8c9d83aa08e44b">OnTouchEvent</a> (<a class="el" href="_touch_manager_8cs.html#ae33e321a424fe84ba8b2fdb81ad40a68">eTouchEvent</a> touch)</td></tr>
+<tr class="separator:a2807603db9cda7bcec8c9d83aa08e44b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ff84085475a9689d242fea2861d6f1e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_m_c_n_1_1_i_actor_queue.html#a4ff84085475a9689d242fea2861d6f1e">AddActor</a> (<a class="el" href="class_m_c_n_1_1_actor.html">MCN.Actor</a> actor)</td></tr>
+<tr class="separator:a4ff84085475a9689d242fea2861d6f1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a363cf9df4d42c417cab5b14952f95ebd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_m_c_n_1_1_i_actor_queue.html#a363cf9df4d42c417cab5b14952f95ebd">EnqueueActor</a> (System.Type actorType)</td></tr>
+<tr class="separator:a363cf9df4d42c417cab5b14952f95ebd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected 속성</h2></td></tr>
@@ -170,12 +169,17 @@ Protected 속성</h2></td></tr>
 Private 멤버 함수</h2></td></tr>
 <tr class="memitem:a06a30cf4396743908cc88733cb216df5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_placeable_object.html#a06a30cf4396743908cc88733cb216df5">Place</a> (<a class="el" href="class_tile.html">Tile</a> tile)</td></tr>
 <tr class="separator:a06a30cf4396743908cc88733cb216df5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private 속성</h2></td></tr>
+<tr class="memitem:a1a9f2ccdb8b2e650d6bdda5abbad3ef9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_m_c_n_1_1_actor_machine.html">ActorMachine</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_placeable_object.html#a1a9f2ccdb8b2e650d6bdda5abbad3ef9">_actorMachine</a> = new <a class="el" href="class_m_c_n_1_1_actor_machine.html">ActorMachine</a>()</td></tr>
+<tr class="separator:a1a9f2ccdb8b2e650d6bdda5abbad3ef9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">상세한 설명</h2>
 <div class="textblock">
-<p><a class="el" href="_placeable_object_8cs_source.html">PlaceableObject.cs</a> 파일의 <a class="el" href="_placeable_object_8cs_source.html#l00005">5</a> 번째 라인에서 정의되었습니다.</p>
+<p><a class="el" href="_placeable_object_8cs_source.html">PlaceableObject.cs</a> 파일의 <a class="el" href="_placeable_object_8cs_source.html#l00007">7</a> 번째 라인에서 정의되었습니다.</p>
 </div><h2 class="groupheader">멤버 함수 문서화</h2>
-<a class="anchor" id="a2c2b15e6cdb3639a2273978e9b9f294f"></a>
+<a class="anchor" id="a4ff84085475a9689d242fea2861d6f1e"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -183,7 +187,7 @@ Private 멤버 함수</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void TacticsObject.AddActor </td>
+          <td class="memname">void MCN.IActorQueue.AddActor </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_m_c_n_1_1_actor.html">MCN.Actor</a>&#160;</td>
           <td class="paramname"><em>actor</em></td><td>)</td>
@@ -197,9 +201,36 @@ Private 멤버 함수</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="_tactics_object_8cs_source.html">TacticsObject.cs</a> 파일의 <a class="el" href="_tactics_object_8cs_source.html#l00018">18</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    {</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordflow">if</span> (actor.CheckAbsoluteWeightKey())</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        {</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <a class="code" href="class_tactics_object.html#ab16a5fde2c93cad13e6b74453664c2a9">_actors</a>.Add(actor.GetType().ToString(), actor);</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        }</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    }</div><div class="ttc" id="class_tactics_object_html_ab16a5fde2c93cad13e6b74453664c2a9"><div class="ttname"><a href="class_tactics_object.html#ab16a5fde2c93cad13e6b74453664c2a9">TacticsObject._actors</a></div><div class="ttdeci">Dictionary&lt; string, MCN.Actor &gt; _actors</div><div class="ttdef"><b>Definition:</b> <a href="_tactics_object_8cs_source.html#l00016">TacticsObject.cs:16</a></div></div>
+<p><a class="el" href="class_m_c_n_1_1_actor_machine.html#a64284549a56ecf35cb0679101aa9ab11">MCN.ActorMachine</a>에서 구현되었습니다.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4f7ac210f2729a35d88a22d7f286ade5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PlaceableObject.AddActor </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_m_c_n_1_1_actor.html">Actor</a>&#160;</td>
+          <td class="paramname"><em>actor</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="_placeable_object_8cs_source.html">PlaceableObject.cs</a> 파일의 <a class="el" href="_placeable_object_8cs_source.html#l00075">75</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    {</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="class_placeable_object.html#a1a9f2ccdb8b2e650d6bdda5abbad3ef9">_actorMachine</a>.<a class="code" href="class_m_c_n_1_1_actor_machine.html#a64284549a56ecf35cb0679101aa9ab11">AddActor</a>(actor);</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div><div class="ttc" id="class_placeable_object_html_a1a9f2ccdb8b2e650d6bdda5abbad3ef9"><div class="ttname"><a href="class_placeable_object.html#a1a9f2ccdb8b2e650d6bdda5abbad3ef9">PlaceableObject._actorMachine</a></div><div class="ttdeci">ActorMachine _actorMachine</div><div class="ttdef"><b>Definition:</b> <a href="_placeable_object_8cs_source.html#l00009">PlaceableObject.cs:9</a></div></div>
+<div class="ttc" id="class_m_c_n_1_1_actor_machine_html_a64284549a56ecf35cb0679101aa9ab11"><div class="ttname"><a href="class_m_c_n_1_1_actor_machine.html#a64284549a56ecf35cb0679101aa9ab11">MCN.ActorMachine.AddActor</a></div><div class="ttdeci">void AddActor(MCN.Actor actor)</div><div class="ttdef"><b>Definition:</b> <a href="_actor_8cs_source.html#l00136">Actor.cs:136</a></div></div>
 </div><!-- fragment -->
+<p><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_placeable_object_a4f7ac210f2729a35d88a22d7f286ade5_cgraph.png" border="0" usemap="#class_placeable_object_a4f7ac210f2729a35d88a22d7f286ade5_cgraph" alt=""/></div>
+<!-- MAP 2 -->
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a3176ec3d5d26b2a83cdc58b01e630aa1"></a>
@@ -216,9 +247,9 @@ Private 멤버 함수</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="_placeable_object_8cs_source.html">PlaceableObject.cs</a> 파일의 <a class="el" href="_placeable_object_8cs_source.html#l00011">11</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    {</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="comment">// 순환 참조 적용. 레퍼런스 관리에 신경 쓸 것</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <a class="code" href="class_placeable_object.html#a0fd0566f0bb15c71b0630322762342d8">_placedTile</a> = tile;</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <a class="code" href="class_placeable_object.html#a06a30cf4396743908cc88733cb216df5">Place</a>(tile);</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    }</div><div class="ttc" id="class_placeable_object_html_a0fd0566f0bb15c71b0630322762342d8"><div class="ttname"><a href="class_placeable_object.html#a0fd0566f0bb15c71b0630322762342d8">PlaceableObject._placedTile</a></div><div class="ttdeci">Tile _placedTile</div><div class="ttdef"><b>Definition:</b> <a href="_placeable_object_8cs_source.html#l00007">PlaceableObject.cs:7</a></div></div>
-<div class="ttc" id="class_placeable_object_html_a06a30cf4396743908cc88733cb216df5"><div class="ttname"><a href="class_placeable_object.html#a06a30cf4396743908cc88733cb216df5">PlaceableObject.Place</a></div><div class="ttdeci">void Place(Tile tile)</div><div class="ttdef"><b>Definition:</b> <a href="_placeable_object_8cs_source.html#l00038">PlaceableObject.cs:38</a></div></div>
+<p><a class="el" href="_placeable_object_8cs_source.html">PlaceableObject.cs</a> 파일의 <a class="el" href="_placeable_object_8cs_source.html#l00021">21</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    {</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="comment">// 순환 참조 적용. 레퍼런스 관리에 신경 쓸 것</span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="class_placeable_object.html#a0fd0566f0bb15c71b0630322762342d8">_placedTile</a> = tile;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="class_placeable_object.html#a06a30cf4396743908cc88733cb216df5">Place</a>(tile);</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div><div class="ttc" id="class_placeable_object_html_a0fd0566f0bb15c71b0630322762342d8"><div class="ttname"><a href="class_placeable_object.html#a0fd0566f0bb15c71b0630322762342d8">PlaceableObject._placedTile</a></div><div class="ttdeci">Tile _placedTile</div><div class="ttdef"><b>Definition:</b> <a href="_placeable_object_8cs_source.html#l00017">PlaceableObject.cs:17</a></div></div>
+<div class="ttc" id="class_placeable_object_html_a06a30cf4396743908cc88733cb216df5"><div class="ttname"><a href="class_placeable_object.html#a06a30cf4396743908cc88733cb216df5">PlaceableObject.Place</a></div><div class="ttdeci">void Place(Tile tile)</div><div class="ttdef"><b>Definition:</b> <a href="_placeable_object_8cs_source.html#l00048">PlaceableObject.cs:48</a></div></div>
 </div><!-- fragment -->
 <p><div class="dynheader">
 이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
@@ -248,6 +279,35 @@ Private 멤버 함수</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a4df6b98c3e629a1deedb8c8b740e9b04"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PlaceableObject.DequeueActor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="interface_m_c_n_1_1_i_actor_queue.html#ad99049ac93213b4a4f0e2d9aa76f6029">MCN.IActorQueue</a>를 구현.</p>
+
+<p><a class="el" href="_placeable_object_8cs_source.html">PlaceableObject.cs</a> 파일의 <a class="el" href="_placeable_object_8cs_source.html#l00089">89</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    {</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <a class="code" href="class_placeable_object.html#a1a9f2ccdb8b2e650d6bdda5abbad3ef9">_actorMachine</a>.<a class="code" href="class_m_c_n_1_1_actor_machine.html#a845c5d834f618606d2e6561eae4b11b1">DequeueActor</a>();</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#if UNITY_EDITOR</span></div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        _actorDebugQueue.RemoveAt(0);</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div><div class="ttc" id="class_placeable_object_html_a1a9f2ccdb8b2e650d6bdda5abbad3ef9"><div class="ttname"><a href="class_placeable_object.html#a1a9f2ccdb8b2e650d6bdda5abbad3ef9">PlaceableObject._actorMachine</a></div><div class="ttdeci">ActorMachine _actorMachine</div><div class="ttdef"><b>Definition:</b> <a href="_placeable_object_8cs_source.html#l00009">PlaceableObject.cs:9</a></div></div>
+<div class="ttc" id="class_m_c_n_1_1_actor_machine_html_a845c5d834f618606d2e6561eae4b11b1"><div class="ttname"><a href="class_m_c_n_1_1_actor_machine.html#a845c5d834f618606d2e6561eae4b11b1">MCN.ActorMachine.DequeueActor</a></div><div class="ttdeci">void DequeueActor()</div><div class="ttdef"><b>Definition:</b> <a href="_actor_8cs_source.html#l00167">Actor.cs:167</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_placeable_object_a4df6b98c3e629a1deedb8c8b740e9b04_cgraph.png" border="0" usemap="#class_placeable_object_a4df6b98c3e629a1deedb8c8b740e9b04_cgraph" alt=""/></div>
+<!-- MAP 3 -->
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="a0c1248b1f9981ddbf68e6f70a6498f3d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -261,8 +321,8 @@ Private 멤버 함수</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="_placeable_object_8cs_source.html">PlaceableObject.cs</a> 파일의 <a class="el" href="_placeable_object_8cs_source.html#l00059">59</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    {</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="class_game_manager.html">GameManager</a>.<a class="code" href="class_m_c_n_1_1_singletone.html#a46dbbebd93e96a9592a9803c51f35602">Instance</a>.SelectedObj = null;</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div><div class="ttc" id="class_m_c_n_1_1_singletone_html_a46dbbebd93e96a9592a9803c51f35602"><div class="ttname"><a href="class_m_c_n_1_1_singletone.html#a46dbbebd93e96a9592a9803c51f35602">MCN.Singletone.Instance</a></div><div class="ttdeci">static T Instance</div><div class="ttdef"><b>Definition:</b> <a href="_singletone_8cs_source.html#l00018">Singletone.cs:18</a></div></div>
+<p><a class="el" href="_placeable_object_8cs_source.html">PlaceableObject.cs</a> 파일의 <a class="el" href="_placeable_object_8cs_source.html#l00069">69</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    {</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <a class="code" href="class_game_manager.html">GameManager</a>.<a class="code" href="class_m_c_n_1_1_singletone.html#a46dbbebd93e96a9592a9803c51f35602">Instance</a>.SelectedObj = null;</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div><div class="ttc" id="class_m_c_n_1_1_singletone_html_a46dbbebd93e96a9592a9803c51f35602"><div class="ttname"><a href="class_m_c_n_1_1_singletone.html#a46dbbebd93e96a9592a9803c51f35602">MCN.Singletone.Instance</a></div><div class="ttdeci">static T Instance</div><div class="ttdef"><b>Definition:</b> <a href="_singletone_8cs_source.html#l00018">Singletone.cs:18</a></div></div>
 <div class="ttc" id="class_game_manager_html"><div class="ttname"><a href="class_game_manager.html">GameManager</a></div><div class="ttdef"><b>Definition:</b> <a href="_game_manager_8cs_source.html#l00004">GameManager.cs:4</a></div></div>
 </div><!-- fragment -->
 <p><div class="dynheader">
@@ -292,8 +352,8 @@ Private 멤버 함수</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="_placeable_object_8cs_source.html">PlaceableObject.cs</a> 파일의 <a class="el" href="_placeable_object_8cs_source.html#l00021">21</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    {</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="class_placeable_object.html#a0fd0566f0bb15c71b0630322762342d8">_placedTile</a> = null;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    }</div><div class="ttc" id="class_placeable_object_html_a0fd0566f0bb15c71b0630322762342d8"><div class="ttname"><a href="class_placeable_object.html#a0fd0566f0bb15c71b0630322762342d8">PlaceableObject._placedTile</a></div><div class="ttdeci">Tile _placedTile</div><div class="ttdef"><b>Definition:</b> <a href="_placeable_object_8cs_source.html#l00007">PlaceableObject.cs:7</a></div></div>
+<p><a class="el" href="_placeable_object_8cs_source.html">PlaceableObject.cs</a> 파일의 <a class="el" href="_placeable_object_8cs_source.html#l00031">31</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    {</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="class_placeable_object.html#a0fd0566f0bb15c71b0630322762342d8">_placedTile</a> = null;</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div><div class="ttc" id="class_placeable_object_html_a0fd0566f0bb15c71b0630322762342d8"><div class="ttname"><a href="class_placeable_object.html#a0fd0566f0bb15c71b0630322762342d8">PlaceableObject._placedTile</a></div><div class="ttdeci">Tile _placedTile</div><div class="ttdef"><b>Definition:</b> <a href="_placeable_object_8cs_source.html#l00017">PlaceableObject.cs:17</a></div></div>
 </div><!-- fragment -->
 <p><div class="dynheader">
 이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
@@ -324,8 +384,8 @@ Private 멤버 함수</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="_placeable_object_8cs_source.html">PlaceableObject.cs</a> 파일의 <a class="el" href="_placeable_object_8cs_source.html#l00031">31</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    {</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="class_placeable_object.html#a0fd0566f0bb15c71b0630322762342d8">_placedTile</a> = null;</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        GameObject.Destroy(gameObject);</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div><div class="ttc" id="class_placeable_object_html_a0fd0566f0bb15c71b0630322762342d8"><div class="ttname"><a href="class_placeable_object.html#a0fd0566f0bb15c71b0630322762342d8">PlaceableObject._placedTile</a></div><div class="ttdeci">Tile _placedTile</div><div class="ttdef"><b>Definition:</b> <a href="_placeable_object_8cs_source.html#l00007">PlaceableObject.cs:7</a></div></div>
+<p><a class="el" href="_placeable_object_8cs_source.html">PlaceableObject.cs</a> 파일의 <a class="el" href="_placeable_object_8cs_source.html#l00041">41</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    {</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="class_placeable_object.html#a0fd0566f0bb15c71b0630322762342d8">_placedTile</a> = null;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        GameObject.Destroy(gameObject);</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div><div class="ttc" id="class_placeable_object_html_a0fd0566f0bb15c71b0630322762342d8"><div class="ttname"><a href="class_placeable_object.html#a0fd0566f0bb15c71b0630322762342d8">PlaceableObject._placedTile</a></div><div class="ttdeci">Tile _placedTile</div><div class="ttdef"><b>Definition:</b> <a href="_placeable_object_8cs_source.html#l00017">PlaceableObject.cs:17</a></div></div>
 </div><!-- fragment -->
 <p><div class="dynheader">
 이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
@@ -344,7 +404,7 @@ Private 멤버 함수</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a4e08c233c75e0f0025f13f92b4e3ec1a"></a>
+<a class="anchor" id="a363cf9df4d42c417cab5b14952f95ebd"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -352,9 +412,10 @@ Private 멤버 함수</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void TacticsObject.FinishActor </td>
+          <td class="memname">void MCN.IActorQueue.EnqueueActor </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">System.Type&#160;</td>
+          <td class="paramname"><em>actorType</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -365,17 +426,33 @@ Private 멤버 함수</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="_tactics_object_8cs_source.html">TacticsObject.cs</a> 파일의 <a class="el" href="_tactics_object_8cs_source.html#l00038">38</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    {</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_tactics_object.html#a816dd74a6daa037c17a43fb28c12ca09">_actorQueue</a>.Count &gt; 0)</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        {</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <a class="code" href="class_tactics_object.html#a816dd74a6daa037c17a43fb28c12ca09">_actorQueue</a>.RemoveFirst();</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <a class="code" href="class_tactics_object.html#ac26a5e81a142ce350e9a481d59bd0daa">_actorDebugQueue</a>.RemoveAt(0);</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        }</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div><div class="ttc" id="class_tactics_object_html_a816dd74a6daa037c17a43fb28c12ca09"><div class="ttname"><a href="class_tactics_object.html#a816dd74a6daa037c17a43fb28c12ca09">TacticsObject._actorQueue</a></div><div class="ttdeci">LinkedList&lt; MCN.Actor &gt; _actorQueue</div><div class="ttdef"><b>Definition:</b> <a href="_tactics_object_8cs_source.html#l00009">TacticsObject.cs:9</a></div></div>
-<div class="ttc" id="class_tactics_object_html_ac26a5e81a142ce350e9a481d59bd0daa"><div class="ttname"><a href="class_tactics_object.html#ac26a5e81a142ce350e9a481d59bd0daa">TacticsObject._actorDebugQueue</a></div><div class="ttdeci">List&lt; string &gt; _actorDebugQueue</div><div class="ttdef"><b>Definition:</b> <a href="_tactics_object_8cs_source.html#l00013">TacticsObject.cs:13</a></div></div>
+<p><a class="el" href="class_m_c_n_1_1_actor_machine.html#a2762339a4d7f2a872f53076a3491ed03">MCN.ActorMachine</a>에서 구현되었습니다.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad21b0a166f06cf406fd2ffdeee04eb3b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PlaceableObject.EnqueueActor </td>
+          <td>(</td>
+          <td class="paramtype">Type&#160;</td>
+          <td class="paramname"><em>actorType</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="_placeable_object_8cs_source.html">PlaceableObject.cs</a> 파일의 <a class="el" href="_placeable_object_8cs_source.html#l00080">80</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    {</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <a class="code" href="class_placeable_object.html#a1a9f2ccdb8b2e650d6bdda5abbad3ef9">_actorMachine</a>.<a class="code" href="class_m_c_n_1_1_actor_machine.html#a2762339a4d7f2a872f53076a3491ed03">EnqueueActor</a>(actorType);</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#if UNITY_EDITOR</span></div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        _actorDebugQueue.Add(actorType.ToString());</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div><div class="ttc" id="class_placeable_object_html_a1a9f2ccdb8b2e650d6bdda5abbad3ef9"><div class="ttname"><a href="class_placeable_object.html#a1a9f2ccdb8b2e650d6bdda5abbad3ef9">PlaceableObject._actorMachine</a></div><div class="ttdeci">ActorMachine _actorMachine</div><div class="ttdef"><b>Definition:</b> <a href="_placeable_object_8cs_source.html#l00009">PlaceableObject.cs:9</a></div></div>
+<div class="ttc" id="class_m_c_n_1_1_actor_machine_html_a2762339a4d7f2a872f53076a3491ed03"><div class="ttname"><a href="class_m_c_n_1_1_actor_machine.html#a2762339a4d7f2a872f53076a3491ed03">MCN.ActorMachine.EnqueueActor</a></div><div class="ttdeci">void EnqueueActor(System.Type actorType)</div><div class="ttdef"><b>Definition:</b> <a href="_actor_8cs_source.html#l00144">Actor.cs:144</a></div></div>
 </div><!-- fragment -->
 <p><div class="dynheader">
-이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_tactics_object_a4e08c233c75e0f0025f13f92b4e3ec1a_icgraph.png" border="0" usemap="#class_tactics_object_a4e08c233c75e0f0025f13f92b4e3ec1a_icgraph" alt=""/></div>
-<map name="class_tactics_object_a4e08c233c75e0f0025f13f92b4e3ec1a_icgraph" id="class_tactics_object_a4e08c233c75e0f0025f13f92b4e3ec1a_icgraph">
-<area shape="rect" id="node2" href="class_m_c_n_1_1_actor.html#ae86279ca7d290707cd010bc411f38966" title="MCN.Actor.FinishActor" alt="" coords="225,5,381,32"/>
-</map>
+<div class="center"><img src="class_placeable_object_ad21b0a166f06cf406fd2ffdeee04eb3b_cgraph.png" border="0" usemap="#class_placeable_object_ad21b0a166f06cf406fd2ffdeee04eb3b_cgraph" alt=""/></div>
+<!-- MAP 4 -->
 </div>
 </p>
 
@@ -394,8 +471,8 @@ Private 멤버 함수</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="_placeable_object_8cs_source.html">PlaceableObject.cs</a> 파일의 <a class="el" href="_placeable_object_8cs_source.html#l00026">26</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    {</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_placeable_object.html#a0fd0566f0bb15c71b0630322762342d8">_placedTile</a>;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div><div class="ttc" id="class_placeable_object_html_a0fd0566f0bb15c71b0630322762342d8"><div class="ttname"><a href="class_placeable_object.html#a0fd0566f0bb15c71b0630322762342d8">PlaceableObject._placedTile</a></div><div class="ttdeci">Tile _placedTile</div><div class="ttdef"><b>Definition:</b> <a href="_placeable_object_8cs_source.html#l00007">PlaceableObject.cs:7</a></div></div>
+<p><a class="el" href="_placeable_object_8cs_source.html">PlaceableObject.cs</a> 파일의 <a class="el" href="_placeable_object_8cs_source.html#l00036">36</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    {</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_placeable_object.html#a0fd0566f0bb15c71b0630322762342d8">_placedTile</a>;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div><div class="ttc" id="class_placeable_object_html_a0fd0566f0bb15c71b0630322762342d8"><div class="ttname"><a href="class_placeable_object.html#a0fd0566f0bb15c71b0630322762342d8">PlaceableObject._placedTile</a></div><div class="ttdeci">Tile _placedTile</div><div class="ttdef"><b>Definition:</b> <a href="_placeable_object_8cs_source.html#l00017">PlaceableObject.cs:17</a></div></div>
 </div><!-- fragment -->
 <p><div class="dynheader">
 이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
@@ -412,7 +489,7 @@ Private 멤버 함수</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a5f94ed01497a7072a2785163f4cbc57b"></a>
+<a class="anchor" id="a167a3ebbac7456ea823c0b51ee37046d"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -420,7 +497,7 @@ Private 멤버 함수</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void TacticsObject.Interactive </td>
+          <td class="memname">override void PlaceableObject.Interactive </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_tactics_object.html">TacticsObject</a>&#160;</td>
           <td class="paramname"><em>interactTarget</em></td><td>)</td>
@@ -429,14 +506,26 @@ Private 멤버 함수</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="_tactics_object_8cs_source.html">TacticsObject.cs</a> 파일의 <a class="el" href="_tactics_object_8cs_source.html#l00047">47</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    {</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="class_tactics_object.html#a816dd74a6daa037c17a43fb28c12ca09">_actorQueue</a>.Count &gt; 0)</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        {</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            var actor = <a class="code" href="class_tactics_object.html#a816dd74a6daa037c17a43fb28c12ca09">_actorQueue</a>.First.Value;</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            actor.Interactive(interactTarget);</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        }</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div><div class="ttc" id="class_tactics_object_html_a816dd74a6daa037c17a43fb28c12ca09"><div class="ttname"><a href="class_tactics_object.html#a816dd74a6daa037c17a43fb28c12ca09">TacticsObject._actorQueue</a></div><div class="ttdeci">LinkedList&lt; MCN.Actor &gt; _actorQueue</div><div class="ttdef"><b>Definition:</b> <a href="_tactics_object_8cs_source.html#l00009">TacticsObject.cs:9</a></div></div>
+<p><a class="el" href="class_tactics_object.html#a5f94ed01497a7072a2785163f4cbc57b">TacticsObject</a>(으)로부터 재구현되었습니다.</p>
+
+<p><a class="el" href="_placeable_object_8cs_source.html">PlaceableObject.cs</a> 파일의 <a class="el" href="_placeable_object_8cs_source.html#l00099">99</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    {</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        var activeActor = <a class="code" href="class_placeable_object.html#a1a9f2ccdb8b2e650d6bdda5abbad3ef9">_actorMachine</a>.<a class="code" href="class_m_c_n_1_1_actor_machine.html#a7b3687c57ed3e48db2aaa77fc02d766c">GetActiveActor</a>();</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">if</span> (activeActor != null)</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        {</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            activeActor.<a class="code" href="class_m_c_n_1_1_actor.html#a8ca8f46410f6ee9557e529e22fd6f6d1">Interactive</a>(interactTarget);</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        }</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div><div class="ttc" id="class_placeable_object_html_a1a9f2ccdb8b2e650d6bdda5abbad3ef9"><div class="ttname"><a href="class_placeable_object.html#a1a9f2ccdb8b2e650d6bdda5abbad3ef9">PlaceableObject._actorMachine</a></div><div class="ttdeci">ActorMachine _actorMachine</div><div class="ttdef"><b>Definition:</b> <a href="_placeable_object_8cs_source.html#l00009">PlaceableObject.cs:9</a></div></div>
+<div class="ttc" id="class_m_c_n_1_1_actor_machine_html_a7b3687c57ed3e48db2aaa77fc02d766c"><div class="ttname"><a href="class_m_c_n_1_1_actor_machine.html#a7b3687c57ed3e48db2aaa77fc02d766c">MCN.ActorMachine.GetActiveActor</a></div><div class="ttdeci">MCN.Actor GetActiveActor()</div><div class="ttdef"><b>Definition:</b> <a href="_actor_8cs_source.html#l00155">Actor.cs:155</a></div></div>
+<div class="ttc" id="class_m_c_n_1_1_actor_html_a8ca8f46410f6ee9557e529e22fd6f6d1"><div class="ttname"><a href="class_m_c_n_1_1_actor.html#a8ca8f46410f6ee9557e529e22fd6f6d1">MCN.Actor.Interactive</a></div><div class="ttdeci">virtual void Interactive(TacticsObject interactTarget)</div><div class="ttdef"><b>Definition:</b> <a href="_actor_8cs_source.html#l00123">Actor.cs:123</a></div></div>
 </div><!-- fragment -->
+<p><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_placeable_object_a167a3ebbac7456ea823c0b51ee37046d_cgraph.png" border="0" usemap="#class_placeable_object_a167a3ebbac7456ea823c0b51ee37046d_cgraph" alt=""/></div>
+<!-- MAP 5 -->
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a71fd42914caa0dc6229fe6a5ffe09b99"></a>
@@ -452,13 +541,13 @@ Private 멤버 함수</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="_placeable_object_8cs_source.html">PlaceableObject.cs</a> 파일의 <a class="el" href="_placeable_object_8cs_source.html#l00049">49</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    {</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_game_manager.html">GameManager</a>.<a class="code" href="class_m_c_n_1_1_singletone.html#a46dbbebd93e96a9592a9803c51f35602">Instance</a>.SelectedObj == <span class="keyword">this</span>;</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div><div class="ttc" id="class_m_c_n_1_1_singletone_html_a46dbbebd93e96a9592a9803c51f35602"><div class="ttname"><a href="class_m_c_n_1_1_singletone.html#a46dbbebd93e96a9592a9803c51f35602">MCN.Singletone.Instance</a></div><div class="ttdeci">static T Instance</div><div class="ttdef"><b>Definition:</b> <a href="_singletone_8cs_source.html#l00018">Singletone.cs:18</a></div></div>
+<p><a class="el" href="_placeable_object_8cs_source.html">PlaceableObject.cs</a> 파일의 <a class="el" href="_placeable_object_8cs_source.html#l00059">59</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    {</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_game_manager.html">GameManager</a>.<a class="code" href="class_m_c_n_1_1_singletone.html#a46dbbebd93e96a9592a9803c51f35602">Instance</a>.SelectedObj == <span class="keyword">this</span>;</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div><div class="ttc" id="class_m_c_n_1_1_singletone_html_a46dbbebd93e96a9592a9803c51f35602"><div class="ttname"><a href="class_m_c_n_1_1_singletone.html#a46dbbebd93e96a9592a9803c51f35602">MCN.Singletone.Instance</a></div><div class="ttdeci">static T Instance</div><div class="ttdef"><b>Definition:</b> <a href="_singletone_8cs_source.html#l00018">Singletone.cs:18</a></div></div>
 <div class="ttc" id="class_game_manager_html"><div class="ttname"><a href="class_game_manager.html">GameManager</a></div><div class="ttdef"><b>Definition:</b> <a href="_game_manager_8cs_source.html#l00004">GameManager.cs:4</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="af34052e62ea471d21e4c601cc79ff717"></a>
+<a class="anchor" id="a2807603db9cda7bcec8c9d83aa08e44b"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -466,7 +555,7 @@ Private 멤버 함수</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual bool TacticsObject.OnTouchEvent </td>
+          <td class="memname">override bool PlaceableObject.OnTouchEvent </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="_touch_manager_8cs.html#ae33e321a424fe84ba8b2fdb81ad40a68">eTouchEvent</a>&#160;</td>
           <td class="paramname"><em>touch</em></td><td>)</td>
@@ -475,21 +564,31 @@ Private 멤버 함수</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="_tactics_object_8cs_source.html">TacticsObject.cs</a> 파일의 <a class="el" href="_tactics_object_8cs_source.html#l00057">57</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    {</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_tactics_object.html#a816dd74a6daa037c17a43fb28c12ca09">_actorQueue</a>.Count &gt; 0)</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        {</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            var actor = <a class="code" href="class_tactics_object.html#a816dd74a6daa037c17a43fb28c12ca09">_actorQueue</a>.First.Value;</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            actor.OnTouchEvent(touch);</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        }</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div><div class="ttc" id="class_tactics_object_html_a816dd74a6daa037c17a43fb28c12ca09"><div class="ttname"><a href="class_tactics_object.html#a816dd74a6daa037c17a43fb28c12ca09">TacticsObject._actorQueue</a></div><div class="ttdeci">LinkedList&lt; MCN.Actor &gt; _actorQueue</div><div class="ttdef"><b>Definition:</b> <a href="_tactics_object_8cs_source.html#l00009">TacticsObject.cs:9</a></div></div>
+<p><a class="el" href="class_tactics_object.html#af34052e62ea471d21e4c601cc79ff717">TacticsObject</a>(으)로부터 재구현되었습니다.</p>
+
+<p><a class="el" href="_placeable_object_8cs_source.html">PlaceableObject.cs</a> 파일의 <a class="el" href="_placeable_object_8cs_source.html#l00108">108</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    {</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        var activeActor = <a class="code" href="class_placeable_object.html#a1a9f2ccdb8b2e650d6bdda5abbad3ef9">_actorMachine</a>.<a class="code" href="class_m_c_n_1_1_actor_machine.html#a7b3687c57ed3e48db2aaa77fc02d766c">GetActiveActor</a>();</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordflow">if</span> (activeActor != null)</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        {</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            activeActor.<a class="code" href="class_m_c_n_1_1_actor.html#a4891cf321e2a9ee25fd618c19b785331">OnTouchEvent</a>(touch);</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        }</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div><div class="ttc" id="class_placeable_object_html_a1a9f2ccdb8b2e650d6bdda5abbad3ef9"><div class="ttname"><a href="class_placeable_object.html#a1a9f2ccdb8b2e650d6bdda5abbad3ef9">PlaceableObject._actorMachine</a></div><div class="ttdeci">ActorMachine _actorMachine</div><div class="ttdef"><b>Definition:</b> <a href="_placeable_object_8cs_source.html#l00009">PlaceableObject.cs:9</a></div></div>
+<div class="ttc" id="class_m_c_n_1_1_actor_html_a4891cf321e2a9ee25fd618c19b785331"><div class="ttname"><a href="class_m_c_n_1_1_actor.html#a4891cf321e2a9ee25fd618c19b785331">MCN.Actor.OnTouchEvent</a></div><div class="ttdeci">virtual bool OnTouchEvent(eTouchEvent touch)</div><div class="ttdef"><b>Definition:</b> <a href="_actor_8cs_source.html#l00125">Actor.cs:125</a></div></div>
+<div class="ttc" id="class_m_c_n_1_1_actor_machine_html_a7b3687c57ed3e48db2aaa77fc02d766c"><div class="ttname"><a href="class_m_c_n_1_1_actor_machine.html#a7b3687c57ed3e48db2aaa77fc02d766c">MCN.ActorMachine.GetActiveActor</a></div><div class="ttdeci">MCN.Actor GetActiveActor()</div><div class="ttdef"><b>Definition:</b> <a href="_actor_8cs_source.html#l00155">Actor.cs:155</a></div></div>
 </div><!-- fragment -->
+<p><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_placeable_object_a2807603db9cda7bcec8c9d83aa08e44b_cgraph.png" border="0" usemap="#class_placeable_object_a2807603db9cda7bcec8c9d83aa08e44b_cgraph" alt=""/></div>
+<!-- MAP 6 -->
+</div>
+</p>
+
 <p><div class="dynheader">
 이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_tactics_object_af34052e62ea471d21e4c601cc79ff717_icgraph.png" border="0" usemap="#class_tactics_object_af34052e62ea471d21e4c601cc79ff717_icgraph" alt=""/></div>
-<map name="class_tactics_object_af34052e62ea471d21e4c601cc79ff717_icgraph" id="class_tactics_object_af34052e62ea471d21e4c601cc79ff717_icgraph">
-<area shape="rect" id="node2" href="class_m_c_n_1_1_decorator.html#ac45ab12c190bd9f5188c9f748f8ddbbf" title="MCN.Decorator.OnTouchEvent" alt="" coords="244,5,443,32"/>
-</map>
+<div class="center"><img src="class_placeable_object_a2807603db9cda7bcec8c9d83aa08e44b_icgraph.png" border="0" usemap="#class_placeable_object_a2807603db9cda7bcec8c9d83aa08e44b_icgraph" alt=""/></div>
+<!-- MAP 7 -->
 </div>
 </p>
 
@@ -517,8 +616,8 @@ Private 멤버 함수</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="_placeable_object_8cs_source.html">PlaceableObject.cs</a> 파일의 <a class="el" href="_placeable_object_8cs_source.html#l00038">38</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    {</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">if</span> (tile != null)</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        {</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            transform.parent = tile.transform;</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            transform.localPosition = <span class="keyword">new</span> Vector3(0, transform.localScale.y / 2, 0);</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            tile.<a class="code" href="class_tile.html#a1969ee41c320c6e7748a33374942e07e">AttachObject</a>(<span class="keyword">this</span>);</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        }</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div><div class="ttc" id="class_tile_html_a1969ee41c320c6e7748a33374942e07e"><div class="ttname"><a href="class_tile.html#a1969ee41c320c6e7748a33374942e07e">Tile.AttachObject</a></div><div class="ttdeci">bool AttachObject(PlaceableObject obj)</div><div class="ttdef"><b>Definition:</b> <a href="_tile_8cs_source.html#l00219">Tile.cs:219</a></div></div>
+<p><a class="el" href="_placeable_object_8cs_source.html">PlaceableObject.cs</a> 파일의 <a class="el" href="_placeable_object_8cs_source.html#l00048">48</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    {</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">if</span> (tile != null)</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        {</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            transform.parent = tile.transform;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            transform.localPosition = <span class="keyword">new</span> Vector3(0, transform.localScale.y / 2, 0);</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            tile.<a class="code" href="class_tile.html#a1969ee41c320c6e7748a33374942e07e">AttachObject</a>(<span class="keyword">this</span>);</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        }</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div><div class="ttc" id="class_tile_html_a1969ee41c320c6e7748a33374942e07e"><div class="ttname"><a href="class_tile.html#a1969ee41c320c6e7748a33374942e07e">Tile.AttachObject</a></div><div class="ttdeci">bool AttachObject(PlaceableObject obj)</div><div class="ttdef"><b>Definition:</b> <a href="_tile_8cs_source.html#l00219">Tile.cs:219</a></div></div>
 </div><!-- fragment -->
 <p><div class="dynheader">
 이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
@@ -538,45 +637,10 @@ Private 멤버 함수</h2></td></tr>
 이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_placeable_object_a06a30cf4396743908cc88733cb216df5_icgraph.png" border="0" usemap="#class_placeable_object_a06a30cf4396743908cc88733cb216df5_icgraph" alt=""/></div>
-<map name="class_placeable_object_a06a30cf4396743908cc88733cb216df5_icgraph" id="class_placeable_object_a06a30cf4396743908cc88733cb216df5_icgraph">
-<area shape="rect" id="node2" href="class_placeable_object.html#a3176ec3d5d26b2a83cdc58b01e630aa1" title="PlaceableObject.Attach" alt="" coords="208,5,367,32"/>
-<area shape="rect" id="node3" href="class_tile.html#a1969ee41c320c6e7748a33374942e07e" title="Tile.AttachObject" alt="" coords="415,31,537,57"/>
-<area shape="rect" id="node4" href="class_move_actor_1_1_moveable_state___move.html#ab0fa6e69cbb4c179d2c7ee1381cda850" title="MoveActor.MoveableState\l_Move.Interactive" alt="" coords="585,23,757,65"/>
-</map>
+<!-- MAP 8 -->
 </div>
 </p>
 
-</div>
-</div>
-<a class="anchor" id="ac24894e1e9355ac7bb7c94b7ea51ef02"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void TacticsObject.RunActor </td>
-          <td>(</td>
-          <td class="paramtype">System.Type&#160;</td>
-          <td class="paramname"><em>actorType</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><a class="el" href="_tactics_object_8cs_source.html">TacticsObject.cs</a> 파일의 <a class="el" href="_tactics_object_8cs_source.html#l00026">26</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    {</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">if</span>(!actorType.IsSubclassOf(typeof(<a class="code" href="namespace_m_c_n.html">MCN</a>.<a class="code" href="class_m_c_n_1_1_actor.html">Actor</a>)) ||</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;           !<a class="code" href="class_tactics_object.html#ab16a5fde2c93cad13e6b74453664c2a9">_actors</a>.ContainsKey(actorType.ToString()))</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        {</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="keywordflow">throw</span> <span class="keyword">new</span> UnityException(<span class="stringliteral">&quot;Actor&#39;s type is not correct.&quot;</span>);</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="class_tactics_object.html#a816dd74a6daa037c17a43fb28c12ca09">_actorQueue</a>.AddLast(<a class="code" href="class_tactics_object.html#ab16a5fde2c93cad13e6b74453664c2a9">_actors</a>[actorType.ToString()]);</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="class_tactics_object.html#ac26a5e81a142ce350e9a481d59bd0daa">_actorDebugQueue</a>.Add(actorType.ToString());</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div><div class="ttc" id="class_tactics_object_html_a816dd74a6daa037c17a43fb28c12ca09"><div class="ttname"><a href="class_tactics_object.html#a816dd74a6daa037c17a43fb28c12ca09">TacticsObject._actorQueue</a></div><div class="ttdeci">LinkedList&lt; MCN.Actor &gt; _actorQueue</div><div class="ttdef"><b>Definition:</b> <a href="_tactics_object_8cs_source.html#l00009">TacticsObject.cs:9</a></div></div>
-<div class="ttc" id="class_m_c_n_1_1_actor_html"><div class="ttname"><a href="class_m_c_n_1_1_actor.html">MCN.Actor</a></div><div class="ttdef"><b>Definition:</b> <a href="_actor_8cs_source.html#l00009">Actor.cs:9</a></div></div>
-<div class="ttc" id="class_tactics_object_html_ab16a5fde2c93cad13e6b74453664c2a9"><div class="ttname"><a href="class_tactics_object.html#ab16a5fde2c93cad13e6b74453664c2a9">TacticsObject._actors</a></div><div class="ttdeci">Dictionary&lt; string, MCN.Actor &gt; _actors</div><div class="ttdef"><b>Definition:</b> <a href="_tactics_object_8cs_source.html#l00016">TacticsObject.cs:16</a></div></div>
-<div class="ttc" id="namespace_m_c_n_html"><div class="ttname"><a href="namespace_m_c_n.html">MCN</a></div><div class="ttdef"><b>Definition:</b> <a href="_actor_8cs_source.html#l00005">Actor.cs:5</a></div></div>
-<div class="ttc" id="class_tactics_object_html_ac26a5e81a142ce350e9a481d59bd0daa"><div class="ttname"><a href="class_tactics_object.html#ac26a5e81a142ce350e9a481d59bd0daa">TacticsObject._actorDebugQueue</a></div><div class="ttdeci">List&lt; string &gt; _actorDebugQueue</div><div class="ttdef"><b>Definition:</b> <a href="_tactics_object_8cs_source.html#l00013">TacticsObject.cs:13</a></div></div>
-</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a019818f3f6c6eb715fed163efa921f5a"></a>
@@ -592,8 +656,8 @@ Private 멤버 함수</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="_placeable_object_8cs_source.html">PlaceableObject.cs</a> 파일의 <a class="el" href="_placeable_object_8cs_source.html#l00054">54</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    {</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="class_game_manager.html">GameManager</a>.<a class="code" href="class_m_c_n_1_1_singletone.html#a46dbbebd93e96a9592a9803c51f35602">Instance</a>.SelectedObj = <span class="keyword">this</span>;</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div><div class="ttc" id="class_m_c_n_1_1_singletone_html_a46dbbebd93e96a9592a9803c51f35602"><div class="ttname"><a href="class_m_c_n_1_1_singletone.html#a46dbbebd93e96a9592a9803c51f35602">MCN.Singletone.Instance</a></div><div class="ttdeci">static T Instance</div><div class="ttdef"><b>Definition:</b> <a href="_singletone_8cs_source.html#l00018">Singletone.cs:18</a></div></div>
+<p><a class="el" href="_placeable_object_8cs_source.html">PlaceableObject.cs</a> 파일의 <a class="el" href="_placeable_object_8cs_source.html#l00064">64</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    {</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="class_game_manager.html">GameManager</a>.<a class="code" href="class_m_c_n_1_1_singletone.html#a46dbbebd93e96a9592a9803c51f35602">Instance</a>.SelectedObj = <span class="keyword">this</span>;</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div><div class="ttc" id="class_m_c_n_1_1_singletone_html_a46dbbebd93e96a9592a9803c51f35602"><div class="ttname"><a href="class_m_c_n_1_1_singletone.html#a46dbbebd93e96a9592a9803c51f35602">MCN.Singletone.Instance</a></div><div class="ttdeci">static T Instance</div><div class="ttdef"><b>Definition:</b> <a href="_singletone_8cs_source.html#l00018">Singletone.cs:18</a></div></div>
 <div class="ttc" id="class_game_manager_html"><div class="ttname"><a href="class_game_manager.html">GameManager</a></div><div class="ttdef"><b>Definition:</b> <a href="_game_manager_8cs_source.html#l00004">GameManager.cs:4</a></div></div>
 </div><!-- fragment -->
 <p><div class="dynheader">
@@ -609,6 +673,28 @@ Private 멤버 함수</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">멤버 데이타 문서화</h2>
+<a class="anchor" id="a1a9f2ccdb8b2e650d6bdda5abbad3ef9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_m_c_n_1_1_actor_machine.html">ActorMachine</a> PlaceableObject._actorMachine = new <a class="el" href="class_m_c_n_1_1_actor_machine.html">ActorMachine</a>()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="_placeable_object_8cs_source.html">PlaceableObject.cs</a> 파일의 <a class="el" href="_placeable_object_8cs_source.html#l00009">9</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
 <a class="anchor" id="a0fd0566f0bb15c71b0630322762342d8"></a>
 <div class="memitem">
 <div class="memproto">
@@ -627,7 +713,7 @@ Private 멤버 함수</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="_placeable_object_8cs_source.html">PlaceableObject.cs</a> 파일의 <a class="el" href="_placeable_object_8cs_source.html#l00007">7</a> 번째 라인에서 정의되었습니다.</p>
+<p><a class="el" href="_placeable_object_8cs_source.html">PlaceableObject.cs</a> 파일의 <a class="el" href="_placeable_object_8cs_source.html#l00017">17</a> 번째 라인에서 정의되었습니다.</p>
 
 </div>
 </div>

@@ -1,6 +1,5 @@
 var class_map_manager =
 [
-    [ "AddActor", "class_map_manager.html#a3fd471f20bdfc00d53997d782bc3339a", null ],
     [ "AttachObject", "class_map_manager.html#ab8cbf46e369a9c59ff183a1b6c3b20bb", null ],
     [ "Awake", "class_map_manager.html#ad633984007048c7d63eab44aaeb0c32d", null ],
     [ "ChangeAllTileState", "class_map_manager.html#a68f796431393b7239320ab1f5200213a", null ],

@@ -1,0 +1,5 @@
+<map id="MCN.ActorMachine.GetActiveActor" name="MCN.ActorMachine.GetActiveActor">
+<area shape="rect" id="node2" href="$class_placeable_object.html#a167a3ebbac7456ea823c0b51ee37046d" title="PlaceableObject.Interactive" alt="" coords="261,5,440,32"/>
+<area shape="rect" id="node3" href="$class_placeable_object.html#a2807603db9cda7bcec8c9d83aa08e44b" title="PlaceableObject.OnTouchEvent" alt="" coords="248,56,453,83"/>
+<area shape="rect" id="node4" href="$class_tile.html#a6133171796d47353aa5d57cd336e0a07" title="Tile.OnNext" alt="" coords="501,56,592,83"/>
+</map>

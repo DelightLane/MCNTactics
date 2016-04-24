@@ -1,0 +1,183 @@
+\hypertarget{class_m_c_n_1_1_actor_machine}{}\section{M\+C\+N.\+Actor\+Machine 클래스 참조}
+\label{class_m_c_n_1_1_actor_machine}\index{M\+C\+N.\+Actor\+Machine@{M\+C\+N.\+Actor\+Machine}}
+
+
+M\+C\+N.\+Actor\+Machine에 대한 상속 다이어그램 \+: 
+% FIG 0
+
+
+M\+C\+N.\+Actor\+Machine에 대한 협력 다이어그램\+:
+% FIG 1
+\subsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_m_c_n_1_1_actor_machine_a64284549a56ecf35cb0679101aa9ab11}{Add\+Actor} (\hyperlink{class_m_c_n_1_1_actor}{M\+C\+N.\+Actor} actor)
+\item 
+void \hyperlink{class_m_c_n_1_1_actor_machine_a2762339a4d7f2a872f53076a3491ed03}{Enqueue\+Actor} (System.\+Type actor\+Type)
+\item 
+\hyperlink{class_m_c_n_1_1_actor}{M\+C\+N.\+Actor} \hyperlink{class_m_c_n_1_1_actor_machine_a7b3687c57ed3e48db2aaa77fc02d766c}{Get\+Active\+Actor} ()
+\item 
+void \hyperlink{class_m_c_n_1_1_actor_machine_a845c5d834f618606d2e6561eae4b11b1}{Dequeue\+Actor} ()
+\end{DoxyCompactItemize}
+\subsection*{Private 속성}
+\begin{DoxyCompactItemize}
+\item 
+Linked\+List$<$ \hyperlink{class_m_c_n_1_1_actor}{M\+C\+N.\+Actor} $>$ \hyperlink{class_m_c_n_1_1_actor_machine_a9e02068493541237f3f6fb8a6141bbc4}{\+\_\+actor\+Queue} = new Linked\+List$<$\hyperlink{class_m_c_n_1_1_actor}{M\+C\+N.\+Actor}$>$()
+\item 
+Dictionary$<$ string, \hyperlink{class_m_c_n_1_1_actor}{M\+C\+N.\+Actor} $>$ \hyperlink{class_m_c_n_1_1_actor_machine_a4e38488fdd2af93cc62e2b8fd6d4dc2c}{\+\_\+actors} = new Dictionary$<$string, \hyperlink{class_m_c_n_1_1_actor}{M\+C\+N.\+Actor}$>$()
+\end{DoxyCompactItemize}
+
+
+\subsection{상세한 설명}
+
+
+Actor.\+cs 파일의 128 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{멤버 함수 문서화}
+\index{M\+C\+N\+::\+Actor\+Machine@{M\+C\+N\+::\+Actor\+Machine}!Add\+Actor@{Add\+Actor}}
+\index{Add\+Actor@{Add\+Actor}!M\+C\+N\+::\+Actor\+Machine@{M\+C\+N\+::\+Actor\+Machine}}
+\subsubsection[{\texorpdfstring{Add\+Actor(\+M\+C\+N.\+Actor actor)}{AddActor(MCN.Actor actor)}}]{\setlength{\rightskip}{0pt plus 5cm}void M\+C\+N.\+Actor\+Machine.\+Add\+Actor (
+\begin{DoxyParamCaption}
+\item[{{\bf M\+C\+N.\+Actor}}]{actor}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_c_n_1_1_actor_machine_a64284549a56ecf35cb0679101aa9ab11}{}\label{class_m_c_n_1_1_actor_machine_a64284549a56ecf35cb0679101aa9ab11}
+
+
+\hyperlink{interface_m_c_n_1_1_i_actor_queue_a4ff84085475a9689d242fea2861d6f1e}{M\+C\+N.\+I\+Actor\+Queue}를 구현.
+
+
+
+Actor.\+cs 파일의 136 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+137         \{
+138             \textcolor{keywordflow}{if} (actor.CheckAbsoluteWeightKey())
+139             \{
+140                 \hyperlink{class_m_c_n_1_1_actor_machine_a4e38488fdd2af93cc62e2b8fd6d4dc2c}{\_actors}.Add(actor.GetType().ToString(), actor);
+141             \}
+142         \}
+\end{DoxyCode}
+
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 2
+
+
+\index{M\+C\+N\+::\+Actor\+Machine@{M\+C\+N\+::\+Actor\+Machine}!Dequeue\+Actor@{Dequeue\+Actor}}
+\index{Dequeue\+Actor@{Dequeue\+Actor}!M\+C\+N\+::\+Actor\+Machine@{M\+C\+N\+::\+Actor\+Machine}}
+\subsubsection[{\texorpdfstring{Dequeue\+Actor()}{DequeueActor()}}]{\setlength{\rightskip}{0pt plus 5cm}void M\+C\+N.\+Actor\+Machine.\+Dequeue\+Actor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_c_n_1_1_actor_machine_a845c5d834f618606d2e6561eae4b11b1}{}\label{class_m_c_n_1_1_actor_machine_a845c5d834f618606d2e6561eae4b11b1}
+
+
+\hyperlink{interface_m_c_n_1_1_i_actor_queue_ad99049ac93213b4a4f0e2d9aa76f6029}{M\+C\+N.\+I\+Actor\+Queue}를 구현.
+
+
+
+Actor.\+cs 파일의 167 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+168         \{
+169             \textcolor{keywordflow}{if} (\hyperlink{class_m_c_n_1_1_actor_machine_a9e02068493541237f3f6fb8a6141bbc4}{\_actorQueue}.Count > 0)
+170             \{
+171                 \hyperlink{class_m_c_n_1_1_actor_machine_a9e02068493541237f3f6fb8a6141bbc4}{\_actorQueue}.RemoveFirst();
+172             \}
+173         \}
+\end{DoxyCode}
+
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 3
+
+
+\index{M\+C\+N\+::\+Actor\+Machine@{M\+C\+N\+::\+Actor\+Machine}!Enqueue\+Actor@{Enqueue\+Actor}}
+\index{Enqueue\+Actor@{Enqueue\+Actor}!M\+C\+N\+::\+Actor\+Machine@{M\+C\+N\+::\+Actor\+Machine}}
+\subsubsection[{\texorpdfstring{Enqueue\+Actor(\+System.\+Type actor\+Type)}{EnqueueActor(System.Type actorType)}}]{\setlength{\rightskip}{0pt plus 5cm}void M\+C\+N.\+Actor\+Machine.\+Enqueue\+Actor (
+\begin{DoxyParamCaption}
+\item[{System.\+Type}]{actor\+Type}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_c_n_1_1_actor_machine_a2762339a4d7f2a872f53076a3491ed03}{}\label{class_m_c_n_1_1_actor_machine_a2762339a4d7f2a872f53076a3491ed03}
+
+
+\hyperlink{interface_m_c_n_1_1_i_actor_queue_a363cf9df4d42c417cab5b14952f95ebd}{M\+C\+N.\+I\+Actor\+Queue}를 구현.
+
+
+
+Actor.\+cs 파일의 144 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+145         \{
+146             \textcolor{keywordflow}{if} (!actorType.IsSubclassOf(typeof(\hyperlink{namespace_m_c_n}{MCN}.\hyperlink{class_m_c_n_1_1_actor}{Actor})) ||
+147                !\hyperlink{class_m_c_n_1_1_actor_machine_a4e38488fdd2af93cc62e2b8fd6d4dc2c}{\_actors}.ContainsKey(actorType.ToString()))
+148             \{
+149                 \textcolor{keywordflow}{throw} \textcolor{keyword}{new} UnityException(\textcolor{stringliteral}{"Actor's type is not correct."});
+150             \}
+151 
+152             \hyperlink{class_m_c_n_1_1_actor_machine_a9e02068493541237f3f6fb8a6141bbc4}{\_actorQueue}.AddLast(\hyperlink{class_m_c_n_1_1_actor_machine_a4e38488fdd2af93cc62e2b8fd6d4dc2c}{\_actors}[actorType.ToString()]);
+153         \}
+\end{DoxyCode}
+
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 4
+
+
+\index{M\+C\+N\+::\+Actor\+Machine@{M\+C\+N\+::\+Actor\+Machine}!Get\+Active\+Actor@{Get\+Active\+Actor}}
+\index{Get\+Active\+Actor@{Get\+Active\+Actor}!M\+C\+N\+::\+Actor\+Machine@{M\+C\+N\+::\+Actor\+Machine}}
+\subsubsection[{\texorpdfstring{Get\+Active\+Actor()}{GetActiveActor()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\+C\+N.\+Actor} M\+C\+N.\+Actor\+Machine.\+Get\+Active\+Actor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_c_n_1_1_actor_machine_a7b3687c57ed3e48db2aaa77fc02d766c}{}\label{class_m_c_n_1_1_actor_machine_a7b3687c57ed3e48db2aaa77fc02d766c}
+
+
+Actor.\+cs 파일의 155 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+156         \{
+157             \textcolor{keywordflow}{if} (\hyperlink{class_m_c_n_1_1_actor_machine_a9e02068493541237f3f6fb8a6141bbc4}{\_actorQueue}.Count > 0)
+158             \{
+159                 var actor = \hyperlink{class_m_c_n_1_1_actor_machine_a9e02068493541237f3f6fb8a6141bbc4}{\_actorQueue}.First.Value;
+160 
+161                 \textcolor{keywordflow}{return} actor;
+162             \}
+163 
+164             \textcolor{keywordflow}{return} null;
+165         \}
+\end{DoxyCode}
+
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 5
+
+
+
+
+\subsection{멤버 데이타 문서화}
+\index{M\+C\+N\+::\+Actor\+Machine@{M\+C\+N\+::\+Actor\+Machine}!\+\_\+actor\+Queue@{\+\_\+actor\+Queue}}
+\index{\+\_\+actor\+Queue@{\+\_\+actor\+Queue}!M\+C\+N\+::\+Actor\+Machine@{M\+C\+N\+::\+Actor\+Machine}}
+\subsubsection[{\texorpdfstring{\+\_\+actor\+Queue}{_actorQueue}}]{\setlength{\rightskip}{0pt plus 5cm}Linked\+List$<${\bf M\+C\+N.\+Actor}$>$ M\+C\+N.\+Actor\+Machine.\+\_\+actor\+Queue = new Linked\+List$<${\bf M\+C\+N.\+Actor}$>$()\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_m_c_n_1_1_actor_machine_a9e02068493541237f3f6fb8a6141bbc4}{}\label{class_m_c_n_1_1_actor_machine_a9e02068493541237f3f6fb8a6141bbc4}
+
+
+Actor.\+cs 파일의 131 번째 라인에서 정의되었습니다.
+
+\index{M\+C\+N\+::\+Actor\+Machine@{M\+C\+N\+::\+Actor\+Machine}!\+\_\+actors@{\+\_\+actors}}
+\index{\+\_\+actors@{\+\_\+actors}!M\+C\+N\+::\+Actor\+Machine@{M\+C\+N\+::\+Actor\+Machine}}
+\subsubsection[{\texorpdfstring{\+\_\+actors}{_actors}}]{\setlength{\rightskip}{0pt plus 5cm}Dictionary$<$string, {\bf M\+C\+N.\+Actor}$>$ M\+C\+N.\+Actor\+Machine.\+\_\+actors = new Dictionary$<$string, {\bf M\+C\+N.\+Actor}$>$()\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_m_c_n_1_1_actor_machine_a4e38488fdd2af93cc62e2b8fd6d4dc2c}{}\label{class_m_c_n_1_1_actor_machine_a4e38488fdd2af93cc62e2b8fd6d4dc2c}
+
+
+Actor.\+cs 파일의 134 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Git\+Hub/\+M\+C\+N\+Tactics/\+Assets/\+Scripts/\+Core/\hyperlink{_actor_8cs}{Actor.\+cs}\end{DoxyCompactItemize}

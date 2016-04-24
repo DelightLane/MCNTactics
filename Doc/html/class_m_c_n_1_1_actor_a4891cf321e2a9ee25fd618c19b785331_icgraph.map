@@ -1,0 +1,4 @@
+<map id="MCN.Actor.OnTouchEvent" name="MCN.Actor.OnTouchEvent">
+<area shape="rect" id="node2" href="$class_placeable_object.html#a2807603db9cda7bcec8c9d83aa08e44b" title="PlaceableObject.OnTouchEvent" alt="" coords="228,5,433,32"/>
+<area shape="rect" id="node3" href="$class_tile.html#a6133171796d47353aa5d57cd336e0a07" title="Tile.OnNext" alt="" coords="481,5,572,32"/>
+</map>

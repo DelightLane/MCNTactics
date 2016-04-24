@@ -1,0 +1,6 @@
+<map id="CombatObject" name="CombatObject">
+<area shape="rect" id="node2" href="$class_placeable_object.html" title="{PlaceableObject\n|# _placedTile\l&#45; _actorMachine\l|+ Attach()\l+ Detach()\l+ GetPlacedTile()\l+ Dispose()\l+ IsSelected()\l+ Select()\l+ Deselect()\l+ AddActor()\l+ EnqueueActor()\l+ DequeueActor()\l+ Interactive()\l+ OnTouchEvent()\l&#45; Place()\l}" alt="" coords="137,285,264,553"/>
+<area shape="rect" id="node3" href="$class_tactics_object.html" title="{TacticsObject\n||+ Interactive()\l+ OnTouchEvent()\l}" alt="" coords="5,138,132,230"/>
+<area shape="rect" id="node6" href="$interface_m_c_n_1_1_i_actor_queue.html" title="{MCN::IActorQueue\n||+ AddActor()\l+ EnqueueActor()\l+ DequeueActor()\l}" alt="" coords="270,131,401,237"/>
+<area shape="rect" id="node7" href="$interface_i_combat.html" title="{ICombat\n|+ Hp\l+ Sp\l+ Atk\l+ Def\l+ MaxHp\l+ MaxSp\l+ CombatState\l|+ Damaged()\l}" alt="" coords="288,337,399,502"/>
+</map>

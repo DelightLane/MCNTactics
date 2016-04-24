@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>MCNTactics: D:/GitHub/MCNTactics/Assets/Scripts/Objects/Decorator/CombatInstance.cs 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">MCNTactics
+   &#160;<span id="projectnumber">1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'검색');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>메인&#160;페이지</span></a></li>
+      <li><a href="namespaces.html"><span>패키지</span></a></li>
+      <li><a href="annotated.html"><span>클래스</span></a></li>
+      <li class="current"><a href="files.html"><span>파일들</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="검색" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>파일&#160;목록</span></a></li>
+      <li><a href="globals.html"><span>파일&#160;멤버</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_combat_instance_8cs_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">CombatInstance.cs</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_combat_instance_8cs.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>;</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_unity_engine.html">UnityEngine</a>;</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="class_combat_instance.html">    4</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_combat_instance.html">CombatInstance</a> : <a class="code" href="interface_i_combat.html">ICombat</a></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;{</div><div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="class_combat_instance.html#a392329b865aa88f2a579fcb7e7a0a99b">    6</a></span>&#160;    <span class="keyword">private</span> <span class="keywordtype">int</span> <a class="code" href="class_combat_instance.html#a392329b865aa88f2a579fcb7e7a0a99b">_hp</a>;</div><div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="class_combat_instance.html#a3a9ee2ea52b19b5150386b52396621f9">    7</a></span>&#160;    <span class="keyword">private</span> <span class="keywordtype">int</span> <a class="code" href="class_combat_instance.html#a3a9ee2ea52b19b5150386b52396621f9">_sp</a>;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_combat_instance.html#afce9395cdf3a359fb6eb982c0bf7f063">    9</a></span>&#160;    <span class="keyword">private</span> <span class="keywordtype">int</span> <a class="code" href="class_combat_instance.html#afce9395cdf3a359fb6eb982c0bf7f063">_maxHp</a>;</div><div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_combat_instance.html#a2489b1182b81f028cfd45f26fb2a7af0">   10</a></span>&#160;    <span class="keyword">private</span> <span class="keywordtype">int</span> <a class="code" href="class_combat_instance.html#a2489b1182b81f028cfd45f26fb2a7af0">_maxSp</a>;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div><div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_combat_instance.html#a7107dad81ca2638ed2ad30de391029e6">   12</a></span>&#160;    <span class="keyword">private</span> <span class="keywordtype">int</span> <a class="code" href="class_combat_instance.html#a7107dad81ca2638ed2ad30de391029e6">_atk</a>;</div><div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_combat_instance.html#a1c2bc3e91c7e2fee8b5d5f489eaa3d40">   13</a></span>&#160;    <span class="keyword">private</span> <span class="keywordtype">int</span> <a class="code" href="class_combat_instance.html#a1c2bc3e91c7e2fee8b5d5f489eaa3d40">_def</a>;</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div><div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_combat_instance.html#a6352b66ef39484c9d76b03df56d26ee4">   15</a></span>&#160;    <span class="keyword">private</span> <a class="code" href="_combat_object_8cs.html#ae6d9f4a8ae9fffcdf1a546168a44f917">eCombatState</a> <a class="code" href="class_combat_instance.html#a6352b66ef39484c9d76b03df56d26ee4">_combatState</a>;</div><div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_combat_instance.html#a149d2068f3dc0ec72f3461d101dcebab">   16</a></span>&#160;    <span class="keyword">public</span> <a class="code" href="_combat_object_8cs.html#ae6d9f4a8ae9fffcdf1a546168a44f917">eCombatState</a> <a class="code" href="class_combat_instance.html#a149d2068f3dc0ec72f3461d101dcebab">CombatState</a> { <span class="keyword">get</span> { <span class="keywordflow">return</span> <a class="code" href="class_combat_instance.html#a6352b66ef39484c9d76b03df56d26ee4">_combatState</a>; } }</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code" href="class_combat_instance.html#ae4682b727ea05a59141f747341877eb6">Hp</a></div><div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_combat_instance.html#ae4682b727ea05a59141f747341877eb6">   19</a></span>&#160;    {</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keyword">get</span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        {</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_combat_instance.html#a149d2068f3dc0ec72f3461d101dcebab">CombatState</a> == <a class="code" href="_combat_object_8cs.html#ae6d9f4a8ae9fffcdf1a546168a44f917">eCombatState</a>.ALIVE)</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            {</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="class_combat_instance.html#a392329b865aa88f2a579fcb7e7a0a99b">_hp</a>;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            }</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keywordflow">return</span> 0;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        }</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div><div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_combat_instance.html#a120995296719b1fb1fa4cc55721ddba4">   30</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code" href="class_combat_instance.html#a120995296719b1fb1fa4cc55721ddba4">Sp</a> { <span class="keyword">get</span> { <span class="keywordflow">return</span> <a class="code" href="class_combat_instance.html#a3a9ee2ea52b19b5150386b52396621f9">_sp</a>; } }</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div><div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_combat_instance.html#a9de7c50888b56d9854709d132e69baa9">   32</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code" href="class_combat_instance.html#a9de7c50888b56d9854709d132e69baa9">Atk</a> { <span class="keyword">get</span> { <span class="keywordflow">return</span> <a class="code" href="class_combat_instance.html#a7107dad81ca2638ed2ad30de391029e6">_atk</a>; } }</div><div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_combat_instance.html#ab52acfd86a70be3647d2f092e6816190">   33</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code" href="class_combat_instance.html#ab52acfd86a70be3647d2f092e6816190">Def</a> { <span class="keyword">get</span> { <span class="keywordflow">return</span> <a class="code" href="class_combat_instance.html#a1c2bc3e91c7e2fee8b5d5f489eaa3d40">_def</a>; } }</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div><div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_combat_instance.html#a33c5218456253d1a5c457fe6364b10d7">   35</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code" href="class_combat_instance.html#a33c5218456253d1a5c457fe6364b10d7">MaxHp</a> { <span class="keyword">get</span> { <span class="keywordflow">return</span> <a class="code" href="class_combat_instance.html#afce9395cdf3a359fb6eb982c0bf7f063">_maxHp</a>; } }</div><div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_combat_instance.html#ad1d6d4d72223021bd0130b069437463d">   36</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code" href="class_combat_instance.html#ad1d6d4d72223021bd0130b069437463d">MaxSp</a> { <span class="keyword">get</span> { <span class="keywordflow">return</span> <a class="code" href="class_combat_instance.html#a2489b1182b81f028cfd45f26fb2a7af0">_maxSp</a>; } }</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div><div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_combat_instance.html#a613a6f5a211954d3f5f0d621cab88606">   38</a></span>&#160;    <span class="keyword">public</span> <a class="code" href="class_combat_instance.html#a613a6f5a211954d3f5f0d621cab88606">CombatInstance</a>(<a class="code" href="struct_status.html">Status</a> status)</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    {</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        _combatState = <a class="code" href="_combat_object_8cs.html#ae6d9f4a8ae9fffcdf1a546168a44f917">eCombatState</a>.ALIVE;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        _hp = status.<a class="code" href="struct_status.html#a6912591952ae3178114200d6383919df">hp</a>;</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        _sp = status.<a class="code" href="struct_status.html#a685aa4b12faa74a48a3b57f69e94084c">sp</a>;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        _maxHp = status.<a class="code" href="struct_status.html#a6912591952ae3178114200d6383919df">hp</a>;</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        _maxSp = status.<a class="code" href="struct_status.html#a685aa4b12faa74a48a3b57f69e94084c">sp</a>;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        _atk = status.<a class="code" href="struct_status.html#aeaf2f82dd6fbce2adf2219b7a6b8227f">atk</a>;</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        _def = status.<a class="code" href="struct_status.html#a95a2f2a23ef79f2e0ced04621c4593c9">def</a>;</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div><div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="class_combat_instance.html#a612a867750ddfc0da7306e73752225b7">   52</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_combat_instance.html#a612a867750ddfc0da7306e73752225b7">Damaged</a>(<a class="code" href="class_attack_actor.html">AttackActor</a> actor)</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    {</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        _hp -= actor.<a class="code" href="class_attack_actor.html#aaa126531b12eeb6d03311d761697cc84">Damage</a>;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="class_combat_instance.html#ae4682b727ea05a59141f747341877eb6">Hp</a> &lt; 0)</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        {</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            _combatState = <a class="code" href="_combat_object_8cs.html#ae6d9f4a8ae9fffcdf1a546168a44f917">eCombatState</a>.DEAD;</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div><div class="ttc" id="class_combat_instance_html_a2489b1182b81f028cfd45f26fb2a7af0"><div class="ttname"><a href="class_combat_instance.html#a2489b1182b81f028cfd45f26fb2a7af0">CombatInstance._maxSp</a></div><div class="ttdeci">int _maxSp</div><div class="ttdef"><b>Definition:</b> <a href="_combat_instance_8cs_source.html#l00010">CombatInstance.cs:10</a></div></div>
+<div class="ttc" id="namespace_system_html"><div class="ttname"><a href="namespace_system.html">System</a></div></div>
+<div class="ttc" id="interface_i_combat_html"><div class="ttname"><a href="interface_i_combat.html">ICombat</a></div><div class="ttdef"><b>Definition:</b> <a href="_i_combat_8cs_source.html#l00004">ICombat.cs:4</a></div></div>
+<div class="ttc" id="class_combat_instance_html_afce9395cdf3a359fb6eb982c0bf7f063"><div class="ttname"><a href="class_combat_instance.html#afce9395cdf3a359fb6eb982c0bf7f063">CombatInstance._maxHp</a></div><div class="ttdeci">int _maxHp</div><div class="ttdef"><b>Definition:</b> <a href="_combat_instance_8cs_source.html#l00009">CombatInstance.cs:9</a></div></div>
+<div class="ttc" id="class_combat_instance_html_a33c5218456253d1a5c457fe6364b10d7"><div class="ttname"><a href="class_combat_instance.html#a33c5218456253d1a5c457fe6364b10d7">CombatInstance.MaxHp</a></div><div class="ttdeci">int MaxHp</div><div class="ttdef"><b>Definition:</b> <a href="_combat_instance_8cs_source.html#l00035">CombatInstance.cs:35</a></div></div>
+<div class="ttc" id="struct_status_html_a95a2f2a23ef79f2e0ced04621c4593c9"><div class="ttname"><a href="struct_status.html#a95a2f2a23ef79f2e0ced04621c4593c9">Status.def</a></div><div class="ttdeci">int def</div><div class="ttdef"><b>Definition:</b> <a href="_combat_object_8cs_source.html#l00010">CombatObject.cs:10</a></div></div>
+<div class="ttc" id="class_combat_instance_html_a149d2068f3dc0ec72f3461d101dcebab"><div class="ttname"><a href="class_combat_instance.html#a149d2068f3dc0ec72f3461d101dcebab">CombatInstance.CombatState</a></div><div class="ttdeci">eCombatState CombatState</div><div class="ttdef"><b>Definition:</b> <a href="_combat_instance_8cs_source.html#l00016">CombatInstance.cs:16</a></div></div>
+<div class="ttc" id="class_combat_instance_html"><div class="ttname"><a href="class_combat_instance.html">CombatInstance</a></div><div class="ttdef"><b>Definition:</b> <a href="_combat_instance_8cs_source.html#l00004">CombatInstance.cs:4</a></div></div>
+<div class="ttc" id="class_combat_instance_html_a613a6f5a211954d3f5f0d621cab88606"><div class="ttname"><a href="class_combat_instance.html#a613a6f5a211954d3f5f0d621cab88606">CombatInstance.CombatInstance</a></div><div class="ttdeci">CombatInstance(Status status)</div><div class="ttdef"><b>Definition:</b> <a href="_combat_instance_8cs_source.html#l00038">CombatInstance.cs:38</a></div></div>
+<div class="ttc" id="class_combat_instance_html_a9de7c50888b56d9854709d132e69baa9"><div class="ttname"><a href="class_combat_instance.html#a9de7c50888b56d9854709d132e69baa9">CombatInstance.Atk</a></div><div class="ttdeci">int Atk</div><div class="ttdef"><b>Definition:</b> <a href="_combat_instance_8cs_source.html#l00032">CombatInstance.cs:32</a></div></div>
+<div class="ttc" id="_combat_object_8cs_html_ae6d9f4a8ae9fffcdf1a546168a44f917"><div class="ttname"><a href="_combat_object_8cs.html#ae6d9f4a8ae9fffcdf1a546168a44f917">eCombatState</a></div><div class="ttdeci">eCombatState</div><div class="ttdef"><b>Definition:</b> <a href="_combat_object_8cs_source.html#l00013">CombatObject.cs:13</a></div></div>
+<div class="ttc" id="class_combat_instance_html_a3a9ee2ea52b19b5150386b52396621f9"><div class="ttname"><a href="class_combat_instance.html#a3a9ee2ea52b19b5150386b52396621f9">CombatInstance._sp</a></div><div class="ttdeci">int _sp</div><div class="ttdef"><b>Definition:</b> <a href="_combat_instance_8cs_source.html#l00007">CombatInstance.cs:7</a></div></div>
+<div class="ttc" id="class_attack_actor_html"><div class="ttname"><a href="class_attack_actor.html">AttackActor</a></div><div class="ttdef"><b>Definition:</b> <a href="_attack_actor_8cs_source.html#l00012">AttackActor.cs:12</a></div></div>
+<div class="ttc" id="class_combat_instance_html_ab52acfd86a70be3647d2f092e6816190"><div class="ttname"><a href="class_combat_instance.html#ab52acfd86a70be3647d2f092e6816190">CombatInstance.Def</a></div><div class="ttdeci">int Def</div><div class="ttdef"><b>Definition:</b> <a href="_combat_instance_8cs_source.html#l00033">CombatInstance.cs:33</a></div></div>
+<div class="ttc" id="class_attack_actor_html_aaa126531b12eeb6d03311d761697cc84"><div class="ttname"><a href="class_attack_actor.html#aaa126531b12eeb6d03311d761697cc84">AttackActor.Damage</a></div><div class="ttdeci">int Damage</div><div class="ttdef"><b>Definition:</b> <a href="_attack_actor_8cs_source.html#l00024">AttackActor.cs:24</a></div></div>
+<div class="ttc" id="class_combat_instance_html_a392329b865aa88f2a579fcb7e7a0a99b"><div class="ttname"><a href="class_combat_instance.html#a392329b865aa88f2a579fcb7e7a0a99b">CombatInstance._hp</a></div><div class="ttdeci">int _hp</div><div class="ttdef"><b>Definition:</b> <a href="_combat_instance_8cs_source.html#l00006">CombatInstance.cs:6</a></div></div>
+<div class="ttc" id="class_combat_instance_html_a6352b66ef39484c9d76b03df56d26ee4"><div class="ttname"><a href="class_combat_instance.html#a6352b66ef39484c9d76b03df56d26ee4">CombatInstance._combatState</a></div><div class="ttdeci">eCombatState _combatState</div><div class="ttdef"><b>Definition:</b> <a href="_combat_instance_8cs_source.html#l00015">CombatInstance.cs:15</a></div></div>
+<div class="ttc" id="struct_status_html_a6912591952ae3178114200d6383919df"><div class="ttname"><a href="struct_status.html#a6912591952ae3178114200d6383919df">Status.hp</a></div><div class="ttdeci">int hp</div><div class="ttdef"><b>Definition:</b> <a href="_combat_object_8cs_source.html#l00007">CombatObject.cs:7</a></div></div>
+<div class="ttc" id="class_combat_instance_html_a120995296719b1fb1fa4cc55721ddba4"><div class="ttname"><a href="class_combat_instance.html#a120995296719b1fb1fa4cc55721ddba4">CombatInstance.Sp</a></div><div class="ttdeci">int Sp</div><div class="ttdef"><b>Definition:</b> <a href="_combat_instance_8cs_source.html#l00030">CombatInstance.cs:30</a></div></div>
+<div class="ttc" id="class_combat_instance_html_ae4682b727ea05a59141f747341877eb6"><div class="ttname"><a href="class_combat_instance.html#ae4682b727ea05a59141f747341877eb6">CombatInstance.Hp</a></div><div class="ttdeci">int Hp</div><div class="ttdef"><b>Definition:</b> <a href="_combat_instance_8cs_source.html#l00019">CombatInstance.cs:19</a></div></div>
+<div class="ttc" id="struct_status_html_aeaf2f82dd6fbce2adf2219b7a6b8227f"><div class="ttname"><a href="struct_status.html#aeaf2f82dd6fbce2adf2219b7a6b8227f">Status.atk</a></div><div class="ttdeci">int atk</div><div class="ttdef"><b>Definition:</b> <a href="_combat_object_8cs_source.html#l00009">CombatObject.cs:9</a></div></div>
+<div class="ttc" id="class_combat_instance_html_a7107dad81ca2638ed2ad30de391029e6"><div class="ttname"><a href="class_combat_instance.html#a7107dad81ca2638ed2ad30de391029e6">CombatInstance._atk</a></div><div class="ttdeci">int _atk</div><div class="ttdef"><b>Definition:</b> <a href="_combat_instance_8cs_source.html#l00012">CombatInstance.cs:12</a></div></div>
+<div class="ttc" id="class_combat_instance_html_a1c2bc3e91c7e2fee8b5d5f489eaa3d40"><div class="ttname"><a href="class_combat_instance.html#a1c2bc3e91c7e2fee8b5d5f489eaa3d40">CombatInstance._def</a></div><div class="ttdeci">int _def</div><div class="ttdef"><b>Definition:</b> <a href="_combat_instance_8cs_source.html#l00013">CombatInstance.cs:13</a></div></div>
+<div class="ttc" id="class_combat_instance_html_ad1d6d4d72223021bd0130b069437463d"><div class="ttname"><a href="class_combat_instance.html#ad1d6d4d72223021bd0130b069437463d">CombatInstance.MaxSp</a></div><div class="ttdeci">int MaxSp</div><div class="ttdef"><b>Definition:</b> <a href="_combat_instance_8cs_source.html#l00036">CombatInstance.cs:36</a></div></div>
+<div class="ttc" id="struct_status_html_a685aa4b12faa74a48a3b57f69e94084c"><div class="ttname"><a href="struct_status.html#a685aa4b12faa74a48a3b57f69e94084c">Status.sp</a></div><div class="ttdeci">int sp</div><div class="ttdef"><b>Definition:</b> <a href="_combat_object_8cs_source.html#l00008">CombatObject.cs:8</a></div></div>
+<div class="ttc" id="class_combat_instance_html_a612a867750ddfc0da7306e73752225b7"><div class="ttname"><a href="class_combat_instance.html#a612a867750ddfc0da7306e73752225b7">CombatInstance.Damaged</a></div><div class="ttdeci">void Damaged(AttackActor actor)</div><div class="ttdef"><b>Definition:</b> <a href="_combat_instance_8cs_source.html#l00052">CombatInstance.cs:52</a></div></div>
+<div class="ttc" id="struct_status_html"><div class="ttname"><a href="struct_status.html">Status</a></div><div class="ttdef"><b>Definition:</b> <a href="_combat_object_8cs_source.html#l00005">CombatObject.cs:5</a></div></div>
+<div class="ttc" id="namespace_unity_engine_html"><div class="ttname"><a href="namespace_unity_engine.html">UnityEngine</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_84bbf7b3c7f28a5a18725745e1505219.html">Assets</a></li><li class="navelem"><a class="el" href="dir_f13b41af88cf68434578284aaf699e39.html">Scripts</a></li><li class="navelem"><a class="el" href="dir_13a3e771a65691c34742252531c1895f.html">Objects</a></li><li class="navelem"><a class="el" href="dir_4ae16de3e21171a98ae75095b82b764a.html">Decorator</a></li><li class="navelem"><a class="el" href="_combat_instance_8cs.html">CombatInstance.cs</a></li>
+    <li class="footer">다음에 의해 생성됨 : 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+  </ul>
+</div>
+</body>
+</html>

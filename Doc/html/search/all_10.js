@@ -1,20 +1,7 @@
 var searchData=
 [
-  ['tacticsobject',['TacticsObject',['../class_tactics_object.html',1,'']]],
-  ['tacticsobject_2ecs',['TacticsObject.cs',['../_tactics_object_8cs.html',1,'']]],
-  ['target',['Target',['../class_m_c_n_1_1_state.html#a93ba2fd920292031bd6e65b1dc505cb3',1,'MCN::State']]],
-  ['tile',['Tile',['../class_tile.html',1,'Tile'],['../class_tile.html#a7684d2e86beeb06d844ebb7819b11b33',1,'Tile.Tile()']]],
-  ['tile_2ecs',['Tile.cs',['../_tile_8cs.html',1,'']]],
-  ['tile_5fsize',['TILE_SIZE',['../class_tile.html#a51b7dea4344573ba12a461a32517e683',1,'Tile']]],
-  ['tilestate',['TileState',['../class_tile_1_1_tile_state.html#a3cb3d3d596f38e7fc846a115a74843b9',1,'Tile::TileState']]],
-  ['tilestate',['TileState',['../class_tile_1_1_tile_state.html',1,'Tile']]],
-  ['tilestate_5factive',['TileState_Active',['../class_tile_1_1_tile_state___active.html',1,'Tile']]],
-  ['tilestate_5factive',['TileState_Active',['../class_tile_1_1_tile_state___active.html#a89b45a1d74fe0e384f9cc8960f29d86a',1,'Tile::TileState_Active']]],
-  ['tilestate_5fdeactive',['TileState_Deactive',['../class_tile_1_1_tile_state___deactive.html',1,'Tile']]],
-  ['tilestate_5fdeactive',['TileState_Deactive',['../class_tile_1_1_tile_state___deactive.html#af238bc1bded3aea43c93b71f4428d8e5',1,'Tile::TileState_Deactive']]],
-  ['tilestate_5fnormal',['TileState_Normal',['../class_tile_1_1_tile_state___normal.html#a521cdb030b6ad4b3827cd37592a79406',1,'Tile::TileState_Normal']]],
-  ['tilestate_5fnormal',['TileState_Normal',['../class_tile_1_1_tile_state___normal.html',1,'Tile']]],
-  ['touch',['TOUCH',['../_touch_manager_8cs.html#ae33e321a424fe84ba8b2fdb81ad40a68a2b40a1ea27beb450618885ec87f0ee15',1,'TouchManager.cs']]],
-  ['touchmanager',['TouchManager',['../class_touch_manager.html',1,'']]],
-  ['touchmanager_2ecs',['TouchManager.cs',['../_touch_manager_8cs.html',1,'']]]
+  ['range',['Range',['../class_attack_actor.html#aa331a3d1fbebd46a2458c64b209af927',1,'AttackActor.Range()'],['../class_move_actor.html#a4473f7867a074c8ca605220086c5d8fd',1,'MoveActor.Range()']]],
+  ['removetilemap',['RemoveTilemap',['../class_map_creator.html#afb12afa9a9ca8fe04701af4b494e1c8a',1,'MapCreator.RemoveTilemap()'],['../class_map_manager.html#aac20afabde4946e32ce1e719c72e0f50',1,'MapManager.RemoveTilemap()']]],
+  ['right',['RIGHT',['../_tile_8cs.html#a082f743a62d2d8e13dac8fd38af246d7a21507b40c80068eda19865706fdc2403',1,'Tile.cs']]],
+  ['run',['Run',['../interface_m_c_n_1_1_i_state.html#a6345ae1392685098bacef30ddf80362e',1,'MCN.IState.Run()'],['../class_m_c_n_1_1_state.html#a8adfea67c55997e5c0eefbae1e429f4d',1,'MCN.State.Run()'],['../class_attack_actor_1_1_attack_act_state___normal.html#a7d6644fed269325b8f62138d8adb50f5',1,'AttackActor.AttackActState_Normal.Run()'],['../class_attack_actor_1_1_attack_act_state___attack.html#a2755f4dae2cf1f80a94b6bcc973d1bfd',1,'AttackActor.AttackActState_Attack.Run()'],['../class_attack_actor_1_1_attack_act_state___done.html#a87dc9fe06b7132e7eff68fce885c2cd2',1,'AttackActor.AttackActState_Done.Run()'],['../class_move_actor_1_1_move_act_state___normal.html#ac679d09107c9471774c30ffc169b5ad0',1,'MoveActor.MoveActState_Normal.Run()'],['../class_move_actor_1_1_move_act_state___move.html#a8eb57e77a4d5d6e1e0b2f6ccf8532d73',1,'MoveActor.MoveActState_Move.Run()'],['../class_move_actor_1_1_move_act_state___done.html#a50f24c5382008b0205b7d5280880600f',1,'MoveActor.MoveActState_Done.Run()'],['../class_tile_1_1_tile_state___normal.html#acf613382b6ddeff2fcc226d8caeb0b53',1,'Tile.TileState_Normal.Run()'],['../class_tile_1_1_tile_state___active.html#ab53c7c818d65122d6d36c9681ca53bf9',1,'Tile.TileState_Active.Run()'],['../class_tile_1_1_tile_state___deactive.html#a806c5dbc5eb43903ad41d448f3d25c61',1,'Tile.TileState_Deactive.Run()']]]
 ];

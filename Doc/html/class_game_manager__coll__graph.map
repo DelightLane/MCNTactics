@@ -1,4 +1,4 @@
 <map id="GameManager" name="GameManager">
-<area shape="rect" id="node2" href="$class_m_c_n_1_1_singletone.html" title="{MCN::Singletone\&lt; GameManager \&gt;\n|+ Instance\l# _instance\l|&#45; CreateInstance()\l}" alt="" coords="5,169,235,261"/>
-<area shape="rect" id="node3" href="$class_tactics_object.html" title="{TacticsObject\n|&#45; _actorQueue\l&#45; _actorDebugQueue\l&#45; _actors\l|+ AddActor()\l+ RunActor()\l+ FinishActor()\l+ Interactive()\l+ OnTouchEvent()\l}" alt="" coords="259,132,400,297"/>
+<area shape="rect" id="node2" href="$class_m_c_n_1_1_singletone.html" title="{MCN::Singletone\&lt; GameManager \&gt;\n|+ Instance\l# _instance\l|&#45; CreateInstance()\l}" alt="" coords="5,132,235,224"/>
+<area shape="rect" id="node3" href="$class_tactics_object.html" title="{TacticsObject\n||+ Interactive()\l+ OnTouchEvent()\l}" alt="" coords="259,132,386,224"/>
 </map>

@@ -1,0 +1,5 @@
+<map id="AttackActor.Interactive" name="AttackActor.Interactive">
+<area shape="rect" id="node2" href="$class_attack_actor.html#ac231e370a4747dc36886f4158b289898" title="AttackActor.GetCurrentState" alt="" coords="207,13,396,39"/>
+<area shape="rect" id="node3" href="$class_attack_actor_1_1_attack_act_state.html#ab084b28b7bfaec2033a5102a48303af5" title="AttackActor.AttackActState.\lAttackActState" alt="" coords="444,5,632,47"/>
+<area shape="rect" id="node4" href="$class_attack_actor_1_1_attack_act_state.html#a8657ce92996ace441bb68b9e3002aa56" title="AttackActor.AttackActState.\lGetCurrentType" alt="" coords="680,5,868,47"/>
+</map>

@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['gamemanager',['GameManager',['../class_game_manager.html',1,'']]]
+  ['combataddeddeco',['CombatAddedDeco',['../class_combat_added_deco.html',1,'']]],
+  ['combatinstance',['CombatInstance',['../class_combat_instance.html',1,'']]],
+  ['combatobject',['CombatObject',['../class_combat_object.html',1,'']]]
 ];

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['actorclassinfo',['actorClassInfo',['../class_m_c_n_1_1_place_info.html#a53e63fce0254eb635a1c6a302bce97d1',1,'MCN::PlaceInfo']]]
+  ['actor',['actor',['../class_unit_data.html#ad1e372fd4cb1548a947582f993eab2b7',1,'UnitData']]],
+  ['atk',['atk',['../struct_status.html#aeaf2f82dd6fbce2adf2219b7a6b8227f',1,'Status']]]
 ];

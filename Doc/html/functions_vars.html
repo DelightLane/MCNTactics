@@ -81,7 +81,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'검색');
       <li><a href="functions.html"><span>모두</span></a></li>
       <li><a href="functions_func.html"><span>함수</span></a></li>
       <li class="current"><a href="functions_vars.html"><span>변수</span></a></li>
+      <li><a href="functions_enum.html"><span>열거형&#160;타입</span></a></li>
       <li><a href="functions_prop.html"><span>속성</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow4" class="tabs3">
+    <ul class="tablist">
+      <li><a href="#index__"><span>_</span></a></li>
+      <li><a href="#index_a"><span>a</span></a></li>
+      <li><a href="#index_d"><span>d</span></a></li>
+      <li><a href="#index_h"><span>h</span></a></li>
+      <li><a href="#index_k"><span>k</span></a></li>
+      <li><a href="#index_n"><span>n</span></a></li>
+      <li><a href="#index_p"><span>p</span></a></li>
+      <li><a href="#index_s"><span>s</span></a></li>
+      <li><a href="#index_t"><span>t</span></a></li>
+      <li><a href="#index_u"><span>u</span></a></li>
+      <li><a href="#index_v"><span>v</span></a></li>
+      <li class="current"><a href="#index_w"><span>w</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -114,21 +131,62 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 </div>
 
 <div class="contents">
-&#160;<ul>
-<li>_actorDebugQueue
-: <a class="el" href="class_tactics_object.html#ac26a5e81a142ce350e9a481d59bd0daa">TacticsObject</a>
+&#160;
+
+<h3><a class="anchor" id="index__"></a>- _ -</h3><ul>
+<li>_actorMachine
+: <a class="el" href="class_placeable_object.html#a1a9f2ccdb8b2e650d6bdda5abbad3ef9">PlaceableObject</a>
 </li>
 <li>_actorQueue
-: <a class="el" href="class_tactics_object.html#a816dd74a6daa037c17a43fb28c12ca09">TacticsObject</a>
+: <a class="el" href="class_m_c_n_1_1_actor_machine.html#a9e02068493541237f3f6fb8a6141bbc4">MCN.ActorMachine</a>
 </li>
 <li>_actors
-: <a class="el" href="class_tactics_object.html#ab16a5fde2c93cad13e6b74453664c2a9">TacticsObject</a>
+: <a class="el" href="class_m_c_n_1_1_actor_machine.html#a4e38488fdd2af93cc62e2b8fd6d4dc2c">MCN.ActorMachine</a>
+</li>
+<li>_addedAtk
+: <a class="el" href="class_combat_added_deco.html#ae3e4d0cbbf900b51cadf756154b9cd80">CombatAddedDeco</a>
+</li>
+<li>_addedDef
+: <a class="el" href="class_combat_added_deco.html#abb40c78d41f1f133a285415b70506940">CombatAddedDeco</a>
+</li>
+<li>_addedHp
+: <a class="el" href="class_combat_added_deco.html#aa6d7287956c39e242ed254faf29e6a3b">CombatAddedDeco</a>
+</li>
+<li>_addedSp
+: <a class="el" href="class_combat_added_deco.html#a02d5c40dcf180b1ad7086856dfa83929">CombatAddedDeco</a>
+</li>
+<li>_atk
+: <a class="el" href="class_combat_instance.html#a7107dad81ca2638ed2ad30de391029e6">CombatInstance</a>
 </li>
 <li>_attached
 : <a class="el" href="class_tile.html#aa548ae60732f4d054b6777436baefdd5">Tile</a>
 </li>
+<li>_combatState
+: <a class="el" href="class_combat_instance.html#a6352b66ef39484c9d76b03df56d26ee4">CombatInstance</a>
+</li>
 <li>_currentState
 : <a class="el" href="class_m_c_n_1_1_state_machine.html#a040bf7c13d5127fe983af2ef0a6315ec">MCN.StateMachine&lt; T &gt;</a>
+</li>
+<li>_data
+: <a class="el" href="class_unit_data_object.html#aa18d9577f22b44c4f3398e30ef0689ee">UnitDataObject</a>
+</li>
+<li>_datas
+: <a class="el" href="class_data_manager.html#a01ff3ff6f614ac0840d1209110710666">DataManager</a>
+</li>
+<li>_decoTarget
+: <a class="el" href="class_m_c_n_1_1_decorator.html#a358dba6e4ac8d5ef06ed9f5592f8827e">MCN.Decorator&lt; T &gt;</a>
+</li>
+<li>_def
+: <a class="el" href="class_combat_instance.html#a1c2bc3e91c7e2fee8b5d5f489eaa3d40">CombatInstance</a>
+</li>
+<li>_hp
+: <a class="el" href="class_combat_instance.html#a392329b865aa88f2a579fcb7e7a0a99b">CombatInstance</a>
+</li>
+<li>_impl
+: <a class="el" href="class_combat_object.html#ab20a8e6719930a9e416b81bc8922bd1b">CombatObject</a>
+</li>
+<li>_initialStatus
+: <a class="el" href="class_combat_object.html#a8989ba48addd736a18b9e3074ffe5a5f">CombatObject</a>
 </li>
 <li>_instance
 : <a class="el" href="class_m_c_n_1_1_mono_singletone.html#a790a4dfd828c6e4f008ad64d33d61ac0">MCN.MonoSingletone&lt; T &gt;</a>
@@ -140,8 +198,11 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 <li>_mapSize
 : <a class="el" href="class_map_manager.html#a960f398cc92f569f620ddc8c0140a5c7">MapManager</a>
 </li>
-<li>_moveableStateMachine
-: <a class="el" href="class_move_actor.html#a72afe80e236dbb9a66b27f752e8231f1">MoveActor</a>
+<li>_maxHp
+: <a class="el" href="class_combat_instance.html#afce9395cdf3a359fb6eb982c0bf7f063">CombatInstance</a>
+</li>
+<li>_maxSp
+: <a class="el" href="class_combat_instance.html#a2489b1182b81f028cfd45f26fb2a7af0">CombatInstance</a>
 </li>
 <li>_observers
 : <a class="el" href="class_touch_manager.html#a90d8ccdafc722f2d17dd0c7c818631c4">TouchManager</a>
@@ -158,8 +219,13 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 <li>_selectedObj
 : <a class="el" href="class_game_manager.html#a5a9b1c2a22af163ddb89c8a55d2f1603">GameManager</a>
 </li>
+<li>_sp
+: <a class="el" href="class_combat_instance.html#a3a9ee2ea52b19b5150386b52396621f9">CombatInstance</a>
+</li>
 <li>_stateMachine
-: <a class="el" href="class_tile.html#a822a1bffe56b1193b8c5c61070ea7827">Tile</a>
+: <a class="el" href="class_attack_actor.html#aefebe59645532f127c1504abb12ffac8">AttackActor</a>
+, <a class="el" href="class_move_actor.html#ab70f094ec948137a13da36afa0f673e0">MoveActor</a>
+, <a class="el" href="class_tile.html#a822a1bffe56b1193b8c5c61070ea7827">Tile</a>
 </li>
 <li>_states
 : <a class="el" href="class_m_c_n_1_1_state_machine.html#adf0f1417aacb073306b88563e7b3d740">MCN.StateMachine&lt; T &gt;</a>
@@ -173,29 +239,98 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 <li>_weight
 : <a class="el" href="class_m_c_n_1_1_actor.html#abf0c60f05e2a904b0b225b4839a7296d">MCN.Actor</a>
 </li>
-<li>actorClassInfo
-: <a class="el" href="class_m_c_n_1_1_place_info.html#a53e63fce0254eb635a1c6a302bce97d1">MCN.PlaceInfo</a>
+</ul>
+
+
+<h3><a class="anchor" id="index_a"></a>- a -</h3><ul>
+<li>actor
+: <a class="el" href="class_unit_data.html#ad1e372fd4cb1548a947582f993eab2b7">UnitData</a>
 </li>
-<li>className
-: <a class="el" href="class_m_c_n_1_1_actor_class_info.html#ae6514ccfb1a131c047d28a612b2e5d7c">MCN.ActorClassInfo</a>
+<li>atk
+: <a class="el" href="struct_status.html#aeaf2f82dd6fbce2adf2219b7a6b8227f">Status</a>
 </li>
+</ul>
+
+
+<h3><a class="anchor" id="index_d"></a>- d -</h3><ul>
+<li>def
+: <a class="el" href="struct_status.html#a95a2f2a23ef79f2e0ced04621c4593c9">Status</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_h"></a>- h -</h3><ul>
+<li>hp
+: <a class="el" href="struct_status.html#a6912591952ae3178114200d6383919df">Status</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_k"></a>- k -</h3><ul>
 <li>key
 : <a class="el" href="class_m_c_n_1_1_pair.html#a62c546d3829b8819a65f8c9d64200338">MCN.Pair&lt; T, T2 &gt;</a>
 </li>
+</ul>
+
+
+<h3><a class="anchor" id="index_n"></a>- n -</h3><ul>
+<li>name
+: <a class="el" href="class_actor_info.html#a2e9e540cdc037f204d80622e47543410">ActorInfo</a>
+, <a class="el" href="class_unit_data.html#a7aa329703ed47d3d717cbe3343133ad8">UnitData</a>
+</li>
+<li>no
+: <a class="el" href="class_unit_data.html#a45de9d7b5ceb45a81feca29b67e1c46c">UnitData</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_p"></a>- p -</h3><ul>
 <li>pos
 : <a class="el" href="class_m_c_n_1_1_place_info.html#ab61c1f49a0d342fb132a2af87ee7c322">MCN.PlaceInfo</a>
 </li>
 <li>prefabName
-: <a class="el" href="class_m_c_n_1_1_place_info.html#aedf20cfad59c8298386c61bdcc266457">MCN.PlaceInfo</a>
+: <a class="el" href="class_unit_data.html#a1523fa01f295711683596fec6f3268e5">UnitData</a>
 </li>
+</ul>
+
+
+<h3><a class="anchor" id="index_s"></a>- s -</h3><ul>
+<li>sp
+: <a class="el" href="struct_status.html#a685aa4b12faa74a48a3b57f69e94084c">Status</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_t"></a>- t -</h3><ul>
 <li>TILE_SIZE
 : <a class="el" href="class_tile.html#a51b7dea4344573ba12a461a32517e683">Tile</a>
 </li>
+</ul>
+
+
+<h3><a class="anchor" id="index_u"></a>- u -</h3><ul>
+<li>UnitData
+: <a class="el" href="class_unit_datas.html#a3f2f1ca9117d1c2431ae1b5c17e1bafe">UnitDatas</a>
+</li>
+<li>unitName
+: <a class="el" href="class_m_c_n_1_1_place_info.html#a5949fecaca40a115d37f3ad02b8cc15e">MCN.PlaceInfo</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_v"></a>- v -</h3><ul>
 <li>value
 : <a class="el" href="class_m_c_n_1_1_pair.html#a1980bbf37b60fcbfea22382f71250e84">MCN.Pair&lt; T, T2 &gt;</a>
 </li>
-<li>weight
-: <a class="el" href="class_m_c_n_1_1_actor_class_info.html#a65c5ae85a99cc8058149fb567f7c0086">MCN.ActorClassInfo</a>
+</ul>
+
+
+<h3><a class="anchor" id="index_w"></a>- w -</h3><ul>
+<li>weightName
+: <a class="el" href="class_actor_info.html#a25bb8e0eafab630572ffddea088a1f80">ActorInfo</a>
+</li>
+<li>weightValue
+: <a class="el" href="class_actor_info.html#a1c5dd2d46e5ebc5a6483f2bcb55cb162">ActorInfo</a>
 </li>
 </ul>
 </div><!-- contents -->

@@ -1,0 +1,5 @@
+<map id="PlaceableCreator.AddActor" name="PlaceableCreator.AddActor">
+<area shape="rect" id="node2" href="$class_placeable_creator.html#aab512359c3b021e0ad98fc56ff99ec28" title="PlaceableCreator.Create" alt="" coords="232,5,395,32"/>
+<area shape="rect" id="node3" href="$class_map_manager.html#a4213ccbaa1a81d0a47884de50a28de32" title="MapManager.PlaceObjacts" alt="" coords="443,5,621,32"/>
+<area shape="rect" id="node4" href="$class_map_manager.html#ad633984007048c7d63eab44aaeb0c32d" title="MapManager.Awake" alt="" coords="669,5,809,32"/>
+</map>

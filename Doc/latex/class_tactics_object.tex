@@ -2,43 +2,18 @@
 \label{class_tactics_object}\index{Tactics\+Object@{Tactics\+Object}}
 
 
-Tactics\+Object에 대한 상속 다이어그램 \+: \nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[height=550pt]{class_tactics_object__inherit__graph}
-\end{center}
-\end{figure}
+Tactics\+Object에 대한 상속 다이어그램 \+: 
+% FIG 0
 
 
-Tactics\+Object에 대한 협력 다이어그램\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=186pt]{class_tactics_object__coll__graph}
-\end{center}
-\end{figure}
+Tactics\+Object에 대한 협력 다이어그램\+:
+% FIG 1
 \subsection*{Public 멤버 함수}
 \begin{DoxyCompactItemize}
-\item 
-void \hyperlink{class_tactics_object_a2c2b15e6cdb3639a2273978e9b9f294f}{Add\+Actor} (\hyperlink{class_m_c_n_1_1_actor}{M\+C\+N.\+Actor} actor)
-\item 
-void \hyperlink{class_tactics_object_ac24894e1e9355ac7bb7c94b7ea51ef02}{Run\+Actor} (System.\+Type actor\+Type)
-\item 
-void \hyperlink{class_tactics_object_a4e08c233c75e0f0025f13f92b4e3ec1a}{Finish\+Actor} ()
 \item 
 virtual void \hyperlink{class_tactics_object_a5f94ed01497a7072a2785163f4cbc57b}{Interactive} (\hyperlink{class_tactics_object}{Tactics\+Object} interact\+Target)
 \item 
 virtual bool \hyperlink{class_tactics_object_af34052e62ea471d21e4c601cc79ff717}{On\+Touch\+Event} (\hyperlink{_touch_manager_8cs_ae33e321a424fe84ba8b2fdb81ad40a68}{e\+Touch\+Event} touch)
-\end{DoxyCompactItemize}
-\subsection*{Private 속성}
-\begin{DoxyCompactItemize}
-\item 
-Linked\+List$<$ \hyperlink{class_m_c_n_1_1_actor}{M\+C\+N.\+Actor} $>$ \hyperlink{class_tactics_object_a816dd74a6daa037c17a43fb28c12ca09}{\+\_\+actor\+Queue} = new Linked\+List$<$\hyperlink{class_m_c_n_1_1_actor}{M\+C\+N.\+Actor}$>$()
-\item 
-List$<$ string $>$ \hyperlink{class_tactics_object_ac26a5e81a142ce350e9a481d59bd0daa}{\+\_\+actor\+Debug\+Queue} = new List$<$string$>$()
-\item 
-Dictionary$<$ string, \hyperlink{class_m_c_n_1_1_actor}{M\+C\+N.\+Actor} $>$ \hyperlink{class_tactics_object_ab16a5fde2c93cad13e6b74453664c2a9}{\+\_\+actors} = new Dictionary$<$string, \hyperlink{class_m_c_n_1_1_actor}{M\+C\+N.\+Actor}$>$()
 \end{DoxyCompactItemize}
 
 
@@ -50,58 +25,6 @@ Tactics\+Object.\+cs 파일의 6 번째 라인에서 정의되었습니다.
 
 
 \subsection{멤버 함수 문서화}
-\index{Tactics\+Object@{Tactics\+Object}!Add\+Actor@{Add\+Actor}}
-\index{Add\+Actor@{Add\+Actor}!Tactics\+Object@{Tactics\+Object}}
-\subsubsection[{\texorpdfstring{Add\+Actor(\+M\+C\+N.\+Actor actor)}{AddActor(MCN.Actor actor)}}]{\setlength{\rightskip}{0pt plus 5cm}void Tactics\+Object.\+Add\+Actor (
-\begin{DoxyParamCaption}
-\item[{{\bf M\+C\+N.\+Actor}}]{actor}
-\end{DoxyParamCaption}
-)}\hypertarget{class_tactics_object_a2c2b15e6cdb3639a2273978e9b9f294f}{}\label{class_tactics_object_a2c2b15e6cdb3639a2273978e9b9f294f}
-
-
-Tactics\+Object.\+cs 파일의 18 번째 라인에서 정의되었습니다.
-
-
-\begin{DoxyCode}
-19     \{
-20         \textcolor{keywordflow}{if} (actor.CheckAbsoluteWeightKey())
-21         \{
-22             \hyperlink{class_tactics_object_ab16a5fde2c93cad13e6b74453664c2a9}{\_actors}.Add(actor.GetType().ToString(), actor);
-23         \}
-24     \}
-\end{DoxyCode}
-\index{Tactics\+Object@{Tactics\+Object}!Finish\+Actor@{Finish\+Actor}}
-\index{Finish\+Actor@{Finish\+Actor}!Tactics\+Object@{Tactics\+Object}}
-\subsubsection[{\texorpdfstring{Finish\+Actor()}{FinishActor()}}]{\setlength{\rightskip}{0pt plus 5cm}void Tactics\+Object.\+Finish\+Actor (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}\hypertarget{class_tactics_object_a4e08c233c75e0f0025f13f92b4e3ec1a}{}\label{class_tactics_object_a4e08c233c75e0f0025f13f92b4e3ec1a}
-
-
-Tactics\+Object.\+cs 파일의 38 번째 라인에서 정의되었습니다.
-
-
-\begin{DoxyCode}
-39     \{
-40         \textcolor{keywordflow}{if} (\hyperlink{class_tactics_object_a816dd74a6daa037c17a43fb28c12ca09}{\_actorQueue}.Count > 0)
-41         \{
-42             \hyperlink{class_tactics_object_a816dd74a6daa037c17a43fb28c12ca09}{\_actorQueue}.RemoveFirst();
-43             \hyperlink{class_tactics_object_ac26a5e81a142ce350e9a481d59bd0daa}{\_actorDebugQueue}.RemoveAt(0);
-44         \}
-45     \}
-\end{DoxyCode}
-
-
-이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_tactics_object_a4e08c233c75e0f0025f13f92b4e3ec1a_icgraph}
-\end{center}
-\end{figure}
-
-
 \index{Tactics\+Object@{Tactics\+Object}!Interactive@{Interactive}}
 \index{Interactive@{Interactive}!Tactics\+Object@{Tactics\+Object}}
 \subsubsection[{\texorpdfstring{Interactive(\+Tactics\+Object interact\+Target)}{Interactive(TacticsObject interactTarget)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Tactics\+Object.\+Interactive (
@@ -111,18 +34,15 @@ Tactics\+Object.\+cs 파일의 38 번째 라인에서 정의되었습니다.
 )\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_tactics_object_a5f94ed01497a7072a2785163f4cbc57b}{}\label{class_tactics_object_a5f94ed01497a7072a2785163f4cbc57b}
 
 
-Tactics\+Object.\+cs 파일의 47 번째 라인에서 정의되었습니다.
+\hyperlink{class_placeable_object_a167a3ebbac7456ea823c0b51ee37046d}{Placeable\+Object}에서 재구현되었습니다.
+
+
+
+Tactics\+Object.\+cs 파일의 10 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-48     \{
-49         \textcolor{keywordflow}{if}(\hyperlink{class_tactics_object_a816dd74a6daa037c17a43fb28c12ca09}{\_actorQueue}.Count > 0)
-50         \{
-51             var actor = \hyperlink{class_tactics_object_a816dd74a6daa037c17a43fb28c12ca09}{\_actorQueue}.First.Value;
-52 
-53             actor.Interactive(interactTarget);
-54         \}
-55     \}
+10 \{ \}
 \end{DoxyCode}
 \index{Tactics\+Object@{Tactics\+Object}!On\+Touch\+Event@{On\+Touch\+Event}}
 \index{On\+Touch\+Event@{On\+Touch\+Event}!Tactics\+Object@{Tactics\+Object}}
@@ -133,80 +53,16 @@ Tactics\+Object.\+cs 파일의 47 번째 라인에서 정의되었습니다.
 )\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_tactics_object_af34052e62ea471d21e4c601cc79ff717}{}\label{class_tactics_object_af34052e62ea471d21e4c601cc79ff717}
 
 
-Tactics\+Object.\+cs 파일의 57 번째 라인에서 정의되었습니다.
+\hyperlink{class_placeable_object_a2807603db9cda7bcec8c9d83aa08e44b}{Placeable\+Object}에서 재구현되었습니다.
+
+
+
+Tactics\+Object.\+cs 파일의 12 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-58     \{
-59         \textcolor{keywordflow}{if} (\hyperlink{class_tactics_object_a816dd74a6daa037c17a43fb28c12ca09}{\_actorQueue}.Count > 0)
-60         \{
-61             var actor = \hyperlink{class_tactics_object_a816dd74a6daa037c17a43fb28c12ca09}{\_actorQueue}.First.Value;
-62 
-63             actor.OnTouchEvent(touch);
-64         \}
-65 
-66         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
-67     \}
+12 \{ \textcolor{keywordflow}{return} \textcolor{keyword}{true}; \}
 \end{DoxyCode}
-
-
-이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_tactics_object_af34052e62ea471d21e4c601cc79ff717_icgraph}
-\end{center}
-\end{figure}
-
-
-\index{Tactics\+Object@{Tactics\+Object}!Run\+Actor@{Run\+Actor}}
-\index{Run\+Actor@{Run\+Actor}!Tactics\+Object@{Tactics\+Object}}
-\subsubsection[{\texorpdfstring{Run\+Actor(\+System.\+Type actor\+Type)}{RunActor(System.Type actorType)}}]{\setlength{\rightskip}{0pt plus 5cm}void Tactics\+Object.\+Run\+Actor (
-\begin{DoxyParamCaption}
-\item[{System.\+Type}]{actor\+Type}
-\end{DoxyParamCaption}
-)}\hypertarget{class_tactics_object_ac24894e1e9355ac7bb7c94b7ea51ef02}{}\label{class_tactics_object_ac24894e1e9355ac7bb7c94b7ea51ef02}
-
-
-Tactics\+Object.\+cs 파일의 26 번째 라인에서 정의되었습니다.
-
-
-\begin{DoxyCode}
-27     \{
-28         \textcolor{keywordflow}{if}(!actorType.IsSubclassOf(typeof(\hyperlink{namespace_m_c_n}{MCN}.\hyperlink{class_m_c_n_1_1_actor}{Actor})) ||
-29            !\hyperlink{class_tactics_object_ab16a5fde2c93cad13e6b74453664c2a9}{\_actors}.ContainsKey(actorType.ToString()))
-30         \{
-31             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} UnityException(\textcolor{stringliteral}{"Actor's type is not correct."});
-32         \}
-33 
-34         \hyperlink{class_tactics_object_a816dd74a6daa037c17a43fb28c12ca09}{\_actorQueue}.AddLast(\hyperlink{class_tactics_object_ab16a5fde2c93cad13e6b74453664c2a9}{\_actors}[actorType.ToString()]);
-35         \hyperlink{class_tactics_object_ac26a5e81a142ce350e9a481d59bd0daa}{\_actorDebugQueue}.Add(actorType.ToString());
-36     \}
-\end{DoxyCode}
-
-
-\subsection{멤버 데이타 문서화}
-\index{Tactics\+Object@{Tactics\+Object}!\+\_\+actor\+Debug\+Queue@{\+\_\+actor\+Debug\+Queue}}
-\index{\+\_\+actor\+Debug\+Queue@{\+\_\+actor\+Debug\+Queue}!Tactics\+Object@{Tactics\+Object}}
-\subsubsection[{\texorpdfstring{\+\_\+actor\+Debug\+Queue}{_actorDebugQueue}}]{\setlength{\rightskip}{0pt plus 5cm}List$<$string$>$ Tactics\+Object.\+\_\+actor\+Debug\+Queue = new List$<$string$>$()\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_tactics_object_ac26a5e81a142ce350e9a481d59bd0daa}{}\label{class_tactics_object_ac26a5e81a142ce350e9a481d59bd0daa}
-
-
-Tactics\+Object.\+cs 파일의 13 번째 라인에서 정의되었습니다.
-
-\index{Tactics\+Object@{Tactics\+Object}!\+\_\+actor\+Queue@{\+\_\+actor\+Queue}}
-\index{\+\_\+actor\+Queue@{\+\_\+actor\+Queue}!Tactics\+Object@{Tactics\+Object}}
-\subsubsection[{\texorpdfstring{\+\_\+actor\+Queue}{_actorQueue}}]{\setlength{\rightskip}{0pt plus 5cm}Linked\+List$<${\bf M\+C\+N.\+Actor}$>$ Tactics\+Object.\+\_\+actor\+Queue = new Linked\+List$<${\bf M\+C\+N.\+Actor}$>$()\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_tactics_object_a816dd74a6daa037c17a43fb28c12ca09}{}\label{class_tactics_object_a816dd74a6daa037c17a43fb28c12ca09}
-
-
-Tactics\+Object.\+cs 파일의 9 번째 라인에서 정의되었습니다.
-
-\index{Tactics\+Object@{Tactics\+Object}!\+\_\+actors@{\+\_\+actors}}
-\index{\+\_\+actors@{\+\_\+actors}!Tactics\+Object@{Tactics\+Object}}
-\subsubsection[{\texorpdfstring{\+\_\+actors}{_actors}}]{\setlength{\rightskip}{0pt plus 5cm}Dictionary$<$string, {\bf M\+C\+N.\+Actor}$>$ Tactics\+Object.\+\_\+actors = new Dictionary$<$string, {\bf M\+C\+N.\+Actor}$>$()\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_tactics_object_ab16a5fde2c93cad13e6b74453664c2a9}{}\label{class_tactics_object_ab16a5fde2c93cad13e6b74453664c2a9}
-
-
-Tactics\+Object.\+cs 파일의 16 번째 라인에서 정의되었습니다.
-
 
 
 이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}

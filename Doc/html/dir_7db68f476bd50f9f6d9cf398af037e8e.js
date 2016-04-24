@@ -1,7 +1,12 @@
 var dir_7db68f476bd50f9f6d9cf398af037e8e =
 [
     [ "Actor.cs", "_actor_8cs.html", [
-      [ "Actor", "class_m_c_n_1_1_actor.html", "class_m_c_n_1_1_actor" ]
+      [ "IActorQueue", "interface_m_c_n_1_1_i_actor_queue.html", "interface_m_c_n_1_1_i_actor_queue" ],
+      [ "Actor", "class_m_c_n_1_1_actor.html", "class_m_c_n_1_1_actor" ],
+      [ "ActorMachine", "class_m_c_n_1_1_actor_machine.html", "class_m_c_n_1_1_actor_machine" ]
+    ] ],
+    [ "Decorator.cs", "_decorator_8cs.html", [
+      [ "Decorator", "class_m_c_n_1_1_decorator.html", "class_m_c_n_1_1_decorator" ]
     ] ],
     [ "IObservable.cs", "_i_observable_8cs.html", [
       [ "IObservable", "interface_m_c_n_1_1_i_observable.html", "interface_m_c_n_1_1_i_observable" ],
@@ -18,7 +23,6 @@ var dir_7db68f476bd50f9f6d9cf398af037e8e =
     ] ],
     [ "Structure.cs", "_structure_8cs.html", [
       [ "PlaceInfo", "class_m_c_n_1_1_place_info.html", "class_m_c_n_1_1_place_info" ],
-      [ "ActorClassInfo", "class_m_c_n_1_1_actor_class_info.html", "class_m_c_n_1_1_actor_class_info" ],
       [ "Pair", "class_m_c_n_1_1_pair.html", "class_m_c_n_1_1_pair" ],
       [ "StringIntPair", "class_m_c_n_1_1_string_int_pair.html", "class_m_c_n_1_1_string_int_pair" ]
     ] ]

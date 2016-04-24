@@ -2,22 +2,12 @@
 \label{class_placeable_object}\index{Placeable\+Object@{Placeable\+Object}}
 
 
-Placeable\+Object에 대한 상속 다이어그램 \+: \nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=272pt]{class_placeable_object__inherit__graph}
-\end{center}
-\end{figure}
+Placeable\+Object에 대한 상속 다이어그램 \+: 
+% FIG 0
 
 
-Placeable\+Object에 대한 협력 다이어그램\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_placeable_object__coll__graph}
-\end{center}
-\end{figure}
+Placeable\+Object에 대한 협력 다이어그램\+:
+% FIG 1
 \subsection*{Public 멤버 함수}
 \begin{DoxyCompactItemize}
 \item 
@@ -35,15 +25,19 @@ void \hyperlink{class_placeable_object_a019818f3f6c6eb715fed163efa921f5a}{Select
 \item 
 void \hyperlink{class_placeable_object_a0c1248b1f9981ddbf68e6f70a6498f3d}{Deselect} ()
 \item 
-void \hyperlink{class_tactics_object_a2c2b15e6cdb3639a2273978e9b9f294f}{Add\+Actor} (\hyperlink{class_m_c_n_1_1_actor}{M\+C\+N.\+Actor} actor)
+void \hyperlink{class_placeable_object_a4f7ac210f2729a35d88a22d7f286ade5}{Add\+Actor} (\hyperlink{class_m_c_n_1_1_actor}{Actor} actor)
 \item 
-void \hyperlink{class_tactics_object_ac24894e1e9355ac7bb7c94b7ea51ef02}{Run\+Actor} (System.\+Type actor\+Type)
+void \hyperlink{class_placeable_object_ad21b0a166f06cf406fd2ffdeee04eb3b}{Enqueue\+Actor} (Type actor\+Type)
 \item 
-void \hyperlink{class_tactics_object_a4e08c233c75e0f0025f13f92b4e3ec1a}{Finish\+Actor} ()
+void \hyperlink{class_placeable_object_a4df6b98c3e629a1deedb8c8b740e9b04}{Dequeue\+Actor} ()
 \item 
-virtual void \hyperlink{class_tactics_object_a5f94ed01497a7072a2785163f4cbc57b}{Interactive} (\hyperlink{class_tactics_object}{Tactics\+Object} interact\+Target)
+override void \hyperlink{class_placeable_object_a167a3ebbac7456ea823c0b51ee37046d}{Interactive} (\hyperlink{class_tactics_object}{Tactics\+Object} interact\+Target)
 \item 
-virtual bool \hyperlink{class_tactics_object_af34052e62ea471d21e4c601cc79ff717}{On\+Touch\+Event} (\hyperlink{_touch_manager_8cs_ae33e321a424fe84ba8b2fdb81ad40a68}{e\+Touch\+Event} touch)
+override bool \hyperlink{class_placeable_object_a2807603db9cda7bcec8c9d83aa08e44b}{On\+Touch\+Event} (\hyperlink{_touch_manager_8cs_ae33e321a424fe84ba8b2fdb81ad40a68}{e\+Touch\+Event} touch)
+\item 
+void \hyperlink{interface_m_c_n_1_1_i_actor_queue_a4ff84085475a9689d242fea2861d6f1e}{Add\+Actor} (\hyperlink{class_m_c_n_1_1_actor}{M\+C\+N.\+Actor} actor)
+\item 
+void \hyperlink{interface_m_c_n_1_1_i_actor_queue_a363cf9df4d42c417cab5b14952f95ebd}{Enqueue\+Actor} (System.\+Type actor\+Type)
 \end{DoxyCompactItemize}
 \subsection*{Protected 속성}
 \begin{DoxyCompactItemize}
@@ -55,36 +49,55 @@ virtual bool \hyperlink{class_tactics_object_af34052e62ea471d21e4c601cc79ff717}{
 \item 
 void \hyperlink{class_placeable_object_a06a30cf4396743908cc88733cb216df5}{Place} (\hyperlink{class_tile}{Tile} tile)
 \end{DoxyCompactItemize}
+\subsection*{Private 속성}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_m_c_n_1_1_actor_machine}{Actor\+Machine} \hyperlink{class_placeable_object_a1a9f2ccdb8b2e650d6bdda5abbad3ef9}{\+\_\+actor\+Machine} = new \hyperlink{class_m_c_n_1_1_actor_machine}{Actor\+Machine}()
+\end{DoxyCompactItemize}
 
 
 \subsection{상세한 설명}
 
 
-Placeable\+Object.\+cs 파일의 5 번째 라인에서 정의되었습니다.
+Placeable\+Object.\+cs 파일의 7 번째 라인에서 정의되었습니다.
 
 
 
 \subsection{멤버 함수 문서화}
 \index{Placeable\+Object@{Placeable\+Object}!Add\+Actor@{Add\+Actor}}
 \index{Add\+Actor@{Add\+Actor}!Placeable\+Object@{Placeable\+Object}}
-\subsubsection[{\texorpdfstring{Add\+Actor(\+M\+C\+N.\+Actor actor)}{AddActor(MCN.Actor actor)}}]{\setlength{\rightskip}{0pt plus 5cm}void Tactics\+Object.\+Add\+Actor (
+\subsubsection[{\texorpdfstring{Add\+Actor(\+M\+C\+N.\+Actor actor)}{AddActor(MCN.Actor actor)}}]{\setlength{\rightskip}{0pt plus 5cm}void M\+C\+N.\+I\+Actor\+Queue.\+Add\+Actor (
 \begin{DoxyParamCaption}
 \item[{{\bf M\+C\+N.\+Actor}}]{actor}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inherited]}}\hypertarget{class_tactics_object_a2c2b15e6cdb3639a2273978e9b9f294f}{}\label{class_tactics_object_a2c2b15e6cdb3639a2273978e9b9f294f}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\hypertarget{interface_m_c_n_1_1_i_actor_queue_a4ff84085475a9689d242fea2861d6f1e}{}\label{interface_m_c_n_1_1_i_actor_queue_a4ff84085475a9689d242fea2861d6f1e}
 
 
-Tactics\+Object.\+cs 파일의 18 번째 라인에서 정의되었습니다.
+\hyperlink{class_m_c_n_1_1_actor_machine_a64284549a56ecf35cb0679101aa9ab11}{M\+C\+N.\+Actor\+Machine}에서 구현되었습니다.
+
+\index{Placeable\+Object@{Placeable\+Object}!Add\+Actor@{Add\+Actor}}
+\index{Add\+Actor@{Add\+Actor}!Placeable\+Object@{Placeable\+Object}}
+\subsubsection[{\texorpdfstring{Add\+Actor(\+Actor actor)}{AddActor(Actor actor)}}]{\setlength{\rightskip}{0pt plus 5cm}void Placeable\+Object.\+Add\+Actor (
+\begin{DoxyParamCaption}
+\item[{{\bf Actor}}]{actor}
+\end{DoxyParamCaption}
+)}\hypertarget{class_placeable_object_a4f7ac210f2729a35d88a22d7f286ade5}{}\label{class_placeable_object_a4f7ac210f2729a35d88a22d7f286ade5}
+
+
+Placeable\+Object.\+cs 파일의 75 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-19     \{
-20         \textcolor{keywordflow}{if} (actor.CheckAbsoluteWeightKey())
-21         \{
-22             \hyperlink{class_tactics_object_ab16a5fde2c93cad13e6b74453664c2a9}{\_actors}.Add(actor.GetType().ToString(), actor);
-23         \}
-24     \}
+76     \{
+77         \hyperlink{class_placeable_object_a1a9f2ccdb8b2e650d6bdda5abbad3ef9}{\_actorMachine}.\hyperlink{class_m_c_n_1_1_actor_machine_a64284549a56ecf35cb0679101aa9ab11}{AddActor}(actor);
+78     \}
 \end{DoxyCode}
+
+
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 2
+
+
 \index{Placeable\+Object@{Placeable\+Object}!Attach@{Attach}}
 \index{Attach@{Attach}!Placeable\+Object@{Placeable\+Object}}
 \subsubsection[{\texorpdfstring{Attach(\+Tile tile)}{Attach(Tile tile)}}]{\setlength{\rightskip}{0pt plus 5cm}void Placeable\+Object.\+Attach (
@@ -94,16 +107,16 @@ Tactics\+Object.\+cs 파일의 18 번째 라인에서 정의되었습니다.
 )}\hypertarget{class_placeable_object_a3176ec3d5d26b2a83cdc58b01e630aa1}{}\label{class_placeable_object_a3176ec3d5d26b2a83cdc58b01e630aa1}
 
 
-Placeable\+Object.\+cs 파일의 11 번째 라인에서 정의되었습니다.
+Placeable\+Object.\+cs 파일의 21 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-12     \{
-13         \textcolor{comment}{// 순환 참조 적용. 레퍼런스 관리에 신경 쓸 것}
-14         \hyperlink{class_placeable_object_a0fd0566f0bb15c71b0630322762342d8}{\_placedTile} = tile;
-15 
-16         \hyperlink{class_placeable_object_a06a30cf4396743908cc88733cb216df5}{Place}(tile);
-17     \}
+22     \{
+23         \textcolor{comment}{// 순환 참조 적용. 레퍼런스 관리에 신경 쓸 것}
+24         \hyperlink{class_placeable_object_a0fd0566f0bb15c71b0630322762342d8}{\_placedTile} = tile;
+25 
+26         \hyperlink{class_placeable_object_a06a30cf4396743908cc88733cb216df5}{Place}(tile);
+27     \}
 \end{DoxyCode}
 
 
@@ -127,6 +140,37 @@ Placeable\+Object.\+cs 파일의 11 번째 라인에서 정의되었습니다.
 \end{figure}
 
 
+\index{Placeable\+Object@{Placeable\+Object}!Dequeue\+Actor@{Dequeue\+Actor}}
+\index{Dequeue\+Actor@{Dequeue\+Actor}!Placeable\+Object@{Placeable\+Object}}
+\subsubsection[{\texorpdfstring{Dequeue\+Actor()}{DequeueActor()}}]{\setlength{\rightskip}{0pt plus 5cm}void Placeable\+Object.\+Dequeue\+Actor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_placeable_object_a4df6b98c3e629a1deedb8c8b740e9b04}{}\label{class_placeable_object_a4df6b98c3e629a1deedb8c8b740e9b04}
+
+
+\hyperlink{interface_m_c_n_1_1_i_actor_queue_ad99049ac93213b4a4f0e2d9aa76f6029}{M\+C\+N.\+I\+Actor\+Queue}를 구현.
+
+
+
+Placeable\+Object.\+cs 파일의 89 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+90     \{
+91         \hyperlink{class_placeable_object_a1a9f2ccdb8b2e650d6bdda5abbad3ef9}{\_actorMachine}.\hyperlink{class_m_c_n_1_1_actor_machine_a845c5d834f618606d2e6561eae4b11b1}{DequeueActor}();
+92 
+93 \textcolor{preprocessor}{#if UNITY\_EDITOR}
+94         \_actorDebugQueue.RemoveAt(0);
+95 \textcolor{preprocessor}{#endif}
+96     \}
+\end{DoxyCode}
+
+
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 3
+
+
 \index{Placeable\+Object@{Placeable\+Object}!Deselect@{Deselect}}
 \index{Deselect@{Deselect}!Placeable\+Object@{Placeable\+Object}}
 \subsubsection[{\texorpdfstring{Deselect()}{Deselect()}}]{\setlength{\rightskip}{0pt plus 5cm}void Placeable\+Object.\+Deselect (
@@ -136,13 +180,13 @@ Placeable\+Object.\+cs 파일의 11 번째 라인에서 정의되었습니다.
 )}\hypertarget{class_placeable_object_a0c1248b1f9981ddbf68e6f70a6498f3d}{}\label{class_placeable_object_a0c1248b1f9981ddbf68e6f70a6498f3d}
 
 
-Placeable\+Object.\+cs 파일의 59 번째 라인에서 정의되었습니다.
+Placeable\+Object.\+cs 파일의 69 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-60     \{
-61         \hyperlink{class_game_manager}{GameManager}.\hyperlink{class_m_c_n_1_1_singletone_a46dbbebd93e96a9592a9803c51f35602}{Instance}.SelectedObj = null;
-62     \}
+70     \{
+71         \hyperlink{class_game_manager}{GameManager}.\hyperlink{class_m_c_n_1_1_singletone_a46dbbebd93e96a9592a9803c51f35602}{Instance}.SelectedObj = null;
+72     \}
 \end{DoxyCode}
 
 
@@ -164,13 +208,13 @@ Placeable\+Object.\+cs 파일의 59 번째 라인에서 정의되었습니다.
 )}\hypertarget{class_placeable_object_aef2018b58bf7c8c0fab5aaf3d9a154d4}{}\label{class_placeable_object_aef2018b58bf7c8c0fab5aaf3d9a154d4}
 
 
-Placeable\+Object.\+cs 파일의 21 번째 라인에서 정의되었습니다.
+Placeable\+Object.\+cs 파일의 31 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-22     \{
-23         \hyperlink{class_placeable_object_a0fd0566f0bb15c71b0630322762342d8}{\_placedTile} = null;
-24     \}
+32     \{
+33         \hyperlink{class_placeable_object_a0fd0566f0bb15c71b0630322762342d8}{\_placedTile} = null;
+34     \}
 \end{DoxyCode}
 
 
@@ -192,15 +236,15 @@ Placeable\+Object.\+cs 파일의 21 번째 라인에서 정의되었습니다.
 )}\hypertarget{class_placeable_object_a8bd49b7db556556502a0518fc833be48}{}\label{class_placeable_object_a8bd49b7db556556502a0518fc833be48}
 
 
-Placeable\+Object.\+cs 파일의 31 번째 라인에서 정의되었습니다.
+Placeable\+Object.\+cs 파일의 41 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-32     \{
-33         \hyperlink{class_placeable_object_a0fd0566f0bb15c71b0630322762342d8}{\_placedTile} = null;
-34 
-35         GameObject.Destroy(gameObject);
-36     \}
+42     \{
+43         \hyperlink{class_placeable_object_a0fd0566f0bb15c71b0630322762342d8}{\_placedTile} = null;
+44 
+45         GameObject.Destroy(gameObject);
+46     \}
 \end{DoxyCode}
 
 
@@ -213,36 +257,42 @@ Placeable\+Object.\+cs 파일의 31 번째 라인에서 정의되었습니다.
 \end{figure}
 
 
-\index{Placeable\+Object@{Placeable\+Object}!Finish\+Actor@{Finish\+Actor}}
-\index{Finish\+Actor@{Finish\+Actor}!Placeable\+Object@{Placeable\+Object}}
-\subsubsection[{\texorpdfstring{Finish\+Actor()}{FinishActor()}}]{\setlength{\rightskip}{0pt plus 5cm}void Tactics\+Object.\+Finish\+Actor (
+\index{Placeable\+Object@{Placeable\+Object}!Enqueue\+Actor@{Enqueue\+Actor}}
+\index{Enqueue\+Actor@{Enqueue\+Actor}!Placeable\+Object@{Placeable\+Object}}
+\subsubsection[{\texorpdfstring{Enqueue\+Actor(\+System.\+Type actor\+Type)}{EnqueueActor(System.Type actorType)}}]{\setlength{\rightskip}{0pt plus 5cm}void M\+C\+N.\+I\+Actor\+Queue.\+Enqueue\+Actor (
 \begin{DoxyParamCaption}
-{}
+\item[{System.\+Type}]{actor\+Type}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inherited]}}\hypertarget{class_tactics_object_a4e08c233c75e0f0025f13f92b4e3ec1a}{}\label{class_tactics_object_a4e08c233c75e0f0025f13f92b4e3ec1a}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\hypertarget{interface_m_c_n_1_1_i_actor_queue_a363cf9df4d42c417cab5b14952f95ebd}{}\label{interface_m_c_n_1_1_i_actor_queue_a363cf9df4d42c417cab5b14952f95ebd}
 
 
-Tactics\+Object.\+cs 파일의 38 번째 라인에서 정의되었습니다.
+\hyperlink{class_m_c_n_1_1_actor_machine_a2762339a4d7f2a872f53076a3491ed03}{M\+C\+N.\+Actor\+Machine}에서 구현되었습니다.
+
+\index{Placeable\+Object@{Placeable\+Object}!Enqueue\+Actor@{Enqueue\+Actor}}
+\index{Enqueue\+Actor@{Enqueue\+Actor}!Placeable\+Object@{Placeable\+Object}}
+\subsubsection[{\texorpdfstring{Enqueue\+Actor(\+Type actor\+Type)}{EnqueueActor(Type actorType)}}]{\setlength{\rightskip}{0pt plus 5cm}void Placeable\+Object.\+Enqueue\+Actor (
+\begin{DoxyParamCaption}
+\item[{Type}]{actor\+Type}
+\end{DoxyParamCaption}
+)}\hypertarget{class_placeable_object_ad21b0a166f06cf406fd2ffdeee04eb3b}{}\label{class_placeable_object_ad21b0a166f06cf406fd2ffdeee04eb3b}
+
+
+Placeable\+Object.\+cs 파일의 80 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-39     \{
-40         \textcolor{keywordflow}{if} (\hyperlink{class_tactics_object_a816dd74a6daa037c17a43fb28c12ca09}{\_actorQueue}.Count > 0)
-41         \{
-42             \hyperlink{class_tactics_object_a816dd74a6daa037c17a43fb28c12ca09}{\_actorQueue}.RemoveFirst();
-43             \hyperlink{class_tactics_object_ac26a5e81a142ce350e9a481d59bd0daa}{\_actorDebugQueue}.RemoveAt(0);
-44         \}
-45     \}
+81     \{
+82         \hyperlink{class_placeable_object_a1a9f2ccdb8b2e650d6bdda5abbad3ef9}{\_actorMachine}.\hyperlink{class_m_c_n_1_1_actor_machine_a2762339a4d7f2a872f53076a3491ed03}{EnqueueActor}(actorType);
+83 
+84 \textcolor{preprocessor}{#if UNITY\_EDITOR}
+85         \_actorDebugQueue.Add(actorType.ToString());
+86 \textcolor{preprocessor}{#endif}
+87     \}
 \end{DoxyCode}
 
 
-이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_tactics_object_a4e08c233c75e0f0025f13f92b4e3ec1a_icgraph}
-\end{center}
-\end{figure}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 4
 
 
 \index{Placeable\+Object@{Placeable\+Object}!Get\+Placed\+Tile@{Get\+Placed\+Tile}}
@@ -254,13 +304,13 @@ Tactics\+Object.\+cs 파일의 38 번째 라인에서 정의되었습니다.
 )}\hypertarget{class_placeable_object_ab44a9b122632ac3cf0babb5040e8a201}{}\label{class_placeable_object_ab44a9b122632ac3cf0babb5040e8a201}
 
 
-Placeable\+Object.\+cs 파일의 26 번째 라인에서 정의되었습니다.
+Placeable\+Object.\+cs 파일의 36 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-27     \{
-28         \textcolor{keywordflow}{return} \hyperlink{class_placeable_object_a0fd0566f0bb15c71b0630322762342d8}{\_placedTile};
-29     \}
+37     \{
+38         \textcolor{keywordflow}{return} \hyperlink{class_placeable_object_a0fd0566f0bb15c71b0630322762342d8}{\_placedTile};
+39     \}
 \end{DoxyCode}
 
 
@@ -275,26 +325,35 @@ Placeable\+Object.\+cs 파일의 26 번째 라인에서 정의되었습니다.
 
 \index{Placeable\+Object@{Placeable\+Object}!Interactive@{Interactive}}
 \index{Interactive@{Interactive}!Placeable\+Object@{Placeable\+Object}}
-\subsubsection[{\texorpdfstring{Interactive(\+Tactics\+Object interact\+Target)}{Interactive(TacticsObject interactTarget)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Tactics\+Object.\+Interactive (
+\subsubsection[{\texorpdfstring{Interactive(\+Tactics\+Object interact\+Target)}{Interactive(TacticsObject interactTarget)}}]{\setlength{\rightskip}{0pt plus 5cm}override void Placeable\+Object.\+Interactive (
 \begin{DoxyParamCaption}
 \item[{{\bf Tactics\+Object}}]{interact\+Target}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\hypertarget{class_tactics_object_a5f94ed01497a7072a2785163f4cbc57b}{}\label{class_tactics_object_a5f94ed01497a7072a2785163f4cbc57b}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_placeable_object_a167a3ebbac7456ea823c0b51ee37046d}{}\label{class_placeable_object_a167a3ebbac7456ea823c0b51ee37046d}
 
 
-Tactics\+Object.\+cs 파일의 47 번째 라인에서 정의되었습니다.
+\hyperlink{class_tactics_object_a5f94ed01497a7072a2785163f4cbc57b}{Tactics\+Object}(으)로부터 재구현되었습니다.
+
+
+
+Placeable\+Object.\+cs 파일의 99 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-48     \{
-49         \textcolor{keywordflow}{if}(\hyperlink{class_tactics_object_a816dd74a6daa037c17a43fb28c12ca09}{\_actorQueue}.Count > 0)
-50         \{
-51             var actor = \hyperlink{class_tactics_object_a816dd74a6daa037c17a43fb28c12ca09}{\_actorQueue}.First.Value;
-52 
-53             actor.Interactive(interactTarget);
-54         \}
-55     \}
+100     \{
+101         var activeActor = \hyperlink{class_placeable_object_a1a9f2ccdb8b2e650d6bdda5abbad3ef9}{\_actorMachine}.\hyperlink{class_m_c_n_1_1_actor_machine_a7b3687c57ed3e48db2aaa77fc02d766c}{GetActiveActor}();
+102         \textcolor{keywordflow}{if} (activeActor != null)
+103         \{
+104             activeActor.\hyperlink{class_m_c_n_1_1_actor_a8ca8f46410f6ee9557e529e22fd6f6d1}{Interactive}(interactTarget);
+105         \}
+106     \}
 \end{DoxyCode}
+
+
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 5
+
+
 \index{Placeable\+Object@{Placeable\+Object}!Is\+Selected@{Is\+Selected}}
 \index{Is\+Selected@{Is\+Selected}!Placeable\+Object@{Placeable\+Object}}
 \subsubsection[{\texorpdfstring{Is\+Selected()}{IsSelected()}}]{\setlength{\rightskip}{0pt plus 5cm}bool Placeable\+Object.\+Is\+Selected (
@@ -304,47 +363,51 @@ Tactics\+Object.\+cs 파일의 47 번째 라인에서 정의되었습니다.
 )}\hypertarget{class_placeable_object_a71fd42914caa0dc6229fe6a5ffe09b99}{}\label{class_placeable_object_a71fd42914caa0dc6229fe6a5ffe09b99}
 
 
-Placeable\+Object.\+cs 파일의 49 번째 라인에서 정의되었습니다.
+Placeable\+Object.\+cs 파일의 59 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-50     \{
-51         \textcolor{keywordflow}{return} \hyperlink{class_game_manager}{GameManager}.\hyperlink{class_m_c_n_1_1_singletone_a46dbbebd93e96a9592a9803c51f35602}{Instance}.SelectedObj == \textcolor{keyword}{this};
-52     \}
+60     \{
+61         \textcolor{keywordflow}{return} \hyperlink{class_game_manager}{GameManager}.\hyperlink{class_m_c_n_1_1_singletone_a46dbbebd93e96a9592a9803c51f35602}{Instance}.SelectedObj == \textcolor{keyword}{this};
+62     \}
 \end{DoxyCode}
 \index{Placeable\+Object@{Placeable\+Object}!On\+Touch\+Event@{On\+Touch\+Event}}
 \index{On\+Touch\+Event@{On\+Touch\+Event}!Placeable\+Object@{Placeable\+Object}}
-\subsubsection[{\texorpdfstring{On\+Touch\+Event(e\+Touch\+Event touch)}{OnTouchEvent(eTouchEvent touch)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Tactics\+Object.\+On\+Touch\+Event (
+\subsubsection[{\texorpdfstring{On\+Touch\+Event(e\+Touch\+Event touch)}{OnTouchEvent(eTouchEvent touch)}}]{\setlength{\rightskip}{0pt plus 5cm}override bool Placeable\+Object.\+On\+Touch\+Event (
 \begin{DoxyParamCaption}
 \item[{{\bf e\+Touch\+Event}}]{touch}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\hypertarget{class_tactics_object_af34052e62ea471d21e4c601cc79ff717}{}\label{class_tactics_object_af34052e62ea471d21e4c601cc79ff717}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_placeable_object_a2807603db9cda7bcec8c9d83aa08e44b}{}\label{class_placeable_object_a2807603db9cda7bcec8c9d83aa08e44b}
 
 
-Tactics\+Object.\+cs 파일의 57 번째 라인에서 정의되었습니다.
+\hyperlink{class_tactics_object_af34052e62ea471d21e4c601cc79ff717}{Tactics\+Object}(으)로부터 재구현되었습니다.
+
+
+
+Placeable\+Object.\+cs 파일의 108 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-58     \{
-59         \textcolor{keywordflow}{if} (\hyperlink{class_tactics_object_a816dd74a6daa037c17a43fb28c12ca09}{\_actorQueue}.Count > 0)
-60         \{
-61             var actor = \hyperlink{class_tactics_object_a816dd74a6daa037c17a43fb28c12ca09}{\_actorQueue}.First.Value;
-62 
-63             actor.OnTouchEvent(touch);
-64         \}
-65 
-66         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
-67     \}
+109     \{
+110         var activeActor = \hyperlink{class_placeable_object_a1a9f2ccdb8b2e650d6bdda5abbad3ef9}{\_actorMachine}.\hyperlink{class_m_c_n_1_1_actor_machine_a7b3687c57ed3e48db2aaa77fc02d766c}{GetActiveActor}();
+111         \textcolor{keywordflow}{if} (activeActor != null)
+112         \{
+113             activeActor.\hyperlink{class_m_c_n_1_1_actor_a4891cf321e2a9ee25fd618c19b785331}{OnTouchEvent}(touch);
+114         \}
+115 
+116         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+117     \}
 \end{DoxyCode}
 
 
-이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_tactics_object_af34052e62ea471d21e4c601cc79ff717_icgraph}
-\end{center}
-\end{figure}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 6
+
+
+
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 7
 
 
 \index{Placeable\+Object@{Placeable\+Object}!Place@{Place}}
@@ -356,19 +419,19 @@ Tactics\+Object.\+cs 파일의 57 번째 라인에서 정의되었습니다.
 )\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_placeable_object_a06a30cf4396743908cc88733cb216df5}{}\label{class_placeable_object_a06a30cf4396743908cc88733cb216df5}
 
 
-Placeable\+Object.\+cs 파일의 38 번째 라인에서 정의되었습니다.
+Placeable\+Object.\+cs 파일의 48 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-39     \{
-40         \textcolor{keywordflow}{if} (tile != null)
-41         \{
-42             transform.parent = tile.transform;
-43             transform.localPosition = \textcolor{keyword}{new} Vector3(0, transform.localScale.y / 2, 0);
-44 
-45             tile.\hyperlink{class_tile_a1969ee41c320c6e7748a33374942e07e}{AttachObject}(\textcolor{keyword}{this});
-46         \}
-47     \}
+49     \{
+50         \textcolor{keywordflow}{if} (tile != null)
+51         \{
+52             transform.parent = tile.transform;
+53             transform.localPosition = \textcolor{keyword}{new} Vector3(0, transform.localScale.y / 2, 0);
+54 
+55             tile.\hyperlink{class_tile_a1969ee41c320c6e7748a33374942e07e}{AttachObject}(\textcolor{keyword}{this});
+56         \}
+57     \}
 \end{DoxyCode}
 
 
@@ -383,39 +446,10 @@ Placeable\+Object.\+cs 파일의 38 번째 라인에서 정의되었습니다.
 
 
 
-이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_placeable_object_a06a30cf4396743908cc88733cb216df5_icgraph}
-\end{center}
-\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 8
 
 
-\index{Placeable\+Object@{Placeable\+Object}!Run\+Actor@{Run\+Actor}}
-\index{Run\+Actor@{Run\+Actor}!Placeable\+Object@{Placeable\+Object}}
-\subsubsection[{\texorpdfstring{Run\+Actor(\+System.\+Type actor\+Type)}{RunActor(System.Type actorType)}}]{\setlength{\rightskip}{0pt plus 5cm}void Tactics\+Object.\+Run\+Actor (
-\begin{DoxyParamCaption}
-\item[{System.\+Type}]{actor\+Type}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inherited]}}\hypertarget{class_tactics_object_ac24894e1e9355ac7bb7c94b7ea51ef02}{}\label{class_tactics_object_ac24894e1e9355ac7bb7c94b7ea51ef02}
-
-
-Tactics\+Object.\+cs 파일의 26 번째 라인에서 정의되었습니다.
-
-
-\begin{DoxyCode}
-27     \{
-28         \textcolor{keywordflow}{if}(!actorType.IsSubclassOf(typeof(\hyperlink{namespace_m_c_n}{MCN}.\hyperlink{class_m_c_n_1_1_actor}{Actor})) ||
-29            !\hyperlink{class_tactics_object_ab16a5fde2c93cad13e6b74453664c2a9}{\_actors}.ContainsKey(actorType.ToString()))
-30         \{
-31             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} UnityException(\textcolor{stringliteral}{"Actor's type is not correct."});
-32         \}
-33 
-34         \hyperlink{class_tactics_object_a816dd74a6daa037c17a43fb28c12ca09}{\_actorQueue}.AddLast(\hyperlink{class_tactics_object_ab16a5fde2c93cad13e6b74453664c2a9}{\_actors}[actorType.ToString()]);
-35         \hyperlink{class_tactics_object_ac26a5e81a142ce350e9a481d59bd0daa}{\_actorDebugQueue}.Add(actorType.ToString());
-36     \}
-\end{DoxyCode}
 \index{Placeable\+Object@{Placeable\+Object}!Select@{Select}}
 \index{Select@{Select}!Placeable\+Object@{Placeable\+Object}}
 \subsubsection[{\texorpdfstring{Select()}{Select()}}]{\setlength{\rightskip}{0pt plus 5cm}void Placeable\+Object.\+Select (
@@ -425,13 +459,13 @@ Tactics\+Object.\+cs 파일의 26 번째 라인에서 정의되었습니다.
 )}\hypertarget{class_placeable_object_a019818f3f6c6eb715fed163efa921f5a}{}\label{class_placeable_object_a019818f3f6c6eb715fed163efa921f5a}
 
 
-Placeable\+Object.\+cs 파일의 54 번째 라인에서 정의되었습니다.
+Placeable\+Object.\+cs 파일의 64 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-55     \{
-56         \hyperlink{class_game_manager}{GameManager}.\hyperlink{class_m_c_n_1_1_singletone_a46dbbebd93e96a9592a9803c51f35602}{Instance}.SelectedObj = \textcolor{keyword}{this};
-57     \}
+65     \{
+66         \hyperlink{class_game_manager}{GameManager}.\hyperlink{class_m_c_n_1_1_singletone_a46dbbebd93e96a9592a9803c51f35602}{Instance}.SelectedObj = \textcolor{keyword}{this};
+67     \}
 \end{DoxyCode}
 
 
@@ -447,12 +481,19 @@ Placeable\+Object.\+cs 파일의 54 번째 라인에서 정의되었습니다.
 
 
 \subsection{멤버 데이타 문서화}
+\index{Placeable\+Object@{Placeable\+Object}!\+\_\+actor\+Machine@{\+\_\+actor\+Machine}}
+\index{\+\_\+actor\+Machine@{\+\_\+actor\+Machine}!Placeable\+Object@{Placeable\+Object}}
+\subsubsection[{\texorpdfstring{\+\_\+actor\+Machine}{_actorMachine}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Actor\+Machine} Placeable\+Object.\+\_\+actor\+Machine = new {\bf Actor\+Machine}()\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_placeable_object_a1a9f2ccdb8b2e650d6bdda5abbad3ef9}{}\label{class_placeable_object_a1a9f2ccdb8b2e650d6bdda5abbad3ef9}
+
+
+Placeable\+Object.\+cs 파일의 9 번째 라인에서 정의되었습니다.
+
 \index{Placeable\+Object@{Placeable\+Object}!\+\_\+placed\+Tile@{\+\_\+placed\+Tile}}
 \index{\+\_\+placed\+Tile@{\+\_\+placed\+Tile}!Placeable\+Object@{Placeable\+Object}}
 \subsubsection[{\texorpdfstring{\+\_\+placed\+Tile}{_placedTile}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tile} Placeable\+Object.\+\_\+placed\+Tile\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_placeable_object_a0fd0566f0bb15c71b0630322762342d8}{}\label{class_placeable_object_a0fd0566f0bb15c71b0630322762342d8}
 
 
-Placeable\+Object.\+cs 파일의 7 번째 라인에서 정의되었습니다.
+Placeable\+Object.\+cs 파일의 17 번째 라인에서 정의되었습니다.
 
 
 

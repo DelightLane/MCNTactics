@@ -1,0 +1,4 @@
+<map id="AttackActor.Initialize" name="AttackActor.Initialize">
+<area shape="rect" id="node2" href="$class_attack_actor.html#a4c1408e09de62ad12b42bee3251556ba" title="AttackActor.StorageStates" alt="" coords="196,5,375,32"/>
+<area shape="rect" id="node3" href="$class_attack_actor.html#a97035efd9d67dd78cfa55cf321426567" title="AttackActor.ChangeState" alt="" coords="200,56,371,83"/>
+</map>

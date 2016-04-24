@@ -1,4 +1,5 @@
 <map id="그래픽컬한 클래스 계통도" name="그래픽컬한 클래스 계통도">
-<area shape="rect" id="node1" href="$class_m_c_n_1_1_singletone.html" title="MCN.Singletone\&lt; GameManager \&gt;" alt="" coords="5,5,231,32"/>
-<area shape="rect" id="node2" href="$class_game_manager.html" title="GameManager" alt="" coords="279,5,385,32"/>
+<area shape="rect" id="node1" href="$interface_m_c_n_1_1_i_observable.html" title="MCN.IObservable\&lt; eTouchEvent \&gt;" alt="" coords="5,5,225,32"/>
+<area shape="rect" id="node2" href="$class_touch_manager.html" title="TouchManager" alt="" coords="273,35,380,61"/>
+<area shape="rect" id="node3" href="$class_m_c_n_1_1_mono_singletone.html" title="MCN.MonoSingletone\l\&lt; TouchManager \&gt;" alt="" coords="41,57,189,98"/>
 </map>

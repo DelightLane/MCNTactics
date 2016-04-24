@@ -1,0 +1,5 @@
+<map id="ICombat" name="ICombat">
+<area shape="rect" id="node2" href="$class_combat_added_deco.html" title="{CombatAddedDeco\n|+ Atk\l+ Def\l+ Hp\l+ Sp\l+ MaxHp\l+ MaxSp\l+ CombatState\l&#45; _addedAtk\l&#45; _addedDef\l&#45; _addedHp\l&#45; _addedSp\l|+ CombatAddedDeco()\l+ Damaged()\l}" alt="" coords="5,241,160,479"/>
+<area shape="rect" id="node3" href="$class_combat_instance.html" title="{CombatInstance\n|+ CombatState\l+ Hp\l+ Sp\l+ Atk\l+ Def\l+ MaxHp\l+ MaxSp\l&#45; _hp\l&#45; _sp\l&#45; _maxHp\l&#45; _maxSp\l&#45; _atk\l&#45; _def\l&#45; _combatState\l|+ CombatInstance()\l+ Damaged()\l}" alt="" coords="184,219,320,501"/>
+<area shape="rect" id="node4" href="$class_combat_object.html" title="{CombatObject\n|+ _initialStatus\l+ Hp\l+ Sp\l+ Atk\l+ Def\l+ MaxHp\l+ MaxSp\l+ CombatState\l&#45; _impl\l|+ Damaged()\l+ AddStatus()\l&#45; Awake()\l&#45; DisplayDebugStatus()\l}" alt="" coords="345,241,501,479"/>
+</map>

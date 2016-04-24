@@ -1,0 +1,5 @@
+<map id="MoveActor.GetCurrentStateType" name="MoveActor.GetCurrentStateType">
+<area shape="rect" id="node2" href="$class_move_actor.html#afb5993f5f72725ebd6e1bc58470e5621" title="MoveActor.GetCurrentState" alt="" coords="263,13,444,39"/>
+<area shape="rect" id="node3" href="$class_move_actor_1_1_move_act_state.html#a3b5151984b49ac01bce197ec80e299b1" title="MoveActor.MoveActState.Move\lActState" alt="" coords="492,5,695,47"/>
+<area shape="rect" id="node4" href="$class_move_actor_1_1_move_act_state.html#a21d1c989ddf24ff492600353ed8e7682" title="MoveActor.MoveActState.Get\lCurrentType" alt="" coords="743,5,936,47"/>
+</map>

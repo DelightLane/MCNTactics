@@ -1,0 +1,3 @@
+<map id="AttackActor" name="AttackActor">
+<area shape="rect" id="node2" href="$class_m_c_n_1_1_actor.html" title="{MCN::Actor\n|+ ActTarget\l&#45; _weight\l|+ Actor()\l+ CheckAbsoluteWeightKey()\l+ Initialize()\l+ Initialize()\l+ GetWeight()\l+ SetWeight()\l+ SetWeight()\l+ Interactive()\l+ OnTouchEvent()\l# AbsoluteWeightKey()\l# Initialize()\l# FinishActor()\l}" alt="" coords="5,5,200,259"/>
+</map>

@@ -1,3 +1,5 @@
 <map id="PlaceableObject" name="PlaceableObject">
-<area shape="rect" id="node2" href="$class_tactics_object.html" title="{TacticsObject\n|&#45; _actorQueue\l&#45; _actorDebugQueue\l&#45; _actors\l|+ AddActor()\l+ RunActor()\l+ FinishActor()\l+ Interactive()\l+ OnTouchEvent()\l}" alt="" coords="5,131,147,296"/>
+<area shape="rect" id="node6" href="$class_combat_object.html" title="{CombatObject\n|+ _initialStatus\l+ Hp\l+ Sp\l+ Atk\l+ Def\l+ MaxHp\l+ MaxSp\l+ CombatState\l&#45; _impl\l|+ Damaged()\l+ AddStatus()\l&#45; Awake()\l&#45; DisplayDebugStatus()\l}" alt="" coords="123,601,279,840"/>
+<area shape="rect" id="node2" href="$class_tactics_object.html" title="{TacticsObject\n||+ Interactive()\l+ OnTouchEvent()\l}" alt="" coords="5,138,132,230"/>
+<area shape="rect" id="node5" href="$interface_m_c_n_1_1_i_actor_queue.html" title="{MCN::IActorQueue\n||+ AddActor()\l+ EnqueueActor()\l+ DequeueActor()\l}" alt="" coords="270,131,401,237"/>
 </map>

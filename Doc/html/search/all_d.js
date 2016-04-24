@@ -1,12 +1,6 @@
 var searchData=
 [
-  ['pair',['Pair',['../class_m_c_n_1_1_pair.html',1,'MCN']]],
-  ['pair_3c_20string_2c_20int_20_3e',['Pair&lt; string, int &gt;',['../class_m_c_n_1_1_pair.html',1,'MCN']]],
-  ['place',['Place',['../class_placeable_object.html#a06a30cf4396743908cc88733cb216df5',1,'PlaceableObject']]],
-  ['placeableobject',['PlaceableObject',['../class_placeable_object.html',1,'']]],
-  ['placeableobject_2ecs',['PlaceableObject.cs',['../_placeable_object_8cs.html',1,'']]],
-  ['placeinfo',['PlaceInfo',['../class_m_c_n_1_1_place_info.html',1,'MCN']]],
-  ['placeobjacts',['PlaceObjacts',['../class_map_manager.html#a4213ccbaa1a81d0a47884de50a28de32',1,'MapManager']]],
-  ['pos',['pos',['../class_m_c_n_1_1_place_info.html#ab61c1f49a0d342fb132a2af87ee7c322',1,'MCN::PlaceInfo']]],
-  ['prefabname',['prefabName',['../class_m_c_n_1_1_place_info.html#aedf20cfad59c8298386c61bdcc266457',1,'MCN::PlaceInfo']]]
+  ['name',['name',['../class_unit_data.html#a7aa329703ed47d3d717cbe3343133ad8',1,'UnitData.name()'],['../class_actor_info.html#a2e9e540cdc037f204d80622e47543410',1,'ActorInfo.name()']]],
+  ['no',['no',['../class_unit_data.html#a45de9d7b5ceb45a81feca29b67e1c46c',1,'UnitData']]],
+  ['normal',['NORMAL',['../_attack_actor_8cs.html#a10659ce944335df4ded984f6bc41f31ba1e23852820b9154316c7c06e2b7ba051',1,'NORMAL():&#160;AttackActor.cs'],['../_move_actor_8cs.html#a1df5a2532cc7e6bde40a57d2dcbe23fea1e23852820b9154316c7c06e2b7ba051',1,'NORMAL():&#160;MoveActor.cs'],['../_tile_8cs.html#a271bc07be325bca511bcb747e0ff2fdaa1e23852820b9154316c7c06e2b7ba051',1,'NORMAL():&#160;Tile.cs']]]
 ];

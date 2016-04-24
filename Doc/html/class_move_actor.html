@@ -122,28 +122,24 @@ $(document).ready(function(){initNavTree('class_move_actor.html','');});
 MoveActor에 대한 상속 다이어그램 : </div>
 <div class="dyncontent">
 <div class="center"><img src="class_move_actor__inherit__graph.png" border="0" usemap="#_move_actor_inherit__map" alt="Inheritance graph"/></div>
-<map name="_move_actor_inherit__map" id="_move_actor_inherit__map">
-<area shape="rect" id="node2" href="class_m_c_n_1_1_actor.html" title="{MCN::Actor\n|+ ActTarget\l&#45; _weight\l|+ Actor()\l+ CheckAbsoluteWeightKey()\l+ Initialize()\l+ GetWeight()\l+ SetWeight()\l+ SetWeight()\l+ Interactive()\l+ OnTouchEvent()\l# AbsoluteWeightKey()\l# Initialize()\l# FinishActor()\l}" alt="" coords="5,5,200,244"/>
-</map>
+<!-- MAP 0 -->
 </div>
 <div class="dynheader">
 MoveActor에 대한 협력 다이어그램:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_move_actor__coll__graph.png" border="0" usemap="#_move_actor_coll__map" alt="Collaboration graph"/></div>
-<map name="_move_actor_coll__map" id="_move_actor_coll__map">
-<area shape="rect" id="node2" href="class_m_c_n_1_1_actor.html" title="{MCN::Actor\n|+ ActTarget\l&#45; _weight\l|+ Actor()\l+ CheckAbsoluteWeightKey()\l+ Initialize()\l+ GetWeight()\l+ SetWeight()\l+ SetWeight()\l+ Interactive()\l+ OnTouchEvent()\l# AbsoluteWeightKey()\l# Initialize()\l# FinishActor()\l}" alt="" coords="5,5,200,244"/>
-</map>
+<!-- MAP 1 -->
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 클래스</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_move_actor_1_1_moveable_state.html">MoveableState</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_move_actor_1_1_move_act_state.html">MoveActState</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_move_actor_1_1_moveable_state___done.html">MoveableState_Done</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_move_actor_1_1_move_act_state___done.html">MoveActState_Done</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_move_actor_1_1_moveable_state___move.html">MoveableState_Move</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_move_actor_1_1_move_act_state___move.html">MoveActState_Move</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_move_actor_1_1_moveable_state___normal.html">MoveableState_Normal</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_move_actor_1_1_move_act_state___normal.html">MoveActState_Normal</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -154,8 +150,10 @@ Public 멤버 함수</h2></td></tr>
 <tr class="separator:ade9f1263ef53ad85968cf6cae50d6139"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a493bb0a37cb9fc5b1aa8507ec69b04ac"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_c_n_1_1_actor.html#a493bb0a37cb9fc5b1aa8507ec69b04ac">CheckAbsoluteWeightKey</a> ()</td></tr>
 <tr class="separator:a493bb0a37cb9fc5b1aa8507ec69b04ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aadb5d1045def818bbcba4cd2248f2f1c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_c_n_1_1_actor.html#aadb5d1045def818bbcba4cd2248f2f1c">Initialize</a> (<a class="el" href="class_tactics_object.html">TacticsObject</a> actTarget)</td></tr>
-<tr class="separator:aadb5d1045def818bbcba4cd2248f2f1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27b307fecbbbf3aa53f8b5683de7ff36"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_c_n_1_1_actor.html#a27b307fecbbbf3aa53f8b5683de7ff36">Initialize</a> (IActorQueue actTarget, List&lt; StringIntPair &gt; weights)</td></tr>
+<tr class="separator:a27b307fecbbbf3aa53f8b5683de7ff36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5856541ad65c2c0ecc055414d20df0f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_c_n_1_1_actor.html#ae5856541ad65c2c0ecc055414d20df0f">Initialize</a> (IActorQueue actTarget, List&lt; string &gt; weightName, List&lt; int &gt; weightValue)</td></tr>
+<tr class="separator:ae5856541ad65c2c0ecc055414d20df0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af264703ef93c3c77b5b7062aef828205"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_c_n_1_1_actor.html#af264703ef93c3c77b5b7062aef828205">GetWeight</a> (string key)</td></tr>
 <tr class="separator:af264703ef93c3c77b5b7062aef828205"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d8020782aefa7fff625f5f8e09f7539"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_c_n_1_1_actor.html#a8d8020782aefa7fff625f5f8e09f7539">SetWeight</a> (string key, int weight)</td></tr>
@@ -176,24 +174,24 @@ Protected 멤버 함수</h2></td></tr>
 속성</h2></td></tr>
 <tr class="memitem:a4473f7867a074c8ca605220086c5d8fd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_move_actor.html#a4473f7867a074c8ca605220086c5d8fd">Range</a><code> [get]</code></td></tr>
 <tr class="separator:a4473f7867a074c8ca605220086c5d8fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e2e573370bb52bb747f77d4c75dc7e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_tactics_object.html">TacticsObject</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_c_n_1_1_actor.html#a4e2e573370bb52bb747f77d4c75dc7e1">ActTarget</a><code> [get, private set]</code></td></tr>
-<tr class="separator:a4e2e573370bb52bb747f77d4c75dc7e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d809d2994dcccb6a8fcc665afa1ca6f"><td class="memItemLeft" align="right" valign="top">IActorQueue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_c_n_1_1_actor.html#a1d809d2994dcccb6a8fcc665afa1ca6f">ActTarget</a><code> [get, private set]</code></td></tr>
+<tr class="separator:a1d809d2994dcccb6a8fcc665afa1ca6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private 멤버 함수</h2></td></tr>
 <tr class="memitem:a34b9e1ec5019892f38a8d5087bd5c2fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_move_actor.html#a34b9e1ec5019892f38a8d5087bd5c2fe">StorageStates</a> ()</td></tr>
 <tr class="separator:a34b9e1ec5019892f38a8d5087bd5c2fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b39cf27e1929b766133c6b56031ebdc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_move_actor_1_1_moveable_state.html">MoveableState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_move_actor.html#a5b39cf27e1929b766133c6b56031ebdc">GetCurrentState</a> ()</td></tr>
-<tr class="separator:a5b39cf27e1929b766133c6b56031ebdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85a48e1d0414d35588b56e36d42fbd3b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_move_actor_8cs.html#a90215797ba850e199f3ef63d7c56f132">eMoveableType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_move_actor.html#a85a48e1d0414d35588b56e36d42fbd3b">GetCurrentStateType</a> ()</td></tr>
-<tr class="separator:a85a48e1d0414d35588b56e36d42fbd3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82120e64a04913f530ac5a2aaec3ce91"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_move_actor.html#a82120e64a04913f530ac5a2aaec3ce91">ChangeState</a> (<a class="el" href="_move_actor_8cs.html#a90215797ba850e199f3ef63d7c56f132">eMoveableType</a> type)</td></tr>
-<tr class="separator:a82120e64a04913f530ac5a2aaec3ce91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb5993f5f72725ebd6e1bc58470e5621"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_move_actor_1_1_move_act_state.html">MoveActState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_move_actor.html#afb5993f5f72725ebd6e1bc58470e5621">GetCurrentState</a> ()</td></tr>
+<tr class="separator:afb5993f5f72725ebd6e1bc58470e5621"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91d32dcea30abc30c8e04641244e8c09"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_move_actor_8cs.html#a1df5a2532cc7e6bde40a57d2dcbe23fe">eMoveActType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_move_actor.html#a91d32dcea30abc30c8e04641244e8c09">GetCurrentStateType</a> ()</td></tr>
+<tr class="separator:a91d32dcea30abc30c8e04641244e8c09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f441e674d4ce71a460930e395f0966b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_move_actor.html#a5f441e674d4ce71a460930e395f0966b">ChangeState</a> (<a class="el" href="_move_actor_8cs.html#a1df5a2532cc7e6bde40a57d2dcbe23fe">eMoveActType</a> type)</td></tr>
+<tr class="separator:a5f441e674d4ce71a460930e395f0966b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private 속성</h2></td></tr>
-<tr class="memitem:a72afe80e236dbb9a66b27f752e8231f1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_m_c_n_1_1_state_machine.html">MCN.StateMachine</a>&lt; <a class="el" href="class_move_actor_1_1_moveable_state.html">MoveableState</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_move_actor.html#a72afe80e236dbb9a66b27f752e8231f1">_moveableStateMachine</a> = new <a class="el" href="class_m_c_n_1_1_state_machine.html">MCN.StateMachine</a>&lt;<a class="el" href="class_move_actor_1_1_moveable_state.html">MoveableState</a>&gt;()</td></tr>
-<tr class="separator:a72afe80e236dbb9a66b27f752e8231f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab70f094ec948137a13da36afa0f673e0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_m_c_n_1_1_state_machine.html">MCN.StateMachine</a>&lt; <a class="el" href="class_move_actor_1_1_move_act_state.html">MoveActState</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_move_actor.html#ab70f094ec948137a13da36afa0f673e0">_stateMachine</a> = new <a class="el" href="class_m_c_n_1_1_state_machine.html">MCN.StateMachine</a>&lt;<a class="el" href="class_move_actor_1_1_move_act_state.html">MoveActState</a>&gt;()</td></tr>
+<tr class="separator:ab70f094ec948137a13da36afa0f673e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">상세한 설명</h2>
 <div class="textblock">
@@ -226,7 +224,7 @@ Private 속성</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    {</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">new</span> <span class="keywordtype">string</span>[] { <span class="stringliteral">&quot;range&quot;</span> };</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div></div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="a82120e64a04913f530ac5a2aaec3ce91"></a>
+<a class="anchor" id="a5f441e674d4ce71a460930e395f0966b"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -236,7 +234,7 @@ Private 속성</h2></td></tr>
         <tr>
           <td class="memname">void MoveActor.ChangeState </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="_move_actor_8cs.html#a90215797ba850e199f3ef63d7c56f132">eMoveableType</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_move_actor_8cs.html#a1df5a2532cc7e6bde40a57d2dcbe23fe">eMoveActType</a>&#160;</td>
           <td class="paramname"><em>type</em></td><td>)</td>
           <td></td>
         </tr>
@@ -249,15 +247,13 @@ Private 속성</h2></td></tr>
 </div><div class="memdoc">
 
 <p><a class="el" href="_move_actor_8cs_source.html">MoveActor.cs</a> 파일의 <a class="el" href="_move_actor_8cs_source.html#l00228">228</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    {</div><div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_move_actor.html#a72afe80e236dbb9a66b27f752e8231f1">_moveableStateMachine</a> != null)</div><div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        {</div><div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            <a class="code" href="class_move_actor.html#a72afe80e236dbb9a66b27f752e8231f1">_moveableStateMachine</a>.ChangeState(type.ToString());</div><div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        }</div><div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    }</div><div class="ttc" id="class_move_actor_html_a72afe80e236dbb9a66b27f752e8231f1"><div class="ttname"><a href="class_move_actor.html#a72afe80e236dbb9a66b27f752e8231f1">MoveActor._moveableStateMachine</a></div><div class="ttdeci">MCN.StateMachine&lt; MoveableState &gt; _moveableStateMachine</div><div class="ttdef"><b>Definition:</b> <a href="_move_actor_8cs_source.html#l00030">MoveActor.cs:30</a></div></div>
+<div class="fragment"><div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    {</div><div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_move_actor.html#ab70f094ec948137a13da36afa0f673e0">_stateMachine</a> != null)</div><div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        {</div><div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            <a class="code" href="class_move_actor.html#ab70f094ec948137a13da36afa0f673e0">_stateMachine</a>.ChangeState(type.ToString());</div><div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        }</div><div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    }</div><div class="ttc" id="class_move_actor_html_ab70f094ec948137a13da36afa0f673e0"><div class="ttname"><a href="class_move_actor.html#ab70f094ec948137a13da36afa0f673e0">MoveActor._stateMachine</a></div><div class="ttdeci">MCN.StateMachine&lt; MoveActState &gt; _stateMachine</div><div class="ttdef"><b>Definition:</b> <a href="_move_actor_8cs_source.html#l00030">MoveActor.cs:30</a></div></div>
 </div><!-- fragment -->
 <p><div class="dynheader">
 이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_move_actor_a82120e64a04913f530ac5a2aaec3ce91_icgraph.png" border="0" usemap="#class_move_actor_a82120e64a04913f530ac5a2aaec3ce91_icgraph" alt=""/></div>
-<map name="class_move_actor_a82120e64a04913f530ac5a2aaec3ce91_icgraph" id="class_move_actor_a82120e64a04913f530ac5a2aaec3ce91_icgraph">
-<area shape="rect" id="node2" href="class_move_actor.html#a5dadb0f5c892440b6a884da7ef56b538" title="MoveActor.Initialize" alt="" coords="216,5,351,32"/>
-</map>
+<div class="center"><img src="class_move_actor_a5f441e674d4ce71a460930e395f0966b_icgraph.png" border="0" usemap="#class_move_actor_a5f441e674d4ce71a460930e395f0966b_icgraph" alt=""/></div>
+<!-- MAP 2 -->
 </div>
 </p>
 
@@ -284,20 +280,10 @@ Private 속성</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="_actor_8cs_source.html">Actor.cs</a> 파일의 <a class="el" href="_actor_8cs_source.html#l00022">22</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        {</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <span class="keywordflow">foreach</span> (var key <span class="keywordflow">in</span> <a class="code" href="class_m_c_n_1_1_actor.html#a54340ddb597852fbb6e9f2a35663bbc5">AbsoluteWeightKey</a>())</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            {</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="class_m_c_n_1_1_actor.html#abf0c60f05e2a904b0b225b4839a7296d">_weight</a> == null || !<a class="code" href="class_m_c_n_1_1_actor.html#abf0c60f05e2a904b0b225b4839a7296d">_weight</a>.ContainsKey(key))</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                {</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                    <span class="keywordflow">throw</span> <span class="keyword">new</span> UnityException(<span class="keywordtype">string</span>.Format(<span class="stringliteral">&quot;{0} is not available. because weight &#39;{1}&#39; key is not initialized.&quot;</span>, this.GetType().Name, key));</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                }</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            }</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        }</div><div class="ttc" id="class_m_c_n_1_1_actor_html_abf0c60f05e2a904b0b225b4839a7296d"><div class="ttname"><a href="class_m_c_n_1_1_actor.html#abf0c60f05e2a904b0b225b4839a7296d">MCN.Actor._weight</a></div><div class="ttdeci">Dictionary&lt; string, int &gt; _weight</div><div class="ttdef"><b>Definition:</b> <a href="_actor_8cs_source.html#l00014">Actor.cs:14</a></div></div>
+<p><a class="el" href="_actor_8cs_source.html">Actor.cs</a> 파일의 <a class="el" href="_actor_8cs_source.html#l00029">29</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        {</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="keywordflow">foreach</span> (var key <span class="keywordflow">in</span> <a class="code" href="class_m_c_n_1_1_actor.html#a54340ddb597852fbb6e9f2a35663bbc5">AbsoluteWeightKey</a>())</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            {</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="class_m_c_n_1_1_actor.html#abf0c60f05e2a904b0b225b4839a7296d">_weight</a> == null || !<a class="code" href="class_m_c_n_1_1_actor.html#abf0c60f05e2a904b0b225b4839a7296d">_weight</a>.ContainsKey(key))</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                {</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                    <span class="keywordflow">throw</span> <span class="keyword">new</span> UnityException(<span class="keywordtype">string</span>.Format(<span class="stringliteral">&quot;{0} is not available. because weight &#39;{1}&#39; key is not initialized.&quot;</span>, this.GetType().Name, key));</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                }</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            }</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        }</div><div class="ttc" id="class_m_c_n_1_1_actor_html_abf0c60f05e2a904b0b225b4839a7296d"><div class="ttname"><a href="class_m_c_n_1_1_actor.html#abf0c60f05e2a904b0b225b4839a7296d">MCN.Actor._weight</a></div><div class="ttdeci">Dictionary&lt; string, int &gt; _weight</div><div class="ttdef"><b>Definition:</b> <a href="_actor_8cs_source.html#l00021">Actor.cs:21</a></div></div>
 <div class="ttc" id="class_m_c_n_1_1_actor_html_a54340ddb597852fbb6e9f2a35663bbc5"><div class="ttname"><a href="class_m_c_n_1_1_actor.html#a54340ddb597852fbb6e9f2a35663bbc5">MCN.Actor.AbsoluteWeightKey</a></div><div class="ttdeci">abstract string[] AbsoluteWeightKey()</div></div>
 </div><!-- fragment -->
-<p><div class="dynheader">
-이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_m_c_n_1_1_actor_a493bb0a37cb9fc5b1aa8507ec69b04ac_cgraph.png" border="0" usemap="#class_m_c_n_1_1_actor_a493bb0a37cb9fc5b1aa8507ec69b04ac_cgraph" alt=""/></div>
-<map name="class_m_c_n_1_1_actor_a493bb0a37cb9fc5b1aa8507ec69b04ac_cgraph" id="class_m_c_n_1_1_actor_a493bb0a37cb9fc5b1aa8507ec69b04ac_cgraph">
-<area shape="rect" id="node2" href="class_m_c_n_1_1_actor.html#a54340ddb597852fbb6e9f2a35663bbc5" title="MCN.Actor.AbsoluteWeightKey" alt="" coords="296,5,501,32"/>
-</map>
-</div>
-</p>
-
 </div>
 </div>
 <a class="anchor" id="ae86279ca7d290707cd010bc411f38966"></a>
@@ -321,23 +307,13 @@ Private 속성</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="_actor_8cs_source.html">Actor.cs</a> 파일의 <a class="el" href="_actor_8cs_source.html#l00049">49</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        {</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_m_c_n_1_1_actor.html#a4e2e573370bb52bb747f77d4c75dc7e1">ActTarget</a> != null)</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            {</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <a class="code" href="class_m_c_n_1_1_actor.html#a4e2e573370bb52bb747f77d4c75dc7e1">ActTarget</a>.<a class="code" href="class_tactics_object.html#a4e08c233c75e0f0025f13f92b4e3ec1a">FinishActor</a>();</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            }</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }</div><div class="ttc" id="class_m_c_n_1_1_actor_html_a4e2e573370bb52bb747f77d4c75dc7e1"><div class="ttname"><a href="class_m_c_n_1_1_actor.html#a4e2e573370bb52bb747f77d4c75dc7e1">MCN.Actor.ActTarget</a></div><div class="ttdeci">TacticsObject ActTarget</div><div class="ttdef"><b>Definition:</b> <a href="_actor_8cs_source.html#l00016">Actor.cs:16</a></div></div>
-<div class="ttc" id="class_tactics_object_html_a4e08c233c75e0f0025f13f92b4e3ec1a"><div class="ttname"><a href="class_tactics_object.html#a4e08c233c75e0f0025f13f92b4e3ec1a">TacticsObject.FinishActor</a></div><div class="ttdeci">void FinishActor()</div><div class="ttdef"><b>Definition:</b> <a href="_tactics_object_8cs_source.html#l00038">TacticsObject.cs:38</a></div></div>
+<p><a class="el" href="_actor_8cs_source.html">Actor.cs</a> 파일의 <a class="el" href="_actor_8cs_source.html#l00087">87</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        {</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_m_c_n_1_1_actor.html#a1d809d2994dcccb6a8fcc665afa1ca6f">ActTarget</a> != null)</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            {</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                <a class="code" href="class_m_c_n_1_1_actor.html#a1d809d2994dcccb6a8fcc665afa1ca6f">ActTarget</a>.<a class="code" href="interface_m_c_n_1_1_i_actor_queue.html#ad99049ac93213b4a4f0e2d9aa76f6029">DequeueActor</a>();</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            }</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        }</div><div class="ttc" id="interface_m_c_n_1_1_i_actor_queue_html_ad99049ac93213b4a4f0e2d9aa76f6029"><div class="ttname"><a href="interface_m_c_n_1_1_i_actor_queue.html#ad99049ac93213b4a4f0e2d9aa76f6029">MCN.IActorQueue.DequeueActor</a></div><div class="ttdeci">void DequeueActor()</div></div>
+<div class="ttc" id="class_m_c_n_1_1_actor_html_a1d809d2994dcccb6a8fcc665afa1ca6f"><div class="ttname"><a href="class_m_c_n_1_1_actor.html#a1d809d2994dcccb6a8fcc665afa1ca6f">MCN.Actor.ActTarget</a></div><div class="ttdeci">IActorQueue ActTarget</div><div class="ttdef"><b>Definition:</b> <a href="_actor_8cs_source.html#l00023">Actor.cs:23</a></div></div>
 </div><!-- fragment -->
-<p><div class="dynheader">
-이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_m_c_n_1_1_actor_ae86279ca7d290707cd010bc411f38966_cgraph.png" border="0" usemap="#class_m_c_n_1_1_actor_ae86279ca7d290707cd010bc411f38966_cgraph" alt=""/></div>
-<map name="class_m_c_n_1_1_actor_ae86279ca7d290707cd010bc411f38966_cgraph" id="class_m_c_n_1_1_actor_ae86279ca7d290707cd010bc411f38966_cgraph">
-<area shape="rect" id="node2" href="class_tactics_object.html#a4e08c233c75e0f0025f13f92b4e3ec1a" title="TacticsObject.FinishActor" alt="" coords="209,5,381,32"/>
-</map>
-</div>
-</p>
-
 </div>
 </div>
-<a class="anchor" id="a5b39cf27e1929b766133c6b56031ebdc"></a>
+<a class="anchor" id="afb5993f5f72725ebd6e1bc58470e5621"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -345,7 +321,7 @@ Private 속성</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_move_actor_1_1_moveable_state.html">MoveableState</a> MoveActor.GetCurrentState </td>
+          <td class="memname"><a class="el" href="class_move_actor_1_1_move_act_state.html">MoveActState</a> MoveActor.GetCurrentState </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -359,34 +335,27 @@ Private 속성</h2></td></tr>
 </div><div class="memdoc">
 
 <p><a class="el" href="_move_actor_8cs_source.html">MoveActor.cs</a> 파일의 <a class="el" href="_move_actor_8cs_source.html#l00205">205</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    {</div><div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        var state = <a class="code" href="class_move_actor.html#a72afe80e236dbb9a66b27f752e8231f1">_moveableStateMachine</a>.GetCurrentState();</div><div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <span class="keywordflow">if</span> (state != null &amp;&amp; state is MoveableState)</div><div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        {</div><div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            <span class="keywordflow">return</span> state as MoveableState;</div><div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        }</div><div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;</div><div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        <span class="keywordflow">throw</span> <span class="keyword">new</span> UnityException(<span class="stringliteral">&quot;don&#39;t have moveAct state.&quot;</span>);</div><div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    }</div><div class="ttc" id="class_move_actor_html_a72afe80e236dbb9a66b27f752e8231f1"><div class="ttname"><a href="class_move_actor.html#a72afe80e236dbb9a66b27f752e8231f1">MoveActor._moveableStateMachine</a></div><div class="ttdeci">MCN.StateMachine&lt; MoveableState &gt; _moveableStateMachine</div><div class="ttdef"><b>Definition:</b> <a href="_move_actor_8cs_source.html#l00030">MoveActor.cs:30</a></div></div>
+<div class="fragment"><div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    {</div><div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        var state = <a class="code" href="class_move_actor.html#ab70f094ec948137a13da36afa0f673e0">_stateMachine</a>.GetCurrentState();</div><div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <span class="keywordflow">if</span> (state != null &amp;&amp; state is MoveActState)</div><div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        {</div><div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            <span class="keywordflow">return</span> state as MoveActState;</div><div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        }</div><div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;</div><div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        <span class="keywordflow">throw</span> <span class="keyword">new</span> UnityException(<span class="stringliteral">&quot;don&#39;t have moveAct state.&quot;</span>);</div><div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    }</div><div class="ttc" id="class_move_actor_html_ab70f094ec948137a13da36afa0f673e0"><div class="ttname"><a href="class_move_actor.html#ab70f094ec948137a13da36afa0f673e0">MoveActor._stateMachine</a></div><div class="ttdeci">MCN.StateMachine&lt; MoveActState &gt; _stateMachine</div><div class="ttdef"><b>Definition:</b> <a href="_move_actor_8cs_source.html#l00030">MoveActor.cs:30</a></div></div>
 </div><!-- fragment -->
 <p><div class="dynheader">
 이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_move_actor_a5b39cf27e1929b766133c6b56031ebdc_cgraph.png" border="0" usemap="#class_move_actor_a5b39cf27e1929b766133c6b56031ebdc_cgraph" alt=""/></div>
-<map name="class_move_actor_a5b39cf27e1929b766133c6b56031ebdc_cgraph" id="class_move_actor_a5b39cf27e1929b766133c6b56031ebdc_cgraph">
-<area shape="rect" id="node2" href="class_move_actor_1_1_moveable_state.html#a8aabee832e31e33507bf93a2737f520c" title="MoveActor.MoveableState.\lMoveableState" alt="" coords="235,5,411,47"/>
-<area shape="rect" id="node3" href="class_move_actor_1_1_moveable_state.html#a0333e87600aceebfe26602fd0c697447" title="MoveActor.MoveableState.\lGetCurrentType" alt="" coords="459,5,635,47"/>
-</map>
+<div class="center"><img src="class_move_actor_afb5993f5f72725ebd6e1bc58470e5621_cgraph.png" border="0" usemap="#class_move_actor_afb5993f5f72725ebd6e1bc58470e5621_cgraph" alt=""/></div>
+<!-- MAP 3 -->
 </div>
 </p>
 
 <p><div class="dynheader">
 이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_move_actor_a5b39cf27e1929b766133c6b56031ebdc_icgraph.png" border="0" usemap="#class_move_actor_a5b39cf27e1929b766133c6b56031ebdc_icgraph" alt=""/></div>
-<map name="class_move_actor_a5b39cf27e1929b766133c6b56031ebdc_icgraph" id="class_move_actor_a5b39cf27e1929b766133c6b56031ebdc_icgraph">
-<area shape="rect" id="node2" href="class_move_actor.html#a85a48e1d0414d35588b56e36d42fbd3b" title="MoveActor.GetCurrentStateType" alt="" coords="235,5,444,32"/>
-<area shape="rect" id="node3" href="class_move_actor.html#abbb2fe6a87e45fe6a4f7eeec674558d6" title="MoveActor.OnTouchEvent" alt="" coords="254,56,425,83"/>
-<area shape="rect" id="node4" href="class_move_actor.html#ade9f1263ef53ad85968cf6cae50d6139" title="MoveActor.Interactive" alt="" coords="267,107,412,133"/>
-</map>
+<div class="center"><img src="class_move_actor_afb5993f5f72725ebd6e1bc58470e5621_icgraph.png" border="0" usemap="#class_move_actor_afb5993f5f72725ebd6e1bc58470e5621_icgraph" alt=""/></div>
+<!-- MAP 4 -->
 </div>
 </p>
 
 </div>
 </div>
-<a class="anchor" id="a85a48e1d0414d35588b56e36d42fbd3b"></a>
+<a class="anchor" id="a91d32dcea30abc30c8e04641244e8c09"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -394,7 +363,7 @@ Private 속성</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_move_actor_8cs.html#a90215797ba850e199f3ef63d7c56f132">eMoveableType</a> MoveActor.GetCurrentStateType </td>
+          <td class="memname"><a class="el" href="_move_actor_8cs.html#a1df5a2532cc7e6bde40a57d2dcbe23fe">eMoveActType</a> MoveActor.GetCurrentStateType </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -408,17 +377,13 @@ Private 속성</h2></td></tr>
 </div><div class="memdoc">
 
 <p><a class="el" href="_move_actor_8cs_source.html">MoveActor.cs</a> 파일의 <a class="el" href="_move_actor_8cs_source.html#l00216">216</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    {</div><div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        var state = <a class="code" href="class_move_actor.html#a5b39cf27e1929b766133c6b56031ebdc">GetCurrentState</a>();</div><div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;</div><div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        <span class="keywordflow">if</span> (state != null)</div><div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        {</div><div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            <span class="keywordflow">return</span> state.GetCurrentType();</div><div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        }</div><div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;</div><div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        <span class="keywordflow">throw</span> <span class="keyword">new</span> UnityException(<span class="stringliteral">&quot;don&#39;t have moveAct state.&quot;</span>);</div><div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    }</div><div class="ttc" id="class_move_actor_html_a5b39cf27e1929b766133c6b56031ebdc"><div class="ttname"><a href="class_move_actor.html#a5b39cf27e1929b766133c6b56031ebdc">MoveActor.GetCurrentState</a></div><div class="ttdeci">MoveableState GetCurrentState()</div><div class="ttdef"><b>Definition:</b> <a href="_move_actor_8cs_source.html#l00205">MoveActor.cs:205</a></div></div>
+<div class="fragment"><div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    {</div><div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        var state = <a class="code" href="class_move_actor.html#afb5993f5f72725ebd6e1bc58470e5621">GetCurrentState</a>();</div><div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;</div><div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        <span class="keywordflow">if</span> (state != null)</div><div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        {</div><div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            <span class="keywordflow">return</span> state.GetCurrentType();</div><div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        }</div><div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;</div><div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        <span class="keywordflow">throw</span> <span class="keyword">new</span> UnityException(<span class="stringliteral">&quot;don&#39;t have moveAct state.&quot;</span>);</div><div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    }</div><div class="ttc" id="class_move_actor_html_afb5993f5f72725ebd6e1bc58470e5621"><div class="ttname"><a href="class_move_actor.html#afb5993f5f72725ebd6e1bc58470e5621">MoveActor.GetCurrentState</a></div><div class="ttdeci">MoveActState GetCurrentState()</div><div class="ttdef"><b>Definition:</b> <a href="_move_actor_8cs_source.html#l00205">MoveActor.cs:205</a></div></div>
 </div><!-- fragment -->
 <p><div class="dynheader">
 이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_move_actor_a85a48e1d0414d35588b56e36d42fbd3b_cgraph.png" border="0" usemap="#class_move_actor_a85a48e1d0414d35588b56e36d42fbd3b_cgraph" alt=""/></div>
-<map name="class_move_actor_a85a48e1d0414d35588b56e36d42fbd3b_cgraph" id="class_move_actor_a85a48e1d0414d35588b56e36d42fbd3b_cgraph">
-<area shape="rect" id="node2" href="class_move_actor.html#a5b39cf27e1929b766133c6b56031ebdc" title="MoveActor.GetCurrentState" alt="" coords="263,13,444,39"/>
-<area shape="rect" id="node3" href="class_move_actor_1_1_moveable_state.html#a8aabee832e31e33507bf93a2737f520c" title="MoveActor.MoveableState.\lMoveableState" alt="" coords="492,5,668,47"/>
-<area shape="rect" id="node4" href="class_move_actor_1_1_moveable_state.html#a0333e87600aceebfe26602fd0c697447" title="MoveActor.MoveableState.\lGetCurrentType" alt="" coords="716,5,892,47"/>
-</map>
+<div class="center"><img src="class_move_actor_a91d32dcea30abc30c8e04641244e8c09_cgraph.png" border="0" usemap="#class_move_actor_a91d32dcea30abc30c8e04641244e8c09_cgraph" alt=""/></div>
+<!-- MAP 5 -->
 </div>
 </p>
 
@@ -446,12 +411,12 @@ Private 속성</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="_actor_8cs_source.html">Actor.cs</a> 파일의 <a class="el" href="_actor_8cs_source.html#l00057">57</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        {</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_m_c_n_1_1_actor.html#abf0c60f05e2a904b0b225b4839a7296d">_weight</a>.ContainsKey(key))</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            {</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="class_m_c_n_1_1_actor.html#abf0c60f05e2a904b0b225b4839a7296d">_weight</a>[key];</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            }</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keywordflow">return</span> 0;</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        }</div><div class="ttc" id="class_m_c_n_1_1_actor_html_abf0c60f05e2a904b0b225b4839a7296d"><div class="ttname"><a href="class_m_c_n_1_1_actor.html#abf0c60f05e2a904b0b225b4839a7296d">MCN.Actor._weight</a></div><div class="ttdeci">Dictionary&lt; string, int &gt; _weight</div><div class="ttdef"><b>Definition:</b> <a href="_actor_8cs_source.html#l00014">Actor.cs:14</a></div></div>
+<p><a class="el" href="_actor_8cs_source.html">Actor.cs</a> 파일의 <a class="el" href="_actor_8cs_source.html#l00095">95</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        {</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_m_c_n_1_1_actor.html#abf0c60f05e2a904b0b225b4839a7296d">_weight</a>.ContainsKey(key))</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            {</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="class_m_c_n_1_1_actor.html#abf0c60f05e2a904b0b225b4839a7296d">_weight</a>[key];</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            }</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="keywordflow">return</span> 0;</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        }</div><div class="ttc" id="class_m_c_n_1_1_actor_html_abf0c60f05e2a904b0b225b4839a7296d"><div class="ttname"><a href="class_m_c_n_1_1_actor.html#abf0c60f05e2a904b0b225b4839a7296d">MCN.Actor._weight</a></div><div class="ttdeci">Dictionary&lt; string, int &gt; _weight</div><div class="ttdef"><b>Definition:</b> <a href="_actor_8cs_source.html#l00021">Actor.cs:21</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="aadb5d1045def818bbcba4cd2248f2f1c"></a>
+<a class="anchor" id="a27b307fecbbbf3aa53f8b5683de7ff36"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -461,9 +426,19 @@ Private 속성</h2></td></tr>
         <tr>
           <td class="memname">void MCN.Actor.Initialize </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_tactics_object.html">TacticsObject</a>&#160;</td>
-          <td class="paramname"><em>actTarget</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="interface_m_c_n_1_1_i_actor_queue.html">IActorQueue</a>&#160;</td>
+          <td class="paramname"><em>actTarget</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">List&lt; <a class="el" href="class_m_c_n_1_1_string_int_pair.html">StringIntPair</a> &gt;&#160;</td>
+          <td class="paramname"><em>weights</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -473,32 +448,64 @@ Private 속성</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="_actor_8cs_source.html">Actor.cs</a> 파일의 <a class="el" href="_actor_8cs_source.html#l00035">35</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        {</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keywordflow">if</span> (actTarget == null)</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            {</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <span class="keywordflow">throw</span> <span class="keyword">new</span> UnityException(<span class="stringliteral">&quot;Act Target is null.&quot;</span>);</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            }</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            this.<a class="code" href="class_m_c_n_1_1_actor.html#a4e2e573370bb52bb747f77d4c75dc7e1">ActTarget</a> = actTarget;</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <a class="code" href="class_m_c_n_1_1_actor.html#a37e76fad4625e138478764ae6c5ce959">Initialize</a>();</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        }</div><div class="ttc" id="class_m_c_n_1_1_actor_html_a4e2e573370bb52bb747f77d4c75dc7e1"><div class="ttname"><a href="class_m_c_n_1_1_actor.html#a4e2e573370bb52bb747f77d4c75dc7e1">MCN.Actor.ActTarget</a></div><div class="ttdeci">TacticsObject ActTarget</div><div class="ttdef"><b>Definition:</b> <a href="_actor_8cs_source.html#l00016">Actor.cs:16</a></div></div>
-<div class="ttc" id="class_m_c_n_1_1_actor_html_a37e76fad4625e138478764ae6c5ce959"><div class="ttname"><a href="class_m_c_n_1_1_actor.html#a37e76fad4625e138478764ae6c5ce959">MCN.Actor.Initialize</a></div><div class="ttdeci">virtual void Initialize()</div><div class="ttdef"><b>Definition:</b> <a href="_actor_8cs_source.html#l00047">Actor.cs:47</a></div></div>
+<p><a class="el" href="_actor_8cs_source.html">Actor.cs</a> 파일의 <a class="el" href="_actor_8cs_source.html#l00042">42</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        {</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keywordflow">if</span> (actTarget == null)</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            {</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <span class="keywordflow">throw</span> <span class="keyword">new</span> UnityException(<span class="stringliteral">&quot;Act Target is null.&quot;</span>);</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            }</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            this.<a class="code" href="class_m_c_n_1_1_actor.html#a1d809d2994dcccb6a8fcc665afa1ca6f">ActTarget</a> = actTarget;</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordflow">foreach</span> (var actorWeight <span class="keywordflow">in</span> weights)</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            {</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <a class="code" href="class_m_c_n_1_1_actor.html#a8d8020782aefa7fff625f5f8e09f7539">SetWeight</a>(actorWeight);</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            }</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <a class="code" href="class_m_c_n_1_1_actor.html#a37e76fad4625e138478764ae6c5ce959">Initialize</a>();</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div><div class="ttc" id="class_m_c_n_1_1_actor_html_a8d8020782aefa7fff625f5f8e09f7539"><div class="ttname"><a href="class_m_c_n_1_1_actor.html#a8d8020782aefa7fff625f5f8e09f7539">MCN.Actor.SetWeight</a></div><div class="ttdeci">void SetWeight(string key, int weight)</div><div class="ttdef"><b>Definition:</b> <a href="_actor_8cs_source.html#l00105">Actor.cs:105</a></div></div>
+<div class="ttc" id="class_m_c_n_1_1_actor_html_a37e76fad4625e138478764ae6c5ce959"><div class="ttname"><a href="class_m_c_n_1_1_actor.html#a37e76fad4625e138478764ae6c5ce959">MCN.Actor.Initialize</a></div><div class="ttdeci">virtual void Initialize()</div><div class="ttdef"><b>Definition:</b> <a href="_actor_8cs_source.html#l00085">Actor.cs:85</a></div></div>
+<div class="ttc" id="class_m_c_n_1_1_actor_html_a1d809d2994dcccb6a8fcc665afa1ca6f"><div class="ttname"><a href="class_m_c_n_1_1_actor.html#a1d809d2994dcccb6a8fcc665afa1ca6f">MCN.Actor.ActTarget</a></div><div class="ttdeci">IActorQueue ActTarget</div><div class="ttdef"><b>Definition:</b> <a href="_actor_8cs_source.html#l00023">Actor.cs:23</a></div></div>
 </div><!-- fragment -->
-<p><div class="dynheader">
-이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_m_c_n_1_1_actor_aadb5d1045def818bbcba4cd2248f2f1c_cgraph.png" border="0" usemap="#class_m_c_n_1_1_actor_aadb5d1045def818bbcba4cd2248f2f1c_cgraph" alt=""/></div>
-<map name="class_m_c_n_1_1_actor_aadb5d1045def818bbcba4cd2248f2f1c_cgraph" id="class_m_c_n_1_1_actor_aadb5d1045def818bbcba4cd2248f2f1c_cgraph">
-<area shape="rect" id="node2" href="class_m_c_n_1_1_actor.html#a37e76fad4625e138478764ae6c5ce959" title="MCN.Actor.Initialize" alt="" coords="191,5,328,32"/>
-</map>
-</div>
-</p>
-
 <p><div class="dynheader">
 이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_m_c_n_1_1_actor_aadb5d1045def818bbcba4cd2248f2f1c_icgraph.png" border="0" usemap="#class_m_c_n_1_1_actor_aadb5d1045def818bbcba4cd2248f2f1c_icgraph" alt=""/></div>
-<map name="class_m_c_n_1_1_actor_aadb5d1045def818bbcba4cd2248f2f1c_icgraph" id="class_m_c_n_1_1_actor_aadb5d1045def818bbcba4cd2248f2f1c_icgraph">
-<area shape="rect" id="node2" href="class_map_manager.html#a3fd471f20bdfc00d53997d782bc3339a" title="MapManager.AddActor" alt="" coords="191,5,345,32"/>
-<area shape="rect" id="node3" href="class_map_manager.html#a4213ccbaa1a81d0a47884de50a28de32" title="MapManager.PlaceObjacts" alt="" coords="393,5,572,32"/>
-<area shape="rect" id="node4" href="class_map_manager.html#ad633984007048c7d63eab44aaeb0c32d" title="MapManager.Awake" alt="" coords="620,5,760,32"/>
-</map>
+<div class="center"><img src="class_m_c_n_1_1_actor_a27b307fecbbbf3aa53f8b5683de7ff36_icgraph.png" border="0" usemap="#class_m_c_n_1_1_actor_a27b307fecbbbf3aa53f8b5683de7ff36_icgraph" alt=""/></div>
+<!-- MAP 6 -->
 </div>
 </p>
 
+</div>
+</div>
+<a class="anchor" id="ae5856541ad65c2c0ecc055414d20df0f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MCN.Actor.Initialize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="interface_m_c_n_1_1_i_actor_queue.html">IActorQueue</a>&#160;</td>
+          <td class="paramname"><em>actTarget</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">List&lt; string &gt;&#160;</td>
+          <td class="paramname"><em>weightName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">List&lt; int &gt;&#160;</td>
+          <td class="paramname"><em>weightValue</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="_actor_8cs_source.html">Actor.cs</a> 파일의 <a class="el" href="_actor_8cs_source.html#l00059">59</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        {</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordflow">if</span> (actTarget == null)</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            {</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="keywordflow">throw</span> <span class="keyword">new</span> UnityException(<span class="stringliteral">&quot;Act Target is null.&quot;</span>);</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            }</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            this.<a class="code" href="class_m_c_n_1_1_actor.html#a1d809d2994dcccb6a8fcc665afa1ca6f">ActTarget</a> = actTarget;</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; weightName.Count; ++i)</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            {</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                var pair = <span class="keyword">new</span> StringIntPair();</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                pair.key = weightName[i];</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <span class="keywordflow">if</span> (weightValue.Count &gt; i)</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                {</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                    pair.value = weightValue[i];</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                }</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                <a class="code" href="class_m_c_n_1_1_actor.html#a8d8020782aefa7fff625f5f8e09f7539">SetWeight</a>(pair);</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            }</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <a class="code" href="class_m_c_n_1_1_actor.html#a37e76fad4625e138478764ae6c5ce959">Initialize</a>();</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        }</div><div class="ttc" id="class_m_c_n_1_1_actor_html_a8d8020782aefa7fff625f5f8e09f7539"><div class="ttname"><a href="class_m_c_n_1_1_actor.html#a8d8020782aefa7fff625f5f8e09f7539">MCN.Actor.SetWeight</a></div><div class="ttdeci">void SetWeight(string key, int weight)</div><div class="ttdef"><b>Definition:</b> <a href="_actor_8cs_source.html#l00105">Actor.cs:105</a></div></div>
+<div class="ttc" id="class_m_c_n_1_1_actor_html_a37e76fad4625e138478764ae6c5ce959"><div class="ttname"><a href="class_m_c_n_1_1_actor.html#a37e76fad4625e138478764ae6c5ce959">MCN.Actor.Initialize</a></div><div class="ttdeci">virtual void Initialize()</div><div class="ttdef"><b>Definition:</b> <a href="_actor_8cs_source.html#l00085">Actor.cs:85</a></div></div>
+<div class="ttc" id="class_m_c_n_1_1_actor_html_a1d809d2994dcccb6a8fcc665afa1ca6f"><div class="ttname"><a href="class_m_c_n_1_1_actor.html#a1d809d2994dcccb6a8fcc665afa1ca6f">MCN.Actor.ActTarget</a></div><div class="ttdeci">IActorQueue ActTarget</div><div class="ttdef"><b>Definition:</b> <a href="_actor_8cs_source.html#l00023">Actor.cs:23</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a5dadb0f5c892440b6a884da7ef56b538"></a>
@@ -525,18 +532,15 @@ Private 속성</h2></td></tr>
 <p><a class="el" href="class_m_c_n_1_1_actor.html#a37e76fad4625e138478764ae6c5ce959">MCN.Actor</a>(으)로부터 재구현되었습니다.</p>
 
 <p><a class="el" href="_move_actor_8cs_source.html">MoveActor.cs</a> 파일의 <a class="el" href="_move_actor_8cs_source.html#l00189">189</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    {</div><div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        base.Initialize();</div><div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;</div><div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <a class="code" href="class_move_actor.html#a34b9e1ec5019892f38a8d5087bd5c2fe">StorageStates</a>();</div><div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;</div><div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <a class="code" href="class_move_actor.html#a82120e64a04913f530ac5a2aaec3ce91">ChangeState</a>(<a class="code" href="_move_actor_8cs.html#a90215797ba850e199f3ef63d7c56f132">eMoveableType</a>.NORMAL);</div><div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    }</div><div class="ttc" id="class_move_actor_html_a34b9e1ec5019892f38a8d5087bd5c2fe"><div class="ttname"><a href="class_move_actor.html#a34b9e1ec5019892f38a8d5087bd5c2fe">MoveActor.StorageStates</a></div><div class="ttdeci">void StorageStates()</div><div class="ttdef"><b>Definition:</b> <a href="_move_actor_8cs_source.html#l00198">MoveActor.cs:198</a></div></div>
-<div class="ttc" id="_move_actor_8cs_html_a90215797ba850e199f3ef63d7c56f132"><div class="ttname"><a href="_move_actor_8cs.html#a90215797ba850e199f3ef63d7c56f132">eMoveableType</a></div><div class="ttdeci">eMoveableType</div><div class="ttdef"><b>Definition:</b> <a href="_move_actor_8cs_source.html#l00005">MoveActor.cs:5</a></div></div>
-<div class="ttc" id="class_move_actor_html_a82120e64a04913f530ac5a2aaec3ce91"><div class="ttname"><a href="class_move_actor.html#a82120e64a04913f530ac5a2aaec3ce91">MoveActor.ChangeState</a></div><div class="ttdeci">void ChangeState(eMoveableType type)</div><div class="ttdef"><b>Definition:</b> <a href="_move_actor_8cs_source.html#l00228">MoveActor.cs:228</a></div></div>
+<div class="fragment"><div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    {</div><div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        base.Initialize();</div><div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;</div><div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <a class="code" href="class_move_actor.html#a34b9e1ec5019892f38a8d5087bd5c2fe">StorageStates</a>();</div><div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;</div><div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <a class="code" href="class_move_actor.html#a5f441e674d4ce71a460930e395f0966b">ChangeState</a>(<a class="code" href="_move_actor_8cs.html#a1df5a2532cc7e6bde40a57d2dcbe23fe">eMoveActType</a>.NORMAL);</div><div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    }</div><div class="ttc" id="class_move_actor_html_a34b9e1ec5019892f38a8d5087bd5c2fe"><div class="ttname"><a href="class_move_actor.html#a34b9e1ec5019892f38a8d5087bd5c2fe">MoveActor.StorageStates</a></div><div class="ttdeci">void StorageStates()</div><div class="ttdef"><b>Definition:</b> <a href="_move_actor_8cs_source.html#l00198">MoveActor.cs:198</a></div></div>
+<div class="ttc" id="_move_actor_8cs_html_a1df5a2532cc7e6bde40a57d2dcbe23fe"><div class="ttname"><a href="_move_actor_8cs.html#a1df5a2532cc7e6bde40a57d2dcbe23fe">eMoveActType</a></div><div class="ttdeci">eMoveActType</div><div class="ttdef"><b>Definition:</b> <a href="_move_actor_8cs_source.html#l00005">MoveActor.cs:5</a></div></div>
+<div class="ttc" id="class_move_actor_html_a5f441e674d4ce71a460930e395f0966b"><div class="ttname"><a href="class_move_actor.html#a5f441e674d4ce71a460930e395f0966b">MoveActor.ChangeState</a></div><div class="ttdeci">void ChangeState(eMoveActType type)</div><div class="ttdef"><b>Definition:</b> <a href="_move_actor_8cs_source.html#l00228">MoveActor.cs:228</a></div></div>
 </div><!-- fragment -->
 <p><div class="dynheader">
 이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_move_actor_a5dadb0f5c892440b6a884da7ef56b538_cgraph.png" border="0" usemap="#class_move_actor_a5dadb0f5c892440b6a884da7ef56b538_cgraph" alt=""/></div>
-<map name="class_move_actor_a5dadb0f5c892440b6a884da7ef56b538_cgraph" id="class_move_actor_a5dadb0f5c892440b6a884da7ef56b538_cgraph">
-<area shape="rect" id="node2" href="class_move_actor.html#a34b9e1ec5019892f38a8d5087bd5c2fe" title="MoveActor.StorageStates" alt="" coords="188,5,359,32"/>
-<area shape="rect" id="node3" href="class_move_actor.html#a82120e64a04913f530ac5a2aaec3ce91" title="MoveActor.ChangeState" alt="" coords="192,56,355,83"/>
-</map>
+<!-- MAP 7 -->
 </div>
 </p>
 
@@ -567,18 +571,14 @@ Private 속성</h2></td></tr>
 <p><a class="el" href="class_m_c_n_1_1_actor.html#a8ca8f46410f6ee9557e529e22fd6f6d1">MCN.Actor</a>(으)로부터 재구현되었습니다.</p>
 
 <p><a class="el" href="_move_actor_8cs_source.html">MoveActor.cs</a> 파일의 <a class="el" href="_move_actor_8cs_source.html#l00250">250</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    {</div><div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        base.Interactive(interactTarget);</div><div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;</div><div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        var tile = interactTarget as <a class="code" href="class_tile.html">Tile</a>;</div><div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;</div><div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        <span class="keywordflow">if</span> (tile != null)</div><div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        {</div><div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            var state = <a class="code" href="class_move_actor.html#a5b39cf27e1929b766133c6b56031ebdc">GetCurrentState</a>();</div><div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;</div><div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            <span class="keywordflow">if</span> (state != null)</div><div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            {</div><div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                state.Interactive(tile);</div><div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;</div><div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                <span class="keywordflow">return</span>;</div><div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            }</div><div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        }</div><div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;</div><div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        <span class="keywordflow">throw</span> <span class="keyword">new</span> UnityException(<span class="stringliteral">&quot;don&#39;t have moveAct state.&quot;</span>);</div><div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    }</div><div class="ttc" id="class_tile_html"><div class="ttname"><a href="class_tile.html">Tile</a></div><div class="ttdef"><b>Definition:</b> <a href="_tile_8cs_source.html#l00020">Tile.cs:20</a></div></div>
-<div class="ttc" id="class_move_actor_html_a5b39cf27e1929b766133c6b56031ebdc"><div class="ttname"><a href="class_move_actor.html#a5b39cf27e1929b766133c6b56031ebdc">MoveActor.GetCurrentState</a></div><div class="ttdeci">MoveableState GetCurrentState()</div><div class="ttdef"><b>Definition:</b> <a href="_move_actor_8cs_source.html#l00205">MoveActor.cs:205</a></div></div>
+<div class="fragment"><div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    {</div><div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        base.Interactive(interactTarget);</div><div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;</div><div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        var tile = interactTarget as <a class="code" href="class_tile.html">Tile</a>;</div><div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;</div><div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        <span class="keywordflow">if</span> (tile != null)</div><div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        {</div><div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            var state = <a class="code" href="class_move_actor.html#afb5993f5f72725ebd6e1bc58470e5621">GetCurrentState</a>();</div><div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;</div><div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            <span class="keywordflow">if</span> (state != null)</div><div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            {</div><div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                state.Interactive(tile);</div><div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;</div><div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                <span class="keywordflow">return</span>;</div><div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            }</div><div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        }</div><div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;</div><div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        <span class="keywordflow">throw</span> <span class="keyword">new</span> UnityException(<span class="stringliteral">&quot;don&#39;t have moveAct state.&quot;</span>);</div><div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    }</div><div class="ttc" id="class_tile_html"><div class="ttname"><a href="class_tile.html">Tile</a></div><div class="ttdef"><b>Definition:</b> <a href="_tile_8cs_source.html#l00020">Tile.cs:20</a></div></div>
+<div class="ttc" id="class_move_actor_html_afb5993f5f72725ebd6e1bc58470e5621"><div class="ttname"><a href="class_move_actor.html#afb5993f5f72725ebd6e1bc58470e5621">MoveActor.GetCurrentState</a></div><div class="ttdeci">MoveActState GetCurrentState()</div><div class="ttdef"><b>Definition:</b> <a href="_move_actor_8cs_source.html#l00205">MoveActor.cs:205</a></div></div>
 </div><!-- fragment -->
 <p><div class="dynheader">
 이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_move_actor_ade9f1263ef53ad85968cf6cae50d6139_cgraph.png" border="0" usemap="#class_move_actor_ade9f1263ef53ad85968cf6cae50d6139_cgraph" alt=""/></div>
-<map name="class_move_actor_ade9f1263ef53ad85968cf6cae50d6139_cgraph" id="class_move_actor_ade9f1263ef53ad85968cf6cae50d6139_cgraph">
-<area shape="rect" id="node2" href="class_move_actor.html#a5b39cf27e1929b766133c6b56031ebdc" title="MoveActor.GetCurrentState" alt="" coords="199,13,380,39"/>
-<area shape="rect" id="node3" href="class_move_actor_1_1_moveable_state.html#a8aabee832e31e33507bf93a2737f520c" title="MoveActor.MoveableState.\lMoveableState" alt="" coords="428,5,604,47"/>
-<area shape="rect" id="node4" href="class_move_actor_1_1_moveable_state.html#a0333e87600aceebfe26602fd0c697447" title="MoveActor.MoveableState.\lGetCurrentType" alt="" coords="652,5,828,47"/>
-</map>
+<!-- MAP 8 -->
 </div>
 </p>
 
@@ -609,17 +609,13 @@ Private 속성</h2></td></tr>
 <p><a class="el" href="class_m_c_n_1_1_actor.html#a4891cf321e2a9ee25fd618c19b785331">MCN.Actor</a>(으)로부터 재구현되었습니다.</p>
 
 <p><a class="el" href="_move_actor_8cs_source.html">MoveActor.cs</a> 파일의 <a class="el" href="_move_actor_8cs_source.html#l00236">236</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    {</div><div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        base.OnTouchEvent(touch);</div><div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;</div><div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        var state = <a class="code" href="class_move_actor.html#a5b39cf27e1929b766133c6b56031ebdc">GetCurrentState</a>();</div><div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;</div><div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        <span class="keywordflow">if</span> (state != null)</div><div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        {</div><div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;            <span class="keywordflow">return</span> state.OnTouchEvent();</div><div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        }</div><div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;</div><div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        <span class="keywordflow">throw</span> <span class="keyword">new</span> UnityException(<span class="stringliteral">&quot;don&#39;t have moveAct state.&quot;</span>);</div><div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    }</div><div class="ttc" id="class_move_actor_html_a5b39cf27e1929b766133c6b56031ebdc"><div class="ttname"><a href="class_move_actor.html#a5b39cf27e1929b766133c6b56031ebdc">MoveActor.GetCurrentState</a></div><div class="ttdeci">MoveableState GetCurrentState()</div><div class="ttdef"><b>Definition:</b> <a href="_move_actor_8cs_source.html#l00205">MoveActor.cs:205</a></div></div>
+<div class="fragment"><div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    {</div><div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        base.OnTouchEvent(touch);</div><div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;</div><div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        var state = <a class="code" href="class_move_actor.html#afb5993f5f72725ebd6e1bc58470e5621">GetCurrentState</a>();</div><div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;</div><div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        <span class="keywordflow">if</span> (state != null)</div><div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        {</div><div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;            <span class="keywordflow">return</span> state.OnTouchEvent();</div><div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        }</div><div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;</div><div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        <span class="keywordflow">throw</span> <span class="keyword">new</span> UnityException(<span class="stringliteral">&quot;don&#39;t have moveAct state.&quot;</span>);</div><div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    }</div><div class="ttc" id="class_move_actor_html_afb5993f5f72725ebd6e1bc58470e5621"><div class="ttname"><a href="class_move_actor.html#afb5993f5f72725ebd6e1bc58470e5621">MoveActor.GetCurrentState</a></div><div class="ttdeci">MoveActState GetCurrentState()</div><div class="ttdef"><b>Definition:</b> <a href="_move_actor_8cs_source.html#l00205">MoveActor.cs:205</a></div></div>
 </div><!-- fragment -->
 <p><div class="dynheader">
 이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_move_actor_abbb2fe6a87e45fe6a4f7eeec674558d6_cgraph.png" border="0" usemap="#class_move_actor_abbb2fe6a87e45fe6a4f7eeec674558d6_cgraph" alt=""/></div>
-<map name="class_move_actor_abbb2fe6a87e45fe6a4f7eeec674558d6_cgraph" id="class_move_actor_abbb2fe6a87e45fe6a4f7eeec674558d6_cgraph">
-<area shape="rect" id="node2" href="class_move_actor.html#a5b39cf27e1929b766133c6b56031ebdc" title="MoveActor.GetCurrentState" alt="" coords="224,13,405,39"/>
-<area shape="rect" id="node3" href="class_move_actor_1_1_moveable_state.html#a8aabee832e31e33507bf93a2737f520c" title="MoveActor.MoveableState.\lMoveableState" alt="" coords="453,5,629,47"/>
-<area shape="rect" id="node4" href="class_move_actor_1_1_moveable_state.html#a0333e87600aceebfe26602fd0c697447" title="MoveActor.MoveableState.\lGetCurrentType" alt="" coords="677,5,853,47"/>
-</map>
+<!-- MAP 9 -->
 </div>
 </p>
 
@@ -657,21 +653,9 @@ Private 속성</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="_actor_8cs_source.html">Actor.cs</a> 파일의 <a class="el" href="_actor_8cs_source.html#l00067">67</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        {</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <a class="code" href="class_m_c_n_1_1_actor.html#abf0c60f05e2a904b0b225b4839a7296d">_weight</a>[key] = weight;</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        }</div><div class="ttc" id="class_m_c_n_1_1_actor_html_abf0c60f05e2a904b0b225b4839a7296d"><div class="ttname"><a href="class_m_c_n_1_1_actor.html#abf0c60f05e2a904b0b225b4839a7296d">MCN.Actor._weight</a></div><div class="ttdeci">Dictionary&lt; string, int &gt; _weight</div><div class="ttdef"><b>Definition:</b> <a href="_actor_8cs_source.html#l00014">Actor.cs:14</a></div></div>
+<p><a class="el" href="_actor_8cs_source.html">Actor.cs</a> 파일의 <a class="el" href="_actor_8cs_source.html#l00105">105</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        {</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <a class="code" href="class_m_c_n_1_1_actor.html#abf0c60f05e2a904b0b225b4839a7296d">_weight</a>[key] = weight;</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        }</div><div class="ttc" id="class_m_c_n_1_1_actor_html_abf0c60f05e2a904b0b225b4839a7296d"><div class="ttname"><a href="class_m_c_n_1_1_actor.html#abf0c60f05e2a904b0b225b4839a7296d">MCN.Actor._weight</a></div><div class="ttdeci">Dictionary&lt; string, int &gt; _weight</div><div class="ttdef"><b>Definition:</b> <a href="_actor_8cs_source.html#l00021">Actor.cs:21</a></div></div>
 </div><!-- fragment -->
-<p><div class="dynheader">
-이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_m_c_n_1_1_actor_a8d8020782aefa7fff625f5f8e09f7539_icgraph.png" border="0" usemap="#class_m_c_n_1_1_actor_a8d8020782aefa7fff625f5f8e09f7539_icgraph" alt=""/></div>
-<map name="class_m_c_n_1_1_actor_a8d8020782aefa7fff625f5f8e09f7539_icgraph" id="class_m_c_n_1_1_actor_a8d8020782aefa7fff625f5f8e09f7539_icgraph">
-<area shape="rect" id="node2" href="class_map_manager.html#a3fd471f20bdfc00d53997d782bc3339a" title="MapManager.AddActor" alt="" coords="204,5,359,32"/>
-<area shape="rect" id="node3" href="class_map_manager.html#a4213ccbaa1a81d0a47884de50a28de32" title="MapManager.PlaceObjacts" alt="" coords="407,5,585,32"/>
-<area shape="rect" id="node4" href="class_map_manager.html#ad633984007048c7d63eab44aaeb0c32d" title="MapManager.Awake" alt="" coords="633,5,773,32"/>
-</map>
-</div>
-</p>
-
 </div>
 </div>
 <a class="anchor" id="a4337ef4d88c2086f18db4f2e6415eddd"></a>
@@ -696,10 +680,10 @@ Private 속성</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="_actor_8cs_source.html">Actor.cs</a> 파일의 <a class="el" href="_actor_8cs_source.html#l00072">72</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        {</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="keywordflow">if</span> (info != null)</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            {</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="class_m_c_n_1_1_actor.html#abf0c60f05e2a904b0b225b4839a7296d">_weight</a> == null)</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                {</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                    <a class="code" href="class_m_c_n_1_1_actor.html#abf0c60f05e2a904b0b225b4839a7296d">_weight</a> = <span class="keyword">new</span> Dictionary&lt;string, int&gt;();</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                }</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <a class="code" href="class_m_c_n_1_1_actor.html#abf0c60f05e2a904b0b225b4839a7296d">_weight</a>[info.<a class="code" href="class_m_c_n_1_1_pair.html#a62c546d3829b8819a65f8c9d64200338">key</a>] = info.<a class="code" href="class_m_c_n_1_1_pair.html#a1980bbf37b60fcbfea22382f71250e84">value</a>;</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            }</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        }</div><div class="ttc" id="class_m_c_n_1_1_actor_html_abf0c60f05e2a904b0b225b4839a7296d"><div class="ttname"><a href="class_m_c_n_1_1_actor.html#abf0c60f05e2a904b0b225b4839a7296d">MCN.Actor._weight</a></div><div class="ttdeci">Dictionary&lt; string, int &gt; _weight</div><div class="ttdef"><b>Definition:</b> <a href="_actor_8cs_source.html#l00014">Actor.cs:14</a></div></div>
-<div class="ttc" id="class_m_c_n_1_1_pair_html_a1980bbf37b60fcbfea22382f71250e84"><div class="ttname"><a href="class_m_c_n_1_1_pair.html#a1980bbf37b60fcbfea22382f71250e84">MCN.Pair.value</a></div><div class="ttdeci">T2 value</div><div class="ttdef"><b>Definition:</b> <a href="_structure_8cs_source.html#l00026">Structure.cs:26</a></div></div>
-<div class="ttc" id="class_m_c_n_1_1_pair_html_a62c546d3829b8819a65f8c9d64200338"><div class="ttname"><a href="class_m_c_n_1_1_pair.html#a62c546d3829b8819a65f8c9d64200338">MCN.Pair.key</a></div><div class="ttdeci">T key</div><div class="ttdef"><b>Definition:</b> <a href="_structure_8cs_source.html#l00025">Structure.cs:25</a></div></div>
+<p><a class="el" href="_actor_8cs_source.html">Actor.cs</a> 파일의 <a class="el" href="_actor_8cs_source.html#l00110">110</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        {</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <span class="keywordflow">if</span> (info != null)</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            {</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="class_m_c_n_1_1_actor.html#abf0c60f05e2a904b0b225b4839a7296d">_weight</a> == null)</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                {</div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                    <a class="code" href="class_m_c_n_1_1_actor.html#abf0c60f05e2a904b0b225b4839a7296d">_weight</a> = <span class="keyword">new</span> Dictionary&lt;string, int&gt;();</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                }</div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                <a class="code" href="class_m_c_n_1_1_actor.html#abf0c60f05e2a904b0b225b4839a7296d">_weight</a>[info.<a class="code" href="class_m_c_n_1_1_pair.html#a62c546d3829b8819a65f8c9d64200338">key</a>] = info.<a class="code" href="class_m_c_n_1_1_pair.html#a1980bbf37b60fcbfea22382f71250e84">value</a>;</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            }</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        }</div><div class="ttc" id="class_m_c_n_1_1_actor_html_abf0c60f05e2a904b0b225b4839a7296d"><div class="ttname"><a href="class_m_c_n_1_1_actor.html#abf0c60f05e2a904b0b225b4839a7296d">MCN.Actor._weight</a></div><div class="ttdeci">Dictionary&lt; string, int &gt; _weight</div><div class="ttdef"><b>Definition:</b> <a href="_actor_8cs_source.html#l00021">Actor.cs:21</a></div></div>
+<div class="ttc" id="class_m_c_n_1_1_pair_html_a1980bbf37b60fcbfea22382f71250e84"><div class="ttname"><a href="class_m_c_n_1_1_pair.html#a1980bbf37b60fcbfea22382f71250e84">MCN.Pair.value</a></div><div class="ttdeci">T2 value</div><div class="ttdef"><b>Definition:</b> <a href="_structure_8cs_source.html#l00018">Structure.cs:18</a></div></div>
+<div class="ttc" id="class_m_c_n_1_1_pair_html_a62c546d3829b8819a65f8c9d64200338"><div class="ttname"><a href="class_m_c_n_1_1_pair.html#a62c546d3829b8819a65f8c9d64200338">MCN.Pair.key</a></div><div class="ttdeci">T key</div><div class="ttdef"><b>Definition:</b> <a href="_structure_8cs_source.html#l00017">Structure.cs:17</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -725,7 +709,7 @@ Private 속성</h2></td></tr>
 </div><div class="memdoc">
 
 <p><a class="el" href="_move_actor_8cs_source.html">MoveActor.cs</a> 파일의 <a class="el" href="_move_actor_8cs_source.html#l00198">198</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    {</div><div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <span class="keyword">new</span> MoveableState_Normal(<span class="keyword">this</span>);</div><div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="keyword">new</span> MoveableState_Move(<span class="keyword">this</span>);</div><div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        <span class="keyword">new</span> MoveableState_Done(<span class="keyword">this</span>);</div><div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    }</div></div><!-- fragment -->
+<div class="fragment"><div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    {</div><div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <span class="keyword">new</span> MoveActState_Normal(<span class="keyword">this</span>);</div><div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="keyword">new</span> MoveActState_Move(<span class="keyword">this</span>);</div><div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        <span class="keyword">new</span> MoveActState_Done(<span class="keyword">this</span>);</div><div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    }</div></div><!-- fragment -->
 <p><div class="dynheader">
 이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
@@ -739,7 +723,7 @@ Private 속성</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">멤버 데이타 문서화</h2>
-<a class="anchor" id="a72afe80e236dbb9a66b27f752e8231f1"></a>
+<a class="anchor" id="ab70f094ec948137a13da36afa0f673e0"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -747,7 +731,7 @@ Private 속성</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_m_c_n_1_1_state_machine.html">MCN.StateMachine</a>&lt;<a class="el" href="class_move_actor_1_1_moveable_state.html">MoveableState</a>&gt; MoveActor._moveableStateMachine = new <a class="el" href="class_m_c_n_1_1_state_machine.html">MCN.StateMachine</a>&lt;<a class="el" href="class_move_actor_1_1_moveable_state.html">MoveableState</a>&gt;()</td>
+          <td class="memname"><a class="el" href="class_m_c_n_1_1_state_machine.html">MCN.StateMachine</a>&lt;<a class="el" href="class_move_actor_1_1_move_act_state.html">MoveActState</a>&gt; MoveActor._stateMachine = new <a class="el" href="class_m_c_n_1_1_state_machine.html">MCN.StateMachine</a>&lt;<a class="el" href="class_move_actor_1_1_move_act_state.html">MoveActState</a>&gt;()</td>
         </tr>
       </table>
   </td>
@@ -762,7 +746,7 @@ Private 속성</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">속성 문서화</h2>
-<a class="anchor" id="a4e2e573370bb52bb747f77d4c75dc7e1"></a>
+<a class="anchor" id="a1d809d2994dcccb6a8fcc665afa1ca6f"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -770,7 +754,7 @@ Private 속성</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_tactics_object.html">TacticsObject</a> MCN.Actor.ActTarget</td>
+          <td class="memname">IActorQueue MCN.Actor.ActTarget</td>
         </tr>
       </table>
   </td>
@@ -780,7 +764,7 @@ Private 속성</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="_actor_8cs_source.html">Actor.cs</a> 파일의 <a class="el" href="_actor_8cs_source.html#l00016">16</a> 번째 라인에서 정의되었습니다.</p>
+<p><a class="el" href="_actor_8cs_source.html">Actor.cs</a> 파일의 <a class="el" href="_actor_8cs_source.html#l00023">23</a> 번째 라인에서 정의되었습니다.</p>
 
 </div>
 </div>
@@ -797,7 +781,7 @@ Private 속성</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

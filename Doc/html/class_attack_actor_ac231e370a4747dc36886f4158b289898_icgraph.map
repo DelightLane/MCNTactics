@@ -1,0 +1,5 @@
+<map id="AttackActor.GetCurrentState" name="AttackActor.GetCurrentState">
+<area shape="rect" id="node2" href="$class_attack_actor.html#aab8bdc29ed7dae173129dbb09c9b8913" title="AttackActor.GetCurrentStateType" alt="" coords="243,5,460,32"/>
+<area shape="rect" id="node3" href="$class_attack_actor.html#a471c22dd21a49e9676a0e9d276cba709" title="AttackActor.OnTouchEvent" alt="" coords="262,56,441,83"/>
+<area shape="rect" id="node4" href="$class_attack_actor.html#a766e164877bf499175dfb091967198a5" title="AttackActor.Interactive" alt="" coords="275,107,428,133"/>
+</map>
