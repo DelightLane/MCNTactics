@@ -25,7 +25,7 @@ public class AttackActor : MCN.Actor
         get
         {
             int atk = 0;
-            var combatObj = ActTarget as CombatObject;
+            var combatObj = ActTarget as ICombat;
             if(combatObj != null)
             {
                 atk = combatObj.Atk;
@@ -151,7 +151,7 @@ public class AttackActor : MCN.Actor
                         var placedTile = placeable.GetPlacedTile();
                         
                         // TODO : 적인지 아닌지 판단하는 로직이 condition에 들어가야 한다.
-                        placedTile.ShowChainActiveTile(Target.Range, (Tile tile) => { return tile.GetAttachObject() != null && !(tile.GetAttachObject() is CombatObject); });
+                        placedTile.ShowChainActiveTile(Target.Range, (Tile tile) => { return tile.GetAttachObject() != null && !(tile.GetAttachObject() is ICombat); });
                     }
                 }
             }
@@ -161,7 +161,7 @@ public class AttackActor : MCN.Actor
         {
             if (Target != null)
             {
-                var damagedTarget = activeTile.GetAttachObject() as CombatObject;
+                var damagedTarget = activeTile.GetAttachObject() as ICombat;
 
                 if (damagedTarget != null)
                 {

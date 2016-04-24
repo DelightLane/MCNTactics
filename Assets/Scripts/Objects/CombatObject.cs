@@ -1,31 +1,73 @@
 ﻿using System;
 using UnityEngine;
 
-public class CombatObject : PlaceableObject
+[Serializable]
+public struct Status
 {
-    [SerializeField]
-    private int _hp;
-    [SerializeField]
-    private int _sp;
+    public int hp;
+    public int sp;
+    public int atk;
+    public int def;
+}
 
-    [SerializeField]
-    private int _atk;
-    [SerializeField]
-    private int _def;
+public enum eCombatState
+{
+    ALIVE,
+    DEAD
+}
 
-    public int Hp { get { return _hp; } }
-    public int Sp { get { return _sp; } }
+public class CombatObject : PlaceableObject, ICombat
+{
+    public Status _initialStatus;
+
+    private ICombat _impl;
+
+    public int Hp { get { return _impl.Hp; } }
+    public int Sp { get { return _impl.Sp; } }
     
-    public int Atk { get { return _atk; } }
-    public int Def { get { return _def; } }
+    public int Atk { get { return _impl.Atk; } }
+    public int Def { get { return _impl.Def; } }
+
+    public int MaxHp { get { return _impl.MaxHp; } }
+    public int MaxSp { get { return _impl.MaxSp; } }
+
+    public eCombatState CombatState { get { return _impl.CombatState; } }
+
+    // 데코레이터 디버깅용
+#if UNITY_EDITOR
+    public Status _debugStatus;
+
+#endif
+
+    void Awake()
+    {
+        _impl = new CombatInstance(_initialStatus);
+
+        DisplayDebugStatus();
+    }
+
+    private void DisplayDebugStatus()
+    {
+        // 데코레이터 디버깅용
+#if UNITY_EDITOR
+        _debugStatus.hp = _impl.Hp;
+        _debugStatus.sp = _impl.Sp;
+        _debugStatus.atk = _impl.Atk;
+        _debugStatus.def = _impl.Def;
+#endif
+    }
 
     public void Damaged(AttackActor actor)
     {
-        _hp -= actor.Damage;
+        _impl.Damaged(actor);
 
-        if(_hp < 0)
-        {
-            _hp = 0;
-        }
+        DisplayDebugStatus();
+    }
+
+    public void AddStatus(Status status)
+    {
+        _impl = new CombatAddedDeco(_impl, status);
+
+        DisplayDebugStatus();
     }
 }
