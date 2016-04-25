@@ -25,7 +25,7 @@ public class AttackActor : MCN.Actor
         get
         {
             int atk = 0;
-            var combatObj = ActTarget as ICombat;
+            var combatObj = ActTarget as CombatObject;
             if(combatObj != null)
             {
                 atk = combatObj.Atk;
@@ -138,20 +138,25 @@ public class AttackActor : MCN.Actor
         {
             if (Target != null)
             {
-                var placeable = Target.ActTarget as PlaceableObject;
+                var combatTarget = Target.ActTarget as CombatObject;
 
-                if (placeable != null)
+                if (combatTarget != null)
                 {
-                    placeable.Select();
+                    combatTarget.Select();
 
-                    if (placeable.GetPlacedTile() != null)
+                    if (combatTarget.GetPlacedTile() != null)
                     {
                         MapManager.Instance.ChangeAllTileState(eTileType.DEACTIVE);
 
-                        var placedTile = placeable.GetPlacedTile();
-                        
-                        // TODO : 적인지 아닌지 판단하는 로직이 condition에 들어가야 한다.
-                        placedTile.ShowChainActiveTile(Target.Range, (Tile tile) => { return tile.GetAttachObject() != null && !(tile.GetAttachObject() is ICombat); });
+                        var placedTile = combatTarget.GetPlacedTile();
+
+                        Func<Tile, bool> tileDeactiveCond = (Tile tile) =>
+                        {
+                            return (tile.GetAttachObject() != null && !(tile.GetAttachObject() is CombatObject)) ||
+                                   (tile.GetAttachObject() is CombatObject && (tile.GetAttachObject() as CombatObject).Team == combatTarget.Team);
+                        };
+
+                        placedTile.ShowChainActiveTile(Target.Range, tileDeactiveCond);
                     }
                 }
             }
@@ -161,7 +166,7 @@ public class AttackActor : MCN.Actor
         {
             if (Target != null)
             {
-                var damagedTarget = activeTile.GetAttachObject() as ICombat;
+                var damagedTarget = activeTile.GetAttachObject() as CombatObject;
 
                 if (damagedTarget != null)
                 {

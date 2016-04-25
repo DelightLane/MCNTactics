@@ -16,9 +16,17 @@ public enum eCombatState
     DEAD
 }
 
+public enum eCombatTeam
+{
+    BLUE,
+    RED
+}
+
 public class CombatObject : PlaceableObject, ICombat
 {
     public Status _initialStatus;
+
+    public eCombatTeam Team { get; set; }
 
     private ICombat _impl;
 
@@ -36,7 +44,6 @@ public class CombatObject : PlaceableObject, ICombat
     // 데코레이터 디버깅용
 #if UNITY_EDITOR
     public Status _debugStatus;
-
 #endif
 
     void Awake()
