@@ -1,1 +1,1 @@
-﻿{"unit":[{"no":1,"name":"주인공","prefabName":"Hero","HP":100,"SP":0,"Atk":10,"Def":10},{"no":2,"name":"여주","prefabName":"Hero","HP":90,"SP":10,"Atk":10,"Def":10} ]}
+﻿{"unit":[{"no":1,"name":"주인공","prefabName":"Hero","Hp":100,"Sp":0,"Atk":10,"Def":10},{"no":2,"name":"여주","prefabName":"Hero","Hp":90,"Sp":10,"Atk":10,"Def":10} ]}

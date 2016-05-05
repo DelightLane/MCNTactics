@@ -4,31 +4,26 @@ using System.Collections.Generic;
 [Serializable]
 public class UnitDatas
 {
-    public List<UnitData> UnitData;
+    public List<Unit> unit;
 }
 
 [Serializable]
-public class UnitData
+public class Unit
 {
     public int no;
     public string name;
     public string prefabName;
-    public List<ActorInfo> actor;
-}
-
-[Serializable]
-public class ActorInfo
-{
-    public string name;
-    public List<string> weightName;
-    public List<int> weightValue;
+    public int Hp;
+    public int Sp;
+    public int Atk;
+    public int Def;
 }
 
 public class UnitDataObject : DataObject
 {
     private UnitDatas _data;
 
-    public List<UnitData> Data {  get { return _data.UnitData; } }
+    public List<Unit> Data {  get { return _data.unit; } }
 
     public UnitDataObject(UnitDatas data)
     {

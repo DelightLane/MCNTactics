@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\Core\Singletone.cs" />
     <Compile Include="Assets\Scripts\Core\State.cs" />
     <Compile Include="Assets\Scripts\Core\Structure.cs" />
+    <Compile Include="Assets\Scripts\Data\AttachActorData.cs" />
     <Compile Include="Assets\Scripts\Data\DataObject.cs" />
     <Compile Include="Assets\Scripts\Data\UnitData.cs" />
     <Compile Include="Assets\Scripts\Manager\DataManager.cs" />

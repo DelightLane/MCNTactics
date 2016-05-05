@@ -22,7 +22,12 @@ public class PlaceableCreator
 
                     if (placeableObj != null)
                     {
-                        AddActor(ref placeableObj, unit.actor);
+                        var attachActorData = DataManager.Instance.GetData(DataManager.DataType.ATTACH_ACTOR) as AttachActorDataObject;
+
+                        if (attachActorData != null)
+                        {
+                            AddActor(ref placeableObj, attachActorData.GetActor(unit.no));
+                        }
                     }
                     else
                     {
