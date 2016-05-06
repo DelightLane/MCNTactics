@@ -132,7 +132,7 @@ public class MapManager : MCN.MonoSingletone<MapManager> {
         }
     }
 
-    public void AttachObject(Vector2 pos, PlaceableObject obj)
+    public void AttachObject(Vector2 pos, PlaceObject obj)
     {
         var tile = GetTile(pos);
 

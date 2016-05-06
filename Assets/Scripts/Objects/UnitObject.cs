@@ -13,7 +13,7 @@ public enum eCombatTeam
     RED
 }
 
-public class UnitObject : PlaceableObject, ICombat
+public class UnitObject : ActionObject, ICombat
 {
     public eCombatTeam Team { get; set; }
 

@@ -20,7 +20,7 @@ public enum eTileType
 public class Tile : TacticsObject, IDisposable, MCN.IObserver<eTouchEvent>
 {
     private Vector2 _position;
-    private PlaceableObject _attached;
+    private PlaceObject _attached;
 
     public static readonly float TILE_SIZE = 1;
 
@@ -167,7 +167,7 @@ public class Tile : TacticsObject, IDisposable, MCN.IObserver<eTouchEvent>
     {
         if (_attached != null)
         {
-            var placeable = _attached.GetComponent<PlaceableObject>();
+            var placeable = _attached.GetComponent<PlaceObject>();
 
             if (placeable != null)
             {
@@ -206,7 +206,7 @@ public class Tile : TacticsObject, IDisposable, MCN.IObserver<eTouchEvent>
         _position = pos;
     }
 
-    public PlaceableObject GetAttachObject()
+    public PlaceObject GetAttachObject()
     {
         if (_attached != null)
         {
@@ -216,7 +216,7 @@ public class Tile : TacticsObject, IDisposable, MCN.IObserver<eTouchEvent>
         return null;
     }
 
-    public bool AttachObject(PlaceableObject obj)
+    public bool AttachObject(PlaceObject obj)
     {
         if (_attached == null)
         {

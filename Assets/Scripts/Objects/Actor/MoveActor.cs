@@ -49,7 +49,7 @@ public class MoveActor : MCN.Actor
         {
             if (Target != null)
             {
-                var placeable = Target.ActTarget as PlaceableObject;
+                var placeable = Target.ActTarget as PlaceObject;
 
                 if (placeable != null)
                 {
@@ -105,7 +105,7 @@ public class MoveActor : MCN.Actor
         {
             if (Target != null)
             {
-                var placeable = Target.ActTarget as PlaceableObject;
+                var placeable = Target.ActTarget as PlaceObject;
 
                 if (placeable != null)
                 {
@@ -123,7 +123,7 @@ public class MoveActor : MCN.Actor
         {
             if (Target != null)
             {
-                var placeable = Target.ActTarget as PlaceableObject;
+                var placeable = Target.ActTarget as PlaceObject;
 
                 if (placeable != null)
                 {
@@ -145,7 +145,7 @@ public class MoveActor : MCN.Actor
         {
             if (Target != null)
             {
-                var placeable = Target.ActTarget as PlaceableObject;
+                var placeable = Target.ActTarget as PlaceObject;
 
                 if (placeable != null)
                 {

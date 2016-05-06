@@ -13,13 +13,11 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.3.4f1</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -79,15 +77,16 @@
     <Compile Include="Assets\Scripts\Manager\MapCreator.cs" />
     <Compile Include="Assets\Scripts\Manager\MapManager.cs" />
     <Compile Include="Assets\Scripts\Manager\TouchManager.cs" />
+    <Compile Include="Assets\Scripts\Objects\ActionObject.cs" />
     <Compile Include="Assets\Scripts\Objects\Actor\AttackActor.cs" />
     <Compile Include="Assets\Scripts\Objects\Actor\MoveActor.cs" />
-    <Compile Include="Assets\Scripts\Objects\UnitObject.cs" />
     <Compile Include="Assets\Scripts\Objects\Decorator\CombatAddedDeco.cs" />
     <Compile Include="Assets\Scripts\Objects\Decorator\CombatInstance.cs" />
     <Compile Include="Assets\Scripts\Objects\Decorator\ICombat.cs" />
-    <Compile Include="Assets\Scripts\Objects\PlaceableObject.cs" />
+    <Compile Include="Assets\Scripts\Objects\PlaceObject.cs" />
     <Compile Include="Assets\Scripts\Objects\TacticsObject.cs" />
     <Compile Include="Assets\Scripts\Objects\Tile.cs" />
+    <Compile Include="Assets\Scripts\Objects\UnitObject.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
