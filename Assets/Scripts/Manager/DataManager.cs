@@ -20,7 +20,7 @@ public class DataManager : FZ.Singletone<DataManager>
         // TODO : 나은 위치에서 로드하게 수정
         // 리플랙션을 사용해서 데이터들을 로드하게 하는 건 어떨지?
         LoadData(new UnitDataFactory());
-        LoadData(new AttachActorDataFactory());
+        LoadData(new UnitActorDataFactory());
     }
 
     public void LoadData(DataFactory factory)
@@ -100,11 +100,11 @@ public class UnitDataFactory : DataFactory
     }
 }
 
-public class AttachActorDataFactory : DataFactory
+public class UnitActorDataFactory : DataFactory
 {
     protected override string GetName()
     {
-        return "attachActor";
+        return "unitActor";
     }
 
     public override DataManager.DataType GetDataType()
@@ -114,7 +114,7 @@ public class AttachActorDataFactory : DataFactory
 
     public override DataObject LoadDatas()
     {
-        return new JsonParser<AttachActorDataList>().LoadDatas(this);
+        return new JsonParser<UnitActorDataList>().LoadDatas(this);
     }
 }
 

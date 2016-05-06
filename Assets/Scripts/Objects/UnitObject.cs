@@ -19,9 +19,9 @@ public class UnitObject : ActionObject, ICombat
 
     private ICombat _impl;
 
-    public int no { get; private set; }
+    public int No { get; private set; }
 
-    public string unitName { get; private set; }
+    public string UnitName { get; private set; }
 
     public int Hp { get { return _impl.Hp; } }
     public int Sp { get { return _impl.Sp; } }
@@ -79,8 +79,8 @@ public class UnitObject : ActionObject, ICombat
         {
             AddActor(unitData);
 
-            this.no = unitData.no;
-            this.unitName = unitData.name;
+            this.No = unitData.no;
+            this.UnitName = unitData.name;
 
             _impl = new CombatInstance(unitData);
         }
@@ -90,11 +90,11 @@ public class UnitObject : ActionObject, ICombat
 
     private void AddActor(UnitData data)
     {
-        var attachActorDataList = DataManager.Instance.GetData(DataManager.DataType.ATTACH_ACTOR) as AttachActorDataList;
+        var unitActorDataList = DataManager.Instance.GetData(DataManager.DataType.ATTACH_ACTOR) as UnitActorDataList;
 
-        if (attachActorDataList != null)
+        if (unitActorDataList != null)
         {
-            var actorList = attachActorDataList.GetActorList(data.no);
+            var actorList = unitActorDataList.GetActorList(data.no);
             foreach (var info in actorList)
             {
                 this.AddActor(info);
@@ -108,8 +108,8 @@ public class UnitObject : ActionObject, ICombat
 #if UNITY_EDITOR
         _debugStatus = new UnitData();
 
-        _debugStatus.no = no;
-        _debugStatus.name = unitName;
+        _debugStatus.no = No;
+        _debugStatus.name = UnitName;
 
         _debugStatus.Hp = _impl.Hp;
         _debugStatus.Sp = _impl.Sp;

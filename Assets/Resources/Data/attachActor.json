@@ -1,1 +1,0 @@
-﻿{"attachActor":[{"no":1,"actor":[{"name":"MoveActor","weightName":["range" ],"weightValue":[4 ]},{"name":"AttackActor","weightName":["range","damage" ],"weightValue":[1,3 ]} ]},{"no":2,"actor":[{"name":"MoveActor","weightName":["range" ],"weightValue":[3 ]} ]} ]}
