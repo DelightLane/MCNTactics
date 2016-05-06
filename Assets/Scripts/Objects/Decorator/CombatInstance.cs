@@ -1,6 +1,15 @@
 ﻿using System;
 using UnityEngine;
 
+[Serializable]
+public struct Status
+{
+    public int Hp;
+    public int Sp;
+    public int Atk;
+    public int Def;
+}
+
 public class CombatInstance : ICombat
 {
     private int _hp;
@@ -37,16 +46,32 @@ public class CombatInstance : ICombat
 
     public CombatInstance(Status status)
     {
+        Initialize(status);
+    }
+
+    public CombatInstance(UnitData unitData)
+    {
+        Status status;
+        status.Hp = unitData.Hp;
+        status.Sp = unitData.Sp;
+        status.Atk = unitData.Atk;
+        status.Def = unitData.Def;
+
+        Initialize(status);
+    }
+
+    private void Initialize(Status status)
+    {
         _combatState = eCombatState.ALIVE;
 
-        _hp = status.hp;
-        _sp = status.sp;
+        _hp = status.Hp;
+        _sp = status.Sp;
 
-        _maxHp = status.hp;
-        _maxSp = status.sp;
+        _maxHp = status.Hp;
+        _maxSp = status.Sp;
 
-        _atk = status.atk;
-        _def = status.def;
+        _atk = status.Atk;
+        _def = status.Def;
     }
 
     public void Damaged(AttackActor actor)

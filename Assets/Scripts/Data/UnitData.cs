@@ -4,11 +4,11 @@ using System.Collections.Generic;
 [Serializable]
 public class UnitDatas
 {
-    public List<Unit> unit;
+    public List<UnitData> unit;
 }
 
 [Serializable]
-public class Unit
+public class UnitData : DataObject
 {
     public int no;
     public string name;
@@ -19,13 +19,13 @@ public class Unit
     public int Def;
 }
 
-public class UnitDataObject : DataObject
+public class UnitDataList : DataObject
 {
     private UnitDatas _data;
 
-    public List<Unit> Data {  get { return _data.unit; } }
+    public List<UnitData> Data {  get { return _data.unit; } }
 
-    public UnitDataObject(UnitDatas data)
+    public UnitDataList(UnitDatas data)
     {
         _data = data;
     }

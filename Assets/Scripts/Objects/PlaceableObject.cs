@@ -17,6 +17,11 @@ public class PlaceableObject : TacticsObject, IDisposable, MCN.IActorQueue
 
     protected Tile _placedTile;
 
+    public virtual void Initialize(DataObject data)
+    {
+        
+    }
+
     // 타일에 놓는 건 타일의 AttachObject 메소드를 사용할 것.
     // 이걸 사용할 수 없게 막을 방법은 없을까?
     public void Attach(Tile tile)

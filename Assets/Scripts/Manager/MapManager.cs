@@ -23,7 +23,7 @@ public class MapManager : MCN.MonoSingletone<MapManager> {
             {
                 manager.CreateTilemap();
 
-                manager.PlaceObjacts();
+                manager.PlaceUnits();
 
                 _savedMapSize = manager._mapSize;
             }
@@ -63,7 +63,7 @@ public class MapManager : MCN.MonoSingletone<MapManager> {
 #else
         CreateTilemap();
 
-        PlaceObjacts();
+        PlaceUnits();
 #endif
     }
 
@@ -95,18 +95,17 @@ public class MapManager : MCN.MonoSingletone<MapManager> {
         return _mapSize.x > pos.x && _mapSize.y > pos.y;
     }
 
-    public void PlaceObjacts()
+    public void PlaceUnits()
     {
         foreach (var objInfo in _placeObjInfos)
         {
             if (IsInMapSize(objInfo.pos))
             {
-                var placeableObj = PlaceableCreator.Create(objInfo.unitName);
-                if (placeableObj != null)
+                var unitObj = UnitObject.Create(objInfo.unitName);
+                if (unitObj != null)
                 {
-                    this.AttachObject(objInfo.pos, placeableObj);
+                    this.AttachObject(objInfo.pos, unitObj);
                 }
-                 
             }
         }
     }

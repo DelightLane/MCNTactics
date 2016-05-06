@@ -9,10 +9,10 @@ public class CombatAddedDeco : MCN.Decorator<ICombat>, ICombat
 
     public CombatAddedDeco(ICombat target, Status addedStatus) : base(target)
     {
-        this._addedAtk = addedStatus.atk;
-        this._addedDef = addedStatus.def;
-        this._addedHp = addedStatus.hp;
-        this._addedSp = addedStatus.sp;
+        this._addedAtk = addedStatus.Atk;
+        this._addedDef = addedStatus.Def;
+        this._addedHp = addedStatus.Hp;
+        this._addedSp = addedStatus.Sp;
     }
 
     public int Atk { get { return _decoTarget.Atk + _addedAtk; } }

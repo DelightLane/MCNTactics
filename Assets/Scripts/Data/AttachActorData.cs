@@ -5,11 +5,11 @@ using System.Linq;
 [Serializable]
 public class AttachActorDatas
 {
-    public List<AttachActor> attachActor;
+    public List<AttachActorData> attachActor;
 }
 
 [Serializable]
-public class AttachActor
+public class AttachActorData : DataObject
 {
     public int no;
     public List<ActorInfo> actor;
@@ -23,13 +23,13 @@ public class ActorInfo
     public List<int> weightValue;
 }
 
-public class AttachActorDataObject : DataObject
+public class AttachActorDataList : DataObject
 {
     private AttachActorDatas _data;
 
-    private List<AttachActor> Data { get { return _data.attachActor; } }
+    private List<AttachActorData> Data { get { return _data.attachActor; } }
 
-    public AttachActorDataObject(AttachActorDatas data)
+    public AttachActorDataList(AttachActorDatas data)
     {
         _data = data;
     }

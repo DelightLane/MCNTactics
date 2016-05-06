@@ -78,11 +78,10 @@
     <Compile Include="Assets\Scripts\Manager\GameManager.cs" />
     <Compile Include="Assets\Scripts\Manager\MapCreator.cs" />
     <Compile Include="Assets\Scripts\Manager\MapManager.cs" />
-    <Compile Include="Assets\Scripts\Manager\PlaceableCreator.cs" />
     <Compile Include="Assets\Scripts\Manager\TouchManager.cs" />
     <Compile Include="Assets\Scripts\Objects\Actor\AttackActor.cs" />
     <Compile Include="Assets\Scripts\Objects\Actor\MoveActor.cs" />
-    <Compile Include="Assets\Scripts\Objects\CombatObject.cs" />
+    <Compile Include="Assets\Scripts\Objects\UnitObject.cs" />
     <Compile Include="Assets\Scripts\Objects\Decorator\CombatAddedDeco.cs" />
     <Compile Include="Assets\Scripts\Objects\Decorator\CombatInstance.cs" />
     <Compile Include="Assets\Scripts\Objects\Decorator\ICombat.cs" />

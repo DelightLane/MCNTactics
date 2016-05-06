@@ -25,10 +25,10 @@ public class AttackActor : MCN.Actor
         get
         {
             int atk = 0;
-            var combatObj = ActTarget as CombatObject;
-            if(combatObj != null)
+            var unitObj = ActTarget as UnitObject;
+            if(unitObj != null)
             {
-                atk = combatObj.Atk;
+                atk = unitObj.Atk;
             }
 
             return atk + GetWeight("damage");
@@ -138,22 +138,22 @@ public class AttackActor : MCN.Actor
         {
             if (Target != null)
             {
-                var combatTarget = Target.ActTarget as CombatObject;
+                var unitTarget = Target.ActTarget as UnitObject;
 
-                if (combatTarget != null)
+                if (unitTarget != null)
                 {
-                    combatTarget.Select();
+                    unitTarget.Select();
 
-                    if (combatTarget.GetPlacedTile() != null)
+                    if (unitTarget.GetPlacedTile() != null)
                     {
                         MapManager.Instance.ChangeAllTileState(eTileType.DEACTIVE);
 
-                        var placedTile = combatTarget.GetPlacedTile();
+                        var placedTile = unitTarget.GetPlacedTile();
 
                         Func<Tile, bool> tileDeactiveCond = (Tile tile) =>
                         {
-                            return (tile.GetAttachObject() != null && !(tile.GetAttachObject() is CombatObject)) ||
-                                   (tile.GetAttachObject() is CombatObject && (tile.GetAttachObject() as CombatObject).Team == combatTarget.Team);
+                            return (tile.GetAttachObject() != null && !(tile.GetAttachObject() is UnitObject)) ||
+                                   (tile.GetAttachObject() is UnitObject && (tile.GetAttachObject() as UnitObject).Team == unitTarget.Team);
                         };
 
                         placedTile.ShowChainActiveTile(Target.Range, tileDeactiveCond);
@@ -166,7 +166,7 @@ public class AttackActor : MCN.Actor
         {
             if (Target != null)
             {
-                var damagedTarget = activeTile.GetAttachObject() as CombatObject;
+                var damagedTarget = activeTile.GetAttachObject() as UnitObject;
 
                 if (damagedTarget != null)
                 {
