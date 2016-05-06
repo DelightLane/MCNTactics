@@ -43,7 +43,7 @@ public class UnitObject : PlaceableObject, ICombat
     {
         var unitData = DataManager.Instance.GetData(DataManager.DataType.UNIT) as UnitDataList;
 
-        foreach (var unit in unitData.Data)
+        foreach (var unit in unitData.unit)
         {
             if (unit.name == unitName)
             {

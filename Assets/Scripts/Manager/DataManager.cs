@@ -96,7 +96,7 @@ public class UnitDataFactory : DataFactory
 
     public override DataObject LoadDatas()
     {
-        return new UnitDataList(new JsonParser<UnitDatas>().LoadDatas(this));
+        return new JsonParser<UnitDataList>().LoadDatas(this);
     }
 }
 
@@ -114,7 +114,7 @@ public class AttachActorDataFactory : DataFactory
 
     public override DataObject LoadDatas()
     {
-        return new AttachActorDataList(new JsonParser<AttachActorDatas>().LoadDatas(this));
+        return new JsonParser<AttachActorDataList>().LoadDatas(this);
     }
 }
 

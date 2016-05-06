@@ -3,9 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 
 [Serializable]
-public class AttachActorDatas
+public class AttachActorDataList : DataObject
 {
     public List<AttachActorData> attachActor;
+
+    public List<ActorInfo> GetActorList(int unitNo)
+    {
+        return attachActor.Find(actor => actor.no == unitNo).actor;
+    }
 }
 
 [Serializable]
@@ -21,21 +26,4 @@ public class ActorInfo
     public string name;
     public List<string> weightName;
     public List<int> weightValue;
-}
-
-public class AttachActorDataList : DataObject
-{
-    private AttachActorDatas _data;
-
-    private List<AttachActorData> Data { get { return _data.attachActor; } }
-
-    public AttachActorDataList(AttachActorDatas data)
-    {
-        _data = data;
-    }
-
-    public List<ActorInfo> GetActorList(int unitNo)
-    {
-        return Data.Find(actor => actor.no == unitNo).actor;
-    }
 }
