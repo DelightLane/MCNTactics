@@ -39,7 +39,7 @@ public class UnitObject : PlaceableObject, ICombat
     public UnitData _debugStatus;
 #endif
 
-    public static UnitObject Create(string unitName)
+    public static UnitObject Create(string unitName, eCombatTeam team)
     {
         var unitData = DataManager.Instance.GetData(DataManager.DataType.UNIT) as UnitDataList;
 
@@ -55,6 +55,8 @@ public class UnitObject : PlaceableObject, ICombat
                         var unitObj = targetObj.AddComponent<UnitObject>();
 
                         unitObj.Initialize(unit);
+
+                        unitObj.Team = team;
 
                         return unitObj;
                     }

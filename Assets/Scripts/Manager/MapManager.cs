@@ -101,7 +101,7 @@ public class MapManager : MCN.MonoSingletone<MapManager> {
         {
             if (IsInMapSize(objInfo.pos))
             {
-                var unitObj = UnitObject.Create(objInfo.unitName);
+                var unitObj = UnitObject.Create(objInfo.unitName, objInfo.team);
                 if (unitObj != null)
                 {
                     this.AttachObject(objInfo.pos, unitObj);

@@ -8,6 +8,7 @@ namespace MCN
     public class PlaceInfo
     {
         public Vector2 pos;
+        public eCombatTeam team;
         public string unitName;
     }
 
