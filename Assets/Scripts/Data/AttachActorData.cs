@@ -34,7 +34,7 @@ public class AttachActorDataObject : DataObject
         _data = data;
     }
 
-    public List<ActorInfo> GetActor(int unitNo)
+    public List<ActorInfo> GetActorList(int unitNo)
     {
         return Data.Find(actor => actor.no == unitNo).actor;
     }

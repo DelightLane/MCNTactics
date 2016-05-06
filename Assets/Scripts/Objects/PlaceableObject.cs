@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using MCN;
 
 public class PlaceableObject : TacticsObject, IDisposable, MCN.IActorQueue
@@ -75,6 +76,33 @@ public class PlaceableObject : TacticsObject, IDisposable, MCN.IActorQueue
     public void AddActor(Actor actor)
     {
         _actorMachine.AddActor(actor);
+    }
+
+    public void AddActor(ActorInfo info)
+    {
+        Assembly assembly = Assembly.GetExecutingAssembly();
+        try
+        {
+            Type actorType = assembly.GetType(info.name);
+
+            MCN.Actor actor = (MCN.Actor)Activator.CreateInstance(actorType);
+
+            if (actor != null)
+            {
+                actor.Initialize(this, info.weightName, info.weightValue);
+            }
+
+            this.AddActor(actor);
+
+#if UNITY_EDITOR
+            // 이건 디버깅용으로.. 무조껀 큐에 삽입한다.
+            this.EnqueueActor(actor.GetType());
+#endif
+        }
+        catch (Exception e)
+        {
+            throw new UnityException(e.ToString());
+        }
     }
 
     public void EnqueueActor(Type actorType)

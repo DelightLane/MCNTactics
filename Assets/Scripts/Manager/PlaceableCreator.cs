@@ -26,7 +26,11 @@ public class PlaceableCreator
 
                         if (attachActorData != null)
                         {
-                            AddActor(ref placeableObj, attachActorData.GetActor(unit.no));
+                            var actorList = attachActorData.GetActorList(unit.no);
+                            foreach (var info in actorList)
+                            {
+                                placeableObj.AddActor(info);
+                            }
                         }
                     }
                     else
@@ -40,39 +44,6 @@ public class PlaceableCreator
         }
 
         return null;
-    }
-
-    public static void AddActor(ref PlaceableObject obj, List<ActorInfo> info)
-    {
-        if (obj != null)
-        {
-            foreach (var actorInfo in info)
-            {
-                Assembly assembly = Assembly.GetExecutingAssembly();
-                try
-                {
-                    Type actorType = assembly.GetType(actorInfo.name);
-
-                    MCN.Actor actor = (MCN.Actor)Activator.CreateInstance(actorType);
-
-                    if (actor != null)
-                    {
-                        actor.Initialize(obj, actorInfo.weightName, actorInfo.weightValue);
-                    }
-
-                    obj.AddActor(actor);
-
-#if UNITY_EDITOR
-                    // 이건 디버깅용으로.. 무조껀 큐에 삽입한다.
-                    obj.EnqueueActor(actor.GetType());
-#endif
-                }
-                catch (Exception e)
-                {
-                    throw new UnityException(e.ToString());
-                }
-            }
-        }
     }
 }
 
