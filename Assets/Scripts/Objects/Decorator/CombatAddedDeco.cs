@@ -1,6 +1,6 @@
 ﻿using System;
 
-public class CombatAddedDeco : MCN.Decorator<ICombat>, ICombat
+public class CombatAddedDeco : FZ.Decorator<ICombat>, ICombat
 {
     private int _addedAtk;
     private int _addedDef;

@@ -2,11 +2,11 @@
 using System;
 using System.Collections.Generic;
 
-namespace MCN
+namespace FZ
 {
     public interface IActorQueue
     {
-        void AddActor(MCN.Actor actor);
+        void AddActor(FZ.Actor actor);
         void EnqueueActor(System.Type actorType);
         void DequeueActor();
     }
@@ -160,12 +160,12 @@ namespace MCN
     public class ActorMachine : IActorQueue
     {
         // Actor의 큐. 만약 큐에 Actor가 있다면 그 Actor는 사용될 준비가 된 것이다.
-        private LinkedList<MCN.Actor> _actorQueue = new LinkedList<MCN.Actor>();
+        private LinkedList<FZ.Actor> _actorQueue = new LinkedList<FZ.Actor>();
 
         // 해당 TacticsObject가 행동을 취할 수 있는 Actor들
-        private Dictionary<string, MCN.Actor> _actors = new Dictionary<string, MCN.Actor>();
+        private Dictionary<string, FZ.Actor> _actors = new Dictionary<string, FZ.Actor>();
 
-        public void AddActor(MCN.Actor actor)
+        public void AddActor(FZ.Actor actor)
         {
             if (actor.CheckAbsoluteWeightKey())
             {
@@ -175,7 +175,7 @@ namespace MCN
 
         public void EnqueueActor(System.Type actorType)
         {
-            if (!actorType.IsSubclassOf(typeof(MCN.Actor)) ||
+            if (!actorType.IsSubclassOf(typeof(FZ.Actor)) ||
                !_actors.ContainsKey(actorType.ToString()))
             {
                 throw new UnityException("Actor's type is not correct.");
@@ -184,7 +184,7 @@ namespace MCN
             _actorQueue.AddLast(_actors[actorType.ToString()]);
         }
 
-        public MCN.Actor GetActiveActor()
+        public FZ.Actor GetActiveActor()
         {
             if (_actorQueue.Count > 0)
             {

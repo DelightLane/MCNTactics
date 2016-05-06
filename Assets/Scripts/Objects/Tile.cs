@@ -17,7 +17,7 @@ public enum eTileType
     DEACTIVE
 }
 
-public class Tile : TacticsObject, IDisposable, MCN.IObserver<eTouchEvent>
+public class Tile : TacticsObject, IDisposable, FZ.IObserver<eTouchEvent>
 {
     private Vector2 _position;
     private PlaceObject _attached;
@@ -25,9 +25,9 @@ public class Tile : TacticsObject, IDisposable, MCN.IObserver<eTouchEvent>
     public static readonly float TILE_SIZE = 1;
 
     #region Tile State
-    private MCN.StateMachine<TileState> _stateMachine = new MCN.StateMachine<TileState>();
+    private FZ.StateMachine<TileState> _stateMachine = new FZ.StateMachine<TileState>();
 
-    private abstract class TileState : MCN.State<Tile>
+    private abstract class TileState : FZ.State<Tile>
     {
         public TileState(Tile target) : base(target)
         {

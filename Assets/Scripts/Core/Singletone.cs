@@ -2,7 +2,7 @@
 using System.Reflection;
 using UnityEngine;
 
-namespace MCN
+namespace FZ
 {
     /**
     *@brief 싱글톤 추상 클래스

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections.Generic;
-using MCN;
+using FZ;
 
 // TODO : 더 많은 터치 이벤트들을 구현해야 함
 public enum eTouchEvent

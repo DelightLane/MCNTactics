@@ -9,7 +9,7 @@ public enum eMoveActType
     DONE
 }
 
-public class MoveActor : MCN.ActObjActor
+public class MoveActor : FZ.ActObjActor
 {
     #region weight
     public int Range
@@ -27,9 +27,9 @@ public class MoveActor : MCN.ActObjActor
     #endregion
 
     #region state
-    private MCN.StateMachine<MoveActState> _stateMachine = new MCN.StateMachine<MoveActState>();
+    private FZ.StateMachine<MoveActState> _stateMachine = new FZ.StateMachine<MoveActState>();
 
-    private abstract class MoveActState : MCN.State<MoveActor>
+    private abstract class MoveActState : FZ.State<MoveActor>
     {
         public MoveActState(MoveActor target) : base(target)
         {

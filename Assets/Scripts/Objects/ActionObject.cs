@@ -2,9 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Reflection;
-using MCN;
+using FZ;
 
-public class ActionObject : PlaceObject, MCN.IActorQueue
+public class ActionObject : PlaceObject, FZ.IActorQueue
 {
     private ActorMachine _actorMachine = new ActorMachine();
 
@@ -31,7 +31,7 @@ public class ActionObject : PlaceObject, MCN.IActorQueue
         {
             Type actorType = assembly.GetType(info.name);
 
-            MCN.Actor actor = (MCN.Actor)Activator.CreateInstance(actorType);
+            FZ.Actor actor = (FZ.Actor)Activator.CreateInstance(actorType);
 
             if (actor != null)
             {

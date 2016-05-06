@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace MCN
+namespace FZ
 {
     /**
     *@brief 상태 인터페이스

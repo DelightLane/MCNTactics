@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace MCN
+namespace FZ
 {
     [System.Serializable]
     public class PlaceInfo

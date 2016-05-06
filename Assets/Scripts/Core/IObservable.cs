@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace MCN
+namespace FZ
 {
     /**
     *@brief 옵저버 관리자 인터페이스

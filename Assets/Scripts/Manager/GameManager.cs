@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GameManager : MCN.Singletone<GameManager>
+public class GameManager : FZ.Singletone<GameManager>
 {
     private TacticsObject _selectedObj;
 

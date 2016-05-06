@@ -9,7 +9,7 @@ public enum eAttackActType
     DONE
 }
 
-public class AttackActor : MCN.UnitObjActor
+public class AttackActor : FZ.UnitObjActor
 {
     #region weight
     public int Range
@@ -37,9 +37,9 @@ public class AttackActor : MCN.UnitObjActor
     #endregion   
 
     #region state
-    private MCN.StateMachine<AttackActState> _stateMachine = new MCN.StateMachine<AttackActState>();
+    private FZ.StateMachine<AttackActState> _stateMachine = new FZ.StateMachine<AttackActState>();
 
-    private abstract class AttackActState : MCN.State<AttackActor>
+    private abstract class AttackActState : FZ.State<AttackActor>
     {
         public AttackActState(AttackActor target) : base(target)
         {

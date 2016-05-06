@@ -3,9 +3,9 @@ using System;
 using System.Reflection;
 using System.Collections;
 using System.Collections.Generic;
-using MCN;
+using FZ;
 
-public class MapManager : MCN.MonoSingletone<MapManager> {
+public class MapManager : FZ.MonoSingletone<MapManager> {
     [SerializeField]
     private Vector2 _mapSize;
 
