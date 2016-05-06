@@ -1,5 +1,5 @@
 <map id="MapManager.GetTile" name="MapManager.GetTile">
-<area shape="rect" id="node2" href="$class_map_manager.html#ab8cbf46e369a9c59ff183a1b6c3b20bb" title="MapManager.AttachObject" alt="" coords="196,5,373,32"/>
-<area shape="rect" id="node3" href="$class_map_manager.html#a4213ccbaa1a81d0a47884de50a28de32" title="MapManager.PlaceObjacts" alt="" coords="421,5,600,32"/>
-<area shape="rect" id="node4" href="$class_map_manager.html#ad633984007048c7d63eab44aaeb0c32d" title="MapManager.Awake" alt="" coords="648,5,788,32"/>
+<area shape="rect" id="node2" href="$class_map_manager.html#af1766fb2d9800aaea322edede0a8ebf6" title="MapManager.AttachObject" alt="" coords="196,5,373,32"/>
+<area shape="rect" id="node3" href="$class_map_manager.html#a0b4f29a9504f7004c7b562fa49ba84cd" title="MapManager.PlaceUnits" alt="" coords="421,5,585,32"/>
+<area shape="rect" id="node4" href="$class_map_manager.html#ad633984007048c7d63eab44aaeb0c32d" title="MapManager.Awake" alt="" coords="633,5,773,32"/>
 </map>

@@ -1,4 +1,4 @@
 <map id="그래픽컬한 클래스 계통도" name="그래픽컬한 클래스 계통도">
-<area shape="rect" id="node1" href="$class_m_c_n_1_1_singletone.html" title="MCN.Singletone\&lt; DataManager \&gt;" alt="" coords="5,5,223,32"/>
-<area shape="rect" id="node2" href="$class_data_manager.html" title="DataManager" alt="" coords="271,5,369,32"/>
+<area shape="rect" id="node1" href="$class_f_z_1_1_singletone.html" title="FZ.Singletone\&lt; GameManager \&gt;" alt="" coords="5,5,216,32"/>
+<area shape="rect" id="node2" href="$class_game_manager.html" title="GameManager" alt="" coords="264,5,371,32"/>
 </map>

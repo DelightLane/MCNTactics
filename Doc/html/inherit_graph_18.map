@@ -1,7 +1,7 @@
 <map id="그래픽컬한 클래스 계통도" name="그래픽컬한 클래스 계통도">
-<area shape="rect" id="node1" href="$class_m_c_n_1_1_state.html" title="MCN.State\&lt; AttackActor \&gt;" alt="" coords="5,71,184,98"/>
-<area shape="rect" id="node2" href="$class_attack_actor_1_1_attack_act_state.html" title="AttackActor.AttackActState" alt="" coords="232,71,416,98"/>
-<area shape="rect" id="node3" href="$class_attack_actor_1_1_attack_act_state___attack.html" title="AttackActor.AttackActState\l_Attack" alt="" coords="483,5,667,47"/>
-<area shape="rect" id="node4" href="$class_attack_actor_1_1_attack_act_state___done.html" title="AttackActor.AttackActState_Done" alt="" coords="464,71,685,98"/>
-<area shape="rect" id="node5" href="$class_attack_actor_1_1_attack_act_state___normal.html" title="AttackActor.AttackActState\l_Normal" alt="" coords="483,123,667,164"/>
+<area shape="rect" id="node1" href="$class_f_z_1_1_state.html" title="FZ.State\&lt; MoveActor \&gt;" alt="" coords="5,56,163,83"/>
+<area shape="rect" id="node2" href="$class_move_actor_1_1_move_act_state.html" title="MoveActor.MoveActState" alt="" coords="211,56,379,83"/>
+<area shape="rect" id="node3" href="$class_move_actor_1_1_move_act_state___done.html" title="MoveActor.MoveActState_Done" alt="" coords="427,5,632,32"/>
+<area shape="rect" id="node4" href="$class_move_actor_1_1_move_act_state___move.html" title="MoveActor.MoveActState_Move" alt="" coords="427,56,632,83"/>
+<area shape="rect" id="node5" href="$class_move_actor_1_1_move_act_state___normal.html" title="MoveActor.MoveActState\l_Normal" alt="" coords="445,107,613,149"/>
 </map>

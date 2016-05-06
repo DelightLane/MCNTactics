@@ -1,4 +1,4 @@
 <map id="MoveActor.MoveActState_Move" name="MoveActor.MoveActState_Move">
 <area shape="rect" id="node2" href="$class_move_actor_1_1_move_act_state.html" title="{MoveActState\n||+ MoveActState()\l+ Interactive()\l+ GetCurrentType()\l+ OnTouchEvent()\l# AllTileToNormal()\l}" alt="" coords="41,219,175,355"/>
-<area shape="rect" id="node3" href="$class_m_c_n_1_1_state.html" title="{MCN::State\&lt; MoveActor \&gt;\n|+ Target\l&#45; _target\l|+ State()\l+ Initialize()\l+ Destroy()\l+ Run()\l+ Finish()\l+ Dispose()\l}" alt="" coords="21,5,195,171"/>
+<area shape="rect" id="node3" href="$class_f_z_1_1_state.html" title="{FZ::State\&lt; MoveActor \&gt;\n|+ Target\l&#45; _target\l|+ State()\l+ Initialize()\l+ Destroy()\l+ Run()\l+ Finish()\l+ Dispose()\l}" alt="" coords="27,5,189,171"/>
 </map>

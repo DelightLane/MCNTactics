@@ -6,7 +6,7 @@ var class_combat_added_deco =
     [ "_addedDef", "class_combat_added_deco.html#abb40c78d41f1f133a285415b70506940", null ],
     [ "_addedHp", "class_combat_added_deco.html#aa6d7287956c39e242ed254faf29e6a3b", null ],
     [ "_addedSp", "class_combat_added_deco.html#a02d5c40dcf180b1ad7086856dfa83929", null ],
-    [ "_decoTarget", "class_combat_added_deco.html#a358dba6e4ac8d5ef06ed9f5592f8827e", null ],
+    [ "_decoTarget", "class_combat_added_deco.html#adce2c6d288dcfa08b899f3e233190210", null ],
     [ "Atk", "class_combat_added_deco.html#aeb5992435525404a992ee9f028a2cf0d", null ],
     [ "CombatState", "class_combat_added_deco.html#a16e7a3ae7dc8751d25ef0b6ee0ce5531", null ],
     [ "Def", "class_combat_added_deco.html#ac3d7d042df2e8c8cbec3d6cbcb85ae96", null ],

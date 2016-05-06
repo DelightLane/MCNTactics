@@ -1,0 +1,4 @@
+<map id="FZ.ActObjActor" name="FZ.ActObjActor">
+<area shape="rect" id="node3" href="$class_move_actor.html" title="{MoveActor\n|+ Range\l&#45; _stateMachine\l|+ OnTouchEvent()\l+ Interactive()\l# AbsoluteWeightKey()\l# Initialize()\l&#45; StorageStates()\l&#45; GetCurrentState()\l&#45; GetCurrentStateType()\l&#45; ChangeState()\l}" alt="" coords="23,432,183,627"/>
+<area shape="rect" id="node2" href="$class_f_z_1_1_actor.html" title="{Actor\n|+ ActTarget\l&#45; _weight\l|+ Actor()\l+ CheckAbsoluteWeightKey()\l+ Initialize()\l+ Initialize()\l+ GetWeight()\l+ SetWeight()\l+ SetWeight()\l+ Interactive()\l+ OnTouchEvent()\l# AbsoluteWeightKey()\l# Initialize()\l# FinishActor()\l}" alt="" coords="5,5,200,259"/>
+</map>

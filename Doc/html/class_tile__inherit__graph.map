@@ -1,4 +1,4 @@
 <map id="Tile" name="Tile">
 <area shape="rect" id="node2" href="$class_tactics_object.html" title="{TacticsObject\n||+ Interactive()\l+ OnTouchEvent()\l}" alt="" coords="5,131,132,223"/>
-<area shape="rect" id="node5" href="$interface_m_c_n_1_1_i_observer.html" title="{MCN::IObserver\&lt; eTouchEvent \&gt;\n||+ OnNext()\l}" alt="" coords="270,138,481,215"/>
+<area shape="rect" id="node5" href="$interface_f_z_1_1_i_observer.html" title="{FZ::IObserver\&lt; eTouchEvent \&gt;\n||+ OnNext()\l}" alt="" coords="270,138,467,215"/>
 </map>

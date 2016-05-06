@@ -1,0 +1,100 @@
+\hypertarget{class_f_z_1_1_singletone}{}\section{F\+Z.\+Singletone$<$ T $>$ 클래스 템플릿 참조}
+\label{class_f_z_1_1_singletone}\index{F\+Z.\+Singletone$<$ T $>$@{F\+Z.\+Singletone$<$ T $>$}}
+
+
+싱글톤 추상 클래스  
+
+
+
+
+F\+Z.\+Singletone$<$ T $>$에 대한 협력 다이어그램\+:
+% FIG 0
+\subsection*{정적 Protected 속성}
+\begin{DoxyCompactItemize}
+\item 
+static T \hyperlink{class_f_z_1_1_singletone_a1da3d44c1904d88e6fc0252c9333c221}{\+\_\+instance} = null
+\end{DoxyCompactItemize}
+\subsection*{속성}
+\begin{DoxyCompactItemize}
+\item 
+static T \hyperlink{class_f_z_1_1_singletone_a8e7ba3cf5cff48b1101428beefcd76b4}{Instance}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\subsection*{정적 Private 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_f_z_1_1_singletone_a9e386b925c431c4ddd71a0c4e86e8a08}{Create\+Instance} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{상세한 설명}
+싱글톤 추상 클래스 
+
+템플릿 T에 해당하는 클래스가 이 추상 클래스를 상속받을 시 싱글톤 클래스로 구현된다. 반드시 생성자는 private로 지정해 주어야 한다. \begin{DoxyAuthor}{작성자}
+Delight 
+\end{DoxyAuthor}
+\begin{Desc}
+\item[타입 한정자들]\begin{description}
+\item[{\em T} : {\em class}]\end{description}
+\end{Desc}
+
+
+Singletone.\+cs 파일의 13 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{멤버 함수 문서화}
+\index{F\+Z\+::\+Singletone@{F\+Z\+::\+Singletone}!Create\+Instance@{Create\+Instance}}
+\index{Create\+Instance@{Create\+Instance}!F\+Z\+::\+Singletone@{F\+Z\+::\+Singletone}}
+\subsubsection[{\texorpdfstring{Create\+Instance()}{CreateInstance()}}]{\setlength{\rightskip}{0pt plus 5cm}static void {\bf F\+Z.\+Singletone}$<$ T $>$.Create\+Instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\hypertarget{class_f_z_1_1_singletone_a9e386b925c431c4ddd71a0c4e86e8a08}{}\label{class_f_z_1_1_singletone_a9e386b925c431c4ddd71a0c4e86e8a08}
+
+
+Singletone.\+cs 파일의 29 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+30         \{
+31             \textcolor{keywordflow}{if} (\hyperlink{class_f_z_1_1_singletone_a1da3d44c1904d88e6fc0252c9333c221}{\_instance} == null)
+32             \{
+33                 Type t = typeof(T);
+34 
+35                 ConstructorInfo[] ctors = t.GetConstructors();
+36 
+37                 \textcolor{keywordflow}{if} (ctors.Length > 0)
+38                 \{
+39                     \textcolor{keywordflow}{throw} \textcolor{keyword}{new} InvalidOperationException(String.Format(\textcolor{stringliteral}{"\{0\} has at least one accesible ctor
+       making it impossible to enforce singleton behaviour"}, t.Name));
+40                 \}
+41 
+42                 \hyperlink{class_f_z_1_1_singletone_a1da3d44c1904d88e6fc0252c9333c221}{\_instance} = (T)Activator.CreateInstance(t, \textcolor{keyword}{true});
+43             \}
+44         \}
+\end{DoxyCode}
+
+
+\subsection{멤버 데이타 문서화}
+\index{F\+Z\+::\+Singletone@{F\+Z\+::\+Singletone}!\+\_\+instance@{\+\_\+instance}}
+\index{\+\_\+instance@{\+\_\+instance}!F\+Z\+::\+Singletone@{F\+Z\+::\+Singletone}}
+\subsubsection[{\texorpdfstring{\+\_\+instance}{_instance}}]{\setlength{\rightskip}{0pt plus 5cm}T {\bf F\+Z.\+Singletone}$<$ T $>$.\+\_\+instance = null\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\hypertarget{class_f_z_1_1_singletone_a1da3d44c1904d88e6fc0252c9333c221}{}\label{class_f_z_1_1_singletone_a1da3d44c1904d88e6fc0252c9333c221}
+
+
+Singletone.\+cs 파일의 15 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{속성 문서화}
+\index{F\+Z\+::\+Singletone@{F\+Z\+::\+Singletone}!Instance@{Instance}}
+\index{Instance@{Instance}!F\+Z\+::\+Singletone@{F\+Z\+::\+Singletone}}
+\subsubsection[{\texorpdfstring{Instance}{Instance}}]{\setlength{\rightskip}{0pt plus 5cm}T {\bf F\+Z.\+Singletone}$<$ T $>$.Instance\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}\hypertarget{class_f_z_1_1_singletone_a8e7ba3cf5cff48b1101428beefcd76b4}{}\label{class_f_z_1_1_singletone_a8e7ba3cf5cff48b1101428beefcd76b4}
+
+
+Singletone.\+cs 파일의 18 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Git\+Hub/\+M\+C\+N\+Tactics/\+Assets/\+Scripts/\+Core/\hyperlink{_singletone_8cs}{Singletone.\+cs}\end{DoxyCompactItemize}

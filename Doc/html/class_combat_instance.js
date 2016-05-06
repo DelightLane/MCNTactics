@@ -1,7 +1,9 @@
 var class_combat_instance =
 [
     [ "CombatInstance", "class_combat_instance.html#a613a6f5a211954d3f5f0d621cab88606", null ],
+    [ "CombatInstance", "class_combat_instance.html#a1f243136512dccd4c911fd62b11894ae", null ],
     [ "Damaged", "class_combat_instance.html#a612a867750ddfc0da7306e73752225b7", null ],
+    [ "Initialize", "class_combat_instance.html#a2b1d21b8c8afbcf8ba1782ce65c01da4", null ],
     [ "_atk", "class_combat_instance.html#a7107dad81ca2638ed2ad30de391029e6", null ],
     [ "_combatState", "class_combat_instance.html#a6352b66ef39484c9d76b03df56d26ee4", null ],
     [ "_def", "class_combat_instance.html#a1c2bc3e91c7e2fee8b5d5f489eaa3d40", null ],

@@ -93,9 +93,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'검색');
       <li><a href="#index_h"><span>h</span></a></li>
       <li><a href="#index_i"><span>i</span></a></li>
       <li><a href="#index_m"><span>m</span></a></li>
+      <li><a href="#index_n"><span>n</span></a></li>
       <li><a href="#index_r"><span>r</span></a></li>
       <li><a href="#index_s"><span>s</span></a></li>
-      <li class="current"><a href="#index_t"><span>t</span></a></li>
+      <li><a href="#index_t"><span>t</span></a></li>
+      <li class="current"><a href="#index_u"><span>u</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -132,13 +134,15 @@ $(document).ready(function(){initNavTree('functions_prop.html','');});
 
 <h3><a class="anchor" id="index_a"></a>- a -</h3><ul>
 <li>ActTarget
-: <a class="el" href="class_m_c_n_1_1_actor.html#a1d809d2994dcccb6a8fcc665afa1ca6f">MCN.Actor</a>
+: <a class="el" href="class_f_z_1_1_act_obj_actor.html#abb12c3b4970b1e028a57e16f04065944">FZ.ActObjActor</a>
+, <a class="el" href="class_f_z_1_1_actor.html#add19d5c2a31b5c4482cbf9ba0a399ecd">FZ.Actor</a>
+, <a class="el" href="class_f_z_1_1_unit_obj_actor.html#a9343320a7b31731b88fa6ab91d649328">FZ.UnitObjActor</a>
 </li>
 <li>Atk
 : <a class="el" href="class_combat_added_deco.html#aeb5992435525404a992ee9f028a2cf0d">CombatAddedDeco</a>
 , <a class="el" href="class_combat_instance.html#a9de7c50888b56d9854709d132e69baa9">CombatInstance</a>
-, <a class="el" href="class_combat_object.html#a96cb990e2f70cf963e6a1f8f4e992efa">CombatObject</a>
 , <a class="el" href="interface_i_combat.html#a63d4002359409bac694aecdff0120c43">ICombat</a>
+, <a class="el" href="class_unit_object.html#a39c41a2a1ba683b02a265594abad9684">UnitObject</a>
 </li>
 </ul>
 
@@ -147,8 +151,8 @@ $(document).ready(function(){initNavTree('functions_prop.html','');});
 <li>CombatState
 : <a class="el" href="class_combat_added_deco.html#a16e7a3ae7dc8751d25ef0b6ee0ce5531">CombatAddedDeco</a>
 , <a class="el" href="class_combat_instance.html#a149d2068f3dc0ec72f3461d101dcebab">CombatInstance</a>
-, <a class="el" href="class_combat_object.html#a25cac282f047475ab61d9f4b6187c9da">CombatObject</a>
 , <a class="el" href="interface_i_combat.html#aef944c90874b03051f60395f3c8532e4">ICombat</a>
+, <a class="el" href="class_unit_object.html#a2e807fb19c32a7d2bd16d86297e7a7fa">UnitObject</a>
 </li>
 </ul>
 
@@ -157,14 +161,11 @@ $(document).ready(function(){initNavTree('functions_prop.html','');});
 <li>Damage
 : <a class="el" href="class_attack_actor.html#aaa126531b12eeb6d03311d761697cc84">AttackActor</a>
 </li>
-<li>Data
-: <a class="el" href="class_unit_data_object.html#a91bcbabf21e310c89dce5a88fe8e482f">UnitDataObject</a>
-</li>
 <li>Def
 : <a class="el" href="class_combat_added_deco.html#ac3d7d042df2e8c8cbec3d6cbcb85ae96">CombatAddedDeco</a>
 , <a class="el" href="class_combat_instance.html#ab52acfd86a70be3647d2f092e6816190">CombatInstance</a>
-, <a class="el" href="class_combat_object.html#a9c4572f9571e28d069538807ddefc567">CombatObject</a>
 , <a class="el" href="interface_i_combat.html#a7d659a107f8e0f610cd74f1da0218e43">ICombat</a>
+, <a class="el" href="class_unit_object.html#a35b9e7e361b6757ea62ae961fc638cd9">UnitObject</a>
 </li>
 </ul>
 
@@ -173,16 +174,16 @@ $(document).ready(function(){initNavTree('functions_prop.html','');});
 <li>Hp
 : <a class="el" href="class_combat_added_deco.html#a6810b0a4d852d7f8dc61145e2c7c9fc4">CombatAddedDeco</a>
 , <a class="el" href="class_combat_instance.html#ae4682b727ea05a59141f747341877eb6">CombatInstance</a>
-, <a class="el" href="class_combat_object.html#aa55597fe00c9fa9f3ff701313ffee7ae">CombatObject</a>
 , <a class="el" href="interface_i_combat.html#aa9d63fa3662b41ec000a73b9bfa663c4">ICombat</a>
+, <a class="el" href="class_unit_object.html#a07153bf66bf9922005e9421629d3b697">UnitObject</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_i"></a>- i -</h3><ul>
 <li>Instance
-: <a class="el" href="class_m_c_n_1_1_mono_singletone.html#aa50c027cca64cf4ad30c1ee5c83e0b78">MCN.MonoSingletone&lt; T &gt;</a>
-, <a class="el" href="class_m_c_n_1_1_singletone.html#a46dbbebd93e96a9592a9803c51f35602">MCN.Singletone&lt; T &gt;</a>
+: <a class="el" href="class_f_z_1_1_mono_singletone.html#a39e34129d25a9664576949259e7dfd5f">FZ.MonoSingletone&lt; T &gt;</a>
+, <a class="el" href="class_f_z_1_1_singletone.html#a8e7ba3cf5cff48b1101428beefcd76b4">FZ.Singletone&lt; T &gt;</a>
 </li>
 </ul>
 
@@ -191,14 +192,21 @@ $(document).ready(function(){initNavTree('functions_prop.html','');});
 <li>MaxHp
 : <a class="el" href="class_combat_added_deco.html#a6e24be83c5d6b04b0d900103bb398d2e">CombatAddedDeco</a>
 , <a class="el" href="class_combat_instance.html#a33c5218456253d1a5c457fe6364b10d7">CombatInstance</a>
-, <a class="el" href="class_combat_object.html#a7101559cd03a4e1d635425dc086f7da6">CombatObject</a>
 , <a class="el" href="interface_i_combat.html#a5c6ed297759d86d674077ee495226cc3">ICombat</a>
+, <a class="el" href="class_unit_object.html#a1d15c3814aaa733055fae8235c45def7">UnitObject</a>
 </li>
 <li>MaxSp
 : <a class="el" href="class_combat_added_deco.html#aa1dde14484472ac5d8b42d3ee9b745f2">CombatAddedDeco</a>
 , <a class="el" href="class_combat_instance.html#ad1d6d4d72223021bd0130b069437463d">CombatInstance</a>
-, <a class="el" href="class_combat_object.html#aa515c86e379dd5300b036a662587b9d6">CombatObject</a>
 , <a class="el" href="interface_i_combat.html#ab40a631d18b8bff65e84be84f0061708">ICombat</a>
+, <a class="el" href="class_unit_object.html#a484552912394874ea5cb91ea567b6cd4">UnitObject</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_n"></a>- n -</h3><ul>
+<li>No
+: <a class="el" href="class_unit_object.html#a87d41a2fa19b25157d5d33dd883572a1">UnitObject</a>
 </li>
 </ul>
 
@@ -218,15 +226,25 @@ $(document).ready(function(){initNavTree('functions_prop.html','');});
 <li>Sp
 : <a class="el" href="class_combat_added_deco.html#aac41784d0f685c5db6107affca78d089">CombatAddedDeco</a>
 , <a class="el" href="class_combat_instance.html#a120995296719b1fb1fa4cc55721ddba4">CombatInstance</a>
-, <a class="el" href="class_combat_object.html#a042786e7e585cb8c00a3a85d3e89f861">CombatObject</a>
 , <a class="el" href="interface_i_combat.html#a833ef74923f764476c432b48be18ac90">ICombat</a>
+, <a class="el" href="class_unit_object.html#a59a8969cb22dea7f58579517826974dd">UnitObject</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_t"></a>- t -</h3><ul>
 <li>Target
-: <a class="el" href="class_m_c_n_1_1_state.html#a93ba2fd920292031bd6e65b1dc505cb3">MCN.State&lt; T &gt;</a>
+: <a class="el" href="class_f_z_1_1_state.html#a6927f5c9f2517052f9dc5596188e9d95">FZ.State&lt; T &gt;</a>
+</li>
+<li>Team
+: <a class="el" href="class_unit_object.html#ab856bbbecf4207710302fc1ecaa75379">UnitObject</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_u"></a>- u -</h3><ul>
+<li>UnitName
+: <a class="el" href="class_unit_object.html#ad60ea173f3e24fcdd247cd0438438858">UnitObject</a>
 </li>
 </ul>
 </div><!-- contents -->

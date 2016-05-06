@@ -1,0 +1,7 @@
+<map id="UnitObject" name="UnitObject">
+<area shape="rect" id="node2" href="$class_action_object.html" title="{ActionObject\n|&#45; _actorMachine\l|+ Initialize()\l+ AddActor()\l+ AddActor()\l+ EnqueueActor()\l+ DequeueActor()\l+ Interactive()\l+ OnTouchEvent()\l}" alt="" coords="144,513,271,679"/>
+<area shape="rect" id="node3" href="$class_place_object.html" title="{PlaceObject\n|# _placedTile\l|+ Initialize()\l+ Attach()\l+ Detach()\l+ GetPlacedTile()\l+ Dispose()\l+ IsSelected()\l+ Select()\l+ Deselect()\l&#45; Place()\l}" alt="" coords="73,271,195,465"/>
+<area shape="rect" id="node4" href="$class_tactics_object.html" title="{TacticsObject\n||+ Interactive()\l+ OnTouchEvent()\l}" alt="" coords="5,131,132,223"/>
+<area shape="rect" id="node7" href="$interface_f_z_1_1_i_actor_queue.html" title="{FZ::IActorQueue\n||+ AddActor()\l+ EnqueueActor()\l+ DequeueActor()\l}" alt="" coords="220,315,344,421"/>
+<area shape="rect" id="node8" href="$interface_i_combat.html" title="{ICombat\n|+ Hp\l+ Sp\l+ Atk\l+ Def\l+ MaxHp\l+ MaxSp\l+ CombatState\l|+ Damaged()\l}" alt="" coords="295,513,405,679"/>
+</map>

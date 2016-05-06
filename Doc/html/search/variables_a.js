@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['value',['value',['../class_m_c_n_1_1_pair.html#a1980bbf37b60fcbfea22382f71250e84',1,'MCN::Pair']]]
+  ['value',['value',['../class_f_z_1_1_pair.html#a548bd4cfb4d1587016f1f53be6fac5b8',1,'FZ::Pair']]]
 ];

@@ -1,0 +1,9 @@
+<map id="ActionObject" name="ActionObject">
+<area shape="rect" id="node2" href="$class_place_object.html" title="{PlaceObject\n||+ Initialize()\l+ Attach()\l+ Detach()\l+ GetPlacedTile()\l+ Dispose()\l+ IsSelected()\l+ Select()\l+ Deselect()\l&#45; Place()\l}" alt="" coords="380,288,502,483"/>
+<area shape="rect" id="node6" href="$class_tile.html" title="{Tile\n|+ TILE_SIZE\l&#45; _position\l|+ Dispose()\l+ SetPosition()\l+ GetAttachObject()\l+ AttachObject()\l+ DetachObject()\l+ GetClosedTiles()\l+ GetClosedTile()\l+ ShowChainActiveTile()\l+ ShowChainActiveTile()\l+ ChangeState()\l+ OnNext()\l+ CreateTile()\l&#45; Tile()\l&#45; Awake()\l&#45; StorageStates()\l&#45; GetChainActiveTileCost()\l&#45; GetCurrentState()\l}" alt="" coords="198,545,372,872"/>
+<area shape="rect" id="node3" href="$class_tactics_object.html" title="{TacticsObject\n||+ Interactive()\l+ OnTouchEvent()\l}" alt="" coords="78,139,204,231"/>
+<area shape="rect" id="node7" href="$interface_f_z_1_1_i_observer.html" title="{FZ::IObserver\&lt; eTouchEvent \&gt;\n||+ OnNext()\l}" alt="" coords="44,347,241,424"/>
+<area shape="rect" id="node9" href="$interface_f_z_1_1_i_actor_queue.html" title="{FZ::IActorQueue\n||+ AddActor()\l+ EnqueueActor()\l+ DequeueActor()\l}" alt="" coords="551,332,675,439"/>
+<area shape="rect" id="node10" href="$class_f_z_1_1_actor_machine.html" title="{FZ.ActorMachine\n|&#45; _actorQueue\l&#45; _actors\l|+ AddActor()\l+ EnqueueActor()\l+ GetActiveActor()\l+ DequeueActor()\l}" alt="" coords="699,317,828,453"/>
+<area shape="rect" id="node11" href="$interface_f_z_1_1_i_actor_queue.html" title="{IActorQueue\n||+ AddActor()\l+ EnqueueActor()\l+ DequeueActor()\l}" alt="" coords="702,132,826,239"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="Tile.GetAttachObject" name="Tile.GetAttachObject">
+<area shape="rect" id="node2" href="$class_attack_actor_1_1_attack_act_state___attack.html#a59a3f2e994baeddabb870446b5df1641" title="AttackActor.AttackActState\l_Attack.Interactive" alt="" coords="196,5,380,47"/>
+<area shape="rect" id="node3" href="$class_tile.html#a81b4dd833bdeade289583aabbdcaff73" title="Tile.GetChainActiveTileCost" alt="" coords="197,71,379,98"/>
+<area shape="rect" id="node5" href="$class_tile.html#a6133171796d47353aa5d57cd336e0a07" title="Tile.OnNext" alt="" coords="243,122,333,149"/>
+<area shape="rect" id="node4" href="$class_tile.html#a2da9865ff4d9af18c0c00d70c08d5951" title="Tile.ShowChainActiveTile" alt="" coords="428,71,595,98"/>
+</map>

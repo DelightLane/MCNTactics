@@ -1,0 +1,203 @@
+\hypertarget{class_f_z_1_1_state}{}\section{F\+Z.\+State$<$ T $>$ 클래스 템플릿 참조}
+\label{class_f_z_1_1_state}\index{F\+Z.\+State$<$ T $>$@{F\+Z.\+State$<$ T $>$}}
+
+
+상태 추상 클래스  
+
+
+
+
+F\+Z.\+State$<$ T $>$에 대한 상속 다이어그램 \+: 
+% FIG 0
+
+
+F\+Z.\+State$<$ T $>$에 대한 협력 다이어그램\+:
+% FIG 1
+\subsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_f_z_1_1_state_af41ff99fa6cd69f1b8e11ca329c73f27}{State} (T target)
+\item 
+virtual void \hyperlink{class_f_z_1_1_state_a27ac6fd2e844476017b35aa781d73c8c}{Initialize} ()
+\item 
+virtual void \hyperlink{class_f_z_1_1_state_aa85fdf4a5495d6d5d3ed4aeda3497c8a}{Destroy} ()
+\item 
+abstract void \hyperlink{class_f_z_1_1_state_acaf1584680a2e69e2a4da20574723981}{Run} ()
+\item 
+virtual void \hyperlink{class_f_z_1_1_state_a288bb8c3fceee4bf03f01e295dcef1be}{Finish} ()
+\item 
+void \hyperlink{class_f_z_1_1_state_a598887d3fbb412fada132dc1c079b25b}{Dispose} ()
+\end{DoxyCompactItemize}
+\subsection*{속성}
+\begin{DoxyCompactItemize}
+\item 
+T \hyperlink{class_f_z_1_1_state_a6927f5c9f2517052f9dc5596188e9d95}{Target}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\subsection*{Private 속성}
+\begin{DoxyCompactItemize}
+\item 
+T \hyperlink{class_f_z_1_1_state_aff2ae4a7940bd3e363e98e3c0d76d011}{\+\_\+target}
+\end{DoxyCompactItemize}
+
+
+\subsection{상세한 설명}
+상태 추상 클래스 
+
+\hyperlink{class_f_z_1_1_state}{State} 패턴을 구현하기 위한 추상 클래스. \hyperlink{class_f_z_1_1_state_machine}{State\+Machine} 객체를 통하여 조작된다. \begin{DoxyAuthor}{작성자}
+Delight 
+\end{DoxyAuthor}
+
+
+State.\+cs 파일의 29 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{생성자 \& 소멸자 문서화}
+\index{F\+Z\+::\+State@{F\+Z\+::\+State}!State@{State}}
+\index{State@{State}!F\+Z\+::\+State@{F\+Z\+::\+State}}
+\subsubsection[{\texorpdfstring{State(\+T target)}{State(T target)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\+Z.\+State}$<$ T $>$.{\bf State} (
+\begin{DoxyParamCaption}
+\item[{T}]{target}
+\end{DoxyParamCaption}
+)}\hypertarget{class_f_z_1_1_state_af41ff99fa6cd69f1b8e11ca329c73f27}{}\label{class_f_z_1_1_state_af41ff99fa6cd69f1b8e11ca329c73f27}
+
+
+State.\+cs 파일의 39 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+40         \{
+41             \hyperlink{class_f_z_1_1_state_aff2ae4a7940bd3e363e98e3c0d76d011}{\_target} = target;
+42 
+43             \hyperlink{class_f_z_1_1_state_a27ac6fd2e844476017b35aa781d73c8c}{Initialize}();
+44         \}
+\end{DoxyCode}
+
+
+\subsection{멤버 함수 문서화}
+\index{F\+Z\+::\+State@{F\+Z\+::\+State}!Destroy@{Destroy}}
+\index{Destroy@{Destroy}!F\+Z\+::\+State@{F\+Z\+::\+State}}
+\subsubsection[{\texorpdfstring{Destroy()}{Destroy()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void {\bf F\+Z.\+State}$<$ T $>$.Destroy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_f_z_1_1_state_aa85fdf4a5495d6d5d3ed4aeda3497c8a}{}\label{class_f_z_1_1_state_aa85fdf4a5495d6d5d3ed4aeda3497c8a}
+
+
+\hyperlink{interface_f_z_1_1_i_state_a504c9e0cab335b8fa8f1ae5a4735eb6b}{F\+Z.\+I\+State}를 구현.
+
+
+
+State.\+cs 파일의 47 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+47 \{ \}
+\end{DoxyCode}
+
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 2
+
+
+\index{F\+Z\+::\+State@{F\+Z\+::\+State}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!F\+Z\+::\+State@{F\+Z\+::\+State}}
+\subsubsection[{\texorpdfstring{Dispose()}{Dispose()}}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf F\+Z.\+State}$<$ T $>$.Dispose (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_f_z_1_1_state_a598887d3fbb412fada132dc1c079b25b}{}\label{class_f_z_1_1_state_a598887d3fbb412fada132dc1c079b25b}
+
+
+State.\+cs 파일의 52 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+53         \{
+54             \hyperlink{class_f_z_1_1_state_aff2ae4a7940bd3e363e98e3c0d76d011}{\_target} = \textcolor{keywordflow}{default}(T);
+55         \}
+\end{DoxyCode}
+
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 3
+
+
+\index{F\+Z\+::\+State@{F\+Z\+::\+State}!Finish@{Finish}}
+\index{Finish@{Finish}!F\+Z\+::\+State@{F\+Z\+::\+State}}
+\subsubsection[{\texorpdfstring{Finish()}{Finish()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void {\bf F\+Z.\+State}$<$ T $>$.Finish (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_f_z_1_1_state_a288bb8c3fceee4bf03f01e295dcef1be}{}\label{class_f_z_1_1_state_a288bb8c3fceee4bf03f01e295dcef1be}
+
+
+\hyperlink{interface_f_z_1_1_i_state_a790472e7289534bd51e7f4e948a21766}{F\+Z.\+I\+State}를 구현.
+
+
+
+State.\+cs 파일의 50 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+50 \{ \}
+\end{DoxyCode}
+\index{F\+Z\+::\+State@{F\+Z\+::\+State}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!F\+Z\+::\+State@{F\+Z\+::\+State}}
+\subsubsection[{\texorpdfstring{Initialize()}{Initialize()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void {\bf F\+Z.\+State}$<$ T $>$.Initialize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_f_z_1_1_state_a27ac6fd2e844476017b35aa781d73c8c}{}\label{class_f_z_1_1_state_a27ac6fd2e844476017b35aa781d73c8c}
+
+
+\hyperlink{interface_f_z_1_1_i_state_a50d2b2c2d8f2db6caf017e58e0909d98}{F\+Z.\+I\+State}를 구현.
+
+
+
+State.\+cs 파일의 46 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+46 \{ \}
+\end{DoxyCode}
+\index{F\+Z\+::\+State@{F\+Z\+::\+State}!Run@{Run}}
+\index{Run@{Run}!F\+Z\+::\+State@{F\+Z\+::\+State}}
+\subsubsection[{\texorpdfstring{Run()}{Run()}}]{\setlength{\rightskip}{0pt plus 5cm}abstract void {\bf F\+Z.\+State}$<$ T $>$.Run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_f_z_1_1_state_acaf1584680a2e69e2a4da20574723981}{}\label{class_f_z_1_1_state_acaf1584680a2e69e2a4da20574723981}
+
+
+\hyperlink{interface_f_z_1_1_i_state_af263144a3596421bc9550799d4444ca4}{F\+Z.\+I\+State}를 구현.
+
+
+
+\hyperlink{class_attack_actor_1_1_attack_act_state___done_a87dc9fe06b7132e7eff68fce885c2cd2}{Attack\+Actor.\+Attack\+Act\+State\+\_\+\+Done}, \hyperlink{class_move_actor_1_1_move_act_state___done_a50f24c5382008b0205b7d5280880600f}{Move\+Actor.\+Move\+Act\+State\+\_\+\+Done}, \hyperlink{class_attack_actor_1_1_attack_act_state___attack_a2755f4dae2cf1f80a94b6bcc973d1bfd}{Attack\+Actor.\+Attack\+Act\+State\+\_\+\+Attack}, \hyperlink{class_tile_1_1_tile_state___deactive_a806c5dbc5eb43903ad41d448f3d25c61}{Tile.\+Tile\+State\+\_\+\+Deactive}, \hyperlink{class_move_actor_1_1_move_act_state___move_a8eb57e77a4d5d6e1e0b2f6ccf8532d73}{Move\+Actor.\+Move\+Act\+State\+\_\+\+Move}, \hyperlink{class_attack_actor_1_1_attack_act_state___normal_a7d6644fed269325b8f62138d8adb50f5}{Attack\+Actor.\+Attack\+Act\+State\+\_\+\+Normal}, \hyperlink{class_move_actor_1_1_move_act_state___normal_ac679d09107c9471774c30ffc169b5ad0}{Move\+Actor.\+Move\+Act\+State\+\_\+\+Normal}, \hyperlink{class_tile_1_1_tile_state___active_ab53c7c818d65122d6d36c9681ca53bf9}{Tile.\+Tile\+State\+\_\+\+Active}, \hyperlink{class_tile_1_1_tile_state___normal_acf613382b6ddeff2fcc226d8caeb0b53}{Tile.\+Tile\+State\+\_\+\+Normal}에서 구현되었습니다.
+
+
+
+\subsection{멤버 데이타 문서화}
+\index{F\+Z\+::\+State@{F\+Z\+::\+State}!\+\_\+target@{\+\_\+target}}
+\index{\+\_\+target@{\+\_\+target}!F\+Z\+::\+State@{F\+Z\+::\+State}}
+\subsubsection[{\texorpdfstring{\+\_\+target}{_target}}]{\setlength{\rightskip}{0pt plus 5cm}T {\bf F\+Z.\+State}$<$ T $>$.\+\_\+target\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_f_z_1_1_state_aff2ae4a7940bd3e363e98e3c0d76d011}{}\label{class_f_z_1_1_state_aff2ae4a7940bd3e363e98e3c0d76d011}
+
+
+State.\+cs 파일의 31 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{속성 문서화}
+\index{F\+Z\+::\+State@{F\+Z\+::\+State}!Target@{Target}}
+\index{Target@{Target}!F\+Z\+::\+State@{F\+Z\+::\+State}}
+\subsubsection[{\texorpdfstring{Target}{Target}}]{\setlength{\rightskip}{0pt plus 5cm}T {\bf F\+Z.\+State}$<$ T $>$.Target\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected]}}\hypertarget{class_f_z_1_1_state_a6927f5c9f2517052f9dc5596188e9d95}{}\label{class_f_z_1_1_state_a6927f5c9f2517052f9dc5596188e9d95}
+
+
+State.\+cs 파일의 32 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Git\+Hub/\+M\+C\+N\+Tactics/\+Assets/\+Scripts/\+Core/\hyperlink{_state_8cs}{State.\+cs}\end{DoxyCompactItemize}

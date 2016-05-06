@@ -2,5 +2,5 @@
 <area shape="rect" id="node3" href="$class_move_actor_1_1_move_act_state___done.html" title="{MoveActor.MoveActState_Done\n||+ MoveActState_Done()\l+ GetCurrentType()\l+ OnTouchEvent()\l+ Run()\l}" alt="" coords="5,410,211,531"/>
 <area shape="rect" id="node4" href="$class_move_actor_1_1_move_act_state___move.html" title="{MoveActor.MoveActState_Move\n||+ MoveActState_Move()\l+ GetCurrentType()\l+ OnTouchEvent()\l+ Run()\l+ Interactive()\l}" alt="" coords="235,403,440,539"/>
 <area shape="rect" id="node5" href="$class_move_actor_1_1_move_act_state___normal.html" title="{MoveActor.MoveActState\l_Normal\n||+ MoveActState_Normal()\l+ GetCurrentType()\l+ OnTouchEvent()\l+ Run()\l}" alt="" coords="464,403,635,539"/>
-<area shape="rect" id="node2" href="$class_m_c_n_1_1_state.html" title="{MCN::State\&lt; MoveActor \&gt;\n|+ Target\l&#45; _target\l|+ State()\l+ Initialize()\l+ Destroy()\l+ Run()\l+ Finish()\l+ Dispose()\l}" alt="" coords="250,5,425,171"/>
+<area shape="rect" id="node2" href="$class_f_z_1_1_state.html" title="{FZ::State\&lt; MoveActor \&gt;\n|+ Target\l&#45; _target\l|+ State()\l+ Initialize()\l+ Destroy()\l+ Run()\l+ Finish()\l+ Dispose()\l}" alt="" coords="257,5,418,171"/>
 </map>

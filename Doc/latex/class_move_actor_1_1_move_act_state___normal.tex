@@ -21,13 +21,13 @@ override void \hyperlink{class_move_actor_1_1_move_act_state___normal_ac679d0910
 \item 
 virtual void \hyperlink{class_move_actor_1_1_move_act_state_ae43bc38159d36bd83eaf172d946c0415}{Interactive} (\hyperlink{class_tile}{Tile} active\+Tile)
 \item 
-virtual void \hyperlink{class_m_c_n_1_1_state_a8eabaffe047e6dccd5c5d8aed7bf218a}{Initialize} ()
+virtual void \hyperlink{class_f_z_1_1_state_a27ac6fd2e844476017b35aa781d73c8c}{Initialize} ()
 \item 
-virtual void \hyperlink{class_m_c_n_1_1_state_a32af22a6a0a979d3b3a80225426aa839}{Destroy} ()
+virtual void \hyperlink{class_f_z_1_1_state_aa85fdf4a5495d6d5d3ed4aeda3497c8a}{Destroy} ()
 \item 
-virtual void \hyperlink{class_m_c_n_1_1_state_a6de4f94b23916fcd05f589759da9ac3f}{Finish} ()
+virtual void \hyperlink{class_f_z_1_1_state_a288bb8c3fceee4bf03f01e295dcef1be}{Finish} ()
 \item 
-void \hyperlink{class_m_c_n_1_1_state_a6c53b2eda47e718ff469fd76a95cf02a}{Dispose} ()
+void \hyperlink{class_f_z_1_1_state_a598887d3fbb412fada132dc1c079b25b}{Dispose} ()
 \end{DoxyCompactItemize}
 \subsection*{Protected 멤버 함수}
 \begin{DoxyCompactItemize}
@@ -37,14 +37,14 @@ void \hyperlink{class_move_actor_1_1_move_act_state_a8e1d5e7942d4f9de8c8e0732964
 \subsection*{속성}
 \begin{DoxyCompactItemize}
 \item 
-T \hyperlink{class_m_c_n_1_1_state_a93ba2fd920292031bd6e65b1dc505cb3}{Target}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+T \hyperlink{class_f_z_1_1_state_a6927f5c9f2517052f9dc5596188e9d95}{Target}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \end{DoxyCompactItemize}
 
 
 \subsection{상세한 설명}
 
 
-Move\+Actor.\+cs 파일의 64 번째 라인에서 정의되었습니다.
+Move\+Actor.\+cs 파일의 59 번째 라인에서 정의되었습니다.
 
 
 
@@ -58,11 +58,11 @@ Move\+Actor.\+cs 파일의 64 번째 라인에서 정의되었습니다.
 )}\hypertarget{class_move_actor_1_1_move_act_state___normal_a43d9a631de0e6f95d31f7b1894c7cbd7}{}\label{class_move_actor_1_1_move_act_state___normal_a43d9a631de0e6f95d31f7b1894c7cbd7}
 
 
-Move\+Actor.\+cs 파일의 66 번째 라인에서 정의되었습니다.
+Move\+Actor.\+cs 파일의 61 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-66 : base(target) \{ \}
+61 : base(target) \{ \}
 \end{DoxyCode}
 
 
@@ -81,39 +81,33 @@ Move\+Actor.\+cs 파일의 48 번째 라인에서 정의되었습니다.
 
 \begin{DoxyCode}
 49         \{
-50             \textcolor{keywordflow}{if} (\hyperlink{class_m_c_n_1_1_state_a93ba2fd920292031bd6e65b1dc505cb3}{Target} != null)
+50             \textcolor{keywordflow}{if} (\hyperlink{class_f_z_1_1_state_a6927f5c9f2517052f9dc5596188e9d95}{Target} != null)
 51             \{
-52                 var placeable = \hyperlink{class_m_c_n_1_1_state_a93ba2fd920292031bd6e65b1dc505cb3}{Target}.ActTarget as \hyperlink{class_placeable_object}{PlaceableObject};
+52                 \hyperlink{class_f_z_1_1_state_a6927f5c9f2517052f9dc5596188e9d95}{Target}.ActTarget.Deselect();
 53 
-54                 \textcolor{keywordflow}{if} (placeable != null)
-55                 \{
-56                     placeable.\hyperlink{class_placeable_object_a0c1248b1f9981ddbf68e6f70a6498f3d}{Deselect}();
-57 
-58                     \hyperlink{class_map_manager}{MapManager}.\hyperlink{class_m_c_n_1_1_mono_singletone_aa50c027cca64cf4ad30c1ee5c83e0b78}{Instance}.ChangeAllTileState(
+54                 \hyperlink{class_map_manager}{MapManager}.\hyperlink{class_f_z_1_1_mono_singletone_a39e34129d25a9664576949259e7dfd5f}{Instance}.ChangeAllTileState(
       \hyperlink{_tile_8cs_a271bc07be325bca511bcb747e0ff2fda}{eTileType}.NORMAL);
-59                 \}
-60             \}
-61         \}
+55             \}
+56         \}
 \end{DoxyCode}
 
 
-이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
-% FIG 2
-
-
-
-
-이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
-% FIG 3
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_move_actor_1_1_move_act_state_a8e1d5e7942d4f9de8c8e0732964c554b_icgraph}
+\end{center}
+\end{figure}
 
 
 \index{Move\+Actor\+::\+Move\+Act\+State\+\_\+\+Normal@{Move\+Actor\+::\+Move\+Act\+State\+\_\+\+Normal}!Destroy@{Destroy}}
 \index{Destroy@{Destroy}!Move\+Actor\+::\+Move\+Act\+State\+\_\+\+Normal@{Move\+Actor\+::\+Move\+Act\+State\+\_\+\+Normal}}
-\subsubsection[{\texorpdfstring{Destroy()}{Destroy()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void {\bf M\+C\+N.\+State}$<$ T $>$.Destroy (
+\subsubsection[{\texorpdfstring{Destroy()}{Destroy()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void {\bf F\+Z.\+State}$<$ T $>$.Destroy (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\hypertarget{class_m_c_n_1_1_state_a32af22a6a0a979d3b3a80225426aa839}{}\label{class_m_c_n_1_1_state_a32af22a6a0a979d3b3a80225426aa839}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\hypertarget{class_f_z_1_1_state_aa85fdf4a5495d6d5d3ed4aeda3497c8a}{}\label{class_f_z_1_1_state_aa85fdf4a5495d6d5d3ed4aeda3497c8a}
 
 
 State.\+cs 파일의 47 번째 라인에서 정의되었습니다.
@@ -124,11 +118,11 @@ State.\+cs 파일의 47 번째 라인에서 정의되었습니다.
 \end{DoxyCode}
 \index{Move\+Actor\+::\+Move\+Act\+State\+\_\+\+Normal@{Move\+Actor\+::\+Move\+Act\+State\+\_\+\+Normal}!Dispose@{Dispose}}
 \index{Dispose@{Dispose}!Move\+Actor\+::\+Move\+Act\+State\+\_\+\+Normal@{Move\+Actor\+::\+Move\+Act\+State\+\_\+\+Normal}}
-\subsubsection[{\texorpdfstring{Dispose()}{Dispose()}}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf M\+C\+N.\+State}$<$ T $>$.Dispose (
+\subsubsection[{\texorpdfstring{Dispose()}{Dispose()}}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf F\+Z.\+State}$<$ T $>$.Dispose (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inherited]}}\hypertarget{class_m_c_n_1_1_state_a6c53b2eda47e718ff469fd76a95cf02a}{}\label{class_m_c_n_1_1_state_a6c53b2eda47e718ff469fd76a95cf02a}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\hypertarget{class_f_z_1_1_state_a598887d3fbb412fada132dc1c079b25b}{}\label{class_f_z_1_1_state_a598887d3fbb412fada132dc1c079b25b}
 
 
 State.\+cs 파일의 52 번째 라인에서 정의되었습니다.
@@ -136,16 +130,16 @@ State.\+cs 파일의 52 번째 라인에서 정의되었습니다.
 
 \begin{DoxyCode}
 53         \{
-54             \hyperlink{class_m_c_n_1_1_state_ab759357c7d076cf62dd0016b743d762e}{\_target} = \textcolor{keywordflow}{default}(T);
+54             \hyperlink{class_f_z_1_1_state_aff2ae4a7940bd3e363e98e3c0d76d011}{\_target} = \textcolor{keywordflow}{default}(T);
 55         \}
 \end{DoxyCode}
 \index{Move\+Actor\+::\+Move\+Act\+State\+\_\+\+Normal@{Move\+Actor\+::\+Move\+Act\+State\+\_\+\+Normal}!Finish@{Finish}}
 \index{Finish@{Finish}!Move\+Actor\+::\+Move\+Act\+State\+\_\+\+Normal@{Move\+Actor\+::\+Move\+Act\+State\+\_\+\+Normal}}
-\subsubsection[{\texorpdfstring{Finish()}{Finish()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void {\bf M\+C\+N.\+State}$<$ T $>$.Finish (
+\subsubsection[{\texorpdfstring{Finish()}{Finish()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void {\bf F\+Z.\+State}$<$ T $>$.Finish (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\hypertarget{class_m_c_n_1_1_state_a6de4f94b23916fcd05f589759da9ac3f}{}\label{class_m_c_n_1_1_state_a6de4f94b23916fcd05f589759da9ac3f}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\hypertarget{class_f_z_1_1_state_a288bb8c3fceee4bf03f01e295dcef1be}{}\label{class_f_z_1_1_state_a288bb8c3fceee4bf03f01e295dcef1be}
 
 
 State.\+cs 파일의 50 번째 라인에서 정의되었습니다.
@@ -167,21 +161,21 @@ State.\+cs 파일의 50 번째 라인에서 정의되었습니다.
 
 
 
-Move\+Actor.\+cs 파일의 68 번째 라인에서 정의되었습니다.
+Move\+Actor.\+cs 파일의 63 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-69         \{
-70             \textcolor{keywordflow}{return} \hyperlink{_move_actor_8cs_a1df5a2532cc7e6bde40a57d2dcbe23fe}{eMoveActType}.NORMAL;
-71         \}
+64         \{
+65             \textcolor{keywordflow}{return} \hyperlink{_move_actor_8cs_a1df5a2532cc7e6bde40a57d2dcbe23fe}{eMoveActType}.NORMAL;
+66         \}
 \end{DoxyCode}
 \index{Move\+Actor\+::\+Move\+Act\+State\+\_\+\+Normal@{Move\+Actor\+::\+Move\+Act\+State\+\_\+\+Normal}!Initialize@{Initialize}}
 \index{Initialize@{Initialize}!Move\+Actor\+::\+Move\+Act\+State\+\_\+\+Normal@{Move\+Actor\+::\+Move\+Act\+State\+\_\+\+Normal}}
-\subsubsection[{\texorpdfstring{Initialize()}{Initialize()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void {\bf M\+C\+N.\+State}$<$ T $>$.Initialize (
+\subsubsection[{\texorpdfstring{Initialize()}{Initialize()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void {\bf F\+Z.\+State}$<$ T $>$.Initialize (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\hypertarget{class_m_c_n_1_1_state_a8eabaffe047e6dccd5c5d8aed7bf218a}{}\label{class_m_c_n_1_1_state_a8eabaffe047e6dccd5c5d8aed7bf218a}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\hypertarget{class_f_z_1_1_state_a27ac6fd2e844476017b35aa781d73c8c}{}\label{class_f_z_1_1_state_a27ac6fd2e844476017b35aa781d73c8c}
 
 
 State.\+cs 파일의 46 번째 라인에서 정의되었습니다.
@@ -211,8 +205,13 @@ Move\+Actor.\+cs 파일의 42 번째 라인에서 정의되었습니다.
 \end{DoxyCode}
 
 
-이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
-% FIG 4
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_move_actor_1_1_move_act_state_ae43bc38159d36bd83eaf172d946c0415_cgraph}
+\end{center}
+\end{figure}
 
 
 \index{Move\+Actor\+::\+Move\+Act\+State\+\_\+\+Normal@{Move\+Actor\+::\+Move\+Act\+State\+\_\+\+Normal}!On\+Touch\+Event@{On\+Touch\+Event}}
@@ -228,24 +227,24 @@ Move\+Actor.\+cs 파일의 42 번째 라인에서 정의되었습니다.
 
 
 
-Move\+Actor.\+cs 파일의 73 번째 라인에서 정의되었습니다.
+Move\+Actor.\+cs 파일의 68 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-74         \{
-75             \textcolor{keywordflow}{if} (\hyperlink{class_m_c_n_1_1_state_a93ba2fd920292031bd6e65b1dc505cb3}{Target} != null)
-76             \{
-77                 \textcolor{keywordflow}{if} (\hyperlink{class_m_c_n_1_1_state_a93ba2fd920292031bd6e65b1dc505cb3}{Target}.GetCurrentStateType() != \hyperlink{_move_actor_8cs_a1df5a2532cc7e6bde40a57d2dcbe23fe}{eMoveActType}.DONE)
-78                 \{
-79                     \textcolor{keywordflow}{if} (\hyperlink{class_game_manager}{GameManager}.\hyperlink{class_m_c_n_1_1_singletone_a46dbbebd93e96a9592a9803c51f35602}{Instance}.SelectedObj == null)
-80                     \{
-81                         \hyperlink{class_m_c_n_1_1_state_a93ba2fd920292031bd6e65b1dc505cb3}{Target}.ChangeState(\hyperlink{_move_actor_8cs_a1df5a2532cc7e6bde40a57d2dcbe23fe}{eMoveActType}.MOVE);
-82                     \}
-83                 \}
-84             \}
-85 
-86             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-87         \}
+69         \{
+70             \textcolor{keywordflow}{if} (\hyperlink{class_f_z_1_1_state_a6927f5c9f2517052f9dc5596188e9d95}{Target} != null)
+71             \{
+72                 \textcolor{keywordflow}{if} (\hyperlink{class_f_z_1_1_state_a6927f5c9f2517052f9dc5596188e9d95}{Target}.GetCurrentStateType() != \hyperlink{_move_actor_8cs_a1df5a2532cc7e6bde40a57d2dcbe23fe}{eMoveActType}.DONE)
+73                 \{
+74                     \textcolor{keywordflow}{if} (\hyperlink{class_game_manager}{GameManager}.\hyperlink{class_f_z_1_1_singletone_a8e7ba3cf5cff48b1101428beefcd76b4}{Instance}.SelectedObj == null)
+75                     \{
+76                         \hyperlink{class_f_z_1_1_state_a6927f5c9f2517052f9dc5596188e9d95}{Target}.ChangeState(\hyperlink{_move_actor_8cs_a1df5a2532cc7e6bde40a57d2dcbe23fe}{eMoveActType}.MOVE);
+77                     \}
+78                 \}
+79             \}
+80 
+81             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+82         \}
 \end{DoxyCode}
 \index{Move\+Actor\+::\+Move\+Act\+State\+\_\+\+Normal@{Move\+Actor\+::\+Move\+Act\+State\+\_\+\+Normal}!Run@{Run}}
 \index{Run@{Run}!Move\+Actor\+::\+Move\+Act\+State\+\_\+\+Normal@{Move\+Actor\+::\+Move\+Act\+State\+\_\+\+Normal}}
@@ -256,22 +255,22 @@ Move\+Actor.\+cs 파일의 73 번째 라인에서 정의되었습니다.
 )\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_move_actor_1_1_move_act_state___normal_ac679d09107c9471774c30ffc169b5ad0}{}\label{class_move_actor_1_1_move_act_state___normal_ac679d09107c9471774c30ffc169b5ad0}
 
 
-\hyperlink{class_m_c_n_1_1_state_a8adfea67c55997e5c0eefbae1e429f4d}{M\+C\+N.\+State$<$ Move\+Actor $>$}를 구현.
+\hyperlink{class_f_z_1_1_state_acaf1584680a2e69e2a4da20574723981}{F\+Z.\+State$<$ Move\+Actor $>$}를 구현.
 
 
 
-Move\+Actor.\+cs 파일의 89 번째 라인에서 정의되었습니다.
+Move\+Actor.\+cs 파일의 84 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-90         \{
-91             \hyperlink{class_move_actor_1_1_move_act_state_a8e1d5e7942d4f9de8c8e0732964c554b}{AllTileToNormal}();
-92         \}
+85         \{
+86             \hyperlink{class_move_actor_1_1_move_act_state_a8e1d5e7942d4f9de8c8e0732964c554b}{AllTileToNormal}();
+87         \}
 \end{DoxyCode}
 
 
 이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
-% FIG 5
+% FIG 2
 
 
 
@@ -279,7 +278,7 @@ Move\+Actor.\+cs 파일의 89 번째 라인에서 정의되었습니다.
 \subsection{속성 문서화}
 \index{Move\+Actor\+::\+Move\+Act\+State\+\_\+\+Normal@{Move\+Actor\+::\+Move\+Act\+State\+\_\+\+Normal}!Target@{Target}}
 \index{Target@{Target}!Move\+Actor\+::\+Move\+Act\+State\+\_\+\+Normal@{Move\+Actor\+::\+Move\+Act\+State\+\_\+\+Normal}}
-\subsubsection[{\texorpdfstring{Target}{Target}}]{\setlength{\rightskip}{0pt plus 5cm}T {\bf M\+C\+N.\+State}$<$ T $>$.Target\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\hypertarget{class_m_c_n_1_1_state_a93ba2fd920292031bd6e65b1dc505cb3}{}\label{class_m_c_n_1_1_state_a93ba2fd920292031bd6e65b1dc505cb3}
+\subsubsection[{\texorpdfstring{Target}{Target}}]{\setlength{\rightskip}{0pt plus 5cm}T {\bf F\+Z.\+State}$<$ T $>$.Target\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\hypertarget{class_f_z_1_1_state_a6927f5c9f2517052f9dc5596188e9d95}{}\label{class_f_z_1_1_state_a6927f5c9f2517052f9dc5596188e9d95}
 
 
 State.\+cs 파일의 32 번째 라인에서 정의되었습니다.

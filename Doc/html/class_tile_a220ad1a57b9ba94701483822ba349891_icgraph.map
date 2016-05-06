@@ -1,0 +1,5 @@
+<map id="Tile.AttachObject" name="Tile.AttachObject">
+<area shape="rect" id="node2" href="$class_move_actor_1_1_move_act_state___move.html#a82e0eb4bd7a3e7eae9bbe9897d75a516" title="MoveActor.MoveActState\l_Move.Interactive" alt="" coords="176,5,344,47"/>
+<area shape="rect" id="node3" href="$class_place_object.html#aee28273784ccccbc9df57c6bddead3fd" title="PlaceObject.Place" alt="" coords="195,71,325,98"/>
+<area shape="rect" id="node4" href="$class_place_object.html#aa0f1a877d0abc20133e390d0964602ed" title="PlaceObject.Attach" alt="" coords="392,97,527,123"/>
+</map>

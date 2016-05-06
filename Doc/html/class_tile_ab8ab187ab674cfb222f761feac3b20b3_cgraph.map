@@ -1,3 +1,3 @@
 <map id="Tile.DetachObject" name="Tile.DetachObject">
-<area shape="rect" id="node2" href="$class_placeable_object.html#aef2018b58bf7c8c0fab5aaf3d9a154d4" title="PlaceableObject.Detach" alt="" coords="179,5,341,32"/>
+<area shape="rect" id="node2" href="$class_place_object.html#a5bcf3ff3fd935121fbd699a08da217e2" title="PlaceObject.Detach" alt="" coords="179,5,317,32"/>
 </map>

@@ -1,27 +1,8 @@
 var searchData=
 [
-  ['select',['Select',['../class_placeable_object.html#a019818f3f6c6eb715fed163efa921f5a',1,'PlaceableObject']]],
-  ['selectedobj',['SelectedObj',['../class_game_manager.html#a708d9fb61ea9f34e4c3a55d34c31acf2',1,'GameManager']]],
-  ['setposition',['SetPosition',['../class_tile.html#a4d7a81b36513066aad741ed675164690',1,'Tile']]],
-  ['settilecolor',['SetTileColor',['../class_tile_1_1_tile_state___normal.html#a81d8bc6e280e6143ff42a292e863307e',1,'Tile.TileState_Normal.SetTileColor()'],['../class_tile_1_1_tile_state___active.html#a89a5859b28fa5ad021e8dcee572aacc9',1,'Tile.TileState_Active.SetTileColor()'],['../class_tile_1_1_tile_state___deactive.html#ac0b9d7d4a64b2c320eeb2679fc6ad459',1,'Tile.TileState_Deactive.SetTileColor()']]],
-  ['setweight',['SetWeight',['../class_m_c_n_1_1_actor.html#a8d8020782aefa7fff625f5f8e09f7539',1,'MCN.Actor.SetWeight(string key, int weight)'],['../class_m_c_n_1_1_actor.html#a4337ef4d88c2086f18db4f2e6415eddd',1,'MCN.Actor.SetWeight(Pair&lt; string, int &gt; info)']]],
-  ['showchainactivetile',['ShowChainActiveTile',['../class_tile.html#acc5e0dbed92b6c57b6cd19efdb1b95aa',1,'Tile.ShowChainActiveTile(int range, Func&lt; Tile, bool &gt; condition)'],['../class_tile.html#af046cbcb35fa138f709cb158ade23e74',1,'Tile.ShowChainActiveTile(int range, TacticsObject startedObj, Func&lt; Tile, bool &gt; condition)']]],
-  ['singletone',['Singletone',['../class_m_c_n_1_1_singletone.html',1,'MCN']]],
-  ['singletone_2ecs',['Singletone.cs',['../_singletone_8cs.html',1,'']]],
-  ['singletone_3c_20datamanager_20_3e',['Singletone&lt; DataManager &gt;',['../class_m_c_n_1_1_singletone.html',1,'MCN']]],
-  ['singletone_3c_20gamemanager_20_3e',['Singletone&lt; GameManager &gt;',['../class_m_c_n_1_1_singletone.html',1,'MCN']]],
-  ['sp',['sp',['../struct_status.html#a685aa4b12faa74a48a3b57f69e94084c',1,'Status.sp()'],['../class_combat_object.html#a042786e7e585cb8c00a3a85d3e89f861',1,'CombatObject.Sp()'],['../class_combat_added_deco.html#aac41784d0f685c5db6107affca78d089',1,'CombatAddedDeco.Sp()'],['../class_combat_instance.html#a120995296719b1fb1fa4cc55721ddba4',1,'CombatInstance.Sp()'],['../interface_i_combat.html#a833ef74923f764476c432b48be18ac90',1,'ICombat.Sp()']]],
-  ['state',['State',['../class_m_c_n_1_1_state.html#a63bbb5cb66bc266c6bde3d3568165a3d',1,'MCN::State']]],
-  ['state',['State',['../class_m_c_n_1_1_state.html',1,'MCN']]],
-  ['state_2ecs',['State.cs',['../_state_8cs.html',1,'']]],
-  ['state_3c_20attackactor_20_3e',['State&lt; AttackActor &gt;',['../class_m_c_n_1_1_state.html',1,'MCN']]],
-  ['state_3c_20moveactor_20_3e',['State&lt; MoveActor &gt;',['../class_m_c_n_1_1_state.html',1,'MCN']]],
-  ['state_3c_20tile_20_3e',['State&lt; Tile &gt;',['../class_m_c_n_1_1_state.html',1,'MCN']]],
-  ['statemachine',['StateMachine',['../class_m_c_n_1_1_state_machine.html',1,'MCN']]],
-  ['status',['Status',['../struct_status.html',1,'']]],
-  ['storagestate',['StorageState',['../class_m_c_n_1_1_state_machine.html#a30d168379929d5bdb050f211e6273a8b',1,'MCN::StateMachine']]],
-  ['storagestates',['StorageStates',['../class_attack_actor.html#a4c1408e09de62ad12b42bee3251556ba',1,'AttackActor.StorageStates()'],['../class_move_actor.html#a34b9e1ec5019892f38a8d5087bd5c2fe',1,'MoveActor.StorageStates()'],['../class_tile.html#a6cb69a9fad04bee1fa3473aec22428de',1,'Tile.StorageStates()']]],
-  ['stringintpair',['StringIntPair',['../class_m_c_n_1_1_string_int_pair.html',1,'MCN']]],
-  ['structure_2ecs',['Structure.cs',['../_structure_8cs.html',1,'']]],
-  ['subscribe',['Subscribe',['../interface_m_c_n_1_1_i_observable.html#a84e57296a612a2d49afbcc7f841ceb0b',1,'MCN.IObservable.Subscribe()'],['../class_touch_manager.html#aa68342b07f75f8eda3b420e07f9e4c7b',1,'TouchManager.Subscribe()']]]
+  ['range',['Range',['../class_attack_actor.html#aa331a3d1fbebd46a2458c64b209af927',1,'AttackActor.Range()'],['../class_move_actor.html#a4473f7867a074c8ca605220086c5d8fd',1,'MoveActor.Range()']]],
+  ['red',['RED',['../_unit_object_8cs.html#a833537ff3bed216464ac08315287fb12aa2d9547b5d3dd9f05984475f7c926da0',1,'UnitObject.cs']]],
+  ['removetilemap',['RemoveTilemap',['../class_map_creator.html#afb12afa9a9ca8fe04701af4b494e1c8a',1,'MapCreator.RemoveTilemap()'],['../class_map_manager.html#aac20afabde4946e32ce1e719c72e0f50',1,'MapManager.RemoveTilemap()']]],
+  ['right',['RIGHT',['../_tile_8cs.html#a082f743a62d2d8e13dac8fd38af246d7a21507b40c80068eda19865706fdc2403',1,'Tile.cs']]],
+  ['run',['Run',['../interface_f_z_1_1_i_state.html#af263144a3596421bc9550799d4444ca4',1,'FZ.IState.Run()'],['../class_f_z_1_1_state.html#acaf1584680a2e69e2a4da20574723981',1,'FZ.State.Run()'],['../class_attack_actor_1_1_attack_act_state___normal.html#a7d6644fed269325b8f62138d8adb50f5',1,'AttackActor.AttackActState_Normal.Run()'],['../class_attack_actor_1_1_attack_act_state___attack.html#a2755f4dae2cf1f80a94b6bcc973d1bfd',1,'AttackActor.AttackActState_Attack.Run()'],['../class_attack_actor_1_1_attack_act_state___done.html#a87dc9fe06b7132e7eff68fce885c2cd2',1,'AttackActor.AttackActState_Done.Run()'],['../class_move_actor_1_1_move_act_state___normal.html#ac679d09107c9471774c30ffc169b5ad0',1,'MoveActor.MoveActState_Normal.Run()'],['../class_move_actor_1_1_move_act_state___move.html#a8eb57e77a4d5d6e1e0b2f6ccf8532d73',1,'MoveActor.MoveActState_Move.Run()'],['../class_move_actor_1_1_move_act_state___done.html#a50f24c5382008b0205b7d5280880600f',1,'MoveActor.MoveActState_Done.Run()'],['../class_tile_1_1_tile_state___normal.html#acf613382b6ddeff2fcc226d8caeb0b53',1,'Tile.TileState_Normal.Run()'],['../class_tile_1_1_tile_state___active.html#ab53c7c818d65122d6d36c9681ca53bf9',1,'Tile.TileState_Active.Run()'],['../class_tile_1_1_tile_state___deactive.html#a806c5dbc5eb43903ad41d448f3d25c61',1,'Tile.TileState_Deactive.Run()']]]
 ];

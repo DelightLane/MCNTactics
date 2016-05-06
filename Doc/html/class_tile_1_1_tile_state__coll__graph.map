@@ -1,3 +1,3 @@
 <map id="Tile.TileState" name="Tile.TileState">
-<area shape="rect" id="node2" href="$class_m_c_n_1_1_state.html" title="{MCN::State\&lt; Tile \&gt;\n|+ Target\l&#45; _target\l|+ State()\l+ Initialize()\l+ Destroy()\l+ Run()\l+ Finish()\l+ Dispose()\l}" alt="" coords="5,5,140,171"/>
+<area shape="rect" id="node2" href="$class_f_z_1_1_state.html" title="{FZ::State\&lt; Tile \&gt;\n|+ Target\l&#45; _target\l|+ State()\l+ Initialize()\l+ Destroy()\l+ Run()\l+ Finish()\l+ Dispose()\l}" alt="" coords="12,5,132,171"/>
 </map>

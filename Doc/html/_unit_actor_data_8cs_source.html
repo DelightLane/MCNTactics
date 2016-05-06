@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>MCNTactics: D:/GitHub/MCNTactics/Assets/Scripts/Data/UnitActorData.cs 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">MCNTactics
+   &#160;<span id="projectnumber">1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'검색');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>메인&#160;페이지</span></a></li>
+      <li><a href="namespaces.html"><span>패키지</span></a></li>
+      <li><a href="annotated.html"><span>클래스</span></a></li>
+      <li class="current"><a href="files.html"><span>파일들</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="검색" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>파일&#160;목록</span></a></li>
+      <li><a href="globals.html"><span>파일&#160;멤버</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_unit_actor_data_8cs_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">UnitActorData.cs</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_unit_actor_data_8cs.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>;</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>.Collections.Generic;</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>.Linq;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;[Serializable]</div><div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="class_unit_actor_data_list.html">    6</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_unit_actor_data_list.html">UnitActorDataList</a> : <a class="code" href="class_data_object.html">DataObject</a></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div><div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="class_unit_actor_data_list.html#a77e515548ec7edc9618908dd45cafa09">    8</a></span>&#160;    <span class="keyword">public</span> List&lt;UnitActorData&gt; <a class="code" href="class_unit_actor_data_list.html#a77e515548ec7edc9618908dd45cafa09">unitActor</a>;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div><div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_unit_actor_data_list.html#a6786cacdbff3671edcb628c86cc5eb95">   10</a></span>&#160;    <span class="keyword">public</span> List&lt;ActorInfo&gt; <a class="code" href="class_unit_actor_data_list.html#a6786cacdbff3671edcb628c86cc5eb95">GetActorList</a>(<span class="keywordtype">int</span> unitNo)</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    {</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="keywordflow">return</span> unitActor.Find(actor =&gt; actor.no == unitNo).actor;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    }</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;[Serializable]</div><div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_unit_actor_data.html">   17</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_unit_actor_data.html">UnitActorData</a> : <a class="code" href="class_data_object.html">DataObject</a></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div><div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_unit_actor_data.html#a9f735b8ce20acf902658337ced801ffc">   19</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code" href="class_unit_actor_data.html#a9f735b8ce20acf902658337ced801ffc">no</a>;</div><div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_unit_actor_data.html#a9208c26866ced88e2f5b6cd71ff8c36d">   20</a></span>&#160;    <span class="keyword">public</span> List&lt;ActorInfo&gt; <a class="code" href="class_unit_actor_data.html#a9208c26866ced88e2f5b6cd71ff8c36d">actor</a>;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;[Serializable]</div><div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_actor_info.html">   24</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_actor_info.html">ActorInfo</a></div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div><div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="class_actor_info.html#a2e9e540cdc037f204d80622e47543410">   26</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">string</span> <a class="code" href="class_actor_info.html#a2e9e540cdc037f204d80622e47543410">name</a>;</div><div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="class_actor_info.html#a25bb8e0eafab630572ffddea088a1f80">   27</a></span>&#160;    <span class="keyword">public</span> List&lt;string&gt; <a class="code" href="class_actor_info.html#a25bb8e0eafab630572ffddea088a1f80">weightName</a>;</div><div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_actor_info.html#a1c5dd2d46e5ebc5a6483f2bcb55cb162">   28</a></span>&#160;    <span class="keyword">public</span> List&lt;int&gt; <a class="code" href="class_actor_info.html#a1c5dd2d46e5ebc5a6483f2bcb55cb162">weightValue</a>;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div><div class="ttc" id="class_actor_info_html_a25bb8e0eafab630572ffddea088a1f80"><div class="ttname"><a href="class_actor_info.html#a25bb8e0eafab630572ffddea088a1f80">ActorInfo.weightName</a></div><div class="ttdeci">List&lt; string &gt; weightName</div><div class="ttdef"><b>Definition:</b> <a href="_unit_actor_data_8cs_source.html#l00027">UnitActorData.cs:27</a></div></div>
+<div class="ttc" id="class_unit_actor_data_list_html_a77e515548ec7edc9618908dd45cafa09"><div class="ttname"><a href="class_unit_actor_data_list.html#a77e515548ec7edc9618908dd45cafa09">UnitActorDataList.unitActor</a></div><div class="ttdeci">List&lt; UnitActorData &gt; unitActor</div><div class="ttdef"><b>Definition:</b> <a href="_unit_actor_data_8cs_source.html#l00008">UnitActorData.cs:8</a></div></div>
+<div class="ttc" id="namespace_system_html"><div class="ttname"><a href="namespace_system.html">System</a></div></div>
+<div class="ttc" id="class_unit_actor_data_html_a9f735b8ce20acf902658337ced801ffc"><div class="ttname"><a href="class_unit_actor_data.html#a9f735b8ce20acf902658337ced801ffc">UnitActorData.no</a></div><div class="ttdeci">int no</div><div class="ttdef"><b>Definition:</b> <a href="_unit_actor_data_8cs_source.html#l00019">UnitActorData.cs:19</a></div></div>
+<div class="ttc" id="class_unit_actor_data_html"><div class="ttname"><a href="class_unit_actor_data.html">UnitActorData</a></div><div class="ttdef"><b>Definition:</b> <a href="_unit_actor_data_8cs_source.html#l00017">UnitActorData.cs:17</a></div></div>
+<div class="ttc" id="class_actor_info_html"><div class="ttname"><a href="class_actor_info.html">ActorInfo</a></div><div class="ttdef"><b>Definition:</b> <a href="_unit_actor_data_8cs_source.html#l00024">UnitActorData.cs:24</a></div></div>
+<div class="ttc" id="class_actor_info_html_a2e9e540cdc037f204d80622e47543410"><div class="ttname"><a href="class_actor_info.html#a2e9e540cdc037f204d80622e47543410">ActorInfo.name</a></div><div class="ttdeci">string name</div><div class="ttdef"><b>Definition:</b> <a href="_unit_actor_data_8cs_source.html#l00026">UnitActorData.cs:26</a></div></div>
+<div class="ttc" id="class_unit_actor_data_list_html"><div class="ttname"><a href="class_unit_actor_data_list.html">UnitActorDataList</a></div><div class="ttdef"><b>Definition:</b> <a href="_unit_actor_data_8cs_source.html#l00006">UnitActorData.cs:6</a></div></div>
+<div class="ttc" id="class_unit_actor_data_html_a9208c26866ced88e2f5b6cd71ff8c36d"><div class="ttname"><a href="class_unit_actor_data.html#a9208c26866ced88e2f5b6cd71ff8c36d">UnitActorData.actor</a></div><div class="ttdeci">List&lt; ActorInfo &gt; actor</div><div class="ttdef"><b>Definition:</b> <a href="_unit_actor_data_8cs_source.html#l00020">UnitActorData.cs:20</a></div></div>
+<div class="ttc" id="class_unit_actor_data_list_html_a6786cacdbff3671edcb628c86cc5eb95"><div class="ttname"><a href="class_unit_actor_data_list.html#a6786cacdbff3671edcb628c86cc5eb95">UnitActorDataList.GetActorList</a></div><div class="ttdeci">List&lt; ActorInfo &gt; GetActorList(int unitNo)</div><div class="ttdef"><b>Definition:</b> <a href="_unit_actor_data_8cs_source.html#l00010">UnitActorData.cs:10</a></div></div>
+<div class="ttc" id="class_data_object_html"><div class="ttname"><a href="class_data_object.html">DataObject</a></div><div class="ttdef"><b>Definition:</b> <a href="_data_object_8cs_source.html#l00005">DataObject.cs:5</a></div></div>
+<div class="ttc" id="class_actor_info_html_a1c5dd2d46e5ebc5a6483f2bcb55cb162"><div class="ttname"><a href="class_actor_info.html#a1c5dd2d46e5ebc5a6483f2bcb55cb162">ActorInfo.weightValue</a></div><div class="ttdeci">List&lt; int &gt; weightValue</div><div class="ttdef"><b>Definition:</b> <a href="_unit_actor_data_8cs_source.html#l00028">UnitActorData.cs:28</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_84bbf7b3c7f28a5a18725745e1505219.html">Assets</a></li><li class="navelem"><a class="el" href="dir_f13b41af88cf68434578284aaf699e39.html">Scripts</a></li><li class="navelem"><a class="el" href="dir_aa3b7ab08f4c107d50e2677e19a5d9e6.html">Data</a></li><li class="navelem"><a class="el" href="_unit_actor_data_8cs.html">UnitActorData.cs</a></li>
+    <li class="footer">다음에 의해 생성됨 : 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+  </ul>
+</div>
+</body>
+</html>

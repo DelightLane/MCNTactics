@@ -1,0 +1,7 @@
+<map id="UnitActorDataList.GetActorList" name="UnitActorDataList.GetActorList">
+<area shape="rect" id="node2" href="$class_unit_object.html#a210d5044920f051fe347d0c5137aaae8" title="UnitObject.AddActor" alt="" coords="255,5,396,32"/>
+<area shape="rect" id="node3" href="$class_unit_object.html#acc70df752878272e4f9d0f0dc1f68f84" title="UnitObject.Initialize" alt="" coords="444,5,579,32"/>
+<area shape="rect" id="node4" href="$class_unit_object.html#ae5ef094dc79c767cc91aad73134dd227" title="UnitObject.Create" alt="" coords="627,5,752,32"/>
+<area shape="rect" id="node5" href="$class_map_manager.html#a0b4f29a9504f7004c7b562fa49ba84cd" title="MapManager.PlaceUnits" alt="" coords="800,5,964,32"/>
+<area shape="rect" id="node6" href="$class_map_manager.html#ad633984007048c7d63eab44aaeb0c32d" title="MapManager.Awake" alt="" coords="1012,5,1152,32"/>
+</map>

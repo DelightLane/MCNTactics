@@ -17,13 +17,13 @@ void \hyperlink{class_map_manager_aac20afabde4946e32ce1e719c72e0f50}{Remove\+Til
 \item 
 bool \hyperlink{class_map_manager_a504d7a68ace64557bc3c3254a8b1cddc}{Is\+In\+Map\+Size} (Vector2 pos)
 \item 
-void \hyperlink{class_map_manager_a4213ccbaa1a81d0a47884de50a28de32}{Place\+Objacts} ()
+void \hyperlink{class_map_manager_a0b4f29a9504f7004c7b562fa49ba84cd}{Place\+Units} ()
 \item 
 bool \hyperlink{class_map_manager_a9a18efae73b0d690d2bc6c8ac8703a02}{Is\+Exist\+Map} ()
 \item 
 \hyperlink{class_tile}{Tile} \hyperlink{class_map_manager_ae457099efdd1a804add3b851b2bc7691}{Get\+Tile} (Vector2 position)
 \item 
-void \hyperlink{class_map_manager_ab8cbf46e369a9c59ff183a1b6c3b20bb}{Attach\+Object} (Vector2 pos, \hyperlink{class_placeable_object}{Placeable\+Object} obj)
+void \hyperlink{class_map_manager_af1766fb2d9800aaea322edede0a8ebf6}{Attach\+Object} (Vector2 pos, \hyperlink{class_place_object}{Place\+Object} obj)
 \item 
 void \hyperlink{class_map_manager_a68f796431393b7239320ab1f5200213a}{Change\+All\+Tile\+State} (\hyperlink{_tile_8cs_a271bc07be325bca511bcb747e0ff2fda}{e\+Tile\+Type} state)
 \end{DoxyCompactItemize}
@@ -35,7 +35,7 @@ override string \hyperlink{class_map_manager_aa3459a9fe2d748c6e9f2c3da8a6273cd}{
 \subsection*{속성}
 \begin{DoxyCompactItemize}
 \item 
-static T \hyperlink{class_m_c_n_1_1_mono_singletone_aa50c027cca64cf4ad30c1ee5c83e0b78}{Instance}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+static T \hyperlink{class_f_z_1_1_mono_singletone_a39e34129d25a9664576949259e7dfd5f}{Instance}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \end{DoxyCompactItemize}
 \subsection*{Private 멤버 함수}
 \begin{DoxyCompactItemize}
@@ -49,7 +49,7 @@ void \hyperlink{class_map_manager_aeaf61c0a498d98a5ac778db479353d77}{Update} ()
 \item 
 Vector2 \hyperlink{class_map_manager_a960f398cc92f569f620ddc8c0140a5c7}{\+\_\+map\+Size}
 \item 
-List$<$ \hyperlink{class_m_c_n_1_1_place_info}{Place\+Info} $>$ \hyperlink{class_map_manager_ab581d2c754246f74999a0b744ba2b14f}{\+\_\+place\+Obj\+Infos}
+List$<$ \hyperlink{class_f_z_1_1_place_info}{Place\+Info} $>$ \hyperlink{class_map_manager_ab581d2c754246f74999a0b744ba2b14f}{\+\_\+place\+Obj\+Infos}
 \item 
 \hyperlink{class_map_creator}{Map\+Creator} \hyperlink{class_map_manager_aa837a852f355a33b263c1bb07c6c4ece}{\+\_\+map\+Creator}
 \item 
@@ -67,47 +67,37 @@ Map\+Manager.\+cs 파일의 8 번째 라인에서 정의되었습니다.
 \subsection{멤버 함수 문서화}
 \index{Map\+Manager@{Map\+Manager}!Attach\+Object@{Attach\+Object}}
 \index{Attach\+Object@{Attach\+Object}!Map\+Manager@{Map\+Manager}}
-\subsubsection[{\texorpdfstring{Attach\+Object(\+Vector2 pos, Placeable\+Object obj)}{AttachObject(Vector2 pos, PlaceableObject obj)}}]{\setlength{\rightskip}{0pt plus 5cm}void Map\+Manager.\+Attach\+Object (
+\subsubsection[{\texorpdfstring{Attach\+Object(\+Vector2 pos, Place\+Object obj)}{AttachObject(Vector2 pos, PlaceObject obj)}}]{\setlength{\rightskip}{0pt plus 5cm}void Map\+Manager.\+Attach\+Object (
 \begin{DoxyParamCaption}
 \item[{Vector2}]{pos, }
-\item[{{\bf Placeable\+Object}}]{obj}
+\item[{{\bf Place\+Object}}]{obj}
 \end{DoxyParamCaption}
-)}\hypertarget{class_map_manager_ab8cbf46e369a9c59ff183a1b6c3b20bb}{}\label{class_map_manager_ab8cbf46e369a9c59ff183a1b6c3b20bb}
+)}\hypertarget{class_map_manager_af1766fb2d9800aaea322edede0a8ebf6}{}\label{class_map_manager_af1766fb2d9800aaea322edede0a8ebf6}
 
 
-Map\+Manager.\+cs 파일의 136 번째 라인에서 정의되었습니다.
+Map\+Manager.\+cs 파일의 135 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-137     \{
-138         var tile = \hyperlink{class_map_manager_ae457099efdd1a804add3b851b2bc7691}{GetTile}(pos);
-139 
-140         \textcolor{keywordflow}{if} (tile != null)
-141         \{
-142             tile.AttachObject(obj);
-143         \}
-144     \}
+136     \{
+137         var tile = \hyperlink{class_map_manager_ae457099efdd1a804add3b851b2bc7691}{GetTile}(pos);
+138 
+139         \textcolor{keywordflow}{if} (tile != null)
+140         \{
+141             tile.AttachObject(obj);
+142         \}
+143     \}
 \end{DoxyCode}
 
 
-이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_map_manager_ab8cbf46e369a9c59ff183a1b6c3b20bb_cgraph}
-\end{center}
-\end{figure}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 2
 
 
 
 
-이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_map_manager_ab8cbf46e369a9c59ff183a1b6c3b20bb_icgraph}
-\end{center}
-\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 3
 
 
 \index{Map\+Manager@{Map\+Manager}!Awake@{Awake}}
@@ -124,8 +114,8 @@ Map\+Manager.\+cs 파일의 45 번째 라인에서 정의되었습니다.
 
 \begin{DoxyCode}
 46     \{
-47         \textcolor{comment}{// TODO : 이 곳은 임시 위치. 모든 Awake보다 먼저 불리는 곳에서 데이터를 불러야 할텐데 방법이 없을까?}
-48         \hyperlink{class_data_manager}{DataManager}.\hyperlink{class_m_c_n_1_1_singletone_a46dbbebd93e96a9592a9803c51f35602}{Instance}.LoadDatas();
+47         \textcolor{comment}{// TODO : 이 곳은 임시 위치. 추후 로딩 씬에서 부를 수 있게 수정.}
+48         \hyperlink{class_data_manager}{DataManager}.\hyperlink{class_f_z_1_1_singletone_a8e7ba3cf5cff48b1101428beefcd76b4}{Instance}.LoadDatas();
 49 
 50         \textcolor{keywordflow}{if} (\hyperlink{class_map_manager_aa837a852f355a33b263c1bb07c6c4ece}{\_mapCreator} == null)
 51         \{
@@ -143,14 +133,14 @@ Map\+Manager.\+cs 파일의 45 번째 라인에서 정의되었습니다.
 63 \textcolor{preprocessor}{#else}
 64         \hyperlink{class_map_manager_aa6125f2ca4b3c4e8858f73f5e65d385b}{CreateTilemap}();
 65 
-66         \hyperlink{class_map_manager_a4213ccbaa1a81d0a47884de50a28de32}{PlaceObjacts}();
+66         \hyperlink{class_map_manager_a0b4f29a9504f7004c7b562fa49ba84cd}{PlaceUnits}();
 67 \textcolor{preprocessor}{#endif}
 68     \}
 \end{DoxyCode}
 
 
 이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
-% FIG 2
+% FIG 4
 
 
 \index{Map\+Manager@{Map\+Manager}!Change\+All\+Tile\+State@{Change\+All\+Tile\+State}}
@@ -162,16 +152,16 @@ Map\+Manager.\+cs 파일의 45 번째 라인에서 정의되었습니다.
 )}\hypertarget{class_map_manager_a68f796431393b7239320ab1f5200213a}{}\label{class_map_manager_a68f796431393b7239320ab1f5200213a}
 
 
-Map\+Manager.\+cs 파일의 146 번째 라인에서 정의되었습니다.
+Map\+Manager.\+cs 파일의 145 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-147     \{
-148         \textcolor{keywordflow}{foreach}(var tile \textcolor{keywordflow}{in} \hyperlink{class_map_manager_a58f7635d8e19795f3845a3f85e2b4ac3}{\_tilemap})
-149         \{
-150             tile.Value.ChangeState(state);
-151         \}
-152     \}
+146     \{
+147         \textcolor{keywordflow}{foreach}(var tile \textcolor{keywordflow}{in} \hyperlink{class_map_manager_a58f7635d8e19795f3845a3f85e2b4ac3}{\_tilemap})
+148         \{
+149             tile.Value.ChangeState(state);
+150         \}
+151     \}
 \end{DoxyCode}
 \index{Map\+Manager@{Map\+Manager}!Created\+Object\+Name@{Created\+Object\+Name}}
 \index{Created\+Object\+Name@{Created\+Object\+Name}!Map\+Manager@{Map\+Manager}}
@@ -186,7 +176,7 @@ Map\+Manager.\+cs 파일의 146 번째 라인에서 정의되었습니다.
 
 싱글톤 객체가 생성될 때 생성되는 Game\+Object의 객체 이름을 리턴한다. 
 
-\hyperlink{class_m_c_n_1_1_mono_singletone_a3dde6c2c7e6a3723102f059a043aed22}{M\+C\+N.\+Mono\+Singletone$<$ Map\+Manager $>$}를 구현.
+\hyperlink{class_f_z_1_1_mono_singletone_acc57ab6be46d2b0d7cd9ee4eb5df2b38}{F\+Z.\+Mono\+Singletone$<$ Map\+Manager $>$}를 구현.
 
 
 
@@ -221,13 +211,8 @@ Map\+Manager.\+cs 파일의 77 번째 라인에서 정의되었습니다.
 \end{DoxyCode}
 
 
-이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_map_manager_aa6125f2ca4b3c4e8858f73f5e65d385b_cgraph}
-\end{center}
-\end{figure}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 5
 
 
 
@@ -250,25 +235,25 @@ Map\+Manager.\+cs 파일의 77 번째 라인에서 정의되었습니다.
 )}\hypertarget{class_map_manager_ae457099efdd1a804add3b851b2bc7691}{}\label{class_map_manager_ae457099efdd1a804add3b851b2bc7691}
 
 
-Map\+Manager.\+cs 파일의 119 번째 라인에서 정의되었습니다.
+Map\+Manager.\+cs 파일의 118 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-120     \{
-121         \textcolor{keywordflow}{if} (\hyperlink{class_map_manager_a9a18efae73b0d690d2bc6c8ac8703a02}{IsExistMap}())
-122         \{
-123             \textcolor{keywordflow}{if} (\hyperlink{class_map_manager_a504d7a68ace64557bc3c3254a8b1cddc}{IsInMapSize}(position))
-124             \{
-125                 \textcolor{keywordflow}{return} \hyperlink{class_map_manager_a58f7635d8e19795f3845a3f85e2b4ac3}{\_tilemap}[position];
-126             \}
-127 
-128             \textcolor{keywordflow}{return} null;
-129         \}
-130         \textcolor{keywordflow}{else}
-131         \{
-132             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} UnityException(\textcolor{stringliteral}{"Tilemap is not exist."});
-133         \}
-134     \}
+119     \{
+120         \textcolor{keywordflow}{if} (\hyperlink{class_map_manager_a9a18efae73b0d690d2bc6c8ac8703a02}{IsExistMap}())
+121         \{
+122             \textcolor{keywordflow}{if} (\hyperlink{class_map_manager_a504d7a68ace64557bc3c3254a8b1cddc}{IsInMapSize}(position))
+123             \{
+124                 \textcolor{keywordflow}{return} \hyperlink{class_map_manager_a58f7635d8e19795f3845a3f85e2b4ac3}{\_tilemap}[position];
+125             \}
+126 
+127             \textcolor{keywordflow}{return} null;
+128         \}
+129         \textcolor{keywordflow}{else}
+130         \{
+131             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} UnityException(\textcolor{stringliteral}{"Tilemap is not exist."});
+132         \}
+133     \}
 \end{DoxyCode}
 
 
@@ -283,13 +268,8 @@ Map\+Manager.\+cs 파일의 119 번째 라인에서 정의되었습니다.
 
 
 
-이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_map_manager_ae457099efdd1a804add3b851b2bc7691_icgraph}
-\end{center}
-\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 6
 
 
 \index{Map\+Manager@{Map\+Manager}!Is\+Exist\+Map@{Is\+Exist\+Map}}
@@ -301,23 +281,18 @@ Map\+Manager.\+cs 파일의 119 번째 라인에서 정의되었습니다.
 )}\hypertarget{class_map_manager_a9a18efae73b0d690d2bc6c8ac8703a02}{}\label{class_map_manager_a9a18efae73b0d690d2bc6c8ac8703a02}
 
 
-Map\+Manager.\+cs 파일의 114 번째 라인에서 정의되었습니다.
+Map\+Manager.\+cs 파일의 113 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-115     \{
-116         \textcolor{keywordflow}{return} \hyperlink{class_map_manager_a58f7635d8e19795f3845a3f85e2b4ac3}{\_tilemap} == null ? \textcolor{keyword}{false} : \textcolor{keyword}{true};
-117     \}
+114     \{
+115         \textcolor{keywordflow}{return} \hyperlink{class_map_manager_a58f7635d8e19795f3845a3f85e2b4ac3}{\_tilemap} == null ? \textcolor{keyword}{false} : \textcolor{keyword}{true};
+116     \}
 \end{DoxyCode}
 
 
-이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_map_manager_a9a18efae73b0d690d2bc6c8ac8703a02_icgraph}
-\end{center}
-\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 7
 
 
 \index{Map\+Manager@{Map\+Manager}!Is\+In\+Map\+Size@{Is\+In\+Map\+Size}}
@@ -339,22 +314,17 @@ Map\+Manager.\+cs 파일의 93 번째 라인에서 정의되었습니다.
 \end{DoxyCode}
 
 
-이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_map_manager_a504d7a68ace64557bc3c3254a8b1cddc_icgraph}
-\end{center}
-\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 8
 
 
-\index{Map\+Manager@{Map\+Manager}!Place\+Objacts@{Place\+Objacts}}
-\index{Place\+Objacts@{Place\+Objacts}!Map\+Manager@{Map\+Manager}}
-\subsubsection[{\texorpdfstring{Place\+Objacts()}{PlaceObjacts()}}]{\setlength{\rightskip}{0pt plus 5cm}void Map\+Manager.\+Place\+Objacts (
+\index{Map\+Manager@{Map\+Manager}!Place\+Units@{Place\+Units}}
+\index{Place\+Units@{Place\+Units}!Map\+Manager@{Map\+Manager}}
+\subsubsection[{\texorpdfstring{Place\+Units()}{PlaceUnits()}}]{\setlength{\rightskip}{0pt plus 5cm}void Map\+Manager.\+Place\+Units (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}\hypertarget{class_map_manager_a4213ccbaa1a81d0a47884de50a28de32}{}\label{class_map_manager_a4213ccbaa1a81d0a47884de50a28de32}
+)}\hypertarget{class_map_manager_a0b4f29a9504f7004c7b562fa49ba84cd}{}\label{class_map_manager_a0b4f29a9504f7004c7b562fa49ba84cd}
 
 
 Map\+Manager.\+cs 파일의 98 번째 라인에서 정의되었습니다.
@@ -366,31 +336,25 @@ Map\+Manager.\+cs 파일의 98 번째 라인에서 정의되었습니다.
 101         \{
 102             \textcolor{keywordflow}{if} (\hyperlink{class_map_manager_a504d7a68ace64557bc3c3254a8b1cddc}{IsInMapSize}(objInfo.pos))
 103             \{
-104                 var placeableObj = \hyperlink{class_placeable_creator}{PlaceableCreator}.\hyperlink{class_placeable_creator_aab512359c3b021e0ad98fc56ff99ec28}{Create}(objInfo.unitName);
-105                 \textcolor{keywordflow}{if} (placeableObj != null)
+104                 var unitObj = \hyperlink{class_unit_object}{UnitObject}.\hyperlink{class_unit_object_ae5ef094dc79c767cc91aad73134dd227}{Create}(objInfo.unitName, objInfo.team);
+105                 \textcolor{keywordflow}{if} (unitObj != null)
 106                 \{
-107                     this.\hyperlink{class_map_manager_ab8cbf46e369a9c59ff183a1b6c3b20bb}{AttachObject}(objInfo.pos, placeableObj);
+107                     this.\hyperlink{class_map_manager_af1766fb2d9800aaea322edede0a8ebf6}{AttachObject}(objInfo.pos, unitObj);
 108                 \}
-109                  
-110             \}
-111         \}
-112     \}
+109             \}
+110         \}
+111     \}
 \end{DoxyCode}
 
 
 이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
-% FIG 3
+% FIG 9
 
 
 
 
-이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_map_manager_a4213ccbaa1a81d0a47884de50a28de32_icgraph}
-\end{center}
-\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 10
 
 
 \index{Map\+Manager@{Map\+Manager}!Remove\+Tilemap@{Remove\+Tilemap}}
@@ -415,13 +379,8 @@ Map\+Manager.\+cs 파일의 85 번째 라인에서 정의되었습니다.
 \end{DoxyCode}
 
 
-이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_map_manager_aac20afabde4946e32ce1e719c72e0f50_cgraph}
-\end{center}
-\end{figure}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 11
 
 
 \index{Map\+Manager@{Map\+Manager}!Update@{Update}}
@@ -479,7 +438,7 @@ Map\+Manager.\+cs 파일의 38 번째 라인에서 정의되었습니다.
 \subsection{속성 문서화}
 \index{Map\+Manager@{Map\+Manager}!Instance@{Instance}}
 \index{Instance@{Instance}!Map\+Manager@{Map\+Manager}}
-\subsubsection[{\texorpdfstring{Instance}{Instance}}]{\setlength{\rightskip}{0pt plus 5cm}T {\bf M\+C\+N.\+Mono\+Singletone}$<$ T $>$.Instance\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}, {\ttfamily [inherited]}}\hypertarget{class_m_c_n_1_1_mono_singletone_aa50c027cca64cf4ad30c1ee5c83e0b78}{}\label{class_m_c_n_1_1_mono_singletone_aa50c027cca64cf4ad30c1ee5c83e0b78}
+\subsubsection[{\texorpdfstring{Instance}{Instance}}]{\setlength{\rightskip}{0pt plus 5cm}T {\bf F\+Z.\+Mono\+Singletone}$<$ T $>$.Instance\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}, {\ttfamily [inherited]}}\hypertarget{class_f_z_1_1_mono_singletone_a39e34129d25a9664576949259e7dfd5f}{}\label{class_f_z_1_1_mono_singletone_a39e34129d25a9664576949259e7dfd5f}
 
 
 Singletone.\+cs 파일의 58 번째 라인에서 정의되었습니다.

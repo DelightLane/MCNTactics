@@ -1,0 +1,144 @@
+\hypertarget{class_unit_actor_data_factory}{}\section{Unit\+Actor\+Data\+Factory 클래스 참조}
+\label{class_unit_actor_data_factory}\index{Unit\+Actor\+Data\+Factory@{Unit\+Actor\+Data\+Factory}}
+
+
+Unit\+Actor\+Data\+Factory에 대한 상속 다이어그램 \+: 
+% FIG 0
+
+
+Unit\+Actor\+Data\+Factory에 대한 협력 다이어그램\+:
+% FIG 1
+\subsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+override \hyperlink{class_data_manager_ac9cb5bf021d3ebcc7f3eaa4bf5393408}{Data\+Manager.\+Data\+Type} \hyperlink{class_unit_actor_data_factory_acf2e4d518f143721c03497ccd1d9a4b0}{Get\+Data\+Type} ()
+\item 
+override \hyperlink{class_data_object}{Data\+Object} \hyperlink{class_unit_actor_data_factory_af2d10cba13fca1669a50705e828cd475}{Load\+Datas} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+override string \hyperlink{class_unit_actor_data_factory_a28174650b3b068fd661b7c0adaea74d5}{Get\+Name} ()
+\item 
+string \hyperlink{class_data_factory_a5f040ba1715a670e29f45e07d22b4d5b}{Get\+Json\+String} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{상세한 설명}
+
+
+Data\+Manager.\+cs 파일의 103 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{멤버 함수 문서화}
+\index{Unit\+Actor\+Data\+Factory@{Unit\+Actor\+Data\+Factory}!Get\+Data\+Type@{Get\+Data\+Type}}
+\index{Get\+Data\+Type@{Get\+Data\+Type}!Unit\+Actor\+Data\+Factory@{Unit\+Actor\+Data\+Factory}}
+\subsubsection[{\texorpdfstring{Get\+Data\+Type()}{GetDataType()}}]{\setlength{\rightskip}{0pt plus 5cm}override {\bf Data\+Manager.\+Data\+Type} Unit\+Actor\+Data\+Factory.\+Get\+Data\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_unit_actor_data_factory_acf2e4d518f143721c03497ccd1d9a4b0}{}\label{class_unit_actor_data_factory_acf2e4d518f143721c03497ccd1d9a4b0}
+
+
+\hyperlink{class_data_factory_a801f5669364ffcfd2a926022d5aef950}{Data\+Factory}를 구현.
+
+
+
+Data\+Manager.\+cs 파일의 110 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+111     \{
+112         \textcolor{keywordflow}{return} \hyperlink{class_data_manager}{DataManager}.\hyperlink{class_data_manager_ac9cb5bf021d3ebcc7f3eaa4bf5393408}{DataType}.ATTACH\_ACTOR;
+113     \}
+\end{DoxyCode}
+\index{Unit\+Actor\+Data\+Factory@{Unit\+Actor\+Data\+Factory}!Get\+Json\+String@{Get\+Json\+String}}
+\index{Get\+Json\+String@{Get\+Json\+String}!Unit\+Actor\+Data\+Factory@{Unit\+Actor\+Data\+Factory}}
+\subsubsection[{\texorpdfstring{Get\+Json\+String()}{GetJsonString()}}]{\setlength{\rightskip}{0pt plus 5cm}string Data\+Factory.\+Get\+Json\+String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\hypertarget{class_data_factory_a5f040ba1715a670e29f45e07d22b4d5b}{}\label{class_data_factory_a5f040ba1715a670e29f45e07d22b4d5b}
+
+
+Data\+Manager.\+cs 파일의 71 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+72     \{
+73         var textAsset = Resources.Load(\textcolor{keywordtype}{string}.Format(\textcolor{stringliteral}{"Data/\{0\}"}, \hyperlink{class_data_factory_af66cb0238bd7b6fc0b675ac48ced0eea}{GetName}())) as TextAsset;
+74         \textcolor{keywordflow}{if} (textAsset != null)
+75         \{
+76             \textcolor{keywordflow}{return} textAsset.text;
+77         \}
+78         \textcolor{keywordflow}{else}
+79         \{
+80             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} UnityException(\textcolor{stringliteral}{"DataFactory : DataPath is not available."});
+81         \}
+82     \}
+\end{DoxyCode}
+
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_data_factory_a5f040ba1715a670e29f45e07d22b4d5b_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Unit\+Actor\+Data\+Factory@{Unit\+Actor\+Data\+Factory}!Get\+Name@{Get\+Name}}
+\index{Get\+Name@{Get\+Name}!Unit\+Actor\+Data\+Factory@{Unit\+Actor\+Data\+Factory}}
+\subsubsection[{\texorpdfstring{Get\+Name()}{GetName()}}]{\setlength{\rightskip}{0pt plus 5cm}override string Unit\+Actor\+Data\+Factory.\+Get\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{class_unit_actor_data_factory_a28174650b3b068fd661b7c0adaea74d5}{}\label{class_unit_actor_data_factory_a28174650b3b068fd661b7c0adaea74d5}
+
+
+\hyperlink{class_data_factory_af66cb0238bd7b6fc0b675ac48ced0eea}{Data\+Factory}를 구현.
+
+
+
+Data\+Manager.\+cs 파일의 105 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+106     \{
+107         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"unitActor"};
+108     \}
+\end{DoxyCode}
+\index{Unit\+Actor\+Data\+Factory@{Unit\+Actor\+Data\+Factory}!Load\+Datas@{Load\+Datas}}
+\index{Load\+Datas@{Load\+Datas}!Unit\+Actor\+Data\+Factory@{Unit\+Actor\+Data\+Factory}}
+\subsubsection[{\texorpdfstring{Load\+Datas()}{LoadDatas()}}]{\setlength{\rightskip}{0pt plus 5cm}override {\bf Data\+Object} Unit\+Actor\+Data\+Factory.\+Load\+Datas (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_unit_actor_data_factory_af2d10cba13fca1669a50705e828cd475}{}\label{class_unit_actor_data_factory_af2d10cba13fca1669a50705e828cd475}
+
+
+\hyperlink{class_data_factory_a8ed29ae4a917c15aa824bb7f56418cbf}{Data\+Factory}를 구현.
+
+
+
+Data\+Manager.\+cs 파일의 115 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+116     \{
+117         \textcolor{keywordflow}{return} \textcolor{keyword}{new} JsonParser<UnitActorDataList>().\hyperlink{class_unit_actor_data_factory_af2d10cba13fca1669a50705e828cd475}{LoadDatas}(\textcolor{keyword}{this});
+118     \}
+\end{DoxyCode}
+
+
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 2
+
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Git\+Hub/\+M\+C\+N\+Tactics/\+Assets/\+Scripts/\+Manager/\hyperlink{_data_manager_8cs}{Data\+Manager.\+cs}\end{DoxyCompactItemize}

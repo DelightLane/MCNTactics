@@ -1,0 +1,89 @@
+\hypertarget{class_f_z_1_1_mono_singletone}{}\section{F\+Z.\+Mono\+Singletone$<$ T $>$ 클래스 템플릿 참조}
+\label{class_f_z_1_1_mono_singletone}\index{F\+Z.\+Mono\+Singletone$<$ T $>$@{F\+Z.\+Mono\+Singletone$<$ T $>$}}
+
+
+모노 싱글톤 추상 클래스  
+
+
+
+
+F\+Z.\+Mono\+Singletone$<$ T $>$에 대한 상속 다이어그램 \+: 
+% FIG 0
+
+
+F\+Z.\+Mono\+Singletone$<$ T $>$에 대한 협력 다이어그램\+:
+% FIG 1
+\subsection*{Protected 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+abstract string \hyperlink{class_f_z_1_1_mono_singletone_acc57ab6be46d2b0d7cd9ee4eb5df2b38}{Created\+Object\+Name} ()
+\begin{DoxyCompactList}\small\item\em 모노 싱글톤의 오브젝트 이름 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{속성}
+\begin{DoxyCompactItemize}
+\item 
+static T \hyperlink{class_f_z_1_1_mono_singletone_a39e34129d25a9664576949259e7dfd5f}{Instance}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\subsection*{정적 Private 속성}
+\begin{DoxyCompactItemize}
+\item 
+static T \hyperlink{class_f_z_1_1_mono_singletone_ad6822c95bf3a117cd4cceb793eef5ed7}{\+\_\+instance}
+\end{DoxyCompactItemize}
+
+
+\subsection{상세한 설명}
+모노 싱글톤 추상 클래스 
+
+템플릿 T에 해당하는 클래스가 이 추상 클래스를 상속받을 시 모노 싱글톤 클래스로 구현된다. Mono\+Behaviour를 상속받아야 하는 클래스가 싱글톤으로 구현되어야 할 시 이 추상 클래스를 상속받는다. \begin{DoxyAuthor}{작성자}
+Delight 
+\end{DoxyAuthor}
+\begin{Desc}
+\item[타입 한정자들]\begin{description}
+\item[{\em T} : {\em \hyperlink{class_f_z_1_1_mono_singletone}{Mono\+Singletone}$<$T$>$}]\end{description}
+\end{Desc}
+
+
+Singletone.\+cs 파일의 53 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{멤버 함수 문서화}
+\index{F\+Z\+::\+Mono\+Singletone@{F\+Z\+::\+Mono\+Singletone}!Created\+Object\+Name@{Created\+Object\+Name}}
+\index{Created\+Object\+Name@{Created\+Object\+Name}!F\+Z\+::\+Mono\+Singletone@{F\+Z\+::\+Mono\+Singletone}}
+\subsubsection[{\texorpdfstring{Created\+Object\+Name()}{CreatedObjectName()}}]{\setlength{\rightskip}{0pt plus 5cm}abstract string {\bf F\+Z.\+Mono\+Singletone}$<$ T $>$.Created\+Object\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\hypertarget{class_f_z_1_1_mono_singletone_acc57ab6be46d2b0d7cd9ee4eb5df2b38}{}\label{class_f_z_1_1_mono_singletone_acc57ab6be46d2b0d7cd9ee4eb5df2b38}
+
+
+모노 싱글톤의 오브젝트 이름 
+
+싱글톤 객체가 생성될 때 생성되는 Game\+Object의 객체 이름을 리턴한다. 
+
+\hyperlink{class_touch_manager_a8fb5460d8904a0c1a6453b5c49dc3cb4}{Touch\+Manager}, \hyperlink{class_map_manager_aa3459a9fe2d748c6e9f2c3da8a6273cd}{Map\+Manager}에서 구현되었습니다.
+
+
+
+\subsection{멤버 데이타 문서화}
+\index{F\+Z\+::\+Mono\+Singletone@{F\+Z\+::\+Mono\+Singletone}!\+\_\+instance@{\+\_\+instance}}
+\index{\+\_\+instance@{\+\_\+instance}!F\+Z\+::\+Mono\+Singletone@{F\+Z\+::\+Mono\+Singletone}}
+\subsubsection[{\texorpdfstring{\+\_\+instance}{_instance}}]{\setlength{\rightskip}{0pt plus 5cm}T {\bf F\+Z.\+Mono\+Singletone}$<$ T $>$.\+\_\+instance\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\hypertarget{class_f_z_1_1_mono_singletone_ad6822c95bf3a117cd4cceb793eef5ed7}{}\label{class_f_z_1_1_mono_singletone_ad6822c95bf3a117cd4cceb793eef5ed7}
+
+
+Singletone.\+cs 파일의 55 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{속성 문서화}
+\index{F\+Z\+::\+Mono\+Singletone@{F\+Z\+::\+Mono\+Singletone}!Instance@{Instance}}
+\index{Instance@{Instance}!F\+Z\+::\+Mono\+Singletone@{F\+Z\+::\+Mono\+Singletone}}
+\subsubsection[{\texorpdfstring{Instance}{Instance}}]{\setlength{\rightskip}{0pt plus 5cm}T {\bf F\+Z.\+Mono\+Singletone}$<$ T $>$.Instance\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}\hypertarget{class_f_z_1_1_mono_singletone_a39e34129d25a9664576949259e7dfd5f}{}\label{class_f_z_1_1_mono_singletone_a39e34129d25a9664576949259e7dfd5f}
+
+
+Singletone.\+cs 파일의 58 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Git\+Hub/\+M\+C\+N\+Tactics/\+Assets/\+Scripts/\+Core/\hyperlink{_singletone_8cs}{Singletone.\+cs}\end{DoxyCompactItemize}

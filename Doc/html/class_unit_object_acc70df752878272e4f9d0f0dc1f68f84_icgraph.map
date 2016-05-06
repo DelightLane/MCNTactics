@@ -1,0 +1,5 @@
+<map id="UnitObject.Initialize" name="UnitObject.Initialize">
+<area shape="rect" id="node2" href="$class_unit_object.html#ae5ef094dc79c767cc91aad73134dd227" title="UnitObject.Create" alt="" coords="188,5,313,32"/>
+<area shape="rect" id="node3" href="$class_map_manager.html#a0b4f29a9504f7004c7b562fa49ba84cd" title="MapManager.PlaceUnits" alt="" coords="361,5,525,32"/>
+<area shape="rect" id="node4" href="$class_map_manager.html#ad633984007048c7d63eab44aaeb0c32d" title="MapManager.Awake" alt="" coords="573,5,713,32"/>
+</map>

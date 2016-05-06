@@ -7,7 +7,7 @@ Data\+Manager에 대한 상속 다이어그램 \+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=246pt]{class_data_manager__inherit__graph}
+\includegraphics[width=235pt]{class_data_manager__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -17,13 +17,14 @@ Data\+Manager에 대한 협력 다이어그램\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=246pt]{class_data_manager__coll__graph}
+\includegraphics[width=235pt]{class_data_manager__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public 타입}
 \begin{DoxyCompactItemize}
 \item 
-enum \hyperlink{class_data_manager_ac9cb5bf021d3ebcc7f3eaa4bf5393408}{Data\+Type} \{ \hyperlink{class_data_manager_ac9cb5bf021d3ebcc7f3eaa4bf5393408aec8fc2c42b9c76effd648a14b311411f}{Data\+Type.\+U\+N\+IT}
+enum \hyperlink{class_data_manager_ac9cb5bf021d3ebcc7f3eaa4bf5393408}{Data\+Type} \{ \hyperlink{class_data_manager_ac9cb5bf021d3ebcc7f3eaa4bf5393408aec8fc2c42b9c76effd648a14b311411f}{Data\+Type.\+U\+N\+IT}, 
+\hyperlink{class_data_manager_ac9cb5bf021d3ebcc7f3eaa4bf5393408a7c6e2cf513b9dd1e325a44c62b4db182}{Data\+Type.\+A\+T\+T\+A\+C\+H\+\_\+\+A\+C\+T\+OR}
  \}
 \end{DoxyCompactItemize}
 \subsection*{Public 멤버 함수}
@@ -38,12 +39,12 @@ void \hyperlink{class_data_manager_a458b89dc0fc8d8f2e744ec90e5c43a89}{Load\+Data
 \subsection*{정적 Protected 속성}
 \begin{DoxyCompactItemize}
 \item 
-static T \hyperlink{class_m_c_n_1_1_singletone_a267e8a9e6e7c073b988cda4f95e26eb1}{\+\_\+instance}
+static T \hyperlink{class_f_z_1_1_singletone_a1da3d44c1904d88e6fc0252c9333c221}{\+\_\+instance}
 \end{DoxyCompactItemize}
 \subsection*{속성}
 \begin{DoxyCompactItemize}
 \item 
-static T \hyperlink{class_m_c_n_1_1_singletone_a46dbbebd93e96a9592a9803c51f35602}{Instance}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+static T \hyperlink{class_f_z_1_1_singletone_a8e7ba3cf5cff48b1101428beefcd76b4}{Instance}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \end{DoxyCompactItemize}
 \subsection*{Private 멤버 함수}
 \begin{DoxyCompactItemize}
@@ -73,6 +74,8 @@ Data\+Manager.\+cs 파일의 6 번째 라인에서 정의되었습니다.
 \begin{description}
 \index{U\+N\+IT@{U\+N\+IT}!Data\+Manager@{Data\+Manager}}\index{Data\+Manager@{Data\+Manager}!U\+N\+IT@{U\+N\+IT}}\item[{\em 
 U\+N\+IT\hypertarget{class_data_manager_ac9cb5bf021d3ebcc7f3eaa4bf5393408aec8fc2c42b9c76effd648a14b311411f}{}\label{class_data_manager_ac9cb5bf021d3ebcc7f3eaa4bf5393408aec8fc2c42b9c76effd648a14b311411f}
+}]\index{A\+T\+T\+A\+C\+H\+\_\+\+A\+C\+T\+OR@{A\+T\+T\+A\+C\+H\+\_\+\+A\+C\+T\+OR}!Data\+Manager@{Data\+Manager}}\index{Data\+Manager@{Data\+Manager}!A\+T\+T\+A\+C\+H\+\_\+\+A\+C\+T\+OR@{A\+T\+T\+A\+C\+H\+\_\+\+A\+C\+T\+OR}}\item[{\em 
+A\+T\+T\+A\+C\+H\+\_\+\+A\+C\+T\+OR\hypertarget{class_data_manager_ac9cb5bf021d3ebcc7f3eaa4bf5393408a7c6e2cf513b9dd1e325a44c62b4db182}{}\label{class_data_manager_ac9cb5bf021d3ebcc7f3eaa4bf5393408a7c6e2cf513b9dd1e325a44c62b4db182}
 }]\end{description}
 \end{Desc}
 
@@ -82,8 +85,9 @@ Data\+Manager.\+cs 파일의 8 번째 라인에서 정의되었습니다.
 
 \begin{DoxyCode}
 9     \{
-10         UNIT
-11     \}
+10         UNIT,
+11         ATTACH\_ACTOR
+12     \}
 \end{DoxyCode}
 
 
@@ -97,11 +101,11 @@ Data\+Manager.\+cs 파일의 8 번째 라인에서 정의되었습니다.
 )\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_data_manager_a35770e76737b1bdbcfdab3d2e5d652e4}{}\label{class_data_manager_a35770e76737b1bdbcfdab3d2e5d652e4}
 
 
-Data\+Manager.\+cs 파일의 13 번째 라인에서 정의되었습니다.
+Data\+Manager.\+cs 파일의 14 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-13 \{ \}
+14 \{ \}
 \end{DoxyCode}
 
 
@@ -115,18 +119,18 @@ Data\+Manager.\+cs 파일의 13 번째 라인에서 정의되었습니다.
 )}\hypertarget{class_data_manager_ae2b53c25ded2918f2f0aa62ca0a6cee9}{}\label{class_data_manager_ae2b53c25ded2918f2f0aa62ca0a6cee9}
 
 
-Data\+Manager.\+cs 파일의 29 번째 라인에서 정의되었습니다.
+Data\+Manager.\+cs 파일의 31 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-30     \{
-31         \textcolor{keywordflow}{if} (\hyperlink{class_data_manager_a01ff3ff6f614ac0840d1209110710666}{\_datas}.ContainsKey(type))
-32         \{
-33             \textcolor{keywordflow}{return} \hyperlink{class_data_manager_a01ff3ff6f614ac0840d1209110710666}{\_datas}[type];
-34         \}
-35 
-36         \textcolor{keywordflow}{return} null;
-37     \}
+32     \{
+33         \textcolor{keywordflow}{if} (\hyperlink{class_data_manager_a01ff3ff6f614ac0840d1209110710666}{\_datas}.ContainsKey(type))
+34         \{
+35             \textcolor{keywordflow}{return} \hyperlink{class_data_manager_a01ff3ff6f614ac0840d1209110710666}{\_datas}[type];
+36         \}
+37 
+38         \textcolor{keywordflow}{return} null;
+39     \}
 \end{DoxyCode}
 \index{Data\+Manager@{Data\+Manager}!Load\+Data@{Load\+Data}}
 \index{Load\+Data@{Load\+Data}!Data\+Manager@{Data\+Manager}}
@@ -137,18 +141,17 @@ Data\+Manager.\+cs 파일의 29 번째 라인에서 정의되었습니다.
 )}\hypertarget{class_data_manager_a458b89dc0fc8d8f2e744ec90e5c43a89}{}\label{class_data_manager_a458b89dc0fc8d8f2e744ec90e5c43a89}
 
 
-Data\+Manager.\+cs 파일의 24 번째 라인에서 정의되었습니다.
+Data\+Manager.\+cs 파일의 26 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-25     \{
-26         \hyperlink{class_data_manager_a01ff3ff6f614ac0840d1209110710666}{\_datas}.Add(factory.\hyperlink{class_data_factory_a801f5669364ffcfd2a926022d5aef950}{GetDataType}(), factory.\hyperlink{class_data_factory_a8ed29ae4a917c15aa824bb7f56418cbf}{LoadDatas}());
-27     \}
+27     \{
+28         \hyperlink{class_data_manager_a01ff3ff6f614ac0840d1209110710666}{\_datas}.Add(factory.\hyperlink{class_data_factory_a801f5669364ffcfd2a926022d5aef950}{GetDataType}(), factory.\hyperlink{class_data_factory_a8ed29ae4a917c15aa824bb7f56418cbf}{LoadDatas}());
+29     \}
 \end{DoxyCode}
 
 
-이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
-\nopagebreak
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -178,20 +181,20 @@ Data\+Manager.\+cs 파일의 24 번째 라인에서 정의되었습니다.
 )}\hypertarget{class_data_manager_a00011c93858e3f4ff45ee740b62a6035}{}\label{class_data_manager_a00011c93858e3f4ff45ee740b62a6035}
 
 
-Data\+Manager.\+cs 파일의 17 번째 라인에서 정의되었습니다.
+Data\+Manager.\+cs 파일의 18 번째 라인에서 정의되었습니다.
 
 
 \begin{DoxyCode}
-18     \{
-19         \textcolor{comment}{// TODO : 나은 위치에서 로드하게 수정}
-20         \textcolor{comment}{// 리플랙션을 사용해서 데이터들을 로드하게 하는 건 어떨지?}
-21         \hyperlink{class_data_manager_a458b89dc0fc8d8f2e744ec90e5c43a89}{LoadData}(\textcolor{keyword}{new} \hyperlink{class_unit_data_factory}{UnitDataFactory}());
-22     \}
+19     \{
+20         \textcolor{comment}{// TODO : 나은 위치에서 로드하게 수정}
+21         \textcolor{comment}{// 리플랙션을 사용해서 데이터들을 로드하게 하는 건 어떨지?}
+22         \hyperlink{class_data_manager_a458b89dc0fc8d8f2e744ec90e5c43a89}{LoadData}(\textcolor{keyword}{new} \hyperlink{class_unit_data_factory}{UnitDataFactory}());
+23         \hyperlink{class_data_manager_a458b89dc0fc8d8f2e744ec90e5c43a89}{LoadData}(\textcolor{keyword}{new} \hyperlink{class_unit_actor_data_factory}{UnitActorDataFactory}());
+24     \}
 \end{DoxyCode}
 
 
-이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
-\nopagebreak
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -220,11 +223,11 @@ Data\+Manager.\+cs 파일의 17 번째 라인에서 정의되었습니다.
 \subsubsection[{\texorpdfstring{\+\_\+datas}{_datas}}]{\setlength{\rightskip}{0pt plus 5cm}Dictionary$<${\bf Data\+Type}, {\bf Data\+Object}$>$ Data\+Manager.\+\_\+datas = new Dictionary$<${\bf Data\+Type}, {\bf Data\+Object}$>$()\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_data_manager_a01ff3ff6f614ac0840d1209110710666}{}\label{class_data_manager_a01ff3ff6f614ac0840d1209110710666}
 
 
-Data\+Manager.\+cs 파일의 15 번째 라인에서 정의되었습니다.
+Data\+Manager.\+cs 파일의 16 번째 라인에서 정의되었습니다.
 
 \index{Data\+Manager@{Data\+Manager}!\+\_\+instance@{\+\_\+instance}}
 \index{\+\_\+instance@{\+\_\+instance}!Data\+Manager@{Data\+Manager}}
-\subsubsection[{\texorpdfstring{\+\_\+instance}{_instance}}]{\setlength{\rightskip}{0pt plus 5cm}T {\bf M\+C\+N.\+Singletone}$<$ T $>$.\+\_\+instance\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\hypertarget{class_m_c_n_1_1_singletone_a267e8a9e6e7c073b988cda4f95e26eb1}{}\label{class_m_c_n_1_1_singletone_a267e8a9e6e7c073b988cda4f95e26eb1}
+\subsubsection[{\texorpdfstring{\+\_\+instance}{_instance}}]{\setlength{\rightskip}{0pt plus 5cm}T {\bf F\+Z.\+Singletone}$<$ T $>$.\+\_\+instance\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\hypertarget{class_f_z_1_1_singletone_a1da3d44c1904d88e6fc0252c9333c221}{}\label{class_f_z_1_1_singletone_a1da3d44c1904d88e6fc0252c9333c221}
 
 
 Singletone.\+cs 파일의 15 번째 라인에서 정의되었습니다.
@@ -234,7 +237,7 @@ Singletone.\+cs 파일의 15 번째 라인에서 정의되었습니다.
 \subsection{속성 문서화}
 \index{Data\+Manager@{Data\+Manager}!Instance@{Instance}}
 \index{Instance@{Instance}!Data\+Manager@{Data\+Manager}}
-\subsubsection[{\texorpdfstring{Instance}{Instance}}]{\setlength{\rightskip}{0pt plus 5cm}T {\bf M\+C\+N.\+Singletone}$<$ T $>$.Instance\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}, {\ttfamily [inherited]}}\hypertarget{class_m_c_n_1_1_singletone_a46dbbebd93e96a9592a9803c51f35602}{}\label{class_m_c_n_1_1_singletone_a46dbbebd93e96a9592a9803c51f35602}
+\subsubsection[{\texorpdfstring{Instance}{Instance}}]{\setlength{\rightskip}{0pt plus 5cm}T {\bf F\+Z.\+Singletone}$<$ T $>$.Instance\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}, {\ttfamily [inherited]}}\hypertarget{class_f_z_1_1_singletone_a8e7ba3cf5cff48b1101428beefcd76b4}{}\label{class_f_z_1_1_singletone_a8e7ba3cf5cff48b1101428beefcd76b4}
 
 
 Singletone.\+cs 파일의 18 번째 라인에서 정의되었습니다.

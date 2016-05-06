@@ -1,0 +1,60 @@
+\hypertarget{interface_f_z_1_1_i_observable}{}\section{F\+Z.\+I\+Observable$<$ T $>$ 인터페이스 템플릿 참조}
+\label{interface_f_z_1_1_i_observable}\index{F\+Z.\+I\+Observable$<$ T $>$@{F\+Z.\+I\+Observable$<$ T $>$}}
+
+
+옵저버 관리자 인터페이스  
+
+
+
+
+F\+Z.\+I\+Observable$<$ T $>$에 대한 협력 다이어그램\+:
+% FIG 0
+\subsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{interface_f_z_1_1_i_observable_a9d81fb0fd7c697a9e78cf0ac8ce4d233}{Subscribe} (\hyperlink{interface_f_z_1_1_i_observer}{I\+Observer}$<$ T $>$ observer)
+\begin{DoxyCompactList}\small\item\em 옵저버 등록 메소드 \end{DoxyCompactList}\item 
+void \hyperlink{interface_f_z_1_1_i_observable_a52b72c2bdfb0fe164945d7fe74cec386}{Unsubscribe} (\hyperlink{interface_f_z_1_1_i_observer}{I\+Observer}$<$ T $>$ observer)
+\begin{DoxyCompactList}\small\item\em 옵저버 등록 해제 메소드 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{상세한 설명}
+옵저버 관리자 인터페이스 
+
+옵저버 패턴에서 관찰자들을 관리하는 관리자 인터페이스. \begin{DoxyAuthor}{작성자}
+Delight 
+\end{DoxyAuthor}
+
+
+I\+Observable.\+cs 파일의 10 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{멤버 함수 문서화}
+\index{F\+Z\+::\+I\+Observable@{F\+Z\+::\+I\+Observable}!Subscribe@{Subscribe}}
+\index{Subscribe@{Subscribe}!F\+Z\+::\+I\+Observable@{F\+Z\+::\+I\+Observable}}
+\subsubsection[{\texorpdfstring{Subscribe(\+I\+Observer$<$ T $>$ observer)}{Subscribe(IObserver< T > observer)}}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf F\+Z.\+I\+Observable}$<$ T $>$.Subscribe (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+Observer}$<$ T $>$}]{observer}
+\end{DoxyParamCaption}
+)}\hypertarget{interface_f_z_1_1_i_observable_a9d81fb0fd7c697a9e78cf0ac8ce4d233}{}\label{interface_f_z_1_1_i_observable_a9d81fb0fd7c697a9e78cf0ac8ce4d233}
+
+
+옵저버 등록 메소드 
+
+구현시에는 리스트 등을 활용하여 observer를 등록해둔다. \index{F\+Z\+::\+I\+Observable@{F\+Z\+::\+I\+Observable}!Unsubscribe@{Unsubscribe}}
+\index{Unsubscribe@{Unsubscribe}!F\+Z\+::\+I\+Observable@{F\+Z\+::\+I\+Observable}}
+\subsubsection[{\texorpdfstring{Unsubscribe(\+I\+Observer$<$ T $>$ observer)}{Unsubscribe(IObserver< T > observer)}}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf F\+Z.\+I\+Observable}$<$ T $>$.Unsubscribe (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+Observer}$<$ T $>$}]{observer}
+\end{DoxyParamCaption}
+)}\hypertarget{interface_f_z_1_1_i_observable_a52b72c2bdfb0fe164945d7fe74cec386}{}\label{interface_f_z_1_1_i_observable_a52b72c2bdfb0fe164945d7fe74cec386}
+
+
+옵저버 등록 해제 메소드 
+
+등록된 리스트 등에서 해당 observer를 해제한다. 
+
+이 인터페이스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Git\+Hub/\+M\+C\+N\+Tactics/\+Assets/\+Scripts/\+Core/\hyperlink{_i_observable_8cs}{I\+Observable.\+cs}\end{DoxyCompactItemize}

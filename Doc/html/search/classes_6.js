@@ -2,9 +2,9 @@ var searchData=
 [
   ['mapcreator',['MapCreator',['../class_map_creator.html',1,'']]],
   ['mapmanager',['MapManager',['../class_map_manager.html',1,'']]],
-  ['monosingletone',['MonoSingletone',['../class_m_c_n_1_1_mono_singletone.html',1,'MCN']]],
-  ['monosingletone_3c_20mapmanager_20_3e',['MonoSingletone&lt; MapManager &gt;',['../class_m_c_n_1_1_mono_singletone.html',1,'MCN']]],
-  ['monosingletone_3c_20touchmanager_20_3e',['MonoSingletone&lt; TouchManager &gt;',['../class_m_c_n_1_1_mono_singletone.html',1,'MCN']]],
+  ['monosingletone',['MonoSingletone',['../class_f_z_1_1_mono_singletone.html',1,'FZ']]],
+  ['monosingletone_3c_20mapmanager_20_3e',['MonoSingletone&lt; MapManager &gt;',['../class_f_z_1_1_mono_singletone.html',1,'FZ']]],
+  ['monosingletone_3c_20touchmanager_20_3e',['MonoSingletone&lt; TouchManager &gt;',['../class_f_z_1_1_mono_singletone.html',1,'FZ']]],
   ['moveactor',['MoveActor',['../class_move_actor.html',1,'']]],
   ['moveactstate',['MoveActState',['../class_move_actor_1_1_move_act_state.html',1,'MoveActor']]],
   ['moveactstate_5fdone',['MoveActState_Done',['../class_move_actor_1_1_move_act_state___done.html',1,'MoveActor']]],

@@ -1,0 +1,6 @@
+<map id="ActionObject" name="ActionObject">
+<area shape="rect" id="node7" href="$class_unit_object.html" title="{UnitObject\n|+ Team\l+ No\l+ UnitName\l+ Hp\l+ Sp\l+ Atk\l+ Def\l+ MaxHp\l+ MaxSp\l+ CombatState\l&#45; _impl\l|+ Initialize()\l+ Damaged()\l+ AddStatus()\l+ Create()\l&#45; AddActor()\l&#45; DisplayDebugStatus()\l}" alt="" coords="129,727,285,1024"/>
+<area shape="rect" id="node2" href="$class_place_object.html" title="{PlaceObject\n|# _placedTile\l|+ Initialize()\l+ Attach()\l+ Detach()\l+ GetPlacedTile()\l+ Dispose()\l+ IsSelected()\l+ Select()\l+ Deselect()\l&#45; Place()\l}" alt="" coords="73,271,195,465"/>
+<area shape="rect" id="node3" href="$class_tactics_object.html" title="{TacticsObject\n||+ Interactive()\l+ OnTouchEvent()\l}" alt="" coords="5,131,132,223"/>
+<area shape="rect" id="node6" href="$interface_f_z_1_1_i_actor_queue.html" title="{FZ::IActorQueue\n||+ AddActor()\l+ EnqueueActor()\l+ DequeueActor()\l}" alt="" coords="220,315,344,421"/>
+</map>

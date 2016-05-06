@@ -1,4 +1,4 @@
 <map id="Tile.TileState_Active" name="Tile.TileState_Active">
 <area shape="rect" id="node2" href="$class_tile_1_1_tile_state.html" title="{TileState\n||+ TileState()\l+ GetCurrentType()\l+ OnTouchEvent()\l}" alt="" coords="8,219,141,325"/>
-<area shape="rect" id="node3" href="$class_m_c_n_1_1_state.html" title="{MCN::State\&lt; Tile \&gt;\n|+ Target\l&#45; _target\l|+ State()\l+ Initialize()\l+ Destroy()\l+ Run()\l+ Finish()\l+ Dispose()\l}" alt="" coords="7,5,142,171"/>
+<area shape="rect" id="node3" href="$class_f_z_1_1_state.html" title="{FZ::State\&lt; Tile \&gt;\n|+ Target\l&#45; _target\l|+ State()\l+ Initialize()\l+ Destroy()\l+ Run()\l+ Finish()\l+ Dispose()\l}" alt="" coords="15,5,135,171"/>
 </map>

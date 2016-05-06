@@ -1,15 +1,15 @@
 var searchData=
 [
-  ['absoluteweightkey',['AbsoluteWeightKey',['../class_m_c_n_1_1_actor.html#a54340ddb597852fbb6e9f2a35663bbc5',1,'MCN.Actor.AbsoluteWeightKey()'],['../class_attack_actor.html#af120af42f4607f14a61928429f84eba5',1,'AttackActor.AbsoluteWeightKey()'],['../class_move_actor.html#a1039b1d985874bc3aace417e85bf6676',1,'MoveActor.AbsoluteWeightKey()']]],
-  ['actor',['Actor',['../class_m_c_n_1_1_actor.html#a6a3b8a1620a77b18521d714a7657ab75',1,'MCN::Actor']]],
-  ['addactor',['AddActor',['../interface_m_c_n_1_1_i_actor_queue.html#a4ff84085475a9689d242fea2861d6f1e',1,'MCN.IActorQueue.AddActor()'],['../class_m_c_n_1_1_actor_machine.html#a64284549a56ecf35cb0679101aa9ab11',1,'MCN.ActorMachine.AddActor()'],['../class_placeable_creator.html#a3786a5093e5df101e8fe16ab315dc236',1,'PlaceableCreator.AddActor()'],['../class_placeable_object.html#a4f7ac210f2729a35d88a22d7f286ade5',1,'PlaceableObject.AddActor()']]],
-  ['addstatus',['AddStatus',['../class_combat_object.html#a9be860004106d19e5e020d0855d96886',1,'CombatObject']]],
+  ['absoluteweightkey',['AbsoluteWeightKey',['../class_f_z_1_1_actor.html#aade2d1f3a48ea90fe361a2e0e3ff9985',1,'FZ.Actor.AbsoluteWeightKey()'],['../class_attack_actor.html#af120af42f4607f14a61928429f84eba5',1,'AttackActor.AbsoluteWeightKey()'],['../class_move_actor.html#a1039b1d985874bc3aace417e85bf6676',1,'MoveActor.AbsoluteWeightKey()']]],
+  ['actor',['Actor',['../class_f_z_1_1_actor.html#aff143f814855a85dd0668ef12f46ef21',1,'FZ::Actor']]],
+  ['addactor',['AddActor',['../interface_f_z_1_1_i_actor_queue.html#a913b199f922223b26cf05efa96c14139',1,'FZ.IActorQueue.AddActor()'],['../class_f_z_1_1_actor_machine.html#abf6949bf5213c6b7eb9f7b2d0c677a23',1,'FZ.ActorMachine.AddActor()'],['../class_action_object.html#a56caea069fa424581114bd41b299944c',1,'ActionObject.AddActor(Actor actor)'],['../class_action_object.html#a25c60d577ecf4dedb7d5af668fe1c8e7',1,'ActionObject.AddActor(ActorInfo info)'],['../class_unit_object.html#a210d5044920f051fe347d0c5137aaae8',1,'UnitObject.AddActor()']]],
+  ['addstatus',['AddStatus',['../class_unit_object.html#a62836ee6382c85a0128d208baf118088',1,'UnitObject']]],
   ['alltiletonormal',['AllTileToNormal',['../class_attack_actor_1_1_attack_act_state.html#a993762ec959af926e416f03fa7b71203',1,'AttackActor.AttackActState.AllTileToNormal()'],['../class_move_actor_1_1_move_act_state.html#a8e1d5e7942d4f9de8c8e0732964c554b',1,'MoveActor.MoveActState.AllTileToNormal()']]],
-  ['attach',['Attach',['../class_placeable_object.html#a3176ec3d5d26b2a83cdc58b01e630aa1',1,'PlaceableObject']]],
-  ['attachobject',['AttachObject',['../class_map_manager.html#ab8cbf46e369a9c59ff183a1b6c3b20bb',1,'MapManager.AttachObject()'],['../class_tile.html#a1969ee41c320c6e7748a33374942e07e',1,'Tile.AttachObject()']]],
+  ['attach',['Attach',['../class_place_object.html#aa0f1a877d0abc20133e390d0964602ed',1,'PlaceObject']]],
+  ['attachobject',['AttachObject',['../class_map_manager.html#af1766fb2d9800aaea322edede0a8ebf6',1,'MapManager.AttachObject()'],['../class_tile.html#a220ad1a57b9ba94701483822ba349891',1,'Tile.AttachObject()']]],
   ['attackactstate',['AttackActState',['../class_attack_actor_1_1_attack_act_state.html#ab084b28b7bfaec2033a5102a48303af5',1,'AttackActor::AttackActState']]],
   ['attackactstate_5fattack',['AttackActState_Attack',['../class_attack_actor_1_1_attack_act_state___attack.html#a2503cf96e99f943f0be13c3a87e7dd12',1,'AttackActor::AttackActState_Attack']]],
   ['attackactstate_5fdone',['AttackActState_Done',['../class_attack_actor_1_1_attack_act_state___done.html#a57cc20f4a46c32a80eed29122c71c2e0',1,'AttackActor::AttackActState_Done']]],
   ['attackactstate_5fnormal',['AttackActState_Normal',['../class_attack_actor_1_1_attack_act_state___normal.html#ab68b0ac3deec2c36e132dd8d635eef94',1,'AttackActor::AttackActState_Normal']]],
-  ['awake',['Awake',['../class_map_manager.html#ad633984007048c7d63eab44aaeb0c32d',1,'MapManager.Awake()'],['../class_touch_manager.html#a73c7b6bf98d9834ce87b72012a2a99f1',1,'TouchManager.Awake()'],['../class_combat_object.html#a336e88fa8a82958f100e5eeb0c1b4207',1,'CombatObject.Awake()'],['../class_tile.html#a4fbf82b2a26cdeb792dc78192d7247dc',1,'Tile.Awake()']]]
+  ['awake',['Awake',['../class_map_manager.html#ad633984007048c7d63eab44aaeb0c32d',1,'MapManager.Awake()'],['../class_touch_manager.html#a73c7b6bf98d9834ce87b72012a2a99f1',1,'TouchManager.Awake()'],['../class_tile.html#a4fbf82b2a26cdeb792dc78192d7247dc',1,'Tile.Awake()']]]
 ];

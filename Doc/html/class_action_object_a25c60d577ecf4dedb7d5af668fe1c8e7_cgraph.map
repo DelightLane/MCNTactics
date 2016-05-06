@@ -1,0 +1,7 @@
+<map id="ActionObject.AddActor" name="ActionObject.AddActor">
+<area shape="rect" id="node2" href="$class_f_z_1_1_actor.html#ac29de02b4c3cc1012143f6531f5809ed" title="FZ.Actor.Initialize" alt="" coords="238,5,361,32"/>
+<area shape="rect" id="node3" href="$class_action_object.html#a56caea069fa424581114bd41b299944c" title="ActionObject.AddActor" alt="" coords="222,56,377,83"/>
+<area shape="rect" id="node5" href="$class_action_object.html#a1aa21a0bbc88cf7456dd20005d55e972" title="ActionObject.EnqueueActor" alt="" coords="208,107,391,133"/>
+<area shape="rect" id="node4" href="$class_f_z_1_1_actor_machine.html#abf6949bf5213c6b7eb9f7b2d0c677a23" title="FZ.ActorMachine.AddActor" alt="" coords="453,56,631,83"/>
+<area shape="rect" id="node6" href="$class_f_z_1_1_actor_machine.html#ac399a880001dbecdc39c1807f81e4eac" title="FZ.ActorMachine.EnqueueActor" alt="" coords="439,107,645,133"/>
+</map>

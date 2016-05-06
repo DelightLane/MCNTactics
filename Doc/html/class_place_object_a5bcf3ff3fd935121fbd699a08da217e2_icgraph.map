@@ -1,0 +1,7 @@
+<map id="PlaceObject.Detach" name="PlaceObject.Detach">
+<area shape="rect" id="node2" href="$class_tile.html#ab8ab187ab674cfb222f761feac3b20b3" title="Tile.DetachObject" alt="" coords="192,71,317,98"/>
+<area shape="rect" id="node3" href="$class_tile.html#a220ad1a57b9ba94701483822ba349891" title="Tile.AttachObject" alt="" coords="365,71,488,98"/>
+<area shape="rect" id="node4" href="$class_move_actor_1_1_move_act_state___move.html#a82e0eb4bd7a3e7eae9bbe9897d75a516" title="MoveActor.MoveActState\l_Move.Interactive" alt="" coords="536,5,704,47"/>
+<area shape="rect" id="node5" href="$class_place_object.html#aee28273784ccccbc9df57c6bddead3fd" title="PlaceObject.Place" alt="" coords="555,71,685,98"/>
+<area shape="rect" id="node6" href="$class_place_object.html#aa0f1a877d0abc20133e390d0964602ed" title="PlaceObject.Attach" alt="" coords="752,97,887,123"/>
+</map>

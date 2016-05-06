@@ -7,7 +7,7 @@ Combat\+Added\+Deco에 대한 상속 다이어그램 \+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=322pt]{class_combat_added_deco__inherit__graph}
+\includegraphics[width=312pt]{class_combat_added_deco__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -17,7 +17,7 @@ Combat\+Added\+Deco에 대한 협력 다이어그램\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=322pt]{class_combat_added_deco__coll__graph}
+\includegraphics[width=312pt]{class_combat_added_deco__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public 멤버 함수}
@@ -30,7 +30,7 @@ void \hyperlink{class_combat_added_deco_a3f1bc69d50b10571339d651eaa093a43}{Damag
 \subsection*{Protected 속성}
 \begin{DoxyCompactItemize}
 \item 
-T \hyperlink{class_m_c_n_1_1_decorator_a358dba6e4ac8d5ef06ed9f5592f8827e}{\+\_\+deco\+Target}
+T \hyperlink{class_f_z_1_1_decorator_adce2c6d288dcfa08b899f3e233190210}{\+\_\+deco\+Target}
 \end{DoxyCompactItemize}
 \subsection*{속성}
 \begin{DoxyCompactItemize}
@@ -47,7 +47,7 @@ int \hyperlink{class_combat_added_deco_a6e24be83c5d6b04b0d900103bb398d2e}{Max\+H
 \item 
 int \hyperlink{class_combat_added_deco_aa1dde14484472ac5d8b42d3ee9b745f2}{Max\+Sp}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \item 
-\hyperlink{_combat_object_8cs_ae6d9f4a8ae9fffcdf1a546168a44f917}{e\+Combat\+State} \hyperlink{class_combat_added_deco_a16e7a3ae7dc8751d25ef0b6ee0ce5531}{Combat\+State}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\hyperlink{_unit_object_8cs_ae6d9f4a8ae9fffcdf1a546168a44f917}{e\+Combat\+State} \hyperlink{class_combat_added_deco_a16e7a3ae7dc8751d25ef0b6ee0ce5531}{Combat\+State}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \end{DoxyCompactItemize}
 \subsection*{Private 속성}
 \begin{DoxyCompactItemize}
@@ -86,10 +86,10 @@ Combat\+Added\+Deco.\+cs 파일의 10 번째 라인에서 정의되었습니다.
 \begin{DoxyCode}
 10                                                                : base(target)
 11     \{
-12         this.\hyperlink{class_combat_added_deco_ae3e4d0cbbf900b51cadf756154b9cd80}{\_addedAtk} = addedStatus.\hyperlink{struct_status_aeaf2f82dd6fbce2adf2219b7a6b8227f}{atk};
-13         this.\hyperlink{class_combat_added_deco_abb40c78d41f1f133a285415b70506940}{\_addedDef} = addedStatus.\hyperlink{struct_status_a95a2f2a23ef79f2e0ced04621c4593c9}{def};
-14         this.\hyperlink{class_combat_added_deco_aa6d7287956c39e242ed254faf29e6a3b}{\_addedHp} = addedStatus.\hyperlink{struct_status_a6912591952ae3178114200d6383919df}{hp};
-15         this.\hyperlink{class_combat_added_deco_a02d5c40dcf180b1ad7086856dfa83929}{\_addedSp} = addedStatus.\hyperlink{struct_status_a685aa4b12faa74a48a3b57f69e94084c}{sp};
+12         this.\hyperlink{class_combat_added_deco_ae3e4d0cbbf900b51cadf756154b9cd80}{\_addedAtk} = addedStatus.\hyperlink{struct_status_a60abcd71f2c5226ae8466b01b1fa56e6}{Atk};
+13         this.\hyperlink{class_combat_added_deco_abb40c78d41f1f133a285415b70506940}{\_addedDef} = addedStatus.\hyperlink{struct_status_a57d7e201d642441114f0426e449f6b45}{Def};
+14         this.\hyperlink{class_combat_added_deco_aa6d7287956c39e242ed254faf29e6a3b}{\_addedHp} = addedStatus.\hyperlink{struct_status_a81b0c200ac8f8285e57cd4cc7bfd1fbf}{Hp};
+15         this.\hyperlink{class_combat_added_deco_a02d5c40dcf180b1ad7086856dfa83929}{\_addedSp} = addedStatus.\hyperlink{struct_status_a71c109a2932f2f43a780485f6bf1209d}{Sp};
 16     \}
 \end{DoxyCode}
 
@@ -113,7 +113,7 @@ Combat\+Added\+Deco.\+cs 파일의 32 번째 라인에서 정의되었습니다.
 
 \begin{DoxyCode}
 33     \{
-34         \hyperlink{class_m_c_n_1_1_decorator_a358dba6e4ac8d5ef06ed9f5592f8827e}{\_decoTarget}.Damaged(actor);
+34         \hyperlink{class_f_z_1_1_decorator_adce2c6d288dcfa08b899f3e233190210}{\_decoTarget}.Damaged(actor);
 35     \}
 \end{DoxyCode}
 
@@ -149,7 +149,7 @@ Combat\+Added\+Deco.\+cs 파일의 8 번째 라인에서 정의되었습니다.
 
 \index{Combat\+Added\+Deco@{Combat\+Added\+Deco}!\+\_\+deco\+Target@{\+\_\+deco\+Target}}
 \index{\+\_\+deco\+Target@{\+\_\+deco\+Target}!Combat\+Added\+Deco@{Combat\+Added\+Deco}}
-\subsubsection[{\texorpdfstring{\+\_\+deco\+Target}{_decoTarget}}]{\setlength{\rightskip}{0pt plus 5cm}T {\bf M\+C\+N.\+Decorator}$<$ T $>$.\+\_\+deco\+Target\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\hypertarget{class_m_c_n_1_1_decorator_a358dba6e4ac8d5ef06ed9f5592f8827e}{}\label{class_m_c_n_1_1_decorator_a358dba6e4ac8d5ef06ed9f5592f8827e}
+\subsubsection[{\texorpdfstring{\+\_\+deco\+Target}{_decoTarget}}]{\setlength{\rightskip}{0pt plus 5cm}T {\bf F\+Z.\+Decorator}$<$ T $>$.\+\_\+deco\+Target\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\hypertarget{class_f_z_1_1_decorator_adce2c6d288dcfa08b899f3e233190210}{}\label{class_f_z_1_1_decorator_adce2c6d288dcfa08b899f3e233190210}
 
 
 Decorator.\+cs 파일의 9 번째 라인에서 정의되었습니다.

@@ -1,3 +1,6 @@
 <map id="DataObject" name="DataObject">
-<area shape="rect" id="node2" href="$class_unit_data_object.html" title="{UnitDataObject\n|+ Data\l&#45; _data\l|+ UnitDataObject()\l}" alt="" coords="5,131,136,223"/>
+<area shape="rect" id="node2" href="$class_unit_actor_data.html" title="{UnitActorData\n|+ no\l+ actor\l|}" alt="" coords="5,167,108,259"/>
+<area shape="rect" id="node3" href="$class_unit_actor_data_list.html" title="{UnitActorDataList\n|+ unitActor\l|+ GetActorList()\l}" alt="" coords="132,175,256,252"/>
+<area shape="rect" id="node4" href="$class_unit_data.html" title="{UnitData\n|+ no\l+ name\l+ prefabName\l+ Hp\l+ Sp\l+ Atk\l+ Def\l|}" alt="" coords="280,131,383,296"/>
+<area shape="rect" id="node5" href="$class_unit_data_list.html" title="{UnitDataList\n|+ unit\l|}" alt="" coords="407,175,501,252"/>
 </map>

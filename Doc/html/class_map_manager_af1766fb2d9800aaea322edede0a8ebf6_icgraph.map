@@ -1,0 +1,4 @@
+<map id="MapManager.AttachObject" name="MapManager.AttachObject">
+<area shape="rect" id="node2" href="$class_map_manager.html#a0b4f29a9504f7004c7b562fa49ba84cd" title="MapManager.PlaceUnits" alt="" coords="231,5,395,32"/>
+<area shape="rect" id="node3" href="$class_map_manager.html#ad633984007048c7d63eab44aaeb0c32d" title="MapManager.Awake" alt="" coords="443,5,583,32"/>
+</map>

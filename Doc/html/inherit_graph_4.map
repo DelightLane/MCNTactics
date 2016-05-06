@@ -1,3 +1,7 @@
 <map id="그래픽컬한 클래스 계통도" name="그래픽컬한 클래스 계통도">
-<area shape="rect" id="node1" href="$class_map_creator.html" title="MapCreator" alt="" coords="5,5,95,32"/>
+<area shape="rect" id="node1" href="$class_f_z_1_1_actor.html" title="FZ.Actor" alt="" coords="5,31,77,57"/>
+<area shape="rect" id="node2" href="$class_f_z_1_1_act_obj_actor.html" title="FZ.ActObjActor" alt="" coords="127,5,239,32"/>
+<area shape="rect" id="node4" href="$class_f_z_1_1_unit_obj_actor.html" title="FZ.UnitObjActor" alt="" coords="125,56,240,83"/>
+<area shape="rect" id="node3" href="$class_move_actor.html" title="MoveActor" alt="" coords="292,5,375,32"/>
+<area shape="rect" id="node5" href="$class_attack_actor.html" title="AttackActor" alt="" coords="288,56,379,83"/>
 </map>

@@ -1,7 +1,7 @@
 <map id="그래픽컬한 클래스 계통도" name="그래픽컬한 클래스 계통도">
-<area shape="rect" id="node1" href="$class_m_c_n_1_1_state.html" title="MCN.State\&lt; MoveActor \&gt;" alt="" coords="5,56,176,83"/>
-<area shape="rect" id="node2" href="$class_move_actor_1_1_move_act_state.html" title="MoveActor.MoveActState" alt="" coords="224,56,392,83"/>
-<area shape="rect" id="node3" href="$class_move_actor_1_1_move_act_state___done.html" title="MoveActor.MoveActState_Done" alt="" coords="440,5,645,32"/>
-<area shape="rect" id="node4" href="$class_move_actor_1_1_move_act_state___move.html" title="MoveActor.MoveActState_Move" alt="" coords="440,56,645,83"/>
-<area shape="rect" id="node5" href="$class_move_actor_1_1_move_act_state___normal.html" title="MoveActor.MoveActState\l_Normal" alt="" coords="459,107,627,149"/>
+<area shape="rect" id="node1" href="$class_f_z_1_1_state.html" title="FZ.State\&lt; Tile \&gt;" alt="" coords="5,56,121,83"/>
+<area shape="rect" id="node2" href="$class_tile_1_1_tile_state.html" title="Tile.TileState" alt="" coords="169,56,267,83"/>
+<area shape="rect" id="node3" href="$class_tile_1_1_tile_state___active.html" title="Tile.TileState_Active" alt="" coords="322,5,461,32"/>
+<area shape="rect" id="node4" href="$class_tile_1_1_tile_state___deactive.html" title="Tile.TileState_Deactive" alt="" coords="315,56,468,83"/>
+<area shape="rect" id="node5" href="$class_tile_1_1_tile_state___normal.html" title="Tile.TileState_Normal" alt="" coords="319,107,464,133"/>
 </map>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['key',['key',['../class_m_c_n_1_1_pair.html#a62c546d3829b8819a65f8c9d64200338',1,'MCN::Pair']]]
+  ['key',['key',['../class_f_z_1_1_pair.html#a36d4b7c90f0a247dff54da733701a53a',1,'FZ::Pair']]]
 ];

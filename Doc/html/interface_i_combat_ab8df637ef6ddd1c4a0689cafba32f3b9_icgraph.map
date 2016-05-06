@@ -1,4 +1,4 @@
 <map id="ICombat.Damaged" name="ICombat.Damaged">
-<area shape="rect" id="node2" href="$class_attack_actor_1_1_attack_act_state___attack.html#a59a3f2e994baeddabb870446b5df1641" title="AttackActor.AttackActState\l_Attack.Interactive" alt="" coords="183,5,367,47"/>
-<area shape="rect" id="node3" href="$class_combat_object.html#afeda914f613cec31214bf41233d5cb1e" title="CombatObject.Damaged" alt="" coords="193,71,357,98"/>
+<area shape="rect" id="node2" href="$class_unit_object.html#a36511c5c48346ec7aba58e0150b3d462" title="UnitObject.Damaged" alt="" coords="183,13,325,39"/>
+<area shape="rect" id="node3" href="$class_attack_actor_1_1_attack_act_state___attack.html#a59a3f2e994baeddabb870446b5df1641" title="AttackActor.AttackActState\l_Attack.Interactive" alt="" coords="373,5,557,47"/>
 </map>

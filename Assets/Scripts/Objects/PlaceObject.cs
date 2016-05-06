@@ -68,14 +68,4 @@ public class PlaceObject : TacticsObject, IDisposable
     {
         GameManager.Instance.SelectedObj = null;
     }
-
-    public override void Interactive(TacticsObject interactTarget)
-    {
-       
-    }
-
-    public override bool OnTouchEvent(eTouchEvent touch)
-    {
-        return true;
-    }
 }

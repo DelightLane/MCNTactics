@@ -1,0 +1,5 @@
+<map id="PlaceObject" name="PlaceObject">
+<area shape="rect" id="node5" href="$class_tile.html" title="{Tile\n|+ TILE_SIZE\l&#45; _position\l|+ Dispose()\l+ SetPosition()\l+ GetAttachObject()\l+ AttachObject()\l+ DetachObject()\l+ GetClosedTiles()\l+ GetClosedTile()\l+ ShowChainActiveTile()\l+ ShowChainActiveTile()\l+ ChangeState()\l+ OnNext()\l+ CreateTile()\l&#45; Tile()\l&#45; Awake()\l&#45; StorageStates()\l&#45; GetChainActiveTileCost()\l&#45; GetCurrentState()\l}" alt="" coords="155,531,329,857"/>
+<area shape="rect" id="node2" href="$class_tactics_object.html" title="{TacticsObject\n||+ Interactive()\l+ OnTouchEvent()\l}" alt="" coords="5,132,132,224"/>
+<area shape="rect" id="node6" href="$interface_f_z_1_1_i_observer.html" title="{FZ::IObserver\&lt; eTouchEvent \&gt;\n||+ OnNext()\l}" alt="" coords="329,332,526,409"/>
+</map>

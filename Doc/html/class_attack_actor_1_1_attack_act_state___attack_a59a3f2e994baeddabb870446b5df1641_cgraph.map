@@ -1,4 +1,6 @@
 <map id="AttackActor.AttackActState_Attack.Interactive" name="AttackActor.AttackActState_Attack.Interactive">
-<area shape="rect" id="node2" href="$class_tile.html#a02150b69b975e8e9de1c3e10070a8dda" title="Tile.GetAttachObject" alt="" coords="237,5,380,32"/>
-<area shape="rect" id="node3" href="$interface_i_combat.html#ab8df637ef6ddd1c4a0689cafba32f3b9" title="ICombat.Damaged" alt="" coords="244,56,373,83"/>
+<area shape="rect" id="node2" href="$class_tile.html#a955e550fb4df0be4245223e9520c9559" title="Tile.GetAttachObject" alt="" coords="237,5,380,32"/>
+<area shape="rect" id="node3" href="$class_unit_object.html#a36511c5c48346ec7aba58e0150b3d462" title="UnitObject.Damaged" alt="" coords="237,56,380,83"/>
+<area shape="rect" id="node4" href="$interface_i_combat.html#ab8df637ef6ddd1c4a0689cafba32f3b9" title="ICombat.Damaged" alt="" coords="466,31,595,57"/>
+<area shape="rect" id="node5" href="$class_unit_object.html#afc26392bbc6cfaa93cc84c182a62a5d7" title="UnitObject.DisplayDebugStatus" alt="" coords="428,81,633,108"/>
 </map>

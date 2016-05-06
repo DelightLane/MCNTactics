@@ -1,0 +1,4 @@
+<map id="ActionObject.OnTouchEvent" name="ActionObject.OnTouchEvent">
+<area shape="rect" id="node2" href="$class_f_z_1_1_actor_machine.html#a9f1efcf25b000d4634abcc97d361c629" title="FZ.ActorMachine.GetActive\lActor" alt="" coords="239,5,420,47"/>
+<area shape="rect" id="node3" href="$class_f_z_1_1_actor.html#a9f30b12f3615a447df054d48ef4e22c7" title="FZ.Actor.OnTouchEvent" alt="" coords="249,71,409,98"/>
+</map>

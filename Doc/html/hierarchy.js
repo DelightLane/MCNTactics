@@ -1,98 +1,105 @@
 var hierarchy =
 [
-    [ "MCN.Actor", "class_m_c_n_1_1_actor.html", [
-      [ "AttackActor", "class_attack_actor.html", null ],
-      [ "MoveActor", "class_move_actor.html", null ]
+    [ "FZ.Actor", "class_f_z_1_1_actor.html", [
+      [ "FZ.ActObjActor", "class_f_z_1_1_act_obj_actor.html", [
+        [ "MoveActor", "class_move_actor.html", null ]
+      ] ],
+      [ "FZ.UnitObjActor", "class_f_z_1_1_unit_obj_actor.html", [
+        [ "AttackActor", "class_attack_actor.html", null ]
+      ] ]
     ] ],
     [ "ActorInfo", "class_actor_info.html", null ],
     [ "DataFactory", "class_data_factory.html", [
+      [ "UnitActorDataFactory", "class_unit_actor_data_factory.html", null ],
       [ "UnitDataFactory", "class_unit_data_factory.html", null ]
     ] ],
     [ "DataObject", "class_data_object.html", [
-      [ "UnitDataObject", "class_unit_data_object.html", null ]
+      [ "UnitActorData", "class_unit_actor_data.html", null ],
+      [ "UnitActorDataList", "class_unit_actor_data_list.html", null ],
+      [ "UnitData", "class_unit_data.html", null ],
+      [ "UnitDataList", "class_unit_data_list.html", null ]
     ] ],
-    [ "MCN.Decorator< T >", "class_m_c_n_1_1_decorator.html", null ],
-    [ "MCN.Decorator< ICombat >", "class_m_c_n_1_1_decorator.html", [
+    [ "FZ.Decorator< T >", "class_f_z_1_1_decorator.html", null ],
+    [ "FZ.Decorator< ICombat >", "class_f_z_1_1_decorator.html", [
       [ "CombatAddedDeco", "class_combat_added_deco.html", null ]
     ] ],
-    [ "MCN.IActorQueue", "interface_m_c_n_1_1_i_actor_queue.html", [
-      [ "MCN.ActorMachine", "class_m_c_n_1_1_actor_machine.html", null ],
-      [ "PlaceableObject", "class_placeable_object.html", [
-        [ "CombatObject", "class_combat_object.html", null ]
-      ] ]
+    [ "FZ.IActorQueue", "interface_f_z_1_1_i_actor_queue.html", [
+      [ "ActionObject", "class_action_object.html", [
+        [ "UnitObject", "class_unit_object.html", null ]
+      ] ],
+      [ "FZ.ActorMachine", "class_f_z_1_1_actor_machine.html", null ]
     ] ],
     [ "ICombat", "interface_i_combat.html", [
       [ "CombatAddedDeco", "class_combat_added_deco.html", null ],
       [ "CombatInstance", "class_combat_instance.html", null ],
-      [ "CombatObject", "class_combat_object.html", null ]
+      [ "UnitObject", "class_unit_object.html", null ]
     ] ],
     [ "IDisposable", null, [
-      [ "MCN.State< T >", "class_m_c_n_1_1_state.html", null ],
-      [ "PlaceableObject", "class_placeable_object.html", null ],
+      [ "FZ.State< T >", "class_f_z_1_1_state.html", null ],
+      [ "PlaceObject", "class_place_object.html", [
+        [ "ActionObject", "class_action_object.html", null ]
+      ] ],
       [ "Tile", "class_tile.html", null ]
     ] ],
-    [ "MCN.IObservable< T >", "interface_m_c_n_1_1_i_observable.html", null ],
-    [ "MCN.IObservable< eTouchEvent >", "interface_m_c_n_1_1_i_observable.html", [
+    [ "FZ.IObservable< T >", "interface_f_z_1_1_i_observable.html", null ],
+    [ "FZ.IObservable< eTouchEvent >", "interface_f_z_1_1_i_observable.html", [
       [ "TouchManager", "class_touch_manager.html", null ]
     ] ],
-    [ "MCN.IObserver< T >", "interface_m_c_n_1_1_i_observer.html", null ],
-    [ "MCN.IObserver< eTouchEvent >", "interface_m_c_n_1_1_i_observer.html", [
+    [ "FZ.IObserver< T >", "interface_f_z_1_1_i_observer.html", null ],
+    [ "FZ.IObserver< eTouchEvent >", "interface_f_z_1_1_i_observer.html", [
       [ "Tile", "class_tile.html", null ]
     ] ],
-    [ "MCN.IState", "interface_m_c_n_1_1_i_state.html", [
-      [ "MCN.State< T >", "class_m_c_n_1_1_state.html", null ]
+    [ "FZ.IState", "interface_f_z_1_1_i_state.html", [
+      [ "FZ.State< T >", "class_f_z_1_1_state.html", null ]
     ] ],
     [ "DataFactory.JsonParser< T >", "class_data_factory_1_1_json_parser.html", null ],
     [ "MapCreator", "class_map_creator.html", null ],
     [ "MonoBehaviour", null, [
-      [ "MCN.MonoSingletone< T >", "class_m_c_n_1_1_mono_singletone.html", null ],
+      [ "FZ.MonoSingletone< T >", "class_f_z_1_1_mono_singletone.html", null ],
       [ "TacticsObject", "class_tactics_object.html", [
-        [ "PlaceableObject", "class_placeable_object.html", null ],
+        [ "PlaceObject", "class_place_object.html", null ],
         [ "Tile", "class_tile.html", null ]
       ] ]
     ] ],
-    [ "MCN.MonoSingletone< MapManager >", "class_m_c_n_1_1_mono_singletone.html", [
+    [ "FZ.MonoSingletone< MapManager >", "class_f_z_1_1_mono_singletone.html", [
       [ "MapManager", "class_map_manager.html", null ]
     ] ],
-    [ "MCN.MonoSingletone< TouchManager >", "class_m_c_n_1_1_mono_singletone.html", [
+    [ "FZ.MonoSingletone< TouchManager >", "class_f_z_1_1_mono_singletone.html", [
       [ "TouchManager", "class_touch_manager.html", null ]
     ] ],
-    [ "MCN.Pair< T, T2 >", "class_m_c_n_1_1_pair.html", null ],
-    [ "MCN.Pair< string, int >", "class_m_c_n_1_1_pair.html", [
-      [ "MCN.StringIntPair", "class_m_c_n_1_1_string_int_pair.html", null ]
+    [ "FZ.Pair< T, T2 >", "class_f_z_1_1_pair.html", null ],
+    [ "FZ.Pair< string, int >", "class_f_z_1_1_pair.html", [
+      [ "FZ.StringIntPair", "class_f_z_1_1_string_int_pair.html", null ]
     ] ],
-    [ "PlaceableCreator", "class_placeable_creator.html", null ],
-    [ "MCN.PlaceInfo", "class_m_c_n_1_1_place_info.html", null ],
-    [ "MCN.Singletone< T >", "class_m_c_n_1_1_singletone.html", null ],
-    [ "MCN.Singletone< DataManager >", "class_m_c_n_1_1_singletone.html", [
+    [ "FZ.PlaceInfo", "class_f_z_1_1_place_info.html", null ],
+    [ "FZ.Singletone< T >", "class_f_z_1_1_singletone.html", null ],
+    [ "FZ.Singletone< DataManager >", "class_f_z_1_1_singletone.html", [
       [ "DataManager", "class_data_manager.html", null ]
     ] ],
-    [ "MCN.Singletone< GameManager >", "class_m_c_n_1_1_singletone.html", [
+    [ "FZ.Singletone< GameManager >", "class_f_z_1_1_singletone.html", [
       [ "GameManager", "class_game_manager.html", null ]
     ] ],
-    [ "MCN.State< AttackActor >", "class_m_c_n_1_1_state.html", [
+    [ "FZ.State< AttackActor >", "class_f_z_1_1_state.html", [
       [ "AttackActor.AttackActState", "class_attack_actor_1_1_attack_act_state.html", [
         [ "AttackActor.AttackActState_Attack", "class_attack_actor_1_1_attack_act_state___attack.html", null ],
         [ "AttackActor.AttackActState_Done", "class_attack_actor_1_1_attack_act_state___done.html", null ],
         [ "AttackActor.AttackActState_Normal", "class_attack_actor_1_1_attack_act_state___normal.html", null ]
       ] ]
     ] ],
-    [ "MCN.State< MoveActor >", "class_m_c_n_1_1_state.html", [
+    [ "FZ.State< MoveActor >", "class_f_z_1_1_state.html", [
       [ "MoveActor.MoveActState", "class_move_actor_1_1_move_act_state.html", [
         [ "MoveActor.MoveActState_Done", "class_move_actor_1_1_move_act_state___done.html", null ],
         [ "MoveActor.MoveActState_Move", "class_move_actor_1_1_move_act_state___move.html", null ],
         [ "MoveActor.MoveActState_Normal", "class_move_actor_1_1_move_act_state___normal.html", null ]
       ] ]
     ] ],
-    [ "MCN.State< Tile >", "class_m_c_n_1_1_state.html", [
+    [ "FZ.State< Tile >", "class_f_z_1_1_state.html", [
       [ "Tile.TileState", "class_tile_1_1_tile_state.html", [
         [ "Tile.TileState_Active", "class_tile_1_1_tile_state___active.html", null ],
         [ "Tile.TileState_Deactive", "class_tile_1_1_tile_state___deactive.html", null ],
         [ "Tile.TileState_Normal", "class_tile_1_1_tile_state___normal.html", null ]
       ] ]
     ] ],
-    [ "MCN.StateMachine< T >", "class_m_c_n_1_1_state_machine.html", null ],
-    [ "Status", "struct_status.html", null ],
-    [ "UnitData", "class_unit_data.html", null ],
-    [ "UnitDatas", "class_unit_datas.html", null ]
+    [ "FZ.StateMachine< T >", "class_f_z_1_1_state_machine.html", null ],
+    [ "Status", "struct_status.html", null ]
 ];

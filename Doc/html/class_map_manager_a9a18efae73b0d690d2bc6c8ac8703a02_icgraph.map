@@ -1,6 +1,6 @@
 <map id="MapManager.IsExistMap" name="MapManager.IsExistMap">
 <area shape="rect" id="node2" href="$class_map_manager.html#ae457099efdd1a804add3b851b2bc7691" title="MapManager.GetTile" alt="" coords="220,5,363,32"/>
-<area shape="rect" id="node3" href="$class_map_manager.html#ab8cbf46e369a9c59ff183a1b6c3b20bb" title="MapManager.AttachObject" alt="" coords="411,5,588,32"/>
-<area shape="rect" id="node4" href="$class_map_manager.html#a4213ccbaa1a81d0a47884de50a28de32" title="MapManager.PlaceObjacts" alt="" coords="636,5,815,32"/>
-<area shape="rect" id="node5" href="$class_map_manager.html#ad633984007048c7d63eab44aaeb0c32d" title="MapManager.Awake" alt="" coords="863,5,1003,32"/>
+<area shape="rect" id="node3" href="$class_map_manager.html#af1766fb2d9800aaea322edede0a8ebf6" title="MapManager.AttachObject" alt="" coords="411,5,588,32"/>
+<area shape="rect" id="node4" href="$class_map_manager.html#a0b4f29a9504f7004c7b562fa49ba84cd" title="MapManager.PlaceUnits" alt="" coords="636,5,800,32"/>
+<area shape="rect" id="node5" href="$class_map_manager.html#ad633984007048c7d63eab44aaeb0c32d" title="MapManager.Awake" alt="" coords="848,5,988,32"/>
 </map>

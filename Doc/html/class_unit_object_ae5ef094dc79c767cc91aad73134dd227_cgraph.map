@@ -1,0 +1,6 @@
+<map id="UnitObject.Create" name="UnitObject.Create">
+<area shape="rect" id="node2" href="$class_unit_object.html#acc70df752878272e4f9d0f0dc1f68f84" title="UnitObject.Initialize" alt="" coords="179,31,313,57"/>
+<area shape="rect" id="node3" href="$class_unit_object.html#a210d5044920f051fe347d0c5137aaae8" title="UnitObject.AddActor" alt="" coords="393,5,535,32"/>
+<area shape="rect" id="node5" href="$class_unit_object.html#afc26392bbc6cfaa93cc84c182a62a5d7" title="UnitObject.DisplayDebugStatus" alt="" coords="361,56,567,83"/>
+<area shape="rect" id="node4" href="$class_unit_actor_data_list.html#a6786cacdbff3671edcb628c86cc5eb95" title="UnitActorDataList.GetActorList" alt="" coords="615,5,816,32"/>
+</map>

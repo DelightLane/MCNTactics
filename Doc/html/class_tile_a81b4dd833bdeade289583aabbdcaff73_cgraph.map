@@ -1,5 +1,5 @@
 <map id="Tile.GetChainActiveTileCost" name="Tile.GetChainActiveTileCost">
 <area shape="rect" id="node2" href="$class_tile.html#a38b9f5c215f16448118e83e0d10aed05" title="Tile.GetClosedTiles" alt="" coords="240,5,375,32"/>
-<area shape="rect" id="node4" href="$class_tile.html#a02150b69b975e8e9de1c3e10070a8dda" title="Tile.GetAttachObject" alt="" coords="236,56,379,83"/>
+<area shape="rect" id="node4" href="$class_tile.html#a955e550fb4df0be4245223e9520c9559" title="Tile.GetAttachObject" alt="" coords="236,56,379,83"/>
 <area shape="rect" id="node3" href="$class_tile.html#a838aaa6a94321629d04e944ed3bf8b9f" title="Tile.GetClosedTile" alt="" coords="427,5,553,32"/>
 </map>

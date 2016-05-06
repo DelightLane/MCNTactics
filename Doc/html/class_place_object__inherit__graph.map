@@ -1,0 +1,5 @@
+<map id="PlaceObject" name="PlaceObject">
+<area shape="rect" id="node5" href="$class_action_object.html" title="{ActionObject\n|&#45; _actorMachine\l|+ Initialize()\l+ AddActor()\l+ AddActor()\l+ EnqueueActor()\l+ DequeueActor()\l+ Interactive()\l+ OnTouchEvent()\l}" alt="" coords="71,513,197,679"/>
+<area shape="rect" id="node2" href="$class_tactics_object.html" title="{TacticsObject\n||+ Interactive()\l+ OnTouchEvent()\l}" alt="" coords="5,131,132,223"/>
+<area shape="rect" id="node6" href="$class_unit_object.html" title="{UnitObject\n|+ Team\l+ No\l+ UnitName\l+ Hp\l+ Sp\l+ Atk\l+ Def\l+ MaxHp\l+ MaxSp\l+ CombatState\l&#45; _impl\l|+ Initialize()\l+ Damaged()\l+ AddStatus()\l+ Create()\l&#45; AddActor()\l&#45; DisplayDebugStatus()\l}" alt="" coords="56,727,212,1024"/>
+</map>

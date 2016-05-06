@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['actor',['actor',['../class_unit_data.html#ad1e372fd4cb1548a947582f993eab2b7',1,'UnitData']]],
-  ['atk',['atk',['../struct_status.html#aeaf2f82dd6fbce2adf2219b7a6b8227f',1,'Status']]]
+  ['actor',['actor',['../class_unit_actor_data.html#a9208c26866ced88e2f5b6cd71ff8c36d',1,'UnitActorData']]],
+  ['atk',['Atk',['../class_unit_data.html#a28383a219f3d935026e359f833ba1770',1,'UnitData.Atk()'],['../struct_status.html#a60abcd71f2c5226ae8466b01b1fa56e6',1,'Status.Atk()']]]
 ];

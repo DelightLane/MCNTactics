@@ -1,5 +1,5 @@
 <map id="Tile.Dispose" name="Tile.Dispose">
-<area shape="rect" id="node2" href="$class_placeable_object.html#a8bd49b7db556556502a0518fc833be48" title="PlaceableObject.Dispose" alt="" coords="147,5,315,32"/>
-<area shape="rect" id="node3" href="$class_m_c_n_1_1_state.html#a6c53b2eda47e718ff469fd76a95cf02a" title="MCN.State.Dispose" alt="" coords="162,56,299,83"/>
-<area shape="rect" id="node4" href="$class_m_c_n_1_1_state.html#a32af22a6a0a979d3b3a80225426aa839" title="MCN.State.Destroy" alt="" coords="163,107,298,133"/>
+<area shape="rect" id="node2" href="$class_place_object.html#aeac9db9685cc3134a90b6a2578046933" title="PlaceObject.Dispose" alt="" coords="147,5,291,32"/>
+<area shape="rect" id="node3" href="$class_f_z_1_1_state.html#a598887d3fbb412fada132dc1c079b25b" title="FZ.State.Dispose" alt="" coords="157,56,280,83"/>
+<area shape="rect" id="node4" href="$class_f_z_1_1_state.html#aa85fdf4a5495d6d5d3ed4aeda3497c8a" title="FZ.State.Destroy" alt="" coords="158,107,279,133"/>
 </map>

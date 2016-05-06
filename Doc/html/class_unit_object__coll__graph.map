@@ -1,0 +1,11 @@
+<map id="UnitObject" name="UnitObject">
+<area shape="rect" id="node2" href="$class_action_object.html" title="{ActionObject\n||+ Initialize()\l+ AddActor()\l+ AddActor()\l+ EnqueueActor()\l+ DequeueActor()\l+ Interactive()\l+ OnTouchEvent()\l}" alt="" coords="546,626,673,791"/>
+<area shape="rect" id="node3" href="$class_place_object.html" title="{PlaceObject\n||+ Initialize()\l+ Attach()\l+ Detach()\l+ GetPlacedTile()\l+ Dispose()\l+ IsSelected()\l+ Select()\l+ Deselect()\l&#45; Place()\l}" alt="" coords="376,288,499,483"/>
+<area shape="rect" id="node7" href="$class_tile.html" title="{Tile\n|+ TILE_SIZE\l&#45; _position\l|+ Dispose()\l+ SetPosition()\l+ GetAttachObject()\l+ AttachObject()\l+ DetachObject()\l+ GetClosedTiles()\l+ GetClosedTile()\l+ ShowChainActiveTile()\l+ ShowChainActiveTile()\l+ ChangeState()\l+ OnNext()\l+ CreateTile()\l&#45; Tile()\l&#45; Awake()\l&#45; StorageStates()\l&#45; GetChainActiveTileCost()\l&#45; GetCurrentState()\l}" alt="" coords="194,545,369,872"/>
+<area shape="rect" id="node4" href="$class_tactics_object.html" title="{TacticsObject\n||+ Interactive()\l+ OnTouchEvent()\l}" alt="" coords="23,139,150,231"/>
+<area shape="rect" id="node8" href="$interface_f_z_1_1_i_observer.html" title="{FZ::IObserver\&lt; eTouchEvent \&gt;\n||+ OnNext()\l}" alt="" coords="40,347,237,424"/>
+<area shape="rect" id="node10" href="$interface_f_z_1_1_i_actor_queue.html" title="{FZ::IActorQueue\n||+ AddActor()\l+ EnqueueActor()\l+ DequeueActor()\l}" alt="" coords="547,332,671,439"/>
+<area shape="rect" id="node11" href="$class_f_z_1_1_actor_machine.html" title="{FZ.ActorMachine\n|&#45; _actorQueue\l&#45; _actors\l|+ AddActor()\l+ EnqueueActor()\l+ GetActiveActor()\l+ DequeueActor()\l}" alt="" coords="695,317,825,453"/>
+<area shape="rect" id="node12" href="$interface_f_z_1_1_i_actor_queue.html" title="{IActorQueue\n||+ AddActor()\l+ EnqueueActor()\l+ DequeueActor()\l}" alt="" coords="698,132,822,239"/>
+<area shape="rect" id="node13" href="$interface_i_combat.html" title="{ICombat\n|+ Hp\l+ Sp\l+ Atk\l+ Def\l+ MaxHp\l+ MaxSp\l+ CombatState\l|+ Damaged()\l}" alt="" coords="697,626,807,791"/>
+</map>

@@ -1,6 +1,6 @@
 <map id="MapCreator.RemoveTilemap" name="MapCreator.RemoveTilemap">
 <area shape="rect" id="node2" href="$class_tile.html#a6e8a801e95a29156cbf32024e45c6596" title="Tile.Dispose" alt="" coords="237,56,331,83"/>
-<area shape="rect" id="node3" href="$class_placeable_object.html#a8bd49b7db556556502a0518fc833be48" title="PlaceableObject.Dispose" alt="" coords="379,5,547,32"/>
-<area shape="rect" id="node4" href="$class_m_c_n_1_1_state.html#a6c53b2eda47e718ff469fd76a95cf02a" title="MCN.State.Dispose" alt="" coords="394,56,531,83"/>
-<area shape="rect" id="node5" href="$class_m_c_n_1_1_state.html#a32af22a6a0a979d3b3a80225426aa839" title="MCN.State.Destroy" alt="" coords="395,107,530,133"/>
+<area shape="rect" id="node3" href="$class_place_object.html#aeac9db9685cc3134a90b6a2578046933" title="PlaceObject.Dispose" alt="" coords="379,5,523,32"/>
+<area shape="rect" id="node4" href="$class_f_z_1_1_state.html#a598887d3fbb412fada132dc1c079b25b" title="FZ.State.Dispose" alt="" coords="389,56,512,83"/>
+<area shape="rect" id="node5" href="$class_f_z_1_1_state.html#aa85fdf4a5495d6d5d3ed4aeda3497c8a" title="FZ.State.Destroy" alt="" coords="390,107,511,133"/>
 </map>

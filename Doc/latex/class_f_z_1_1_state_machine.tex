@@ -1,0 +1,157 @@
+\hypertarget{class_f_z_1_1_state_machine}{}\section{F\+Z.\+State\+Machine$<$ T $>$ 클래스 템플릿 참조}
+\label{class_f_z_1_1_state_machine}\index{F\+Z.\+State\+Machine$<$ T $>$@{F\+Z.\+State\+Machine$<$ T $>$}}
+
+
+상태 머신 클래스  
+
+
+
+
+F\+Z.\+State\+Machine$<$ T $>$에 대한 협력 다이어그램\+:
+% FIG 0
+\subsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_f_z_1_1_state_machine_aeaffed122a66905daa001170cde557b2}{Storage\+State} (string state\+Name, T state)
+\item 
+T \hyperlink{class_f_z_1_1_state_machine_ad85bc1c80792ce8c766fab8ec4c9eac3}{Get\+Current\+State} ()
+\item 
+void \hyperlink{class_f_z_1_1_state_machine_ab275998adcf7e25994116544f56c829d}{Change\+State} (string state\+Name)
+\item 
+void \hyperlink{class_f_z_1_1_state_machine_aceccdcc753e18d4886b319c6abcb78b3}{Dispose} ()
+\end{DoxyCompactItemize}
+\subsection*{Private 속성}
+\begin{DoxyCompactItemize}
+\item 
+Dictionary$<$ string, T $>$ \hyperlink{class_f_z_1_1_state_machine_a9b898e40ec3b434b5a60ef1e4d51cc80}{\+\_\+states} = new Dictionary$<$string, T$>$()
+\item 
+T \hyperlink{class_f_z_1_1_state_machine_a71de6122cd9b9d84048f679b1bb47c9f}{\+\_\+current\+State}
+\end{DoxyCompactItemize}
+
+
+\subsection{상세한 설명}
+상태 머신 클래스 
+
+\hyperlink{class_f_z_1_1_state}{State} 패턴을 조작하기 위한 has a 클래스. \hyperlink{class_f_z_1_1_state}{State} 패턴이 필요한 클래스는 해당 클래스의 인스턴스를 지역 변수로 가진다. \begin{DoxyAuthor}{작성자}
+Delight 
+\end{DoxyAuthor}
+\begin{Desc}
+\item[타입 한정자들]\begin{description}
+\item[{\em T} : {\em \hyperlink{interface_f_z_1_1_i_state}{I\+State}}]\item[{\em T} : {\em I\+Disposable}]\end{description}
+\end{Desc}
+
+
+State.\+cs 파일의 64 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{멤버 함수 문서화}
+\index{F\+Z\+::\+State\+Machine@{F\+Z\+::\+State\+Machine}!Change\+State@{Change\+State}}
+\index{Change\+State@{Change\+State}!F\+Z\+::\+State\+Machine@{F\+Z\+::\+State\+Machine}}
+\subsubsection[{\texorpdfstring{Change\+State(string state\+Name)}{ChangeState(string stateName)}}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf F\+Z.\+State\+Machine}$<$ T $>$.Change\+State (
+\begin{DoxyParamCaption}
+\item[{string}]{state\+Name}
+\end{DoxyParamCaption}
+)}\hypertarget{class_f_z_1_1_state_machine_ab275998adcf7e25994116544f56c829d}{}\label{class_f_z_1_1_state_machine_ab275998adcf7e25994116544f56c829d}
+
+
+State.\+cs 파일의 79 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+80         \{
+81             \textcolor{keywordflow}{if}(\hyperlink{class_f_z_1_1_state_machine_a71de6122cd9b9d84048f679b1bb47c9f}{\_currentState} != null)
+82             \{
+83                 \hyperlink{class_f_z_1_1_state_machine_a71de6122cd9b9d84048f679b1bb47c9f}{\_currentState}.Finish();
+84             \}
+85 
+86             \hyperlink{class_f_z_1_1_state_machine_a71de6122cd9b9d84048f679b1bb47c9f}{\_currentState} = \hyperlink{class_f_z_1_1_state_machine_a9b898e40ec3b434b5a60ef1e4d51cc80}{\_states}[stateName];
+87 
+88             \textcolor{keywordflow}{if}(\hyperlink{class_f_z_1_1_state_machine_a71de6122cd9b9d84048f679b1bb47c9f}{\_currentState} != null)
+89             \{
+90                 \hyperlink{class_f_z_1_1_state_machine_a71de6122cd9b9d84048f679b1bb47c9f}{\_currentState}.Run();
+91             \}
+92         \}
+\end{DoxyCode}
+\index{F\+Z\+::\+State\+Machine@{F\+Z\+::\+State\+Machine}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!F\+Z\+::\+State\+Machine@{F\+Z\+::\+State\+Machine}}
+\subsubsection[{\texorpdfstring{Dispose()}{Dispose()}}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf F\+Z.\+State\+Machine}$<$ T $>$.Dispose (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_f_z_1_1_state_machine_aceccdcc753e18d4886b319c6abcb78b3}{}\label{class_f_z_1_1_state_machine_aceccdcc753e18d4886b319c6abcb78b3}
+
+
+State.\+cs 파일의 94 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+95         \{
+96             \textcolor{keywordflow}{foreach}(var state \textcolor{keywordflow}{in} \hyperlink{class_f_z_1_1_state_machine_a9b898e40ec3b434b5a60ef1e4d51cc80}{\_states})
+97             \{
+98                 \textcolor{keywordflow}{if}(state.Value != null)
+99                 \{
+100                     state.Value.Dispose();
+101                 \}
+102             \}
+103 
+104             \_states.Clear();
+105         \}
+\end{DoxyCode}
+\index{F\+Z\+::\+State\+Machine@{F\+Z\+::\+State\+Machine}!Get\+Current\+State@{Get\+Current\+State}}
+\index{Get\+Current\+State@{Get\+Current\+State}!F\+Z\+::\+State\+Machine@{F\+Z\+::\+State\+Machine}}
+\subsubsection[{\texorpdfstring{Get\+Current\+State()}{GetCurrentState()}}]{\setlength{\rightskip}{0pt plus 5cm}T {\bf F\+Z.\+State\+Machine}$<$ T $>$.Get\+Current\+State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_f_z_1_1_state_machine_ad85bc1c80792ce8c766fab8ec4c9eac3}{}\label{class_f_z_1_1_state_machine_ad85bc1c80792ce8c766fab8ec4c9eac3}
+
+
+State.\+cs 파일의 74 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+75         \{
+76             \textcolor{keywordflow}{return} \hyperlink{class_f_z_1_1_state_machine_a71de6122cd9b9d84048f679b1bb47c9f}{\_currentState};
+77         \}
+\end{DoxyCode}
+\index{F\+Z\+::\+State\+Machine@{F\+Z\+::\+State\+Machine}!Storage\+State@{Storage\+State}}
+\index{Storage\+State@{Storage\+State}!F\+Z\+::\+State\+Machine@{F\+Z\+::\+State\+Machine}}
+\subsubsection[{\texorpdfstring{Storage\+State(string state\+Name, T state)}{StorageState(string stateName, T state)}}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf F\+Z.\+State\+Machine}$<$ T $>$.Storage\+State (
+\begin{DoxyParamCaption}
+\item[{string}]{state\+Name, }
+\item[{T}]{state}
+\end{DoxyParamCaption}
+)}\hypertarget{class_f_z_1_1_state_machine_aeaffed122a66905daa001170cde557b2}{}\label{class_f_z_1_1_state_machine_aeaffed122a66905daa001170cde557b2}
+
+
+State.\+cs 파일의 69 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+70         \{
+71             \hyperlink{class_f_z_1_1_state_machine_a9b898e40ec3b434b5a60ef1e4d51cc80}{\_states}.Add(stateName, state);
+72         \}
+\end{DoxyCode}
+
+
+\subsection{멤버 데이타 문서화}
+\index{F\+Z\+::\+State\+Machine@{F\+Z\+::\+State\+Machine}!\+\_\+current\+State@{\+\_\+current\+State}}
+\index{\+\_\+current\+State@{\+\_\+current\+State}!F\+Z\+::\+State\+Machine@{F\+Z\+::\+State\+Machine}}
+\subsubsection[{\texorpdfstring{\+\_\+current\+State}{_currentState}}]{\setlength{\rightskip}{0pt plus 5cm}T {\bf F\+Z.\+State\+Machine}$<$ T $>$.\+\_\+current\+State\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_f_z_1_1_state_machine_a71de6122cd9b9d84048f679b1bb47c9f}{}\label{class_f_z_1_1_state_machine_a71de6122cd9b9d84048f679b1bb47c9f}
+
+
+State.\+cs 파일의 67 번째 라인에서 정의되었습니다.
+
+\index{F\+Z\+::\+State\+Machine@{F\+Z\+::\+State\+Machine}!\+\_\+states@{\+\_\+states}}
+\index{\+\_\+states@{\+\_\+states}!F\+Z\+::\+State\+Machine@{F\+Z\+::\+State\+Machine}}
+\subsubsection[{\texorpdfstring{\+\_\+states}{_states}}]{\setlength{\rightskip}{0pt plus 5cm}Dictionary$<$string, T$>$ {\bf F\+Z.\+State\+Machine}$<$ T $>$.\+\_\+states = new Dictionary$<$string, T$>$()\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_f_z_1_1_state_machine_a9b898e40ec3b434b5a60ef1e4d51cc80}{}\label{class_f_z_1_1_state_machine_a9b898e40ec3b434b5a60ef1e4d51cc80}
+
+
+State.\+cs 파일의 66 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Git\+Hub/\+M\+C\+N\+Tactics/\+Assets/\+Scripts/\+Core/\hyperlink{_state_8cs}{State.\+cs}\end{DoxyCompactItemize}

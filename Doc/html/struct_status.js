@@ -1,7 +1,7 @@
 var struct_status =
 [
-    [ "atk", "struct_status.html#aeaf2f82dd6fbce2adf2219b7a6b8227f", null ],
-    [ "def", "struct_status.html#a95a2f2a23ef79f2e0ced04621c4593c9", null ],
-    [ "hp", "struct_status.html#a6912591952ae3178114200d6383919df", null ],
-    [ "sp", "struct_status.html#a685aa4b12faa74a48a3b57f69e94084c", null ]
+    [ "Atk", "struct_status.html#a60abcd71f2c5226ae8466b01b1fa56e6", null ],
+    [ "Def", "struct_status.html#a57d7e201d642441114f0426e449f6b45", null ],
+    [ "Hp", "struct_status.html#a81b0c200ac8f8285e57cd4cc7bfd1fbf", null ],
+    [ "Sp", "struct_status.html#a71c109a2932f2f43a780485f6bf1209d", null ]
 ];

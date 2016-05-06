@@ -1,0 +1,4 @@
+<map id="UnitObject.Damaged" name="UnitObject.Damaged">
+<area shape="rect" id="node2" href="$interface_i_combat.html#ab8df637ef6ddd1c4a0689cafba32f3b9" title="ICombat.Damaged" alt="" coords="234,5,363,32"/>
+<area shape="rect" id="node3" href="$class_unit_object.html#afc26392bbc6cfaa93cc84c182a62a5d7" title="UnitObject.DisplayDebugStatus" alt="" coords="196,56,401,83"/>
+</map>

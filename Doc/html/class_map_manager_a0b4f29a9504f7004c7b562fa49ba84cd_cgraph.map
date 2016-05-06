@@ -1,0 +1,11 @@
+<map id="MapManager.PlaceUnits" name="MapManager.PlaceUnits">
+<area shape="rect" id="node2" href="$class_map_manager.html#a504d7a68ace64557bc3c3254a8b1cddc" title="MapManager.IsInMapSize" alt="" coords="650,107,822,133"/>
+<area shape="rect" id="node3" href="$class_unit_object.html#ae5ef094dc79c767cc91aad73134dd227" title="UnitObject.Create" alt="" coords="243,56,369,83"/>
+<area shape="rect" id="node8" href="$class_map_manager.html#af1766fb2d9800aaea322edede0a8ebf6" title="MapManager.AttachObject" alt="" coords="217,157,395,184"/>
+<area shape="rect" id="node4" href="$class_unit_object.html#acc70df752878272e4f9d0f0dc1f68f84" title="UnitObject.Initialize" alt="" coords="447,56,581,83"/>
+<area shape="rect" id="node5" href="$class_unit_object.html#a210d5044920f051fe347d0c5137aaae8" title="UnitObject.AddActor" alt="" coords="665,56,807,83"/>
+<area shape="rect" id="node7" href="$class_unit_object.html#afc26392bbc6cfaa93cc84c182a62a5d7" title="UnitObject.DisplayDebugStatus" alt="" coords="633,5,839,32"/>
+<area shape="rect" id="node6" href="$class_unit_actor_data_list.html#a6786cacdbff3671edcb628c86cc5eb95" title="UnitActorDataList.GetActorList" alt="" coords="887,56,1088,83"/>
+<area shape="rect" id="node9" href="$class_map_manager.html#ae457099efdd1a804add3b851b2bc7691" title="MapManager.GetTile" alt="" coords="443,157,585,184"/>
+<area shape="rect" id="node10" href="$class_map_manager.html#a9a18efae73b0d690d2bc6c8ac8703a02" title="MapManager.IsExistMap" alt="" coords="653,157,819,184"/>
+</map>

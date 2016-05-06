@@ -1,4 +1,4 @@
 var namespaces =
 [
-    [ "MCN", "namespace_m_c_n.html", null ]
+    [ "FZ", "namespace_f_z.html", null ]
 ];
