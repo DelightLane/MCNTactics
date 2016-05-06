@@ -44,7 +44,7 @@ public class MapManager : MCN.MonoSingletone<MapManager> {
 
     void Awake()
     {
-        // TODO : 이 곳은 임시 위치. 모든 Awake보다 먼저 불리는 곳에서 데이터를 불러야 할텐데 방법이 없을까?
+        // TODO : 이 곳은 임시 위치. 추후 로딩 씬에서 부를 수 있게 수정.
         DataManager.Instance.LoadDatas();
 
         if (_mapCreator == null)
