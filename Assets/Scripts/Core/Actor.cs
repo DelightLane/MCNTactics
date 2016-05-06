@@ -125,6 +125,38 @@ namespace MCN
         public virtual bool OnTouchEvent(eTouchEvent touch) { return true; }
     }
 
+    public abstract class ActObjActor : Actor
+    {
+        protected new ActionObject ActTarget
+        {
+            get
+            {
+                if(base.ActTarget is ActionObject)
+                {
+                    return base.ActTarget as ActionObject;
+                }
+
+                throw new UnityException("It is not ActionObject.");
+            }
+        }
+    }
+
+    public abstract class UnitObjActor : Actor
+    {
+        protected new UnitObject ActTarget
+        {
+            get
+            {
+                if (base.ActTarget is UnitObject)
+                {
+                    return base.ActTarget as UnitObject;
+                }
+
+                throw new UnityException("It is not UnitObject.");
+            }
+        }
+    }
+
     public class ActorMachine : IActorQueue
     {
         // Actor의 큐. 만약 큐에 Actor가 있다면 그 Actor는 사용될 준비가 된 것이다.

@@ -9,7 +9,7 @@ public enum eAttackActType
     DONE
 }
 
-public class AttackActor : MCN.Actor
+public class AttackActor : MCN.UnitObjActor
 {
     #region weight
     public int Range
@@ -24,13 +24,8 @@ public class AttackActor : MCN.Actor
     {
         get
         {
-            int atk = 0;
-            var unitObj = ActTarget as UnitObject;
-            if(unitObj != null)
-            {
-                atk = unitObj.Atk;
-            }
-
+            int atk = ActTarget.Atk;
+            
             return atk + GetWeight("damage");
         }
     }
@@ -64,14 +59,9 @@ public class AttackActor : MCN.Actor
         {
             if (Target != null)
             {
-                var placeable = Target.ActTarget as PlaceObject;
+                Target.ActTarget.Deselect();
 
-                if (placeable != null)
-                {
-                    placeable.Deselect();
-
-                    MapManager.Instance.ChangeAllTileState(eTileType.NORMAL);
-                }
+                MapManager.Instance.ChangeAllTileState(eTileType.NORMAL);
             }
         }
     }
@@ -120,14 +110,9 @@ public class AttackActor : MCN.Actor
         {
             if (Target != null)
             {
-                var placeable = Target.ActTarget as PlaceObject;
-
-                if (placeable != null)
+                if (Target.ActTarget.IsSelected())
                 {
-                    if (placeable.IsSelected())
-                    {
-                        Target.ChangeState(eAttackActType.NORMAL);
-                    }
+                    Target.ChangeState(eAttackActType.NORMAL);
                 }
             }
 
@@ -138,26 +123,21 @@ public class AttackActor : MCN.Actor
         {
             if (Target != null)
             {
-                var unitTarget = Target.ActTarget as UnitObject;
+                Target.ActTarget.Select();
 
-                if (unitTarget != null)
+                if (Target.ActTarget.GetPlacedTile() != null)
                 {
-                    unitTarget.Select();
+                    MapManager.Instance.ChangeAllTileState(eTileType.DEACTIVE);
 
-                    if (unitTarget.GetPlacedTile() != null)
+                    var placedTile = Target.ActTarget.GetPlacedTile();
+
+                    Func<Tile, bool> tileDeactiveCond = (Tile tile) =>
                     {
-                        MapManager.Instance.ChangeAllTileState(eTileType.DEACTIVE);
+                        return (tile.GetAttachObject() != null && !(tile.GetAttachObject() is UnitObject)) ||
+                               (tile.GetAttachObject() is UnitObject && (tile.GetAttachObject() as UnitObject).Team == Target.ActTarget.Team);
+                    };
 
-                        var placedTile = unitTarget.GetPlacedTile();
-
-                        Func<Tile, bool> tileDeactiveCond = (Tile tile) =>
-                        {
-                            return (tile.GetAttachObject() != null && !(tile.GetAttachObject() is UnitObject)) ||
-                                   (tile.GetAttachObject() is UnitObject && (tile.GetAttachObject() as UnitObject).Team == unitTarget.Team);
-                        };
-
-                        placedTile.ShowChainActiveTile(Target.Range, tileDeactiveCond);
-                    }
+                    placedTile.ShowChainActiveTile(Target.Range, tileDeactiveCond);
                 }
             }
         }
@@ -194,9 +174,12 @@ public class AttackActor : MCN.Actor
 
         public override void Run()
         {
-            AllTileToNormal();
+            if (Target != null)
+            {
+                AllTileToNormal();
 
-            Target.FinishActor();
+                Target.FinishActor();
+            }
         }
     }
     #endregion

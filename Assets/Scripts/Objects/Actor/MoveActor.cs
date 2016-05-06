@@ -9,7 +9,7 @@ public enum eMoveActType
     DONE
 }
 
-public class MoveActor : MCN.Actor
+public class MoveActor : MCN.ActObjActor
 {
     #region weight
     public int Range
@@ -49,14 +49,9 @@ public class MoveActor : MCN.Actor
         {
             if (Target != null)
             {
-                var placeable = Target.ActTarget as PlaceObject;
+                Target.ActTarget.Deselect();
 
-                if (placeable != null)
-                {
-                    placeable.Deselect();
-
-                    MapManager.Instance.ChangeAllTileState(eTileType.NORMAL);
-                }
+                MapManager.Instance.ChangeAllTileState(eTileType.NORMAL);
             }
         }
     }
@@ -105,14 +100,9 @@ public class MoveActor : MCN.Actor
         {
             if (Target != null)
             {
-                var placeable = Target.ActTarget as PlaceObject;
-
-                if (placeable != null)
+                if (Target.ActTarget.IsSelected())
                 {
-                    if (placeable.IsSelected())
-                    {
-                        Target.ChangeState(eMoveActType.NORMAL);
-                    }
+                    Target.ChangeState(eMoveActType.NORMAL);
                 }
             }
 
@@ -123,20 +113,15 @@ public class MoveActor : MCN.Actor
         {
             if (Target != null)
             {
-                var placeable = Target.ActTarget as PlaceObject;
+                Target.ActTarget.Select();
 
-                if (placeable != null)
+                if (Target.ActTarget.GetPlacedTile() != null)
                 {
-                    placeable.Select();
+                    MapManager.Instance.ChangeAllTileState(eTileType.DEACTIVE);
 
-                    if (placeable.GetPlacedTile() != null)
-                    {
-                        MapManager.Instance.ChangeAllTileState(eTileType.DEACTIVE);
+                    var placedTile = Target.ActTarget.GetPlacedTile();
 
-                        var placedTile = placeable.GetPlacedTile();
-
-                        placedTile.ShowChainActiveTile(Target.Range, (Tile tile)=> { return tile.GetAttachObject() != null; });
-                    }
+                    placedTile.ShowChainActiveTile(Target.Range, (Tile tile) => { return tile.GetAttachObject() != null; });
                 }
             }
         }
@@ -145,18 +130,13 @@ public class MoveActor : MCN.Actor
         {
             if (Target != null)
             {
-                var placeable = Target.ActTarget as PlaceObject;
+                bool isSuccess = activeTile.AttachObject(Target.ActTarget);
 
-                if (placeable != null)
+                if (isSuccess)
                 {
-                    bool isSuccess = activeTile.AttachObject(placeable);
-
-                    if (isSuccess)
+                    if (Target != null)
                     {
-                        if (Target != null)
-                        {
-                            Target.ChangeState(eMoveActType.DONE);
-                        }
+                        Target.ChangeState(eMoveActType.DONE);
                     }
                 }
             }
@@ -179,9 +159,12 @@ public class MoveActor : MCN.Actor
 
         public override void Run()
         {
-            AllTileToNormal();
+            if (Target != null)
+            {
+                AllTileToNormal();
 
-            Target.FinishActor();
+                Target.FinishActor();
+            }
         }
     }
     #endregion
