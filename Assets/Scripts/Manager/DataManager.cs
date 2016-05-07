@@ -8,7 +8,8 @@ public class DataManager : FZ.Singletone<DataManager>
     public enum DataType
     {
         UNIT,
-        ATTACH_ACTOR
+        ATTACH_ACTOR,
+        MAP
     }
 
     private DataManager() { }
@@ -21,6 +22,7 @@ public class DataManager : FZ.Singletone<DataManager>
         // 리플랙션을 사용해서 데이터들을 로드하게 하는 건 어떨지?
         LoadData(new UnitDataFactory());
         LoadData(new UnitActorDataFactory());
+        LoadData(new MapDataFactory(1)); // TODO : 맵 번호를 런타임에 변경할 수 있게 수정 필요
     }
 
     public void LoadData(DataFactory factory)
@@ -115,6 +117,31 @@ public class UnitActorDataFactory : DataFactory
     public override DataObject LoadDatas()
     {
         return new JsonParser<UnitActorDataList>().LoadDatas(this);
+    }
+}
+
+public class MapDataFactory : DataFactory
+{
+    private int _mapNo;
+
+    public MapDataFactory(int mapNo)
+    {
+        _mapNo = mapNo;
+    }
+
+    protected override string GetName()
+    {
+        return string.Format("map{0}", _mapNo);
+    }
+
+    public override DataManager.DataType GetDataType()
+    {
+        return DataManager.DataType.MAP;
+    }
+
+    public override DataObject LoadDatas()
+    {
+        return new JsonParser<MapData>().LoadDatas(this);
     }
 }
 

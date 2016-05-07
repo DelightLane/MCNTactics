@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using System.Linq;
 
 public enum eCombatState
 {
@@ -9,6 +10,7 @@ public enum eCombatState
 
 public enum eCombatTeam
 {
+    WHITE,
     BLUE,
     RED
 }
@@ -47,24 +49,45 @@ public class UnitObject : ActionObject, ICombat
         {
             if (unit.name == unitName)
             {
-                var targetObj = GameObject.Instantiate(Resources.Load(string.Format("Prefabs/{0}", unit.prefabName), typeof(GameObject))) as GameObject;
-                if (targetObj != null)
-                {
-                    try
-                    {
-                        var unitObj = targetObj.AddComponent<UnitObject>();
+                return Create(unit, team);
+            }
+        }
 
-                        unitObj.Initialize(unit);
+        return null;
+    }
 
-                        unitObj.Team = team;
+    public static UnitObject Create(int unitNo, eCombatTeam team)
+    {
+        var unitData = DataManager.Instance.GetData(DataManager.DataType.UNIT) as UnitDataList;
 
-                        return unitObj;
-                    }
-                    catch(Exception e)
-                    {
-                        throw new UnityException(e.Message);
-                    }
-                }
+        var unit = unitData.unit.Find(u => u.no == unitNo);
+
+        if (unit != null)
+        {
+            return Create(unit, team);
+        }
+
+        return null;
+    }
+
+    private static UnitObject Create(UnitData unit, eCombatTeam team)
+    {
+        var targetObj = GameObject.Instantiate(Resources.Load(string.Format("Prefabs/{0}", unit.prefabName), typeof(GameObject))) as GameObject;
+        if (targetObj != null)
+        {
+            try
+            {
+                var unitObj = targetObj.AddComponent<UnitObject>();
+
+                unitObj.Initialize(unit);
+
+                unitObj.Team = team;
+
+                return unitObj;
+            }
+            catch (Exception e)
+            {
+                throw new UnityException(e.Message);
             }
         }
 

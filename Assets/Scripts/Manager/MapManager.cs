@@ -3,6 +3,7 @@ using System;
 using System.Reflection;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using FZ;
 
 public class MapManager : FZ.MonoSingletone<MapManager> {
@@ -10,7 +11,7 @@ public class MapManager : FZ.MonoSingletone<MapManager> {
     private Vector2 _mapSize;
 
     [SerializeField]
-    private List<PlaceInfo> _placeObjInfos;
+    private List<PlaceInfo> _objInfos;
 
 #if UNITY_EDITOR
     private class DebugMapManager
@@ -23,7 +24,7 @@ public class MapManager : FZ.MonoSingletone<MapManager> {
             {
                 manager.CreateTilemap();
 
-                manager.PlaceUnits();
+                manager.PlaceObjs(eObjType.UNIT);
 
                 _savedMapSize = manager._mapSize;
             }
@@ -52,10 +53,7 @@ public class MapManager : FZ.MonoSingletone<MapManager> {
             _mapCreator = new MapCreator();
         }
 
-        if (_placeObjInfos == null)
-        {
-            _placeObjInfos = new List<PlaceInfo>();
-        }
+        LoadMapData();
 
 #if UNITY_EDITOR
         _debug = new DebugMapManager();
@@ -63,7 +61,7 @@ public class MapManager : FZ.MonoSingletone<MapManager> {
 #else
         CreateTilemap();
 
-        PlaceUnits();
+        PlaceObjs(eObjType.UNIT);
 #endif
     }
 
@@ -72,6 +70,21 @@ public class MapManager : FZ.MonoSingletone<MapManager> {
 #if UNITY_EDITOR
         _debug.CreateTilemap(this);
 #endif
+    }
+
+    private void LoadMapData()
+    {
+        _objInfos = new List<PlaceInfo>();
+
+        var mapData = DataManager.Instance.GetData(DataManager.DataType.MAP) as MapData;
+
+        _mapSize.x = mapData.x;
+        _mapSize.y = mapData.y;
+        
+        foreach(var obj in mapData.objects)
+        {
+            _objInfos.Add(new PlaceInfo(obj));
+        }
     }
 
     public void CreateTilemap()
@@ -95,13 +108,15 @@ public class MapManager : FZ.MonoSingletone<MapManager> {
         return _mapSize.x > pos.x && _mapSize.y > pos.y;
     }
 
-    public void PlaceUnits()
+    public void PlaceObjs(eObjType type)
     {
-        foreach (var objInfo in _placeObjInfos)
+        var unitList = _objInfos.FindAll(obj => obj.type == type);
+
+        foreach (var objInfo in unitList)
         {
             if (IsInMapSize(objInfo.pos))
             {
-                var unitObj = UnitObject.Create(objInfo.unitName, objInfo.team);
+                var unitObj = UnitObject.Create(objInfo.no, objInfo.team);
                 if (unitObj != null)
                 {
                     this.AttachObject(objInfo.pos, unitObj);

@@ -1,0 +1,17 @@
+﻿{
+	"x": 10,
+	"y": 10,
+	"objects": [{
+		"type": "UNIT",
+		"no": 1,
+	  	"team": "RED",
+		"x": 5,
+		"y": 5
+	}, {
+		"type": "UNIT",
+		"no": 2,
+	  	"team": "BLUE",
+		"x": 1,
+		"y": 1
+	}]
+}
