@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using System;
 
 public enum eTileDirect
@@ -150,10 +151,11 @@ public class Tile : TacticsObject, IDisposable, FZ.IObserver<eTouchEvent>
         var tile = GameObject.CreatePrimitive(PrimitiveType.Cube);
         tile.name = String.Format("{0}_{1}", pos.x, pos.y);
 
-        var material = Resources.Load("Material/Notthing", typeof(Material)) as Material;
+        var material = Resources.Load("Material/Texture", typeof(Material)) as Material;
+        material.SetTexture("_MainTex", Resources.Load("Images/tile0", typeof(Texture)) as Texture);
 
         var renderer = tile.GetComponent<Renderer>();
-        renderer.material = material;
+        renderer.sharedMaterial = material;
 
         tile.transform.localScale = new Vector3(TILE_SIZE, 0.05f, TILE_SIZE);
 

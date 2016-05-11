@@ -22,7 +22,7 @@ public class DataManager : FZ.Singletone<DataManager>
         // 리플랙션을 사용해서 데이터들을 로드하게 하는 건 어떨지?
         LoadData(new UnitDataFactory());
         LoadData(new UnitActorDataFactory());
-        LoadData(new MapDataFactory("test")); // TODO : 맵 번호를 런타임에 변경할 수 있게 수정 필요
+        LoadData(new MapDataFactory("test")); // TODO : 맵 이름을 런타임에 변경할 수 있게 수정 필요
     }
 
     public void LoadData(DataFactory factory)
