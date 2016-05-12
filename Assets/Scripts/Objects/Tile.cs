@@ -146,6 +146,7 @@ public class Tile : TacticsObject, IDisposable, FZ.IObserver<eTouchEvent>
 
     private Tile() { }
 
+    // TODO : 각각 다른 머터리얼을 쓰고 있으며 이것은 드로우콜을 늘린다.(아틀라스 + SCALE / OFFSET 으로 같은 머터리얼을 공유하게 수정할 것)
     public static GameObject CreateTile(Vector2 pos)
     {
         var tile = GameObject.CreatePrimitive(PrimitiveType.Cube);
