@@ -157,10 +157,10 @@ public class AtlasPacker : EditorWindow
             {
                 var info = new AtlasData();
                 info.imageName = _targetTextures[i].name;
-                info.x = rectInfos[i].x;
-                info.y = rectInfos[i].y;
-                info.width = rectInfos[i].width;
-                info.height = rectInfos[i].height;
+                info.offsetX = rectInfos[i].x;
+                info.offsetY = rectInfos[i].y;
+                info.scaleX = rectInfos[i].width;
+                info.scaleY = rectInfos[i].height;
 
                 _rects.Add(info);
             }

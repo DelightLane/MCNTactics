@@ -12,8 +12,8 @@ public class AtlasDataList : DataObject
 public class AtlasData : DataObject
 {
     public string imageName;
-    public float x;
-    public float y;
-    public float width;
-    public float height;
+    public float offsetX;
+    public float offsetY;
+    public float scaleX;
+    public float scaleY;
 }
