@@ -5,6 +5,12 @@ using System.IO;
 
 public class AtlasPacker : EditorWindow
 {
+    private enum eAtlasType
+    {
+        PNG,
+        JSON
+    }
+
     private List<Texture2D> _targetTextures = new List<Texture2D>();
     private Texture2D _atlas = null;
 
@@ -27,8 +33,9 @@ public class AtlasPacker : EditorWindow
 
         if(GUILayout.Button("Make Atlas"))
         {
-            PackTexturesToAtlas();
+            var atlasInfo = PackTexturesToAtlas();
             SaveAtlas();
+            SaveJson(atlasInfo);
         }
 
         _atlasName = EditorGUILayout.TextField("Atlas Name: ", _atlasName);
@@ -78,7 +85,10 @@ public class AtlasPacker : EditorWindow
                 {
                     var fileData = File.ReadAllBytes(file);
                     Texture2D tex = new Texture2D(2, 2);
-                    tex.name = file;
+
+                    string name = GetTextureName(file);
+
+                    tex.name = name;
                     tex.LoadImage(fileData);
 
                     _targetTextures.Add(tex);
@@ -89,30 +99,100 @@ public class AtlasPacker : EditorWindow
         AtlasPacker window = (AtlasPacker)EditorWindow.GetWindow(typeof(AtlasPacker));
     }
 
-    private void PackTexturesToAtlas()
+    private string GetTextureName(string filePath)
+    {
+        string[] splitPath = filePath.Split('.', '/', '\\');
+        string name = splitPath[splitPath.Length - 2];
+
+        return name;
+    }
+
+    private Rect[] PackTexturesToAtlas()
     {
         if (_atlasName != string.Empty)
         {
             _atlas = new Texture2D(8192, 8192);
-            var rects = _atlas.PackTextures(_targetTextures.ToArray(), 0, 8192);
-            _atlas.name = GetResultPath();
+            Rect[] rects = _atlas.PackTextures(_targetTextures.ToArray(), 0, 8192);
+
+            _atlas.name = GetTextureName(GetResultPath(eAtlasType.PNG));
 
             AtlasPacker window = (AtlasPacker)EditorWindow.GetWindow(typeof(AtlasPacker));
+
+            return rects;
         }
         else
         {
             EditorUtility.DisplayDialog("Atlas name", "Please input atlas name.", "Ok");
         }
+
+        return null;
     }
 
-    private string GetResultPath()
+    private string GetResultPath(eAtlasType type)
     {
-        return string.Format("{0}/{1}.png", _path, _atlasName);
+        if (type == eAtlasType.PNG)
+        {
+            return string.Format("{0}/{1}.png", _path, _atlasName);
+        }
+        else if(type == eAtlasType.JSON)
+        {
+            return string.Format("{0}/{1}.json", _path, _atlasName);
+        }
+
+        throw new UnityException("eAtlasType is not invailable.");
+    }
+
+    private void SaveJson(Rect[] rectInfos)
+    {
+        if(rectInfos == null)
+        {
+            return;
+        }
+
+        List<AtlasData> _rects = new List<AtlasData>();
+
+        for(int i = 0; i < rectInfos.Length; ++i)
+        {
+            if (_targetTextures[i] != null)
+            {
+                var info = new AtlasData();
+                info.imageName = _targetTextures[i].name;
+                info.x = rectInfos[i].x;
+                info.y = rectInfos[i].y;
+                info.width = rectInfos[i].width;
+                info.height = rectInfos[i].height;
+
+                _rects.Add(info);
+            }
+        }
+
+        AtlasDataList atlasInfo = new AtlasDataList();
+        atlasInfo.infos = _rects.ToArray();
+
+        string json = JsonUtility.ToJson(atlasInfo);
+        string resultPath = GetResultPath(eAtlasType.JSON);
+
+        if (resultPath == null || resultPath == string.Empty)
+        {
+            return;
+        }
+
+        try
+        {
+            var file = File.Open(resultPath, FileMode.Create);
+            var binary = new BinaryWriter(file);
+            binary.Write(json);
+            file.Close();
+        }
+        catch (IOException e)
+        {
+            
+        }
     }
 
     private void SaveAtlas()
     {
-        string resultPath = GetResultPath();
+        string resultPath = GetResultPath(eAtlasType.PNG);
 
         if (resultPath == null || resultPath == string.Empty)
         {
