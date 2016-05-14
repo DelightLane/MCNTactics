@@ -8,7 +8,8 @@ public class AtlasPacker : EditorWindow
     private enum eAtlasType
     {
         PNG,
-        JSON
+        JSON,
+        LOAD_RESOURCES
     }
 
     private List<Texture2D> _targetTextures = new List<Texture2D>();
@@ -36,6 +37,7 @@ public class AtlasPacker : EditorWindow
             var atlasInfo = PackTexturesToAtlas();
             SaveAtlas();
             SaveJson(atlasInfo);
+            SaveMaterial();
         }
 
         _atlasName = EditorGUILayout.TextField("Atlas Name: ", _atlasName);
@@ -138,6 +140,32 @@ public class AtlasPacker : EditorWindow
         {
             return string.Format("{0}/{1}.json", _path, _atlasName);
         }
+        else if(type == eAtlasType.LOAD_RESOURCES)
+        {
+            string path = string.Empty;
+
+            string[] pathSplit = _path.Split('/', '\\');
+            bool passPivot = false;
+            for(int i = 0; i < pathSplit.Length; ++i)
+            {
+                if(passPivot)
+                {
+                    path += pathSplit[i];
+
+                    if (i < pathSplit.Length - 1)
+                    {
+                        path += '/';
+                    }
+                }
+
+                if(pathSplit[i] == "Resources")
+                {
+                    passPivot = true;
+                }
+            }
+
+            return string.Format("{0}/{1}", path, _atlasName);
+        }
 
         throw new UnityException("eAtlasType is not invailable.");
     }
@@ -212,6 +240,22 @@ public class AtlasPacker : EditorWindow
         catch (IOException e)
         {
             EditorUtility.DisplayDialog("Save", e.ToString(), "Ok");
+        }
+    }
+
+    private void SaveMaterial()
+    {
+        string resultPath = string.Format("Assets/Resources/Materials/{0}.mat", _atlasName);
+
+        Material material = new Material(Shader.Find("Standard"));
+        material.mainTexture = Resources.Load(GetResultPath(eAtlasType.LOAD_RESOURCES), typeof(Texture)) as Texture;
+
+        Debug.Log(GetResultPath(eAtlasType.LOAD_RESOURCES));
+        if (material.mainTexture != null)
+        {
+            AssetDatabase.CreateAsset(material, resultPath);
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
         }
     }
 }
