@@ -72,7 +72,7 @@ public abstract class DataFactory
 
     protected string GetJsonString()
     {
-        var textAsset = Resources.Load(string.Format("Data/{0}", GetName())) as TextAsset;
+        var textAsset = Resources.Load(string.Format("Datas/{0}", GetName())) as TextAsset;
         if (textAsset != null)
         {
             return textAsset.text;
