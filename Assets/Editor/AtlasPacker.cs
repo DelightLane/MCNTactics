@@ -23,7 +23,7 @@ public class AtlasPacker : EditorWindow
 
     private string _path;
 
-    private string _atlasName = "Atlas";
+    private string _atlasName;
 
     [MenuItem("Window/AtlasPacker")]
     static void Init()
@@ -40,7 +40,14 @@ public class AtlasPacker : EditorWindow
 
         if(GUILayout.Button("Make Atlas"))
         {
-            SaveEverything();
+            if (_targetTextures.Count > 0)
+            {
+                SaveEverything();
+            }
+            else
+            {
+                EditorUtility.DisplayDialog("Save", "Select Images First.", "Ok");
+            }
         }
 
         _atlasName = EditorGUILayout.TextField("Atlas Name: ", _atlasName);
@@ -124,7 +131,7 @@ public class AtlasPacker : EditorWindow
 
     private Rect[] PackAtlas()
     {
-        if (_atlasName != string.Empty)
+        if (_atlasName != null && _atlasName != string.Empty)
         {
             var atlas = new Texture2D(8192, 8192);
             Rect[] rects = atlas.PackTextures(_targetTextures.ToArray(), 0, 8192);
