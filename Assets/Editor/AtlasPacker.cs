@@ -9,8 +9,12 @@ public class AtlasPacker : EditorWindow
     {
         PNG,
         JSON,
-        LOAD_RESOURCES
+        LOAD_TEXTURE
     }
+
+    public static string AtlasMaterialPath = "Resources/Materials";
+    public static string AtlasTexturePath = "Resources/Atlases";
+    
 
     private List<Texture2D> _targetTextures = new List<Texture2D>();
     private Texture2D _atlas = null;
@@ -34,10 +38,7 @@ public class AtlasPacker : EditorWindow
 
         if(GUILayout.Button("Make Atlas"))
         {
-            var atlasInfo = PackTexturesToAtlas();
-            SaveAtlas();
-            SaveJson(atlasInfo);
-            SaveMaterial();
+            SaveEverything();
         }
 
         _atlasName = EditorGUILayout.TextField("Atlas Name: ", _atlasName);
@@ -109,14 +110,25 @@ public class AtlasPacker : EditorWindow
         return name;
     }
 
-    private Rect[] PackTexturesToAtlas()
+    private void SaveEverything()
+    {
+        SaveJson(PackAtlas());
+        SaveMaterial();
+    }
+
+    private Rect[] PackAtlas()
     {
         if (_atlasName != string.Empty)
         {
-            _atlas = new Texture2D(8192, 8192);
-            Rect[] rects = _atlas.PackTextures(_targetTextures.ToArray(), 0, 8192);
+            var atlas = new Texture2D(8192, 8192);
+            Rect[] rects = atlas.PackTextures(_targetTextures.ToArray(), 0, 8192);
 
-            _atlas.name = GetTextureName(GetResultPath(eAtlasType.PNG));
+            atlas.name = _atlasName;
+
+            SaveAtlas(atlas);
+
+            // assign
+            _atlas = atlas;
 
             AtlasPacker window = (AtlasPacker)EditorWindow.GetWindow(typeof(AtlasPacker));
 
@@ -134,21 +146,21 @@ public class AtlasPacker : EditorWindow
     {
         if (type == eAtlasType.PNG)
         {
-            return string.Format("{0}/{1}.png", _path, _atlasName);
+            return string.Format("{0}/{1}/{2}.png", Application.dataPath, AtlasTexturePath, _atlasName);
         }
-        else if(type == eAtlasType.JSON)
+        else if (type == eAtlasType.JSON)
         {
-            return string.Format("{0}/{1}.json", _path, _atlasName);
+            return string.Format("{0}/{1}/{2}.json", Application.dataPath, AtlasTexturePath, _atlasName);
         }
-        else if(type == eAtlasType.LOAD_RESOURCES)
+        else if (type == eAtlasType.LOAD_TEXTURE)
         {
             string path = string.Empty;
 
-            string[] pathSplit = _path.Split('/', '\\');
+            string[] pathSplit = AtlasTexturePath.Split('/', '\\');
             bool passPivot = false;
-            for(int i = 0; i < pathSplit.Length; ++i)
+            for (int i = 0; i < pathSplit.Length; ++i)
             {
-                if(passPivot)
+                if (passPivot)
                 {
                     path += pathSplit[i];
 
@@ -158,7 +170,7 @@ public class AtlasPacker : EditorWindow
                     }
                 }
 
-                if(pathSplit[i] == "Resources")
+                if (pathSplit[i] == "Resources")
                 {
                     passPivot = true;
                 }
@@ -218,7 +230,7 @@ public class AtlasPacker : EditorWindow
         }
     }
 
-    private void SaveAtlas()
+    private void SaveAtlas(Texture2D atlas)
     {
         string resultPath = GetResultPath(eAtlasType.PNG);
 
@@ -229,7 +241,9 @@ public class AtlasPacker : EditorWindow
 
         try
         {
-            var bytes = _atlas.EncodeToPNG();
+            Directory.CreateDirectory(AtlasTexturePath);
+
+            var bytes = atlas.EncodeToPNG();
             var file = File.Open(resultPath, FileMode.Create);
             var binary = new BinaryWriter(file);
             binary.Write(bytes);
@@ -243,19 +257,28 @@ public class AtlasPacker : EditorWindow
         }
     }
 
+    // 반드시 아틀라스 텍스쳐가 만들어진 후에 불려야 한다.
     private void SaveMaterial()
     {
-        string resultPath = string.Format("Assets/Resources/Materials/{0}.mat", _atlasName);
+        string resultPath = string.Format("Assets/{0}/{1}.mat", AtlasMaterialPath, _atlasName);
 
         Material material = new Material(Shader.Find("Standard"));
-        material.mainTexture = Resources.Load(GetResultPath(eAtlasType.LOAD_RESOURCES), typeof(Texture)) as Texture;
+        material.mainTexture = Resources.Load(GetResultPath(eAtlasType.LOAD_TEXTURE), typeof(Texture)) as Texture;
 
-        Debug.Log(GetResultPath(eAtlasType.LOAD_RESOURCES));
         if (material.mainTexture != null)
         {
-            AssetDatabase.CreateAsset(material, resultPath);
-            AssetDatabase.SaveAssets();
-            AssetDatabase.Refresh();
+            try
+            {
+                Directory.CreateDirectory(AtlasMaterialPath);
+
+                AssetDatabase.CreateAsset(material, resultPath);
+                AssetDatabase.SaveAssets();
+                AssetDatabase.Refresh();
+            }
+            catch(IOException e)
+            {
+                EditorUtility.DisplayDialog("Save", e.ToString(), "Ok");
+            }
         }
     }
 }
