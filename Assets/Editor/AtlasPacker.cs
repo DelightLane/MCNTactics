@@ -19,6 +19,8 @@ public class AtlasPacker : EditorWindow
     private List<Texture2D> _targetTextures = new List<Texture2D>();
     private Texture2D _atlas = null;
 
+    private Vector2 _scrollPosition;
+
     private string _path;
 
     private string _atlasName = "Atlas";
@@ -63,12 +65,16 @@ public class AtlasPacker : EditorWindow
     {
         if (_targetTextures.Count > 0)
         {
+            _scrollPosition = EditorGUILayout.BeginScrollView(_scrollPosition);
+
             GUILayout.Label("Selected Textures", EditorStyles.boldLabel);
 
             for (int i = 0; i < _targetTextures.Count; ++i)
             {
                 _targetTextures[i] = EditorGUILayout.ObjectField(_targetTextures[i], typeof(Texture2D), allowSceneObjects: false) as Texture2D;
             }
+
+            EditorGUILayout.EndScrollView();
         }
     }
     #endregion
