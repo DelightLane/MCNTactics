@@ -9,7 +9,8 @@ public class DataManager : FZ.Singletone<DataManager>
     {
         UNIT,
         ATTACH_ACTOR,
-        MAP
+        MAP,
+        ATLAS_TILE
     }
 
     private DataManager() { }
@@ -23,6 +24,7 @@ public class DataManager : FZ.Singletone<DataManager>
         LoadData(new UnitDataFactory());
         LoadData(new UnitActorDataFactory());
         LoadData(new MapDataFactory("test")); // TODO : 맵 이름을 런타임에 변경할 수 있게 수정 필요
+        LoadData(new AtlasDataFactory("TileAtlas", DataType.ATLAS_TILE));
     }
 
     public void LoadData(DataFactory factory)
@@ -30,11 +32,20 @@ public class DataManager : FZ.Singletone<DataManager>
         _datas.Add(factory.GetDataType(), factory.LoadDatas());
     }
 
-    public DataObject GetData(DataType type)
+    public T GetData<T>(DataType type) where T : DataObject
     {
         if (_datas.ContainsKey(type))
         {
-            return _datas[type];
+            var data = _datas[type] as T;
+
+            if(data != null)
+            {
+                return data;
+            }
+            else
+            {
+                throw new UnityException("DataType & Generic Type is not matched.");
+            }
         }
 
         return null;
@@ -72,7 +83,7 @@ public abstract class DataFactory
 
     protected string GetJsonString()
     {
-        var textAsset = Resources.Load(string.Format("Datas/{0}", GetName())) as TextAsset;
+        var textAsset = Resources.Load(GetName()) as TextAsset;
         if (textAsset != null)
         {
             return textAsset.text;
@@ -88,7 +99,7 @@ public class UnitDataFactory : DataFactory
 {
     protected override string GetName()
     {
-        return "unit";
+        return "Datas/unit";
     }
 
     public override DataManager.DataType GetDataType()
@@ -106,7 +117,7 @@ public class UnitActorDataFactory : DataFactory
 {
     protected override string GetName()
     {
-        return "unitActor";
+        return "Datas/unitActor";
     }
 
     public override DataManager.DataType GetDataType()
@@ -131,7 +142,7 @@ public class MapDataFactory : DataFactory
 
     protected override string GetName()
     {
-        return string.Format("map_{0}", _name);
+        return string.Format("Datas/map_{0}", _name);
     }
 
     public override DataManager.DataType GetDataType()
@@ -142,6 +153,33 @@ public class MapDataFactory : DataFactory
     public override DataObject LoadDatas()
     {
         return new JsonParser<MapData>().LoadDatas(this);
+    }
+}
+
+public class AtlasDataFactory : DataFactory
+{
+    private string _name;
+    private DataManager.DataType _type;
+
+    public AtlasDataFactory(string name, DataManager.DataType dataType)
+    {
+        _name = name;
+        _type = dataType;
+    }
+
+    protected override string GetName()
+    {
+        return string.Format("Atlases/{0}", _name);
+    }
+
+    public override DataManager.DataType GetDataType()
+    {
+        return _type;
+    }
+
+    public override DataObject LoadDatas()
+    {
+        return new JsonParser<AtlasDataList>().LoadDatas(this);
     }
 }
 

@@ -76,7 +76,7 @@ public class MapManager : FZ.MonoSingletone<MapManager> {
     {
         _objInfos = new List<PlaceInfo>();
 
-        var mapData = DataManager.Instance.GetData(DataManager.DataType.MAP) as MapData;
+        var mapData = DataManager.Instance.GetData<MapData>(DataManager.DataType.MAP);
 
         _mapSize.x = mapData.x;
         _mapSize.y = mapData.y;

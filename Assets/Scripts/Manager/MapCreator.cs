@@ -65,7 +65,8 @@ public class MapCreator
             {
                 var tilePosition = new Vector2(i, j);
 
-                var tile = Tile.CreateTile(tilePosition);
+                var tile = Tile.CreateTile();
+                tile.SetName(tilePosition);
 
                 tile.transform.position = new Vector3(i * (Tile.TILE_SIZE + offset), 0, j * (Tile.TILE_SIZE + offset));
 

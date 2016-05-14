@@ -28,7 +28,7 @@ public class AtlasPacker : EditorWindow
     [MenuItem("Window/AtlasPacker")]
     static void Init()
     {
-        AtlasPacker window = (AtlasPacker)EditorWindow.GetWindow(typeof(AtlasPacker));
+        EditorWindow.GetWindow(typeof(AtlasPacker));
     }
 
     void OnGUI()
@@ -105,7 +105,7 @@ public class AtlasPacker : EditorWindow
             }
         }
 
-        AtlasPacker window = (AtlasPacker)EditorWindow.GetWindow(typeof(AtlasPacker));
+        EditorWindow.GetWindow(typeof(AtlasPacker));
     }
 
     private string GetTextureName(string filePath)
@@ -136,7 +136,7 @@ public class AtlasPacker : EditorWindow
             // assign
             _atlas = atlas;
 
-            AtlasPacker window = (AtlasPacker)EditorWindow.GetWindow(typeof(AtlasPacker));
+            EditorWindow.GetWindow(typeof(AtlasPacker));
 
             return rects;
         }
@@ -213,6 +213,7 @@ public class AtlasPacker : EditorWindow
         }
 
         AtlasDataList atlasInfo = new AtlasDataList();
+        atlasInfo.name = _atlasName;
         atlasInfo.infos = _rects.ToArray();
 
         string json = JsonUtility.ToJson(atlasInfo);
@@ -225,14 +226,14 @@ public class AtlasPacker : EditorWindow
 
         try
         {
-            var file = File.Open(resultPath, FileMode.Create);
+            var file = File.Open(resultPath, FileMode.Create, FileAccess.Write);
             var binary = new BinaryWriter(file);
-            binary.Write(json);
+            binary.Write(json.ToCharArray());
             file.Close();
         }
         catch (IOException e)
         {
-            
+            EditorUtility.DisplayDialog("Save", e.ToString(), "Ok");
         }
     }
 
@@ -268,7 +269,7 @@ public class AtlasPacker : EditorWindow
     {
         string resultPath = string.Format("Assets/{0}/{1}.mat", AtlasMaterialPath, _atlasName);
 
-        Material material = new Material(Shader.Find("Standard"));
+        Material material = new Material(Shader.Find("Unlit/Texture"));
         material.mainTexture = Resources.Load(GetResultPath(eAtlasType.LOAD_TEXTURE), typeof(Texture)) as Texture;
 
         if (material.mainTexture != null)

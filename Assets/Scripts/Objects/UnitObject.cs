@@ -43,7 +43,7 @@ public class UnitObject : ActionObject, ICombat
 
     public static UnitObject Create(string unitName, eCombatTeam team)
     {
-        var unitData = DataManager.Instance.GetData(DataManager.DataType.UNIT) as UnitDataList;
+        var unitData = DataManager.Instance.GetData<UnitDataList>(DataManager.DataType.UNIT);
 
         foreach (var unit in unitData.unit)
         {
@@ -58,7 +58,7 @@ public class UnitObject : ActionObject, ICombat
 
     public static UnitObject Create(int unitNo, eCombatTeam team)
     {
-        var unitData = DataManager.Instance.GetData(DataManager.DataType.UNIT) as UnitDataList;
+        var unitData = DataManager.Instance.GetData<UnitDataList>(DataManager.DataType.UNIT);
 
         var unit = unitData.unit.Find(u => u.no == unitNo);
 
@@ -113,7 +113,7 @@ public class UnitObject : ActionObject, ICombat
 
     private void AddActor(UnitData data)
     {
-        var unitActorDataList = DataManager.Instance.GetData(DataManager.DataType.ATTACH_ACTOR) as UnitActorDataList;
+        var unitActorDataList = DataManager.Instance.GetData<UnitActorDataList>(DataManager.DataType.ATTACH_ACTOR);
 
         if (unitActorDataList != null)
         {

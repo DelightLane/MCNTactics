@@ -1,1 +1,1 @@
-ï{"infos":[{"imageName":"tile0","offsetX":0.0,"offsetY":0.0,"scaleX":0.5,"scaleY":0.5},{"imageName":"tile1","offsetX":0.5,"offsetY":0.0,"scaleX":0.5,"scaleY":0.5},{"imageName":"tile2","offsetX":0.0,"offsetY":0.5,"scaleX":0.5,"scaleY":0.5}]}
+{"name":"TileAtlas","infos":[{"imageName":"tile0","offsetX":0.0,"offsetY":0.0,"scaleX":0.5,"scaleY":0.5},{"imageName":"tile1","offsetX":0.5,"offsetY":0.0,"scaleX":0.5,"scaleY":0.5},{"imageName":"tile2","offsetX":0.0,"offsetY":0.5,"scaleX":0.5,"scaleY":0.5}]}

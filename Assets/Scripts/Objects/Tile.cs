@@ -43,6 +43,19 @@ public class Tile : TacticsObject, IDisposable, FZ.IObserver<eTouchEvent>
 
         // 타일에 붙은 오브젝트에 터치 이벤트를 넘기고 싶지 않을 때 false를 리턴한다.
         public virtual bool OnTouchEvent(eTouchEvent touch) { return true; }
+
+        protected void SetTileImage(string imageName)
+        {
+            if (Target != null)
+            {
+                var renderer = Target.transform.GetComponent<Renderer>();
+                if (renderer != null)
+                {
+                    var tileDatas = DataManager.Instance.GetData<AtlasDataList>(DataManager.DataType.ATLAS_TILE);
+                    renderer.sharedMaterial = tileDatas.GetMaterial(imageName);
+                }
+            }
+        }
     }
 
     private class TileState_Normal : TileState
@@ -51,24 +64,13 @@ public class Tile : TacticsObject, IDisposable, FZ.IObserver<eTouchEvent>
 
         public override void Run()
         {
-            SetTileColor();
+            // TODO : 맞는 타일 이미지로 변경
+            SetTileImage("tile0");
         }
 
         public override eTileType GetCurrentType()
         {
             return eTileType.NORMAL;
-        }
-
-        private void SetTileColor()
-        {
-            if (Target != null)
-            {
-                var renderer = Target.transform.GetComponent<Renderer>();
-                if (renderer != null)
-                {
-                    renderer.material.color = Color.white;
-                }
-            }
         }
     }
 
@@ -78,24 +80,13 @@ public class Tile : TacticsObject, IDisposable, FZ.IObserver<eTouchEvent>
 
         public override void Run()
         {
-            SetTileColor();
+            // TODO : 맞는 타일 이미지로 변경
+            SetTileImage("tile1");
         }
 
         public override eTileType GetCurrentType()
         {
             return eTileType.ACTIVE;
-        }
-
-        private void SetTileColor()
-        {
-            if (Target != null)
-            {
-                var renderer = Target.transform.GetComponent<Renderer>();
-                if (renderer != null)
-                {
-                    renderer.material.color = Color.red;
-                }
-            }
         }
 
         public override bool OnTouchEvent(eTouchEvent touch)
@@ -122,48 +113,34 @@ public class Tile : TacticsObject, IDisposable, FZ.IObserver<eTouchEvent>
 
         public override void Run()
         {
-            SetTileColor();
+            // TODO : 맞는 타일 이미지로 변경
+            SetTileImage("tile2");
         }
 
         public override eTileType GetCurrentType()
         {
             return eTileType.DEACTIVE;
         }
-
-        private void SetTileColor()
-        {
-            if (Target != null)
-            {
-                var renderer = Target.transform.GetComponent<Renderer>();
-                if (renderer != null)
-                {
-                    renderer.material.color = Color.black;
-                }
-            }
-        }
     }
     #endregion
 
     private Tile() { }
 
-    // TODO : 각각 다른 머터리얼을 쓰고 있으며 이것은 드로우콜을 늘린다.(아틀라스 + SCALE / OFFSET 으로 같은 머터리얼을 공유하게 수정할 것)
-    public static GameObject CreateTile(Vector2 pos)
+    public static Tile CreateTile()
     {
         var tile = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        tile.name = String.Format("{0}_{1}", pos.x, pos.y);
-
-        var material = Resources.Load("Materials/Texture", typeof(Material)) as Material;
-        material.SetTexture("_MainTex", Resources.Load("Images/tile0", typeof(Texture)) as Texture);
-
-        var renderer = tile.GetComponent<Renderer>();
-        renderer.sharedMaterial = material;
 
         tile.transform.localScale = new Vector3(TILE_SIZE, 0.05f, TILE_SIZE);
 
         var tileComp = tile.AddComponent<Tile>();
         TouchManager.Instance.Subscribe(tileComp);
 
-        return tile;
+        return tileComp;
+    }
+
+    public void SetName(Vector2 pos)
+    {
+        this.name = String.Format("{0}_{1}", pos.x, pos.y);
     }
 
     public void Dispose()
