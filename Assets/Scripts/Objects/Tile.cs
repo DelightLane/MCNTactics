@@ -58,6 +58,7 @@ public class Tile : TacticsObject, IDisposable, FZ.IObserver<eTouchEvent>
             }
         }
 
+        // TODO : 오른쪽 왼쪽 텍스쳐 uv가 이상한 듯.. 확인 요망
         private void SetCubeUV(AtlasData data)
         {
             var mesh = Target.GetComponent<MeshFilter>().mesh;
