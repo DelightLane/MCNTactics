@@ -9,7 +9,6 @@ public abstract class TacticsObject : MonoBehaviour
 
     public virtual bool OnTouchEvent(eTouchEvent touch) { return true; }
 
-    // TODO : 오른쪽 왼쪽 텍스쳐 uv가 이상한 듯.. 확인 요망
     protected void SetCubeTexture(AtlasDataList atlasData, string imageName)
     {
         var imageData = atlasData.GetImageData(imageName);
