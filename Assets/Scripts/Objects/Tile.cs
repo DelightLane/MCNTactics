@@ -48,61 +48,10 @@ public class Tile : TacticsObject, IDisposable, FZ.IObserver<eTouchEvent>
         {
             if (Target != null)
             {
-                var renderer = Target.transform.GetComponent<Renderer>();
-                if (renderer != null)
-                {
-                    var tileDatas = DataManager.Instance.GetData<AtlasDataList>(DataManager.DataType.ATLAS_TILE);
-                    renderer.sharedMaterial = tileDatas.GetMaterial();
-                    SetCubeUV(tileDatas.GetImageData(imageName));
-                }
+                var tileDatas = DataManager.Instance.GetData<AtlasDataList>(DataManager.DataType.ATLAS_TILE);
+
+                Target.SetCubeTexture(tileDatas, imageName);
             }
-        }
-
-        // TODO : 오른쪽 왼쪽 텍스쳐 uv가 이상한 듯.. 확인 요망
-        private void SetCubeUV(AtlasData data)
-        {
-            var mesh = Target.GetComponent<MeshFilter>().mesh;
-
-            var uv = new Vector2[24];
-
-            var leftTop = new Vector2(data.offsetX, data.offsetY + data.scaleY);
-            var rightTop = new Vector2(data.offsetX + data.scaleX, data.offsetY + data.scaleY);
-            var leftBottom = new Vector2(data.offsetX, data.offsetY);
-            var rightBottom = new Vector2(data.offsetX + data.scaleX, data.offsetY);
-
-            uv[2] = leftTop;
-            uv[3] = rightTop;
-            uv[0] = leftBottom;
-            uv[1] = rightBottom;
-
-            uv[6] = leftTop;
-            uv[7] = rightTop;
-            uv[10] = leftBottom;
-            uv[11] = rightBottom;
-
-            uv[19] = leftTop;
-            uv[17] = rightTop;
-            uv[16] = leftBottom;
-            uv[18] = rightBottom;
-
-            uv[23] = leftTop;
-            uv[21] = rightTop;
-            uv[20] = leftBottom;
-            uv[22] = rightBottom;
-
-            uv[4] = leftTop;
-            uv[5] = rightTop;
-            uv[8] = leftBottom;
-            uv[9] = rightBottom;
-
-            uv[15] = leftTop;
-            uv[13] = rightTop;
-            uv[12] = leftBottom;
-            uv[14] = rightBottom;
-            
-            mesh.uv = uv;
-            mesh.Optimize();
-            mesh.RecalculateNormals();
         }
     }
 
