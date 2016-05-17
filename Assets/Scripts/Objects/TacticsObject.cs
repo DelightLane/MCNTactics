@@ -13,7 +13,7 @@ public abstract class TacticsObject : MonoBehaviour
     protected void SetCubeTexture(AtlasDataList atlasData, string imageName)
     {
         var imageData = atlasData.GetImageData(imageName);
-
+        
         this.GetComponent<Renderer>().sharedMaterial = atlasData.GetMaterial();
 
         var mesh = this.GetComponent<MeshFilter>().mesh;
@@ -25,35 +25,41 @@ public abstract class TacticsObject : MonoBehaviour
         var leftBottom = new Vector2(imageData.offsetX, imageData.offsetY);
         var rightBottom = new Vector2(imageData.offsetX + imageData.scaleX, imageData.offsetY);
 
+        // front
         uv[2] = leftTop;
         uv[3] = rightTop;
         uv[0] = leftBottom;
         uv[1] = rightBottom;
 
-        uv[6] = leftTop;
-        uv[7] = rightTop;
-        uv[10] = leftBottom;
-        uv[11] = rightBottom;
-
-        uv[19] = leftTop;
-        uv[17] = rightTop;
-        uv[16] = leftBottom;
-        uv[18] = rightBottom;
-
-        uv[23] = leftTop;
-        uv[21] = rightTop;
-        uv[20] = leftBottom;
-        uv[22] = rightBottom;
-
+        // top
         uv[4] = leftTop;
         uv[5] = rightTop;
         uv[8] = leftBottom;
         uv[9] = rightBottom;
 
+        // back
+        uv[6] = leftTop;
+        uv[7] = rightTop;
+        uv[10] = leftBottom;
+        uv[11] = rightBottom;
+
+        // bottom
         uv[15] = leftTop;
-        uv[13] = rightTop;
+        uv[14] = rightTop;
         uv[12] = leftBottom;
-        uv[14] = rightBottom;
+        uv[13] = rightBottom;
+
+        // left
+        uv[19] = leftTop;
+        uv[18] = rightTop;
+        uv[16] = leftBottom;
+        uv[17] = rightBottom;
+
+        // right
+        uv[23] = leftTop;
+        uv[22] = rightTop;
+        uv[20] = leftBottom;
+        uv[21] = rightBottom;
 
         mesh.uv = uv;
         mesh.Optimize();
