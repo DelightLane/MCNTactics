@@ -25,7 +25,7 @@ public class AtlasPacker : EditorWindow
 
     private string _atlasName;
 
-    [MenuItem("Window/AtlasPacker")]
+    [MenuItem("Window/FZTools/AtlasPacker")]
     static void Init()
     {
         EditorWindow.GetWindow(typeof(AtlasPacker));
