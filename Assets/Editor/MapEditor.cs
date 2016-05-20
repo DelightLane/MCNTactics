@@ -21,7 +21,6 @@ public class MapEditor : EditorWindow
     private AtlasDataList _tileRawData;
 
     private readonly float MENU_WIDTH = 300;
-    private readonly float MAP_SIZE = 40;
 
     [MenuItem("Window/FZTools/MapEditor")]
     static void Init()
@@ -58,8 +57,8 @@ public class MapEditor : EditorWindow
                 for(int x = 0; x < _mapSize.x; ++x)
                 {
                     int position = x + (y * (x + 1));
-
-                    // TODO : 타일 데이터를 가져와서 아틀라스에서 해당 부분을 자르게 수정
+                    
+                    // 신규 맵을 작성할 시 첫 번째 타일맵으로 전부 다 채운다.
                     _tileTextureData[position] = GetTileImg(_tileRawData.infos[0]);
                 }
             }
@@ -155,7 +154,7 @@ public class MapEditor : EditorWindow
     {
         GUILayout.BeginVertical("Box", GUILayout.Height(EditorWindow.focusedWindow.position.height));
         _mapScrollPos = EditorGUILayout.BeginScrollView(_mapScrollPos);
-        // TODO : 제대로 유닛과 맵이 보이게 수정
+        
         if (_resultMapSize != null)
         {
             for (int y = 0; y < _resultMapSize.x; ++y)
@@ -165,12 +164,15 @@ public class MapEditor : EditorWindow
                 for (int x = 0; x < _resultMapSize.y; ++x)
                 {
                     int position = x + (y * (x + 1));
+                    int margin = 5;
 
                     GUIStyle style = new GUIStyle();
-                    style.normal.background = _tileTextureData[position];
                     style.alignment = TextAnchor.MiddleCenter;
-                    GUIContent content = new GUIContent(Resources.Load("images/tile1", typeof(Texture2D)) as Texture2D);
-                    EditorGUILayout.LabelField(content, style, GUILayout.Width(MAP_SIZE), GUILayout.Height(MAP_SIZE));
+                    GUIContent content = new GUIContent(_tileTextureData[position]);
+                    if(GUILayout.Button(content, style, GUILayout.Width(_tileTextureData[position].width + margin), GUILayout.Height(_tileTextureData[position].height + margin)))
+                    {
+
+                    }
 
                 }
                 GUILayout.EndHorizontal();
