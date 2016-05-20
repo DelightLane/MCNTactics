@@ -78,6 +78,8 @@ public class MapEditor : EditorWindow
         {
 
         }
+
+        GUILayout.EndVertical();
     }
 
     private void DisplayMapData()
