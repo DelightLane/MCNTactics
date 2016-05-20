@@ -20,7 +20,7 @@ public class MapEditor : EditorWindow
 
     private AtlasDataList _tileRawData;
 
-    private AtlasData _selectTileData;
+    private AtlasData _selectTileData = null;
 
     private readonly float MENU_WIDTH = 300;
 
@@ -47,16 +47,16 @@ public class MapEditor : EditorWindow
 
         _mapName = EditorGUILayout.TextField("Map Name: ", _mapName);
         _mapSize = EditorGUILayout.Vector2Field("Map Size", _mapSize);
-
+        
         if (GUILayout.Button("New"))
         {
-            if(_tileRawData == null)
+            if(_tileRawData == null || _tileRawData.infos.Length <= 0)
             {
                 LoadTileMap();
             }
 
             int mapMaxSize = (int)_mapSize.x * (int)_mapSize.y;
-
+            
             _tileTextureData = new AtlasData[mapMaxSize];
 
             for (int y = 0; y < _mapSize.y; ++y)
@@ -186,40 +186,47 @@ public class MapEditor : EditorWindow
         return tileImg;
     }
     
+
+    public int _selGridInt = -1;
     private void DisplayMapData()
     {
-        GUILayout.BeginVertical("Box", GUILayout.Height(EditorWindow.focusedWindow.position.height));
-        _mapScrollPos = EditorGUILayout.BeginScrollView(_mapScrollPos);
+        _selGridInt = -1;
+        var margin = 3;
+
+        GUIStyle style = new GUIStyle();
+        style.alignment = TextAnchor.MiddleCenter;
+        style.margin = new RectOffset(margin, margin, margin, margin);
+
+        List<GUIContent> contents = new List<GUIContent>();
         
         if (_resultMapSize != null)
         {
-            for (int y = 0; y < _resultMapSize.x; ++y)
+            for (int y = 0; y < _resultMapSize.y; ++y)
             {
-                GUILayout.BeginHorizontal();
-
-                for (int x = 0; x < _resultMapSize.y; ++x)
+                for (int x = 0; x < _resultMapSize.x; ++x)
                 {
                     int position = x + (int)_resultMapSize.x * y;
-                    int margin = 3;
 
                     var texture = GetTileImg(_tileTextureData[position]);
-
-                    GUIStyle style = new GUIStyle();
-                    style.alignment = TextAnchor.MiddleCenter;
                     GUIContent content = new GUIContent(texture);
-                    if(GUILayout.Button(content, style, GUILayout.Width(texture.width + margin), GUILayout.Height(texture.height + margin)))
-                    {
-                        if(_selectTileData != null)
-                        {
-                            _tileTextureData[position] = _selectTileData;
-                        }
-                    }
-
+                    contents.Add(content);
                 }
-                GUILayout.EndHorizontal();
             }
         }
-        EditorGUILayout.EndScrollView();
-        GUILayout.EndVertical();
+
+        if (contents.Count > 0)
+        {
+            GUILayout.BeginVertical("Box", GUILayout.Height(EditorWindow.focusedWindow.position.height));
+            _mapScrollPos = EditorGUILayout.BeginScrollView(_mapScrollPos);
+
+            _selGridInt = GUILayout.SelectionGrid(_selGridInt, contents.ToArray(), (int)_resultMapSize.x, style);
+            if (_selectTileData != null && _selectTileData.imageName.Length > 0 && _selGridInt >= 0)
+            {
+                _tileTextureData[_selGridInt] = _selectTileData;
+            }
+
+            EditorGUILayout.EndScrollView();
+            GUILayout.EndVertical();
+        }
     }
 }
