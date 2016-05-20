@@ -16,9 +16,11 @@ public class MapEditor : EditorWindow
 
     private string _resultMapName;
     private Vector2 _resultMapSize;
-    private Texture2D[] _tileTextureData;
+    private AtlasData[] _tileTextureData;
 
     private AtlasDataList _tileRawData;
+
+    private AtlasData _selectTileData;
 
     private readonly float MENU_WIDTH = 300;
 
@@ -48,18 +50,23 @@ public class MapEditor : EditorWindow
 
         if (GUILayout.Button("New"))
         {
+            if(_tileRawData == null)
+            {
+                LoadTileMap();
+            }
+
             int mapMaxSize = (int)_mapSize.x * (int)_mapSize.y;
 
-            _tileTextureData = new Texture2D[mapMaxSize];
+            _tileTextureData = new AtlasData[mapMaxSize];
 
             for (int y = 0; y < _mapSize.y; ++y)
             {
                 for(int x = 0; x < _mapSize.x; ++x)
                 {
-                    int position = x + (y * (x + 1));
+                    int position = x + (int)_mapSize.x * y;
                     
                     // 신규 맵을 작성할 시 첫 번째 타일맵으로 전부 다 채운다.
-                    _tileTextureData[position] = GetTileImg(_tileRawData.infos[0]);
+                    _tileTextureData[position] = _tileRawData.infos[0];
                 }
             }
 
@@ -80,12 +87,19 @@ public class MapEditor : EditorWindow
             _tileRawData = DataManager.Instance.GetData<AtlasDataList>(DataManager.DataType.ATLAS_TILE);
         }
 
-        DisplayTileBtnList();
+        DisplaySelectTileList();
 
         GUILayout.EndVertical();
     }
 
-    private void DisplayTileBtnList()
+    private void LoadTileMap()
+    {
+        DataManager.Instance.LoadData(new AtlasDataFactory("TileAtlas", DataManager.DataType.ATLAS_TILE));
+        _tempTile = Resources.Load("Atlases/TileAtlas", typeof(Texture2D)) as Texture2D;
+        _tileRawData = DataManager.Instance.GetData<AtlasDataList>(DataManager.DataType.ATLAS_TILE);
+    }
+
+    private void DisplaySelectTileList()
     {
         GUILayout.Label("Tiles", EditorStyles.boldLabel);
 
@@ -95,11 +109,12 @@ public class MapEditor : EditorWindow
         if (_tileRawData != null)
         {
             int lineCount = 0;
+            int margin = 5;
 
             for (int i = 0; i < _tileRawData.infos.Length; ++i)
             {
-                var imageData = _tileRawData.infos[i];
-                Texture2D tileImg = GetTileImg(imageData);
+                var tileData = _tileRawData.infos[i];
+                Texture2D tileImg = GetTileImg(tileData);
                 lineCount += tileImg.width;
 
                 if (lineCount == tileImg.width)
@@ -115,10 +130,22 @@ public class MapEditor : EditorWindow
 
                 GUIStyle style = new GUIStyle();
                 style.alignment = TextAnchor.MiddleCenter;
-                GUIContent content = new GUIContent(tileImg);
-                if (GUILayout.Button(content, style, GUILayout.Height(tileImg.height), GUILayout.Width(tileImg.width)))
+                if (_selectTileData == tileData)
                 {
-                    Debug.Log("a");
+                    style.normal.background = new Texture2D(1, 1);
+                    style.normal.background.SetPixels(new Color[2] { Color.red, Color.red });
+                }
+                GUIContent content = new GUIContent(tileImg);
+                if (GUILayout.Button(content, style, GUILayout.Height(tileImg.height + margin), GUILayout.Width(tileImg.width + margin)))
+                {
+                    if (_selectTileData != tileData)
+                    {
+                        _selectTileData = tileData;
+                    }
+                    else
+                    {
+                        _selectTileData = null;
+                    }
                 }
             }
 
@@ -132,8 +159,15 @@ public class MapEditor : EditorWindow
         GUILayout.EndVertical();
     }
 
+    private Dictionary<string, Texture2D> _tileImgPool = new Dictionary<string, Texture2D>();
+
     private Texture2D GetTileImg(AtlasData imageData)
     {
+        if(_tileImgPool.ContainsKey(imageData.imageName))
+        {
+            return _tileImgPool[imageData.imageName];
+        }
+
         var leftTop = new Vector2(imageData.offsetX, imageData.offsetY + imageData.scaleY);
         var leftBottom = new Vector2(imageData.offsetX, imageData.offsetY);
         var rightBottom = new Vector2(imageData.offsetX + imageData.scaleX, imageData.offsetY);
@@ -146,6 +180,8 @@ public class MapEditor : EditorWindow
         var tileImg = new Texture2D(width, height);
         tileImg.SetPixels(_tempTile.GetPixels(x, y, width, height));
         tileImg.Apply(false);
+
+        _tileImgPool.Add(imageData.imageName, tileImg);
 
         return tileImg;
     }
@@ -163,15 +199,20 @@ public class MapEditor : EditorWindow
 
                 for (int x = 0; x < _resultMapSize.y; ++x)
                 {
-                    int position = x + (y * (x + 1));
-                    int margin = 5;
+                    int position = x + (int)_resultMapSize.x * y;
+                    int margin = 3;
+
+                    var texture = GetTileImg(_tileTextureData[position]);
 
                     GUIStyle style = new GUIStyle();
                     style.alignment = TextAnchor.MiddleCenter;
-                    GUIContent content = new GUIContent(_tileTextureData[position]);
-                    if(GUILayout.Button(content, style, GUILayout.Width(_tileTextureData[position].width + margin), GUILayout.Height(_tileTextureData[position].height + margin)))
+                    GUIContent content = new GUIContent(texture);
+                    if(GUILayout.Button(content, style, GUILayout.Width(texture.width + margin), GUILayout.Height(texture.height + margin)))
                     {
-
+                        if(_selectTileData != null)
+                        {
+                            _tileTextureData[position] = _selectTileData;
+                        }
                     }
 
                 }
