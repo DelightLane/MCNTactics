@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
+using System;
 
 // 픽셀을 다루기 때문에 아틀라스 텍스쳐는 reabable이어야 한다.
 public class MapEditor : EditorWindow
@@ -10,17 +11,16 @@ public class MapEditor : EditorWindow
 
     private Texture2D _tempTile;
 
-
-    private Vector2 _heightScrollPos; // 맵 스크롤
-
+    private Vector2 _mapScrollPos;
+    private Vector2 _tileScrollPos;
 
     private string _resultMapName;
     private Vector2 _resultMapSize;
-    private Texture2D[] _tileData;
+    private Texture2D[] _tileTextureData;
 
-    private readonly float MAP_START_X = 300;
-    private readonly float MAP_START_Y = 0;
-    private readonly float MAP_MARGIN = 3;
+    private AtlasDataList _tileRawData;
+
+    private readonly float MENU_WIDTH = 300;
     private readonly float MAP_SIZE = 40;
 
     [MenuItem("Window/FZTools/MapEditor")]
@@ -31,8 +31,6 @@ public class MapEditor : EditorWindow
 
     void OnGUI()
     {
-        _tempTile = Resources.Load("Atlases/TileAtlas", typeof(Texture2D)) as Texture2D;
-
         GUILayout.BeginHorizontal();
 
         DisplaySettingBox();
@@ -44,7 +42,7 @@ public class MapEditor : EditorWindow
 
     private void DisplaySettingBox()
     {
-        GUILayout.BeginVertical("Box", GUILayout.Width(MAP_START_X));
+        GUILayout.BeginVertical("Box", GUILayout.Width(MENU_WIDTH));
 
         _mapName = EditorGUILayout.TextField("Map Name: ", _mapName);
         _mapSize = EditorGUILayout.Vector2Field("Map Size", _mapSize);
@@ -53,7 +51,7 @@ public class MapEditor : EditorWindow
         {
             int mapMaxSize = (int)_mapSize.x * (int)_mapSize.y;
 
-            _tileData = new Texture2D[mapMaxSize];
+            _tileTextureData = new Texture2D[mapMaxSize];
 
             for (int y = 0; y < _mapSize.y; ++y)
             {
@@ -62,9 +60,7 @@ public class MapEditor : EditorWindow
                     int position = x + (y * (x + 1));
 
                     // TODO : 타일 데이터를 가져와서 아틀라스에서 해당 부분을 자르게 수정
-                    _tileData[position] = new Texture2D(32, 32);
-                    _tileData[position].SetPixels(_tempTile.GetPixels(0, 0, 32, 32));
-                    _tileData[position].Apply(false);
+                    _tileTextureData[position] = GetTileImg(_tileRawData.infos[0]);
                 }
             }
 
@@ -78,14 +74,87 @@ public class MapEditor : EditorWindow
         {
 
         }
+        if( GUILayout.Button("Load Tilemap"))
+        {
+            DataManager.Instance.LoadData(new AtlasDataFactory("TileAtlas", DataManager.DataType.ATLAS_TILE));
+            _tempTile = Resources.Load("Atlases/TileAtlas", typeof(Texture2D)) as Texture2D;
+            _tileRawData = DataManager.Instance.GetData<AtlasDataList>(DataManager.DataType.ATLAS_TILE);
+        }
+
+        DisplayTileBtnList();
 
         GUILayout.EndVertical();
     }
 
+    private void DisplayTileBtnList()
+    {
+        GUILayout.Label("Tiles", EditorStyles.boldLabel);
+
+        GUILayout.BeginVertical("Box", GUILayout.Width(MENU_WIDTH));
+        _tileScrollPos = EditorGUILayout.BeginScrollView(_tileScrollPos);
+
+        if (_tileRawData != null)
+        {
+            int lineCount = 0;
+
+            for (int i = 0; i < _tileRawData.infos.Length; ++i)
+            {
+                var imageData = _tileRawData.infos[i];
+                Texture2D tileImg = GetTileImg(imageData);
+                lineCount += tileImg.width;
+
+                if (lineCount == tileImg.width)
+                {
+                    EditorGUILayout.BeginHorizontal();
+                }
+
+                if (lineCount >= MENU_WIDTH)
+                {
+                    EditorGUILayout.EndHorizontal();
+                    lineCount = 0;
+                }
+
+                GUIStyle style = new GUIStyle();
+                style.alignment = TextAnchor.MiddleCenter;
+                GUIContent content = new GUIContent(tileImg);
+                if (GUILayout.Button(content, style, GUILayout.Height(tileImg.height), GUILayout.Width(tileImg.width)))
+                {
+                    Debug.Log("a");
+                }
+            }
+
+            if (_tileRawData.infos.Length > 0 && lineCount < MENU_WIDTH)
+            {
+                EditorGUILayout.EndHorizontal();
+            }
+        }
+
+        EditorGUILayout.EndScrollView();
+        GUILayout.EndVertical();
+    }
+
+    private Texture2D GetTileImg(AtlasData imageData)
+    {
+        var leftTop = new Vector2(imageData.offsetX, imageData.offsetY + imageData.scaleY);
+        var leftBottom = new Vector2(imageData.offsetX, imageData.offsetY);
+        var rightBottom = new Vector2(imageData.offsetX + imageData.scaleX, imageData.offsetY);
+
+        int x = (int)(_tempTile.width * leftBottom.x);
+        int y = (int)(_tempTile.height * leftBottom.y);
+        int width = (int)(_tempTile.width * (Vector2.Distance(leftBottom, rightBottom)));
+        int height = (int)(_tempTile.height * (Vector2.Distance(leftBottom, leftTop)));
+
+        var tileImg = new Texture2D(width, height);
+        tileImg.SetPixels(_tempTile.GetPixels(x, y, width, height));
+        tileImg.Apply(false);
+
+        return tileImg;
+    }
+    
     private void DisplayMapData()
     {
         GUILayout.BeginVertical("Box", GUILayout.Height(EditorWindow.focusedWindow.position.height));
-        _heightScrollPos = EditorGUILayout.BeginScrollView(_heightScrollPos);
+        _mapScrollPos = EditorGUILayout.BeginScrollView(_mapScrollPos);
         // TODO : 제대로 유닛과 맵이 보이게 수정
         if (_resultMapSize != null)
         {
@@ -98,7 +167,7 @@ public class MapEditor : EditorWindow
                     int position = x + (y * (x + 1));
 
                     GUIStyle style = new GUIStyle();
-                    style.normal.background = _tileData[position];
+                    style.normal.background = _tileTextureData[position];
                     style.alignment = TextAnchor.MiddleCenter;
                     GUIContent content = new GUIContent(Resources.Load("images/tile1", typeof(Texture2D)) as Texture2D);
                     EditorGUILayout.LabelField(content, style, GUILayout.Width(MAP_SIZE), GUILayout.Height(MAP_SIZE));

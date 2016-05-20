@@ -29,6 +29,11 @@ public class DataManager : FZ.Singletone<DataManager>
 
     public void LoadData(DataFactory factory)
     {
+        if(_datas.ContainsKey(factory.GetDataType()))
+        {
+            _datas.Clear();
+        }
+
         _datas.Add(factory.GetDataType(), factory.LoadDatas());
     }
 
