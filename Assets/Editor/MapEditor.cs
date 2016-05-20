@@ -11,6 +11,9 @@ public class MapEditor : EditorWindow
     private Texture2D _tempTile;
 
 
+    private Vector2 _heightScrollPos; // 맵 스크롤
+
+
     private string _resultMapName;
     private Vector2 _resultMapSize;
     private Texture2D[] _tileData;
@@ -75,35 +78,34 @@ public class MapEditor : EditorWindow
         {
 
         }
-
-        GUILayout.EndVertical();
     }
 
     private void DisplayMapData()
     {
+        GUILayout.BeginVertical("Box", GUILayout.Height(EditorWindow.focusedWindow.position.height));
+        _heightScrollPos = EditorGUILayout.BeginScrollView(_heightScrollPos);
         // TODO : 제대로 유닛과 맵이 보이게 수정
         if (_resultMapSize != null)
         {
             for (int y = 0; y < _resultMapSize.x; ++y)
             {
+                GUILayout.BeginHorizontal();
+
                 for (int x = 0; x < _resultMapSize.y; ++x)
                 {
                     int position = x + (y * (x + 1));
 
                     GUIStyle style = new GUIStyle();
-
                     style.normal.background = _tileData[position];
                     style.alignment = TextAnchor.MiddleCenter;
                     GUIContent content = new GUIContent(Resources.Load("images/tile1", typeof(Texture2D)) as Texture2D);
-                    EditorGUI.LabelField(new Rect(MAP_START_X + (x + 1) * MAP_MARGIN + x * MAP_SIZE,
-                                                  MAP_START_Y + (y + 1) * MAP_MARGIN + y * MAP_SIZE,
-                                                  MAP_SIZE,
-                                                  MAP_SIZE),
-                                         content,
-                                         style);
+                    EditorGUILayout.LabelField(content, style, GUILayout.Width(MAP_SIZE), GUILayout.Height(MAP_SIZE));
 
                 }
+                GUILayout.EndHorizontal();
             }
         }
+        EditorGUILayout.EndScrollView();
+        GUILayout.EndVertical();
     }
 }
