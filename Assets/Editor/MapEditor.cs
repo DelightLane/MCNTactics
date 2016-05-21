@@ -20,8 +20,6 @@ public class MapEditor : EditorWindow
 
     private AtlasDataList _tileRawData;
 
-    private AtlasData _selectTileData = null;
-
     private readonly float MENU_WIDTH = 300;
 
     [MenuItem("Window/FZTools/MapEditor")]
@@ -99,64 +97,46 @@ public class MapEditor : EditorWindow
         _tileRawData = DataManager.Instance.GetData<AtlasDataList>(DataManager.DataType.ATLAS_TILE);
     }
 
+    public int _selTileGridInt = -1;
     private void DisplaySelectTileList()
     {
-        GUILayout.Label("Tiles", EditorStyles.boldLabel);
-
-        GUILayout.BeginVertical("Box", GUILayout.Width(MENU_WIDTH));
-        _tileScrollPos = EditorGUILayout.BeginScrollView(_tileScrollPos);
-
         if (_tileRawData != null)
         {
+            int lineWidth = 0;
             int lineCount = 0;
-            int margin = 5;
+            
+            List<GUIContent> contents = new List<GUIContent>();
 
             for (int i = 0; i < _tileRawData.infos.Length; ++i)
             {
                 var tileData = _tileRawData.infos[i];
                 Texture2D tileImg = GetTileImg(tileData);
-                lineCount += tileImg.width;
-
-                if (lineCount == tileImg.width)
-                {
-                    EditorGUILayout.BeginHorizontal();
+ 
+                lineWidth += tileImg.width;
+               
+                if (lineWidth <= MENU_WIDTH)
+                {                    
+                    lineCount += 1;
                 }
 
-                if (lineCount >= MENU_WIDTH)
-                {
-                    EditorGUILayout.EndHorizontal();
-                    lineCount = 0;
-                }
-
-                GUIStyle style = new GUIStyle();
-                style.alignment = TextAnchor.MiddleCenter;
-                if (_selectTileData == tileData)
-                {
-                    style.normal.background = new Texture2D(1, 1);
-                    style.normal.background.SetPixels(new Color[2] { Color.red, Color.red });
-                }
-                GUIContent content = new GUIContent(tileImg);
-                if (GUILayout.Button(content, style, GUILayout.Height(tileImg.height + margin), GUILayout.Width(tileImg.width + margin)))
-                {
-                    if (_selectTileData != tileData)
-                    {
-                        _selectTileData = tileData;
-                    }
-                    else
-                    {
-                        _selectTileData = null;
-                    }
-                }
+                contents.Add(new GUIContent(tileImg));
             }
 
-            if (_tileRawData.infos.Length > 0 && lineCount < MENU_WIDTH)
+            if(lineCount <= 0)
             {
-                EditorGUILayout.EndHorizontal();
+                lineCount = 1;
             }
-        }
 
-        EditorGUILayout.EndScrollView();
-        GUILayout.EndVertical();
+            GUILayout.Label("Tiles", EditorStyles.boldLabel);
+
+            GUILayout.BeginVertical("Box", GUILayout.Width(MENU_WIDTH));
+            _tileScrollPos = EditorGUILayout.BeginScrollView(_tileScrollPos);
+
+            _selTileGridInt = GUILayout.SelectionGrid(_selTileGridInt, contents.ToArray(), lineCount, GUILayout.ExpandWidth(false));
+
+            EditorGUILayout.EndScrollView();
+            GUILayout.EndVertical();
+        }
     }
 
     private Dictionary<string, Texture2D> _tileImgPool = new Dictionary<string, Texture2D>();
@@ -187,10 +167,10 @@ public class MapEditor : EditorWindow
     }
     
 
-    public int _selGridInt = -1;
+    public int _selMapGridInt = -1;
     private void DisplayMapData()
     {
-        _selGridInt = -1;
+        _selMapGridInt = -1;
         var margin = 3;
 
         GUIStyle style = new GUIStyle();
@@ -219,10 +199,10 @@ public class MapEditor : EditorWindow
             GUILayout.BeginVertical("Box", GUILayout.Height(EditorWindow.focusedWindow.position.height));
             _mapScrollPos = EditorGUILayout.BeginScrollView(_mapScrollPos);
 
-            _selGridInt = GUILayout.SelectionGrid(_selGridInt, contents.ToArray(), (int)_resultMapSize.x, style, GUILayout.ExpandWidth(false));
-            if (_selectTileData != null && _selectTileData.imageName.Length > 0 && _selGridInt >= 0)
+            _selMapGridInt = GUILayout.SelectionGrid(_selMapGridInt, contents.ToArray(), (int)_resultMapSize.x, style, GUILayout.ExpandWidth(false));
+            if (_selTileGridInt > -1 && _selMapGridInt >= 0)
             {
-                _tileTextureData[_selGridInt] = _selectTileData;
+                _tileTextureData[_selMapGridInt] = _tileRawData.infos[_selTileGridInt];
             }
 
             EditorGUILayout.EndScrollView();
