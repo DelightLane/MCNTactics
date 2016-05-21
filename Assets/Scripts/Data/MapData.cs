@@ -7,6 +7,7 @@ public class MapData : DataObject
 {
     public int x;
     public int y;
+    public List<string> tileTextureNames;
     public List<MapObjectData> objects;
 }
 

@@ -1,6 +1,16 @@
 ﻿{
 	"x": 10,
 	"y": 10,
+	"tileTextureNames": ["tile0","tile0","tile0","tile0","tile0","tile0","tile0","tile0","tile0","tile0",
+			"tile0","tile0","tile0","tile0","tile0","tile0","tile0","tile0","tile0","tile0",
+			"tile0","tile0","tile0","tile0","tile0","tile0","tile0","tile0","tile0","tile0",
+			"tile0","tile0","tile0","tile0","tile0","tile0","tile0","tile0","tile0","tile0",
+			"tile0","tile0","tile0","tile0","tile0","tile0","tile0","tile0","tile0","tile0",
+			"tile0","tile0","tile0","tile0","tile0","tile0","tile0","tile0","tile0","tile0",
+			"tile0","tile0","tile0","tile0","tile0","tile0","tile0","tile0","tile0","tile0",
+			"tile0","tile0","tile0","tile0","tile0","tile0","tile0","tile0","tile0","tile0",
+			"tile0","tile0","tile0","tile0","tile0","tile0","tile0","tile0","tile0","tile0",
+			"tile0","tile0","tile0","tile0","tile0","tile0","tile0","tile0","tile0","tile0"],
 	"objects": [{
 		"type": "UNIT",
 		"no": 1,

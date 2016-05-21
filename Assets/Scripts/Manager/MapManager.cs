@@ -10,6 +10,8 @@ public class MapManager : FZ.MonoSingletone<MapManager> {
     [SerializeField]
     private Vector2 _mapSize;
 
+    private List<string> _tileTextureNames;
+
     [SerializeField]
     private List<PlaceInfo> _objInfos;
 
@@ -80,8 +82,11 @@ public class MapManager : FZ.MonoSingletone<MapManager> {
 
         _mapSize.x = mapData.x;
         _mapSize.y = mapData.y;
-        
-        foreach(var obj in mapData.objects)
+
+        _tileTextureNames = mapData.tileTextureNames;
+
+
+        foreach (var obj in mapData.objects)
         {
             _objInfos.Add(new PlaceInfo(obj));
         }
@@ -91,7 +96,7 @@ public class MapManager : FZ.MonoSingletone<MapManager> {
     {
         if (_mapCreator != null)
         {
-            _mapCreator.CreateTilemap(_mapSize, ref _tilemap);
+            _mapCreator.CreateTilemap(_mapSize, _tileTextureNames, ref _tilemap);
         }
     }
 

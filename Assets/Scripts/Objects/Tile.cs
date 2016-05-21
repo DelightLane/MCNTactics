@@ -23,6 +23,8 @@ public class Tile : TacticsObject, IDisposable, FZ.IObserver<eTouchEvent>
     private Vector2 _position;
     private PlaceObject _attached;
 
+    private string _tileTextureName;
+
     public static readonly float TILE_SIZE = 1;
 
     #region Tile State
@@ -61,8 +63,7 @@ public class Tile : TacticsObject, IDisposable, FZ.IObserver<eTouchEvent>
 
         public override void Run()
         {
-            // TODO : 맞는 타일 이미지로 변경
-            SetTileImage("tile0");
+            SetTileImage(Target._tileTextureName);
         }
 
         public override eTileType GetCurrentType()
@@ -126,18 +127,13 @@ public class Tile : TacticsObject, IDisposable, FZ.IObserver<eTouchEvent>
     public static Tile CreateTile()
     {
         var tile = GameObject.CreatePrimitive(PrimitiveType.Cube);
-
+        
         tile.transform.localScale = new Vector3(TILE_SIZE, 0.05f, TILE_SIZE);
 
         var tileComp = tile.AddComponent<Tile>();
         TouchManager.Instance.Subscribe(tileComp);
 
         return tileComp;
-    }
-
-    public void SetName(Vector2 pos)
-    {
-        this.name = String.Format("{0}_{1}", pos.x, pos.y);
     }
 
     public void Dispose()
@@ -167,8 +163,6 @@ public class Tile : TacticsObject, IDisposable, FZ.IObserver<eTouchEvent>
     void Awake()
     {
         StorageStates();
-
-        ChangeState(eTileType.NORMAL);
     }
 
     private void StorageStates()
@@ -178,9 +172,29 @@ public class Tile : TacticsObject, IDisposable, FZ.IObserver<eTouchEvent>
         new TileState_Deactive(this);
     }
 
+    public void Initialize(Vector2 pos, string tileTextureName)
+    {
+        SetName(pos);
+
+        SetPosition(pos);
+
+        _tileTextureName = tileTextureName;
+
+        ChangeState(eTileType.NORMAL);
+    }
+
+    public void SetName(Vector2 pos)
+    {
+        this.name = String.Format("{0}_{1}", pos.x, pos.y);
+    }
+
     public void SetPosition(Vector2 pos)
     {
         _position = pos;
+
+        var offset = 0.03f;
+        this.transform.position = new Vector3(pos.x * (Tile.TILE_SIZE + offset), 0, pos.y * (Tile.TILE_SIZE + offset));
+        this.transform.parent = MapCreator.GetRoot().transform;
     }
 
     public PlaceObject GetAttachObject()

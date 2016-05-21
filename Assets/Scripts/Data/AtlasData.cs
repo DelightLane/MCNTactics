@@ -23,7 +23,7 @@ public class AtlasDataList : DataObject
             }
         }
 
-        throw new UnityException("Image name is not available.");
+        throw new UnityException(string.Format("Image name {0} is not available.", imageName));
     }
 }
 
