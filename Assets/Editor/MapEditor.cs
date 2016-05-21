@@ -9,7 +9,7 @@ public class MapEditor : EditorWindow
     private string _mapName;
     private Vector2 _mapSize;
 
-    private Texture2D _tempTile;
+    private Texture2D _tileAtlasTexture;
 
     private Vector2 _mapScrollPos;
     private Vector2 _tileScrollPos;
@@ -83,8 +83,8 @@ public class MapEditor : EditorWindow
         if( GUILayout.Button("Load Tilemap"))
         {
             DataManager.Instance.LoadData(new AtlasDataFactory("TileAtlas", DataManager.DataType.ATLAS_TILE));
-            _tempTile = Resources.Load("Atlases/TileAtlas", typeof(Texture2D)) as Texture2D;
             _tileRawData = DataManager.Instance.GetData<AtlasDataList>(DataManager.DataType.ATLAS_TILE);
+            _tileAtlasTexture = _tileRawData.GetMaterial().mainTexture as Texture2D;
         }
 
         DisplaySelectTileList();
@@ -95,7 +95,7 @@ public class MapEditor : EditorWindow
     private void LoadTileMap()
     {
         DataManager.Instance.LoadData(new AtlasDataFactory("TileAtlas", DataManager.DataType.ATLAS_TILE));
-        _tempTile = Resources.Load("Atlases/TileAtlas", typeof(Texture2D)) as Texture2D;
+        _tileAtlasTexture = Resources.Load("Atlases/TileAtlas", typeof(Texture2D)) as Texture2D;
         _tileRawData = DataManager.Instance.GetData<AtlasDataList>(DataManager.DataType.ATLAS_TILE);
     }
 
@@ -172,13 +172,13 @@ public class MapEditor : EditorWindow
         var leftBottom = new Vector2(imageData.offsetX, imageData.offsetY);
         var rightBottom = new Vector2(imageData.offsetX + imageData.scaleX, imageData.offsetY);
 
-        int x = (int)(_tempTile.width * leftBottom.x);
-        int y = (int)(_tempTile.height * leftBottom.y);
-        int width = (int)(_tempTile.width * (Vector2.Distance(leftBottom, rightBottom)));
-        int height = (int)(_tempTile.height * (Vector2.Distance(leftBottom, leftTop)));
+        int x = (int)(_tileAtlasTexture.width * leftBottom.x);
+        int y = (int)(_tileAtlasTexture.height * leftBottom.y);
+        int width = (int)(_tileAtlasTexture.width * (Vector2.Distance(leftBottom, rightBottom)));
+        int height = (int)(_tileAtlasTexture.height * (Vector2.Distance(leftBottom, leftTop)));
 
         var tileImg = new Texture2D(width, height);
-        tileImg.SetPixels(_tempTile.GetPixels(x, y, width, height));
+        tileImg.SetPixels(_tileAtlasTexture.GetPixels(x, y, width, height));
         tileImg.Apply(false);
 
         _tileImgPool.Add(imageData.imageName, tileImg);
@@ -219,7 +219,7 @@ public class MapEditor : EditorWindow
             GUILayout.BeginVertical("Box", GUILayout.Height(EditorWindow.focusedWindow.position.height));
             _mapScrollPos = EditorGUILayout.BeginScrollView(_mapScrollPos);
 
-            _selGridInt = GUILayout.SelectionGrid(_selGridInt, contents.ToArray(), (int)_resultMapSize.x, style);
+            _selGridInt = GUILayout.SelectionGrid(_selGridInt, contents.ToArray(), (int)_resultMapSize.x, style, GUILayout.ExpandWidth(false));
             if (_selectTileData != null && _selectTileData.imageName.Length > 0 && _selGridInt >= 0)
             {
                 _tileTextureData[_selGridInt] = _selectTileData;
