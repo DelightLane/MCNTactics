@@ -26,7 +26,7 @@ public class MapManager : FZ.MonoSingletone<MapManager> {
             {
                 manager.CreateTilemap();
 
-                manager.PlaceObjs(eObjType.UNIT);
+                manager.PlaceAllObjs();
 
                 _savedMapSize = manager._mapSize;
             }
@@ -63,7 +63,7 @@ public class MapManager : FZ.MonoSingletone<MapManager> {
 #else
         CreateTilemap();
 
-        PlaceObjs(eObjType.UNIT);
+        PlaceAllObjs();
 #endif
     }
 
@@ -111,6 +111,14 @@ public class MapManager : FZ.MonoSingletone<MapManager> {
     public bool IsInMapSize(Vector2 pos)
     {
         return _mapSize.x > pos.x && _mapSize.y > pos.y;
+    }
+
+    public void PlaceAllObjs()
+    {
+        foreach(eObjType type in Enum.GetValues(typeof(eObjType)))
+        {
+            PlaceObjs(type);
+        }
     }
 
     public void PlaceObjs(eObjType type)
