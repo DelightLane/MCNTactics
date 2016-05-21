@@ -14,9 +14,11 @@ public class MapEditor : EditorWindow
     private Vector2 _mapScrollPos;
     private Vector2 _tileScrollPos;
 
+    // result datas
     private string _resultMapName;
-    private Vector2 _resultMapSize;
     private AtlasData[] _tileTextureData;
+    private MapData _resultData;
+    // result datas end
 
     private AtlasDataList _tileRawData;
 
@@ -43,6 +45,8 @@ public class MapEditor : EditorWindow
     {
         GUILayout.BeginVertical("Box", GUILayout.Width(MENU_WIDTH));
 
+        GUILayout.Label("Map Data", EditorStyles.boldLabel);
+
         _mapName = EditorGUILayout.TextField("Map Name: ", _mapName);
         _mapSize = EditorGUILayout.Vector2Field("Map Size", _mapSize);
         
@@ -52,6 +56,8 @@ public class MapEditor : EditorWindow
             {
                 LoadTileMap();
             }
+
+            _resultData = new MapData();
 
             int mapMaxSize = (int)_mapSize.x * (int)_mapSize.y;
             
@@ -65,10 +71,14 @@ public class MapEditor : EditorWindow
                     
                     // 신규 맵을 작성할 시 첫 번째 타일맵으로 전부 다 채운다.
                     _tileTextureData[position] = _tileRawData.infos[0];
+
+                    // 결과로 뽑혀나갈 타일 텍스쳐의 이름을 결과 데이터에 적재
+                    _resultData.tileTextureNames.Add(_tileTextureData[position].imageName);
                 }
             }
 
-            _resultMapSize = _mapSize;
+            _resultData.x = (int)_mapSize.x;
+            _resultData.y = (int)_mapSize.y;
         }
         if (GUILayout.Button("Save"))
         {
@@ -85,6 +95,7 @@ public class MapEditor : EditorWindow
             _tileAtlasTexture = _tileRawData.GetMaterial().mainTexture as Texture2D;
         }
 
+        DisplaySelectObject();
         DisplaySelectTileList();
 
         GUILayout.EndVertical();
@@ -95,6 +106,37 @@ public class MapEditor : EditorWindow
         DataManager.Instance.LoadData(new AtlasDataFactory("TileAtlas", DataManager.DataType.ATLAS_TILE));
         _tileAtlasTexture = Resources.Load("Atlases/TileAtlas", typeof(Texture2D)) as Texture2D;
         _tileRawData = DataManager.Instance.GetData<AtlasDataList>(DataManager.DataType.ATLAS_TILE);
+    }
+
+    private PlaceInfo _placeInfo = new PlaceInfo();
+    private PlaceInfo _selPlaceInfo = null;
+    private GUIStyle _toggleButtonStyleToggled;
+
+    private void DisplaySelectObject()
+    {
+        if(_selTileGridInt > -1)
+        {
+            _selPlaceInfo = null;
+        }
+
+        GUILayout.Label("Select Place Object", EditorStyles.boldLabel);
+
+        if (_placeInfo.no <= 0) _placeInfo.no = 1;
+        _placeInfo.no = EditorGUILayout.IntField("No", _placeInfo.no);
+        _placeInfo.team = (eCombatTeam)EditorGUILayout.EnumPopup("Team", _placeInfo.team);
+        _placeInfo.type = (eObjType)EditorGUILayout.EnumPopup("Type", _placeInfo.type);
+
+        if (_toggleButtonStyleToggled == null)
+        {
+            _toggleButtonStyleToggled = new GUIStyle("Button");
+            _toggleButtonStyleToggled.normal.background = _toggleButtonStyleToggled.active.background;
+        }
+
+        if (GUILayout.Button("Select", _selPlaceInfo != null ? _toggleButtonStyleToggled : "Button"))
+        {
+            _selPlaceInfo = _placeInfo;
+            _selTileGridInt = -1;
+        }
     }
 
     public int _selTileGridInt = -1;
@@ -127,7 +169,7 @@ public class MapEditor : EditorWindow
                 lineCount = 1;
             }
 
-            GUILayout.Label("Tiles", EditorStyles.boldLabel);
+            GUILayout.Label("Select Tile", EditorStyles.boldLabel);
 
             GUILayout.BeginVertical("Box", GUILayout.Width(MENU_WIDTH));
             _tileScrollPos = EditorGUILayout.BeginScrollView(_tileScrollPos);
@@ -179,15 +221,19 @@ public class MapEditor : EditorWindow
 
         List<GUIContent> contents = new List<GUIContent>();
         
-        if (_resultMapSize != null)
+        if (_resultData != null)
         {
-            for (int y = 0; y < _resultMapSize.y; ++y)
+            for (int y = 0; y < _resultData.y; ++y)
             {
-                for (int x = 0; x < _resultMapSize.x; ++x)
+                for (int x = 0; x < _resultData.x; ++x)
                 {
-                    int position = x + (int)_resultMapSize.x * y;
+                    int position = x + (int)_resultData.x * y;
 
                     var texture = GetTileImg(_tileTextureData[position]);
+
+                    // 결과로 뽑혀나갈 타일 텍스쳐의 이름을 결과 데이터에 적재
+                    _resultData.tileTextureNames[position] = _tileTextureData[position].imageName;
+
                     GUIContent content = new GUIContent(texture);
                     contents.Add(content);
                 }
@@ -199,7 +245,7 @@ public class MapEditor : EditorWindow
             GUILayout.BeginVertical("Box", GUILayout.Height(EditorWindow.focusedWindow.position.height));
             _mapScrollPos = EditorGUILayout.BeginScrollView(_mapScrollPos);
 
-            _selMapGridInt = GUILayout.SelectionGrid(_selMapGridInt, contents.ToArray(), (int)_resultMapSize.x, style, GUILayout.ExpandWidth(false));
+            _selMapGridInt = GUILayout.SelectionGrid(_selMapGridInt, contents.ToArray(), (int)_resultData.x, style, GUILayout.ExpandWidth(false));
             if (_selTileGridInt > -1 && _selMapGridInt >= 0)
             {
                 _tileTextureData[_selMapGridInt] = _tileRawData.infos[_selTileGridInt];

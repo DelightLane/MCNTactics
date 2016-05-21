@@ -9,6 +9,12 @@ public class MapData : DataObject
     public int y;
     public List<string> tileTextureNames;
     public List<MapObjectData> objects;
+
+    public MapData()
+    {
+        tileTextureNames = new List<string>();
+        objects = new List<MapObjectData>();
+    }
 }
 
 [Serializable]
@@ -39,6 +45,8 @@ public class PlaceInfo
     public eCombatTeam team;
     public eObjType type;
     public int no;
+
+    public PlaceInfo() { }
 
     public PlaceInfo(MapObjectData data)
     {
