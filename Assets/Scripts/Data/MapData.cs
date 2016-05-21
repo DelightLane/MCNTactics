@@ -19,6 +19,11 @@ public class MapObjectData : DataObject
     public string team;
     public int x;
     public int y;
+
+    public PlaceInfo CreatePlaceInfo()
+    {
+        return new PlaceInfo(this);
+    }
 }
 
 public enum eObjType
@@ -26,6 +31,7 @@ public enum eObjType
     UNIT,
 }
 
+// 실질적으로 맵에 배치할 때 사용하는 데이터
 [System.Serializable]
 public class PlaceInfo
 {

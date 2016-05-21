@@ -88,7 +88,7 @@ public class MapManager : FZ.MonoSingletone<MapManager> {
 
         foreach (var obj in mapData.objects)
         {
-            _objInfos.Add(new PlaceInfo(obj));
+            _objInfos.Add(obj.CreatePlaceInfo());
         }
     }
 
