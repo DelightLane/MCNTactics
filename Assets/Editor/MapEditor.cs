@@ -21,6 +21,7 @@ public class MapEditor : EditorWindow
 
     private Texture2D _tileAtlasTexture;
 
+    private Vector2 _settingScrollPos;
     private Vector2 _mapScrollPos;
     private Vector2 _tileScrollPos;
 
@@ -58,6 +59,7 @@ public class MapEditor : EditorWindow
     private void DisplaySettingBox()
     {
         GUILayout.BeginVertical("Box", GUILayout.Width(MENU_WIDTH));
+        _settingScrollPos = EditorGUILayout.BeginScrollView(_settingScrollPos, GUILayout.Width(MENU_WIDTH + 25));
 
         GUILayout.Label("Map Data", EditorStyles.boldLabel);
 
@@ -115,6 +117,7 @@ public class MapEditor : EditorWindow
         DisplayObjectInfoTab();
         DisplaySelectTileListTab();
 
+        EditorGUILayout.EndScrollView();
         GUILayout.EndVertical();
     }
 
