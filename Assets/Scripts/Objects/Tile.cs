@@ -193,7 +193,7 @@ public class Tile : TacticsObject, IDisposable, FZ.IObserver<eTouchEvent>
         _position = pos;
 
         var offset = 0.03f;
-        this.transform.position = new Vector3(pos.x * (Tile.TILE_SIZE + offset), 0, pos.y * (Tile.TILE_SIZE + offset));
+        this.transform.position = new Vector3(pos.x * (Tile.TILE_SIZE + offset), 0, -pos.y * (Tile.TILE_SIZE + offset));
         this.transform.parent = MapCreator.GetRoot().transform;
     }
 
