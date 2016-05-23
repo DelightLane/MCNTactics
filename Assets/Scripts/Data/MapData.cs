@@ -30,6 +30,15 @@ public class MapObjectData : DataObject
     {
         return new PlaceInfo(this);
     }
+
+    public MapObjectData(PlaceInfo data)
+    {
+        x = (int)data.pos.x;
+        y = (int)data.pos.y;
+        team = data.team.ToString();
+        no = data.no;
+        type = data.type.ToString();
+    }
 }
 
 public enum eObjType

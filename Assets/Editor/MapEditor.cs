@@ -2,6 +2,8 @@
 using UnityEditor;
 using System.Collections.Generic;
 using System;
+using System.Linq;
+using System.IO;
 
 // 픽셀을 다루기 때문에 아틀라스 텍스쳐는 reabable이어야 한다.
 public class MapEditor : EditorWindow
@@ -47,6 +49,7 @@ public class MapEditor : EditorWindow
 
     void OnGUI()
     {
+        return;
         GUILayout.BeginHorizontal();
 
         DisplaySettingBox();
@@ -100,7 +103,7 @@ public class MapEditor : EditorWindow
         }
         if (GUILayout.Button("Save"))
         {
-
+            SaveJson();
         }
         if (GUILayout.Button("Load"))
         {
@@ -342,6 +345,9 @@ public class MapEditor : EditorWindow
                 if (_selMapGridInt > -1)
                 {
                     _mapPlaceInfo[_selMapGridInt] = (PlaceInfo)_placeInfo.Clone();
+
+                    _mapPlaceInfo[_selMapGridInt].pos.x = _selMapGridInt % _resultData.x;
+                    _mapPlaceInfo[_selMapGridInt].pos.y = _selMapGridInt / _resultData.x;
                 }
             }
             if(_state == eState.ObjectDelete)
@@ -358,6 +364,39 @@ public class MapEditor : EditorWindow
 
             EditorGUILayout.EndScrollView();
             GUILayout.EndVertical();
+        }
+    }
+
+    private void SaveJson()
+    {
+        if(_mapName == null || _mapName == string.Empty)
+        {
+            return;
+        }
+
+        // 설치한 오브젝트들을 넣는다.
+        _resultData.objects = new List<MapObjectData>(_mapPlaceInfo.Values.Select((PlaceInfo data) => new MapObjectData(data)));
+
+        string json = JsonUtility.ToJson(_resultData);
+        string resultPath = string.Format("{0}/{1}/map_{2}.json", Application.dataPath, "Resources/Datas", _mapName);
+
+        if (resultPath == null || resultPath == string.Empty)
+        {
+            return;
+        }
+
+        try
+        {
+            var file = File.Open(resultPath, FileMode.Create, FileAccess.Write);
+            var binary = new BinaryWriter(file);
+            binary.Write(json.ToCharArray());
+            file.Close();
+
+            EditorUtility.DisplayDialog("Save", "Making Map is Successful.", "Ok");
+        }
+        catch (IOException e)
+        {
+            EditorUtility.DisplayDialog("Save", e.ToString(), "Ok");
         }
     }
 }
