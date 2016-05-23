@@ -49,7 +49,6 @@ public class MapEditor : EditorWindow
 
     void OnGUI()
     {
-        return;
         GUILayout.BeginHorizontal();
 
         DisplaySettingBox();
