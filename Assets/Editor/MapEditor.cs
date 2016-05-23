@@ -83,6 +83,8 @@ public class MapEditor : EditorWindow
 
             _resultData.x = (int)_mapSize.x;
             _resultData.y = (int)_mapSize.y;
+
+            _mapPlaceInfo.Clear();
         }
         if (GUILayout.Button("Save"))
         {
@@ -117,6 +119,8 @@ public class MapEditor : EditorWindow
     private PlaceInfo _selPlaceInfo = null;
     private GUIStyle _toggleButtonStyleToggled;
 
+    private bool _deleteMode = false;
+
     private void DisplayPlaceObjectTab()
     {
         if (_selTileGridInt > -1)
@@ -137,14 +141,23 @@ public class MapEditor : EditorWindow
             _toggleButtonStyleToggled.normal.background = _toggleButtonStyleToggled.active.background;
         }
 
-        if (GUILayout.Button("Select", _selPlaceInfo != null ? _toggleButtonStyleToggled : "Button"))
+        if (GUILayout.Button("Object Place Mode", _selPlaceInfo != null ? _toggleButtonStyleToggled : "Button"))
         {
+            _deleteMode = false;
             _selPlaceInfo = _placeInfo;
             _selTileGridInt = -1;
         }
 
-        if (GUILayout.Button("Unselect All"))
+        if (GUILayout.Button("Object Delete Mode", _deleteMode == true ? _toggleButtonStyleToggled : "Button"))
         {
+            _deleteMode = true;
+            _selPlaceInfo = null;
+            _selTileGridInt = -1;
+        }
+
+        if (GUILayout.Button("Object Infomation Mode"))
+        {
+            _deleteMode = false;
             _selPlaceInfo = null;
             _selTileGridInt = -1;
         }
@@ -154,9 +167,9 @@ public class MapEditor : EditorWindow
     {
         GUILayout.Label("Tile Object Info", EditorStyles.boldLabel);
 
-        GUILayout.Label(string.Format("No : {0}", _selMapGridInt < 0 || !_mapPlaceInfo.ContainsKey(_selMapGridInt) ? string.Empty : _mapPlaceInfo[_selMapGridInt].no.ToString()));
-        GUILayout.Label(string.Format("Team : {0}", _selMapGridInt < 0 || !_mapPlaceInfo.ContainsKey(_selMapGridInt) ? string.Empty : _mapPlaceInfo[_selMapGridInt].team.ToString()));
-        GUILayout.Label(string.Format("Type : {0}", _selMapGridInt < 0 || !_mapPlaceInfo.ContainsKey(_selMapGridInt) ? string.Empty : _mapPlaceInfo[_selMapGridInt].type.ToString()));
+        GUILayout.Label(string.Format("No : {0}", _deleteMode || _selMapGridInt < 0 || !_mapPlaceInfo.ContainsKey(_selMapGridInt) ? string.Empty : _mapPlaceInfo[_selMapGridInt].no.ToString()));
+        GUILayout.Label(string.Format("Team : {0}", _deleteMode || _selMapGridInt < 0 || !_mapPlaceInfo.ContainsKey(_selMapGridInt) ? string.Empty : _mapPlaceInfo[_selMapGridInt].team.ToString()));
+        GUILayout.Label(string.Format("Type : {0}", _deleteMode || _selMapGridInt < 0 || !_mapPlaceInfo.ContainsKey(_selMapGridInt) ? string.Empty : _mapPlaceInfo[_selMapGridInt].type.ToString()));
     }
 
     public int _selTileGridInt = -1;
@@ -202,6 +215,7 @@ public class MapEditor : EditorWindow
     }
 
     private Dictionary<string, Texture2D> _tileImgPool = new Dictionary<string, Texture2D>();
+    private Dictionary<string, Texture2D> _objectPlacedTileImgPool = new Dictionary<string, Texture2D>();
 
     private Texture2D GetTileImg(AtlasData imageData)
     {
@@ -227,6 +241,32 @@ public class MapEditor : EditorWindow
 
         return tileImg;
     }
+
+    private Texture2D GetPlacedTileImg(AtlasData imageData)
+    {
+        if (_objectPlacedTileImgPool.ContainsKey(imageData.imageName))
+        {
+            return _objectPlacedTileImgPool[imageData.imageName];
+        }
+
+        var texture = GetTileImg(imageData);
+
+        Texture2D blendTexture = new Texture2D(texture.width, texture.height);
+        var blendingColor = new Color(1f, 0.5f, 0.5f);
+        for (int i = 0; i < texture.width; ++i)
+        {
+            for (int j = 0; j < texture.height; ++j)
+            {
+                blendTexture.SetPixel(i, j, Color.Lerp(texture.GetPixel(i, j), blendingColor, 0.5f));
+            }
+        }
+
+        blendTexture.Apply();
+
+        _objectPlacedTileImgPool.Add(imageData.imageName, blendTexture);
+
+        return blendTexture;
+    }
     
 
     public int _selMapGridInt = -1;
@@ -238,15 +278,11 @@ public class MapEditor : EditorWindow
             _selMapGridInt = -1;
         }
 
-        var margin = 3;
-        
-        GUIStyle style = new GUIStyle();
+        GUIStyle style = new GUIStyle(GUI.skin.box);
         style.alignment = TextAnchor.MiddleCenter;
-        style.imagePosition = ImagePosition.ImageAbove;
-        style.fontSize = 8;
-        style.normal.textColor = Color.red;
-        style.onNormal = GUI.skin.box.normal;
-        style.margin = new RectOffset(margin * 2, margin * 2, margin, margin);
+        style.onNormal = GUI.skin.button.active;
+        style.margin = new RectOffset(0, 0, 0, 0);
+        style.padding = new RectOffset(1, 1, 1, 1);
 
         List<GUIContent> contents = new List<GUIContent>();
         
@@ -263,11 +299,11 @@ public class MapEditor : EditorWindow
                     // 결과로 뽑혀나갈 타일 텍스쳐의 이름을 결과 데이터에 적재
                     _resultData.tileTextureNames[position] = _tileTextureData[position].imageName;
 
-                    GUIContent content = new GUIContent(" ", texture);
+                    GUIContent content = new GUIContent(texture);
 
                     if(_mapPlaceInfo.ContainsKey(position))
                     {
-                        content.text = "placed";
+                        content.image = GetPlacedTileImg(_tileTextureData[position]);
                     }
 
                     contents.Add(content);
@@ -288,6 +324,10 @@ public class MapEditor : EditorWindow
             if(_selPlaceInfo != null && _selMapGridInt >= 0)
             {
                 _mapPlaceInfo[_selMapGridInt] = _selPlaceInfo;
+            }
+            if(_deleteMode)
+            {
+                _mapPlaceInfo.Remove(_selMapGridInt);
             }
 
             EditorGUILayout.EndScrollView();
