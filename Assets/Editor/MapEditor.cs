@@ -70,43 +70,17 @@ public class MapEditor : EditorWindow
 
         if (GUILayout.Button("New"))
         {
-            if (_tileRawData == null || _tileRawData.infos.Length <= 0)
-            {
-                LoadTileMap();
-            }
+            InitMapEditor(_mapSize);
 
-            _resultData = new MapData();
-
-            int mapMaxSize = (int)_mapSize.x * (int)_mapSize.y;
-
-            _tileTextureData = new AtlasData[mapMaxSize];
-
-            for (int y = 0; y < _mapSize.y; ++y)
-            {
-                for (int x = 0; x < _mapSize.x; ++x)
-                {
-                    int position = x + (int)_mapSize.x * y;
-
-                    // 신규 맵을 작성할 시 첫 번째 타일맵으로 전부 다 채운다.
-                    _tileTextureData[position] = _tileRawData.infos[0];
-
-                    // 결과로 뽑혀나갈 타일 텍스쳐의 이름을 결과 데이터에 적재
-                    _resultData.tileTextureNames.Add(_tileTextureData[position].imageName);
-                }
-            }
-
-            _resultData.x = (int)_mapSize.x;
-            _resultData.y = (int)_mapSize.y;
-
-            _mapPlaceInfo.Clear();
+            InitTileTexture();
         }
         if (GUILayout.Button("Save"))
         {
-            SaveJson();
+            SaveMapData();
         }
         if (GUILayout.Button("Load"))
         {
-
+            LoadMapData();
         }
         if (GUILayout.Button("Load Tilemap"))
         {
@@ -121,6 +95,47 @@ public class MapEditor : EditorWindow
 
         EditorGUILayout.EndScrollView();
         GUILayout.EndVertical();
+    }
+
+    private void InitMapEditor(Vector2 mapSize)
+    {
+        if (_tileRawData == null || _tileRawData.infos.Length <= 0)
+        {
+            LoadTileMap();
+        }
+
+        if (_resultData == null)
+        {
+            _resultData = new MapData();
+
+            _resultData.x = (int)mapSize.x;
+            _resultData.y = (int)mapSize.y;
+        }
+
+        int mapMaxSize = (int)mapSize.x * (int)mapSize.y;
+
+        _tileTextureData = new AtlasData[mapMaxSize];
+
+        _mapPlaceInfo.Clear();
+
+        ChangeState(eState.ObjectInfomation);
+    }
+
+    private void InitTileTexture()
+    {
+        for (int y = 0; y < _mapSize.y; ++y)
+        {
+            for (int x = 0; x < _mapSize.x; ++x)
+            {
+                int position = x + (int)_mapSize.x * y;
+
+                // 신규 맵을 작성할 시 첫 번째 타일맵으로 전부 다 채운다.
+                _tileTextureData[position] = _tileRawData.infos[0];
+
+                // 결과로 뽑혀나갈 타일 텍스쳐의 이름을 결과 데이터에 적재
+                _resultData.tileTextureNames.Add(_tileTextureData[position].imageName);
+            }
+        }
     }
 
     private void LoadTileMap()
@@ -366,7 +381,7 @@ public class MapEditor : EditorWindow
         }
     }
 
-    private void SaveJson()
+    private void SaveMapData()
     {
         if(_mapName == null || _mapName == string.Empty)
         {
@@ -397,5 +412,60 @@ public class MapEditor : EditorWindow
         {
             EditorUtility.DisplayDialog("Save", e.ToString(), "Ok");
         }
+    }
+
+    private void LoadMapData()
+    {
+        string path = EditorUtility.OpenFilePanel("Load Map Data", "/Resources/Datas", "json");
+
+        if (path != null && path != string.Empty)
+        {
+            var fileData = File.ReadAllText(path);
+
+            try
+            {
+                _resultData = JsonUtility.FromJson(fileData, typeof(MapData)) as MapData;
+
+                if(_resultData.tileTextureNames.Count <= 0)
+                {
+                    throw new Exception("tileTextures is empty");
+                }
+
+                _mapSize.x = _resultData.x;
+                _mapSize.y = _resultData.y;
+
+                InitMapEditor(_mapSize);
+
+                for (int i = 0; i < _resultData.tileTextureNames.Count; ++i)
+                {
+                    _tileTextureData[i] = _tileRawData.GetImageData(_resultData.tileTextureNames[i]);
+                }
+
+                foreach(var obj in _resultData.objects)
+                {
+                    int position = obj.x + (int)_mapSize.x * obj.y;
+
+                    _mapPlaceInfo[position] = obj.CreatePlaceInfo();
+                }
+
+                _mapName = GetFileName(path);
+
+                EditorUtility.DisplayDialog("Load", "Load Success.", "Ok");
+            }
+            catch (Exception e)
+            {
+                InitMapEditor(_mapSize);
+                InitTileTexture();
+                EditorUtility.DisplayDialog("Load", e.ToString(), "Ok");
+            }
+        }
+    }
+
+    private string GetFileName(string filePath)
+    {
+        string[] splitPath = filePath.Split('.', '/', '\\');
+        string name = splitPath[splitPath.Length - 2];
+
+        return name.Replace("map_", string.Empty);
     }
 }
