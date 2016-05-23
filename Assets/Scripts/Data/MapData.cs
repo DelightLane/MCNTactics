@@ -39,7 +39,7 @@ public enum eObjType
 
 // 실질적으로 맵에 배치할 때 사용하는 데이터
 [System.Serializable]
-public class PlaceInfo
+public class PlaceInfo : ICloneable
 {
     public Vector2 pos;
     public eCombatTeam team;
@@ -54,6 +54,17 @@ public class PlaceInfo
         team = (eCombatTeam)Enum.Parse(typeof(eCombatTeam), data.team);
         no = data.no;
         type = (eObjType)Enum.Parse(typeof(eObjType), data.type);
+    }
+
+    public object Clone()
+    {
+        PlaceInfo clone = new PlaceInfo();
+        clone.pos = pos;
+        clone.team = team;
+        clone.type = type;
+        clone.no = no;
+
+        return clone;
     }
 }
 

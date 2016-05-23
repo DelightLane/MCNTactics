@@ -6,6 +6,16 @@ using System;
 // 픽셀을 다루기 때문에 아틀라스 텍스쳐는 reabable이어야 한다.
 public class MapEditor : EditorWindow
 {
+    private enum eState
+    {
+        ObjectPlace,
+        ObjectDelete,
+        ObjectInfomation,
+        TilePlace,
+    }
+
+    private eState _state;
+
     private string _mapName;
     private Vector2 _mapSize;
 
@@ -116,16 +126,13 @@ public class MapEditor : EditorWindow
     }
 
     private PlaceInfo _placeInfo = new PlaceInfo();
-    private PlaceInfo _selPlaceInfo = null;
     private GUIStyle _toggleButtonStyleToggled;
-
-    private bool _deleteMode = false;
-
+    
     private void DisplayPlaceObjectTab()
     {
         if (_selTileGridInt > -1)
         {
-            _selPlaceInfo = null;
+            ChangeState(eState.TilePlace);
         }
 
         GUILayout.Label("Place Object", EditorStyles.boldLabel);
@@ -141,25 +148,34 @@ public class MapEditor : EditorWindow
             _toggleButtonStyleToggled.normal.background = _toggleButtonStyleToggled.active.background;
         }
 
-        if (GUILayout.Button("Object Place Mode", _selPlaceInfo != null ? _toggleButtonStyleToggled : "Button"))
+        if (GUILayout.Button("Object Place Mode", _state == eState.ObjectPlace ? _toggleButtonStyleToggled : "Button"))
         {
-            _deleteMode = false;
-            _selPlaceInfo = _placeInfo;
-            _selTileGridInt = -1;
+            ChangeState(eState.ObjectPlace);
         }
 
-        if (GUILayout.Button("Object Delete Mode", _deleteMode == true ? _toggleButtonStyleToggled : "Button"))
+        if (GUILayout.Button("Object Delete Mode", _state == eState.ObjectDelete ? _toggleButtonStyleToggled : "Button"))
         {
-            _deleteMode = true;
-            _selPlaceInfo = null;
-            _selTileGridInt = -1;
+            ChangeState(eState.ObjectDelete);
         }
 
-        if (GUILayout.Button("Object Infomation Mode"))
+        if (GUILayout.Button("Object Infomation Mode", _state == eState.ObjectInfomation ? _toggleButtonStyleToggled : "Button"))
         {
-            _deleteMode = false;
-            _selPlaceInfo = null;
-            _selTileGridInt = -1;
+            ChangeState(eState.ObjectInfomation);
+        }
+    }
+
+    private void ChangeState(eState state)
+    {
+        if (_state != state)
+        {
+            _state = state;
+
+            _selMapGridInt = -1;
+
+            if (_state != eState.TilePlace)
+            {
+                _selTileGridInt = -1;
+            }
         }
     }
 
@@ -167,9 +183,9 @@ public class MapEditor : EditorWindow
     {
         GUILayout.Label("Tile Object Info", EditorStyles.boldLabel);
 
-        GUILayout.Label(string.Format("No : {0}", _deleteMode || _selMapGridInt < 0 || !_mapPlaceInfo.ContainsKey(_selMapGridInt) ? string.Empty : _mapPlaceInfo[_selMapGridInt].no.ToString()));
-        GUILayout.Label(string.Format("Team : {0}", _deleteMode || _selMapGridInt < 0 || !_mapPlaceInfo.ContainsKey(_selMapGridInt) ? string.Empty : _mapPlaceInfo[_selMapGridInt].team.ToString()));
-        GUILayout.Label(string.Format("Type : {0}", _deleteMode || _selMapGridInt < 0 || !_mapPlaceInfo.ContainsKey(_selMapGridInt) ? string.Empty : _mapPlaceInfo[_selMapGridInt].type.ToString()));
+        GUILayout.Label(string.Format("No : {0}", _state == eState.ObjectInfomation && _mapPlaceInfo.ContainsKey(_selMapGridInt) ? _mapPlaceInfo[_selMapGridInt].no.ToString() : string.Empty));
+        GUILayout.Label(string.Format("Team : {0}", _state == eState.ObjectInfomation && _mapPlaceInfo.ContainsKey(_selMapGridInt) ? _mapPlaceInfo[_selMapGridInt].team.ToString() : string.Empty));
+        GUILayout.Label(string.Format("Type : {0}", _state == eState.ObjectInfomation && _mapPlaceInfo.ContainsKey(_selMapGridInt) ? _mapPlaceInfo[_selMapGridInt].type.ToString() : string.Empty));
     }
 
     public int _selTileGridInt = -1;
@@ -272,12 +288,6 @@ public class MapEditor : EditorWindow
     public int _selMapGridInt = -1;
     private void DisplayMapData()
     {
-        // 뭔가를 배치하는 모드라면 mapGrid 인덱스를 초기화
-        if (_selTileGridInt > -1 || _selPlaceInfo != null)
-        {
-            _selMapGridInt = -1;
-        }
-
         GUIStyle style = new GUIStyle(GUI.skin.box);
         style.alignment = TextAnchor.MiddleCenter;
         style.onNormal = GUI.skin.button.active;
@@ -317,17 +327,30 @@ public class MapEditor : EditorWindow
             _mapScrollPos = EditorGUILayout.BeginScrollView(_mapScrollPos);
 
             _selMapGridInt = GUILayout.SelectionGrid(_selMapGridInt, contents.ToArray(), (int)_resultData.x, style, GUILayout.ExpandWidth(false));
-            if (_selTileGridInt > -1 && _selMapGridInt >= 0)
+            if (_state == eState.TilePlace)
             {
-                _tileTextureData[_selMapGridInt] = _tileRawData.infos[_selTileGridInt];
+                if (_selMapGridInt > -1)
+                {
+                    _tileTextureData[_selMapGridInt] = _tileRawData.infos[_selTileGridInt];
+                }
             }
-            if(_selPlaceInfo != null && _selMapGridInt >= 0)
+            if(_state == eState.ObjectPlace)
             {
-                _mapPlaceInfo[_selMapGridInt] = _selPlaceInfo;
+                if (_selMapGridInt > -1)
+                {
+                    _mapPlaceInfo[_selMapGridInt] = (PlaceInfo)_placeInfo.Clone();
+                }
             }
-            if(_deleteMode)
+            if(_state == eState.ObjectDelete)
             {
-                _mapPlaceInfo.Remove(_selMapGridInt);
+                if (_selMapGridInt > -1)
+                {
+                    _mapPlaceInfo.Remove(_selMapGridInt);
+                }
+            }
+            if (_state != eState.ObjectInfomation)
+            {
+                _selMapGridInt = -1;
             }
 
             EditorGUILayout.EndScrollView();
