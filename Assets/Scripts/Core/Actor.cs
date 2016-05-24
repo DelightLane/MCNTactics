@@ -84,11 +84,15 @@ namespace FZ
 
         protected virtual void Initialize() { }
 
+        protected virtual void Reset() { }
+
         protected void FinishActor()
         {
             if (ActTarget != null)
             {
                 ActTarget.DequeueActor();
+
+                this.Reset();
             }
         }
 

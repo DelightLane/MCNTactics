@@ -39,11 +39,6 @@ public class ActionObject : PlaceObject, FZ.IActorQueue
             }
 
             this.AddActor(actor);
-
-#if UNITY_EDITOR
-            // 이건 디버깅용으로.. 무조껀 큐에 삽입한다.
-            this.EnqueueActor(actor.GetType());
-#endif
         }
         catch (Exception e)
         {
@@ -85,6 +80,18 @@ public class ActionObject : PlaceObject, FZ.IActorQueue
         if (activeActor != null)
         {
             activeActor.OnTouchEvent(touch);
+        }
+        else
+        {
+            // TODO : 임시 UI를 사용하기 위해 임시로 처리. UI와 연동하여 ACTION을 어떻게 처리할지 고민 필요.
+            if (IsSelected())
+            {
+                Deselect();
+            }
+            else
+            {
+                Select();
+            }
         }
 
         return true;

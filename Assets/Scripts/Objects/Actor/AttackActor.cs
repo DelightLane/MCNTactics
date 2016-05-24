@@ -79,13 +79,9 @@ public class AttackActor : FZ.UnitObjActor
         {
             if (Target != null)
             {
-                if (Target.GetCurrentStateType() != eAttackActType.DONE)
-                {
-                    if (GameManager.Instance.SelectedObj == null)
-                    {
-                        Target.ChangeState(eAttackActType.ATTACK);
-                    }
-                }
+                Target.ActTarget.Select();
+
+                Target.ChangeState(eAttackActType.ATTACK);
             }
 
             return false;
@@ -123,8 +119,6 @@ public class AttackActor : FZ.UnitObjActor
         {
             if (Target != null)
             {
-                Target.ActTarget.Select();
-
                 if (Target.ActTarget.GetPlacedTile() != null)
                 {
                     MapManager.Instance.ChangeAllTileState(eTileType.DEACTIVE);
@@ -190,6 +184,11 @@ public class AttackActor : FZ.UnitObjActor
 
         StorageStates();
 
+        ChangeState(eAttackActType.NORMAL);
+    }
+
+    protected override void Reset()
+    {
         ChangeState(eAttackActType.NORMAL);
     }
 

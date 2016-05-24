@@ -69,13 +69,9 @@ public class MoveActor : FZ.ActObjActor
         {
             if (Target != null)
             {
-                if (Target.GetCurrentStateType() != eMoveActType.DONE)
-                {
-                    if (GameManager.Instance.SelectedObj == null)
-                    {
-                        Target.ChangeState(eMoveActType.MOVE);
-                    }
-                }
+                Target.ActTarget.Select();
+
+                Target.ChangeState(eMoveActType.MOVE);
             }
 
             return false;
@@ -113,8 +109,6 @@ public class MoveActor : FZ.ActObjActor
         {
             if (Target != null)
             {
-                Target.ActTarget.Select();
-
                 if (Target.ActTarget.GetPlacedTile() != null)
                 {
                     MapManager.Instance.ChangeAllTileState(eTileType.DEACTIVE);
@@ -175,6 +169,11 @@ public class MoveActor : FZ.ActObjActor
 
         StorageStates();
 
+        ChangeState(eMoveActType.NORMAL);
+    }
+
+    protected override void Reset()
+    {
         ChangeState(eMoveActType.NORMAL);
     }
 
