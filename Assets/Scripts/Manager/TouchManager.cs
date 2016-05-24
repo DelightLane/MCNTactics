@@ -26,7 +26,7 @@ public class TouchManager : MonoSingletone<TouchManager>, IObservable<eTouchEven
         if (Input.GetMouseButtonUp(0))
         {
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            Debug.DrawRay(Camera.main.transform.position, ray.direction * 1000, Color.red, 100);
+            //Debug.DrawRay(Camera.main.transform.position, ray.direction * 1000, Color.red, 100);
             RaycastHit[] hits = Physics.RaycastAll(ray);
             if (hits.Length > 0)
             {
