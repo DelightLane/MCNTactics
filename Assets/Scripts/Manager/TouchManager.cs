@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections.Generic;
+using System.Collections;
+using System.Linq;
 using FZ;
 
 // TODO : 더 많은 터치 이벤트들을 구현해야 함
@@ -24,20 +26,20 @@ public class TouchManager : MonoSingletone<TouchManager>, IObservable<eTouchEven
         if (Input.GetMouseButtonUp(0))
         {
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Debug.DrawRay(Camera.main.transform.position, ray.direction * 1000, Color.red, 100);
             RaycastHit[] hits = Physics.RaycastAll(ray);
             if (hits.Length > 0)
             {
-                foreach (var observer in _observers)
+                foreach (var hit in hits)
                 {
-                    var gameObjObserver = observer as MonoBehaviour;
+                    var gameObjObserver = _observers.Find((IObserver<eTouchEvent> ob) => ob is TacticsObject && (ob as TacticsObject).transform == hit.transform);
+
                     if (gameObjObserver != null)
                     {
-                        foreach (var hit in hits)
+                        if (((TacticsObject)gameObjObserver).transform == hit.transform)
                         {
-                            if (gameObjObserver.transform == hit.transform)
-                            {
-                                observer.OnNext(eTouchEvent.TOUCH);
-                            }
+                            gameObjObserver.OnNext(eTouchEvent.TOUCH);
+                            return;
                         }
                     }
                 }

@@ -5,13 +5,13 @@ using System.Collections.Generic;
 using System.Reflection;
 using FZ;
 
-public class PlaceObject : TacticsObject, IDisposable
+public class PlaceObject : TacticsObject, IDisposable, FZ.IObserver<eTouchEvent>
 {
     protected Tile _placedTile;
 
     public virtual void Initialize(DataObject data)
     {
-        
+        TouchManager.Instance.Subscribe(this);
     }
 
     // 타일에 놓는 건 타일의 AttachObject 메소드를 사용할 것.
@@ -48,7 +48,7 @@ public class PlaceObject : TacticsObject, IDisposable
         if (tile != null)
         {
             transform.parent = tile.transform;
-            transform.localPosition = new Vector3(0, transform.localScale.y / 2, 0);
+            transform.localPosition = new Vector3(0, tile.transform.localScale.y, 0);
 
             tile.AttachObject(this);
         }
@@ -67,5 +67,13 @@ public class PlaceObject : TacticsObject, IDisposable
     public void Deselect()
     {
         GameManager.Instance.SelectedObj = null;
+    }
+
+    public void OnNext(eTouchEvent data)
+    {
+        if(_placedTile != null)
+        {
+            _placedTile.OnNext(data);
+        }
     }
 }

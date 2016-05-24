@@ -96,6 +96,8 @@ public class UnitObject : ActionObject, ICombat
 
     public override void Initialize(DataObject data)
     {
+        base.Initialize(data);
+
         UnitData unitData = data as UnitData;
 
         if (unitData != null)

@@ -128,7 +128,7 @@ public class Tile : TacticsObject, IDisposable, FZ.IObserver<eTouchEvent>
     {
         var tile = GameObject.CreatePrimitive(PrimitiveType.Cube);
         
-        tile.transform.localScale = new Vector3(TILE_SIZE, 0.05f, TILE_SIZE);
+        tile.transform.localScale = new Vector3(TILE_SIZE, TILE_SIZE, TILE_SIZE);
 
         var tileComp = tile.AddComponent<Tile>();
         TouchManager.Instance.Subscribe(tileComp);

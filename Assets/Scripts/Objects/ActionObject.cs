@@ -16,7 +16,7 @@ public class ActionObject : PlaceObject, FZ.IActorQueue
 
     public override void Initialize(DataObject data)
     {
-
+        base.Initialize(data);
     }
 
     public void AddActor(Actor actor)
