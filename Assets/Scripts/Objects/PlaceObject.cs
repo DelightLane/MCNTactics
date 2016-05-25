@@ -54,6 +54,11 @@ public class PlaceObject : TacticsObject, IDisposable, FZ.IObserver<eTouchEvent>
         }
     }
 
+    public bool IsSelectedEmpty()
+    {
+        return GameManager.Instance.SelectedObj == null;
+    }
+
     public bool IsSelected()
     {
         return GameManager.Instance.SelectedObj == this;

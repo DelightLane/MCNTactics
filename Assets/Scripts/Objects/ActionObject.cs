@@ -88,7 +88,7 @@ public class ActionObject : PlaceObject, FZ.IActorQueue
             {
                 Deselect();
             }
-            else
+            if(IsSelectedEmpty())
             {
                 Select();
             }
