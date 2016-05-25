@@ -60,7 +60,10 @@ public class ActionObject : PlaceObject, FZ.IActorQueue
         _actorMachine.DequeueActor();
 
 #if UNITY_EDITOR
-        _actorDebugQueue.RemoveAt(0);
+        if (_actorDebugQueue.Count > 0)
+        {
+            _actorDebugQueue.RemoveAt(0);
+        }
 #endif
     }
 
@@ -88,7 +91,7 @@ public class ActionObject : PlaceObject, FZ.IActorQueue
             {
                 Deselect();
             }
-            if(IsSelectedEmpty())
+            else if(IsSelectedEmpty())
             {
                 Select();
             }
