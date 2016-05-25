@@ -84,15 +84,13 @@ namespace FZ
 
         protected virtual void Initialize() { }
 
-        protected virtual void Reset() { }
+        public virtual void Reset() { }
 
         protected void FinishActor()
         {
             if (ActTarget != null)
             {
                 ActTarget.DequeueActor();
-
-                this.Reset();
             }
         }
 
@@ -204,6 +202,8 @@ namespace FZ
         {
             if (_actorQueue.Count > 0)
             {
+                GetActiveActor().Reset();
+
                 _actorQueue.RemoveFirst();
             }
         }

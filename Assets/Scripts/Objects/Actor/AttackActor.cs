@@ -5,8 +5,7 @@ using System;
 public enum eAttackActType
 {
     NORMAL,
-    ATTACK,
-    DONE
+    ATTACK
 }
 
 public class AttackActor : FZ.UnitObjActor
@@ -146,33 +145,8 @@ public class AttackActor : FZ.UnitObjActor
                 {
                     damagedTarget.Damaged(Target);
 
-                    Target.ChangeState(eAttackActType.DONE);
+                    Target.FinishActor();
                 }
-            }
-        }
-    }
-
-    private class AttackActState_Done : AttackActState
-    {
-        public AttackActState_Done(AttackActor target) : base(target) { }
-
-        public override eAttackActType GetCurrentType()
-        {
-            return eAttackActType.DONE;
-        }
-
-        public override bool OnTouchEvent()
-        {
-            return true;
-        }
-
-        public override void Run()
-        {
-            if (Target != null)
-            {
-                AllTileToNormal();
-
-                Target.FinishActor();
             }
         }
     }
@@ -187,7 +161,7 @@ public class AttackActor : FZ.UnitObjActor
         ChangeState(eAttackActType.NORMAL);
     }
 
-    protected override void Reset()
+    public override void Reset()
     {
         ChangeState(eAttackActType.NORMAL);
     }
@@ -196,7 +170,6 @@ public class AttackActor : FZ.UnitObjActor
     {
         new AttackActState_Normal(this);
         new AttackActState_Attack(this);
-        new AttackActState_Done(this);
     }
 
     private AttackActState GetCurrentState()

@@ -5,8 +5,7 @@ using System.Collections.Generic;
 public enum eMoveActType
 {
     NORMAL,
-    MOVE,
-    DONE
+    MOVE
 }
 
 public class MoveActor : FZ.ActObjActor
@@ -130,34 +129,9 @@ public class MoveActor : FZ.ActObjActor
                 {
                     if (Target != null)
                     {
-                        Target.ChangeState(eMoveActType.DONE);
+                        Target.FinishActor();
                     }
                 }
-            }
-        }
-    }
-
-    private class MoveActState_Done : MoveActState
-    {
-        public MoveActState_Done(MoveActor target) : base(target) { }
-
-        public override eMoveActType GetCurrentType()
-        {
-            return eMoveActType.DONE;
-        }
-
-        public override bool OnTouchEvent()
-        {
-            return true;
-        }
-
-        public override void Run()
-        {
-            if (Target != null)
-            {
-                AllTileToNormal();
-
-                Target.FinishActor();
             }
         }
     }
@@ -172,7 +146,7 @@ public class MoveActor : FZ.ActObjActor
         ChangeState(eMoveActType.NORMAL);
     }
 
-    protected override void Reset()
+    public override void Reset()
     {
         ChangeState(eMoveActType.NORMAL);
     }
@@ -181,7 +155,6 @@ public class MoveActor : FZ.ActObjActor
     {
         new MoveActState_Normal(this);
         new MoveActState_Move(this);
-        new MoveActState_Done(this);
     }
 
     private MoveActState GetCurrentState()
