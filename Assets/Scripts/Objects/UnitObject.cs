@@ -156,4 +156,22 @@ public class UnitObject : ActionObject, ICombat
 
         DisplayDebugStatus();
     }
+
+    public override bool OnTouchEvent(eTouchEvent touch)
+    {
+        // TODO : 선택하고 선택하지 않음을 구분하는 조건들 필요
+        if (!HasActor())
+        {
+            if (IsSelected())
+            {
+                Deselect();
+            }
+            else if (IsSelectedEmpty())
+            {
+                Select();
+            }
+        }
+
+        return base.OnTouchEvent(touch);
+    }
 }

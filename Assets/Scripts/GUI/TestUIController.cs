@@ -28,11 +28,11 @@ public class TestUIController : MonoBehaviour
 
     public void MoveTest()
     {
-        GameManager.Instance.ActSelectObj(typeof(MoveActor));
+        GameManager.Instance.Action(typeof(MoveActor));
     }
 
     public void AttackTest()
     {
-        GameManager.Instance.ActSelectObj(typeof(AttackActor));
+        GameManager.Instance.Action(typeof(AttackActor));
     }
 }

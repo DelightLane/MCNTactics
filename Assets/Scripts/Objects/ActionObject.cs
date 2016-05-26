@@ -67,6 +67,10 @@ public class ActionObject : PlaceObject, FZ.IActorQueue
 #endif
     }
 
+    public bool HasActor()
+    {
+        return _actorMachine.GetHeadActor() != null;
+    }
 
     public override void Interactive(TacticsObject interactTarget)
     {
@@ -83,18 +87,6 @@ public class ActionObject : PlaceObject, FZ.IActorQueue
         if (activeActor != null)
         {
             activeActor.OnTouchEvent(touch);
-        }
-        else
-        {
-            // TODO : 임시 UI를 사용하기 위해 임시로 처리. UI와 연동하여 ACTION을 어떻게 처리할지 고민 필요.
-            if (IsSelected())
-            {
-                Deselect();
-            }
-            else if(IsSelectedEmpty())
-            {
-                Select();
-            }
         }
 
         return true;

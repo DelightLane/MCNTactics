@@ -42,14 +42,12 @@ public class MoveActor : FZ.ActObjActor
 
     public override bool OnTouchEvent(eTouchEvent touch)
     {
-        base.OnTouchEvent(touch);
-
         if (ActTarget.IsSelected())
         {
             FinishActor();
         }
 
-        return false;
+        return base.OnTouchEvent(touch);
     }
 
     public override void Interactive(TacticsObject interactTarget)
