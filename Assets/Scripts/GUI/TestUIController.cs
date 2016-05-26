@@ -28,21 +28,11 @@ public class TestUIController : MonoBehaviour
 
     public void MoveTest()
     {
-        var selected = GameManager.Instance.SelectedObj as UnitObject;
-
-        if(selected != null)
-        {
-            selected.EnqueueActor(typeof(MoveActor));
-        }
+        GameManager.Instance.ActSelectObj(typeof(MoveActor));
     }
 
     public void AttackTest()
     {
-        var selected = GameManager.Instance.SelectedObj as UnitObject;
-
-        if (selected != null)
-        {
-            selected.EnqueueActor(typeof(AttackActor));
-        }
+        GameManager.Instance.ActSelectObj(typeof(AttackActor));
     }
 }

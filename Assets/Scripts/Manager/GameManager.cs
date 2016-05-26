@@ -19,4 +19,14 @@ public class GameManager : FZ.Singletone<GameManager>
     }
 
     private GameManager() { }
+
+    public void ActSelectObj(System.Type actType)
+    {
+        var selected = GameManager.Instance.SelectedObj as ActionObject;
+
+        if (selected != null)
+        {
+            selected.EnqueueActor(actType);
+        }
+    }
 }
