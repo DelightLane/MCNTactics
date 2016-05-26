@@ -33,8 +33,6 @@ public class TestUIController : MonoBehaviour
         if(selected != null)
         {
             selected.EnqueueActor(typeof(MoveActor));
-
-            selected.OnTouchEvent(eTouchEvent.TOUCH);
         }
     }
 
@@ -45,8 +43,6 @@ public class TestUIController : MonoBehaviour
         if (selected != null)
         {
             selected.EnqueueActor(typeof(AttackActor));
-            
-            selected.OnTouchEvent(eTouchEvent.TOUCH);
         }
     }
 }

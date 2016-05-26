@@ -22,6 +22,8 @@ namespace FZ
         
         protected IActorQueue ActTarget { get; private set; }
 
+        public bool IsRunning { get; protected set; }
+
         protected abstract string[] AbsoluteWeightKey();
 
         public Actor() { }
@@ -53,7 +55,7 @@ namespace FZ
                 SetWeight(actorWeight);
             }
 
-            Initialize();
+            this.Reset();
         }
 
         public void Initialize(IActorQueue actTarget, List<string> weightName, List<int> weightValue)
@@ -79,12 +81,32 @@ namespace FZ
                 SetWeight(pair);
             }
 
-            Initialize();
+            this.Reset();
         }
 
-        protected virtual void Initialize() { }
+        public virtual void Run()
+        {
+            IsRunning = true;
 
-        public virtual void Reset() { }
+            var placeable = ActTarget as PlaceObject;
+
+            if (ActTarget != null)
+            {
+                placeable.Select();
+            }
+        }
+
+        public virtual void Reset()
+        {
+            IsRunning = false;
+
+            var placeable = ActTarget as PlaceObject;
+
+            if (ActTarget != null)
+            {
+                placeable.Deselect();
+            }
+        }
 
         protected void FinishActor()
         {
@@ -183,10 +205,25 @@ namespace FZ
                 throw new UnityException("Actor's type is not correct.");
             }
 
-            _actorQueue.AddLast(_actors[actorType.ToString()]);
+            var readyActor = _actors[actorType.ToString()];
+            _actorQueue.AddLast(readyActor);
+
+            RunHeadActor();
         }
 
-        public FZ.Actor GetActiveActor()
+        public void DequeueActor()
+        {
+            if (_actorQueue.Count > 0)
+            {
+                GetHeadActor().Reset();
+
+                _actorQueue.RemoveFirst();
+            }
+
+            RunHeadActor();
+        }
+
+        public FZ.Actor GetHeadActor()
         {
             if (_actorQueue.Count > 0)
             {
@@ -198,13 +235,16 @@ namespace FZ
             return null;
         }
 
-        public void DequeueActor()
+        private void RunHeadActor()
         {
-            if (_actorQueue.Count > 0)
-            {
-                GetActiveActor().Reset();
+            var headActor = GetHeadActor();
 
-                _actorQueue.RemoveFirst();
+            if(headActor != null)
+            {
+                if(!headActor.IsRunning)
+                {
+                    headActor.Run();
+                }
             }
         }
     }

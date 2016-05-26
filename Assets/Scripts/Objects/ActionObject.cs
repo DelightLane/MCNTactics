@@ -70,7 +70,7 @@ public class ActionObject : PlaceObject, FZ.IActorQueue
 
     public override void Interactive(TacticsObject interactTarget)
     {
-        var activeActor = _actorMachine.GetActiveActor();
+        var activeActor = _actorMachine.GetHeadActor();
         if (activeActor != null)
         {
             activeActor.Interactive(interactTarget);
@@ -79,7 +79,7 @@ public class ActionObject : PlaceObject, FZ.IActorQueue
 
     public override bool OnTouchEvent(eTouchEvent touch)
     {
-        var activeActor = _actorMachine.GetActiveActor();
+        var activeActor = _actorMachine.GetHeadActor();
         if (activeActor != null)
         {
             activeActor.OnTouchEvent(touch);
