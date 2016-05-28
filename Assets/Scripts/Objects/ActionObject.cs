@@ -50,15 +50,30 @@ public class ActionObject : PlaceObject, FZ.IActorQueue
     {
         _actorMachine.EnqueueActor(actorType);
 
-#if UNITY_EDITOR
-        _actorDebugQueue.Add(actorType.ToString());
-#endif
+        Debug_EnqueueActor(actorType.ToString());
     }
 
     public void DequeueActor()
     {
         _actorMachine.DequeueActor();
 
+        Debug_DequeueActor();
+    }
+
+    public bool HasActor()
+    {
+        return _actorMachine.GetHeadActor() != null;
+    }
+
+    private void Debug_EnqueueActor(string actorType)
+    {
+#if UNITY_EDITOR
+        _actorDebugQueue.Add(actorType.ToString());
+#endif
+    }
+    
+    private void Debug_DequeueActor()
+    {
 #if UNITY_EDITOR
         if (_actorDebugQueue.Count > 0)
         {
@@ -67,9 +82,9 @@ public class ActionObject : PlaceObject, FZ.IActorQueue
 #endif
     }
 
-    public bool HasActor()
+    public IEnumerable<string> GetQueueActorNames()
     {
-        return _actorMachine.GetHeadActor() != null;
+        return _actorMachine.GetQueueActorNames();
     }
 
     public override void Interactive(TacticsObject interactTarget)

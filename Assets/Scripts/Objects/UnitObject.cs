@@ -110,7 +110,7 @@ public class UnitObject : ActionObject, ICombat
             _impl = new CombatInstance(unitData);
         }
 
-        DisplayDebugStatus();
+        Debug_DisplayStatus();
     }
 
     private void AddActor(UnitData data)
@@ -127,7 +127,7 @@ public class UnitObject : ActionObject, ICombat
         }
     }
 
-    private void DisplayDebugStatus()
+    private void Debug_DisplayStatus()
     {
         // 유닛 데이터 디버깅용
 #if UNITY_EDITOR
@@ -147,14 +147,14 @@ public class UnitObject : ActionObject, ICombat
     {
         _impl.Damaged(actor);
 
-        DisplayDebugStatus();
+        Debug_DisplayStatus();
     }
 
     public void AddStatus(Status status)
     {
         _impl = new CombatAddedDeco(_impl, status);
 
-        DisplayDebugStatus();
+        Debug_DisplayStatus();
     }
 
     public override bool OnTouchEvent(eTouchEvent touch)

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TestUIController : MonoBehaviour
+public class TempActionUI : MonoBehaviour
 {
     private GameObject _moveBtn;
     private GameObject _atkBtn;

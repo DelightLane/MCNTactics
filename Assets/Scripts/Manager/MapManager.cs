@@ -15,27 +15,6 @@ public class MapManager : FZ.MonoSingletone<MapManager> {
     [SerializeField]
     private List<PlaceInfo> _objInfos;
 
-#if UNITY_EDITOR
-    private class DebugMapManager
-    {
-        private Vector2 _savedMapSize;
-
-        public void CreateTilemap(MapManager manager)
-        {
-            if (_savedMapSize != manager._mapSize)
-            {
-                manager.CreateTilemap();
-
-                manager.PlaceAllObjs();
-
-                _savedMapSize = manager._mapSize;
-            }
-        }
-    }
-
-    private DebugMapManager _debug;
-#endif
-
     private MapCreator _mapCreator;
 
     private Dictionary<Vector2, Tile> _tilemap;
@@ -57,21 +36,9 @@ public class MapManager : FZ.MonoSingletone<MapManager> {
 
         LoadMapData();
 
-#if UNITY_EDITOR
-        _debug = new DebugMapManager();
-        _debug.CreateTilemap(this);
-#else
         CreateTilemap();
 
         PlaceAllObjs();
-#endif
-    }
-
-    void Update()
-    {
-#if UNITY_EDITOR
-        _debug.CreateTilemap(this);
-#endif
     }
 
     private void LoadMapData()

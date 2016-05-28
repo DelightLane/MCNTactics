@@ -223,6 +223,16 @@ namespace FZ
             RunHeadActor();
         }
 
+        public IEnumerable<string> GetQueueActorNames()
+        {
+            var actorIter = _actorQueue.GetEnumerator();
+
+            while (actorIter.MoveNext())
+            {
+                yield return actorIter.Current.GetType().ToString();
+            }
+        }
+
         public FZ.Actor GetHeadActor()
         {
             if (_actorQueue.Count > 0)
