@@ -79,7 +79,7 @@ public class Tile : TacticsObject, IDisposable, FZ.IObserver<eTouchEvent>
         public override void Run()
         {
             // TODO : 맞는 타일 이미지로 변경
-            SetTileImage("tile1");
+            SetTileImage("active");
         }
 
         public override eTileType GetCurrentType()
@@ -112,7 +112,7 @@ public class Tile : TacticsObject, IDisposable, FZ.IObserver<eTouchEvent>
         public override void Run()
         {
             // TODO : 맞는 타일 이미지로 변경
-            SetTileImage("tile2");
+            SetTileImage("deactive");
         }
 
         public override eTileType GetCurrentType()
