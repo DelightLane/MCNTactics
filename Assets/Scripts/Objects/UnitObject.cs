@@ -200,11 +200,7 @@ public class UnitObject : ActionObject, ICombat
         // TODO : 선택하고 선택하지 않음을 구분하는 조건들 필요
         if (!HasActor())
         {
-            if (IsSelected())
-            {
-                Deselect();
-            }
-            else if (IsSelectedEmpty())
+            if (IsSelectedEmpty())
             {
                 Select();
             }

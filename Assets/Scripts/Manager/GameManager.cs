@@ -36,7 +36,14 @@ public class GameManager : FZ.Singletone<GameManager>
 
         if (selected != null)
         {
-            selected.DequeueActor();
+            if (selected.HasActor())
+            {
+                selected.DequeueActor();
+            }
+            else
+            {
+                selected.Deselect();
+            }
         }
     }
 }
