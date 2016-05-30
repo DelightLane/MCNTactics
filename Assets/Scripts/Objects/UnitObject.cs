@@ -83,6 +83,8 @@ public class UnitObject : ActionObject, ICombat
 
                 unitObj.Team = team;
 
+                unitObj.ShapeNormal();
+
                 return unitObj;
             }
             catch (Exception e)
