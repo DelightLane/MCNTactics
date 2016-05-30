@@ -34,8 +34,6 @@ public class UnitObject : ActionObject, ICombat
     public int MaxHp { get { return _impl.MaxHp; } }
     public int MaxSp { get { return _impl.MaxSp; } }
 
-    public eCombatState CombatState { get { return _impl.CombatState; } }
-
     // 유닛 데이터 디버깅용
 #if UNITY_EDITOR
     public UnitData _debugStatus;
@@ -136,6 +134,12 @@ public class UnitObject : ActionObject, ICombat
         this.GetComponent<Renderer>().material.color = matColor;
     }
 
+    private void ShapeDead()
+    {
+        // TODO : 유닛이 죽을 때 어떤 형식을 취할 것인지? 일단은 바로 삭제.
+        GameObject.Destroy(this.gameObject);
+    }
+
     private void AddActor(UnitData data)
     {
         var unitActorDataList = DataManager.Instance.GetData<UnitActorDataList>(DataManager.DataType.ATTACH_ACTOR);
@@ -168,7 +172,18 @@ public class UnitObject : ActionObject, ICombat
 
     public void Damaged(AttackActor actor)
     {
-        _impl.Damaged(actor);
+        Damaged(actor, (eCombatState state) =>
+        {
+            if(state == eCombatState.DEAD)
+            {
+                ShapeDead();
+            }
+        });
+    }
+
+    public void Damaged(AttackActor actor, ICombatCallback callback)
+    {
+        _impl.Damaged(actor, callback);
 
         Debug_DisplayStatus();
     }

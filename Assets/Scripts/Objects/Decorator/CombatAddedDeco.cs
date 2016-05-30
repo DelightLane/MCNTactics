@@ -27,10 +27,8 @@ public class CombatAddedDeco : FZ.Decorator<ICombat>, ICombat
 
     public int MaxSp { get { return _decoTarget.MaxSp + _addedSp; } }
 
-    public eCombatState CombatState { get { return _decoTarget.CombatState; } }
-
-    public void Damaged(AttackActor actor)
+    public void Damaged(AttackActor actor, ICombatCallback callback)
     {
-        _decoTarget.Damaged(actor);
+        _decoTarget.Damaged(actor, callback);
     }
 }

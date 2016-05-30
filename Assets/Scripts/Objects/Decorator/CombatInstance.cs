@@ -22,13 +22,12 @@ public class CombatInstance : ICombat
     private int _def;
 
     private eCombatState _combatState;
-    public eCombatState CombatState { get { return _combatState; } }
-
+    
     public int Hp
     {
         get
         {
-            if (CombatState == eCombatState.ALIVE)
+            if (_combatState == eCombatState.ALIVE)
             {
                 return _hp;
             }
@@ -74,13 +73,18 @@ public class CombatInstance : ICombat
         _def = status.Def;
     }
 
-    public void Damaged(AttackActor actor)
+    public void Damaged(AttackActor actor, ICombatCallback callback)
     {
         _hp -= actor.Damage;
 
         if(Hp < 0)
         {
             _combatState = eCombatState.DEAD;
+        }
+
+        if (callback != null)
+        {
+            callback(_combatState);
         }
     }
 }

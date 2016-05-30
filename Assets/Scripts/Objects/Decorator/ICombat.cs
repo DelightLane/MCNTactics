@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System;
 
+public delegate void ICombatCallback(eCombatState state);
+
 public interface ICombat
 {
     int Hp { get; }
@@ -12,7 +14,5 @@ public interface ICombat
     int MaxHp { get; }
     int MaxSp { get; }
 
-    eCombatState CombatState { get; }
-
-    void Damaged(AttackActor actor);
+    void Damaged(AttackActor actor, ICombatCallback callback);
 }
