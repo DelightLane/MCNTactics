@@ -113,6 +113,27 @@ public class UnitObject : ActionObject, ICombat
         Debug_DisplayStatus();
     }
 
+    protected override void ShapeNormal()
+    {
+        // TODO : 정상적인 선택 취소 표시를 적용해줄 것
+        Color matColor = Color.white;
+
+        if(Team == eCombatTeam.RED)
+        {
+            matColor = Color.red;
+        }
+        else if(Team == eCombatTeam.BLUE)
+        {
+            matColor = Color.blue;
+        }
+        else if(Team == eCombatTeam.WHITE)
+        {
+            matColor = Color.white;
+        }
+
+        this.GetComponent<Renderer>().material.color = matColor;
+    }
+
     private void AddActor(UnitData data)
     {
         var unitActorDataList = DataManager.Instance.GetData<UnitActorDataList>(DataManager.DataType.ATTACH_ACTOR);

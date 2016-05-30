@@ -66,18 +66,28 @@ public class PlaceObject : TacticsObject, IDisposable, FZ.IObserver<eTouchEvent>
 
     public void Select()
     {
-        // TODO : 정상적인 선택 표시를 적용해줄 것
-        this.GetComponent<Renderer>().material.color = Color.red;
+        ShapeSelect();
 
         GameManager.Instance.SelectedObj = this;
     }
 
     public void Deselect()
     {
-        // TODO : 정상적인 선택 취소 표시를 적용해줄 것
-        this.GetComponent<Renderer>().material.color = Color.white;
+        ShapeNormal();
 
         GameManager.Instance.SelectedObj = null;
+    }
+
+    protected virtual void ShapeSelect()
+    {
+        // TODO : 정상적인 선택 표시를 적용해줄 것
+        this.GetComponent<Renderer>().material.color = Color.yellow;
+    }
+
+    protected virtual void ShapeNormal()
+    {
+        // TODO : 정상적인 선택 취소 표시를 적용해줄 것
+        this.GetComponent<Renderer>().material.color = Color.white;
     }
 
     public void OnNext(eTouchEvent data)
