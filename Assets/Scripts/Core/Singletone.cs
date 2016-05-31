@@ -78,5 +78,10 @@ namespace FZ
         *@details 싱글톤 객체가 생성될 때 생성되는 GameObject의 객체 이름을 리턴한다.
         */
         protected abstract string CreatedObjectName();
+
+        void Awake()
+        {
+            DontDestroyOnLoad(transform.gameObject);
+        }
     }
 }
