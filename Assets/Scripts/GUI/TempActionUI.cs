@@ -32,16 +32,16 @@ public class TempActionUI : MonoBehaviour
 
     public void MoveTest()
     {
-        GameManager.Instance.Action(typeof(MoveActor));
+        GameManager.Instance.ActionSelectObj(typeof(MoveActor));
     }
 
     public void AttackTest()
     {
-        GameManager.Instance.Action(typeof(AttackActor));
+        GameManager.Instance.ActionSelectObj(typeof(AttackActor));
     }
 
     public void CancelTest()
     {
-        GameManager.Instance.CancelAction();
+        GameManager.Instance.CancelActionSelectObj();
     }
 }
