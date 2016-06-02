@@ -17,6 +17,16 @@ namespace FZ
     {
         // 각 액터 별로 필요한 가중치를 설정한다.
         // ex) MoveActor에서 weight는 이동 범위이다.
+        #region weight
+        // 모든 액터는 actPoint를 가진다.
+        public int ActPoint
+        {
+            get
+            {
+                return GetWeight("actPoint");
+            }
+        }
+        #endregion
         [SerializeField]
         private Dictionary<string, int> _weight;
         

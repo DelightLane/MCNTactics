@@ -1,1 +1,1 @@
-﻿{"unitActor":[{"no":1,"actor":[{"name":"MoveActor","weightName":["range" ],"weightValue":[4 ]},{"name":"AttackActor","weightName":["range","damage" ],"weightValue":[1,3 ]} ]},{"no":2,"actor":[{"name":"MoveActor","weightName":["range" ],"weightValue":[3 ]} ]} ]}
+﻿{"unitActor":[{"no":1,"actor":[{"name":"MoveActor","weightName":["actPoint","range" ],"weightValue":[5,4 ]},{"name":"AttackActor","weightName":["actPoint","range","damage" ],"weightValue":[5,1,3 ]} ]},{"no":2,"actor":[{"name":"MoveActor","weightName":["actPoint","range" ],"weightValue":[5,3 ]} ]} ]}
