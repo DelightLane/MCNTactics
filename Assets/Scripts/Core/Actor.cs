@@ -17,16 +17,7 @@ namespace FZ
     {
         // 각 액터 별로 필요한 가중치를 설정한다.
         // ex) MoveActor에서 weight는 이동 범위이다.
-        #region weight
-        // 모든 액터는 actPoint를 가진다.
-        public int ActPoint
-        {
-            get
-            {
-                return GetWeight("actPoint");
-            }
-        }
-        #endregion
+        
         [SerializeField]
         private Dictionary<string, int> _weight;
         
@@ -177,6 +168,17 @@ namespace FZ
 
     public abstract class UnitObjActor : Actor
     {
+        #region weight
+        // 모든 유닛 오브젝트의 액터는 actPoint를 가져야 한다.
+        public int ActPoint
+        {
+            get
+            {
+                return GetWeight("actPoint");
+            }
+        }
+        #endregion
+
         protected new UnitObject ActTarget
         {
             get
@@ -207,7 +209,7 @@ namespace FZ
             }
         }
 
-        public void EnqueueActor(System.Type actorType)
+        public FZ.Actor GetPreActor(System.Type actorType)
         {
             if (!actorType.IsSubclassOf(typeof(FZ.Actor)) ||
                !_actors.ContainsKey(actorType.ToString()))
@@ -215,7 +217,15 @@ namespace FZ
                 throw new UnityException("Actor's type is not correct.");
             }
 
-            var readyActor = _actors[actorType.ToString()];
+            var preActor = _actors[actorType.ToString()];
+
+            return preActor;
+        }
+
+        public void EnqueueActor(System.Type actorType)
+        {
+            var readyActor = GetPreActor(actorType);
+
             _actorQueue.AddLast(readyActor);
 
             RunHeadActor();

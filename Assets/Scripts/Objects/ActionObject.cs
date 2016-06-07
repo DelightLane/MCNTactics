@@ -46,16 +46,33 @@ public class ActionObject : PlaceObject, FZ.IActorQueue
         }
     }
 
+    // 액터를 사용하기 전에 체크할 조건들을 위한 메소드
+    protected virtual bool DoPreEnqueueActor(FZ.Actor checkedActor)
+    {
+        return true;
+    }
+
+    protected virtual bool DoPreDequeueActor(FZ.Actor checkedActor)
+    {
+        return true;
+    }
+
     public void EnqueueActor(Type actorType)
     {
-        _actorMachine.EnqueueActor(actorType);
+        if (DoPreEnqueueActor(_actorMachine.GetPreActor(actorType)))
+        {
+            _actorMachine.EnqueueActor(actorType);
+        }
 
         Debug_EnqueueActor(actorType.ToString());
     }
 
     public void DequeueActor()
     {
-        _actorMachine.DequeueActor();
+        if (DoPreDequeueActor(_actorMachine.GetHeadActor()))
+        {
+            _actorMachine.DequeueActor();
+        }
 
         Debug_DequeueActor();
     }

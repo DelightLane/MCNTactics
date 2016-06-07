@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using System.Linq;
+using FZ;
 
 public enum eCombatState
 {
@@ -195,12 +196,37 @@ public class UnitObject : ActionObject, ICombat
         Debug_DisplayStatus();
     }
 
+    protected override bool DoPreEnqueueActor(FZ.Actor checkedActor)
+    {
+        var checkedUnitActor = checkedActor as FZ.UnitObjActor;
+        if (checkedUnitActor != null)
+        {
+            bool isSuccess = GameManager.Instance.DoTurn(checkedUnitActor);
+
+            return isSuccess;
+        }
+
+        return false;
+    }
+
+    protected override bool DoPreDequeueActor(Actor checkedActor)
+    {
+        var checkedUnitActor = checkedActor as FZ.UnitObjActor;
+        if (checkedUnitActor != null)
+        {
+            GameManager.Instance.UndoTurn(checkedUnitActor);
+        }
+
+        return true;
+    }
+
     public override bool OnTouchEvent(eTouchEvent touch)
     {
         // TODO : 선택하고 선택하지 않음을 구분하는 조건들 필요
         if (!HasActor())
         {
-            if (IsSelectedEmpty())
+            if (IsSelectedEmpty() &&
+                GameManager.Instance.IsCurrentTeam(this.Team))
             {
                 Select();
             }

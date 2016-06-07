@@ -6,10 +6,12 @@ using System.Collections.Generic;
 public class GameManager : FZ.Singletone<GameManager>
 {
     private SelectHandler _selectHandler;
+    private TurnHandler _turnHandler;
 
     private GameManager()
     {
         _selectHandler = new SelectHandler();
+        _turnHandler = new TurnHandler();
     }
 
     #region SelectHandler
@@ -80,31 +82,41 @@ public class GameManager : FZ.Singletone<GameManager>
     #endregion
 
     #region TurnHandler
+    // 유닛 오브젝트만 턴의 제약을 가진다.
     private class TurnHandler
     {
-        private HashSet<eCombatTeam> _existTeams;
+        private HashSet<eCombatTeam> _existTeams = new HashSet<eCombatTeam>();
 
         private eCombatTeam _currentTeam;
-        private int _remainActPoint;
+        private int _remainActPoint = MaxRemainActPoint;
 
         // TODO : 매직 넘버가 아니라 다른 방식으로 정의할 것
         private const int MaxRemainActPoint = 50;
+
+        public void RegisterTeam(eCombatTeam team)
+        {
+            _existTeams.Add(team);
+
+            // TODO : 가장 처음 시작하는 팀을 선택하는 방식을 정할 것
+            // 현재는 가장 마지막에 추가되는 유닛의 팀이 시작 팀이 되는 로직
+            _currentTeam = team;
+        }
+
+        public void ResetRegisterTeams()
+        {
+            _existTeams.Clear();
+        }
 
         public void EndTurn()
         {
             _remainActPoint = MaxRemainActPoint;
 
-            SetNextTurnTeam();
+            GoToNextTurnTeam();
         }
 
-        public bool IsTurnOver()
+        public bool DoTurn(int actPoint)
         {
-            return _remainActPoint <= 0;
-        }
-
-        public bool UseActPoint(int actPoint)
-        {
-            if(_remainActPoint >= actPoint)
+            if (_remainActPoint >= actPoint)
             {
                 _remainActPoint -= actPoint;
                 return true;
@@ -112,12 +124,27 @@ public class GameManager : FZ.Singletone<GameManager>
             return false;
         }
 
+        public void UndoTurn(int actPoint)
+        {
+            _remainActPoint += actPoint;
+        }
+
+        public bool IsTurnOver()
+        {
+            return _remainActPoint <= 0;
+        }
+
         public eCombatTeam GetCurrentTeam()
         {
             return _currentTeam;
         }
 
-        private void SetNextTurnTeam()
+        public bool IsCurrentTeam(eCombatTeam team)
+        {
+            return _currentTeam == team;
+        }
+
+        private void GoToNextTurnTeam()
         {
             int teamCount = Enum.GetValues(typeof(eCombatTeam)).Length - 1;
 
@@ -140,6 +167,53 @@ public class GameManager : FZ.Singletone<GameManager>
                 EndTurn();
             }
         }
-        #endregion
     }
+
+    public void RegisterJoinTeam(eCombatTeam team)
+    {
+        _turnHandler.RegisterTeam(team);
+    }
+
+    public void ResetJoinTeams()
+    {
+        _turnHandler.ResetRegisterTeams();
+    }
+
+    public void ForceEndTurn()
+    {
+        _turnHandler.EndTurn();
+    }
+
+    public void EndTurn()
+    {
+        if(_turnHandler.IsTurnOver())
+        {
+            _turnHandler.EndTurn();
+        }
+    }
+
+    public bool DoTurn(FZ.UnitObjActor act)
+    {
+        int actPoint = act.ActPoint;
+
+        return _turnHandler.DoTurn(actPoint);
+    }
+
+    public void UndoTurn(FZ.UnitObjActor act)
+    {
+        int actPoint = act.ActPoint;
+
+        _turnHandler.UndoTurn(actPoint);
+    }
+
+    public eCombatTeam GetCurrentTeam()
+    {
+        return _turnHandler.GetCurrentTeam();
+    }
+
+    public bool IsCurrentTeam(eCombatTeam team)
+    {
+        return _turnHandler.IsCurrentTeam(team);
+    }
+    #endregion
 }

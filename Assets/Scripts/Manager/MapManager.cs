@@ -84,18 +84,22 @@ public class MapManager : FZ.MonoSingletone<MapManager> {
     {
         foreach(eObjType type in Enum.GetValues(typeof(eObjType)))
         {
-            PlaceObjs(type);
+            InitObjs(type);
         }
     }
 
-    public void PlaceObjs(eObjType type)
+    public void InitObjs(eObjType type)
     {
+        GameManager.Instance.ResetJoinTeams();
+
         var unitList = _objInfos.FindAll(obj => obj.type == type);
 
         foreach (var objInfo in unitList)
         {
             if (IsInMapSize(objInfo.pos))
             {
+                GameManager.Instance.RegisterJoinTeam(objInfo.team);
+
                 var unitObj = UnitObject.Create(objInfo.no, objInfo.team);
                 if (unitObj != null)
                 {
