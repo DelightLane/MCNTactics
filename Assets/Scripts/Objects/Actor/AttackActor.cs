@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using System;
 
 public class AttackActor : FZ.UnitObjActor
@@ -23,9 +24,13 @@ public class AttackActor : FZ.UnitObjActor
         }
     }
 
-    protected override string[] AbsoluteWeightKey()
+    protected override List<string> AbsoluteWeightKey()
     {
-        return new string[] { "range", "damage" };
+        var absoluteWeightList = base.AbsoluteWeightKey();
+        absoluteWeightList.Add("range");
+        absoluteWeightList.Add("damage");
+
+        return absoluteWeightList;
     }
     #endregion   
 

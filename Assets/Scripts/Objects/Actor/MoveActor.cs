@@ -17,9 +17,12 @@ public class MoveActor : FZ.ActObjActor
         }
     }
 
-    protected override string[] AbsoluteWeightKey()
+    protected override List<string> AbsoluteWeightKey()
     {
-        return new string[] { "range" };
+        var absoluteWeightList = base.AbsoluteWeightKey();
+        absoluteWeightList.Add("range");
+
+        return absoluteWeightList;
     }
     #endregion
 

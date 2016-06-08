@@ -25,7 +25,7 @@ namespace FZ
 
         public bool IsRunning { get; protected set; }
 
-        protected abstract string[] AbsoluteWeightKey();
+        protected virtual List<string> AbsoluteWeightKey() { return new List<string>(); }
 
         public Actor() { }
 
@@ -166,7 +166,7 @@ namespace FZ
         }
     }
 
-    public abstract class UnitObjActor : Actor
+    public abstract class UnitObjActor : ActObjActor
     {
         #region weight
         // 모든 유닛 오브젝트의 액터는 actPoint를 가져야 한다.
@@ -178,6 +178,14 @@ namespace FZ
             }
         }
         #endregion
+
+        protected override List<string> AbsoluteWeightKey()
+        {
+            var absoluteWeightList = base.AbsoluteWeightKey();
+            absoluteWeightList.Add("actPoint");
+
+            return absoluteWeightList;
+        }
 
         protected new UnitObject ActTarget
         {
