@@ -86,6 +86,7 @@
     <Compile Include="Assets\Scripts\Manager\TouchManager.cs" />
     <Compile Include="Assets\Scripts\Objects\ActionObject.cs" />
     <Compile Include="Assets\Scripts\Objects\Actor\AttackActor.cs" />
+    <Compile Include="Assets\Scripts\Objects\Actor\IUnitActor.cs" />
     <Compile Include="Assets\Scripts\Objects\Actor\MoveActor.cs" />
     <Compile Include="Assets\Scripts\Objects\Decorator\CombatAddedDeco.cs" />
     <Compile Include="Assets\Scripts\Objects\Decorator\CombatInstance.cs" />

@@ -198,7 +198,7 @@ public class UnitObject : ActionObject, ICombat
 
     protected override bool DoPreEnqueueActor(FZ.Actor checkedActor)
     {
-        var checkedUnitActor = checkedActor as FZ.UnitObjActor;
+        var checkedUnitActor = checkedActor as IUnitActor;
         if (checkedUnitActor != null)
         {
             bool isSuccess = GameManager.Instance.DoTurn(checkedUnitActor);
@@ -211,7 +211,7 @@ public class UnitObject : ActionObject, ICombat
 
     protected override bool DoPreDequeueActor(Actor checkedActor)
     {
-        var checkedUnitActor = checkedActor as FZ.UnitObjActor;
+        var checkedUnitActor = checkedActor as IUnitActor;
         if (checkedUnitActor != null)
         {
             GameManager.Instance.UndoTurn(checkedUnitActor);

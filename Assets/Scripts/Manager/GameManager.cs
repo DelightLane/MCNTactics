@@ -192,14 +192,14 @@ public class GameManager : FZ.Singletone<GameManager>
         }
     }
 
-    public bool DoTurn(FZ.UnitObjActor act)
+    public bool DoTurn(IUnitActor act)
     {
         int actPoint = act.ActPoint;
 
         return _turnHandler.DoTurn(actPoint);
     }
 
-    public void UndoTurn(FZ.UnitObjActor act)
+    public void UndoTurn(IUnitActor act)
     {
         int actPoint = act.ActPoint;
 

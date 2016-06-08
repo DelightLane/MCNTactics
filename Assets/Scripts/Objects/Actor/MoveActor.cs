@@ -6,9 +6,17 @@ using System.Collections.Generic;
 // 유닛만이 턴 / 액션 가중치 제약을 받는데 그걸 받기 위해서는 UnitObjActor를 상속받는 액터여야 한다.
 // 하지만 그 부모 클래스를 상속받으면 확장성에 문제가 생긴다.
 // 내일 이 부분을 해결해보자.
-public class MoveActor : FZ.ActObjActor
+public class MoveActor : FZ.ActObjActor, IUnitActor
 {
     #region weight
+    public int ActPoint
+    {
+        get
+        {
+            return GetWeight("actPoint");
+        }
+    }
+
     public int Range
     {
         get

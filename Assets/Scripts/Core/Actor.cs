@@ -117,7 +117,7 @@ namespace FZ
             }
         }
 
-        public int GetWeight(string key)
+        protected int GetWeight(string key)
         {
             if (_weight.ContainsKey(key))
             {
@@ -166,10 +166,9 @@ namespace FZ
         }
     }
 
-    public abstract class UnitObjActor : ActObjActor
+    public abstract class UnitObjActor : ActObjActor, IUnitActor
     {
         #region weight
-        // 모든 유닛 오브젝트의 액터는 actPoint를 가져야 한다.
         public int ActPoint
         {
             get
@@ -177,7 +176,6 @@ namespace FZ
                 return GetWeight("actPoint");
             }
         }
-        #endregion
 
         protected override List<string> AbsoluteWeightKey()
         {
@@ -186,6 +184,7 @@ namespace FZ
 
             return absoluteWeightList;
         }
+        #endregion
 
         protected new UnitObject ActTarget
         {
