@@ -278,6 +278,11 @@ namespace FZ
             return null;
         }
 
+        public bool IsLastActor()
+        {
+            return _actorQueue.Count == 1;
+        }
+
         private void RunHeadActor()
         {
             var headActor = GetHeadActor();

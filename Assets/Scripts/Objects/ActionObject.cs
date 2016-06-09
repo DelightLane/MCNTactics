@@ -94,6 +94,11 @@ public class ActionObject : PlaceObject, FZ.IActorQueue
         return _actorMachine.GetHeadActor() != null;
     }
 
+    protected bool IsLastActor()
+    {
+        return _actorMachine.IsLastActor();
+    }
+
     private void Debug_EnqueueActor(string actorType)
     {
 #if UNITY_EDITOR

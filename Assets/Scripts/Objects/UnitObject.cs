@@ -209,6 +209,16 @@ public class UnitObject : ActionObject, ICombat
         return false;
     }
 
+    protected override bool DoPreEndActor(Actor checkedActor)
+    {
+        if(IsLastActor())
+        {
+            GameManager.Instance.EndTurn();
+        }
+
+        return true;
+    }
+
     protected override bool DoPreCancelActor(Actor checkedActor)
     {
         var checkedUnitActor = checkedActor as IUnitActor;
