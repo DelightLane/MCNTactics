@@ -187,6 +187,7 @@ public class GameManager : FZ.Singletone<GameManager>
 
     public void ForceEndTurn()
     {
+        // TODO : 누군가 액션을 하고 있다면 그걸 모두 취소시켜주어야 한다.
         _turnHandler.EndTurn();
     }
 

@@ -44,4 +44,9 @@ public class TempActionUI : MonoBehaviour
     {
         GameManager.Instance.CancelActionSelectObj();
     }
+
+    public void EndTurnTest()
+    {
+        GameManager.Instance.ForceEndTurn();
+    }
 }
