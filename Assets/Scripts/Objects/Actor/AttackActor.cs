@@ -80,7 +80,7 @@ public class AttackActor : FZ.UnitObjActor
             {
                 damagedTarget.Damaged(this);
 
-                this.FinishActor();
+                this.RequestFinish();
             }
         }
     }

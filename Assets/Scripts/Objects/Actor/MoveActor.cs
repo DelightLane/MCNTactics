@@ -72,7 +72,7 @@ public class MoveActor : FZ.ActObjActor, IUnitActor
 
             if (isSuccess)
             {
-                this.FinishActor();
+                this.RequestFinish();
             }
         }
     }

@@ -110,7 +110,7 @@ namespace FZ
             }
         }
 
-        protected void FinishActor()
+        protected void RequestFinish()
         {
             if (ActTarget != null)
             {
