@@ -7,8 +7,9 @@ namespace FZ
     public interface IActorQueue
     {
         void AddActor(FZ.Actor actor);
-        void EnqueueActor(System.Type actorType);
-        void DequeueActor();
+        void ReserveActor(System.Type actorType);
+        void EndActor();
+        void CancelActor();
     }
 
     // 실행시 큐로 쌓이는 행동 추상 클래스
@@ -113,7 +114,7 @@ namespace FZ
         {
             if (ActTarget != null)
             {
-                ActTarget.DequeueActor();
+                ActTarget.EndActor();
             }
         }
 
@@ -229,7 +230,7 @@ namespace FZ
             return preActor;
         }
 
-        public void EnqueueActor(System.Type actorType)
+        public void ReserveActor(System.Type actorType)
         {
             var readyActor = GetPreActor(actorType);
 
@@ -238,7 +239,7 @@ namespace FZ
             RunHeadActor();
         }
 
-        public void DequeueActor()
+        public void EndActor()
         {
             if (_actorQueue.Count > 0)
             {
@@ -248,6 +249,11 @@ namespace FZ
             }
 
             RunHeadActor();
+        }
+
+        public void CancelActor()
+        {
+            EndActor();
         }
 
         public IEnumerable<string> GetQueueActorNames()

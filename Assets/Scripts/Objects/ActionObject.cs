@@ -47,34 +47,46 @@ public class ActionObject : PlaceObject, FZ.IActorQueue
     }
 
     // 액터를 사용하기 전에 체크할 조건들을 위한 메소드
-    protected virtual bool DoPreEnqueueActor(FZ.Actor checkedActor)
+    protected virtual bool DoPreReserveActor(FZ.Actor checkedActor)
     {
         return true;
     }
 
-    protected virtual bool DoPreDequeueActor(FZ.Actor checkedActor)
+    protected virtual bool DoPreEndActor(FZ.Actor checkedActor)
     {
         return true;
     }
 
-    public void EnqueueActor(Type actorType)
+    protected virtual bool DoPreCancelActor(FZ.Actor checkedActor)
     {
-        if (DoPreEnqueueActor(_actorMachine.GetPreActor(actorType)))
-        {
-            _actorMachine.EnqueueActor(actorType);
-        }
-
-        Debug_EnqueueActor(actorType.ToString());
+        return true;
     }
 
-    public void DequeueActor()
+    public void ReserveActor(Type actorType)
     {
-        if (DoPreDequeueActor(_actorMachine.GetHeadActor()))
+        if (DoPreReserveActor(_actorMachine.GetPreActor(actorType)))
         {
-            _actorMachine.DequeueActor();
+            _actorMachine.ReserveActor(actorType);
+            Debug_EnqueueActor(actorType.ToString());
         }
+    }
 
-        Debug_DequeueActor();
+    public void EndActor()
+    {
+        if (DoPreEndActor(_actorMachine.GetHeadActor()))
+        {
+            _actorMachine.EndActor();
+            Debug_DequeueActor();
+        }
+    }
+
+    public void CancelActor()
+    {
+        if (DoPreCancelActor(_actorMachine.GetHeadActor()))
+        {
+            _actorMachine.CancelActor();
+            Debug_DequeueActor();
+        }
     }
 
     public bool HasActor()

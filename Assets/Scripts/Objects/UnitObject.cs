@@ -196,7 +196,7 @@ public class UnitObject : ActionObject, ICombat
         Debug_DisplayStatus();
     }
 
-    protected override bool DoPreEnqueueActor(FZ.Actor checkedActor)
+    protected override bool DoPreReserveActor(FZ.Actor checkedActor)
     {
         var checkedUnitActor = checkedActor as IUnitActor;
         if (checkedUnitActor != null)
@@ -209,7 +209,7 @@ public class UnitObject : ActionObject, ICombat
         return false;
     }
 
-    protected override bool DoPreDequeueActor(Actor checkedActor)
+    protected override bool DoPreCancelActor(Actor checkedActor)
     {
         var checkedUnitActor = checkedActor as IUnitActor;
         if (checkedUnitActor != null)

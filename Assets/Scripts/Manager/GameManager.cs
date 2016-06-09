@@ -35,7 +35,7 @@ public class GameManager : FZ.Singletone<GameManager>
 
             if (selected != null)
             {
-                selected.EnqueueActor(actType);
+                selected.ReserveActor(actType);
             }
         }
 
@@ -47,7 +47,7 @@ public class GameManager : FZ.Singletone<GameManager>
             {
                 if (selected.HasActor())
                 {
-                    selected.DequeueActor();
+                    selected.CancelActor();
                 }
                 else
                 {
