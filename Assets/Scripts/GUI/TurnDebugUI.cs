@@ -21,6 +21,6 @@ public class TurnDebugUI : MonoBehaviour
     private void DisplayTurnInfo()
     {
         _turnTeam.text = string.Format("TurnTeam : {0}", GameManager.Instance.TurnTeam);
-        _actPoint.text = string.Format("ActPoint : {0}", GameManager.Instance.TurnActPoint);
+        _actPoint.text = string.Format("TurnActPoint : {0}", GameManager.Instance.TurnActPoint);
     }
 }
