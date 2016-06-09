@@ -102,6 +102,9 @@ public class GameManager : FZ.Singletone<GameManager>
             _currentTeam = team;
         }
 
+        public int RemainActPoint { get { return _remainActPoint; } }
+        public eCombatTeam CurrentTeam { get { return _currentTeam; } }
+
         public void ResetRegisterTeams()
         {
             _existTeams.Clear();
@@ -168,6 +171,9 @@ public class GameManager : FZ.Singletone<GameManager>
             }
         }
     }
+
+    public int TurnActPoint { get { return _turnHandler.RemainActPoint; } }
+    public eCombatTeam TurnTeam { get { return _turnHandler.CurrentTeam; } }
 
     public void RegisterJoinTeam(eCombatTeam team)
     {
