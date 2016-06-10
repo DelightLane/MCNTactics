@@ -8,6 +8,7 @@ public struct Status
     public int Sp;
     public int Atk;
     public int Def;
+    public int ActRange;
 }
 
 public class CombatInstance : ICombat
@@ -20,6 +21,8 @@ public class CombatInstance : ICombat
 
     private int _atk;
     private int _def;
+
+    private int _actRange;
 
     private eCombatState _combatState;
     
@@ -43,6 +46,8 @@ public class CombatInstance : ICombat
     public int MaxHp { get { return _maxHp; } }
     public int MaxSp { get { return _maxSp; } }
 
+    public int ActRange { get { return _actRange; } }
+
     public CombatInstance(Status status)
     {
         Initialize(status);
@@ -55,6 +60,7 @@ public class CombatInstance : ICombat
         status.Sp = unitData.Sp;
         status.Atk = unitData.Atk;
         status.Def = unitData.Def;
+        status.ActRange = unitData.ActRange;
 
         Initialize(status);
     }
@@ -71,6 +77,8 @@ public class CombatInstance : ICombat
 
         _atk = status.Atk;
         _def = status.Def;
+
+        _actRange = status.ActRange;
     }
 
     public void Damaged(AttackActor actor, ICombatCallback callback)

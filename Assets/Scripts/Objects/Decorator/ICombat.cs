@@ -14,5 +14,7 @@ public interface ICombat
     int MaxHp { get; }
     int MaxSp { get; }
 
+    int ActRange { get; }
+
     void Damaged(AttackActor actor, ICombatCallback callback);
 }

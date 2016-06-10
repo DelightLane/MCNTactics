@@ -17,4 +17,5 @@ public class UnitData : DataObject
     public int Sp;
     public int Atk;
     public int Def;
+    public int ActRange;
 }

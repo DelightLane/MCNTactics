@@ -35,6 +35,8 @@ public class UnitObject : ActionObject, ICombat
     public int MaxHp { get { return _impl.MaxHp; } }
     public int MaxSp { get { return _impl.MaxSp; } }
 
+    public int ActRange {  get { return _impl.ActRange; } }
+
     // 유닛 데이터 디버깅용
 #if UNITY_EDITOR
     public UnitData _debugStatus;
@@ -168,6 +170,7 @@ public class UnitObject : ActionObject, ICombat
         _debugStatus.Sp = _impl.Sp;
         _debugStatus.Atk = _impl.Atk;
         _debugStatus.Def = _impl.Def;
+        _debugStatus.ActRange = _impl.ActRange;
 #endif
     }
 

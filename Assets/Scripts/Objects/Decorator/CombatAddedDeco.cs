@@ -6,6 +6,7 @@ public class CombatAddedDeco : FZ.Decorator<ICombat>, ICombat
     private int _addedDef;
     private int _addedHp;
     private int _addedSp;
+    private int _addedActRange;
 
     public CombatAddedDeco(ICombat target, Status addedStatus) : base(target)
     {
@@ -26,6 +27,8 @@ public class CombatAddedDeco : FZ.Decorator<ICombat>, ICombat
     public int MaxHp {  get { return _decoTarget.MaxHp + _addedHp; } }
 
     public int MaxSp { get { return _decoTarget.MaxSp + _addedSp; } }
+
+    public int ActRange { get { return _decoTarget.ActRange + _addedActRange;  } }
 
     public void Damaged(AttackActor actor, ICombatCallback callback)
     {
