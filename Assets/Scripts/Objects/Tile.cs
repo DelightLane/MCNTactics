@@ -46,15 +46,37 @@ public class Tile : TacticsObject, IDisposable, FZ.IObserver<eTouchEvent>
                 Target.SetCubeTexture(tileDatas, imageName);
             }
         }
+
+        private string _forceTileImageName = string.Empty;
+
+        protected string TileImageName
+        {
+            get
+            {
+                return _forceTileImageName == string.Empty ? GetBaseTileImageName() : _forceTileImageName;
+            }
+        }
+
+        protected abstract string GetBaseTileImageName();
+
+        public void SetForceTileImageName(string name)
+        {
+            _forceTileImageName = name;
+        }
+
+        public override void Run()
+        {
+            SetTileImage(TileImageName);
+        }
     }
 
     public class State_Normal : State
     {
         public State_Normal(Tile target) : base(target) { }
 
-        public override void Run()
+        protected override string GetBaseTileImageName()
         {
-            SetTileImage(Target._tileTextureName);
+            return Target._tileTextureName;
         }
     }
 
@@ -62,10 +84,10 @@ public class Tile : TacticsObject, IDisposable, FZ.IObserver<eTouchEvent>
     {
         public State_Active(Tile target) : base(target) { }
 
-        public override void Run()
+        protected override string GetBaseTileImageName()
         {
             // TODO : 맞는 타일 이미지로 변경
-            SetTileImage("active");
+            return "active";
         }
 
         public override bool OnTouchEvent(eTouchEvent touch)
@@ -90,10 +112,10 @@ public class Tile : TacticsObject, IDisposable, FZ.IObserver<eTouchEvent>
     {
         public State_Deactive(Tile target) : base(target) { }
 
-        public override void Run()
+        protected override string GetBaseTileImageName()
         {
             // TODO : 맞는 타일 이미지로 변경
-            SetTileImage("deactive");
+            return "deactive";
         }
     }
     #endregion
@@ -317,10 +339,11 @@ public class Tile : TacticsObject, IDisposable, FZ.IObserver<eTouchEvent>
         return obstacleCost;
     }
 
-    public void ChangeState<T>() where T : Tile.State
+    public void ChangeState<T>(string forceTileImageName = "") where T : Tile.State
     {
         if (_stateMachine != null)
         {
+            _stateMachine.GetState<T>().SetForceTileImageName(forceTileImageName);
             _stateMachine.ChangeState<T>();
         }
     }

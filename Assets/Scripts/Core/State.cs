@@ -1,4 +1,5 @@
-﻿using System;
+﻿using UnityEngine;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -76,6 +77,16 @@ namespace FZ
             return _currentState;
         }
 
+        public T2 GetState<T2>() where T2 : T
+        {
+            if (_states.ContainsKey(typeof(T2)))
+            {
+                return (T2)_states[typeof(T2)];
+            }
+
+            throw new UnityException(string.Format("Don't contain {0}", typeof(T2).ToString()));
+        }
+
         public void ChangeState<T2>() where T2 : T
         {
             if(_currentState != null)
@@ -83,7 +94,7 @@ namespace FZ
                 _currentState.Finish();
             }
 
-            _currentState = _states[typeof(T2)];
+            _currentState = GetState<T2>();
 
             if(_currentState != null)
             {
