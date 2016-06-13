@@ -282,7 +282,9 @@ public class Tile : TacticsObject, IDisposable, FZ.IObserver<eTouchEvent>
         return null;
     }
 
-    public void ShowChainActiveTile(int range, Func<Tile, bool> ignoreCondition)
+    public delegate bool TileActiveIgnoreCond(Tile checkedTile);
+
+    public void ShowChainActiveTile(int range, TileActiveIgnoreCond ignoreCondition)
     {
         if (_attached != null)
         {
@@ -290,7 +292,7 @@ public class Tile : TacticsObject, IDisposable, FZ.IObserver<eTouchEvent>
         }
     }
 
-    public void ShowChainActiveTile(int range, TacticsObject startedObj, Func<Tile, bool> ignoreCondition)
+    public void ShowChainActiveTile(int range, TacticsObject startedObj, TileActiveIgnoreCond ignoreCondition)
     {
         if (range <= 0)
         {

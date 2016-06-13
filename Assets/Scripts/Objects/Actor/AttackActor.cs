@@ -44,7 +44,7 @@ public class AttackActor : FZ.UnitObjActor
 
             var placedTile = ActTarget.GetPlacedTile();
 
-            Func<Tile, bool> tileDeactiveCond = (Tile tile) =>
+            Tile.TileActiveIgnoreCond tileDeactiveCond = (Tile tile) =>
             {
                 return (tile.GetAttachObject() != null && !(tile.GetAttachObject() is UnitObject)) ||
                        (tile.GetAttachObject() is UnitObject && (tile.GetAttachObject() as UnitObject).Team == ActTarget.Team);
