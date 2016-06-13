@@ -40,7 +40,7 @@ public class AttackActor : FZ.UnitObjActor
 
         if (ActTarget.GetPlacedTile() != null)
         {
-            MapManager.Instance.ChangeAllTileState(eTileType.DEACTIVE);
+            MapManager.Instance.ChangeAllTileState<Tile.State_Deactive>();
 
             var placedTile = ActTarget.GetPlacedTile();
 
@@ -58,7 +58,7 @@ public class AttackActor : FZ.UnitObjActor
     {
         base.Reset();
 
-        MapManager.Instance.ChangeAllTileState(eTileType.NORMAL);
+        MapManager.Instance.ChangeAllTileState<Tile.State_Normal>();
     }
 
     public override bool OnTouchEvent(eTouchEvent touch)

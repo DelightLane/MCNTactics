@@ -11,13 +11,6 @@ public enum eTileDirect
     LEFT
 }
 
-public enum eTileType
-{
-    NORMAL,
-    ACTIVE,
-    DEACTIVE
-}
-
 public class Tile : TacticsObject, IDisposable, FZ.IObserver<eTouchEvent>
 {
     private Vector2 _position;
@@ -28,20 +21,18 @@ public class Tile : TacticsObject, IDisposable, FZ.IObserver<eTouchEvent>
     public static readonly float TILE_SIZE = 1;
 
     #region Tile State
-    private FZ.StateMachine<TileState> _stateMachine = new FZ.StateMachine<TileState>();
+    private FZ.StateMachine<State> _stateMachine = new FZ.StateMachine<State>();
 
-    private abstract class TileState : FZ.State<Tile>
+    public abstract class State : FZ.State<Tile>
     {
-        public TileState(Tile target) : base(target)
+        public State(Tile target) : base(target)
         {
             var tile = Target as Tile;
             if (tile != null)
             {
-                tile._stateMachine.StorageState(GetCurrentType().ToString(), this);
+                tile._stateMachine.StorageState(this);
             }
         }
-
-        public abstract eTileType GetCurrentType();
 
         // 타일에 붙은 오브젝트에 터치 이벤트를 넘기고 싶지 않을 때 false를 리턴한다.
         public virtual bool OnTouchEvent(eTouchEvent touch) { return true; }
@@ -57,34 +48,24 @@ public class Tile : TacticsObject, IDisposable, FZ.IObserver<eTouchEvent>
         }
     }
 
-    private class TileState_Normal : TileState
+    public class State_Normal : State
     {
-        public TileState_Normal(Tile target) : base(target) { }
+        public State_Normal(Tile target) : base(target) { }
 
         public override void Run()
         {
             SetTileImage(Target._tileTextureName);
         }
-
-        public override eTileType GetCurrentType()
-        {
-            return eTileType.NORMAL;
-        }
     }
 
-    private class TileState_Active : TileState
+    public class State_Active : State
     {
-        public TileState_Active(Tile target) : base(target) { }
+        public State_Active(Tile target) : base(target) { }
 
         public override void Run()
         {
             // TODO : 맞는 타일 이미지로 변경
             SetTileImage("active");
-        }
-
-        public override eTileType GetCurrentType()
-        {
-            return eTileType.ACTIVE;
         }
 
         public override bool OnTouchEvent(eTouchEvent touch)
@@ -105,19 +86,14 @@ public class Tile : TacticsObject, IDisposable, FZ.IObserver<eTouchEvent>
         }
     }
 
-    private class TileState_Deactive : TileState
+    public class State_Deactive : State
     {
-        public TileState_Deactive(Tile target) : base(target) { }
+        public State_Deactive(Tile target) : base(target) { }
 
         public override void Run()
         {
             // TODO : 맞는 타일 이미지로 변경
             SetTileImage("deactive");
-        }
-
-        public override eTileType GetCurrentType()
-        {
-            return eTileType.DEACTIVE;
         }
     }
     #endregion
@@ -167,9 +143,9 @@ public class Tile : TacticsObject, IDisposable, FZ.IObserver<eTouchEvent>
 
     private void StorageStates()
     {
-        new TileState_Normal(this);
-        new TileState_Active(this);
-        new TileState_Deactive(this);
+        new State_Normal(this);
+        new State_Active(this);
+        new State_Deactive(this);
     }
 
     public void Initialize(Vector2 pos, string tileTextureName)
@@ -180,7 +156,7 @@ public class Tile : TacticsObject, IDisposable, FZ.IObserver<eTouchEvent>
 
         _tileTextureName = tileTextureName;
 
-        ChangeState(eTileType.NORMAL);
+        ChangeState<State_Normal>();
     }
 
     public void SetName(Vector2 pos)
@@ -312,7 +288,7 @@ public class Tile : TacticsObject, IDisposable, FZ.IObserver<eTouchEvent>
                     continue;
                 }
 
-                closedTile.ChangeState(eTileType.ACTIVE);
+                closedTile.ChangeState<State_Active>();
                 closedTile.ShowChainActiveTile(range - 1 - obstacleCost, startedObj, ignoreCondition);
             }
         }
@@ -341,19 +317,19 @@ public class Tile : TacticsObject, IDisposable, FZ.IObserver<eTouchEvent>
         return obstacleCost;
     }
 
-    public void ChangeState(eTileType interaction)
+    public void ChangeState<T>() where T : Tile.State
     {
         if (_stateMachine != null)
         {
-            _stateMachine.ChangeState(interaction.ToString());
+            _stateMachine.ChangeState<T>();
         }
     }
 
-    private TileState GetCurrentState()
+    private State GetCurrentState()
     {
         if(_stateMachine != null)
         {
-            var tileState = _stateMachine.GetCurrentState() as TileState;
+            var tileState = _stateMachine.GetCurrentState() as State;
 
             if(tileState != null)
             {

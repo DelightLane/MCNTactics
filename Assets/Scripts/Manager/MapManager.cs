@@ -141,11 +141,11 @@ public class MapManager : FZ.MonoSingletone<MapManager> {
         }
     }
 
-    public void ChangeAllTileState(eTileType state)
+    public void ChangeAllTileState<T>() where T : Tile.State
     {
         foreach(var tile in _tilemap)
         {
-            tile.Value.ChangeState(state);
+            tile.Value.ChangeState<T>();
         }
     }
 }

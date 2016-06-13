@@ -63,12 +63,12 @@ namespace FZ
     */
     public class StateMachine<T> where T : IState, IDisposable
     {
-        private Dictionary<string, T> _states = new Dictionary<string, T>();
+        private Dictionary<Type, T> _states = new Dictionary<Type, T>();
         private T _currentState;
 
-        public void StorageState(string stateName, T state)
+        public void StorageState(T state)
         {
-            _states.Add(stateName, state);
+            _states.Add(state.GetType(), state);
         }
 
         public T GetCurrentState()
@@ -76,14 +76,14 @@ namespace FZ
             return _currentState;
         }
 
-        public void ChangeState(string stateName)
+        public void ChangeState<T2>() where T2 : T
         {
             if(_currentState != null)
             {
                 _currentState.Finish();
             }
 
-            _currentState = _states[stateName];
+            _currentState = _states[typeof(T2)];
 
             if(_currentState != null)
             {

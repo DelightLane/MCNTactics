@@ -40,7 +40,7 @@ public class MoveActor : FZ.ActObjActor, IUnitActor
 
         if (ActTarget.GetPlacedTile() != null)
         {
-            MapManager.Instance.ChangeAllTileState(eTileType.DEACTIVE);
+            MapManager.Instance.ChangeAllTileState<Tile.State_Deactive>();
 
             var placedTile = ActTarget.GetPlacedTile();
 
@@ -52,7 +52,7 @@ public class MoveActor : FZ.ActObjActor, IUnitActor
     {
         base.Reset();
 
-        MapManager.Instance.ChangeAllTileState(eTileType.NORMAL);
+        MapManager.Instance.ChangeAllTileState<Tile.State_Normal>();
     }
 
     public override bool OnTouchEvent(eTouchEvent touch)
