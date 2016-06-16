@@ -44,13 +44,25 @@ public class AttackActor : FZ.UnitObjActor
 
             var placedTile = ActTarget.GetPlacedTile();
 
-            Tile.TileActiveIgnoreCond tileDeactiveCond = (Tile tile) =>
+            placedTile.ActiveChain(Range, new Tile.ChainInfo((Tile tile) =>
             {
-                return (tile.GetAttachObject() != null && !(tile.GetAttachObject() is UnitObject)) ||
-                       (tile.GetAttachObject() is UnitObject && (tile.GetAttachObject() as UnitObject).Team == ActTarget.Team);
-            };
+                if(tile.GetAttachObject() != null)
+                {
+                    if (tile.GetAttachObject() is UnitObject)
+                    {
+                        if ((tile.GetAttachObject() as UnitObject).Team == ActTarget.Team)
+                        {
+                            return true;
+                        }
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
 
-            placedTile.ShowChainActiveTile(Range, tileDeactiveCond);
+                return false;
+            }));
         }
     }
 

@@ -44,7 +44,10 @@ public class MoveActor : FZ.ActObjActor, IUnitActor
 
             var placedTile = ActTarget.GetPlacedTile();
 
-            placedTile.ShowChainActiveTile(Range, (Tile tile) => { return tile.GetAttachObject() != null; });
+            placedTile.ActiveChain(Range, new Tile.ChainInfo((Tile tile) => 
+            {
+                return tile.GetAttachObject() != null;
+            }));
         }
     }
 

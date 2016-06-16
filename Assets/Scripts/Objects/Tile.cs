@@ -280,43 +280,54 @@ public class Tile : TacticsObject, IDisposable, FZ.IObserver<eTouchEvent>
         return null;
     }
 
-    public delegate bool TileActiveIgnoreCond(Tile checkedTile);
-
-    public void ShowChainActiveTile(int range, TileActiveIgnoreCond ignoreCondition)
+    public struct ChainInfo
     {
-        if (_attached != null)
+        public delegate bool IgnoreCondition(Tile checkedTile);
+
+        public TacticsObject RootObj;
+        public IgnoreCondition IgnoreCond;
+        public string ActiveTileImage;
+
+        public ChainInfo(IgnoreCondition ignoreCond)
         {
-            ShowChainActiveTile(range, _attached, ignoreCondition);
+            this.RootObj = null;
+            this.ActiveTileImage = string.Empty;
+            this.IgnoreCond = ignoreCond;
         }
     }
 
-    public void ShowChainActiveTile(int range, TacticsObject startedObj, TileActiveIgnoreCond ignoreCondition)
+    public void ActiveChain(int range, ChainInfo info)
     {
         if (range <= 0)
         {
             return;
         }
 
+        if(info.RootObj == null)
+        {
+            info.RootObj = _attached;
+        }
+
         var closedTiles = this.GetClosedTiles();
 
-        int obstacleCost = GetChainActiveTileCost(startedObj);
+        range = range - 1 - GetChainCost(info.RootObj);
 
         foreach (var closedTile in closedTiles)
         {
             if (closedTile != null)
             {
-                if (ignoreCondition != null && ignoreCondition(closedTile))
+                if (info.IgnoreCond != null && info.IgnoreCond(closedTile))
                 {
                     continue;
                 }
 
                 closedTile.ChangeState<State_Active>();
-                closedTile.ShowChainActiveTile(range - 1 - obstacleCost, startedObj, ignoreCondition);
+                closedTile.ActiveChain(range, info);
             }
         }
     }
 
-    private int GetChainActiveTileCost(TacticsObject startedObj)
+    private int GetChainCost(TacticsObject startedObj)
     {
         var closedTiles = this.GetClosedTiles();
 
