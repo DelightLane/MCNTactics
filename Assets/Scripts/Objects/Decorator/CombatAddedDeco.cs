@@ -14,6 +14,7 @@ public class CombatAddedDeco : FZ.Decorator<ICombat>, ICombat
         this._addedDef = addedStatus.Def;
         this._addedHp = addedStatus.Hp;
         this._addedSp = addedStatus.Sp;
+        this._addedActRange = addedStatus.ActRange;
     }
 
     public int Atk { get { return _decoTarget.Atk + _addedAtk; } }
