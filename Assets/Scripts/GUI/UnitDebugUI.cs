@@ -22,7 +22,7 @@ public class UnitDebugUI : MonoBehaviour
 
     private void DisplayUnitInfo()
     {
-        var unit = GameManager.Instance.SelectedObj as UnitObject;
+        var unit = GameManager.Get<GameManager.Select>().Target as UnitObject;
         
         if(unit != null)
         {

@@ -16,7 +16,7 @@ public class TempActionUI : MonoBehaviour
 
     void Update()
     {
-        if(GameManager.Instance.SelectedObj == null)
+        if(GameManager.Get<GameManager.Select>().Target == null)
         {
             _moveBtn.SetActive(false);
             _atkBtn.SetActive(false);
@@ -32,21 +32,21 @@ public class TempActionUI : MonoBehaviour
 
     public void MoveTest()
     {
-        GameManager.Instance.ActionSelectObj(typeof(MoveActor));
+        GameManager.Get<GameManager.Select>().Action(typeof(MoveActor));
     }
 
     public void AttackTest()
     {
-        GameManager.Instance.ActionSelectObj(typeof(AttackActor));
+        GameManager.Get<GameManager.Select>().Action(typeof(AttackActor));
     }
 
     public void CancelTest()
     {
-        GameManager.Instance.CancelActionSelectObj();
+        GameManager.Get<GameManager.Select>().CancelAction();
     }
 
     public void EndTurnTest()
     {
-        GameManager.Instance.ForceEndTurn();
+        GameManager.Get<GameManager.Turn>().ForceEndTurn();
     }
 }

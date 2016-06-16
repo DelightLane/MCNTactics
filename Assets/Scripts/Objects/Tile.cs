@@ -94,7 +94,7 @@ public class Tile : TacticsObject, IDisposable, FZ.IObserver<eTouchEvent>
         {
             if (touch == eTouchEvent.TOUCH)
             {
-                var selected = GameManager.Instance.SelectedObj;
+                var selected = GameManager.Get<GameManager.Select>().Target;
 
                 if (selected != null)
                 {

@@ -90,7 +90,7 @@ public class MapManager : FZ.MonoSingletone<MapManager> {
 
     public void InitObjs(eObjType type)
     {
-        GameManager.Instance.ResetJoinTeams();
+        GameManager.Get<GameManager.Turn>().ResetRegisterTeams();
 
         var unitList = _objInfos.FindAll(obj => obj.type == type);
 
@@ -98,7 +98,7 @@ public class MapManager : FZ.MonoSingletone<MapManager> {
         {
             if (IsInMapSize(objInfo.pos))
             {
-                GameManager.Instance.RegisterJoinTeam(objInfo.team);
+                GameManager.Get<GameManager.Turn>().RegisterTeam(objInfo.team);
 
                 var unitObj = UnitObject.Create(objInfo.no, objInfo.team);
                 if (unitObj != null)

@@ -3,35 +3,39 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-public class GameManager : FZ.Singletone<GameManager>
+public class GameManager
 {
-    private SelectHandler _selectHandler;
-    private TurnHandler _turnHandler;
+    private static GameManager _instance;
+    private Dictionary<Type, Handler> _handlers;
 
     private GameManager()
     {
-        _selectHandler = new SelectHandler();
-        _turnHandler = new TurnHandler();
+        _handlers = new Dictionary<Type, Handler>();
+
+        _handlers.Add(typeof(Select), new Select());
+        _handlers.Add(typeof(Turn), new Turn());
     }
 
-    #region SelectHandler
-    private class SelectHandler
+    public static T Get<T>() where T : Handler
     {
-        private TacticsObject _selectedObj;
-
-        public void Set(TacticsObject obj)
+        if (_instance == null)
         {
-            _selectedObj = obj;
+            _instance = new GameManager();
         }
 
-        public TacticsObject Get()
-        {
-            return _selectedObj;
-        }
+        return (T)_instance._handlers[typeof(T)];
+    }
+
+    #region Handler
+    public abstract class Handler { }
+
+    public class Select : Handler
+    {
+        public  TacticsObject Target { get; set; }
 
         public void Action(System.Type actType)
         {
-            var selected = _selectedObj as ActionObject;
+            var selected = Target as ActionObject;
 
             if (selected != null)
             {
@@ -41,7 +45,7 @@ public class GameManager : FZ.Singletone<GameManager>
 
         public void CancelAction()
         {
-            var selected = _selectedObj as ActionObject;
+            var selected = Target as ActionObject;
 
             if (selected != null)
             {
@@ -57,33 +61,8 @@ public class GameManager : FZ.Singletone<GameManager>
         }
     }
 
-    public TacticsObject SelectedObj
-    {
-        get
-        {
-            return _selectHandler.Get();
-        }
-
-        set
-        {
-            _selectHandler.Set(value);
-        }
-    }
-
-    public void ActionSelectObj(System.Type actType)
-    {
-        _selectHandler.Action(actType);
-    }
-
-    public void CancelActionSelectObj()
-    {
-        _selectHandler.CancelAction();
-    }
-    #endregion
-
-    #region TurnHandler
     // 유닛 오브젝트만 턴의 제약을 가진다.
-    private class TurnHandler
+    public class Turn : Handler
     {
         private HashSet<eCombatTeam> _existTeams = new HashSet<eCombatTeam>();
 
@@ -92,6 +71,9 @@ public class GameManager : FZ.Singletone<GameManager>
 
         // TODO : 매직 넘버가 아니라 다른 방식으로 정의할 것
         private const int MaxRemainActPoint = 50;
+
+        public int ActPoint { get { return _remainActPoint; } }
+        public eCombatTeam Team { get { return _currentTeam; } }
 
         public void RegisterTeam(eCombatTeam team)
         {
@@ -102,9 +84,6 @@ public class GameManager : FZ.Singletone<GameManager>
             _currentTeam = team;
         }
 
-        public int RemainActPoint { get { return _remainActPoint; } }
-        public eCombatTeam CurrentTeam { get { return _currentTeam; } }
-
         public void ResetRegisterTeams()
         {
             _existTeams.Clear();
@@ -112,13 +91,29 @@ public class GameManager : FZ.Singletone<GameManager>
 
         public void EndTurn()
         {
+            if (IsTurnOver())
+            {
+                PureEndTurn();
+            }
+        }
+
+        public void ForceEndTurn()
+        {
+            // TODO : 누군가 액션을 하고 있다면 그걸 모두 취소시켜주어야 한다.
+           PureEndTurn();
+        }
+
+        private void PureEndTurn()
+        {
             _remainActPoint = MaxRemainActPoint;
 
             GoToNextTurnTeam();
         }
 
-        public bool DoTurn(int actPoint)
+        public bool DoTurn(IUnitActor act)
         {
+            int actPoint = act.ActPoint;
+
             if (_remainActPoint >= actPoint)
             {
                 _remainActPoint -= actPoint;
@@ -126,9 +121,11 @@ public class GameManager : FZ.Singletone<GameManager>
             }
             return false;
         }
-
-        public void UndoTurn(int actPoint)
+        
+        public void UndoTurn(IUnitActor act)
         {
+            int actPoint = act.ActPoint;
+
             _remainActPoint += actPoint;
         }
 
@@ -167,60 +164,9 @@ public class GameManager : FZ.Singletone<GameManager>
         {
             if (!_existTeams.Contains(_currentTeam))
             {
-                EndTurn();
+                PureEndTurn();
             }
         }
-    }
-
-    public int TurnActPoint { get { return _turnHandler.RemainActPoint; } }
-    public eCombatTeam TurnTeam { get { return _turnHandler.CurrentTeam; } }
-
-    public void RegisterJoinTeam(eCombatTeam team)
-    {
-        _turnHandler.RegisterTeam(team);
-    }
-
-    public void ResetJoinTeams()
-    {
-        _turnHandler.ResetRegisterTeams();
-    }
-
-    public void ForceEndTurn()
-    {
-        // TODO : 누군가 액션을 하고 있다면 그걸 모두 취소시켜주어야 한다.
-        _turnHandler.EndTurn();
-    }
-
-    public void EndTurn()
-    {
-        if(_turnHandler.IsTurnOver())
-        {
-            _turnHandler.EndTurn();
-        }
-    }
-
-    public bool DoTurn(IUnitActor act)
-    {
-        int actPoint = act.ActPoint;
-
-        return _turnHandler.DoTurn(actPoint);
-    }
-
-    public void UndoTurn(IUnitActor act)
-    {
-        int actPoint = act.ActPoint;
-
-        _turnHandler.UndoTurn(actPoint);
-    }
-
-    public eCombatTeam GetCurrentTeam()
-    {
-        return _turnHandler.GetCurrentTeam();
-    }
-
-    public bool IsCurrentTeam(eCombatTeam team)
-    {
-        return _turnHandler.IsCurrentTeam(team);
     }
     #endregion
 }

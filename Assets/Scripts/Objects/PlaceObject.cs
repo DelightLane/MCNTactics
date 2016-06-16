@@ -56,26 +56,26 @@ public class PlaceObject : TacticsObject, IDisposable, FZ.IObserver<eTouchEvent>
 
     public bool IsSelectedEmpty()
     {
-        return GameManager.Instance.SelectedObj == null;
+        return GameManager.Get<GameManager.Select>().Target == null;
     }
 
     public bool IsSelected()
     {
-        return GameManager.Instance.SelectedObj == this;
+        return GameManager.Get<GameManager.Select>().Target == this;
     }
 
     public void Select()
     {
         ShapeSelect();
 
-        GameManager.Instance.SelectedObj = this;
+        GameManager.Get<GameManager.Select>().Target = this;
     }
 
     public void Deselect()
     {
         ShapeNormal();
 
-        GameManager.Instance.SelectedObj = null;
+        GameManager.Get<GameManager.Select>().Target = null;
     }
 
     protected virtual void ShapeSelect()

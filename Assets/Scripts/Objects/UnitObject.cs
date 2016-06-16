@@ -204,7 +204,7 @@ public class UnitObject : ActionObject, ICombat
         var checkedUnitActor = checkedActor as IUnitActor;
         if (checkedUnitActor != null)
         {
-            bool isSuccess = GameManager.Instance.DoTurn(checkedUnitActor);
+            bool isSuccess = GameManager.Get<GameManager.Turn>().DoTurn(checkedUnitActor);
 
             return isSuccess;
         }
@@ -216,7 +216,7 @@ public class UnitObject : ActionObject, ICombat
     {
         if(IsLastActor())
         {
-            GameManager.Instance.EndTurn();
+            GameManager.Get<GameManager.Turn>().EndTurn();
         }
 
         return true;
@@ -227,7 +227,7 @@ public class UnitObject : ActionObject, ICombat
         var checkedUnitActor = checkedActor as IUnitActor;
         if (checkedUnitActor != null)
         {
-            GameManager.Instance.UndoTurn(checkedUnitActor);
+            GameManager.Get<GameManager.Turn>().UndoTurn(checkedUnitActor);
         }
 
         return true;
@@ -239,7 +239,7 @@ public class UnitObject : ActionObject, ICombat
         if (!HasActor())
         {
             if (IsSelectedEmpty() &&
-                GameManager.Instance.IsCurrentTeam(this.Team))
+                GameManager.Get<GameManager.Turn>().IsCurrentTeam(this.Team))
             {
                 Select();
             }
