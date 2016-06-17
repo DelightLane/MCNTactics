@@ -11,12 +11,13 @@ public enum eCombatState
 
 public enum eCombatTeam
 {
+    UNSELECT,
     WHITE,
     BLUE,
     RED
 }
 
-public class UnitObject : ActionObject, ICombat
+public class UnitObject : ActionObject, ICombat, FZ.IObserver<eCombatTeam>
 {
     public eCombatTeam Team { get; set; }
 
@@ -85,6 +86,8 @@ public class UnitObject : ActionObject, ICombat
                 unitObj.Team = team;
 
                 unitObj.ShapeNormal();
+
+                GameManager.Get<GameManager.Turn>().Subscribe(unitObj);
 
                 return unitObj;
             }
@@ -235,16 +238,46 @@ public class UnitObject : ActionObject, ICombat
 
     public override bool OnTouchEvent(eTouchEvent touch)
     {
-        // TODO : 선택하고 선택하지 않음을 구분하는 조건들 필요
         if (!HasActor())
         {
             if (IsSelectedEmpty() &&
                 GameManager.Get<GameManager.Turn>().IsCurrentTeam(this.Team))
             {
                 Select();
+
+                ActiveActRange();
             }
         }
 
         return base.OnTouchEvent(touch);
+    }
+
+    private Tile _actRangeRoot;
+
+    public void OnNext(eCombatTeam team)
+    {
+        if(this.Team == team)
+        {
+            _actRangeRoot = _placedTile;
+        }
+    }
+
+    private void ActiveActRange()
+    {
+        if (_actRangeRoot != null)
+        {
+            var chainInfo = new Tile.ChainInfo((Tile tile) =>
+            {
+                if (tile.GetAttachObject() != null && tile.GetAttachObject() != this)
+                {
+                    return true;
+                }
+
+                return false;
+            });
+            // TODO : 실제 이미지 이름으로 변경
+            chainInfo.ActiveTileImage = "actRange";
+            _actRangeRoot.ActiveChain(ActRange, chainInfo);
+        }
     }
 }

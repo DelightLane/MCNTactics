@@ -39,6 +39,9 @@ public class MapManager : FZ.MonoSingletone<MapManager> {
         CreateTilemap();
 
         PlaceAllObjs();
+
+        // TODO : 이 곳은 임시 위치. 추후 로딩 씬에서 부를 수 있게 수정.(유닛이 모두 셋팅되고 시작팀이 선택되어야 함)
+        GameManager.Get<GameManager.Turn>().SelectCurrectTurnTeam();
     }
 
     private void LoadMapData()

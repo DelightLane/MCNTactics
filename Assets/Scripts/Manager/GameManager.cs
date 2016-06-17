@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using FZ;
 
 public class GameManager
 {
@@ -62,7 +63,7 @@ public class GameManager
     }
 
     // 유닛 오브젝트만 턴의 제약을 가진다.
-    public class Turn : Handler
+    public class Turn : Handler, FZ.IObservable<eCombatTeam>
     {
         private HashSet<eCombatTeam> _existTeams = new HashSet<eCombatTeam>();
 
@@ -80,8 +81,8 @@ public class GameManager
             _existTeams.Add(team);
 
             // TODO : 가장 처음 시작하는 팀을 선택하는 방식을 정할 것
-            // 현재는 가장 마지막에 추가되는 유닛의 팀이 시작 팀이 되는 로직
-            _currentTeam = team;
+            // 현재는 가장 enum의 처음에 있으며 등록된 팀이 시작팀
+            _currentTeam = eCombatTeam.UNSELECT;
         }
 
         public void ResetRegisterTeams()
@@ -107,7 +108,7 @@ public class GameManager
         {
             _remainActPoint = MaxRemainActPoint;
 
-            GoToNextTurnTeam();
+            SelectCurrectTurnTeam();
         }
 
         public bool DoTurn(IUnitActor act)
@@ -144,7 +145,7 @@ public class GameManager
             return _currentTeam == team;
         }
 
-        private void GoToNextTurnTeam()
+        public void SelectCurrectTurnTeam()
         {
             int teamCount = Enum.GetValues(typeof(eCombatTeam)).Length - 1;
 
@@ -157,14 +158,49 @@ public class GameManager
                 _currentTeam = (eCombatTeam)0;
             }
 
-            RepairTurnTeam();
+            bool repair = RepairTurnTeam();
+
+            if (!repair)
+            {
+                NotifyTeamsTurn();
+            }
         }
 
-        private void RepairTurnTeam()
+        private bool RepairTurnTeam()
         {
             if (!_existTeams.Contains(_currentTeam))
             {
                 PureEndTurn();
+
+                return true;
+            }
+
+            return false;
+        }
+
+        private List<IObserver<eCombatTeam>> _observers = new List<IObserver<eCombatTeam>>();
+
+        public void Subscribe(IObserver<eCombatTeam> observer)
+        {
+            if (_observers != null)
+            {
+                _observers.Add(observer);
+            }
+        }
+
+        public void Unsubscribe(IObserver<eCombatTeam> observer)
+        {
+            if (_observers != null)
+            {
+                _observers.Remove(observer);
+            }
+        }
+
+        private void NotifyTeamsTurn()
+        {
+            for(int i = 0; i < _observers.Count; ++i)
+            {
+                _observers[i].OnNext(this.Team);
             }
         }
     }

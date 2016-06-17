@@ -296,7 +296,7 @@ public class Tile : TacticsObject, IDisposable, FZ.IObserver<eTouchEvent>
         }
     }
 
-    public void ActiveChain(int range, ChainInfo info)
+    public void ActiveChain(int range, ChainInfo info = new ChainInfo())
     {
         if (range <= 0)
         {
@@ -321,7 +321,7 @@ public class Tile : TacticsObject, IDisposable, FZ.IObserver<eTouchEvent>
                     continue;
                 }
 
-                closedTile.ChangeState<State_Active>();
+                closedTile.ChangeState<State_Active>(info.ActiveTileImage);
                 closedTile.ActiveChain(range, info);
             }
         }
