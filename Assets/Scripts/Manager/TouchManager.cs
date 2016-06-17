@@ -11,7 +11,7 @@ public enum eTouchEvent
     TOUCH
 }
 
-public class TouchManager : MonoSingletone<TouchManager>, IObservable<eTouchEvent>
+public class TouchManager : MonoSingleton<TouchManager>, IObservable<eTouchEvent>
 {
     private List<IObserver<eTouchEvent>> _observers;
 

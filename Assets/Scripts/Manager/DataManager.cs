@@ -3,7 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-public class DataManager : FZ.GeneralSingletone<DataManager, DataObject>
+public class DataManager : FZ.GeneralSingleton<DataManager, DataObject>
 {
     private DataManager() { }
 
@@ -19,7 +19,7 @@ public class DataManager : FZ.GeneralSingletone<DataManager, DataObject>
 
     public static void LoadData(DataFactory factory)
     {
-        FZ.GeneralSingletone<DataManager, DataObject>.RegisterHandler(factory.LoadDatas());
+        FZ.GeneralSingleton<DataManager, DataObject>.RegisterHandler(factory.LoadDatas());
     }
 }
 

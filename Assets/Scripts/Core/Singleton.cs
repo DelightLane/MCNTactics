@@ -11,7 +11,7 @@ namespace FZ
     *반드시 생성자는 private로 지정해 주어야 한다.
     *@author Delight
     */
-    public abstract class Singletone<T> where T : class
+    public abstract class Singleton<T> where T : class
     {
         protected static T _instance = null;
         
@@ -51,7 +51,7 @@ namespace FZ
     *반드시 생성자는 private로 지정해 주어야 한다.
     *@author Delight
     */
-    public abstract class GeneralSingletone<T, T2> where T2 : class
+    public abstract class GeneralSingleton<T, T2> where T2 : class
     {
         private static T _instance;
         private static Dictionary<Type, T2> _handlers;
@@ -75,7 +75,7 @@ namespace FZ
 
                 CreateInstance();
             }
-            GeneralSingletone<T, T2>._handlers.Add(handler.GetType(), handler);
+            GeneralSingleton<T, T2>._handlers.Add(handler.GetType(), handler);
         }
 
         private static void CreateInstance()
@@ -102,7 +102,7 @@ namespace FZ
     * MonoBehaviour를 상속받아야 하는 클래스가 싱글톤으로 구현되어야 할 시 이 추상 클래스를 상속받는다.
     *@author Delight
     */
-    public abstract class MonoSingletone<T> : MonoBehaviour where T : MonoSingletone<T>
+    public abstract class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T>
     {
         private static T _instance;
 

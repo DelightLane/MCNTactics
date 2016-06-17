@@ -2,7 +2,7 @@
 using System.Collections;
 using System;
 
-public class CameraManager : FZ.MonoSingletone<CameraManager>
+public class CameraManager : FZ.MonoSingleton<CameraManager>
 {
     public float _moveSpeed = 0.2f;
 

@@ -4,12 +4,12 @@ using System.Collections;
 using System.Collections.Generic;
 using FZ;
 
-public class GameManager : FZ.GeneralSingletone<GameManager, GameManager.Handler>
+public class GameManager : FZ.GeneralSingleton<GameManager, GameManager.Handler>
 {
     private GameManager()
     {
-        FZ.GeneralSingletone<GameManager, GameManager.Handler>.RegisterHandler(new Select());
-        FZ.GeneralSingletone<GameManager, GameManager.Handler>.RegisterHandler(new Turn());
+        FZ.GeneralSingleton<GameManager, GameManager.Handler>.RegisterHandler(new Select());
+        FZ.GeneralSingleton<GameManager, GameManager.Handler>.RegisterHandler(new Turn());
     }
 
     #region Handler

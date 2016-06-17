@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using FZ;
 
-public class MapManager : FZ.MonoSingletone<MapManager> {
+public class MapManager : FZ.MonoSingleton<MapManager> {
     [SerializeField]
     private Vector2 _mapSize;
 
