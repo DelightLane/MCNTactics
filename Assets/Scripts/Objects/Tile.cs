@@ -41,7 +41,7 @@ public class Tile : TacticsObject, IDisposable, FZ.IObserver<eTouchEvent>
         {
             if (Target != null)
             {
-                var tileDatas = DataManager.Instance.GetData<AtlasDataList>(DataManager.DataType.ATLAS_TILE);
+                var tileDatas = DataManager.Get<AtlasDataList<AtlasType_Tile>>();
 
                 Target.SetCubeTexture(tileDatas, imageName);
             }

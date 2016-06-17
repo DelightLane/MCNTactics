@@ -69,6 +69,12 @@ namespace FZ
 
         protected static void RegisterHandler(T2 handler)
         {
+            if (_handlers == null)
+            {
+                _handlers = new Dictionary<Type, T2>();
+
+                CreateInstance();
+            }
             GeneralSingletone<T, T2>._handlers.Add(handler.GetType(), handler);
         }
 

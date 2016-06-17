@@ -3,57 +3,23 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-public class DataManager : FZ.Singletone<DataManager>
+public class DataManager : FZ.GeneralSingletone<DataManager, DataObject>
 {
-    public enum DataType
-    {
-        UNIT,
-        ATTACH_ACTOR,
-        MAP,
-        ATLAS_TILE
-    }
-
     private DataManager() { }
 
-    private Dictionary<DataType, DataObject> _datas = new Dictionary<DataType, DataObject>();
-
-    public void LoadDatas()
+    public static void LoadDatas()
     {
         // TODO : 나은 위치에서 로드하게 수정
         // 리플랙션을 사용해서 데이터들을 로드하게 하는 건 어떨지?
         LoadData(new UnitDataFactory());
         LoadData(new UnitActorDataFactory());
         LoadData(new MapDataFactory("test")); // TODO : 맵 이름을 런타임에 변경할 수 있게 수정 필요
-        LoadData(new AtlasDataFactory("TileAtlas", DataType.ATLAS_TILE));
+        LoadData(new AtlasDataFactory<AtlasType_Tile>("TileAtlas"));
     }
 
-    public void LoadData(DataFactory factory)
+    public static void LoadData(DataFactory factory)
     {
-        if(_datas.ContainsKey(factory.GetDataType()))
-        {
-            _datas.Clear();
-        }
-
-        _datas.Add(factory.GetDataType(), factory.LoadDatas());
-    }
-
-    public T GetData<T>(DataType type) where T : DataObject
-    {
-        if (_datas.ContainsKey(type))
-        {
-            var data = _datas[type] as T;
-
-            if(data != null)
-            {
-                return data;
-            }
-            else
-            {
-                throw new UnityException("DataType & Generic Type is not matched.");
-            }
-        }
-
-        return null;
+        FZ.GeneralSingletone<DataManager, DataObject>.RegisterHandler(factory.LoadDatas());
     }
 }
 
@@ -82,8 +48,6 @@ public abstract class DataFactory
 
     protected abstract string GetName();
 
-    public abstract DataManager.DataType GetDataType();
-
     public abstract DataObject LoadDatas();
 
     protected string GetJsonString()
@@ -107,11 +71,6 @@ public class UnitDataFactory : DataFactory
         return "Datas/unit";
     }
 
-    public override DataManager.DataType GetDataType()
-    {
-        return DataManager.DataType.UNIT;
-    }
-
     public override DataObject LoadDatas()
     {
         return new JsonParser<UnitDataList>().LoadDatas(this);
@@ -123,11 +82,6 @@ public class UnitActorDataFactory : DataFactory
     protected override string GetName()
     {
         return "Datas/unitActor";
-    }
-
-    public override DataManager.DataType GetDataType()
-    {
-        return DataManager.DataType.ATTACH_ACTOR;
     }
 
     public override DataObject LoadDatas()
@@ -149,27 +103,20 @@ public class MapDataFactory : DataFactory
     {
         return string.Format("Datas/map_{0}", _name);
     }
-
-    public override DataManager.DataType GetDataType()
-    {
-        return DataManager.DataType.MAP;
-    }
-
+    
     public override DataObject LoadDatas()
     {
         return new JsonParser<MapData>().LoadDatas(this);
     }
 }
 
-public class AtlasDataFactory : DataFactory
+public class AtlasDataFactory<T> : DataFactory where T : AtlasType
 {
     private string _name;
-    private DataManager.DataType _type;
 
-    public AtlasDataFactory(string name, DataManager.DataType dataType)
+    public AtlasDataFactory(string name)
     {
         _name = name;
-        _type = dataType;
     }
 
     protected override string GetName()
@@ -177,14 +124,9 @@ public class AtlasDataFactory : DataFactory
         return string.Format("Atlases/{0}", _name);
     }
 
-    public override DataManager.DataType GetDataType()
-    {
-        return _type;
-    }
-
     public override DataObject LoadDatas()
     {
-        return new JsonParser<AtlasDataList>().LoadDatas(this);
+        return new JsonParser<AtlasDataList<T>>().LoadDatas(this);
     }
 }
 

@@ -27,7 +27,7 @@ public class MapManager : FZ.MonoSingletone<MapManager> {
     void Awake()
     {
         // TODO : 이 곳은 임시 위치. 추후 로딩 씬에서 부를 수 있게 수정.
-        DataManager.Instance.LoadDatas();
+        DataManager.LoadDatas();
 
         if (_mapCreator == null)
         {
@@ -48,7 +48,7 @@ public class MapManager : FZ.MonoSingletone<MapManager> {
     {
         _objInfos = new List<PlaceInfo>();
 
-        var mapData = DataManager.Instance.GetData<MapData>(DataManager.DataType.MAP);
+        var mapData = DataManager.Get<MapData>();
 
         _mapSize.x = mapData.x;
         _mapSize.y = mapData.y;

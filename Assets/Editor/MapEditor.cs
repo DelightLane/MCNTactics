@@ -84,8 +84,8 @@ public class MapEditor : EditorWindow
         }
         if (GUILayout.Button("Load Tilemap"))
         {
-            DataManager.Instance.LoadData(new AtlasDataFactory("TileAtlas", DataManager.DataType.ATLAS_TILE));
-            _tileRawData = DataManager.Instance.GetData<AtlasDataList>(DataManager.DataType.ATLAS_TILE);
+            DataManager.LoadData(new AtlasDataFactory<AtlasType_Tile>("TileAtlas"));
+            _tileRawData = DataManager.Get<AtlasDataList<AtlasType_Tile>>();
             _tileAtlasTexture = _tileRawData.GetMaterial().mainTexture as Texture2D;
         }
 
@@ -140,9 +140,9 @@ public class MapEditor : EditorWindow
 
     private void LoadTileMap()
     {
-        DataManager.Instance.LoadData(new AtlasDataFactory("TileAtlas", DataManager.DataType.ATLAS_TILE));
+        DataManager.LoadData(new AtlasDataFactory<AtlasType_Tile>("TileAtlas"));
         _tileAtlasTexture = Resources.Load("Atlases/TileAtlas", typeof(Texture2D)) as Texture2D;
-        _tileRawData = DataManager.Instance.GetData<AtlasDataList>(DataManager.DataType.ATLAS_TILE);
+        _tileRawData = DataManager.Get<AtlasDataList<AtlasType_Tile>>();
     }
 
     private PlaceInfo _placeInfo = new PlaceInfo();
