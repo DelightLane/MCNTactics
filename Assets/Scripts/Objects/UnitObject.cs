@@ -184,6 +184,8 @@ public class UnitObject : ActionObject, ICombat, FZ.IObserver<eCombatTeam>
             if(state == eCombatState.DEAD)
             {
                 ShapeDead();
+
+                GameManager.Get<GameManager.Turn>().Unsubscribe(this);
             }
         });
     }
