@@ -4,27 +4,12 @@ using System.Collections;
 using System.Collections.Generic;
 using FZ;
 
-public class GameManager
+public class GameManager : FZ.GeneralSingletone<GameManager, GameManager.Handler>
 {
-    private static GameManager _instance;
-    private Dictionary<Type, Handler> _handlers;
-
     private GameManager()
     {
-        _handlers = new Dictionary<Type, Handler>();
-
-        _handlers.Add(typeof(Select), new Select());
-        _handlers.Add(typeof(Turn), new Turn());
-    }
-
-    public static T Get<T>() where T : Handler
-    {
-        if (_instance == null)
-        {
-            _instance = new GameManager();
-        }
-
-        return (T)_instance._handlers[typeof(T)];
+        FZ.GeneralSingletone<GameManager, GameManager.Handler>.RegisterHandler(new Select());
+        FZ.GeneralSingletone<GameManager, GameManager.Handler>.RegisterHandler(new Turn());
     }
 
     #region Handler

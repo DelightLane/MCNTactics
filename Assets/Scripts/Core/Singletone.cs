@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Reflection;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace FZ
@@ -24,6 +25,51 @@ namespace FZ
                 }
                 return _instance;
             }
+        }
+
+        private static void CreateInstance()
+        {
+            if (_instance == null)
+            {
+                Type t = typeof(T);
+
+                ConstructorInfo[] ctors = t.GetConstructors();
+
+                if (ctors.Length > 0)
+                {
+                    throw new InvalidOperationException(String.Format("{0} has at least one accesible ctor making it impossible to enforce singleton behaviour", t.Name));
+                }
+
+                _instance = (T)Activator.CreateInstance(t, true);
+            }
+        }
+    }
+
+    /**
+    *@brief 제네럴 싱글톤 추상 클래스
+    *@details 하나의 클래스가 여러 가짓수의 클래스를 관리할 때 사용한다. T가 총괄하는 클래스, T2가 관리할 클래스들의 상위 클래스
+    *반드시 생성자는 private로 지정해 주어야 한다.
+    *@author Delight
+    */
+    public abstract class GeneralSingletone<T, T2> where T2 : class
+    {
+        private static T _instance;
+        private static Dictionary<Type, T2> _handlers;
+
+        public static T3 Get<T3>() where T3 : T2
+        {
+            if (_handlers == null)
+            {
+                _handlers = new Dictionary<Type, T2>();
+
+                CreateInstance();
+            }
+            return (T3)_handlers[typeof(T3)];
+        }
+
+        protected static void RegisterHandler(T2 handler)
+        {
+            GeneralSingletone<T, T2>._handlers.Add(handler.GetType(), handler);
         }
 
         private static void CreateInstance()
