@@ -18,19 +18,19 @@ public class CameraManager : FZ.MonoSingletone<CameraManager>
 
     void Update()
     {        
-        if (Input.mousePosition.x > Screen.width - 1)
+        if (Input.mousePosition.x > Screen.width - 20)
         {
             transform.Translate(Vector3.right * _moveSpeed);
         }
-        if (Input.mousePosition.x < 1)
+        if (Input.mousePosition.x < 20)
         {
             transform.Translate(-Vector3.right * _moveSpeed);
         }
-        if (Input.mousePosition.y > Screen.height - 1)
+        if (Input.mousePosition.y > Screen.height - 20)
         {
             transform.position = transform.position + Vector3.forward * _moveSpeed;
         }
-        if (Input.mousePosition.y < 1)
+        if (Input.mousePosition.y < 20)
         {
             transform.position = transform.position - Vector3.forward * _moveSpeed;
         }
