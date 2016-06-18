@@ -296,33 +296,48 @@ public class Tile : TacticsObject, IDisposable, FZ.IObserver<eTouchEvent>
         }
     }
 
+    public IEnumerable<Tile> GetChain(int range, Func<Tile, int> costFunc, ChainInfo.IgnoreCondition ignoreCond)
+    {
+        if (range > 0)
+        {
+            if (ignoreCond != null && !ignoreCond(this))
+            {
+                yield return this;
+            }
+
+            var closedTiles = this.GetClosedTiles();
+
+            range = range - 1;
+
+            foreach (var closedTile in closedTiles)
+            {
+                if (closedTile != null)
+                {
+                    int rangeWithCost = range;
+
+                    if (costFunc != null)
+                    {
+                        rangeWithCost -= costFunc(closedTile);
+                    }
+
+                    foreach (var recTile in closedTile.GetChain(rangeWithCost, costFunc, ignoreCond))
+                    {
+                        yield return recTile;
+                    }
+                }
+            }
+        }
+    }
+
     public void ActiveChain(int range, ChainInfo info = new ChainInfo())
     {
-        if (range <= 0)
+        var chainTiles = GetChain(range, (Tile tile)=> { return tile.GetChainCost(info.RootObj); }, info.IgnoreCond);
+        
+        foreach(var tile in chainTiles)
         {
-            return;
-        }
-
-        if(info.RootObj == null)
-        {
-            info.RootObj = _attached;
-        }
-
-        var closedTiles = this.GetClosedTiles();
-
-        range = range - 1 - GetChainCost(info.RootObj);
-
-        foreach (var closedTile in closedTiles)
-        {
-            if (closedTile != null)
+            if (tile != null)
             {
-                if (info.IgnoreCond != null && info.IgnoreCond(closedTile))
-                {
-                    continue;
-                }
-
-                closedTile.ChangeState<State_Active>(info.ActiveTileImage);
-                closedTile.ActiveChain(range, info);
+                tile.ChangeState<State_Active>(info.ActiveTileImage);
             }
         }
     }
