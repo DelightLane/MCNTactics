@@ -283,24 +283,64 @@ public class Tile : TacticsObject, IDisposable, FZ.IObserver<eTouchEvent>
     public struct ChainInfo
     {
         public delegate bool IgnoreCondition(Tile checkedTile);
-
+        
         public TacticsObject RootObj;
         public IgnoreCondition IgnoreCond;
         public string ActiveTileImage;
+        public CostCalculator Cost;
 
-        public ChainInfo(IgnoreCondition ignoreCond)
+        public ChainInfo(IgnoreCondition ignoreCond, CostCalculator cost = null)
         {
             this.RootObj = null;
             this.ActiveTileImage = string.Empty;
             this.IgnoreCond = ignoreCond;
+            this.Cost = cost;
         }
     }
 
-    public IEnumerable<Tile> GetChain(int range, Func<Tile, int> costFunc, ChainInfo.IgnoreCondition ignoreCond)
+    // TODO : 사용성이 좀 떨어지는듯.. 좀 더 고려 필요
+    public abstract class CostCalculator
+    {
+        public abstract int Calc(Tile tile);
+    }
+    public class ObjectCost : CostCalculator
+    {
+        private TacticsObject _pickedObj;
+
+        public ObjectCost(TacticsObject pickedObj)
+        {
+            _pickedObj = pickedObj;
+        }
+
+        public override int Calc(Tile tile)
+        {
+            var closedTiles = tile.GetClosedTiles();
+
+            int obstacleCost = 0;
+
+            if (tile.GetAttachObject() != _pickedObj)
+            {
+                foreach (var closedTile in closedTiles)
+                {
+                    if (closedTile != null)
+                    {
+                        if (closedTile.GetAttachObject() != null && closedTile.GetAttachObject() != _pickedObj)
+                        {
+                            ++obstacleCost;
+                        }
+                    }
+                }
+            }
+
+            return obstacleCost;
+        }
+    }
+
+    public IEnumerable<Tile> GetChain(int range, CostCalculator cost, ChainInfo.IgnoreCondition ignoreCond)
     {
         if (range > 0)
         {
-            if (ignoreCond != null && !ignoreCond(this))
+            if (ignoreCond == null || (ignoreCond != null && !ignoreCond(this)))
             {
                 yield return this;
             }
@@ -315,12 +355,12 @@ public class Tile : TacticsObject, IDisposable, FZ.IObserver<eTouchEvent>
                 {
                     int rangeWithCost = range;
 
-                    if (costFunc != null)
+                    if (cost != null)
                     {
-                        rangeWithCost -= costFunc(closedTile);
+                        rangeWithCost -= cost.Calc(closedTile);
                     }
 
-                    foreach (var recTile in closedTile.GetChain(rangeWithCost, costFunc, ignoreCond))
+                    foreach (var recTile in closedTile.GetChain(rangeWithCost, cost, ignoreCond))
                     {
                         yield return recTile;
                     }
@@ -331,7 +371,7 @@ public class Tile : TacticsObject, IDisposable, FZ.IObserver<eTouchEvent>
 
     public void ActiveChain(int range, ChainInfo info = new ChainInfo())
     {
-        var chainTiles = GetChain(range, (Tile tile)=> { return tile.GetChainCost(info.RootObj); }, info.IgnoreCond);
+        var chainTiles = GetChain(range, info.Cost, info.IgnoreCond);
         
         foreach(var tile in chainTiles)
         {
@@ -340,29 +380,6 @@ public class Tile : TacticsObject, IDisposable, FZ.IObserver<eTouchEvent>
                 tile.ChangeState<State_Active>(info.ActiveTileImage);
             }
         }
-    }
-
-    private int GetChainCost(TacticsObject startedObj)
-    {
-        var closedTiles = this.GetClosedTiles();
-
-        int obstacleCost = 0;
-
-        if (this.GetAttachObject() != startedObj)
-        {
-            foreach (var closedTile in closedTiles)
-            {
-                if (closedTile != null)
-                {
-                    if (closedTile.GetAttachObject() != null && closedTile.GetAttachObject() != startedObj)
-                    {
-                        ++obstacleCost;
-                    }
-                }
-            }
-        }
-
-        return obstacleCost;
     }
 
     public void ChangeState<T>(string forceTileImageName = "") where T : Tile.State

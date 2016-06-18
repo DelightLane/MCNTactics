@@ -269,15 +269,7 @@ public class UnitObject : ActionObject, ICombat, FZ.IObserver<eCombatTeam>
     {
         if (_actRangeRoot != null)
         {
-            var chainInfo = new Tile.ChainInfo((Tile tile) =>
-            {
-                if (tile.GetAttachObject() != null && tile.GetAttachObject() != this)
-                {
-                    return true;
-                }
-
-                return false;
-            });
+            var chainInfo = new Tile.ChainInfo(null);
             // TODO : 실제 이미지 이름으로 변경
             chainInfo.ActiveTileImage = "actRange";
             _actRangeRoot.ActiveChain(ActRange, chainInfo);
