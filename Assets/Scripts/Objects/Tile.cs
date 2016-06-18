@@ -338,7 +338,7 @@ public class Tile : TacticsObject, IDisposable, FZ.IObserver<eTouchEvent>
 
     public IEnumerable<Tile> GetChain(int range, CostCalculator cost, ChainInfo.IgnoreCondition ignoreCond)
     {
-        if (range > 0)
+        if (range >= 0)
         {
             if (ignoreCond == null || (ignoreCond != null && !ignoreCond(this)))
             {
