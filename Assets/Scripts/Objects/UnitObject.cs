@@ -256,13 +256,34 @@ public class UnitObject : ActionObject, ICombat, FZ.IObserver<eCombatTeam>
     }
 
     private Tile _actRangeRoot;
+    private HashSet<string> _actRangeTileNames = new HashSet<string>();
 
     public void OnNext(eCombatTeam team)
     {
         if(this.Team == team)
         {
             _actRangeRoot = _placedTile;
+
+            RegisterActRange();
         }
+    }
+
+    private void RegisterActRange()
+    {
+        _actRangeTileNames.Clear();
+
+        if (_actRangeRoot != null)
+        {
+            foreach (var tile in _actRangeRoot.GetChain(ActRange, null, null))
+            {
+                _actRangeTileNames.Add(tile.name);
+            }
+        }
+    }
+
+    private bool IsOutOfActRange()
+    {
+        return !_actRangeTileNames.Contains(_placedTile.name);
     }
 
     private void ActiveActRange()
