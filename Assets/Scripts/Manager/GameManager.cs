@@ -27,6 +27,8 @@ public class GameManager : FZ.GeneralSingleton<GameManager, GameManager.Handler>
             {
                 selected.ReserveActor(actType);
             }
+
+            selected.StartActor();
         }
 
         public void CancelAction()
@@ -96,23 +98,29 @@ public class GameManager : FZ.GeneralSingleton<GameManager, GameManager.Handler>
             SelectCurrectTurnTeam();
         }
 
-        public bool DoTurn(IUnitActor act)
+        public bool IsActable(eCombatTeam team, IUnitActor act)
+        {
+            if (_currentTeam == team)
+            {
+                int actPoint = act.ActPoint;
+
+                if (_remainActPoint >= actPoint)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public void DoAct(IUnitActor act)
         {
             int actPoint = act.ActPoint;
 
             if (_remainActPoint >= actPoint)
             {
                 _remainActPoint -= actPoint;
-                return true;
             }
-            return false;
-        }
-        
-        public void UndoTurn(IUnitActor act)
-        {
-            int actPoint = act.ActPoint;
-
-            _remainActPoint += actPoint;
         }
 
         public bool IsTurnOver()

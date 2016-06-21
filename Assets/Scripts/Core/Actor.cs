@@ -8,6 +8,7 @@ namespace FZ
     {
         void AddActor(FZ.Actor actor);
         void ReserveActor(System.Type actorType);
+        void StartActor();
         void EndActor();
         void CancelActor();
     }
@@ -217,7 +218,7 @@ namespace FZ
             }
         }
 
-        public FZ.Actor GetPreActor(System.Type actorType)
+        public FZ.Actor GetUsableActor(System.Type actorType)
         {
             if (!actorType.IsSubclassOf(typeof(FZ.Actor)) ||
                !_actors.ContainsKey(actorType.ToString()))
@@ -232,10 +233,13 @@ namespace FZ
 
         public void ReserveActor(System.Type actorType)
         {
-            var readyActor = GetPreActor(actorType);
+            var readyActor = GetUsableActor(actorType);
 
             _actorQueue.AddLast(readyActor);
+        }
 
+        public void StartActor()
+        {
             RunHeadActor();
         }
 
@@ -247,8 +251,6 @@ namespace FZ
 
                 _actorQueue.RemoveFirst();
             }
-
-            RunHeadActor();
         }
 
         public void CancelActor()

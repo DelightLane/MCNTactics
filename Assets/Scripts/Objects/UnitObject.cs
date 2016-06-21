@@ -205,14 +205,12 @@ public class UnitObject : ActionObject, ICombat, FZ.IObserver<eCombatTeam>
         Debug_DisplayStatus();
     }
 
-    protected override bool DoPreReserveActor(FZ.Actor checkedActor)
+    protected override bool DoPreStartActor(FZ.Actor checkedActor)
     {
         var checkedUnitActor = checkedActor as IUnitActor;
         if (checkedUnitActor != null)
         {
-            bool isSuccess = GameManager.Get<GameManager.Turn>().DoTurn(checkedUnitActor);
-
-            return isSuccess;
+            return GameManager.Get<GameManager.Turn>().IsActable(Team, checkedUnitActor);
         }
 
         return false;
@@ -220,21 +218,13 @@ public class UnitObject : ActionObject, ICombat, FZ.IObserver<eCombatTeam>
 
     protected override bool DoPreEndActor(Actor checkedActor)
     {
-        if(IsLastActor())
-        {
-            GameManager.Get<GameManager.Turn>().EndTurn();
-        }
-
-        return true;
-    }
-
-    protected override bool DoPreCancelActor(Actor checkedActor)
-    {
         var checkedUnitActor = checkedActor as IUnitActor;
         if (checkedUnitActor != null)
         {
-            GameManager.Get<GameManager.Turn>().UndoTurn(checkedUnitActor);
+            GameManager.Get<GameManager.Turn>().DoAct(checkedUnitActor);
         }
+        
+        GameManager.Get<GameManager.Turn>().EndTurn();
 
         return true;
     }

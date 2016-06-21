@@ -52,6 +52,11 @@ public class ActionObject : PlaceObject, FZ.IActorQueue
         return true;
     }
 
+    protected virtual bool DoPreStartActor(FZ.Actor checkedActor)
+    {
+        return true;
+    }
+
     protected virtual bool DoPreEndActor(FZ.Actor checkedActor)
     {
         return true;
@@ -64,10 +69,23 @@ public class ActionObject : PlaceObject, FZ.IActorQueue
 
     public void ReserveActor(Type actorType)
     {
-        if (DoPreReserveActor(_actorMachine.GetPreActor(actorType)))
+        if (DoPreReserveActor(_actorMachine.GetUsableActor(actorType)))
         {
             _actorMachine.ReserveActor(actorType);
             Debug_EnqueueActor(actorType.ToString());
+        }
+    }
+
+    public void StartActor()
+    {
+        var headActor = _actorMachine.GetHeadActor();
+
+        if (headActor != null)
+        {
+            if (DoPreStartActor(headActor))
+            {
+                _actorMachine.StartActor();
+            }
         }
     }
 
@@ -78,6 +96,8 @@ public class ActionObject : PlaceObject, FZ.IActorQueue
             _actorMachine.EndActor();
             Debug_DequeueActor();
         }
+
+        StartActor();
     }
 
     public void CancelActor()
