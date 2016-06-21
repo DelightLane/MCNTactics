@@ -19,10 +19,8 @@ namespace FZ
         {
             get
             {
-                if (_instance == null)
-                {
-                    CreateInstance();
-                }
+                CreateInstance();
+                
                 return _instance;
             }
         }
@@ -51,7 +49,7 @@ namespace FZ
     *반드시 생성자는 private로 지정해 주어야 한다.
     *@author Delight
     */
-    public abstract class GeneralSingleton<T, T2> where T2 : class
+    public abstract class GeneralSingleton<T, T2> where T : class where T2 : class
     {
         private static T _instance;
         private static Dictionary<Type, T2> _handlers;
@@ -75,7 +73,11 @@ namespace FZ
 
                 CreateInstance();
             }
-            GeneralSingleton<T, T2>._handlers.Add(handler.GetType(), handler);
+
+            if (!_handlers.ContainsKey(handler.GetType()))
+            {
+                _handlers.Add(handler.GetType(), handler);
+            }
         }
 
         private static void CreateInstance()
